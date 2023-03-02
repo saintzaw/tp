@@ -7,3 +7,5 @@ Display |   Name    |           Github Profile            | Portfolio
 ![](https://via.placeholder.com/100.png?text=Photo) | Gerald Koh Kheng Guan | [Github](https://github.com/geraldkoh4) | [Portfolio](docs/team/johndoe.md)
 ![](https://via.placeholder.com/100.png?text=Photo) | Goh Chok Yao | [Github](https://github.com/chokyao) | [Portfolio](docs/team/johndoe.md)
 ![](https://via.placeholder.com/100.png?text=Photo) | Denzel Chen | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
+![](https://via.placeholder.com/100.png?text=Photo) | Saint Thiri Zaw | [Github](https://github.com/saintzaw) | [Portfolio](docs/team/johndoe.md)
+
