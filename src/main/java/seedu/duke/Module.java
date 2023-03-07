@@ -9,4 +9,9 @@ public class Module {
     public String getModuleCode() {
         return moduleCode;
     }
+
+    @Override
+    public String toString() {
+        return this.moduleCode;
+    }
 }
