@@ -10,6 +10,7 @@ public class Duke {
     private ModuleList moduleList;
     public Duke() {
         parser = new Parser();
+        moduleList = new ModuleList();
     }
 
     public static void run(Duke ChatBot) {
