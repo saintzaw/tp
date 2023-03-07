@@ -1,4 +1,4 @@
-package seedu.modules;
+package seedu.Modules;
 import java.util.ArrayList;
 
 public class ModuleList {

@@ -1,7 +1,7 @@
 package seedu.duke;
 
-import seedu.modules.ModuleList;
-import seedu.ui.Print;
+import seedu.Modules.ModuleList;
+import seedu.Ui.Print;
 
 import java.util.Scanner;
 
