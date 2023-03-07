@@ -13,7 +13,8 @@ public class ModuleList {
     public void findModule(String moduleCode) {
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
-                //Print.printFoundModuleMessage();
+                Module foundModule = listOfModules.get(i);
+                Print.printFoundModule(foundModule);
                 break;
             }
         }
@@ -22,8 +23,9 @@ public class ModuleList {
     public void deleteModule(String moduleCode) {
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
+                Module deletedModule = listOfModules.get(i);
                 listOfModules.remove(i);
-                //Print.printDeletedModuleMessage();
+                Print.printDeletedModule(deletedModule, listOfModules.size());
                 break;
             }
         }
