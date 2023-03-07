@@ -11,11 +11,11 @@ public class Duke {
      */
     private Parser parser;
     private ModuleList moduleList;
-    public Duke () {
+    public Duke() {
         parser = new Parser();
     }
 
-    public static void run (Duke ChatBot) {
+    public static void run(Duke ChatBot) {
         Print.printHelloMessage();
         while (true) {
             Scanner in = new Scanner(System.in);
