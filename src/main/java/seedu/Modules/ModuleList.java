@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.modules;
 import java.util.ArrayList;
 
 public class ModuleList {
@@ -13,7 +13,7 @@ public class ModuleList {
     public void findModule (String moduleCode) {
         for (int i = 0; i < listOfModules.size(); i ++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
-                //UI.printFoundModuleMessage();
+                //Print.printFoundModuleMessage();
                 break;
             }
         }

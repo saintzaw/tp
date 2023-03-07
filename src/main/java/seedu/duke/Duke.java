@@ -1,6 +1,7 @@
 package seedu.duke;
 
-import seedu.ui.Manpage;
+import seedu.modules.ModuleList;
+import seedu.ui.Print;
 
 import java.util.Scanner;
 
@@ -8,25 +9,23 @@ public class Duke {
     /**
      * Main entry-point for the java.duke.Duke application.
      */
-    public static void main(String[] args) {
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
+    private Parser parser;
+    private ModuleList moduleList;
+    public Duke () {
+        parser = new Parser();
+    }
 
-        System.out.println("Hello from\n" + logo);
-        System.out.println("What is your name?");
-
-        Scanner in = new Scanner(System.in);
-
-        String line= in.nextLine();
-        if(line.equalsIgnoreCase("man")) {
-
-            Manpage.printManPage();
-
-        } else {
-            System.out.println("Hello " + line);
+    public static void run (Duke ChatBot) {
+        Print.printHelloMessage();
+        while (true) {
+            Scanner in = new Scanner(System.in);
+            String line = in.nextLine();
+            ChatBot.parser.checkUserInput(line, ChatBot.moduleList);
         }
+    }
+
+    public static void main(String[] args) {
+        Duke ChatBot = new Duke();
+        Duke.run(ChatBot);
     }
 }
