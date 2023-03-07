@@ -1,6 +1,4 @@
 package seedu.duke;
-;
-import java.util.Scanner;
 
 public class Print {
 
@@ -14,10 +12,6 @@ public class Print {
 
         System.out.println("Hello from\n" + logo);
         System.out.println("What is your name?");
-        Scanner in = new Scanner(System.in);
-
-        String line = in.nextLine();
-        System.out.println("Hello " + line);
     }
 
     public static void printFoundModule(Module foundModule) {

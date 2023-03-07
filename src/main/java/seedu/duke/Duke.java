@@ -15,9 +15,11 @@ public class Duke {
 
     public static void run(Duke ChatBot) {
         Print.printHelloMessage();
-        while (true) {
-            Scanner in = new Scanner(System.in);
-            String line = in.nextLine();
+        Scanner in = new Scanner(System.in);
+        String line = in.nextLine();
+        System.out.println("Hello " + line);
+        while (in.hasNextLine()) {
+            line = in.nextLine();
             ChatBot.parser.checkUserInput(line, ChatBot.moduleList);
         }
     }
