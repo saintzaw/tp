@@ -26,7 +26,7 @@ public class Duke {
             Manpage.printManPage();
 
         } else {
-            System.out.println("Hello " + in.nextLine());
+            System.out.println("Hello " + line);
         }
     }
 }
