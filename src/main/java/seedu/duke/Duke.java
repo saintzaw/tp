@@ -1,8 +1,5 @@
 package seedu.duke;
 
-import seedu.modules.ModuleList;
-import seedu.ui.Print;
-
 import java.util.Scanner;
 
 public class Duke {

@@ -1,8 +1,5 @@
 package seedu.duke;
 
-import seedu.modules.ModuleList;
-import seedu.ui.Manpage;
-
 public class Parser {
     public Parser () {
 

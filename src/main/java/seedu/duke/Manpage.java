@@ -1,5 +1,5 @@
 
-package seedu.ui;
+package seedu.duke;
 public class Manpage {
     public Manpage() {
 
