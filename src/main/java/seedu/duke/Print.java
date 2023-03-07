@@ -3,12 +3,7 @@ package seedu.duke;
 public class Print {
 
     public static void printHelloMessage() {
-        String logo = " __  __           _                   _               \n" +
-                "|  \\/  | ___   __| | __ _  __ _ _ __ (_)___  ___ _ __ \n" +
-                "| |\\/| |/ _ \\ / _` |/ _` |/ _` | '_ \\| / __|/ _ \\ '__|\n" +
-                "| |  | | (_) | (_| | (_| | (_| | | | | \\__ \\  __/ |   \n" +
-                "|_|  |_|\\___/ \\__,_|\\__, |\\__,_|_| |_|_|___/\\___|_|   \n" +
-                "                    |___/                             ";
+        String logo = "Modganiser";
 
         System.out.println("Hello from\n" + logo);
         System.out.println("What is your name?");
