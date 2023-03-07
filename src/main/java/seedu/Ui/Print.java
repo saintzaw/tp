@@ -1,4 +1,4 @@
-package seedu.ui;
+package seedu.Ui;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
 package seedu.duke;
 
-import seedu.modules.ModuleList;
-import seedu.ui.Print;
+import seedu.Modules.ModuleList;
+import seedu.Ui.Print;
 
 import java.util.Scanner;
 
@@ -11,11 +11,11 @@ public class Duke {
      */
     private Parser parser;
     private ModuleList moduleList;
-    public Duke () {
+    public Duke() {
         parser = new Parser();
     }
 
-    public static void run (Duke ChatBot) {
+    public static void run(Duke ChatBot) {
         Print.printHelloMessage();
         while (true) {
             Scanner in = new Scanner(System.in);
