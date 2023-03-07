@@ -1,5 +1,7 @@
 package seedu.duke;
 
+import seedu.ui.Manpage;
+
 import java.util.Scanner;
 
 public class Duke {
@@ -12,10 +14,19 @@ public class Duke {
                 + "| | | | | | | |/ / _ \\\n"
                 + "| |_| | |_| |   <  __/\n"
                 + "|____/ \\__,_|_|\\_\\___|\n";
+
         System.out.println("Hello from\n" + logo);
         System.out.println("What is your name?");
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Hello " + in.nextLine());
+
+        String line= in.nextLine();
+        if(line.equalsIgnoreCase("man")) {
+
+            Manpage.printManPage();
+
+        } else {
+            System.out.println("Hello " + line);
+        }
     }
 }
