@@ -13,7 +13,7 @@ public class ModuleList {
     public void findModule (String moduleCode) {
         for (int i = 0; i < listOfModules.size(); i ++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
-                UI.printFoundModuleMessage();
+                //UI.printFoundModuleMessage();
                 break;
             }
         }
