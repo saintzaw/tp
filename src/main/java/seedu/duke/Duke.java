@@ -1,6 +1,6 @@
 package seedu.duke;
 
-import seedu.Ui.Manpage;
+import seedu.ui.Manpage;
 
 import java.util.Scanner;
 

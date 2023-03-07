@@ -1,15 +1,17 @@
 
-package seedu.Ui;
+package seedu.ui;
 public class Manpage {
     public Manpage() {
 
     }
     public static void printManPage() {
-            System.out.println("\n\n\n" +
+        System.out.println("\n\n\n" +
 
                     "--------------------USER GUIDE--------------------\n\n" +
-                    "Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI).\n" +
-                    "It helps Information security students graduate in time by giving you a platform to plan all 4 years\n" +
+                    "Modganiser is effortless module planning, at your fingertips via the " +
+                    "Command Line Interface (CLI).\n" +
+                    "It helps Information security students graduate in time by " +
+                    "giving you a platform to plan all 4 years\n" +
                     "of your modules to ensure that you meet graduation requirements (UE/GEs).\nIf you can type fast," +
                     "Modganiser can get your schedule up  faster than traditional GUI apps.\n\n" +
 
@@ -29,13 +31,15 @@ public class Manpage {
 
                     +"----------FEATURES----------\n"
 
-                    +"Type the command in the command box and press Enter to execute it. e.g. typing man and pressing Enter will open the manual.\n"
+                    +"Type the command in the command box and press Enter to execute it. " +
+                    "e.g. typing man and pressing Enter will open the manual.\n"
                     +"Some example commands you can try:\n\n " +
 
                     "1. Viewing manual: man\n "  +
                     "List the command summary. Example: man \n\n " +
 
-                    "2. Adding a module: add\n Adds a module to the list of modules.\n Format: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE\n " +
+                    "2. Adding a module: add\n Adds a module to the list of modules.\n " +
+                    "Format: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE\n " +
                     "Example: add /CS2113T /4 /CORE\n\n " +
 
                     "--Module Types--\n " +
@@ -64,7 +68,6 @@ public class Manpage {
                     "Format: exit\n\n" +
 
                     "----------FAQ/ERRORS----------\n\n\n" );
-
-        }
+    }
 
 }
