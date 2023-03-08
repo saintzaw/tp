@@ -10,6 +10,29 @@ public class ModuleList {
         return listOfModules;
     }
 
+    public void addModule(String moduleCode, String moduleType) {
+        switch(moduleType) {
+        case "CORE":
+            Core newCore = new Core(moduleCode);
+            listOfModules.add(newCore);
+            Print.printAddedModule(newCore, listOfModules.size());
+            break;
+        case "GE":
+            GeneralElective newGeneralElective = new GeneralElective(moduleCode);
+            listOfModules.add(newGeneralElective);
+            Print.printAddedModule(newGeneralElective, listOfModules.size());
+            break;
+        case "UE":
+            UnrestrictedElective newUnrestrictedElective = new UnrestrictedElective(moduleCode);
+            listOfModules.add(newUnrestrictedElective);
+            Print.printAddedModule(newUnrestrictedElective, listOfModules.size());
+            break;
+        default:
+            break;
+        }
+
+    }
+
     public void findModule(String moduleCode) {
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
