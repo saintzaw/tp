@@ -54,5 +54,7 @@ public class ModuleList {
         }
     }
 
-
+    public void viewModuleList() {
+        Print.printModuleList(listOfModules);
+    }
 }

@@ -1,9 +1,10 @@
 package seedu.duke;
 
 public class Parser {
-    public Parser () {
+    public Parser() {
 
     }
+
     public void checkUserInput(String userInput, ModuleList listOfModules) {
         String userCommand = userInput.split("/")[0].trim();
         switch (userCommand) {
@@ -18,6 +19,9 @@ public class Parser {
             break;
         case "delete":
             listOfModules.deleteModule(userInput.split("/")[1]);
+            break;
+        case "view":
+            listOfModules.viewModuleList();
             break;
         default:
             break;
