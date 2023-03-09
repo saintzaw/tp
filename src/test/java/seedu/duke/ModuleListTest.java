@@ -14,4 +14,15 @@ class ModuleListTest {
         assertEquals(0, moduleList.getModuleList().size());
     }
 
+    @Test
+    public void addDifferentModuleTest() {
+        ModuleList moduleList = new ModuleList();
+        moduleList.addModule("CS2113T", "CORE");
+        assertEquals(1, moduleList.getModuleList().size());
+        moduleList.addModule("GEA1000", "GE");
+        assertEquals(2, moduleList.getModuleList().size());
+        moduleList.addModule("PC1201", "UE");
+        assertEquals(3, moduleList.getModuleList().size());
+    }
+
 }
