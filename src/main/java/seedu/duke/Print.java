@@ -13,7 +13,7 @@ public class Print {
     public static void printFoundModule(Module foundModule) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Here are the matching modules in your list:");
-        System.out.println("     " + foundModule);
+        System.out.println("       " + foundModule);
         System.out.println("    ____________________________________________________________");
     }
 
