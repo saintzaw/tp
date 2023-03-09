@@ -1,4 +1,5 @@
 package seedu.duke;
+import java.util.ArrayList;
 
 public class Print {
 
@@ -32,11 +33,11 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
-    public static void printModuleList(ModuleList listOfModules) {
+    public static void printModuleList(ArrayList<Module> listOfModules) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Here are the modules in your list:");
-        for (int i = 0; i < listOfModules.getModuleList().size(); i++) {
-            System.out.println("     " + (i + 1) + "." + listOfModules.getModuleList().get(i));
+        for (int i = 0; i < listOfModules.size(); i++) {
+            System.out.println("     " + (i + 1) + "." + listOfModules.get(i));
         }
         System.out.println("    ____________________________________________________________");
     }
