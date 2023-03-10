@@ -6,25 +6,27 @@ public class Parser {
 
     }
     public void checkManPageInput(String userInput) {
-        String userCommand =userInput.split("/")[1].trim();
+        String userCommand = userInput.split("/")[1].trim();
+
         switch (userCommand) {
-            case "add":
-                Manpage.printManPageAdd();
-                break;
-            case "list":
-                Manpage.printManPageList();
-                break;
-            case "find":
-                Manpage.printManPageFind();
-                break;
-            case "delete":
-                Manpage.printManPageDelete();
-                break;
-            case "exit":
-                Manpage.printManPageExit();
-                break;
-            default:
-                break;
+
+        case "add":
+            Manpage.printManPageAdd();
+            break;
+        case "list":
+            Manpage.printManPageList();
+            break;
+        case "find":
+            Manpage.printManPageFind();
+            break;
+        case "delete":
+            Manpage.printManPageDelete();
+            break;
+        case "exit":
+            Manpage.printManPageExit();
+            break;
+        default:
+            break;
         }
     }
 
@@ -35,8 +37,7 @@ public class Parser {
             String[] input=userInput.split("/");
             if (input.length>1) {
                 checkManPageInput(userInput);
-            }
-            else {
+            } else {
                 Manpage.printManPage();
             }
             break;
@@ -56,7 +57,6 @@ public class Parser {
         default:
             break;
         }
-
 
     }
 
