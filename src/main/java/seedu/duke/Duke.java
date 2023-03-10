@@ -2,6 +2,8 @@ package seedu.duke;
 
 import java.util.Scanner;
 
+import static seedu.duke.Print.printFarewellMessage;
+
 public class Duke {
     /**
      * Main entry-point for the java.duke.Duke application.
@@ -18,6 +20,11 @@ public class Duke {
         Print.printHelloMessage(in);
         while (in.hasNextLine()) {
             String line = in.nextLine();
+
+            if(line.equalsIgnoreCase("bye")) {
+                printFarewellMessage();
+                break;
+            }
             chatBot.parser.checkUserInput(line, chatBot.moduleList);
         }
     }
