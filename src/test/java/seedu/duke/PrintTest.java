@@ -52,13 +52,13 @@ public class PrintTest {
     @Test
     public void printModuleListTest() {
         ModuleList moduleList = new ModuleList();
-        moduleList.addModule("CS2113T", "CORE");
+        moduleList.addModule("CS2113T", "4", "CORE");
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         moduleList.viewModuleList();
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Here are the modules in your list:" + System.lineSeparator()
-                + "     1.[C] CS2113T" + System.lineSeparator()
+                + "     1.[C] CS2113T 4 MCs" + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
