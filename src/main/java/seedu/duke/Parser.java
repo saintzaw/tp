@@ -12,7 +12,8 @@ public class Parser {
             Manpage.printManPage();
             break;
         case "add":
-            listOfModules.addModule(userInput.split("/")[1].trim(), userInput.split("/")[2]);
+            listOfModules.addModule(userInput.split("/")[1].trim(),
+                    userInput.split("/")[2].trim(), userInput.split("/")[3]);
             break;
         case "find":
             listOfModules.findModule(userInput.split("/")[1]);

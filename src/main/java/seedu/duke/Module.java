@@ -2,8 +2,11 @@ package seedu.duke;
 
 public class Module {
     private String moduleCode;
-    public Module(String moduleCode) {
+    private String modularCredits;
+
+    public Module(String moduleCode, String modularCredits) {
         this.moduleCode = moduleCode;
+        this.modularCredits = modularCredits;
     }
 
     public String getModuleCode() {
@@ -12,6 +15,6 @@ public class Module {
 
     @Override
     public String toString() {
-        return this.moduleCode;
+        return this.moduleCode + " " + this.modularCredits + " MCs";
     }
 }
