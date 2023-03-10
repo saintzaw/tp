@@ -58,7 +58,8 @@ public class PrintTest {
         moduleList.viewModuleList();
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Here are the modules in your list:" + System.lineSeparator()
-                + "     1.[C] CS2113T" + System.lineSeparator() + "    ____________________________________________________________"
+                + "     1.[C] CS2113T" + System.lineSeparator()
+                + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
