@@ -1,13 +1,25 @@
 package seedu.duke;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Print {
 
-    public static void printHelloMessage() {
-        String logo = "Modganiser";
+    public static void printHelloMessage(Scanner in) {
+        String logo = "  __  __               _                           _\n" +
+                " |  \\/  |   ___     __| |   __ _    __ _   _ __   (_)  ___    ___   _ __\n" +
+                " | |\\/| |  / _ \\   / _` |  / _` |  / _` | | '_ \\  | | / __|  / _ \\ | '__|\n" +
+                " | |  | | | (_) | | (_| | | (_| | | (_| | | | | | | | \\__ \\ |  __/ | |\n" +
+                " |_|  |_|  \\___/   \\__,_|  \\__, |  \\__,_| |_| |_| |_| |___/  \\___| |_|\n" +
+                "                           |___/";
 
         System.out.println("Hello from\n" + logo);
         System.out.println("What is your name?");
+        String name = in.nextLine();
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     Hello " + name + "! I'm your personal Modganiser.");
+        System.out.println("     What would you like to plan today?");
+        System.out.println("     To find out more, type `man` and press enter :)");
+        System.out.println("    ____________________________________________________________");
     }
 
     public static void printFoundModule(Module foundModule) {

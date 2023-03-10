@@ -13,19 +13,17 @@ public class Duke {
         moduleList = new ModuleList();
     }
 
-    public static void run(Duke ChatBot) {
-        Print.printHelloMessage();
+    public static void run(Duke chatBot) {
         Scanner in = new Scanner(System.in);
-        String line = in.nextLine();
-        System.out.println("Hello " + line);
+        Print.printHelloMessage(in);
         while (in.hasNextLine()) {
-            line = in.nextLine();
-            ChatBot.parser.checkUserInput(line, ChatBot.moduleList);
+            String line = in.nextLine();
+            chatBot.parser.checkUserInput(line, chatBot.moduleList);
         }
     }
 
     public static void main(String[] args) {
-        Duke ChatBot = new Duke();
-        Duke.run(ChatBot);
+        Duke chatBot = new Duke();
+        Duke.run(chatBot);
     }
 }
