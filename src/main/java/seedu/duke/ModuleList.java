@@ -10,20 +10,20 @@ public class ModuleList {
         return listOfModules;
     }
 
-    public void addModule(String moduleCode, String moduleType) {
+    public void addModule(String moduleCode, String modularCredits, String moduleType) {
         switch(moduleType) {
         case "CORE":
-            Core newCore = new Core(moduleCode);
+            Core newCore = new Core(moduleCode, modularCredits);
             listOfModules.add(newCore);
             Print.printAddedModule(newCore, listOfModules.size());
             break;
         case "GE":
-            GeneralElective newGeneralElective = new GeneralElective(moduleCode);
+            GeneralElective newGeneralElective = new GeneralElective(moduleCode, modularCredits);
             listOfModules.add(newGeneralElective);
             Print.printAddedModule(newGeneralElective, listOfModules.size());
             break;
         case "UE":
-            UnrestrictedElective newUnrestrictedElective = new UnrestrictedElective(moduleCode);
+            UnrestrictedElective newUnrestrictedElective = new UnrestrictedElective(moduleCode, modularCredits);
             listOfModules.add(newUnrestrictedElective);
             Print.printAddedModule(newUnrestrictedElective, listOfModules.size());
             break;

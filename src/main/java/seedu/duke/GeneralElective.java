@@ -2,8 +2,8 @@ package seedu.duke;
 
 public class GeneralElective extends Module {
 
-    public GeneralElective (String moduleCode) {
-        super(moduleCode);
+    public GeneralElective (String moduleCode, String modularCredits) {
+        super(moduleCode, modularCredits);
     }
 
     @Override

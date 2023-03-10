@@ -2,8 +2,8 @@ package seedu.duke;
 
 public class UnrestrictedElective extends Module {
 
-    public UnrestrictedElective (String moduleCode) {
-        super(moduleCode);
+    public UnrestrictedElective (String moduleCode, String modularCredits) {
+        super(moduleCode, modularCredits);
     }
 
     @Override

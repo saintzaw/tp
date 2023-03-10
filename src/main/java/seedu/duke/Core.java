@@ -2,8 +2,8 @@ package seedu.duke;
 
 public class Core extends Module{
 
-    public Core (String moduleCode) {
-        super(moduleCode);
+    public Core (String moduleCode, String modularCredits) {
+        super(moduleCode, modularCredits);
     }
 
     @Override
