@@ -54,7 +54,7 @@ public class Manpage {
                 "Shows a list of all modules in the module planner along with the module type.\n " +
                 "Example: list all\n\n " +
 
-                "4. List all modules: list /(Year) \n " +
+                "List all modules: list /(Year) \n " +
                 "Shows a list of all modules in that year along with the module type.\n " +
                 "Example: list 1\n\n ");
     }
