@@ -35,6 +35,19 @@ public class PrintTest {
     }
 
     @Test
+    public void printNotFoundModuleTest() {
+        ModuleList moduleList = new ModuleList();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        moduleList.addModule("CS2113T", "4", "CORE");
+        System.setOut(new PrintStream(outContent));
+        moduleList.findModule("CS2101");
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     There are no matching modules in your list:" + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
     public void printDeletedModuleTest() {
         ModuleList moduleList = new ModuleList();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();

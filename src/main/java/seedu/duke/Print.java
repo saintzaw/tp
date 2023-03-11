@@ -29,6 +29,12 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    public static void printNoModuleFound() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     There are no matching modules in your list:");
+        System.out.println("    ____________________________________________________________");
+    }
+
     public static void printDeletedModule(Module deletedModule, int numOfModules) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Noted. I've removed this module:");

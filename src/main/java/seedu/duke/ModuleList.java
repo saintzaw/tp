@@ -38,9 +38,10 @@ public class ModuleList {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
                 Module foundModule = listOfModules.get(i);
                 Print.printFoundModule(foundModule);
-                break;
+                return;
             }
         }
+        Print.printNoModuleFound();
     }
 
     public void deleteModule(String moduleCode) {
