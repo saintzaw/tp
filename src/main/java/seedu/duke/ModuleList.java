@@ -41,6 +41,7 @@ public class ModuleList {
                 break;
             }
         }
+        Print.printNoModuleFound();
     }
 
     public void deleteModule(String moduleCode) {
