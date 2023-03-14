@@ -35,9 +35,9 @@ public class ModuleList {
     }
 
     public void findModule(String moduleCode) {
+        assert listOfModules.size() > 0 : "no items in list";
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
-                assert listOfModules.size() > 0 : "no items in list";
                 Module foundModule = listOfModules.get(i);
                 Print.printFoundModule(foundModule);
                 return;
@@ -48,6 +48,7 @@ public class ModuleList {
 
     public void deleteModule(String moduleCode) {
         assert listOfModules.size() > 0 : "no items in list";
+        int oldSizeOfList = listOfModules.size();
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
                 Module deletedModule = listOfModules.get(i);
@@ -56,6 +57,7 @@ public class ModuleList {
                 break;
             }
         }
+        assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
     }
 
     public void viewModuleList() {
