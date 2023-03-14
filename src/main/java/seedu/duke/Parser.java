@@ -34,30 +34,35 @@ public class Parser {
     }
 
     public void checkUserInput(String userInput, ModuleList listOfModules) {
-        String userCommand = userInput.split("/")[0].trim();
-        switch (userCommand) {
+        String[] userCommands = userInput.split("/");
+        switch (userCommands[0].trim()) {
         case "man":
-            String[] input=userInput.split("/");
-            if (input.length == 2) {
+            assert userCommands.length >= 1;
+            if (userCommands.length == 2) {
                 checkManPageInput(userInput);
             } else {
                 Manpage.printManPage();
             }
             break;
         case "add":
-            listOfModules.addModule(userInput.split("/")[1].trim(),
-                    userInput.split("/")[2].trim(), userInput.split("/")[3]);
+            assert userCommands.length == 4;
+            listOfModules.addModule(userCommands[1].trim(),
+                    userCommands[2].trim(), userCommands[3].trim());
             break;
         case "find":
-            listOfModules.findModule(userInput.split("/")[1]);
+            assert userCommands.length == 2;
+            listOfModules.findModule(userCommands[1].trim());
             break;
         case "delete":
-            listOfModules.deleteModule(userInput.split("/")[1]);
+            assert userCommands.length == 2;
+            listOfModules.deleteModule(userCommands[1].trim());
             break;
         case "list":
+            assert userCommands.length == 1;
             listOfModules.viewModuleList();
             break;
         case "bye":
+            assert userCommands.length == 1;
             Print.printFarewellMessage();
             exit(0);
             break;
