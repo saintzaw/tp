@@ -42,10 +42,9 @@ public class ModuleList {
     public void findModule(String moduleCode) {
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModule process");
-        for (int i = 0; i < listOfModules.size(); i++) {
-            if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
-                Module foundModule = listOfModules.get(i);
-                Print.printFoundModule(foundModule);
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                Print.printFoundModule(module);
                 return;
             }
         }
