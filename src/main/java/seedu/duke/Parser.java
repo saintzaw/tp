@@ -107,8 +107,7 @@ public class Parser {
             throw inputException;
         }
         assert userCommands.length == 4;
-        listOfModules.addModule(userCommands[1].trim(),
-                userCommands[2].trim(), userCommands[3].trim());
+        listOfModules.addModule(userCommands[1].trim(), userCommands[2].trim(), userCommands[3].trim());
     }
 
 }

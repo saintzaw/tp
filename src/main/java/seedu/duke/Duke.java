@@ -38,6 +38,7 @@ public class Duke {
             LOGGER.log(Level.INFO, "Name was given as 'bye', exiting Modganiser.");
             return;
         }
+        assert !(name.equalsIgnoreCase("bye")) : "name is not bye";
         Print.printHelloMessage(name);
         while (in.hasNextLine()) {
             String line = in.nextLine();
