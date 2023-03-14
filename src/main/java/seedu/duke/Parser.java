@@ -51,7 +51,7 @@ public class Parser {
         case "delete":
             listOfModules.deleteModule(userInput.split("/")[1]);
             break;
-        case "view":
+        case "list":
             listOfModules.viewModuleList();
             break;
         default:

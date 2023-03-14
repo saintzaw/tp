@@ -22,7 +22,7 @@ public class Manpage {
                 "Command: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE\n " +
                 "To find out more, use the command: man /add\n\n " +
                 "List\n " +
-                "Command: list all or list /x(year)\n " +
+                "Command: list all or list /(year)\n " +
                 "To find out more, use the command: man /list\n\n " +
                 "Find\n " +
                 "Command: find /MODULE_CODE\n " +
