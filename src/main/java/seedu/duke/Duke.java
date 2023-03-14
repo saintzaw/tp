@@ -38,10 +38,15 @@ public class Duke {
             LOGGER.log(Level.INFO, "Name was given as 'bye', exiting Modganiser.");
             return;
         }
+        assert !(name.equalsIgnoreCase("bye")) : "name is not bye";
         Print.printHelloMessage(name);
         while (in.hasNextLine()) {
             String line = in.nextLine();
-            chatBot.parser.checkUserInput(line, chatBot.moduleList);
+            try {
+                chatBot.parser.checkUserInput(line, chatBot.moduleList);
+            } catch (DukeException e){
+                Print.printErrorMessage(e);
+            }
         }
     }
 
