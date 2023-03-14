@@ -1,5 +1,8 @@
 package seedu.duke;
 import java.util.ArrayList;
+import java.util.logging.Level;
+
+import static seedu.duke.Duke.LOGGER;
 
 public class ModuleList {
     private ArrayList<Module> listOfModules;
@@ -11,6 +14,8 @@ public class ModuleList {
     }
 
     public void addModule(String moduleCode, String modularCredits, String moduleType) {
+        int oldSizeOfList = listOfModules.size();
+        LOGGER.log(Level.INFO, "Starting addModule process");
         switch(moduleType) {
         case "CORE":
             Core newCore = new Core(moduleCode, modularCredits);
@@ -30,10 +35,12 @@ public class ModuleList {
         default:
             break;
         }
-
+        assert listOfModules.size() == oldSizeOfList + 1 : "Module not added correctly";
+        LOGGER.log(Level.INFO, "Finished addModule process");
     }
 
     public void findModule(String moduleCode) {
+        assert listOfModules.size() > 0 : "no items in list";
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
                 Module foundModule = listOfModules.get(i);
@@ -45,6 +52,8 @@ public class ModuleList {
     }
 
     public void deleteModule(String moduleCode) {
+        assert listOfModules.size() > 0 : "no items in list";
+        int oldSizeOfList = listOfModules.size();
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
                 Module deletedModule = listOfModules.get(i);
@@ -53,6 +62,7 @@ public class ModuleList {
                 break;
             }
         }
+        assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
     }
 
     public void viewModuleList() {
