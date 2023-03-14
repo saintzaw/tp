@@ -13,6 +13,10 @@ public class ModuleList {
         return listOfModules;
     }
 
+    public int getModuleListSize() {
+        return listOfModules.size();
+    }
+
     public void addModule(String moduleCode, String modularCredits, String moduleType) {
         int oldSizeOfList = listOfModules.size();
         LOGGER.log(Level.INFO, "Starting addModule process");
@@ -66,8 +70,13 @@ public class ModuleList {
         assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
     }
 
-    public void viewModuleList() {
-        LOGGER.log(Level.INFO, "Starting viewModuleList process");
-        Print.printModuleList(listOfModules);
+    public void listModules() {
+        LOGGER.log(Level.INFO, "Starting listModules process");
+        if (getModuleListSize() > 0) {
+            Print.printModuleList(listOfModules);
+        } else {
+            Print.printEmptyModuleList();
+        }
+        LOGGER.log(Level.INFO, "Finished listModules process");
     }
 }

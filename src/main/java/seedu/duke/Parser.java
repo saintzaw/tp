@@ -144,4 +144,15 @@ public class Parser {
         }
     }
 
+    private void checkListModules(ModuleList listOfModules, String[] userCommands) throws DukeException {
+        if (userCommands.length > 1) {
+            DukeException inputException = new DukeException("Too many fields, "
+                    + "Please use the correct command: list");
+            throw inputException;
+        }
+
+        assert userCommands.length == 1;
+        listOfModules.listModules();
+    }
+
 }
