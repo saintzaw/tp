@@ -60,6 +60,12 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    public static void printEmptyModuleList() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     There are currently no modules in your list");
+        System.out.println("    ____________________________________________________________");
+    }
+
     public static void printFarewellMessage() {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Bye! Hope you enjoyed using Modganiser!");

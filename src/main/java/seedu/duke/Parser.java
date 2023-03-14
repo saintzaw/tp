@@ -63,8 +63,12 @@ public class Parser {
             listOfModules.deleteModule(userCommands[1].trim());
             break;
         case "list":
-            assert userCommands.length == 1;
-            listOfModules.viewModuleList();
+            try {
+                checkListModules(listOfModules, userCommands);
+            } catch (DukeException e) {
+                LOGGER.log(Level.WARNING, "listModules Check failed: " + e.getDescription());
+                Print.printErrorMessage(e);
+            }
             break;
         case "bye":
             assert userCommands.length == 1;
@@ -109,6 +113,17 @@ public class Parser {
         assert userCommands.length == 4;
         listOfModules.addModule(userCommands[1].trim(),
                 userCommands[2].trim(), userCommands[3].trim());
+    }
+
+    private void checkListModules(ModuleList listOfModules, String[] userCommands) throws DukeException {
+        if (userCommands.length > 1) {
+            DukeException inputException = new DukeException("Too many fields, "
+                    + "Please use the correct command: list");
+            throw inputException;
+        }
+
+        assert userCommands.length == 1;
+        listOfModules.listModules();
     }
 
 }
