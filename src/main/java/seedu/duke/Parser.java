@@ -7,7 +7,6 @@ public class Parser {
     }
     public void checkManPageInput(String userInput) {
         assert userInput.split(" ").length==2: "Correct input should be man /*command*";
-
         String userCommand = userInput.split("/")[1].trim();
 
         switch (userCommand) {
