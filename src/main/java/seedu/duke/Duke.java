@@ -15,17 +15,22 @@ public class Duke {
         moduleList = new ModuleList();
     }
 
+    public static boolean isNameBye (String name) {
+        return name.equalsIgnoreCase("bye");
+    }
+
     public static void run(Duke chatBot) {
         Scanner in = new Scanner(System.in);
-        Print.printHelloMessage(in);
+        Print.printLogo();
+        System.out.println("What is your name?");
+        String name = in.nextLine();
+        if (isNameBye(name.trim())) {
+            printFarewellMessage();
+            return;
+        }
+        Print.printHelloMessage(name);
         while (in.hasNextLine()) {
             String line = in.nextLine();
-
-            if(line.equalsIgnoreCase("bye")) {
-                assert line.equalsIgnoreCase("bye") :"exit";
-                printFarewellMessage();
-                break;
-            }
             chatBot.parser.checkUserInput(line, chatBot.moduleList);
         }
     }

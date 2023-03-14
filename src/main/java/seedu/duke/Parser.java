@@ -1,6 +1,8 @@
 package seedu.duke;
 
 
+import static java.lang.System.exit;
+
 public class Parser {
     public Parser() {
 
@@ -54,6 +56,10 @@ public class Parser {
             break;
         case "list":
             listOfModules.viewModuleList();
+            break;
+        case "bye":
+            Print.printFarewellMessage();
+            exit(0);
             break;
         default:
             break;
