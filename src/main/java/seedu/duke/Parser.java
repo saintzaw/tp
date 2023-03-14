@@ -47,6 +47,7 @@ public class Parser {
                     checkInputLengthEqualsOne(userCommands);
                 } catch (DukeException e) {
                     Print.printErrorMessage(e);
+                    LOGGER.log(Level.WARNING, "User Input is invalid" );
                 }
                 assert userCommands.length == 1;
                 Manpage.printManPage();
@@ -85,7 +86,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 1;
-            listOfModules.viewModuleList();
+            listOfModules.listModules();
             break;
         case "bye":
             try {
