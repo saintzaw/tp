@@ -42,7 +42,11 @@ public class Duke {
         Print.printHelloMessage(name);
         while (in.hasNextLine()) {
             String line = in.nextLine();
-            chatBot.parser.checkUserInput(line, chatBot.moduleList);
+            try {
+                chatBot.parser.checkUserInput(line, chatBot.moduleList);
+            } catch (DukeException e){
+                Print.printErrorMessage(e);
+            }
         }
     }
 
