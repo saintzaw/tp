@@ -11,10 +11,10 @@ public class Parser {
 
     }
     public void checkManPageInput(String userInput) {
-        assert userInput.split(" ").length == 2: "Correct input should be man /*command*";
-        String userCommand = userInput.split("/")[1].trim();
+        String[] userCommands = userInput.split("/");
+        assert userCommands.length == 2: "Correct input should be man /*command*";
 
-        switch (userCommand) {
+        switch (userCommands[1]) {
         case "add":
             Manpage.printManPageAdd();
             break;
