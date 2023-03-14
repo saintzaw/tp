@@ -8,7 +8,7 @@ public class Parser {
 
     }
     public void checkManPageInput(String userInput) {
-        assert userInput.split(" ").length==2: "Correct input should be man /*command*";
+        assert userInput.split(" ").length == 2: "Correct input should be man /*command*";
         String userCommand = userInput.split("/")[1].trim();
 
         switch (userCommand) {
@@ -38,7 +38,7 @@ public class Parser {
         switch (userCommand) {
         case "man":
             String[] input=userInput.split("/");
-            if (input.length>1) {
+            if (input.length == 2) {
                 checkManPageInput(userInput);
             } else {
                 Manpage.printManPage();
