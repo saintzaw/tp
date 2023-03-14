@@ -1,11 +1,14 @@
 package seedu.duke;
 
 
+import static java.lang.System.exit;
+
 public class Parser {
     public Parser() {
 
     }
     public void checkManPageInput(String userInput) {
+        assert userInput.split(" ").length==2: "Correct input should be man /*command*";
         String userCommand = userInput.split("/")[1].trim();
 
         switch (userCommand) {
@@ -53,6 +56,10 @@ public class Parser {
             break;
         case "list":
             listOfModules.viewModuleList();
+            break;
+        case "bye":
+            Print.printFarewellMessage();
+            exit(0);
             break;
         default:
             break;
