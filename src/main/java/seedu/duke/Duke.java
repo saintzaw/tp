@@ -22,6 +22,7 @@ public class Duke {
             String line = in.nextLine();
 
             if(line.equalsIgnoreCase("bye")) {
+                assert line.equalsIgnoreCase("bye") :"exit";
                 printFarewellMessage();
                 break;
             }
