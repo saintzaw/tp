@@ -1,7 +1,10 @@
 package seedu.duke;
 
 
+import java.util.logging.Level;
+
 import static java.lang.System.exit;
+import static seedu.duke.Duke.LOGGER;
 
 public class Parser {
     public Parser() {
@@ -64,6 +67,7 @@ public class Parser {
         case "bye":
             assert userCommands.length == 1;
             Print.printFarewellMessage();
+            LOGGER.log(Level.INFO, "Exiting Modganiser.");
             exit(0);
             break;
         default:
