@@ -66,4 +66,10 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    public static void printErrorMessage(DukeException e) {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     Error: " + e.getDescription());
+        System.out.println("    ____________________________________________________________");
+    }
+
 }

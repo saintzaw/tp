@@ -1,5 +1,8 @@
 package seedu.duke;
 import java.util.ArrayList;
+import java.util.logging.Level;
+
+import static seedu.duke.Duke.LOGGER;
 
 public class ModuleList {
     private ArrayList<Module> listOfModules;
@@ -12,6 +15,7 @@ public class ModuleList {
 
     public void addModule(String moduleCode, String modularCredits, String moduleType) {
         int oldSizeOfList = listOfModules.size();
+        LOGGER.log(Level.INFO, "Starting addModule process");
         switch(moduleType) {
         case "CORE":
             Core newCore = new Core(moduleCode, modularCredits);
@@ -32,6 +36,7 @@ public class ModuleList {
             break;
         }
         assert listOfModules.size() == oldSizeOfList + 1 : "Module not added correctly";
+        LOGGER.log(Level.INFO, "Finished addModule process");
     }
 
     public void findModule(String moduleCode) {
