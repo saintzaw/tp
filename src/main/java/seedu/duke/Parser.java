@@ -36,6 +36,7 @@ public class Parser {
     }
 
     public void checkUserInput(String userInput, ModuleList listOfModules) {
+        LOGGER.log(Level.INFO, "Checking user input");
         String[] userCommands = userInput.split("/");
         switch (userCommands[0].trim()) {
         case "man":
