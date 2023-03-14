@@ -11,6 +11,7 @@ public class ModuleList {
     }
 
     public void addModule(String moduleCode, String modularCredits, String moduleType) {
+        int oldSizeOfList = listOfModules.size();
         switch(moduleType) {
         case "CORE":
             Core newCore = new Core(moduleCode, modularCredits);
@@ -30,7 +31,7 @@ public class ModuleList {
         default:
             break;
         }
-
+        assert listOfModules.size() == oldSizeOfList + 1 : "Module not added correctly";
     }
 
     public void findModule(String moduleCode) {
