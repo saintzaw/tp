@@ -36,6 +36,7 @@ public class ModuleList {
     public void findModule(String moduleCode) {
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
+                assert listOfModules.size()>0 : "no items in list";
                 Module foundModule = listOfModules.get(i);
                 Print.printFoundModule(foundModule);
                 return;
