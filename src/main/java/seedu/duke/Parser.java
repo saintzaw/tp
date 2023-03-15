@@ -26,7 +26,7 @@ public class Parser {
         case "delete":
             Manpage.printManPageDelete();
             break;
-        case "exit":
+        case "bye":
             Manpage.printManPageExit();
             break;
         default:
