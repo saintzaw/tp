@@ -92,7 +92,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             break;
-        case "list":
+        case "list all":
             try {
                 checkInputLengthEqualsOne(userCommands);
             } catch (DukeException e) {
