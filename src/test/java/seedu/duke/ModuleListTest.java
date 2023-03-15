@@ -10,7 +10,11 @@ class ModuleListTest {
         ModuleList moduleList = new ModuleList();
         moduleList.addModule("CS2113T", "4", "CORE");
         assertEquals(1, moduleList.getModuleList().size());
-        moduleList.deleteModule("CS2113T");
+        try {
+            moduleList.deleteModule("CS2113T");
+        } catch (DukeException e) {
+            return;
+        }
         assertEquals(0, moduleList.getModuleList().size());
     }
 

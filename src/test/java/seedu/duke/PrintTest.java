@@ -26,7 +26,11 @@ public class PrintTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE");
         System.setOut(new PrintStream(outContent));
-        moduleList.findModule("CS2113T");
+        try {
+            moduleList.findModule("CS2113T");
+        } catch (DukeException e) {
+            return;
+        }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
                 + "       [C] CS2113T 4 MCs" + System.lineSeparator()
@@ -40,7 +44,11 @@ public class PrintTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE");
         System.setOut(new PrintStream(outContent));
-        moduleList.findModule("CS2101");
+        try {
+            moduleList.findModule("CS2101");
+        } catch (DukeException e) {
+            return;
+        }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     There are no matching modules in your list:" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
@@ -53,7 +61,11 @@ public class PrintTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE");
         System.setOut(new PrintStream(outContent));
-        moduleList.deleteModule("CS2113T");
+        try {
+            moduleList.deleteModule("CS2113T");
+        } catch (DukeException e) {
+            return;
+        }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Noted. I've removed this module:" + System.lineSeparator()
                 + "       [C] CS2113T 4 MCs" + System.lineSeparator() + "     Now you have 0 modules in the list."
@@ -125,8 +137,8 @@ public class PrintTest {
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "Exit" + System.lineSeparator() + " " +
-                "Command: exit" + System.lineSeparator() + " "+
-                "To find out more, use the command: man /exit"
+                "Command: bye" + System.lineSeparator() + " "+
+                "To find out more, use the command: man /bye"
                 + System.lineSeparator() + System.lineSeparator() + " ";
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
@@ -212,9 +224,9 @@ public class PrintTest {
         Manpage.printManPageExit();
         String expectedOutput = System.lineSeparator() + System.lineSeparator() +
 
-                "Exit program: exit" + System.lineSeparator() + " " +
+                "Exit program: bye" + System.lineSeparator() + " " +
                 "Exit module planner." + System.lineSeparator() + " " +
-                "Format: exit" + System.lineSeparator() + System.lineSeparator();
+                "Format: bye" + System.lineSeparator() + System.lineSeparator();
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));

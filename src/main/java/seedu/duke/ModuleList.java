@@ -43,19 +43,27 @@ public class ModuleList {
         LOGGER.log(Level.INFO, "Finished addModule process");
     }
 
-    public void findModule(String moduleCode) {
+    public void findModule(String moduleCode) throws DukeException {
+        if (listOfModules.size() == 0) {
+            throw new DukeException("There are currently no modules in your list");
+        }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModule process");
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
                 Print.printFoundModule(module);
+                LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
                 return;
             }
         }
         Print.printNoModuleFound();
+        LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
     }
 
-    public void deleteModule(String moduleCode) {
+    public void deleteModule(String moduleCode) throws DukeException {
+        if (listOfModules.size() == 0) {
+            throw new DukeException("There are currently no modules in your list");
+        }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting deleteModule process");
         int oldSizeOfList = listOfModules.size();
@@ -68,6 +76,7 @@ public class ModuleList {
             }
         }
         assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
+        LOGGER.log(Level.INFO, "Finished deleteModule process");
     }
 
     public void listModules() {

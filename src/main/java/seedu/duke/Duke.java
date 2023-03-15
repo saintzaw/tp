@@ -22,7 +22,7 @@ public class Duke {
         moduleList = new ModuleList();
     }
 
-    public static boolean isNameBye (String name) {
+    public static boolean isNameBye(String name) {
         return name.equalsIgnoreCase("bye");
     }
 
@@ -38,7 +38,7 @@ public class Duke {
             LOGGER.log(Level.INFO, "Name was given as 'bye', exiting Modganiser.");
             return;
         }
-        assert !(name.equalsIgnoreCase("bye")) : "name is not bye";
+        assert !(name.equalsIgnoreCase("bye")) : "name is bye";
         Print.printHelloMessage(name);
         while (in.hasNextLine()) {
             String line = in.nextLine();
