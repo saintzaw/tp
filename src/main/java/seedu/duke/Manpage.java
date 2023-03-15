@@ -1,6 +1,7 @@
 
 package seedu.duke;
 public class Manpage {
+    private final static String line= "-----------------------------------------------------\n";
     public Manpage() {
 
     }
@@ -32,12 +33,13 @@ public class Manpage {
                 "To find out more, use the command: man /delete\n\n " +
                 "Exit\n " +
                 "Command: bye\n "+
-                "To find out more, use the command: man /bye\n\n " );
+                "To find out more, use the command: man /bye\n " +
+                line );
     }
 
     public static void printManPageAdd() {
         System.out.println("\n\n" +
-
+                line+
                 "Adding a module: add\n Adds a module to the list of modules.\n " +
                 "Format: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE\n " +
                 "Example: add /CS2113T /4 /CORE\n\n " +
@@ -45,10 +47,11 @@ public class Manpage {
                 "--Module Types--\n " +
                 "CORE\n " +
                 "GE (General modules)\n " +
-                "UE (Unrestricted Electives)\n\n ");
+                "UE (Unrestricted Electives)\n\n" +
+                line);
     }
     public static void printManPageList() {
-        System.out.println("\n\n" +
+        System.out.println("\n\n" + line +
 
                 "List all modules: list all \n " +
                 "Shows a list of all modules in the module planner along with the module type.\n " +
@@ -56,31 +59,35 @@ public class Manpage {
 
                 "List all modules: list /(Year) \n " +
                 "Shows a list of all modules in that year along with the module type.\n " +
-                "Example: list 1\n\n ");
+                "Example: list 1\n\n" +
+                 line);
     }
 
     public static void printManPageFind() {
         System.out.println("\n\n" +
+                line+
 
                 "Find module: find /(Module Code)\n " +
                 "Find which year and semester I plan to take the module.\n " +
-                "Example: find /CS2113T\n\n ");
+                "Example: find /CS2113T\n\n "
+                + line);
     }
 
     public static void printManPageDelete() {
         System.out.println("\n\n" +
-
+                line+
                 "Delete module: delete /(Module Code)\n " +
                 "Shows a list of all modules in the module planner.\n " +
-                "Example: delete /CS2113T\n\n ");
+                "Example: delete /CS2113T\n\n " + line );
     }
 
     public static void printManPageExit() {
         System.out.println("\n\n" +
-
+                line+
                 "Exit program: bye\n " +
                 "Exit module planner.\n " +
-                "Format: bye\n\n");
+                "Format: bye\n\n"
+                +line);
     }
 
 }

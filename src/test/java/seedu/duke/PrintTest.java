@@ -5,6 +5,8 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrintTest {
+    private final static String line= "-----------------------------------------------------"+System.lineSeparator();
+
 
     @Test
     public void printAddedModuleTest() {
@@ -139,7 +141,7 @@ public class PrintTest {
                 "Exit" + System.lineSeparator() + " " +
                 "Command: bye" + System.lineSeparator() + " "+
                 "To find out more, use the command: man /bye"
-                + System.lineSeparator() + System.lineSeparator() + " ";
+                + System.lineSeparator() + System.lineSeparator() + " " +line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -150,7 +152,7 @@ public class PrintTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageAdd();
-        String expectedOutput = System.lineSeparator() + System.lineSeparator() +
+        String expectedOutput = System.lineSeparator() + System.lineSeparator() + line+
 
                 "Adding a module: add" + System.lineSeparator() + "Adds a module to the list of modules."
                 + System.lineSeparator() + " " +
@@ -160,7 +162,7 @@ public class PrintTest {
                 "CORE" + System.lineSeparator() + " " +
                 "GE (General modules)" + System.lineSeparator() + " " +
                 "UE (Unrestricted Electives)" + System.lineSeparator() + System.lineSeparator()
-                + " ";
+                + " " +line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -172,7 +174,7 @@ public class PrintTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageList();
-        String expectedOutput = System.lineSeparator() + System.lineSeparator() +
+        String expectedOutput = System.lineSeparator() + System.lineSeparator() +line+
                 "List all modules: list all " + System.lineSeparator() + " " +
                 "Shows a list of all modules in the module planner along with the module type." +
                 System.lineSeparator() + " " +
@@ -181,7 +183,7 @@ public class PrintTest {
                 "List all modules: list /(Year) "+System.lineSeparator()+" " +
                 "Shows a list of all modules in that year along with the module type."
                 + System.lineSeparator() + " " +
-                "Example: list 1" + System.lineSeparator() + System.lineSeparator() + " ";
+                "Example: list 1" + System.lineSeparator() + System.lineSeparator() + " " +line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -193,11 +195,11 @@ public class PrintTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageFind();
-        String expectedOutput = System.lineSeparator() + System.lineSeparator() +
+        String expectedOutput = System.lineSeparator() + System.lineSeparator() + line+
 
                 "Find module: find /(Module Code)" + System.lineSeparator() + " " +
                 "Find which year and semester I plan to take the module." + System.lineSeparator() + " " +
-                "Example: find /CS2113T" + System.lineSeparator() + System.lineSeparator() + " ";
+                "Example: find /CS2113T" + System.lineSeparator() + System.lineSeparator() + " "+line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -208,11 +210,11 @@ public class PrintTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageDelete();
-        String expectedOutput = System.lineSeparator() + System.lineSeparator() +
+        String expectedOutput = System.lineSeparator() + System.lineSeparator() + line+
 
                 "Delete module: delete /(Module Code)" + System.lineSeparator() + " " +
                 "Shows a list of all modules in the module planner." + System.lineSeparator() + " " +
-                "Example: delete /CS2113T" + System.lineSeparator() + System.lineSeparator() + " ";
+                "Example: delete /CS2113T" + System.lineSeparator() + System.lineSeparator() + " " +line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -222,11 +224,11 @@ public class PrintTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageExit();
-        String expectedOutput = System.lineSeparator() + System.lineSeparator() +
+        String expectedOutput = System.lineSeparator() + System.lineSeparator() +line+
 
                 "Exit program: bye" + System.lineSeparator() + " " +
                 "Exit module planner." + System.lineSeparator() + " " +
-                "Format: bye" + System.lineSeparator() + System.lineSeparator();
+                "Format: bye" + System.lineSeparator() + System.lineSeparator()+line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
