@@ -31,8 +31,8 @@ public class Manpage {
                 "Command: delete /MODULE_CODE\n " +
                 "To find out more, use the command: man /delete\n\n " +
                 "Exit\n " +
-                "Command: exit\n "+
-                "To find out more, use the command: man /exit\n\n " );
+                "Command: bye\n "+
+                "To find out more, use the command: man /bye\n\n " );
     }
 
     public static void printManPageAdd() {
@@ -52,7 +52,7 @@ public class Manpage {
 
                 "List all modules: list all \n " +
                 "Shows a list of all modules in the module planner along with the module type.\n " +
-                "Example: list all\n\n " +
+                "Example: list all\n\n" +
 
                 "List all modules: list /(Year) \n " +
                 "Shows a list of all modules in that year along with the module type.\n " +
@@ -78,9 +78,9 @@ public class Manpage {
     public static void printManPageExit() {
         System.out.println("\n\n" +
 
-                "Exit program: exit\n " +
+                "Exit program: bye\n " +
                 "Exit module planner.\n " +
-                "Format: exit\n\n");
+                "Format: bye\n\n");
     }
 
 }

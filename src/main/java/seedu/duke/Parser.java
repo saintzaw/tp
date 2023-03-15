@@ -73,7 +73,11 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 2;
-            listOfModules.findModule(userCommands[1].trim());
+            try {
+                listOfModules.findModule(userCommands[1].trim());
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+            }
             break;
         case "delete":
             try {
@@ -82,7 +86,11 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 2;
-            listOfModules.deleteModule(userCommands[1].trim());
+            try {
+                listOfModules.deleteModule(userCommands[1].trim());
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+            }
             break;
         case "list":
             try {
