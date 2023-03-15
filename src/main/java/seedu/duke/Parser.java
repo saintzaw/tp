@@ -113,7 +113,7 @@ public class Parser {
             exit(0);
             break;
         default:
-            throw new DukeException("Too many fields");
+            throw new DukeException("Invalid Command");
         }
     }
 
@@ -154,7 +154,7 @@ public class Parser {
 
     public void checkInputLengthEqualsOne(String[] userCommands) throws DukeException {
         if (userCommands.length != 1) {
-            throw new DukeException("Invalid Command");
+            throw new DukeException("Too many fields");
         }
     }
 }
