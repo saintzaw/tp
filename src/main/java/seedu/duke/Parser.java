@@ -35,11 +35,14 @@ public class Parser {
     }
 
     public void checkUserInput(String userInput, ModuleList listOfModules) throws DukeException {
-        LOGGER.log(Level.INFO, "Checking user input");
+
         String[] userCommands = userInput.split("/");
+
         switch (userCommands[0].trim()) {
         case "man":
+            LOGGER.log(Level.INFO, "Starting manpage process");
             assert userCommands.length >= 1;
+
             if (userCommands.length == 2) {
                 checkManPageInput(userInput);
             } else {
@@ -47,10 +50,13 @@ public class Parser {
                     checkInputLengthEqualsOne(userCommands);
                 } catch (DukeException e) {
                     Print.printErrorMessage(e);
+                    LOGGER.log(Level.WARNING, "User Input is invalid" );
                 }
                 assert userCommands.length == 1;
                 Manpage.printManPage();
             }
+
+            LOGGER.log(Level.INFO, "End of manpage process");
             break;
         case "add":
             try {
@@ -85,7 +91,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 1;
-            listOfModules.viewModuleList();
+            listOfModules.listModules();
             break;
         case "bye":
             try {
