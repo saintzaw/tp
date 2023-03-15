@@ -92,7 +92,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             break;
-        case "list":
+        case "list all":
             try {
                 checkInputLengthEqualsOne(userCommands);
             } catch (DukeException e) {
@@ -113,7 +113,7 @@ public class Parser {
             exit(0);
             break;
         default:
-            throw new DukeException("Too many fields");
+            throw new DukeException("Invalid Command");
         }
     }
 
@@ -157,16 +157,4 @@ public class Parser {
             throw new DukeException("Too many fields");
         }
     }
-
-    private void checkListModules(ModuleList listOfModules, String[] userCommands) throws DukeException {
-        if (userCommands.length > 1) {
-            DukeException inputException = new DukeException("Too many fields, "
-                    + "Please use the correct command: list");
-            throw inputException;
-        }
-
-        assert userCommands.length == 1;
-        listOfModules.listModules();
-    }
-
 }
