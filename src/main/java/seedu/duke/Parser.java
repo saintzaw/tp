@@ -11,7 +11,6 @@ public class Parser {
     }
     public void checkManPageInput(String userInput) {
         String[] userCommands = userInput.split("/");
-        assert userCommands.length == 2: "Correct input should be man /*command*";
 
         switch (userCommands[1]) {
         case "add":
@@ -58,6 +57,7 @@ public class Parser {
 
             LOGGER.log(Level.INFO, "End of manpage process");
             break;
+
         case "add":
             try {
                 checkAddInput(listOfModules, userCommands);
