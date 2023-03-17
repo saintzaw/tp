@@ -11,6 +11,7 @@ public class Parser {
     }
     public void checkManPageInput(String userInput) {
         String[] userCommands = userInput.split("/");
+        assert userCommands.length == 2;
 
         switch (userCommands[1]) {
         case "add":
