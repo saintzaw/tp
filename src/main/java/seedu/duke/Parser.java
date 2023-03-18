@@ -128,18 +128,19 @@ public class Parser {
         //check for correct field in MC
         try {
             int moduleCredits = Integer.parseInt(userCommands[2].trim());
-            if (moduleCredits < 0 || moduleCredits > 8) {
-                throw new DukeException("Make sure Modular Credits is a number from 0 to 8");
+            if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
+        || moduleCredits == 10 || moduleCredits == 11) {
+                throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 and 12");
             }
         } catch (NumberFormatException e) {
-            throw new DukeException("Make sure Modular Credits is a number from 0 to 8");
+            throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 and 12");
         }
         //check for correct field in type of module
         String typeOfModule = userCommands[3].trim();
         boolean isCorrectModuleType = typeOfModule.equals("CORE") || typeOfModule.equals("UE")
-                || typeOfModule.equals("GE");
+                || typeOfModule.equals("GE") || typeOfModule.equals("INTERNSHIP") ;
         if (!isCorrectModuleType) {
-            throw new DukeException("Incorrect Module Type, " + "Accepted Module Types are: (CORE,UE,GE)");
+            throw new DukeException("Incorrect Module Type, " + "Accepted Module Types are: (CORE,UE,GE,INTERNSHIP)");
         }
         assert userCommands.length == 4;
         listOfModules.addModule(userCommands[1].trim(), userCommands[2].trim(), userCommands[3].trim());

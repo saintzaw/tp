@@ -21,6 +21,7 @@ public class Manpage {
                 "Command: man\n\n " +
                 "Add\n " +
                 "Command: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE\n " +
+                "Example: add /ATAP /12 /INTERNSHIP\n "+
                 "To find out more, use the command: man /add\n\n " +
                 "List\n " +
                 "Command: list all or list /(year)\n " +
@@ -42,12 +43,14 @@ public class Manpage {
                  "-----------------------------------------------------\n"+
                 "Adding a module: add\n Adds a module to the list of modules.\n " +
                 "Format: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE\n " +
-                "Example: add /CS2113T /4 /CORE\n\n " +
+                "Example: add /CS2113T /4 /CORE\n " +
+                "Example: add /ATAP /12 /INTERNSHIP\n\n "+
 
                 "--Module Types--\n " +
                 "CORE\n " +
                 "GE (General modules)\n " +
-                "UE (Unrestricted Electives)\n\n" +
+                "UE (Unrestricted Electives)\n " +
+                "INTERNSHIP (module code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)\n\n " +
                 "-----------------------------------------------------\n");
     }
     public static void printManPageList() {

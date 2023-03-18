@@ -36,6 +36,11 @@ public class ModuleList {
             listOfModules.add(newUnrestrictedElective);
             Print.printAddedModule(newUnrestrictedElective, listOfModules.size());
             break;
+        case "INTERNSHIP":
+            Internship newinternship = new Internship(moduleCode, modularCredits);
+            listOfModules.add(newinternship);
+            Print.printAddedModule(newinternship, listOfModules.size());
+            break;
         default:
             break;
         }

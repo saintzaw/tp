@@ -116,6 +116,8 @@ public class PrintTest {
                 "Add" + System.lineSeparator() + " " +
                 "Command: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE"
                 + System.lineSeparator() + " " +
+                "Example: add /ATAP /12 /INTERNSHIP" +
+                System.lineSeparator() + " " +
                 "To find out more, use the command: man /add"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
@@ -158,11 +160,14 @@ public class PrintTest {
                 "Adding a module: add" + System.lineSeparator() + "Adds a module to the list of modules."
                 + System.lineSeparator() + " " +
                 "Format: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE" + System.lineSeparator() + " " +
-                "Example: add /CS2113T /4 /CORE" + System.lineSeparator() + System.lineSeparator() + " " +
+                "Example: add /CS2113T /4 /CORE" + System.lineSeparator() + " " +
+                "Example: add /ATAP /12 /INTERNSHIP" + System.lineSeparator() + " " +
                 "--Module Types--" + System.lineSeparator() + " " +
                 "CORE" + System.lineSeparator() + " " +
                 "GE (General modules)" + System.lineSeparator() + " " +
-                "UE (Unrestricted Electives)" + System.lineSeparator() + System.lineSeparator()
+                "UE (Unrestricted Electives)" + System.lineSeparator() +" "+
+                "INTERNSHIP (module code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)"+ System.lineSeparator()
+                +System.lineSeparator()
                 + " " +"-----------------------------------------------------\n";
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
