@@ -94,7 +94,8 @@ public class ModuleList {
         LOGGER.log(Level.INFO, "Finished listModules process");
     }
 
-    public void newAddModule(String moduleCode, String modularCredits, String moduleType, String year, String semester) {
+    public void newAddModule(String moduleCode, String modularCredits,
+                             String moduleType, String year, String semester) {
         int oldSizeOfList = listOfModules.size();
         LOGGER.log(Level.INFO, "Starting addModule process");
         switch(moduleType.toUpperCase()) {
@@ -109,7 +110,8 @@ public class ModuleList {
             Print.printAddedModule(newGeneralElective, listOfModules.size());
             break;
         case "UE":
-            UnrestrictedElective newUnrestrictedElective = new UnrestrictedElective(moduleCode, modularCredits, year, semester);
+            UnrestrictedElective newUnrestrictedElective =
+                    new UnrestrictedElective(moduleCode, modularCredits, year, semester);
             listOfModules.add(newUnrestrictedElective);
             Print.printAddedModule(newUnrestrictedElective, listOfModules.size());
             break;
@@ -120,7 +122,7 @@ public class ModuleList {
             break;
         default:
             break;
-    }
+        }
         assert listOfModules.size() == oldSizeOfList + 1 : "Module not added correctly";
         LOGGER.log(Level.INFO, "Finished addModule process");
     }
