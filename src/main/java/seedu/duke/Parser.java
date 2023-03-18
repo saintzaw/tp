@@ -1,5 +1,6 @@
 package seedu.duke;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 
 import static java.lang.System.exit;
@@ -125,6 +126,17 @@ public class Parser {
         } else if (userCommands.length > 4) {
             throw new DukeException("Too many fields");
         }
+
+        //check for duplicate names
+        String moduleCode = userCommands[1].trim();
+        ArrayList<Module> checkList =listOfModules.getModuleList();
+        for(int i=0; i<checkList.size();i+=1)
+        {
+            if (moduleCode.equalsIgnoreCase(checkList.get(i).getModuleCode())) {
+                throw new DukeException("Module is already in the list");
+            }
+        }
+
         //check for correct field in MC
         try {
             int moduleCredits = Integer.parseInt(userCommands[2].trim());

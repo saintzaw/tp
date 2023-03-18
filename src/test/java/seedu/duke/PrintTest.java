@@ -166,7 +166,7 @@ public class PrintTest {
                 "CORE" + System.lineSeparator() + " " +
                 "GE (General modules)" + System.lineSeparator() + " " +
                 "UE (Unrestricted Electives)" + System.lineSeparator() +" "+
-                "INTERNSHIP (module code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)"+ System.lineSeparator()
+                "INTERNSHIP (Module Code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)"+ System.lineSeparator()
                 +System.lineSeparator()
                 + " " +"-----------------------------------------------------\n";
 

@@ -50,7 +50,7 @@ public class Manpage {
                 "CORE\n " +
                 "GE (General modules)\n " +
                 "UE (Unrestricted Electives)\n " +
-                "INTERNSHIP (module code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)\n\n " +
+                "INTERNSHIP (Module Code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)\n\n " +
                 "-----------------------------------------------------\n");
     }
     public static void printManPageList() {
