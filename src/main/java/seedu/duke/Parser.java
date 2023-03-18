@@ -62,11 +62,13 @@ public class Parser {
 
         case "add":
             try {
+                LOGGER.log(Level.INFO, "Starting addModule process");
                 checkAddInput(listOfModules, userCommands);
             } catch (DukeException e) {
                 LOGGER.log(Level.WARNING, "addModule Check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
             }
+            LOGGER.log(Level.INFO, "End of addModule process");
             break;
         case "find":
             try {
@@ -121,41 +123,30 @@ public class Parser {
 
     private void checkAddInput(ModuleList listOfModules, String[] userCommands) throws DukeException {
         //check for correct number of fields
-        if (userCommands.length < 4) {
-            throw new DukeException("Missing fields");
-        } else if (userCommands.length > 4) {
-            throw new DukeException("Too many fields");
-        }
-
-        //check for duplicate names
-        String moduleCode = userCommands[1].trim();
-        ArrayList<Module> checkList =listOfModules.getModuleList();
-        for(int i=0; i<checkList.size();i+=1)
-        {
-            if (moduleCode.equalsIgnoreCase(checkList.get(i).getModuleCode())) {
-                throw new DukeException("Module is already in the list");
-            }
-        }
+        checkAddInputNumberOfFields(userCommands);
 
         //check for correct field in MC
-        try {
-            int moduleCredits = Integer.parseInt(userCommands[2].trim());
-            if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
-                || moduleCredits == 10 || moduleCredits == 11) {
-                throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 and 12");
-            }
-        } catch (NumberFormatException e) {
-            throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 and 12");
-        }
+        checkAddInputCorrectModularCreditField(userCommands);
+
         //check for correct field in type of module
-        String typeOfModule = userCommands[3].trim();
-        boolean isCorrectModuleType = typeOfModule.equals("CORE") || typeOfModule.equals("UE")
-                || typeOfModule.equals("GE") || typeOfModule.equals("INTERNSHIP") ;
-        if (!isCorrectModuleType) {
-            throw new DukeException("Incorrect Module Type, " + "Accepted Module Types are: (CORE,UE,GE,INTERNSHIP)");
+        checkAddInputCorrectTypeOfModule(userCommands);
+
+        //check for duplicate names
+        String[] moduleList = userCommands[1].trim().split(" ");
+        for (String moduleCode: moduleList) {
+            checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
         }
-        assert userCommands.length == 4;
-        listOfModules.addModule(userCommands[1].trim(), userCommands[2].trim(), userCommands[3].trim());
+
+        assert userCommands.length == 4; //change to 6 after year and sem added.
+        for (String moduleCode: moduleList) {
+            listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(), userCommands[3].trim());
+        }
+        /*
+        //check for correct year and semester
+        checkAddInputYearAndSemester(userCommands);
+
+        assert userCommands.length = 6:
+         */
     }
 
     public void checkInputLengthEqualsTwo(String[] userCommands) throws DukeException {
@@ -171,4 +162,68 @@ public class Parser {
             throw new DukeException("Too many fields");
         }
     }
+    private void checkAddInputNumberOfFields(String[] userCommands) throws DukeException {
+        if (userCommands.length < 4) {
+            // change to 6 after year and sem changes
+            throw new DukeException("Missing fields");
+        } else if (userCommands.length > 4) {
+            throw new DukeException("Too many fields");
+        }
+    }
+
+    /**
+     * Add Command Checks below this point is correct even for new addModule
+     */
+
+    private void checkAddInputCorrectModularCreditField(String[] userCommands) throws DukeException {
+        try {
+            int moduleCredits = Integer.parseInt(userCommands[2].trim());
+            if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
+                    || moduleCredits == 10 || moduleCredits == 11) {
+                throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 and 12");
+            }
+        } catch (NumberFormatException e) {
+            throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 and 12");
+        }
+    }
+
+    private void checkAddInputCorrectTypeOfModule(String[] userCommands) throws DukeException {
+        String typeOfModule = userCommands[3].trim();
+        boolean isCorrectModuleType = typeOfModule.equalsIgnoreCase("CORE")
+                || typeOfModule.equalsIgnoreCase("UE")
+                || typeOfModule.equalsIgnoreCase("GE")
+                || typeOfModule.equalsIgnoreCase("INTERNSHIP") ;
+        if (!isCorrectModuleType) {
+            throw new DukeException("Incorrect Module Type, " + "Accepted Module Types are: (CORE,UE,GE,INTERNSHIP)");
+        }
+    }
+
+    private void checkAddInputNoDuplicates(String moduleCode, ArrayList<Module> listOfModules) throws DukeException {
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equalsIgnoreCase(moduleCode)) {
+                throw new DukeException(moduleCode + " is already in the list");
+            }
+            return;
+        }
+    }
+
+    private void checkAddInputYearAndSemester(String[] userCommands) throws DukeException {
+        try {
+            int year = Integer.parseInt(userCommands[4].trim());
+            if (year < 0 || year > 6) {
+                throw new DukeException("Make sure Year of Study is a number from 0-6");
+            }
+            String semester = userCommands[5].trim();
+            boolean isCorrectSemester = semester.equals("1")
+                    || semester.equals("1.5")
+                    || semester.equals("2")
+                    || semester.equals("2.5");
+            if (!isCorrectSemester) {
+                throw new DukeException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
+            }
+        } catch (NumberFormatException e) {
+            throw new DukeException("Make sure Year of Study is a number from 0-6");
+        }
+    }
+
 }
