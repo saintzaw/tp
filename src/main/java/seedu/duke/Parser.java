@@ -129,7 +129,7 @@ public class Parser {
         try {
             int moduleCredits = Integer.parseInt(userCommands[2].trim());
             if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
-        || moduleCredits == 10 || moduleCredits == 11) {
+                || moduleCredits == 10 || moduleCredits == 11) {
                 throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 and 12");
             }
         } catch (NumberFormatException e) {
