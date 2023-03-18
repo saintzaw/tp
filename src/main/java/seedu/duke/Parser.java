@@ -51,7 +51,7 @@ public class Parser {
                     checkInputLengthEqualsOne(userCommands);
                 } catch (DukeException e) {
                     Print.printErrorMessage(e);
-                    LOGGER.log(Level.WARNING, "User Input is invalid" );
+                    LOGGER.log(Level.WARNING, "User Input is invalid");
                 }
                 assert userCommands.length == 1;
                 Manpage.printManPage();
@@ -59,7 +59,6 @@ public class Parser {
 
             LOGGER.log(Level.INFO, "End of manpage process");
             break;
-
         case "add":
             try {
                 LOGGER.log(Level.INFO, "Starting addModule process");
@@ -104,6 +103,19 @@ public class Parser {
             }
             assert userCommands.length == 1;
             listOfModules.listModules();
+            break;
+        case "edit":
+            try {
+                checkInputLengthEqualsFour(userCommands);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+            }
+            assert userCommands.length == 4;
+            try {
+                editModuleField(listOfModules, userCommands);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+            }
             break;
         case "bye":
             try {
@@ -153,6 +165,14 @@ public class Parser {
         if (userCommands.length > 2) {
             throw new DukeException("Too many fields");
         } else if (userCommands.length < 2){
+            throw new DukeException("Missing fields");
+        }
+    }
+
+    public void checkInputLengthEqualsFour(String[] userCommands) throws DukeException {
+        if (userCommands.length > 4) {
+            throw new DukeException("Too many fields");
+        } else if (userCommands.length < 4){
             throw new DukeException("Missing fields");
         }
     }
@@ -223,6 +243,36 @@ public class Parser {
             }
         } catch (NumberFormatException e) {
             throw new DukeException("Make sure Year of Study is a number from 0-6");
+        }
+    }
+
+    private void editModuleField(ModuleList listOfModules, String[] userCommands) throws DukeException {
+        //format: edit /moduleCode /field /update
+        String moduleCode = userCommands[1].trim();
+        //the field that the user wants to update
+        String field = userCommands[2].trim();
+        //the new information to replace in the indicated field
+        String update = userCommands[3].trim();
+
+        switch (field) {
+        case "MC":
+            listOfModules.editModularCredits(moduleCode, update);
+            break;
+        case "type":
+            String modularCredits = listOfModules.getModularCredits(moduleCode);
+            String year = listOfModules.getYear(moduleCode);
+            String semester = listOfModules.getSemester(moduleCode);
+            listOfModules.deleteModule(moduleCode);
+            listOfModules.newAddModule(moduleCode, modularCredits, update, year, semester);
+            break;
+        case "year":
+            listOfModules.editYear(moduleCode, update);
+            break;
+        case "semester":
+            listOfModules.editSemester(moduleCode, update);
+            break;
+        default:
+            throw new DukeException("Make sure the field to edit is MC, type, year or semester");
         }
     }
 
