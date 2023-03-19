@@ -19,9 +19,11 @@ public class ModuleList {
 
     public ModuleList(ArrayList<String> savedModules) {
         this.listOfModules = new ArrayList<>();
+        LOGGER.log(Level.INFO, "Starting process to load previously saved modules");
         for (String line : savedModules) {
             addExistingModule(line);
         }
+        LOGGER.log(Level.INFO, "Finished loading previously saved modules");
     }
 
     public ArrayList<Module> getModuleList() {

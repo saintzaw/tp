@@ -20,6 +20,7 @@ public class Duke {
     private ModuleList moduleList;
 
     public Duke() {
+        initialiseLogger();
         parser = new Parser();
         try {
             moduleList = new ModuleList(Storage.getSavedModules());
@@ -34,7 +35,6 @@ public class Duke {
     }
 
     public static void run(Duke chatBot) {
-        initialiseLogger();
         LOGGER.log(Level.INFO, "Modganiser is starting up!");
         Scanner in = new Scanner(System.in);
         Print.printLogo();

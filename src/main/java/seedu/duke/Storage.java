@@ -6,6 +6,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+
+import static seedu.duke.Duke.LOGGER;
 
 public class Storage {
     public static final String filePath = "data/modules.txt";
@@ -37,10 +40,13 @@ public class Storage {
     }
 
     public static void saveModules(ArrayList<Module> savedModules) {
+        LOGGER.log(Level.INFO, "Starting process to save modules to text file");
         try {
             writeToFile(savedModules);
+            LOGGER.log(Level.INFO, "Finished saving modules to text file");
         } catch (IOException e) {
             Print.printSavingError();
+            LOGGER.log(Level.WARNING, "Failed to save modules to text file");
         }
     }
 
