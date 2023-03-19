@@ -262,8 +262,7 @@ public class Parser {
             String modularCredits = listOfModules.getModularCredits(moduleCode);
             String year = listOfModules.getYear(moduleCode);
             String semester = listOfModules.getSemester(moduleCode);
-            listOfModules.deleteModule(moduleCode);
-            listOfModules.newAddModule(moduleCode, modularCredits, update, year, semester);
+            listOfModules.editModuleType(moduleCode, modularCredits, update, year, semester);
             break;
         case "year":
             listOfModules.editYear(moduleCode, update);

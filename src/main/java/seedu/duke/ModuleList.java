@@ -154,6 +154,43 @@ public class ModuleList {
         }
     }
 
+    public void editModuleType(String moduleCode, String modularCredits,
+                               String moduleType, String year, String semester) {
+        //delete module with old moduleType
+        for (int i = 0; i < listOfModules.size(); i++) {
+            if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
+                listOfModules.remove(i);
+                break;
+            }
+        }
+        //add module with new moduleType
+        switch (moduleType.toUpperCase()) {
+        case "CORE":
+            Core newCore = new Core(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newCore);
+            Print.printEditedModule(newCore, listOfModules.size());
+            break;
+        case "GE":
+            GeneralElective newGeneralElective = new GeneralElective(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newGeneralElective);
+            Print.printEditedModule(newGeneralElective, listOfModules.size());
+            break;
+        case "UE":
+            UnrestrictedElective newUnrestrictedElective =
+                    new UnrestrictedElective(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newUnrestrictedElective);
+            Print.printEditedModule(newUnrestrictedElective, listOfModules.size());
+            break;
+        case "INTERNSHIP":
+            Internship newinternship = new Internship(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newinternship);
+            Print.printEditedModule(newinternship, listOfModules.size());
+            break;
+        default:
+            break;
+        }
+    }
+
     public String getModularCredits(String moduleCode) {
         String modularCredits = "";
         for (Module module : listOfModules) {
