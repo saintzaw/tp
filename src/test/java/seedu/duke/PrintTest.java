@@ -34,7 +34,8 @@ public class PrintTest {
         }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
-                + "       [C] CS2113T 4 MCs" + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator()
+                + "     1. [C] CS2113T 4 MCs" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -46,12 +47,13 @@ public class PrintTest {
         moduleList.addModule("CS2113T", "4", "CORE");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.findModule("CS2101");
+            moduleList.findModule("GEN");
         } catch (DukeException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     There are no matching modules in your list:" + System.lineSeparator()
+                + System.lineSeparator()
+                + "     There are no modules that match the keyword: GEN in your list" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
