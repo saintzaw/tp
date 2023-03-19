@@ -51,6 +51,14 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    public static void printEditedModule(Module editedModule, int numOfModules) {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     Got it. I've edited the information for this module:");
+        System.out.println("       " + editedModule);
+        System.out.println("     Now you have " + numOfModules + " modules in the list.");
+        System.out.println("    ____________________________________________________________");
+    }
+
     public static void printModuleList(ArrayList<Module> listOfModules) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Here are the modules in your list:");

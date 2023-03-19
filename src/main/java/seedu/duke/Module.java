@@ -21,12 +21,28 @@ public class Module {
         return moduleCode;
     }
 
+    public String getModularCredits() {
+        return modularCredits;
+    }
+
     public String getYear() {
         return year;
     }
 
     public String getSemester() {
         return semester;
+    }
+
+    public void editModularCredits(String newModularCredits) {
+        this.modularCredits = newModularCredits;
+    }
+
+    public void editSemester(String newSemester) {
+        this.semester = newSemester;
+    }
+
+    public void editYear(String newYear) {
+        this.year = newYear;
     }
 
     @Override
