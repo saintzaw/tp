@@ -15,19 +15,19 @@ public class Parser {
         assert userCommands.length == 2;
 
         switch (userCommands[1]) {
-        case "add":
+        case "ADD":
             Manpage.printManPageAdd();
             break;
-        case "list":
+        case "LIST":
             Manpage.printManPageList();
             break;
-        case "find":
+        case "FIND":
             Manpage.printManPageFind();
             break;
-        case "delete":
+        case "DELETE":
             Manpage.printManPageDelete();
             break;
-        case "bye":
+        case "BYE":
             Manpage.printManPageExit();
             break;
         default:
@@ -40,7 +40,7 @@ public class Parser {
         String[] userCommands = userInput.split("/");
 
         switch (userCommands[0].trim()) {
-        case "man":
+        case "MAN":
             LOGGER.log(Level.INFO, "Starting manpage process");
             assert userCommands.length >= 1;
 
@@ -59,7 +59,7 @@ public class Parser {
 
             LOGGER.log(Level.INFO, "End of manpage process");
             break;
-        case "add":
+        case "ADD":
             try {
                 LOGGER.log(Level.INFO, "Starting addModule process");
                 checkAddInput(listOfModules, userCommands);
@@ -69,7 +69,7 @@ public class Parser {
             }
             LOGGER.log(Level.INFO, "End of addModule process");
             break;
-        case "find":
+        case "FIND":
             try {
                 checkInputLengthEqualsTwo(userCommands);
             } catch (DukeException e) {
@@ -82,7 +82,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             break;
-        case "delete":
+        case "DELETE":
             try {
                 checkInputLengthEqualsTwo(userCommands);
             } catch (DukeException e) {
@@ -95,7 +95,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             break;
-        case "list all":
+        case "LIST ALL":
             try {
                 checkInputLengthEqualsOne(userCommands);
             } catch (DukeException e) {
@@ -104,7 +104,7 @@ public class Parser {
             assert userCommands.length == 1;
             listOfModules.listModules();
             break;
-        case "edit":
+        case "EDIT":
             try {
                 checkInputLengthEqualsFour(userCommands);
             } catch (DukeException e) {
@@ -117,7 +117,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             break;
-        case "bye":
+        case "BYE":
             try {
                 checkInputLengthEqualsOne(userCommands);
             } catch (DukeException e) {
@@ -200,27 +200,27 @@ public class Parser {
             int moduleCredits = Integer.parseInt(userCommands[2].trim());
             if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
                     || moduleCredits == 10 || moduleCredits == 11) {
-                throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 and 12");
+                throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 or 12");
             }
         } catch (NumberFormatException e) {
-            throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 and 12");
+            throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 or 12");
         }
     }
 
     private void checkAddInputCorrectTypeOfModule(String[] userCommands) throws DukeException {
         String typeOfModule = userCommands[3].trim();
-        boolean isCorrectModuleType = typeOfModule.equalsIgnoreCase("CORE")
-                || typeOfModule.equalsIgnoreCase("UE")
-                || typeOfModule.equalsIgnoreCase("GE")
-                || typeOfModule.equalsIgnoreCase("INTERNSHIP") ;
+        boolean isCorrectModuleType = typeOfModule.equals("CORE")
+                || typeOfModule.equals("UE")
+                || typeOfModule.equals("GE")
+                || typeOfModule.equals("INTERNSHIP") ;
         if (!isCorrectModuleType) {
-            throw new DukeException("Incorrect Module Type, " + "Accepted Module Types are: (CORE,UE,GE,INTERNSHIP)");
+            throw new DukeException("Incorrect Module Type, Accepted Module Types are: (CORE, UE ,GE ,INTERNSHIP)");
         }
     }
 
     private void checkAddInputNoDuplicates(String moduleCode, ArrayList<Module> listOfModules) throws DukeException {
         for (Module module : listOfModules) {
-            if (module.getModuleCode().equalsIgnoreCase(moduleCode)) {
+            if (module.getModuleCode().equals(moduleCode)) {
                 throw new DukeException(moduleCode + " is already in the list");
             }
             return;
