@@ -52,7 +52,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     There are no modules that match the keyword: GEN in your list" + System.lineSeparator()
+                + System.lineSeparator()
+                + "     There are no modules that match the keyword: GEN in your list" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
