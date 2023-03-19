@@ -1,5 +1,6 @@
 package seedu.duke;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
@@ -14,12 +15,19 @@ public class Duke {
      * Main entry-point for the java.duke.Duke application.
      */
     public static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
     private Parser parser;
     private ModuleList moduleList;
 
     public Duke() {
+        initialiseLogger();
         parser = new Parser();
-        moduleList = new ModuleList();
+        try {
+            moduleList = new ModuleList(Storage.getSavedModules());
+        } catch (FileNotFoundException e) {
+            Print.printFileLoadingError();
+            moduleList = new ModuleList();
+        }
     }
 
     public static boolean isNameBye(String name) {
@@ -27,7 +35,6 @@ public class Duke {
     }
 
     public static void run(Duke chatBot) {
-        initialiseLogger();
         LOGGER.log(Level.INFO, "Modganiser is starting up!");
         Scanner in = new Scanner(System.in);
         Print.printLogo();

@@ -35,7 +35,7 @@ public class Parser {
         }
     }
 
-    public void checkUserInput(String userInput, ModuleList listOfModules) throws DukeException {
+    public void checkUserInput(String userInput, ModuleList moduleList) throws DukeException {
 
         String[] userCommands = userInput.split("/");
 
@@ -62,7 +62,8 @@ public class Parser {
         case "ADD":
             try {
                 LOGGER.log(Level.INFO, "Starting addModule process");
-                checkAddInput(listOfModules, userCommands);
+                checkAddInput(moduleList, userCommands);
+                Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 LOGGER.log(Level.WARNING, "addModule Check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
@@ -74,10 +75,11 @@ public class Parser {
                 checkInputLengthEqualsTwo(userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
+                return;
             }
             assert userCommands.length == 2;
             try {
-                listOfModules.findModule(userCommands[1].trim());
+                moduleList.findModule(userCommands[1].trim());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -87,10 +89,12 @@ public class Parser {
                 checkInputLengthEqualsTwo(userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
+                return;
             }
             assert userCommands.length == 2;
             try {
-                listOfModules.deleteModule(userCommands[1].trim());
+                moduleList.deleteModule(userCommands[1].trim());
+                Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -102,17 +106,19 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 1;
-            listOfModules.listModules();
+            moduleList.listModules();
             break;
         case "EDIT":
             try {
                 checkInputLengthEqualsFour(userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
+                return;
             }
             assert userCommands.length == 4;
             try {
-                editModuleField(listOfModules, userCommands);
+                editModuleField(moduleList, userCommands);
+                Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -131,6 +137,7 @@ public class Parser {
         default:
             throw new DukeException("Invalid Command");
         }
+
     }
 
     private void checkAddInput(ModuleList listOfModules, String[] userCommands) throws DukeException {

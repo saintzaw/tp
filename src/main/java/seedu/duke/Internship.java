@@ -10,6 +10,11 @@ public class Internship extends Module {
     }
 
     @Override
+    public String getModuleType() {
+        return "I";
+    }
+
+    @Override
     public String toString() {
         return "[I] " + super.toString();
     }

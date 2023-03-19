@@ -54,6 +54,12 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    public static void printNoDeletedModuleFound(String moduleCode) {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     There is no module that matches the module code: " + moduleCode + " in your list");
+        System.out.println("    ____________________________________________________________");
+    }
+
     public static void printAddedModule(Module addedModule, int numOfModules) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Got it. I've added this module:");
@@ -94,6 +100,24 @@ public class Print {
     public static void printErrorMessage(DukeException e) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Error: " + e.getDescription());
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printCreateFileError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    An error occurred when creating the data file");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printSavingError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    Data was not saved to file");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printFileLoadingError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    Data file was not found");
         System.out.println("    ____________________________________________________________");
     }
 

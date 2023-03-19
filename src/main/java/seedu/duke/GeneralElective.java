@@ -11,6 +11,11 @@ public class GeneralElective extends Module {
     }
 
     @Override
+    public String getModuleType() {
+        return "GE";
+    }
+
+    @Override
     public String toString() {
         return "[GE] " + super.toString();
     }
