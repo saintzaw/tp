@@ -60,11 +60,11 @@ public class ModuleList {
             if (module.getModuleCode().contains(keyword)) {
                 isFound = true;
                 foundModules.add(module);
-                LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
             }
         }
         if (isFound) {
             Print.printFoundModule(foundModules);
+            LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
         } else {
             Print.printNoModuleFound(keyword);
             LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
@@ -77,17 +77,26 @@ public class ModuleList {
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting deleteModule process");
+        boolean isFound = false;
         int oldSizeOfList = listOfModules.size();
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
                 Module deletedModule = listOfModules.get(i);
                 listOfModules.remove(i);
                 Print.printDeletedModule(deletedModule, listOfModules.size());
+                isFound = true;
                 break;
             }
         }
-        assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
-        LOGGER.log(Level.INFO, "Finished deleteModule process");
+
+        if (!isFound) { // When no module matches the given module code
+            Print.printNoDeletedModuleFound(moduleCode);
+            assert listOfModules.size() == oldSizeOfList : "Wrong module was deleted";
+            LOGGER.log(Level.INFO, "Finished deleteModule process with no module deleted");
+        } else { // When a matching module is found and successfully deleted
+            assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
+            LOGGER.log(Level.INFO, "Finished deleteModule process with module successfully deleted");
+        }
     }
 
     public void listModules() {

@@ -54,6 +54,12 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    public static void printNoDeletedModuleFound(String moduleCode) {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     There is no module that matches the module code: " + moduleCode + " in your list");
+        System.out.println("    ____________________________________________________________");
+    }
+
     public static void printAddedModule(Module addedModule, int numOfModules) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Got it. I've added this module:");
