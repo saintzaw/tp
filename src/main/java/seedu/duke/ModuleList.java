@@ -54,22 +54,20 @@ public class ModuleList {
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModule process");
-        Print.printFoundModuleHeader();
         boolean isFound = false;
-        int numberOfFoundModules = 0;
+        ArrayList<Module> foundModules = new ArrayList<>();
         for (Module module : listOfModules) {
             if (module.getModuleCode().contains(keyword)) {
-                numberOfFoundModules += 1;
                 isFound = true;
-                Print.printFoundModule(numberOfFoundModules, module);
+                foundModules.add(module);
                 LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
             }
         }
-        if (!isFound) {
+        if (isFound) {
+            Print.printFoundModule(foundModules);
+        } else {
             Print.printNoModuleFound(keyword);
             LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
-        } else {
-            Print.printFoundModuleEnd();
         }
     }
 

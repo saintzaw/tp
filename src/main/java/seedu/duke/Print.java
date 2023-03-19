@@ -23,16 +23,21 @@ public class Print {
     }
 
     public static void printFoundModuleHeader() {
+
+    }
+
+    public static void printFoundModule(ArrayList<Module> foundModules) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Here are the matching modules in your list:");
         System.out.println("    ____________________________________________________________");
-    }
-
-    public static void printFoundModule(int index, Module foundModule) {
-        System.out.println("       " + index + ". " + foundModule);
+        for (int i = 0; i < foundModules.size(); i++) {
+            System.out.println("     " + (i + 1) + ". " + foundModules.get(i));
+        }
+        System.out.println("    ____________________________________________________________");
     }
 
     public static void printNoModuleFound(String keyword) {
+        System.out.println("    ____________________________________________________________");
         System.out.println("     There are no modules that match the keyword: " + keyword + " in your list");
         System.out.println("    ____________________________________________________________");
     }
