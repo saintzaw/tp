@@ -22,16 +22,22 @@ public class Print {
         System.out.println("Hello from\n" + logo);
     }
 
-    public static void printFoundModule(Module foundModule) {
+    public static void printFoundModuleHeader() {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Here are the matching modules in your list:");
-        System.out.println("       " + foundModule);
         System.out.println("    ____________________________________________________________");
     }
 
-    public static void printNoModuleFound() {
+    public static void printFoundModule(int index, Module foundModule) {
+        System.out.println("       " + index + ". " + foundModule);
+    }
+
+    public static void printNoModuleFound(String keyword) {
+        System.out.println("     There are no modules that match the keyword: " + keyword + " in your list");
         System.out.println("    ____________________________________________________________");
-        System.out.println("     There are no matching modules in your list:");
+    }
+
+    public static void printFoundModuleEnd() {
         System.out.println("    ____________________________________________________________");
     }
 
