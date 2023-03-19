@@ -41,7 +41,7 @@ public class Duke {
         assert !(name.equalsIgnoreCase("bye")) : "name is bye";
         Print.printHelloMessage(name);
         while (in.hasNextLine()) {
-            String line = in.nextLine();
+            String line = in.nextLine().toUpperCase();
             try {
                 chatBot.parser.checkUserInput(line, chatBot.moduleList);
             } catch (DukeException e){
