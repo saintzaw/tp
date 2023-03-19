@@ -74,6 +74,7 @@ public class Parser {
                 checkInputLengthEqualsTwo(userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
+                return;
             }
             assert userCommands.length == 2;
             try {
@@ -87,6 +88,7 @@ public class Parser {
                 checkInputLengthEqualsTwo(userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
+                return;
             }
             assert userCommands.length == 2;
             try {
@@ -109,6 +111,7 @@ public class Parser {
                 checkInputLengthEqualsFour(userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
+                return;
             }
             assert userCommands.length == 4;
             try {
