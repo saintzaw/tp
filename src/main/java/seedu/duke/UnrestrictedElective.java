@@ -11,6 +11,11 @@ public class UnrestrictedElective extends Module {
     }
 
     @Override
+    public String getModuleType() {
+        return "UE";
+    }
+
+    @Override
     public String toString() {
         return "[UE] " + super.toString();
     }

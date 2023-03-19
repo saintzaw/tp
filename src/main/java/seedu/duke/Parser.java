@@ -276,6 +276,7 @@ public class Parser {
         default:
             throw new DukeException("Make sure the field to edit is MC, type, year or semester");
         }
+        Storage.saveModules(listOfModules.getModuleList());
     }
 
 }

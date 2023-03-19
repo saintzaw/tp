@@ -33,6 +33,10 @@ public class Module {
         return semester;
     }
 
+    public String getModuleType() {
+        return "";
+    }
+
     public void editModularCredits(String newModularCredits) {
         this.modularCredits = newModularCredits;
     }

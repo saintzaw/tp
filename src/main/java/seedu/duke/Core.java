@@ -11,6 +11,11 @@ public class Core extends Module {
     }
 
     @Override
+    public String getModuleType() {
+        return "C";
+    }
+
+    @Override
     public String toString() {
         return "[C] " + super.toString();
     }

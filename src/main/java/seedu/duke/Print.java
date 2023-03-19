@@ -103,4 +103,22 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    public static void printCreateFileError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    An error occurred when creating the data file");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printSavingError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    Data was not saved to file");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printFileLoadingError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    Data file was not found");
+        System.out.println("    ____________________________________________________________");
+    }
+
 }
