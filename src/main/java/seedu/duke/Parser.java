@@ -35,7 +35,7 @@ public class Parser {
         }
     }
 
-    public void checkUserInput(String userInput, ModuleList listOfModules) throws DukeException {
+    public void checkUserInput(String userInput, ModuleList moduleList) throws DukeException {
 
         String[] userCommands = userInput.split("/");
 
@@ -62,7 +62,7 @@ public class Parser {
         case "ADD":
             try {
                 LOGGER.log(Level.INFO, "Starting addModule process");
-                checkAddInput(listOfModules, userCommands);
+                checkAddInput(moduleList, userCommands);
             } catch (DukeException e) {
                 LOGGER.log(Level.WARNING, "addModule Check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
@@ -78,7 +78,7 @@ public class Parser {
             }
             assert userCommands.length == 2;
             try {
-                listOfModules.findModule(userCommands[1].trim());
+                moduleList.findModule(userCommands[1].trim());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -92,7 +92,7 @@ public class Parser {
             }
             assert userCommands.length == 2;
             try {
-                listOfModules.deleteModule(userCommands[1].trim());
+                moduleList.deleteModule(userCommands[1].trim());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -104,7 +104,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 1;
-            listOfModules.listModules();
+            moduleList.listModules();
             break;
         case "EDIT":
             try {
@@ -115,7 +115,7 @@ public class Parser {
             }
             assert userCommands.length == 4;
             try {
-                editModuleField(listOfModules, userCommands);
+                editModuleField(moduleList, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -134,6 +134,7 @@ public class Parser {
         default:
             throw new DukeException("Invalid Command");
         }
+        Storage.saveModules(moduleList.getModuleList());
     }
 
     private void checkAddInput(ModuleList listOfModules, String[] userCommands) throws DukeException {
@@ -276,7 +277,6 @@ public class Parser {
         default:
             throw new DukeException("Make sure the field to edit is MC, type, year or semester");
         }
-        Storage.saveModules(listOfModules.getModuleList());
     }
 
 }

@@ -63,7 +63,6 @@ public class ModuleList {
         }
         assert listOfModules.size() == oldSizeOfList + 1 : "Module not added correctly";
         LOGGER.log(Level.INFO, "Finished addModule process");
-        Storage.saveModules(listOfModules);
     }
 
     public void findModule(String keyword) throws DukeException {
@@ -114,7 +113,6 @@ public class ModuleList {
         } else { // When a matching module is found and successfully deleted
             assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
             LOGGER.log(Level.INFO, "Finished deleteModule process with module successfully deleted");
-            Storage.saveModules(listOfModules);
         }
     }
 
