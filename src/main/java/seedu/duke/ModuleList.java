@@ -20,7 +20,7 @@ public class ModuleList {
     public void addModule(String moduleCode, String modularCredits, String moduleType) {
         int oldSizeOfList = listOfModules.size();
         LOGGER.log(Level.INFO, "Starting addModule process");
-        switch(moduleType) {
+        switch(moduleType.toUpperCase()) {
         case "CORE":
             Core newCore = new Core(moduleCode, modularCredits);
             listOfModules.add(newCore);
@@ -35,6 +35,11 @@ public class ModuleList {
             UnrestrictedElective newUnrestrictedElective = new UnrestrictedElective(moduleCode, modularCredits);
             listOfModules.add(newUnrestrictedElective);
             Print.printAddedModule(newUnrestrictedElective, listOfModules.size());
+            break;
+        case "INTERNSHIP":
+            Internship newinternship = new Internship(moduleCode, modularCredits);
+            listOfModules.add(newinternship);
+            Print.printAddedModule(newinternship, listOfModules.size());
             break;
         default:
             break;
@@ -88,4 +93,132 @@ public class ModuleList {
         }
         LOGGER.log(Level.INFO, "Finished listModules process");
     }
+
+    public void newAddModule(String moduleCode, String modularCredits,
+                             String moduleType, String year, String semester) {
+        int oldSizeOfList = listOfModules.size();
+        LOGGER.log(Level.INFO, "Starting addModule process");
+        switch (moduleType.toUpperCase()) {
+        case "CORE":
+            Core newCore = new Core(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newCore);
+            Print.printAddedModule(newCore, listOfModules.size());
+            break;
+        case "GE":
+            GeneralElective newGeneralElective = new GeneralElective(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newGeneralElective);
+            Print.printAddedModule(newGeneralElective, listOfModules.size());
+            break;
+        case "UE":
+            UnrestrictedElective newUnrestrictedElective =
+                    new UnrestrictedElective(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newUnrestrictedElective);
+            Print.printAddedModule(newUnrestrictedElective, listOfModules.size());
+            break;
+        case "INTERNSHIP":
+            Internship newinternship = new Internship(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newinternship);
+            Print.printAddedModule(newinternship, listOfModules.size());
+            break;
+        default:
+            break;
+        }
+        assert listOfModules.size() == oldSizeOfList + 1 : "Module not added correctly";
+        LOGGER.log(Level.INFO, "Finished addModule process");
+    }
+
+    public void editModularCredits(String moduleCode, String newModularCredits) {
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                module.editModularCredits(newModularCredits);
+                Print.printEditedModule(module, listOfModules.size());
+            }
+        }
+    }
+
+    public void editYear(String moduleCode, String newYear) {
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                module.editYear(newYear);
+                Print.printEditedModule(module, listOfModules.size());
+            }
+        }
+    }
+
+    public void editSemester(String moduleCode, String newSemester) {
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                module.editSemester(newSemester);
+                Print.printEditedModule(module, listOfModules.size());
+            }
+        }
+    }
+
+    public void editModuleType(String moduleCode, String modularCredits,
+                               String moduleType, String year, String semester) {
+        //delete module with old moduleType
+        for (int i = 0; i < listOfModules.size(); i++) {
+            if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
+                listOfModules.remove(i);
+                break;
+            }
+        }
+        //add module with new moduleType
+        switch (moduleType.toUpperCase()) {
+        case "CORE":
+            Core newCore = new Core(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newCore);
+            Print.printEditedModule(newCore, listOfModules.size());
+            break;
+        case "GE":
+            GeneralElective newGeneralElective = new GeneralElective(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newGeneralElective);
+            Print.printEditedModule(newGeneralElective, listOfModules.size());
+            break;
+        case "UE":
+            UnrestrictedElective newUnrestrictedElective =
+                    new UnrestrictedElective(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newUnrestrictedElective);
+            Print.printEditedModule(newUnrestrictedElective, listOfModules.size());
+            break;
+        case "INTERNSHIP":
+            Internship newinternship = new Internship(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newinternship);
+            Print.printEditedModule(newinternship, listOfModules.size());
+            break;
+        default:
+            break;
+        }
+    }
+
+    public String getModularCredits(String moduleCode) {
+        String modularCredits = "";
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                modularCredits = module.getModularCredits();
+            }
+        }
+        return modularCredits;
+    }
+
+    public String getYear(String moduleCode) {
+        String year = "";
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                year = module.getYear();
+            }
+        }
+        return year;
+    }
+
+    public String getSemester(String moduleCode) {
+        String semester = "";
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                semester = module.getSemester();
+            }
+        }
+        return semester;
+    }
+
 }
