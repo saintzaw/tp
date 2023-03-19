@@ -63,6 +63,7 @@ public class Parser {
             try {
                 LOGGER.log(Level.INFO, "Starting addModule process");
                 checkAddInput(moduleList, userCommands);
+                Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 LOGGER.log(Level.WARNING, "addModule Check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
@@ -93,6 +94,7 @@ public class Parser {
             assert userCommands.length == 2;
             try {
                 moduleList.deleteModule(userCommands[1].trim());
+                Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -116,6 +118,7 @@ public class Parser {
             assert userCommands.length == 4;
             try {
                 editModuleField(moduleList, userCommands);
+                Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -134,7 +137,7 @@ public class Parser {
         default:
             throw new DukeException("Invalid Command");
         }
-        Storage.saveModules(moduleList.getModuleList());
+
     }
 
     private void checkAddInput(ModuleList listOfModules, String[] userCommands) throws DukeException {
