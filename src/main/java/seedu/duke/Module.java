@@ -61,6 +61,6 @@ public class Module {
 
     @Override
     public String toString() {
-        return "[\"" + this.grade + "\"]" + this.moduleCode + " " + this.modularCredits + " MCs";
+        return "[\"" + this.grade + "\"] " + this.moduleCode + " " + this.modularCredits + " MCs";
     }
 }

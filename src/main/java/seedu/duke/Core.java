@@ -17,6 +17,6 @@ public class Core extends Module {
 
     @Override
     public String toString() {
-        return "[C] " + super.toString();
+        return "[C]" + super.toString();
     }
 }

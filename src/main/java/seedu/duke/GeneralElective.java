@@ -17,6 +17,6 @@ public class GeneralElective extends Module {
 
     @Override
     public String toString() {
-        return "[GE] " + super.toString();
+        return "[GE]" + super.toString();
     }
 }

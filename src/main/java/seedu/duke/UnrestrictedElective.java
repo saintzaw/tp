@@ -17,6 +17,6 @@ public class UnrestrictedElective extends Module {
 
     @Override
     public String toString() {
-        return "[UE] " + super.toString();
+        return "[UE]" + super.toString();
     }
 }
