@@ -123,6 +123,32 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             break;
+        case "GRADE":
+            try {
+                checkInputLengthEqualsThree(userCommands);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+                return;
+            }
+            assert userCommands.length == 3;
+            try {
+                checkGradeInput(userCommands[2].trim());
+                moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+                Storage.saveModules(moduleList.getModuleList());
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+            }
+            break;
+        case "CALCULATECAP":
+            try {
+                checkInputLengthEqualsOne(userCommands);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+                return;
+            }
+            assert userCommands.length == 1;
+            moduleList.calculateCAP();
+            break;
         case "BYE":
             try {
                 checkInputLengthEqualsOne(userCommands);
@@ -180,6 +206,14 @@ public class Parser {
         if (userCommands.length > 4) {
             throw new DukeException("Too many fields");
         } else if (userCommands.length < 4){
+            throw new DukeException("Missing fields");
+        }
+    }
+
+    public void checkInputLengthEqualsThree(String[] userCommands) throws DukeException {
+        if (userCommands.length > 3) {
+            throw new DukeException("Too many fields");
+        } else if (userCommands.length < 3){
             throw new DukeException("Missing fields");
         }
     }
@@ -265,20 +299,43 @@ public class Parser {
         case "MC":
             listOfModules.editModularCredits(moduleCode, update);
             break;
-        case "type":
+        case "TYPE":
             String modularCredits = listOfModules.getModularCredits(moduleCode);
             String year = listOfModules.getYear(moduleCode);
             String semester = listOfModules.getSemester(moduleCode);
             listOfModules.editModuleType(moduleCode, modularCredits, update, year, semester);
             break;
-        case "year":
+        case "YEAR":
             listOfModules.editYear(moduleCode, update);
             break;
-        case "semester":
+        case "SEMESTER":
             listOfModules.editSemester(moduleCode, update);
             break;
         default:
             throw new DukeException("Make sure the field to edit is MC, type, year or semester");
+        }
+    }
+
+    private void checkGradeInput (String inputGrade) throws DukeException {
+        switch (inputGrade) {
+        case "A+":
+        case "A":
+        case "A-":
+        case "B+":
+        case "B":
+        case "B-":
+        case "C+":
+        case "C":
+        case "D+":
+        case "D":
+        case "F":
+        case "S":
+        case "U":
+        case "CS":
+        case "CU":
+            break;
+        default:
+            throw new DukeException("Please input a valid grade!");
         }
     }
 

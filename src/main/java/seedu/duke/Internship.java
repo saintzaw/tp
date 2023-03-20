@@ -16,6 +16,6 @@ public class Internship extends Module {
 
     @Override
     public String toString() {
-        return "[I] " + super.toString();
+        return "[I]" + super.toString();
     }
 }

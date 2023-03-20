@@ -57,13 +57,11 @@ public class Storage {
 
             // Determine module type and add module type
             String lineToWrite = currModule.getModuleType();
+            lineToWrite += "|" + currModule.getGrade(); // Add grade
             lineToWrite += "|" + currModule.getModuleCode(); // Add module code
             lineToWrite += "|" + currModule.getModularCredits(); // Add MC
             lineToWrite += "|" + currModule.getYear(); // Add year
             lineToWrite += "|" + currModule.getSemester(); // Add semester
-
-            // Add grade
-            //lineToWrite += "|" + currModule.getGrade();
 
             lineToWrite += System.lineSeparator();
             fw.write(lineToWrite);
