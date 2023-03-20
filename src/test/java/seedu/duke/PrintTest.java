@@ -15,7 +15,8 @@ public class PrintTest {
         moduleList.addModule("CS2113T", "4", "CORE");
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Got it. I've added this module:" + System.lineSeparator()
-                + "       [C][\" \"] CS2113T 4 MCs" + System.lineSeparator() + "     Now you have 1 modules in the list."
+                + "       [C][\" \"] CS2113T 4 MCs" + System.lineSeparator()
+                + "     Now you have 1 modules in the list."
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -71,7 +72,8 @@ public class PrintTest {
         }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Noted. I've removed this module:" + System.lineSeparator()
-                + "       [C][\" \"] CS2113T 4 MCs" + System.lineSeparator() + "     Now you have 0 modules in the list."
+                + "       [C][\" \"] CS2113T 4 MCs" + System.lineSeparator()
+                + "     Now you have 0 modules in the list."
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
