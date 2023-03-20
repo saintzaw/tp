@@ -11,7 +11,7 @@ public class Parser {
 
     }
     public void checkManPageInput(String userInput) {
-        String[] userCommands = userInput.split("/");
+        String[] userCommands = userInput.toUpperCase().split("/");
         assert userCommands.length == 2;
 
         switch (userCommands[1]) {
@@ -21,11 +21,20 @@ public class Parser {
         case "LIST":
             Manpage.printManPageList();
             break;
+        case "EDIT":
+            Manpage.printManPageEdit();
+            break;
         case "FIND":
             Manpage.printManPageFind();
             break;
         case "DELETE":
             Manpage.printManPageDelete();
+            break;
+        case "CALCULATOR":
+            Manpage.printManPageCalculator();
+            break;
+        case "GRADE":
+            Manpage.printManPageCalculatorInput();
             break;
         case "BYE":
             Manpage.printManPageExit();
@@ -37,7 +46,7 @@ public class Parser {
 
     public void checkUserInput(String userInput, ModuleList moduleList) throws DukeException {
 
-        String[] userCommands = userInput.split("/");
+        String[] userCommands = userInput.toUpperCase().split("/");
 
         switch (userCommands[0].trim()) {
         case "MAN":

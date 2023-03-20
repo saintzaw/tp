@@ -17,34 +17,56 @@ public class Manpage {
                 "Modganiser can get your schedule up  faster than traditional GUI apps.\n\n" +
 
                 "----------COMMAND SUMMARY----------\n\n " +
-                "Man\n " +
+                "1. Man\n " +
                 "Command: man\n\n " +
-                "Add\n " +
-                "Command: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE\n " +
-                "Example: add /ATAP /12 /INTERNSHIP\n "+
+
+                "2. Add\n " +
+                "Command: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM\n " +
+                "Example for year 1 semester 1 : add /CS2113T /4 /CORE /1 /1\n "+
+                "Example for year 3 semester 2 : add /ATAP /12 /INTERNSHIP /3 /2\n "+
                 "To find out more, use the command: man /add\n\n " +
-                "List\n " +
-                "Command: list all or list /(year)\n " +
+
+                "3. List\n " +
+                "Command: list all or list /Year\n " +
                 "To find out more, use the command: man /list\n\n " +
-                "Find\n " +
-                "Command: find /MODULE_CODE\n " +
+
+                "4. Edit\n " +
+                "Command: edit /MODULE_CODE /fieldToEdit /newInfo\n " +
+                "To find out more, use the command: man /edit\n\n " +
+
+                "5. Find\n " +
+                "Command: find /MODULE_CODE or MODULE_TYPE /keyword\n " +
                 "To find out more, use the command: man /find\n\n " +
-                "Delete\n " +
+
+                "6. Delete\n " +
                 "Command: delete /MODULE_CODE\n " +
                 "To find out more, use the command: man /delete\n\n " +
-                "Exit\n " +
+
+                "7. Grade Calculator\n " +
+                "Command: calculatecap\n " +
+                "To find out more, use the command: man /calculator\n\n " +
+
+                "8. Input/Update Grades\n " +
+                "Command: grade /MODULE_CODE /GRADE\n " +
+                "To find out more, use the command: man /grade\n\n " +
+
+                "9. Exit\n " +
                 "Command: bye\n "+
                 "To find out more, use the command: man /bye\n " +
-                 "-----------------------------------------------------\n" );
+                "-----------------------------------------------------\n" );
     }
 
     public static void printManPageAdd() {
         System.out.println("\n\n" +
-                 "-----------------------------------------------------\n"+
-                "Adding a module: add\n Adds a module to the list of modules.\n " +
-                "Format: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE\n " +
-                "Example: add /CS2113T /4 /CORE\n " +
-                "Example: add /ATAP /12 /INTERNSHIP\n\n "+
+                "-----------------------------------------------------\n"+
+                "Adding a module:  add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM\n "+
+                "Adds a module to the list of modules.\n " +
+                "Year includes {1, 2, 3, 4, 5, 6}\n "+
+                "Semester includes  {1, 1.5(semester 1 break), 2, 2.5(semester 2 break)}\n "+
+                "Multiple modules could be added at the same time, like: "+
+                "add /CS2113T IS4231 CS1010 /4 /CORE /1 /1 for year 1 semester 1\n "+
+                "Example for year 1 semester 1: add /CS2113T /4 /CORE /1 /1\n " +
+                "Example for year 3 semester 2 : add /ATAP /12 /INTERNSHIP /3 /2\n\n "+
 
                 "--Module Types--\n " +
                 "CORE\n " +
@@ -65,15 +87,32 @@ public class Manpage {
                 "Example: list 1\n\n" +
                 "-----------------------------------------------------\n");
     }
+    public static void printManPageEdit() {
+        System.out.println("\n\n" + "-----------------------------------------------------\n" +
 
+                "Edit modules: edit /MODULE_CODE /fieldToEdit /newInfo  \n " +
+                "Shows a list of all modules in that year along with the module type.\n " +
+                "Example: To change CS1010 modular credits field from 6 to 4, the command" +
+                "will be : edit /CS1010 /MC /4\n\n " +
+
+                "fieldToEdit includes:\n "+
+                "1. modular credits will be /MC\n "+
+                "2. MODULE_TYPE will be /TYPE\n " +
+                "3. Year will be /YEAR\n "+
+                "4. Semester will be /SEMESTER\n\n " +
+
+                "-----------------------------------------------------\n");
+    }
     public static void printManPageFind() {
-        System.out.println("\n\n" +
-                "-----------------------------------------------------\n"+
+        System.out.println("\n\n" + "-----------------------------------------------------\n" +
 
-                "Find module: find /(Module Code)\n " +
-                "Find which year and semester I plan to take the module.\n " +
-                "Example: find /CS2113T\n\n "
-                + "-----------------------------------------------------\n");
+                "Find module: find /MODULE_CODE or MODULE_TYPE /keyword\n " +
+                "Find which year and semester I plan to take the module.\n\n " +
+                "Example: In a list with CS2113T and CS2101 as both core modules.\n "+
+                "1.  find /name /CS2113 will show the CS2113T module only\n "+
+                "2.  find /type /CORE  will show both CS2113T and CS2101 modules\n\n " +
+
+                "-----------------------------------------------------\n");
     }
 
     public static void printManPageDelete() {
@@ -83,6 +122,38 @@ public class Manpage {
                 "Shows a list of all modules in the module planner.\n " +
                 "Example: delete /CS2113T\n\n " + "-----------------------------------------------------\n" );
     }
+
+    public static void printManPageCalculator() {
+        System.out.println("\n\n" + "-----------------------------------------------------\n" +
+
+                "Grade calculator: calculatecap \n " +
+                "Calculates your cap\n\n " +
+
+                "-----------------------------------------------------\n");
+    }
+
+    public static void printManPageCalculatorInput() {
+        System.out.println("\n\n" +
+                "-----------------------------------------------------\n"+
+
+                "Input/Update Grades: grade /MODULE_CODE /GRADE\n " +
+                "Updates your cap\n "+
+                "Example: grade /CS2101 /A+\n "+
+                "Grades: \n " +
+                        "A+ [5.0]\n " +
+                        "A [5.0]\n " +
+                        "A- [4.5]\n " +
+                        "B+ [4.0]\n " +
+                        "B [3.5]\n " +
+                        "B- [3.0]\n " +
+                        "C+ [2.5]\n " +
+                        "C [2.0]\n " +
+                        "D+ [1.5]\n " +
+                        "D [1.0]\n " +
+                        "F [0]\n\n " +
+                "-----------------------------------------------------\n");
+    }
+
 
     public static void printManPageExit() {
         System.out.println("\n\n" +
