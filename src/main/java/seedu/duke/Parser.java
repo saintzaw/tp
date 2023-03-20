@@ -265,16 +265,16 @@ public class Parser {
         case "MC":
             listOfModules.editModularCredits(moduleCode, update);
             break;
-        case "type":
+        case "TYPE":
             String modularCredits = listOfModules.getModularCredits(moduleCode);
             String year = listOfModules.getYear(moduleCode);
             String semester = listOfModules.getSemester(moduleCode);
             listOfModules.editModuleType(moduleCode, modularCredits, update, year, semester);
             break;
-        case "year":
+        case "YEAR":
             listOfModules.editYear(moduleCode, update);
             break;
-        case "semester":
+        case "SEMESTER":
             listOfModules.editSemester(moduleCode, update);
             break;
         default:
