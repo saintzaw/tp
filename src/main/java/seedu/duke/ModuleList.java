@@ -6,10 +6,11 @@ import static seedu.duke.Duke.LOGGER;
 
 public class ModuleList {
     private static final int MODULE_TYPE_INDEX = 0;
-    private static final int MODULE_CODE_INDEX = 1;
-    private static final int MODULAR_CREDITS_INDEX = 2;
-    private static final int MODULE_YEAR_INDEX = 3;
-    private static final int MODULE_SEMESTER_INDEX = 4;
+    private static final int MODULE_GRADE_INDEX = 1;
+    private static final int MODULE_CODE_INDEX = 2;
+    private static final int MODULAR_CREDITS_INDEX = 3;
+    private static final int MODULE_YEAR_INDEX = 4;
+    private static final int MODULE_SEMESTER_INDEX = 5;
 
     private ArrayList<Module> listOfModules;
 
@@ -260,6 +261,7 @@ public class ModuleList {
     public void addExistingModule(String line) {
         String[] moduleData = line.split("\\|");
 
+        String moduleGrade = moduleData[MODULE_GRADE_INDEX];
         String moduleCode = moduleData[MODULE_CODE_INDEX];
         String modularCredits = moduleData[MODULAR_CREDITS_INDEX];
         String moduleYear = moduleData[MODULE_YEAR_INDEX];
@@ -268,35 +270,119 @@ public class ModuleList {
         switch (moduleData[MODULE_TYPE_INDEX]) {
         case "C":
             Core coreModule = new Core(moduleCode, modularCredits, moduleYear, moduleSemester);
+            coreModule.setGrade(moduleGrade);
             listOfModules.add(coreModule);
             break;
         case "GE":
             GeneralElective generalElectiveModule = new GeneralElective(moduleCode,
                     modularCredits, moduleYear, moduleSemester);
+            generalElectiveModule.setGrade(moduleGrade);
             listOfModules.add(generalElectiveModule);
             break;
         case "UE":
             UnrestrictedElective unrestrictedElectiveModule =
                     new UnrestrictedElective(moduleCode, modularCredits, moduleYear, moduleSemester);
+            unrestrictedElectiveModule.setGrade(moduleGrade);
             listOfModules.add(unrestrictedElectiveModule);
             break;
         case "I":
             Internship internshipModule = new Internship(moduleCode, modularCredits, moduleYear, moduleSemester);
+            internshipModule.setGrade(moduleGrade);
             listOfModules.add(internshipModule);
             break;
         default:
             break;
         }
+
     }
 
-    public void setModuleGrade(String moduleCode, String grade) {
+    public void updateModuleGrade(String moduleCode, String moduleGrade) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                module.setGrade(grade);
-                Print.printUpdatedModuleGrade(module, grade);
+                module.setGrade(moduleGrade);
+                Print.printUpdatedModuleGrade(module);
                 return;
             }
         }
         Print.printInvalidModule(moduleCode);
+    }
+
+    public void calculateCAP () {
+        double calculatedCAP;
+        double sumOfWeightage = 0;
+        int totalModularCredits = 0;
+        for (Module module : listOfModules) {
+            if(shouldCountModuleGrade(module.getGrade())) {
+                sumOfWeightage += getGradeValue(module.getGrade()) * Integer.parseInt(module.getModularCredits());
+                totalModularCredits += Integer.parseInt(module.getModularCredits());
+            }
+        }
+        calculatedCAP = sumOfWeightage/(double)totalModularCredits;
+        double roundedOffCAP = Math.round(calculatedCAP*100.0)/100.0;
+        Print.printCalculatedCAP(roundedOffCAP);
+    }
+
+    public boolean shouldCountModuleGrade(String moduleGrade) {
+        boolean shouldCount;
+        switch(moduleGrade) {
+        case "A+":
+        case "A":
+        case "A-":
+        case "B+":
+        case "B":
+        case "B-":
+        case "C+":
+        case "C":
+        case "D+":
+        case "D":
+        case "F":
+            shouldCount = true;
+            break;
+        default:
+            shouldCount = false;
+            break;
+        }
+        return shouldCount;
+    }
+
+    public double getGradeValue(String moduleGrade) {
+        double gradeValue;
+        switch(moduleGrade) {
+        case "A+":
+        case "A":
+            gradeValue = 5.0;
+            break;
+        case "A-":
+            gradeValue = 4.5;
+            break;
+        case "B+":
+            gradeValue = 4.0;
+            break;
+        case "B":
+            gradeValue = 3.5;
+            break;
+        case "B-":
+            gradeValue = 3.0;
+            break;
+        case "C+":
+            gradeValue = 2.5;
+            break;
+        case "C":
+            gradeValue = 2.0;
+            break;
+        case "D+":
+            gradeValue = 1.5;
+            break;
+        case "D":
+            gradeValue = 1.0;
+            break;
+        case "F":
+            gradeValue = 0.0;
+            break;
+        default:
+            gradeValue = 0;
+            break;
+        }
+        return gradeValue;
     }
 }

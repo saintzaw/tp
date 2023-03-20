@@ -121,7 +121,7 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
-    public static void printUpdatedModuleGrade(Module updatedModule, String moduleGrade) {
+    public static void printUpdatedModuleGrade(Module updatedModule) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Got it. I've updated the grade for this module:");
         System.out.println("       " + updatedModule);
@@ -131,6 +131,13 @@ public class Print {
     public static void printInvalidModule(String moduleCode) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Unable to update the grade for " + moduleCode + " as it's not in your list!");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printCalculatedCAP(double calculatedCAP) {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     I have calculated your CAP across your graded modules!");
+        System.out.println("     Your CAP is currently: " + calculatedCAP + " :)");
         System.out.println("    ____________________________________________________________");
     }
 

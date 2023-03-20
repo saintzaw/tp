@@ -133,10 +133,21 @@ public class Parser {
             assert userCommands.length == 3;
             try {
                 checkGradeInput(userCommands[2].trim());
-                moduleList.setModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+                moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+                Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
+            break;
+        case "CALCULATECAP":
+            try {
+                checkInputLengthEqualsOne(userCommands);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+                return;
+            }
+            assert userCommands.length == 1;
+            moduleList.calculateCAP();
             break;
         case "BYE":
             try {
@@ -319,6 +330,7 @@ public class Parser {
         case "D":
         case "F":
         case "S":
+        case "U":
         case "CS":
         case "CU":
             break;
