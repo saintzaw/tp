@@ -121,4 +121,17 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    public static void printUpdatedModuleGrade(Module updatedModule, String moduleGrade) {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     Got it. I've updated the grade for this module:");
+        System.out.println("       " + updatedModule);
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printInvalidModule(String moduleCode) {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     Unable to update the grade for " + moduleCode + " as it's not in your list!");
+        System.out.println("    ____________________________________________________________");
+    }
+
 }

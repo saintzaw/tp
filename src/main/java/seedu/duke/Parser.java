@@ -123,6 +123,21 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             break;
+        case "GRADE":
+            try {
+                checkInputLengthEqualsThree(userCommands);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+                return;
+            }
+            assert userCommands.length == 3;
+            try {
+                checkGradeInput(userCommands[2].trim());
+                moduleList.setModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+            }
+            break;
         case "BYE":
             try {
                 checkInputLengthEqualsOne(userCommands);
@@ -180,6 +195,14 @@ public class Parser {
         if (userCommands.length > 4) {
             throw new DukeException("Too many fields");
         } else if (userCommands.length < 4){
+            throw new DukeException("Missing fields");
+        }
+    }
+
+    public void checkInputLengthEqualsThree(String[] userCommands) throws DukeException {
+        if (userCommands.length > 3) {
+            throw new DukeException("Too many fields");
+        } else if (userCommands.length < 3){
             throw new DukeException("Missing fields");
         }
     }
@@ -279,6 +302,28 @@ public class Parser {
             break;
         default:
             throw new DukeException("Make sure the field to edit is MC, type, year or semester");
+        }
+    }
+
+    private void checkGradeInput (String inputGrade) throws DukeException {
+        switch (inputGrade) {
+        case "A+":
+        case "A":
+        case "A-":
+        case "B+":
+        case "B":
+        case "B-":
+        case "C+":
+        case "C":
+        case "D+":
+        case "D":
+        case "F":
+        case "S":
+        case "CS":
+        case "CU":
+            break;
+        default:
+            throw new DukeException("Please input a valid grade!");
         }
     }
 

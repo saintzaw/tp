@@ -10,13 +10,14 @@ public class Module {
     public Module(String moduleCode, String modularCredits) {
         this.moduleCode = moduleCode;
         this.modularCredits = modularCredits;
+        this.grade = " ";
     }
     public Module (String moduleCode, String modularCredits, String year, String semester) {
         this.moduleCode = moduleCode;
         this.modularCredits = modularCredits;
         this.year = year;
         this.semester = semester;
-        this.grade = "";
+        this.grade = " ";
     }
 
     public String getModuleCode() {

@@ -288,4 +288,15 @@ public class ModuleList {
             break;
         }
     }
+
+    public void setModuleGrade(String moduleCode, String grade) {
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                module.setGrade(grade);
+                Print.printUpdatedModuleGrade(module, grade);
+                return;
+            }
+        }
+        Print.printInvalidModule(moduleCode);
+    }
 }
