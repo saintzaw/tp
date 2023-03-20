@@ -29,7 +29,7 @@ public class PrintTest {
         moduleList.addModule("CS2113T", "4", "CORE");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.findModule("CS2113T");
+            moduleList.findModuleByName("CS2113T");
         } catch (DukeException e) {
             return;
         }
@@ -48,13 +48,13 @@ public class PrintTest {
         moduleList.addModule("CS2113T", "4", "CORE");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.findModule("GEN");
+            moduleList.findModuleByType("GE");
         } catch (DukeException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator()
-                + "     There are no modules that match the keyword: GEN in your list" + System.lineSeparator()
+                + "     There are no modules that match the keyword: GE in your list" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
