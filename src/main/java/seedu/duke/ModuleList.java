@@ -66,12 +66,12 @@ public class ModuleList {
         LOGGER.log(Level.INFO, "Finished addModule process");
     }
 
-    public void findModule(String keyword) throws DukeException {
+    public void findModuleByName(String keyword) throws DukeException {
         if (listOfModules.size() == 0) {
             throw new DukeException("There are currently no modules in your list");
         }
         assert listOfModules.size() > 0 : "no items in list";
-        LOGGER.log(Level.INFO, "Starting findModule process");
+        LOGGER.log(Level.INFO, "Starting findModuleByName process");
         boolean isFound = false;
         ArrayList<Module> foundModules = new ArrayList<>();
         for (Module module : listOfModules) {
@@ -81,8 +81,62 @@ public class ModuleList {
             }
         }
         if (isFound) {
-            Print.printFoundModule(foundModules);
             LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
+            Print.printFoundModule(foundModules);
+        } else {
+            Print.printNoModuleFound(keyword);
+            LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
+        }
+    }
+
+    public void findModuleByType(String keyword) throws DukeException {
+        if (listOfModules.size() == 0) {
+            throw new DukeException("There are currently no modules in your list");
+        }
+        assert listOfModules.size() > 0 : "no items in list";
+        LOGGER.log(Level.INFO, "Starting findModuleByType process");
+        boolean isFound = false;
+        ArrayList<Module> foundModules = new ArrayList<>();
+        switch (keyword) {
+        case "CORE":
+            for (Module module : listOfModules) {
+                if (module instanceof Core) {
+                    isFound = true;
+                    foundModules.add(module);
+                }
+            }
+            break;
+        case "GE":
+            for (Module module : listOfModules) {
+                if (module instanceof GeneralElective) {
+                    isFound = true;
+                    foundModules.add(module);
+                }
+            }
+            break;
+        case "UE":
+            for (Module module : listOfModules) {
+                if (module instanceof UnrestrictedElective) {
+                    isFound = true;
+                    foundModules.add(module);
+                }
+            }
+            break;
+        case "Internship":
+            for (Module module : listOfModules) {
+                if (module instanceof Internship) {
+                    isFound = true;
+                    foundModules.add(module);
+                }
+            }
+            break;
+        default:
+            throw new DukeException("Make sure your types are CORE,GE,UE or Internship");
+        }
+
+        if (isFound) {
+            LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
+            Print.printFoundModule(foundModules);
         } else {
             Print.printNoModuleFound(keyword);
             LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");

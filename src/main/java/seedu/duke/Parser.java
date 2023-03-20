@@ -48,7 +48,8 @@ public class Parser {
                 checkManPageInput(userInput);
             } else {
                 try {
-                    checkInputLengthEqualsOne(userCommands);
+                    int inputLength = 1;
+                    checkInputLength(inputLength, userCommands);
                 } catch (DukeException e) {
                     Print.printErrorMessage(e);
                     LOGGER.log(Level.WARNING, "User Input is invalid");
@@ -72,21 +73,33 @@ public class Parser {
             break;
         case "FIND":
             try {
-                checkInputLengthEqualsTwo(userCommands);
+                int inputLength = 3;
+                checkInputLength(inputLength, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
                 return;
             }
-            assert userCommands.length == 2;
-            try {
-                moduleList.findModule(userCommands[1].trim());
-            } catch (DukeException e) {
-                Print.printErrorMessage(e);
+            assert userCommands.length == 3;
+            if (userCommands[1].trim().equals("NAME")) {
+                try {
+                    moduleList.findModuleByName(userCommands[2].trim());
+                } catch (DukeException e) {
+                    Print.printErrorMessage(e);
+                }
+            } else if (userCommands[1].trim().equals("TYPE")) {
+                try {
+                    moduleList.findModuleByType(userCommands[2].trim());
+                } catch (DukeException e) {
+                    Print.printErrorMessage(e);
+                }
+            } else {
+                throw new DukeException("Please specify type of search with /Name or /Type");
             }
             break;
         case "DELETE":
             try {
-                checkInputLengthEqualsTwo(userCommands);
+                int inputLength = 2;
+                checkInputLength(inputLength, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
                 return;
@@ -101,7 +114,8 @@ public class Parser {
             break;
         case "LIST ALL":
             try {
-                checkInputLengthEqualsOne(userCommands);
+                int inputLength = 1;
+                checkInputLength(inputLength, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -110,7 +124,8 @@ public class Parser {
             break;
         case "EDIT":
             try {
-                checkInputLengthEqualsFour(userCommands);
+                int inputLength = 4;
+                checkInputLength(inputLength, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
                 return;
@@ -125,7 +140,8 @@ public class Parser {
             break;
         case "GRADE":
             try {
-                checkInputLengthEqualsThree(userCommands);
+                int inputLength = 3;
+                checkInputLength(inputLength, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
                 return;
@@ -141,7 +157,8 @@ public class Parser {
             break;
         case "CALCULATECAP":
             try {
-                checkInputLengthEqualsOne(userCommands);
+                int inputLength = 1;
+                checkInputLength(inputLength, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
                 return;
@@ -151,7 +168,8 @@ public class Parser {
             break;
         case "BYE":
             try {
-                checkInputLengthEqualsOne(userCommands);
+                int inputLength = 1;
+                checkInputLength(inputLength, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -194,33 +212,11 @@ public class Parser {
          */
     }
 
-    public void checkInputLengthEqualsTwo(String[] userCommands) throws DukeException {
-        if (userCommands.length > 2) {
+    public void checkInputLength(int inputLength, String[] userCommands) throws DukeException {
+        if (userCommands.length > inputLength) {
             throw new DukeException("Too many fields");
-        } else if (userCommands.length < 2){
+        } else if (userCommands.length < inputLength) {
             throw new DukeException("Missing fields");
-        }
-    }
-
-    public void checkInputLengthEqualsFour(String[] userCommands) throws DukeException {
-        if (userCommands.length > 4) {
-            throw new DukeException("Too many fields");
-        } else if (userCommands.length < 4){
-            throw new DukeException("Missing fields");
-        }
-    }
-
-    public void checkInputLengthEqualsThree(String[] userCommands) throws DukeException {
-        if (userCommands.length > 3) {
-            throw new DukeException("Too many fields");
-        } else if (userCommands.length < 3){
-            throw new DukeException("Missing fields");
-        }
-    }
-
-    public void checkInputLengthEqualsOne(String[] userCommands) throws DukeException {
-        if (userCommands.length != 1) {
-            throw new DukeException("Too many fields");
         }
     }
     private void checkAddInputNumberOfFields(String[] userCommands) throws DukeException {
