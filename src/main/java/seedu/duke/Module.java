@@ -5,6 +5,7 @@ public class Module {
     private String modularCredits;
     private String year;
     private String semester;
+    private String grade;
 
     public Module(String moduleCode, String modularCredits) {
         this.moduleCode = moduleCode;
@@ -15,6 +16,7 @@ public class Module {
         this.modularCredits = modularCredits;
         this.year = year;
         this.semester = semester;
+        this.grade = "";
     }
 
     public String getModuleCode() {
@@ -49,8 +51,16 @@ public class Module {
         this.year = newYear;
     }
 
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
     @Override
     public String toString() {
-        return this.moduleCode + " " + this.modularCredits + " MCs";
+        return "[\"" + this.grade + "\"]" + this.moduleCode + " " + this.modularCredits + " MCs";
     }
 }
