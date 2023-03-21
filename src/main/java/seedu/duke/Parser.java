@@ -197,6 +197,9 @@ public class Parser {
         //check for correct number of fields
         checkAddInputNumberOfFields(userCommands);
 
+        //check for non-empty moduleCode field
+        checkAddInputCorrectModuleCode(userCommands);
+
         //check for correct field in MC
         checkAddInputCorrectModularCreditField(userCommands);
 
@@ -205,20 +208,17 @@ public class Parser {
 
         //check for duplicate names
         String[] moduleList = userCommands[1].trim().split(" ");
-        for (String moduleCode: moduleList) {
-            checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
-        }
 
-        assert userCommands.length == 4; //change to 6 after year and sem added.
-        for (String moduleCode: moduleList) {
-            listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(), userCommands[3].trim());
-        }
-        /*
         //check for correct year and semester
         checkAddInputYearAndSemester(userCommands);
 
-        assert userCommands.length = 6:
-         */
+        assert userCommands.length == 6 : "Expected 6 fields"; //change to 6 after year and sem added.
+
+        for (String moduleCode: moduleList) {
+            checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
+            listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(), userCommands[3].trim(),
+                    userCommands[4].trim(), userCommands[5].trim());
+        }
     }
 
     public void checkInputLength(int inputLength, String[] userCommands) throws DukeException {
@@ -228,11 +228,16 @@ public class Parser {
             throw new DukeException("Missing fields");
         }
     }
+
+    private void checkAddInputCorrectModuleCode(String[] userCommands) throws DukeException {
+        if (userCommands[1].trim().equals("")) {
+            throw new DukeException("Module Code cannot be empty");
+        }
+    }
     private void checkAddInputNumberOfFields(String[] userCommands) throws DukeException {
-        if (userCommands.length < 4) {
-            // change to 6 after year and sem changes
+        if (userCommands.length < 6) {
             throw new DukeException("Missing fields");
-        } else if (userCommands.length > 4) {
+        } else if (userCommands.length > 6) {
             throw new DukeException("Too many fields");
         }
     }
