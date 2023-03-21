@@ -5,8 +5,8 @@ box findModuleByName
 participant ":Duke" as ChatBot
 participant ":Parser" as Parser
 participant ":ModuleList" as ModuleList
+participant ":Module" as Module
 participant ":Print" as Print
-
 end box
 
 [-> ChatBot : execute("run")
@@ -15,21 +15,32 @@ activate ChatBot
 create Parser
 ChatBot -> Parser : execute("parser()")
 activate Parser
-ChatBot -> Parser: CheckUserInput("find /name /CS2113T")
 
-
-Parser -> ModuleList : findModuleByName("CS2113T")
+ChatBot -> Parser: CheckUserInput("find /name /CS2")
+Parser -> ModuleList : findModuleByName("CS2")
 activate ModuleList
-return
 
-ModuleList -> Print : printFoundModule("foundModules")
-activate Print
+loop findModule
+    ModuleList -> Module :getModuleCode()
+    activate Module
+    Module -> ModuleList : contains("CS2")
+    ModuleList -> ModuleList : Add foundModule into List
+    deactivate Module
+    activate Print
+end
 
-Print -> Print : Message printed to stdout
+alt moduleIsFound
+    ModuleList -> Print : printFoundModule()
+
+    Print -> Print : Message printed to stdout
+else
+    ModuleList -> Print : PrintNoModuleFound()
+    Print -> Print : Message printed to stdout
+    deactivate Print
+end
 
 return
 return
 return
-
 
 @enduml
