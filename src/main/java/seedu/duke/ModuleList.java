@@ -176,8 +176,6 @@ public class ModuleList {
         LOGGER.log(Level.INFO, "Finished listModules process");
     }
 
-
-
     public void editModularCredits(String moduleCode, String newModularCredits) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
@@ -214,8 +212,9 @@ public class ModuleList {
             Print.printErrorMessage(e);
         }
         //add module with new moduleType
-        addModule(moduleCode, modularCredits, moduleType, year, semester);
+        Module moduleEdited = addModule(moduleCode, modularCredits, moduleType, year, semester);
         updateModuleGrade(moduleCode, grade);
+        Print.printEditedModule(moduleEdited, listOfModules.size());
     }
 
     /**
