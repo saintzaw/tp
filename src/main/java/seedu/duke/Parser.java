@@ -269,7 +269,6 @@ public class Parser {
             if (module.getModuleCode().equals(moduleCode)) {
                 throw new DukeException(moduleCode + " is already in the list");
             }
-            return;
         }
     }
 
