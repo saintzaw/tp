@@ -263,34 +263,34 @@ public class ModuleList {
         return modularCredits;
     }
 
-    public String getYear(String moduleCode) {
-        String year = "";
+    public String getModuleYear(String moduleCode) {
+        String moduleYear = "";
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                year = module.getYear();
+                moduleYear = module.getYear();
             }
         }
-        return year;
+        return moduleYear;
     }
 
-    public String getSemester(String moduleCode) {
-        String semester = "";
+    public String getModuleSemester(String moduleCode) {
+        String moduleSemester = "";
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                semester = module.getSemester();
+                moduleSemester = module.getSemester();
             }
         }
-        return semester;
+        return moduleSemester;
     }
 
-    public String getGrade(String moduleCode) {
-        String grade = "";
+    public String getModuleGrade(String moduleCode) {
+        String moduleGrade = "";
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                grade = module.getGrade();
+                moduleGrade = module.getGrade();
             }
         }
-        return grade;
+        return moduleGrade;
     }
 
     /**

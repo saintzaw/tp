@@ -11,11 +11,11 @@ import java.util.logging.Level;
 import static seedu.duke.Duke.LOGGER;
 
 public class Storage {
-    public static final String filePath = "data/modules.txt";
+    public static final String FILE_PATH = "data/modules.txt";
 
     public static ArrayList<String> getSavedModules() throws FileNotFoundException {
         File dir = new File("data");
-        File f = new File(filePath);
+        File f = new File(FILE_PATH);
 
         // Creates directory for file if it does not exist
         if (!dir.exists()){
@@ -51,7 +51,7 @@ public class Storage {
     }
 
     private static void writeToFile(ArrayList<Module> savedModules) throws IOException {
-        FileWriter fw = new FileWriter(filePath);
+        FileWriter fw = new FileWriter(FILE_PATH);
         for (int i = 0; i < savedModules.size(); i++) {
             Module currModule = savedModules.get(i);
 

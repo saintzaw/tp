@@ -1,13 +1,12 @@
 package seedu.duke;
-/*
+
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-*/
-public class PrintTest {
-/*
 
+public class PrintTest {
+    /*
     @Test
     public void printAddedModuleTest() {
         ModuleList moduleList = new ModuleList();
@@ -79,22 +78,95 @@ public class PrintTest {
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
-
+*/
     @Test
     public void printModuleListTest() {
         ModuleList moduleList = new ModuleList();
-        moduleList.addModule("CS2113T", "4", "CORE");
+        moduleList.addModule("CS2113T", "4", "CORE", "2", "2");
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         moduleList.listModules();
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Here are the modules in your list:" + System.lineSeparator()
-                + "     1.[C][\" \"] CS2113T 4 MCs" + System.lineSeparator()
+                + "     1.[C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
 
+    @Test
+    public void editModuleTypeTest() {
+        ModuleList moduleList = new ModuleList();
+        moduleList.addModule("CS2113T", "4", "GE", "2", "2");
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        moduleList.editModuleType("CS2113T", "4", "CORE", "2", "2",
+                " ");
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Got it. I've edited the information for this module:"
+                + System.lineSeparator()
+                + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
+                + "     Now you have 1 modules in the list."
+                + System.lineSeparator()
+                + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void editModularCreditsTest() {
+        ModuleList moduleList = new ModuleList();
+        moduleList.addModule("CS2113T", "2", "CORE", "2", "2");
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        moduleList.editModularCredits("CS2113T", "4");
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Got it. I've edited the information for this module:"
+                + System.lineSeparator()
+                + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
+                + "     Now you have 1 modules in the list."
+                + System.lineSeparator()
+                + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void editModuleYearTest() {
+        ModuleList moduleList = new ModuleList();
+        moduleList.addModule("CS2113T", "4", "CORE", "3", "2");
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        moduleList.editYear("CS2113T", "2");
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Got it. I've edited the information for this module:"
+                + System.lineSeparator()
+                + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
+                + "     Now you have 1 modules in the list."
+                + System.lineSeparator()
+                + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void editModuleSemesterTest() {
+        ModuleList moduleList = new ModuleList();
+        moduleList.addModule("CS2113T", "4", "CORE", "2", "1");
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        moduleList.editSemester("CS2113T", "2");
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Got it. I've edited the information for this module:"
+                + System.lineSeparator()
+                + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
+                + "     Now you have 1 modules in the list."
+                + System.lineSeparator()
+                + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+    /*
     @Test
     public void printManPageTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();

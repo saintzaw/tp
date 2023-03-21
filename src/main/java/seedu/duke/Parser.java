@@ -300,20 +300,21 @@ public class Parser {
         //format: edit /moduleCode /field /update
         String moduleCode = userCommands[1].trim();
         //the field that the user wants to update
-        String field = userCommands[2].trim();
+        String moduleField = userCommands[2].trim();
         //the new information to replace in the indicated field
         String update = userCommands[3].trim();
 
-        switch (field) {
+        switch (moduleField) {
         case "MC":
             listOfModules.editModularCredits(moduleCode, update);
             break;
         case "TYPE":
             String modularCredits = listOfModules.getModularCredits(moduleCode);
-            String year = listOfModules.getYear(moduleCode);
-            String semester = listOfModules.getSemester(moduleCode);
-            String grade = listOfModules.getGrade(moduleCode);
-            listOfModules.editModuleType(moduleCode, modularCredits, update, year, semester, grade);
+            String moduleYear = listOfModules.getModuleYear(moduleCode);
+            String moduleSemester = listOfModules.getModuleSemester(moduleCode);
+            String moduleGrade = listOfModules.getModuleGrade(moduleCode);
+            listOfModules.editModuleType(moduleCode, modularCredits, update, moduleYear,
+                    moduleSemester, moduleGrade);
             break;
         case "YEAR":
             listOfModules.editYear(moduleCode, update);
