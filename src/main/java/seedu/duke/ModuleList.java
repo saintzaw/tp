@@ -40,29 +40,29 @@ public class ModuleList {
         int oldSizeOfList = listOfModules.size();
         LOGGER.log(Level.INFO, "Starting addModule process");
         switch (moduleType.toUpperCase()) {
-            case "CORE":
-                Core newCore = new Core(moduleCode, modularCredits, year, semester);
-                listOfModules.add(newCore);
-                Print.printAddedModule(newCore, listOfModules.size());
-                break;
-            case "GE":
-                GeneralElective newGeneralElective = new GeneralElective(moduleCode, modularCredits, year, semester);
-                listOfModules.add(newGeneralElective);
-                Print.printAddedModule(newGeneralElective, listOfModules.size());
-                break;
-            case "UE":
-                UnrestrictedElective newUnrestrictedElective =
-                        new UnrestrictedElective(moduleCode, modularCredits, year, semester);
-                listOfModules.add(newUnrestrictedElective);
-                Print.printAddedModule(newUnrestrictedElective, listOfModules.size());
-                break;
-            case "INTERNSHIP":
-                Internship newinternship = new Internship(moduleCode, modularCredits, year, semester);
-                listOfModules.add(newinternship);
-                Print.printAddedModule(newinternship, listOfModules.size());
-                break;
-            default:
-                break;
+        case "CORE":
+            Core newCore = new Core(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newCore);
+            Print.printAddedModule(newCore, listOfModules.size());
+            break;
+        case "GE":
+            GeneralElective newGeneralElective = new GeneralElective(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newGeneralElective);
+            Print.printAddedModule(newGeneralElective, listOfModules.size());
+            break;
+        case "UE":
+            UnrestrictedElective newUnrestrictedElective =
+                    new UnrestrictedElective(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newUnrestrictedElective);
+            Print.printAddedModule(newUnrestrictedElective, listOfModules.size());
+            break;
+        case "INTERNSHIP":
+            Internship newinternship = new Internship(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newinternship);
+            Print.printAddedModule(newinternship, listOfModules.size());
+            break;
+        default:
+            break;
         }
         assert listOfModules.size() == oldSizeOfList + 1 : "Module not added correctly";
         LOGGER.log(Level.INFO, "Finished addModule process");
