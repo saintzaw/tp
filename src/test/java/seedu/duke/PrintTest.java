@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrintTest {
 /*
-
     @Test
     public void printAddedModuleTest() {
         ModuleList moduleList = new ModuleList();
@@ -104,7 +103,8 @@ public class PrintTest {
         moduleList.editModuleType("CS2113T", "4", "CORE", "2", "2",
                 " ");
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Got it. I've edited the information for this module:" + System.lineSeparator()
+                + System.lineSeparator() + "     Got it. I've edited the information for this module:"
+                + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
                 + "     Now you have 1 modules in the list."
                 + System.lineSeparator()
@@ -121,7 +121,8 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         moduleList.editModularCredits("CS2113T", "4");
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Got it. I've edited the information for this module:" + System.lineSeparator()
+                + System.lineSeparator() + "     Got it. I've edited the information for this module:"
+                + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
                 + "     Now you have 1 modules in the list."
                 + System.lineSeparator()
@@ -138,7 +139,8 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         moduleList.editYear("CS2113T", "2");
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Got it. I've edited the information for this module:" + System.lineSeparator()
+                + System.lineSeparator() + "     Got it. I've edited the information for this module:"
+                + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
                 + "     Now you have 1 modules in the list."
                 + System.lineSeparator()
@@ -155,7 +157,8 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         moduleList.editSemester("CS2113T", "2");
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Got it. I've edited the information for this module:" + System.lineSeparator()
+                + System.lineSeparator() + "     Got it. I've edited the information for this module:"
+                + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
                 + "     Now you have 1 modules in the list."
                 + System.lineSeparator()
@@ -163,7 +166,7 @@ public class PrintTest {
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
-/*
+    /*
     @Test
     public void printManPageTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
