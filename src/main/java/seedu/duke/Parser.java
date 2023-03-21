@@ -165,7 +165,8 @@ public class Parser {
             assert userCommands.length == 3;
             try {
                 checkGradeInput(userCommands[2].trim());
-                Module moduleGradeUpdated = moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+                Module moduleGradeUpdated =
+                        moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
                 if (moduleGradeUpdated != null) {
                     Print.printUpdatedModuleGrade(moduleGradeUpdated);
                 } else {
@@ -228,8 +229,8 @@ public class Parser {
 
         for (String moduleCode: moduleList) {
             checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
-            Module addedModule = listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(), userCommands[3].trim(),
-                    userCommands[4].trim(), userCommands[5].trim());
+            Module addedModule = listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(),
+                    userCommands[3].trim(), userCommands[4].trim(), userCommands[5].trim());
             Print.printAddedModule(addedModule, listOfModules.getModuleListSize());
         }
     }
