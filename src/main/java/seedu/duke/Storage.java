@@ -11,10 +11,11 @@ import java.util.logging.Level;
 import static seedu.duke.Duke.LOGGER;
 
 public class Storage {
-    public static final String FILE_PATH = "data/modules.txt";
+    private static final String FILE_PATH = "data/modules.txt";
+    private static final String DIRECTORY = "data";
 
     public static ArrayList<String> getSavedModules() throws FileNotFoundException {
-        File dir = new File("data");
+        File dir = new File(DIRECTORY);
         File f = new File(FILE_PATH);
 
         // Creates directory for file if it does not exist
