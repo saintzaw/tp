@@ -215,13 +215,7 @@ public class ModuleList {
         }
         //add module with new moduleType
         addModule(moduleCode, modularCredits, moduleType, year, semester);
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                module.setGrade(grade);
-                Print.printEditedModule(module, listOfModules.size());
-                break;
-            }
-        }
+        updateModuleGrade(moduleCode, grade);
     }
 
 
@@ -267,15 +261,14 @@ public class ModuleList {
 
     }
 
-    public void updateModuleGrade(String moduleCode, String moduleGrade) {
+    public Module updateModuleGrade(String moduleCode, String moduleGrade) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
                 module.setGrade(moduleGrade);
-                Print.printUpdatedModuleGrade(module);
-                return;
+                return module;
             }
         }
-        Print.printInvalidModule(moduleCode);
+        return null;
     }
 
     public void calculateCAP () {

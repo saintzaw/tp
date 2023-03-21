@@ -165,7 +165,12 @@ public class Parser {
             assert userCommands.length == 3;
             try {
                 checkGradeInput(userCommands[2].trim());
-                moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+                Module moduleGradeUpdated = moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+                if (moduleGradeUpdated != null) {
+                    Print.printUpdatedModuleGrade(moduleGradeUpdated);
+                } else {
+                    Print.printInvalidModule(userCommands[1].trim());
+                }
                 Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
