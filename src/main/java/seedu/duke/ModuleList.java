@@ -218,7 +218,6 @@ public class ModuleList {
         updateModuleGrade(moduleCode, grade);
     }
 
-
     /**
      * Based on the existing saved modules, add these modules to listOfModules
      * @param line A string representation of a module, containing all its relevant information
@@ -271,7 +270,7 @@ public class ModuleList {
         return null;
     }
 
-    public void calculateCAP () {
+    public void calculateCAP() {
         double calculatedCAP;
         double sumOfWeightage = 0;
         int totalModularCredits = 0;
@@ -290,15 +289,25 @@ public class ModuleList {
         boolean shouldCount;
         switch(moduleGrade) {
         case "A+":
+            // Fallthrough
         case "A":
+            // Fallthrough
         case "A-":
+            // Fallthrough
         case "B+":
+            // Fallthrough
         case "B":
+            // Fallthrough
         case "B-":
+            // Fallthrough
         case "C+":
+            // Fallthrough
         case "C":
+            // Fallthrough
         case "D+":
+            // Fallthrough
         case "D":
+            // Fallthrough
         case "F":
             shouldCount = true;
             break;
@@ -313,6 +322,7 @@ public class ModuleList {
         double gradeValue;
         switch(moduleGrade) {
         case "A+":
+            // Fallthrough
         case "A":
             gradeValue = 5.0;
             break;
