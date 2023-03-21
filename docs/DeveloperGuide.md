@@ -99,7 +99,8 @@ The sequence by which the Parser class handles the `add` command is as follows:
 2) The method then checks the type of module that is being added, then calls the relevant 
    constructor (`Core`, `UE`, `GE`, `Internship`).
 3) The `addModule` method returns the module that is added to the `Parser` class.
-4) The `printAddedModule` method is called from the `Print` class to display the result to the user.
+4) The `getModuleListSize` method is called from `ModuleList` class.
+5) The `printAddedModule` method is called from the `Print` class to display the result to the user.
 
 The sequence of events above can be represented with the following sequence diagram:
 
