@@ -8,26 +8,37 @@
 
 {Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
 
-Anthea: Manpage 
+### Proposed Implementation : **Manpage**
+
 The Manpage is a class that is used to display parts of the manpage that is requested by the user.
 It has multiple methods for separate features.
 
-Manpage#printManPage() - Prints the Command Summary.
-Manpage#printManPageAdd() - Prints description of how to use the add feature.
-Manpage#printManPageList() - Prints description of how to use the list feature.
-Manpage#printManPageEdit() - Prints description of how to use the edit feature.
-Manpage#printManPageFind() - Prints description of how to use the find feature.
-Manpage#printManPageDelete() - Prints description of how to use the delete feature.
-Manpage#printManPageCalculator() - Prints description of how to use the grade calculator.
-Manpage#printManPageCalculatorInput() - Prints description of how to input grades.
-Manpage#printManPageExit() - Prints description of how to use the exit feature.
+`Manpage#printManPage()` - Prints the Command Summary.
 
-Alternative 1 : Prints the manual page individually as features. 
+`Manpage#printManPageAdd()` - Prints description of how to use the add feature.
+
+`Manpage#printManPageList()` - Prints description of how to use the list feature.
+
+`Manpage#printManPageEdit()` - Prints description of how to use the edit feature.
+
+`Manpage#printManPageFind()` - Prints description of how to use the find feature.
+
+`Manpage#printManPageDelete()` - Prints description of how to use the delete feature.
+
+`Manpage#printManPageCalculator()` - Prints description of how to use the grade calculator.
+
+`Manpage#printManPageCalculatorInput()` - Prints description of how to input grades.
+
+`Manpage#printManPageExit()` - Prints description of how to use the exit feature.
+
+### Design Considerations : **Manpage**
+
+**Alternative 1** : Prints the manual page individually as features. 
 Pros: Avoids wordy and long manual page when command is man, ability to have more description
 for specific features. Avoids long methods. 
 Cons: Extra step of typing another command to understand a feature well.
 
-Alternative 2: Combining all feature descriptions in a single manual page. 
+**Alternative 2**: Combining all feature descriptions in a single manual page. 
 Pros: Avoid extra step of typing another command to understand a feature well.
 Cons: Wordy and long manual page when command is man, user has to scroll through
 a long manual page to find what they need. Long method.
@@ -38,7 +49,7 @@ a long manual page to find what they need. Long method.
 ## Product scope
 ### Target user profile
 
-{Describe the target user profile}
+Our target user profile is Information Security students in NUS.
 
 ### Value proposition
 
