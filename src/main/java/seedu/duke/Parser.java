@@ -322,7 +322,6 @@ public class Parser {
             listOfModules.editModularCredits(moduleCode, update);
             break;
         case "TYPE":
-<<<<<<< HEAD
             ArrayList<Module> modules = listOfModules.getModuleList();
             for (Module module : modules) {
                 if (module.getModuleCode().equals(moduleCode)) {
@@ -334,14 +333,6 @@ public class Parser {
                     break;
                 }
             }
-=======
-            String modularCredits = listOfModules.getModularCredits(moduleCode);
-            String moduleYear = listOfModules.getModuleYear(moduleCode);
-            String moduleSemester = listOfModules.getModuleSemester(moduleCode);
-            String moduleGrade = listOfModules.getModuleGrade(moduleCode);
-            listOfModules.editModuleType(moduleCode, modularCredits, update, moduleYear,
-                    moduleSemester, moduleGrade);
->>>>>>> 1f01feb84f6d24fcd0eeab4983525330d392f7dd
             break;
         case "YEAR":
             listOfModules.editYear(moduleCode, update);
