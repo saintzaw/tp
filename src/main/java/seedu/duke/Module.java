@@ -40,15 +40,15 @@ public class Module {
         return "";
     }
 
-    public void editModularCredits(String newModularCredits) {
+    public void setModularCredits(String newModularCredits) {
         this.modularCredits = newModularCredits;
     }
 
-    public void editSemester(String newSemester) {
+    public void setSemester(String newSemester) {
         this.semester = newSemester;
     }
 
-    public void editYear(String newYear) {
+    public void setYear(String newYear) {
         this.year = newYear;
     }
 

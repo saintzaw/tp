@@ -115,11 +115,18 @@ public class Parser {
             }
             assert userCommands.length == 2;
             try {
-                moduleList.deleteModule(userCommands[1].trim());
+                Module deletedModule = moduleList.deleteModule(userCommands[1].trim());
+                if (deletedModule == null) { // When no module matches the given module code
+                    Print.printNoDeletedModuleFound(userCommands[1].trim());
+                } else { // When a matching module is found and successfully deleted
+                    Print.printDeletedModule(deletedModule, moduleList.getModuleListSize());
+
+                }
                 Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
+
             break;
         case "LIST ALL":
             try {
@@ -158,7 +165,13 @@ public class Parser {
             assert userCommands.length == 3;
             try {
                 checkGradeInput(userCommands[2].trim());
-                moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+                Module moduleGradeUpdated =
+                        moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+                if (moduleGradeUpdated != null) {
+                    Print.printUpdatedModuleGrade(moduleGradeUpdated);
+                } else {
+                    Print.printInvalidModule(userCommands[1].trim());
+                }
                 Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
@@ -216,8 +229,9 @@ public class Parser {
 
         for (String moduleCode: moduleList) {
             checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
-            listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(), userCommands[3].trim(),
-                    userCommands[4].trim(), userCommands[5].trim());
+            Module addedModule = listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(),
+                    userCommands[3].trim(), userCommands[4].trim(), userCommands[5].trim());
+            Print.printAddedModule(addedModule, listOfModules.getModuleListSize());
         }
     }
 
@@ -309,12 +323,17 @@ public class Parser {
             listOfModules.editModularCredits(moduleCode, update);
             break;
         case "TYPE":
-            String modularCredits = listOfModules.getModularCredits(moduleCode);
-            String moduleYear = listOfModules.getModuleYear(moduleCode);
-            String moduleSemester = listOfModules.getModuleSemester(moduleCode);
-            String moduleGrade = listOfModules.getModuleGrade(moduleCode);
-            listOfModules.editModuleType(moduleCode, modularCredits, update, moduleYear,
-                    moduleSemester, moduleGrade);
+            ArrayList<Module> modules = listOfModules.getModuleList();
+            for (Module module : modules) {
+                if (module.getModuleCode().equals(moduleCode)) {
+                    String modularCredits = module.getModularCredits();
+                    String year = module.getYear();
+                    String semester = module.getSemester();
+                    String grade = module.getGrade();
+                    listOfModules.editModuleType(moduleCode, modularCredits, update, year, semester, grade);
+                    break;
+                }
+            }
             break;
         case "YEAR":
             listOfModules.editYear(moduleCode, update);
