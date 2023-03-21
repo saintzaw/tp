@@ -309,11 +309,17 @@ public class Parser {
             listOfModules.editModularCredits(moduleCode, update);
             break;
         case "TYPE":
-            String modularCredits = listOfModules.getModularCredits(moduleCode);
-            String year = listOfModules.getYear(moduleCode);
-            String semester = listOfModules.getSemester(moduleCode);
-            String grade = listOfModules.getGrade(moduleCode);
-            listOfModules.editModuleType(moduleCode, modularCredits, update, year, semester, grade);
+            ArrayList<Module> modules = listOfModules.getModuleList();
+            for (Module module : modules) {
+                if (module.getModuleCode().equals(moduleCode)) {
+                    String modularCredits = module.getModularCredits();
+                    String year = module.getYear();
+                    String semester = module.getSemester();
+                    String grade = module.getGrade();
+                    listOfModules.editModuleType(moduleCode, modularCredits, update, year, semester, grade);
+                }
+                break;
+            }
             break;
         case "YEAR":
             listOfModules.editYear(moduleCode, update);

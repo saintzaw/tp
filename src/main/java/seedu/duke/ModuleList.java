@@ -188,7 +188,7 @@ public class ModuleList {
     public void editModularCredits(String moduleCode, String newModularCredits) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                module.editModularCredits(newModularCredits);
+                module.setModularCredits(newModularCredits);
                 Print.printEditedModule(module, listOfModules.size());
             }
         }
@@ -197,7 +197,7 @@ public class ModuleList {
     public void editYear(String moduleCode, String newYear) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                module.editYear(newYear);
+                module.setYear(newYear);
                 Print.printEditedModule(module, listOfModules.size());
             }
         }
@@ -206,7 +206,7 @@ public class ModuleList {
     public void editSemester(String moduleCode, String newSemester) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                module.editSemester(newSemester);
+                module.setSemester(newSemester);
                 Print.printEditedModule(module, listOfModules.size());
             }
         }
@@ -215,83 +215,22 @@ public class ModuleList {
     public void editModuleType(String moduleCode, String modularCredits,
                                String moduleType, String year, String semester, String grade) {
         //delete module with old moduleType
-        for (int i = 0; i < listOfModules.size(); i++) {
-            if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
-                listOfModules.remove(i);
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                listOfModules.remove(module);
                 break;
             }
         }
         //add module with new moduleType
-        switch (moduleType.toUpperCase()) {
-        case "CORE":
-            Core newCore = new Core(moduleCode, modularCredits, year, semester);
-            newCore.setGrade(grade);
-            listOfModules.add(newCore);
-            Print.printEditedModule(newCore, listOfModules.size());
-            break;
-        case "GE":
-            GeneralElective newGeneralElective = new GeneralElective(moduleCode, modularCredits, year, semester);
-            newGeneralElective.setGrade(grade);
-            listOfModules.add(newGeneralElective);
-            Print.printEditedModule(newGeneralElective, listOfModules.size());
-            break;
-        case "UE":
-            UnrestrictedElective newUnrestrictedElective =
-                    new UnrestrictedElective(moduleCode, modularCredits, year, semester);
-            newUnrestrictedElective.setGrade(grade);
-            listOfModules.add(newUnrestrictedElective);
-            Print.printEditedModule(newUnrestrictedElective, listOfModules.size());
-            break;
-        case "INTERNSHIP":
-            Internship newinternship = new Internship(moduleCode, modularCredits, year, semester);
-            newinternship.setGrade(grade);
-            listOfModules.add(newinternship);
-            Print.printEditedModule(newinternship, listOfModules.size());
-            break;
-        default:
-            break;
+        addModule(moduleCode, modularCredits, moduleType, year, semester);
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                module.setGrade(grade);
+                break;
+            }
         }
     }
 
-    public String getModularCredits(String moduleCode) {
-        String modularCredits = "";
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                modularCredits = module.getModularCredits();
-            }
-        }
-        return modularCredits;
-    }
-
-    public String getYear(String moduleCode) {
-        String year = "";
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                year = module.getYear();
-            }
-        }
-        return year;
-    }
-
-    public String getSemester(String moduleCode) {
-        String semester = "";
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                semester = module.getSemester();
-            }
-        }
-        return semester;
-    }
-
-    public String getGrade(String moduleCode) {
-        String grade = "";
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                grade = module.getGrade();
-            }
-        }
-        return grade;
-    }
 
     /**
      * Based on the existing saved modules, add these modules to listOfModules
