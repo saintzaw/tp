@@ -54,9 +54,9 @@ public class ModuleList {
             listOfModules.add(newUnrestrictedElective);
             return newUnrestrictedElective;
         case "INTERNSHIP":
-            Internship newinternship = new Internship(moduleCode, modularCredits, year, semester);
-            listOfModules.add(newinternship);
-            return newinternship;
+            Internship newInternship = new Internship(moduleCode, modularCredits, year, semester);
+            listOfModules.add(newInternship);
+            return newInternship;
         default:
             break;
         }

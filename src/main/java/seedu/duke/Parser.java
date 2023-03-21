@@ -210,6 +210,8 @@ public class Parser {
         //check for correct number of fields
         checkAddInputNumberOfFields(userCommands);
 
+        assert userCommands.length == 6 : "Expected 6 fields"; //change to 6 after year and sem added.
+
         //check for non-empty moduleCode field
         checkAddInputCorrectModuleCode(userCommands);
 
@@ -219,13 +221,11 @@ public class Parser {
         //check for correct field in type of module
         checkAddInputCorrectTypeOfModule(userCommands);
 
-        //check for duplicate names
-        String[] moduleList = userCommands[1].trim().split(" ");
-
         //check for correct year and semester
         checkAddInputYearAndSemester(userCommands);
 
-        assert userCommands.length == 6 : "Expected 6 fields"; //change to 6 after year and sem added.
+        //check for duplicate names and then add
+        String[] moduleList = userCommands[1].trim().split(" ");
 
         for (String moduleCode: moduleList) {
             checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
