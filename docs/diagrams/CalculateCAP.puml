@@ -1,0 +1,41 @@
+@startuml
+
+participant ":Parser" as Parser
+participant ":ModuleList" as ML
+participant ":Module" as Mod
+participant ":Print" as Print
+[->Parser : CheckUserInput\n(userInput:String, moduleList:ModuleList)
+activate Parser
+Parser->ML : calculateCAP()
+activate ML
+loop module
+    ML -> Mod : getGrade()
+    activate Mod
+    Mod --> ML : grade:String
+    deactivate Mod
+    ML -> ML : shouldCountModuleGrade(moduleGrade:String)
+    activate ML
+    ML-->ML : shouldCount:boolean
+    deactivate ML
+    alt shouldCount
+        ML -> ML : getGradeValue(String)
+        activate ML
+        ML -> Mod : getGrade()
+        activate Mod
+        Mod --> ML : grade:String
+        deactivate Mod
+        ML --> ML : value: double
+        deactivate ML
+    else else
+    end
+end
+    ML -> Print : printCalculatedCAP(calculatedCAP:double)
+    activate Print
+    Print --> ML
+    deactivate Print
+ML --> Parser
+deactivate ML
+Parser-->[
+deactivate Parser
+
+@enduml

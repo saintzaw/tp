@@ -308,11 +308,11 @@ public class Parser {
         //format: edit /moduleCode /field /update
         String moduleCode = userCommands[1].trim();
         //the field that the user wants to update
-        String field = userCommands[2].trim();
+        String moduleField = userCommands[2].trim();
         //the new information to replace in the indicated field
         String update = userCommands[3].trim();
 
-        switch (field) {
+        switch (moduleField) {
         case "MC":
             listOfModules.editModularCredits(moduleCode, update);
             break;

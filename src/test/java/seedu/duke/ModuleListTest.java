@@ -1,15 +1,15 @@
 package seedu.duke;
 
-// import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;
 
 class ModuleListTest {
-    /*
+
     @Test
     public void deleteModuleTest() {
         ModuleList moduleList = new ModuleList();
-        moduleList.addModule("CS2113T", "4", "CORE");
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         assertEquals(1, moduleList.getModuleList().size());
         try {
             moduleList.deleteModule("CS2113T");
@@ -22,12 +22,12 @@ class ModuleListTest {
     @Test
     public void addDifferentModuleTest() {
         ModuleList moduleList = new ModuleList();
-        moduleList.addModule("CS2113T", "4", "CORE");
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         assertEquals(1, moduleList.getModuleList().size());
-        moduleList.addModule("GEA1000", "4", "GE");
+        moduleList.addModule("GEA1000", "4", "GE", "1", "1");
         assertEquals(2, moduleList.getModuleList().size());
-        moduleList.addModule("PC1201", "4", "UE");
+        moduleList.addModule("PC1201", "4", "UE", "1", "1");
         assertEquals(3, moduleList.getModuleList().size());
     }
-*/
+
 }
