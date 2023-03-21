@@ -2,28 +2,22 @@
 'https://plantuml.com/sequence-diagram
 
 box findModuleByName
-participant ":Duke" as ChatBot
 participant ":Parser" as Parser
 participant ":ModuleList" as ModuleList
 participant ":Module" as Module
 participant ":Print" as Print
 end box
 
-[-> ChatBot : execute("run")
-activate ChatBot
-
-create Parser
-ChatBot -> Parser : execute("parser()")
+[-> Parser: CheckUserInput("find /name /CS")
 activate Parser
 
-ChatBot -> Parser: CheckUserInput("find /name /CS2")
-Parser -> ModuleList : findModuleByName("CS2")
+Parser -> ModuleList : findModuleByName("CS")
 activate ModuleList
 
 loop findModule
-    ModuleList -> Module :getModuleCode()
     activate Module
-    Module -> ModuleList : contains("CS2")
+    ModuleList -> Module :getModuleCode()
+    Module --> ModuleList : contains("CS")
     ModuleList -> ModuleList : Add foundModule into List
     deactivate Module
     activate Print
@@ -39,7 +33,6 @@ else
     deactivate Print
 end
 
-return
 return
 return
 
