@@ -115,11 +115,18 @@ public class Parser {
             }
             assert userCommands.length == 2;
             try {
-                moduleList.deleteModule(userCommands[1].trim());
+                Module deletedModule = moduleList.deleteModule(userCommands[1].trim());
+                if (deletedModule == null) { // When no module matches the given module code
+                    Print.printNoDeletedModuleFound(userCommands[1].trim());
+                } else { // When a matching module is found and successfully deleted
+                    Print.printDeletedModule(deletedModule, moduleList.getModuleListSize());
+
+                }
                 Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
+
             break;
         case "LIST ALL":
             try {
@@ -216,8 +223,9 @@ public class Parser {
 
         for (String moduleCode: moduleList) {
             checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
-            listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(), userCommands[3].trim(),
+            Module addedModule = listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(), userCommands[3].trim(),
                     userCommands[4].trim(), userCommands[5].trim());
+            Print.printAddedModule(addedModule, listOfModules.getModuleListSize());
         }
     }
 
@@ -317,8 +325,8 @@ public class Parser {
                     String semester = module.getSemester();
                     String grade = module.getGrade();
                     listOfModules.editModuleType(moduleCode, modularCredits, update, year, semester, grade);
+                    break;
                 }
-                break;
             }
             break;
         case "YEAR":
