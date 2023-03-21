@@ -89,6 +89,23 @@ The sequence of events above can be represented with the following sequence diag
 
 <small><i>Figure ???</i></small>
 
+`add` command:
+
+The `add` command is used by the user to add a module or multiple modules at once.
+
+The sequence by which the Parser class handles the `add` command is as follows:
+1) The `Parser` class extracts the necessary fields from the user input, and calls upon the `addModule`
+   method in the `ModuleList` class in a loop.
+2) The method then checks the type of module that is being added, then calls the relevant 
+   constructor (`Core`, `UE`, `GE`, `Internship`).
+3) The `addModule` method returns the module that is added to the `Parser` class.
+4) The `printAddedModule` method is called from the `Print` class to display the result to the user.
+
+The sequence of events above can be represented with the following sequence diagram:
+
+![addInputCommand](diagrams/AddInputCommand.png)
+
+<small><i>Figure ???</i></small>
 
 
 
@@ -103,7 +120,7 @@ Modganiser is effortless module planning, at your fingertips via the
 Command Line Interface (CLI). It helps Information security 
 students graduate in time by giving you a platform to plan all 4 years
 of your modules to ensure that you meet graduation requirements (UE/GEs).
-If you can type fast, Modganiser can get your schedule up  faster than
+If you can type fast, Modganiser can get your schedule up faster than
 traditional GUI apps.
 
 
