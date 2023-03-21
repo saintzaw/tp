@@ -89,8 +89,29 @@ The sequence of events above can be represented with the following sequence diag
 
 <small><i>Figure ???</i></small>
 
+`edit` command:
 
+The `edit` command is used by the user to make changes to fields in the module description.
 
+The sequence in which the `Parser` class handles the `edit` command is as follows:
+1) The `Parser` class extracts the other fields of the user input, and calls upon the `editModuleField()` method
+   by self-invocation. 
+2) The method then uses a `switch` statement to evaluate the module field that the user wants to update.
+3) After checking the field to be updated, the appropriate method within the `ModuleList` class is called upon to
+   make the changes specified by the user.
+4) If the user wants to update Modular Credits, the `editModularCredits()` method is called. 
+   This method directly modifies the `modularCredits` attribute of the `Module` object.
+5) If the user wants to update Module Type, the `editModuleType()` method is called.
+   This method removes the existing `Module` object and adds a new `Module` object of the new type specified
+   by the user. The `getModuleCode()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
+   methods in the `Module` class are also called upon to obtain the respective fields required to create the new
+   `Module` object. 
+6) If the user wants to update the Year, the `editYear()` method is called.
+   This method directly modifies the `year` attribute of the `Module` object.
+7) If the user wants to update the Semester, the `editSemester()` method is called.
+   This method directly modifies the `semester` attribute of the `Module` object.
+
+![editCommand](diagrams/editCommand.png)
 
 ## Product scope
 ### Target user profile

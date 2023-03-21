@@ -1,0 +1,57 @@
+@startuml
+
+participant ":Parser" as Parser
+participant ":ModuleList" as ML
+participant ":Module" as Mod
+participant ":Print" as Print
+[->Parser : CheckUserInput\n(userInput:String, moduleList:ModuleList)
+activate Parser
+Parser->Parser : editModuleField\n(moduleList:ModuleList, userInput:String[])
+activate ML
+alt MC
+    Parser -> ML : editModularCredits(moduleCode:String, update:String)
+    ML -> Print : printEditedModule(module:Module, moduleListSize:int)
+    activate Print
+    Print --> ML
+    deactivate Print
+    ML --> Parser
+else TYPE
+    activate Mod
+    ML -> Mod: getModuleCode()
+    Mod --> ML
+    ML -> Mod: getModularCredits()
+    Mod --> ML
+    ML -> Mod: getYear()
+    Mod --> ML
+    ML -> Mod: getSemester()
+    Mod --> ML
+    ML -> Mod: getGrade()
+    Mod --> ML
+    deactivate Mod
+    Parser -> ML : editModuleType(moduleCode:String, modularCredits:String, update:String, year:String, semester:String, grade:String)
+    ML -> Print : printEditedModule(module:Module, moduleListSize:int)
+    activate Print
+    Print --> ML
+    deactivate Print
+    ML --> Parser
+else YEAR
+    Parser -> ML : editYear(moduleCode:String, update:String)
+    ML -> Print : printEditedModule(module:Module, moduleListSize:int)
+    activate Print
+    Print --> ML
+    deactivate Print
+    ML --> Parser
+else SEMESTER
+    Parser -> ML : editSemester(moduleCode:String, update:String)
+    ML -> Print : printEditedModule(module:Module, moduleListSize:int)
+    activate Print
+    Print --> ML
+    deactivate Print
+    ML --> Parser
+end
+ML --> Parser
+deactivate ML
+Parser-->[
+deactivate Parser
+
+@enduml
