@@ -61,8 +61,8 @@ The sequence by which the Parser class handles the `grade` command is as follows
 in the `ModuleList` class.  
 2) The method then loops through the moduleList array to find the moduleCode that requires a grade update. 
 3) If the module is found, it calls the `Module` object method `setGrade()` to update the grade field
-and prints a success message.
-4) Else, it prints an error message.  
+and prints a success message by calling the `printUpdatedModuleGrade()` method of the `Print` class.
+4) Else, it prints an error message by calling the `printInvalidModule()` method of the `Print` class.  
 
 The sequence of events above can be represented with the following sequence diagram:
 
@@ -70,7 +70,24 @@ The sequence of events above can be represented with the following sequence diag
 
 <small><i>Figure ???</i></small>
 
+`calculateCAP` command:
 
+The `calculateCAP` command is used by the user to calculate the Cumulative Average Point (CAP) of graded modules.
+
+The sequence by which the Parser class handles the `calculateCAP` command is as follows:
+1) The `Parser` class extracts the other fields of the user input, and calls upon the `calculateCAP()` method
+   in the `ModuleList` class.
+2) The method then loops through the moduleList array to find modules that have been graded.
+3) It checks if the module grade should be counted by self-invocation of the `shouldCountModule()` method
+4) If it is, proceeds to obtain the grade value by self-invocation of the `getGradeValue()` method.
+5) Calculates the required grade values, and finally calls the `printCalculatedCAP()` of the `Print` class to display
+the result to the user
+
+The sequence of events above can be represented with the following sequence diagram:
+
+![calculateCAP](diagrams/calculateCAP.png)
+
+<small><i>Figure ???</i></small>
 
 
 
