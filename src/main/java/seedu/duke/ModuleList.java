@@ -35,7 +35,7 @@ public class ModuleList {
         return listOfModules.size();
     }
 
-    public void addModule(String moduleCode, String modularCredits,
+    public Module addModule(String moduleCode, String modularCredits,
                           String moduleType, String year, String semester) {
         int oldSizeOfList = listOfModules.size();
         LOGGER.log(Level.INFO, "Starting addModule process");
@@ -43,29 +43,26 @@ public class ModuleList {
         case "CORE":
             Core newCore = new Core(moduleCode, modularCredits, year, semester);
             listOfModules.add(newCore);
-            Print.printAddedModule(newCore, listOfModules.size());
-            break;
+            return newCore;
         case "GE":
             GeneralElective newGeneralElective = new GeneralElective(moduleCode, modularCredits, year, semester);
             listOfModules.add(newGeneralElective);
-            Print.printAddedModule(newGeneralElective, listOfModules.size());
-            break;
+            return newGeneralElective;
         case "UE":
             UnrestrictedElective newUnrestrictedElective =
                     new UnrestrictedElective(moduleCode, modularCredits, year, semester);
             listOfModules.add(newUnrestrictedElective);
-            Print.printAddedModule(newUnrestrictedElective, listOfModules.size());
-            break;
+            return newUnrestrictedElective;
         case "INTERNSHIP":
             Internship newinternship = new Internship(moduleCode, modularCredits, year, semester);
             listOfModules.add(newinternship);
-            Print.printAddedModule(newinternship, listOfModules.size());
-            break;
+            return newinternship;
         default:
             break;
         }
         assert listOfModules.size() == oldSizeOfList + 1 : "Module not added correctly";
         LOGGER.log(Level.INFO, "Finished addModule process");
+        return null;
     }
 
     public void findModuleByName(String keyword) throws DukeException {
@@ -145,32 +142,28 @@ public class ModuleList {
         }
     }
 
-    public void deleteModule(String moduleCode) throws DukeException {
+    public Module deleteModule(String moduleCode) throws DukeException {
         if (listOfModules.size() == 0) {
             throw new DukeException("There are currently no modules in your list");
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting deleteModule process");
-        boolean isFound = false;
+        Module deletedModule = null;
         int oldSizeOfList = listOfModules.size();
         for (int i = 0; i < listOfModules.size(); i++) {
             if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
-                Module deletedModule = listOfModules.get(i);
+                deletedModule = listOfModules.get(i);
                 listOfModules.remove(i);
-                Print.printDeletedModule(deletedModule, listOfModules.size());
-                isFound = true;
-                break;
+                assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
+                LOGGER.log(Level.INFO, "Finished deleteModule process with module successfully deleted");
+
+                return deletedModule;
             }
         }
+        assert listOfModules.size() == oldSizeOfList : "Wrong module was deleted";
+        LOGGER.log(Level.INFO, "Finished deleteModule process with no module deleted");
+        return deletedModule;
 
-        if (!isFound) { // When no module matches the given module code
-            Print.printNoDeletedModuleFound(moduleCode);
-            assert listOfModules.size() == oldSizeOfList : "Wrong module was deleted";
-            LOGGER.log(Level.INFO, "Finished deleteModule process with no module deleted");
-        } else { // When a matching module is found and successfully deleted
-            assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
-            LOGGER.log(Level.INFO, "Finished deleteModule process with module successfully deleted");
-        }
     }
 
     public void listModules() {
@@ -183,12 +176,10 @@ public class ModuleList {
         LOGGER.log(Level.INFO, "Finished listModules process");
     }
 
-
-
     public void editModularCredits(String moduleCode, String newModularCredits) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                module.editModularCredits(newModularCredits);
+                module.setModularCredits(newModularCredits);
                 Print.printEditedModule(module, listOfModules.size());
             }
         }
@@ -197,7 +188,7 @@ public class ModuleList {
     public void editYear(String moduleCode, String newYear) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                module.editYear(newYear);
+                module.setYear(newYear);
                 Print.printEditedModule(module, listOfModules.size());
             }
         }
@@ -206,7 +197,7 @@ public class ModuleList {
     public void editSemester(String moduleCode, String newSemester) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                module.editSemester(newSemester);
+                module.setSemester(newSemester);
                 Print.printEditedModule(module, listOfModules.size());
             }
         }
@@ -215,82 +206,15 @@ public class ModuleList {
     public void editModuleType(String moduleCode, String modularCredits,
                                String moduleType, String year, String semester, String grade) {
         //delete module with old moduleType
-        for (int i = 0; i < listOfModules.size(); i++) {
-            if (listOfModules.get(i).getModuleCode().equals(moduleCode)) {
-                listOfModules.remove(i);
-                break;
-            }
+        try {
+            deleteModule(moduleCode);
+        } catch (DukeException e) {
+            Print.printErrorMessage(e);
         }
         //add module with new moduleType
-        switch (moduleType.toUpperCase()) {
-        case "CORE":
-            Core newCore = new Core(moduleCode, modularCredits, year, semester);
-            newCore.setGrade(grade);
-            listOfModules.add(newCore);
-            Print.printEditedModule(newCore, listOfModules.size());
-            break;
-        case "GE":
-            GeneralElective newGeneralElective = new GeneralElective(moduleCode, modularCredits, year, semester);
-            newGeneralElective.setGrade(grade);
-            listOfModules.add(newGeneralElective);
-            Print.printEditedModule(newGeneralElective, listOfModules.size());
-            break;
-        case "UE":
-            UnrestrictedElective newUnrestrictedElective =
-                    new UnrestrictedElective(moduleCode, modularCredits, year, semester);
-            newUnrestrictedElective.setGrade(grade);
-            listOfModules.add(newUnrestrictedElective);
-            Print.printEditedModule(newUnrestrictedElective, listOfModules.size());
-            break;
-        case "INTERNSHIP":
-            Internship newinternship = new Internship(moduleCode, modularCredits, year, semester);
-            newinternship.setGrade(grade);
-            listOfModules.add(newinternship);
-            Print.printEditedModule(newinternship, listOfModules.size());
-            break;
-        default:
-            break;
-        }
-    }
-
-    public String getModularCredits(String moduleCode) {
-        String modularCredits = "";
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                modularCredits = module.getModularCredits();
-            }
-        }
-        return modularCredits;
-    }
-
-    public String getModuleYear(String moduleCode) {
-        String moduleYear = "";
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                moduleYear = module.getYear();
-            }
-        }
-        return moduleYear;
-    }
-
-    public String getModuleSemester(String moduleCode) {
-        String moduleSemester = "";
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                moduleSemester = module.getSemester();
-            }
-        }
-        return moduleSemester;
-    }
-
-    public String getModuleGrade(String moduleCode) {
-        String moduleGrade = "";
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                moduleGrade = module.getGrade();
-            }
-        }
-        return moduleGrade;
+        Module moduleEdited = addModule(moduleCode, modularCredits, moduleType, year, semester);
+        updateModuleGrade(moduleCode, grade);
+        Print.printEditedModule(moduleEdited, listOfModules.size());
     }
 
     /**
@@ -335,15 +259,14 @@ public class ModuleList {
 
     }
 
-    public void updateModuleGrade(String moduleCode, String moduleGrade) {
+    public Module updateModuleGrade(String moduleCode, String moduleGrade) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
                 module.setGrade(moduleGrade);
-                Print.printUpdatedModuleGrade(module);
-                return;
+                return module;
             }
         }
-        Print.printInvalidModule(moduleCode);
+        return null;
     }
 
     public void calculateCAP() {
