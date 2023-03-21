@@ -43,6 +43,35 @@ Pros: Avoid extra step of typing another command to understand a feature well.
 Cons: Wordy and long manual page when command is man, user has to scroll through
 a long manual page to find what they need. Long method.
 
+### Implementation: **Parser**
+
+The `Parser` is a class that handles the commands keyed in by the user.  
+It has multiple checks to ensure that the user keys in valid commands. 
+
+<!---elaborate more on the class, still unsure of the format...--->
+<!---insert other commands here, still unsure of the format...(should it all be under Parser class or separate?)--->
+
+
+`grade` command:
+
+The `grade` command is used by the user to update the grade of modules that have already been completed.  
+
+The sequence by which the Parser class handles the `grade` command is as follows:  
+1) The `Parser` class extracts the other fields of the user input, and calls upon the `updateModuleGrade()` method
+in the `ModuleList` class.  
+2) The method then loops through the moduleList array to find the moduleCode that requires a grade update. 
+3) If the module is found, it calls the `Module` object method `setGrade()` to update the grade field
+and prints a success message.
+4) Else, it prints an error message.  
+
+The sequence of events above can be represented with the following sequence diagram:
+
+![gradeCommand](diagrams/GradeCommand.png)
+
+<small><i>Figure ???</i></small>
+
+
+
 
 
 
