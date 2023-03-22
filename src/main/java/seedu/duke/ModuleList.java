@@ -369,4 +369,34 @@ public class ModuleList {
         }
         return gradeValue;
     }
+
+    public void trackGeneralElectives() {
+        ArrayList<Module> completedModules = new ArrayList<>();
+        int completed_MCs = 0;
+        int required_MCs = 20;
+        int remaining_MCs = 0;
+        for (Module module : listOfModules) {
+            if (module instanceof GeneralElective && !(module.getGrade().equals(" "))) {
+                completedModules.add(module);
+                completed_MCs += Integer.parseInt(module.getModularCredits());
+            }
+        }
+        remaining_MCs = required_MCs - completed_MCs;
+        Print.printGeneralElectiveRequirements(completedModules, completed_MCs, remaining_MCs, required_MCs);
+    }
+
+    public void trackUnrestrictedElectives() {
+        ArrayList<Module> completedModules = new ArrayList<>();
+        int completed_MCs = 0;
+        int required_MCs = 32;
+        int remaining_MCs = 0;
+        for (Module module : listOfModules) {
+            if (module instanceof UnrestrictedElective && !(module.getGrade().equals(" "))) {
+                completedModules.add(module);
+                completed_MCs += Integer.parseInt(module.getModularCredits());
+            }
+        }
+        remaining_MCs = required_MCs - completed_MCs;
+        Print.printUnrestrictedElectiveRequirements(completedModules, completed_MCs, remaining_MCs, required_MCs);
+    }
 }

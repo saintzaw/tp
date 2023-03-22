@@ -215,6 +215,20 @@ public class Parser {
             LOGGER.log(Level.INFO, "Exiting Modganiser.");
             exit(0);
             break;
+        case "TRACK":
+            try {
+                int numberOfFields = 2;
+                checkNumberOfFields(numberOfFields, userCommands);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+            }
+            assert userCommands.length == 2;
+            try {
+                trackGraduationRequirements(moduleList, userCommands);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+            }
+            break;
         default:
             throw new DukeException("Invalid Command");
         }
@@ -382,6 +396,21 @@ public class Parser {
             break;
         default:
             throw new DukeException("Please input a valid grade!");
+        }
+    }
+
+    private void trackGraduationRequirements (ModuleList listOfModules, String[] userCommands) throws DukeException {
+        String moduleType = userCommands[1].trim();
+
+        switch(moduleType) {
+        case "GE":
+            listOfModules.trackGeneralElectives();
+            break;
+        case "UE":
+            listOfModules.trackUnrestrictedElectives();
+            break;
+        default:
+            throw new DukeException("Make sure you're trying to track GE or UE.");
         }
     }
 
