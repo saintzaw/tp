@@ -13,7 +13,7 @@ loop module
     activate Mod
     Mod --> ML : moduleCode:String
     deactivate Mod
-    alt module.getModuleCode().equals(moduleCode)
+    opt module.getModuleCode().equals(moduleCode)
         ML -> Mod : setGrade(moduleGrade:String)
         activate Mod
         Mod --> ML
@@ -23,12 +23,13 @@ loop module
         Print --> ML
         deactivate Print
         ML --> Parser
-    else InvalidModule
+    end
+
         ML -> Print : printInvalidModule(moduleCode:String)
         activate Print
         Print --> ML
         deactivate Print
-    end
+
 end
 ML --> Parser
 deactivate ML

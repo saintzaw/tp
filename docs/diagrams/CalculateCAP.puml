@@ -17,7 +17,7 @@ loop module
     activate ML
     ML-->ML : shouldCount:boolean
     deactivate ML
-    alt shouldCount
+    opt shouldCount
         ML -> ML : getGradeValue(String)
         activate ML
         ML -> Mod : getGrade()
@@ -26,7 +26,7 @@ loop module
         deactivate Mod
         ML --> ML : value: double
         deactivate ML
-    else else
+
     end
 end
     ML -> Print : printCalculatedCAP(calculatedCAP:double)

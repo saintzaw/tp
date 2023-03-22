@@ -85,7 +85,7 @@ the result to the user
 
 The sequence of events above can be represented with the following sequence diagram:
 
-![calculateCAP](diagrams/calculateCAP.png)
+![calculateCAP](diagrams/CalculateCAP.png)
 
 <small><i>Figure ???</i></small>
 
