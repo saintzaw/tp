@@ -10,6 +10,7 @@ public class PrintTest {
     @Test
     public void printAddedModuleTest() {
         ModuleList moduleList = new ModuleList();
+        new Duke();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
@@ -67,6 +68,7 @@ public class PrintTest {
     @Test
     public void printDeletedModuleTest() {
         ModuleList moduleList = new ModuleList();
+        new Duke();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
@@ -430,6 +432,7 @@ public class PrintTest {
     @Test
     public void updateModuleGradeTest() {
         ModuleList moduleList = new ModuleList();
+        new Duke();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
@@ -474,6 +477,7 @@ public class PrintTest {
     @Test
     public void printInvalidModuleTest() {
         ModuleList moduleList = new ModuleList();
+        new Duke();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
