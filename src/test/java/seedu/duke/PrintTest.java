@@ -23,9 +23,6 @@ public class PrintTest {
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "     Now you have 1 modules in the list."
                 + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    Data was not saved to file"
-                + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -83,9 +80,6 @@ public class PrintTest {
                 + System.lineSeparator() + "     Noted. I've removed this module:" + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "     Now you have 0 modules in the list."
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    Data was not saved to file"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -450,9 +444,6 @@ public class PrintTest {
                 + System.lineSeparator()
                 + "       [C][\"A\"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "    ____________________________________________________________"
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    Data was not saved to file"
-                + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -495,9 +486,6 @@ public class PrintTest {
                 + System.lineSeparator() + "     Unable to update the grade for CS2113T as it's not in your list!"
                 + System.lineSeparator()
                 + "    ____________________________________________________________"
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    Data was not saved to file"
-                + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
