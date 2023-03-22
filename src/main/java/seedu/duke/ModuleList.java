@@ -399,4 +399,19 @@ public class ModuleList {
         remaining_MCs = required_MCs - completed_MCs;
         Print.printUnrestrictedElectiveRequirements(completedModules, completed_MCs, remaining_MCs, required_MCs);
     }
+
+    public void trackInternship() {
+        ArrayList<Module> completedModules = new ArrayList<>();
+        int completed_MCs = 0;
+        int required_MCs = 12;
+        int remaining_MCs = 0;
+        for (Module module : listOfModules) {
+            if (module instanceof Internship && !(module.getGrade().equals(" "))) {
+                completedModules.add(module);
+                completed_MCs += Integer.parseInt(module.getModularCredits());
+            }
+        }
+        remaining_MCs = required_MCs - completed_MCs;
+        Print.printInternshipRequirements(completedModules, completed_MCs, remaining_MCs, required_MCs);
+    }
 }
