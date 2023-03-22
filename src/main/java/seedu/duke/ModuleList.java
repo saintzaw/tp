@@ -168,14 +168,12 @@ public class ModuleList {
                 listOfModules.remove(i);
                 assert listOfModules.size() == oldSizeOfList - 1 : "Module not deleted correctly";
                 LOGGER.log(Level.INFO, "Finished deleteModule process with module successfully deleted");
-
                 return deletedModule;
             }
         }
         assert listOfModules.size() == oldSizeOfList : "Wrong module was deleted";
         LOGGER.log(Level.INFO, "Finished deleteModule process with no module deleted");
         return deletedModule;
-
     }
 
     public void listModules() {
