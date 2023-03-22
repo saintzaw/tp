@@ -1,0 +1,39 @@
+@startuml
+
+participant ":Parser" as Parser
+participant ":ModuleList" as ML
+participant ":Module" as Mod
+participant ":Print" as Print
+
+[->Parser : checkUserInput\n(userInput:String, moduleList:ModuleList)
+activate Parser
+Parser->ML : deleteModule(moduleCode:String)
+activate ML
+
+loop until module found or list ends
+    ML -> Mod : getModuleCode()
+    activate Mod
+    Mod --> ML : moduleCode:String
+    deactivate Mod
+end
+    ML --> Parser : deletedModule:Module
+deactivate ML
+
+alt module found
+    Parser -> Print : printDeletedModule(deletedModule:Module, numOfModules:int)
+    activate Print
+    Print --> Parser
+    deactivate Print
+else module not found
+Parser -> Print : printNoDeletedModuleFound(moduleCode:String)
+    activate Print
+    Print --> Parser
+    deactivate Print
+
+end
+
+deactivate ML
+Parser-->[
+deactivate Parser
+
+@enduml

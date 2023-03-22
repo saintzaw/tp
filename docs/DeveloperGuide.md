@@ -168,7 +168,28 @@ The sequence in which the `Parser` class handles the `edit` command is as follow
 7) If the user wants to update the Semester, the `editSemester()` method is called.
    This method directly modifies the `semester` attribute of the `Module` object.
 
-![editCommand](diagrams/editCommand.png)
+![editCommand](diagrams/EditCommand.png)
+
+<small><i>Figure ???</i></small>
+
+`delete` command:
+
+The `delete` command is used by the user to delete a module which is specified by the user.
+
+The sequence in which the `Parser` class handles the `delete` command is as follows:
+1) The `Parser` class extracts the necessary fields from the user input, and calls upon the `deleteModule`
+   method in the `ModuleList` class.
+2) The method then loops through the moduleList array, attempting to find a module with the module code
+   that was specified by the user.
+3) If a corresponding module is found, the `deleteModule` method will remove the module from the moduleList array
+   and return the deleted `Module` object. Otherwise, the `deleteModule` method returns `null`.
+4) If a deleted `Module` object is returned from `deleteModule`, the `Parser` class calls upon
+   `printDeletedModule()` of the `Print` class. Otherwise, the `Parser` class calls upon `printNoDeletedModuleFound()`
+   of the `Print` class. This displays to the user the result of the `delete` command.
+
+![deleteModule](diagrams/DeleteModule.png)
+
+<small><i>Figure ???</i></small>
 
 ## Product scope
 ### Target user profile
