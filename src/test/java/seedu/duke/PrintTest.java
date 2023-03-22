@@ -29,7 +29,7 @@ public class PrintTest {
     }
 
     @Test
-    public void printFoundModuleTest() {
+    public void printFoundModuleByNameTest() {
         ModuleList moduleList = new ModuleList();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
@@ -46,12 +46,91 @@ public class PrintTest {
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
-    /*
+
     @Test
-    public void printNotFoundModuleTest() {
+    public void printMultipleFoundModuleByNameTest() {
         ModuleList moduleList = new ModuleList();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        moduleList.addModule("CS2113T", "4", "CORE");
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
+        moduleList.addModule("CS2101", "4", "CORE", "1", "1");
+        System.setOut(new PrintStream(outContent));
+        try {
+            moduleList.findModuleByName("CS");
+        } catch (DukeException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator()
+                + "     1. [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
+                + "     2. [C][\" \"] CS2101 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void printNoFoundModuleByNameTest() {
+        ModuleList moduleList = new ModuleList();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
+        System.setOut(new PrintStream(outContent));
+        try {
+            moduleList.findModuleByName("IS");
+        } catch (DukeException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     There are no modules that match the keyword: IS in your list"
+                + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void printFoundModuleByTypeTest() {
+        ModuleList moduleList = new ModuleList();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
+        System.setOut(new PrintStream(outContent));
+        try {
+            moduleList.findModuleByType("CORE");
+        } catch (DukeException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator()
+                + "     1. [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void printMultipleFoundModuleByTypeTest() {
+        ModuleList moduleList = new ModuleList();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
+        moduleList.addModule("CS2101", "4", "CORE", "1", "1");
+        System.setOut(new PrintStream(outContent));
+        try {
+            moduleList.findModuleByType("CORE");
+        } catch (DukeException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator()
+                + "     1. [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
+                + "     2. [C][\" \"] CS2101 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void printNotFoundModuleByTypeTest() {
+        ModuleList moduleList = new ModuleList();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
             moduleList.findModuleByType("GE");
@@ -64,7 +143,7 @@ public class PrintTest {
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
-*/
+
     @Test
     public void printDeletedModuleTest() {
         ModuleList moduleList = new ModuleList();
