@@ -10,6 +10,8 @@ public class Parser {
     public Parser() {
 
     }
+
+
     public void checkManPageInput(String userInput) {
         String[] userCommands = userInput.toUpperCase().split("/");
         assert userCommands.length == 2;
@@ -44,6 +46,12 @@ public class Parser {
         }
     }
 
+    /**
+     * Checks for valid user commands
+     *
+     * @param userInput The command that the user inputs to the ChatBot
+     * @throws DukeException if user command is invalid
+     */
     public void checkUserInput(String userInput, ModuleList moduleList) throws DukeException {
 
         String[] userCommands = userInput.toUpperCase().split("/");
@@ -57,8 +65,8 @@ public class Parser {
                 checkManPageInput(userInput);
             } else {
                 try {
-                    int inputLength = 1;
-                    checkInputLength(inputLength, userCommands);
+                    int numberOfFields = 1;
+                    checkNumberOfFields(numberOfFields, userCommands);
                 } catch (DukeException e) {
                     Print.printErrorMessage(e);
                     LOGGER.log(Level.WARNING, "User Input is invalid");
@@ -82,8 +90,8 @@ public class Parser {
             break;
         case "FIND":
             try {
-                int inputLength = 3;
-                checkInputLength(inputLength, userCommands);
+                int numberOfFields = 3;
+                checkNumberOfFields(numberOfFields, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
                 return;
@@ -107,8 +115,8 @@ public class Parser {
             break;
         case "DELETE":
             try {
-                int inputLength = 2;
-                checkInputLength(inputLength, userCommands);
+                int numberOfFields = 2;
+                checkNumberOfFields(numberOfFields, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
                 return;
@@ -130,8 +138,8 @@ public class Parser {
             break;
         case "LIST ALL":
             try {
-                int inputLength = 1;
-                checkInputLength(inputLength, userCommands);
+                int numberOfFields = 1;
+                checkNumberOfFields(numberOfFields, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -140,8 +148,8 @@ public class Parser {
             break;
         case "EDIT":
             try {
-                int inputLength = 4;
-                checkInputLength(inputLength, userCommands);
+                int numberOfFields = 4;
+                checkNumberOfFields(numberOfFields, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
                 return;
@@ -157,8 +165,8 @@ public class Parser {
         case "GRADE":
             try {
                 LOGGER.log(Level.INFO, "Starting Grade process");
-                int inputLength = 3;
-                checkInputLength(inputLength, userCommands);
+                int numberOfFields = 3;
+                checkNumberOfFields(numberOfFields, userCommands);
             } catch (DukeException e) {
                 LOGGER.log(Level.WARNING, "grade input length check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
@@ -184,8 +192,8 @@ public class Parser {
         case "CALCULATECAP":
             try {
                 LOGGER.log(Level.INFO, "Starting process to calculate CAP");
-                int inputLength = 1;
-                checkInputLength(inputLength, userCommands);
+                int numberOfFields = 1;
+                checkNumberOfFields(numberOfFields, userCommands);
             } catch (DukeException e) {
                 LOGGER.log(Level.WARNING, "calculatecap input length check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
@@ -197,8 +205,8 @@ public class Parser {
             break;
         case "BYE":
             try {
-                int inputLength = 1;
-                checkInputLength(inputLength, userCommands);
+                int numberOfFields = 1;
+                checkNumberOfFields(numberOfFields, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -215,7 +223,8 @@ public class Parser {
 
     private void checkAddInput(ModuleList listOfModules, String[] userCommands) throws DukeException {
         //check for correct number of fields
-        checkAddInputNumberOfFields(userCommands);
+        int numberOfFields = 6;
+        checkNumberOfFields(numberOfFields, userCommands);
 
         assert userCommands.length == 6 : "Expected 6 fields"; //change to 6 after year and sem added.
 
@@ -242,10 +251,17 @@ public class Parser {
         }
     }
 
-    public void checkInputLength(int inputLength, String[] userCommands) throws DukeException {
-        if (userCommands.length > inputLength) {
+    /**
+     * Checks for the correct number of fields for the respective command
+     *
+     * @param numberOfFields The number of fields that the user should input for the command
+     * @param userCommands the user input split into the respective fields and stored in an array
+     * @throws DukeException if user command is invalid
+     */
+    public void checkNumberOfFields(int numberOfFields, String[] userCommands) throws DukeException {
+        if (userCommands.length > numberOfFields) {
             throw new DukeException("Too many fields");
-        } else if (userCommands.length < inputLength) {
+        } else if (userCommands.length < numberOfFields) {
             throw new DukeException("Missing fields");
         }
     }
@@ -253,13 +269,6 @@ public class Parser {
     private void checkAddInputCorrectModuleCode(String[] userCommands) throws DukeException {
         if (userCommands[1].trim().equals("")) {
             throw new DukeException("Module Code cannot be empty");
-        }
-    }
-    private void checkAddInputNumberOfFields(String[] userCommands) throws DukeException {
-        if (userCommands.length < 6) {
-            throw new DukeException("Missing fields");
-        } else if (userCommands.length > 6) {
-            throw new DukeException("Too many fields");
         }
     }
 
