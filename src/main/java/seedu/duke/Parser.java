@@ -409,6 +409,9 @@ public class Parser {
         case "UE":
             listOfModules.trackUnrestrictedElectives();
             break;
+        case "INTERNSHIP":
+            listOfModules.trackInternship();
+            break;
         default:
             throw new DukeException("Make sure you're trying to track GE or UE.");
         }
