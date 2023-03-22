@@ -281,6 +281,7 @@ public class ModuleList {
         }
         calculatedCAP = sumOfWeightage/(double)totalModularCredits;
         double roundedOffCAP = Math.round(calculatedCAP*100.0)/100.0;
+        LOGGER.log(Level.INFO, "CAP has been calculated, proceeding to print.");
         Print.printCalculatedCAP(roundedOffCAP);
     }
 

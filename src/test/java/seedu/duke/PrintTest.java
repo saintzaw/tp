@@ -6,17 +6,25 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrintTest {
-    /*
+
     @Test
     public void printAddedModuleTest() {
         ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        moduleList.addModule("CS2113T", "4", "CORE");
+        try {
+            parser.checkUserInput("add /CS2113T /4 /CORE /1 /1", moduleList);
+        } catch (DukeException e) {
+            return;
+        }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Got it. I've added this module:" + System.lineSeparator()
-                + "       [C][\" \"] CS2113T 4 MCs" + System.lineSeparator()
+                + "       [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "     Now you have 1 modules in the list."
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator() + "    Data was not saved to file"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -26,7 +34,7 @@ public class PrintTest {
     public void printFoundModuleTest() {
         ModuleList moduleList = new ModuleList();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        moduleList.addModule("CS2113T", "4", "CORE");
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
             moduleList.findModuleByName("CS2113T");
@@ -36,11 +44,11 @@ public class PrintTest {
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator()
-                + "     1. [C][\" \"] CS2113T 4 MCs" + System.lineSeparator()
+                + "     1. [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
-
+    /*
     @Test
     public void printNotFoundModuleTest() {
         ModuleList moduleList = new ModuleList();
@@ -58,27 +66,31 @@ public class PrintTest {
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
-
+*/
     @Test
     public void printDeletedModuleTest() {
         ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        moduleList.addModule("CS2113T", "4", "CORE");
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.deleteModule("CS2113T");
+            parser.checkUserInput("delete /CS2113T", moduleList);
         } catch (DukeException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Noted. I've removed this module:" + System.lineSeparator()
-                + "       [C][\" \"] CS2113T 4 MCs" + System.lineSeparator()
+                + "       [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "     Now you have 0 modules in the list."
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator() + "    Data was not saved to file"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
-*/
+
     @Test
     public void printModuleListTest() {
         ModuleList moduleList = new ModuleList();
@@ -419,5 +431,74 @@ public class PrintTest {
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
     }
+
 */
+    @Test
+    public void updateModuleGradeTest() {
+        ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
+        try {
+            parser.checkUserInput("grade /CS2113T /A", moduleList);
+        } catch (DukeException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Got it. I've updated the grade for this module:"
+                + System.lineSeparator()
+                + "       [C][\"A\"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
+                + "    ____________________________________________________________"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator() + "    Data was not saved to file"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void calculateCAPTest() {
+        ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
+        moduleList.addModule("CS2101", "4", "CORE", "1", "1");
+        moduleList.updateModuleGrade("CS2113T", "A");
+        moduleList.updateModuleGrade("CS2101", "B");
+        try {
+            parser.checkUserInput("calculateCAP", moduleList);
+        } catch (DukeException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     I have calculated your CAP across your graded modules!"
+                + System.lineSeparator()
+                + "     Your CAP is currently: 4.25 :)" + System.lineSeparator()
+                + "    ____________________________________________________________" + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void printInvalidModuleTest() {
+        ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        try {
+            parser.checkUserInput("grade /CS2113T /A", moduleList);
+        } catch (DukeException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Unable to update the grade for CS2113T as it's not in your list!"
+                + System.lineSeparator()
+                + "    ____________________________________________________________"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator() + "    Data was not saved to file"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
 }
