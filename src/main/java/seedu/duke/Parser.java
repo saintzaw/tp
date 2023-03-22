@@ -372,7 +372,7 @@ public class Parser {
             listOfModules.editSemester(moduleCode, update);
             break;
         default:
-            throw new DukeException("Make sure the field to edit is MC, type, year or semester");
+            throw new DukeException("Make sure the field to edit is MC, TYPE, YEAR or SEMESTER");
         }
     }
 
@@ -409,8 +409,11 @@ public class Parser {
         case "UE":
             listOfModules.trackUnrestrictedElectives();
             break;
+        case "INTERNSHIP":
+            listOfModules.trackInternship();
+            break;
         default:
-            throw new DukeException("Make sure you're trying to track GE or UE.");
+            throw new DukeException("Make sure you're trying to track GE, UE or INTERNSHIP.");
         }
     }
 
