@@ -10,6 +10,9 @@ import java.util.logging.SimpleFormatter;
 
 import static seedu.duke.Print.printFarewellMessage;
 
+/**
+ * Represents a ChatBot that acts as a Module Planner
+ */
 public class Duke {
     /**
      * Main entry-point for the java.duke.Duke application.
@@ -19,6 +22,9 @@ public class Duke {
     private Parser parser;
     private ModuleList moduleList;
 
+    /**
+     * Loads users saved tasks if any
+     */
     public Duke() {
         initialiseLogger();
         parser = new Parser();
@@ -30,10 +36,21 @@ public class Duke {
         }
     }
 
+    /**
+     * Checks if user key in name is bye as it indicates that user wants exit program
+     *
+     * @param name The string that the user inputs
+     * @return
+     */
     public static boolean isNameBye(String name) {
         return name.equalsIgnoreCase("bye");
     }
 
+    /**
+     * Starts Chatbot and reads in user input
+     *
+     * @param chatBot Chatbot represents the module planner
+     */
     public static void run(Duke chatBot) {
         LOGGER.log(Level.INFO, "Modganiser is starting up!");
         Scanner in = new Scanner(System.in);

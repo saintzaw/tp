@@ -65,6 +65,12 @@ public class ModuleList {
         return null;
     }
 
+    /**
+     * List all the modules that contains the keyword in their module code
+     *
+     * @param keyword The word that the user would like to search for
+     * @throws DukeException if the list of modules is currently empty
+     */
     public void findModuleByName(String keyword) throws DukeException {
         if (listOfModules.size() == 0) {
             throw new DukeException("There are currently no modules in your list");
@@ -88,7 +94,13 @@ public class ModuleList {
         }
     }
 
-    public void findModuleByType(String keyword) throws DukeException {
+    /**
+     * List all the modules that are of the corresponding module type
+     *
+     * @param type The module type that the user wants to search for
+     * @throws DukeException if the module type the user input is invalid or if the list of modules is currently empty
+     */
+    public void findModuleByType(String type) throws DukeException {
         if (listOfModules.size() == 0) {
             throw new DukeException("There are currently no modules in your list");
         }
@@ -96,7 +108,7 @@ public class ModuleList {
         LOGGER.log(Level.INFO, "Starting findModuleByType process");
         boolean isFound = false;
         ArrayList<Module> foundModules = new ArrayList<>();
-        switch (keyword) {
+        switch (type) {
         case "CORE":
             for (Module module : listOfModules) {
                 if (module instanceof Core) {
@@ -137,7 +149,7 @@ public class ModuleList {
             LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
             Print.printFoundModule(foundModules);
         } else {
-            Print.printNoModuleFound(keyword);
+            Print.printNoModuleFound(type);
             LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
         }
     }
