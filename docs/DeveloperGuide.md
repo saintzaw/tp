@@ -59,6 +59,36 @@ It has multiple checks to ensure that the user keys in valid commands.
 <!---elaborate more on the class, still unsure of the format...--->
 <!---insert other commands here, still unsure of the format...(should it all be under Parser class or separate?)--->
 
+### Implementation: **Find Modules Feature**
+
+The find modules features is facilitated by the `Parser`, `ModuleList` and `Module` Classes. `Parser` helps to check
+for user input to determine is user doing a search via a module name or module type, which will then invoke the 
+`findModuleByName` and `findModuleByType` methods respectively. If any modules are found, the ChatBot will print out
+all the modules, else the ChatBot will return a message to the user, saying that no modules were found with the search
+term they used.
+
+Given below is an example usage scenario and how the findModuleByName mechanism behaves at each step.
+
+Step 1: The user launches the application for the first time. The ChatBot will be initialised with an empty ArrayList
+of Modules.
+
+Step 2: The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two modules into the ChatBot via the addModules 
+feature
+
+The following object diagram shows the current state of the ChatBot:
+![FindModule](diagrams/AddTwoModules.png)
+
+<small><i>Figure ???</i></small>
+
+Step 3: The user now wants to find the details of the modules he has just added. He executes `find /name /CS` which
+will call `findModuleByName`. This method will then print out all the modules that have the keyword "CS" in their
+module name.
+
+The following sequence diagram shows how the `findModuleByName` operation works:
+
+![FindModule](diagrams/FindModule.png)
+
+<small><i>Figure ???</i></small>
 
 `grade` command:
 
@@ -93,7 +123,7 @@ the result to the user
 
 The sequence of events above can be represented with the following sequence diagram:
 
-![calculateCAP](diagrams/calculateCAP.png)
+![calculateCAP](diagrams/CalculateCAP.png)
 
 <small><i>Figure ???</i></small>
 

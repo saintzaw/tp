@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+box findModuleByName
+participant ":Parser" as Parser
+participant ":ModuleList" as ModuleList
+participant ":Module" as Module
+participant ":Print" as Print
+end box
+
+[-> Parser: CheckUserInput("find /name /CS")
+activate Parser
+
+Parser -> ModuleList : findModuleByName("CS")
+activate ModuleList
+
+loop findModule
+    activate Module
+    ModuleList -> Module :getModuleCode()
+    Module --> ModuleList : contains("CS")
+    ModuleList -> ModuleList : Add foundModule into List
+    deactivate Module
+    activate Print
+end
+
+alt moduleIsFound
+    ModuleList -> Print : printFoundModule()
+
+    Print -> Print : Message printed to stdout
+else
+    ModuleList -> Print : PrintNoModuleFound()
+    Print -> Print : Message printed to stdout
+    deactivate Print
+end
+
+return
+return
+
+@enduml
