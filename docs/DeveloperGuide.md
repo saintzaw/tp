@@ -13,6 +13,12 @@
 The Manpage is a class that is used to display parts of the manpage that is requested by the user.
 It has multiple methods for separate features.
 
+The sequence by which the ManPage class handles the `man` command is as follows:
+1) The `Parser` class extracts the other fields of the user input, and calls upon the `checkUserInput()` method
+   which calls upon the `checkManPageInput()`.
+
+2) The method then uses the methods in the ManPage class to print out the requested feature.
+
 `Manpage#printManPage()` - Prints the Command Summary.
 
 `Manpage#printManPageAdd()` - Prints description of how to use the add feature.
@@ -30,6 +36,8 @@ It has multiple methods for separate features.
 `Manpage#printManPageCalculatorInput()` - Prints description of how to input grades.
 
 `Manpage#printManPageExit()` - Prints description of how to use the exit feature.
+
+![ManPage](diagrams/ManPage.png)
 
 ### Design Considerations : **Manpage**
 
