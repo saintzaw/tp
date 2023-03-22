@@ -10,6 +10,7 @@ public class PrintTest {
     @Test
     public void printAddedModuleTest() {
         ModuleList moduleList = new ModuleList();
+        new Duke();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
@@ -22,9 +23,6 @@ public class PrintTest {
                 + System.lineSeparator() + "     Got it. I've added this module:" + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "     Now you have 1 modules in the list."
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    Data was not saved to file"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -70,6 +68,7 @@ public class PrintTest {
     @Test
     public void printDeletedModuleTest() {
         ModuleList moduleList = new ModuleList();
+        new Duke();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
@@ -83,9 +82,6 @@ public class PrintTest {
                 + System.lineSeparator() + "     Noted. I've removed this module:" + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "     Now you have 0 modules in the list."
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    Data was not saved to file"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -436,6 +432,7 @@ public class PrintTest {
     @Test
     public void updateModuleGradeTest() {
         ModuleList moduleList = new ModuleList();
+        new Duke();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
@@ -450,9 +447,6 @@ public class PrintTest {
                 + System.lineSeparator()
                 + "       [C][\"A\"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "    ____________________________________________________________"
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    Data was not saved to file"
-                + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -483,6 +477,7 @@ public class PrintTest {
     @Test
     public void printInvalidModuleTest() {
         ModuleList moduleList = new ModuleList();
+        new Duke();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
@@ -495,9 +490,6 @@ public class PrintTest {
                 + System.lineSeparator() + "     Unable to update the grade for CS2113T as it's not in your list!"
                 + System.lineSeparator()
                 + "    ____________________________________________________________"
-                + System.lineSeparator() + "    ____________________________________________________________"
-                + System.lineSeparator() + "    Data was not saved to file"
-                + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
