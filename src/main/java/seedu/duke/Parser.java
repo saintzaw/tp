@@ -156,9 +156,11 @@ public class Parser {
             break;
         case "GRADE":
             try {
+                LOGGER.log(Level.INFO, "Starting Grade process");
                 int inputLength = 3;
                 checkInputLength(inputLength, userCommands);
             } catch (DukeException e) {
+                LOGGER.log(Level.WARNING, "grade input length check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
                 return;
             }
@@ -168,25 +170,30 @@ public class Parser {
                 Module moduleGradeUpdated =
                         moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
                 if (moduleGradeUpdated != null) {
+                    LOGGER.log(Level.INFO, "Update grade process success!");
                     Print.printUpdatedModuleGrade(moduleGradeUpdated);
                 } else {
                     Print.printInvalidModule(userCommands[1].trim());
                 }
                 Storage.saveModules(moduleList.getModuleList());
             } catch (DukeException e) {
+                LOGGER.log(Level.WARNING, "valid grade input check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
             }
             break;
         case "CALCULATECAP":
             try {
+                LOGGER.log(Level.INFO, "Starting process to calculate CAP");
                 int inputLength = 1;
                 checkInputLength(inputLength, userCommands);
             } catch (DukeException e) {
+                LOGGER.log(Level.WARNING, "calculatecap input length check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
                 return;
             }
             assert userCommands.length == 1;
             moduleList.calculateCAP();
+            LOGGER.log(Level.INFO, "End of calculate CAP process");
             break;
         case "BYE":
             try {
