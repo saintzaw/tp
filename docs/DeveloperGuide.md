@@ -67,11 +67,20 @@ of Modules.
 Step 2: The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two modules into the ChatBot via the addModules 
 feature
 
+The following object diagram shows the current state of the ChatBot:
+![FindModule](diagrams/AddTwoModules.png)
+
+<small><i>Figure ???</i></small>
+
 Step 3: The user now wants to find the details of the modules he has just added. He executes `find /name /CS` which
 will call `findModuleByName`. This method will then print out all the modules that have the keyword "CS" in their
 module name.
 
-The following sequence diagram shows how the `findModuleByName` operation works
+The following sequence diagram shows how the `findModuleByName` operation works:
+
+![FindModule](diagrams/FindModule.png)
+
+<small><i>Figure ???</i></small>
 
 `grade` command:
 
@@ -106,7 +115,7 @@ the result to the user
 
 The sequence of events above can be represented with the following sequence diagram:
 
-![calculateCAP](diagrams/calculateCAP.png)
+![calculateCAP](diagrams/CalculateCAP.png)
 
 <small><i>Figure ???</i></small>
 
