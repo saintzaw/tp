@@ -31,11 +31,12 @@ public class PrintTest {
     @Test
     public void printFoundModuleByNameTest() {
         ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser ();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.findModuleByName("CS2113T");
+            parser.checkUserInput("find/name/CS", moduleList);
         } catch (DukeException e) {
             return;
         }
@@ -50,12 +51,13 @@ public class PrintTest {
     @Test
     public void printMultipleFoundModuleByNameTest() {
         ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         moduleList.addModule("CS2101", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.findModuleByName("CS");
+            parser.checkUserInput("find/name/CS", moduleList);
         } catch (DukeException e) {
             return;
         }
@@ -71,11 +73,12 @@ public class PrintTest {
     @Test
     public void printNoFoundModuleByNameTest() {
         ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.findModuleByName("IS");
+            parser.checkUserInput("find/name/IS", moduleList);
         } catch (DukeException e) {
             return;
         }
@@ -89,11 +92,12 @@ public class PrintTest {
     @Test
     public void printFoundModuleByTypeTest() {
         ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.findModuleByType("CORE");
+            parser.checkUserInput("find/type/Core", moduleList);
         } catch (DukeException e) {
             return;
         }
@@ -108,12 +112,13 @@ public class PrintTest {
     @Test
     public void printMultipleFoundModuleByTypeTest() {
         ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         moduleList.addModule("CS2101", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.findModuleByType("CORE");
+            parser.checkUserInput("find/type/Core", moduleList);
         } catch (DukeException e) {
             return;
         }
@@ -129,11 +134,12 @@ public class PrintTest {
     @Test
     public void printNotFoundModuleByTypeTest() {
         ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            moduleList.findModuleByType("GE");
+            parser.checkUserInput("find/type/GE", moduleList);
         } catch (DukeException e) {
             return;
         }
