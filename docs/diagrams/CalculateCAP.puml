@@ -18,7 +18,7 @@ loop module
     ML-->ML : shouldCount:boolean
     deactivate ML
     opt shouldCount
-        ML -> ML : getGradeValue(String)
+        ML -> ML : getGradeValue(moduleGrade:String)
         activate ML
         ML -> Mod : getGrade()
         activate Mod
