@@ -162,13 +162,18 @@ public class Print {
     public static void printModuleTypeRequirements(ArrayList<Module> completedModules, int completed_MCs,
                                                         int remaining_MCs, int required_MCs, String moduleType) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Here are the " + moduleType + " modules that you have completed so far:");
-        System.out.println("    ____________________________________________________________");
-        for (int i = 0; i < completedModules.size(); i++) {
-            System.out.println("     " + (i + 1) + ". " + completedModules.get(i));
+        if (completedModules.size() == 0) {
+            System.out.println("     You have not completed any " + moduleType + " modules yet");
+            System.out.println("    ____________________________________________________________");
+        } else {
+            System.out.println("     Here are the " + moduleType + " modules that you have completed so far:");
+            System.out.println("    ____________________________________________________________");
+            for (int i = 0; i < completedModules.size(); i++) {
+                System.out.println("     " + (i + 1) + ". " + completedModules.get(i));
+            }
+            System.out.println("     Congratulations! You have completed " + completed_MCs + " of the "
+                    + required_MCs + " MCs required :)");
         }
-        System.out.println("     Congratulations! You have completed " + completed_MCs + " of the "
-                + required_MCs + " MCs required :)");
         System.out.println("     You need to complete " + remaining_MCs + " MCs more.");
         System.out.println("    ____________________________________________________________");
     }
