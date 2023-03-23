@@ -427,8 +427,10 @@ public class Parser {
         case "CORE":
             foundModules = listOfModules.findModuleByType("CORE");
             listOfModules.trackCoreModules(foundModules, moduleType);
+            break;
         default:
             throw new DukeException("Make sure you're trying to track COre, GE, UE or Internship.");
+            break;
         }
     }
 }
