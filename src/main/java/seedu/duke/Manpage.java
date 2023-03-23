@@ -5,6 +5,10 @@ public class Manpage {
     public Manpage() {
 
     }
+
+    /**
+     * Prints the full command summary.
+     */
     public static void printManPage() {
         System.out.println("\n\n" +
 
@@ -56,6 +60,10 @@ public class Manpage {
                 "-----------------------------------------------------\n" );
     }
 
+    /**
+     * Prints a more detailed description on how to
+     * use the add feature.
+     */
     public static void printManPageAdd() {
         System.out.println("\n\n" +
                 "-----------------------------------------------------\n"+
@@ -75,6 +83,11 @@ public class Manpage {
                 "INTERNSHIP (Module Code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)\n\n " +
                 "-----------------------------------------------------\n");
     }
+
+    /**
+     * Prints a more detailed description on how to
+     * use the list feature.
+     */
     public static void printManPageList() {
         System.out.println("\n\n" + "-----------------------------------------------------\n" +
 
@@ -87,6 +100,11 @@ public class Manpage {
                 "Example: list 1\n\n" +
                 "-----------------------------------------------------\n");
     }
+
+    /**
+     * Prints a more detailed description on how to
+     * use the edit feature.
+     */
     public static void printManPageEdit() {
         System.out.println("\n\n" + "-----------------------------------------------------\n" +
 
@@ -103,6 +121,11 @@ public class Manpage {
 
                 "-----------------------------------------------------\n");
     }
+
+    /**
+     * Prints a more detailed description on how to
+     * use the find feature.
+     */
     public static void printManPageFind() {
         System.out.println("\n\n" + "-----------------------------------------------------\n" +
 
@@ -115,6 +138,10 @@ public class Manpage {
                 "-----------------------------------------------------\n");
     }
 
+    /**
+     * Prints a more detailed description on how to
+     * use the delete feature.
+     */
     public static void printManPageDelete() {
         System.out.println("\n\n" +
                 "-----------------------------------------------------\n"+
@@ -123,6 +150,10 @@ public class Manpage {
                 "Example: delete /CS2113T\n\n " + "-----------------------------------------------------\n" );
     }
 
+    /**
+     * Prints a more detailed description on how to
+     * use the Grade calculator.
+     */
     public static void printManPageCalculator() {
         System.out.println("\n\n" + "-----------------------------------------------------\n" +
 
@@ -132,6 +163,10 @@ public class Manpage {
                 "-----------------------------------------------------\n");
     }
 
+    /**
+     * Prints a more detailed description on how to
+     * input grades.
+     */
     public static void printManPageCalculatorInput() {
         System.out.println("\n\n" +
                 "-----------------------------------------------------\n"+
@@ -154,7 +189,10 @@ public class Manpage {
                 "-----------------------------------------------------\n");
     }
 
-
+    /**
+     * Prints a more detailed description on how to
+     * use the exit feature.
+     */
     public static void printManPageExit() {
         System.out.println("\n\n" +
                 "-----------------------------------------------------\n"+

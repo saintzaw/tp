@@ -11,7 +11,12 @@ public class Parser {
 
     }
 
-
+    /**
+     * It will display the description of the feature as requested by the
+     * user's input.
+     *
+     * @param userInput the feature the user wants to find out more about
+     */
     public void checkManPageInput(String userInput) {
         String[] userCommands = userInput.toUpperCase().split("/");
         assert userCommands.length == 2;
@@ -59,7 +64,6 @@ public class Parser {
         switch (userCommands[0].trim()) {
         case "MAN":
             LOGGER.log(Level.INFO, "Starting manpage process");
-            assert userCommands.length >= 1;
 
             if (userCommands.length == 2) {
                 checkManPageInput(userInput);
