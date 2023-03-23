@@ -430,7 +430,6 @@ public class Parser {
             break;
         default:
             throw new DukeException("Make sure you're trying to track COre, GE, UE or Internship.");
-            break;
         }
     }
 }
