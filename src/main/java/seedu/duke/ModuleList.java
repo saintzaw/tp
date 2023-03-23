@@ -350,6 +350,12 @@ public class ModuleList {
         return gradeValue;
     }
 
+    /**
+     * Track the number of GE Modules completed
+     *
+     * @param listOfGeneralElectives list of Core Modules that are in the list
+     * @param moduleType String variable that holds the moduleType, "GE"
+     */
     public void trackGeneralElectives(ArrayList<Module> listOfGeneralElectives, String moduleType) {
         int completed_MCs = 0;
         int required_MCs = 20;
@@ -366,6 +372,12 @@ public class ModuleList {
                 completed_MCs, remaining_MCs, required_MCs, moduleType);
     }
 
+    /**
+     * Track the number of UE Modules completed
+     *
+     * @param listOfUnRestrictedElectives list of UE Modules that are in the list
+     * @param moduleType String variable that holds the moduleType, "UE"
+     */
     public void trackUnrestrictedElectives(ArrayList<Module> listOfUnRestrictedElectives, String moduleType) {
         int completed_MCs = 0;
         int required_MCs = 32;
@@ -382,6 +394,12 @@ public class ModuleList {
                 completed_MCs, remaining_MCs, required_MCs, moduleType);
     }
 
+    /**
+     * Track the number of Internship Modules completed
+     *
+     * @param listOfInternship list of Internship Modules that are in the list
+     * @param moduleType String variable that holds the moduleType, "Internship"
+     */
     public void trackInternship(ArrayList<Module> listOfInternship, String moduleType) {
         int completed_MCs = 0;
         int required_MCs = 12;
@@ -398,6 +416,12 @@ public class ModuleList {
                 completed_MCs, remaining_MCs, required_MCs, moduleType);
     }
 
+    /**
+     * Track the number of Core Modules completed
+     *
+     * @param listOfCoreModules list of Core Modules that are in the list
+     * @param moduleType String variable that holds the moduleType, "CORE"
+     */
     public void trackCoreModules(ArrayList<Module> listOfCoreModules, String moduleType) {
         int completed_MCs = 0;
         int required_MCs = 96;
