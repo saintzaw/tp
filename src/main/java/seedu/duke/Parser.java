@@ -175,6 +175,7 @@ public class Parser {
                 checkYearInput(year);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
+                return;
             }
             moduleList.listModulesByYear(year);
             break;
@@ -373,7 +374,13 @@ public class Parser {
     }
 
     private void checkYearInput(String year) throws DukeException {
-        int yearOfStudy = Integer.parseInt(year);
+
+        int yearOfStudy;
+        try {
+            yearOfStudy = Integer.parseInt(year);
+        } catch (NumberFormatException e) {
+            throw new DukeException("Make sure Year of Study is a number from 0-6");
+        }
         if (yearOfStudy < 0 || yearOfStudy > 6) {
             throw new DukeException("Make sure Year of Study is a number from 0-6");
         }

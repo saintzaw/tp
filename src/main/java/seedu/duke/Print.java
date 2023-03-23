@@ -92,8 +92,8 @@ public class Print {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Here are the modules in your list for Year " + year + " :");
         System.out.println("    ____________________________________________________________");
-        System.out.printf("       %-30s %-10s %-30s %-10s %-30s %-10s %-30s\n", "Semester One", "|",
-                "Special Term One", "|", "Semester Two", "|", "Special Term Two");
+        System.out.printf("       %-30s %-10s %-30s %-10s %-30s %-10s %-30s\n", "Semester One", ":",
+                "Special Term One", ":", "Semester Two", ":", "Special Term Two");
 
 
         int max = Math.max(Math.max(semOneModuleList.size(), specialTermOneModuleList.size()),
@@ -129,8 +129,8 @@ public class Print {
                 specialTermTwo = " ";
             }
 
-            System.out.printf("       %-30s %-10s %-30s %-10s %-30s %-10s %-30s\n", semOne, "|", specialTermOne, "|",
-                    semTwo, "|", specialTermTwo);
+            System.out.printf("       %-30s %-10s %-30s %-10s %-30s %-10s %-30s\n", semOne, ":", specialTermOne, ":",
+                    semTwo, ":", specialTermTwo);
         }
     }
 
