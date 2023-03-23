@@ -357,19 +357,20 @@ public class ModuleList {
      * @param moduleType String variable that holds the moduleType, "GE"
      */
     public void trackGeneralElectives(ArrayList<Module> listOfGeneralElectives, String moduleType) {
-        int completed_MCs = 0;
-        int required_MCs = 20;
-        int remaining_MCs = 0;
+        int completedMCs = 0;
+        int requiredMCs = 20;
+        int remainingMCs = 0;
         for (Module module : listOfModules) {
             if (!(module.getGrade().equals(" "))) {
-                completed_MCs += Integer.parseInt(module.getModularCredits());
+                completedMCs += Integer.parseInt(module.getModularCredits());
             } else {
                 listOfGeneralElectives.remove(module);
             }
         }
-        remaining_MCs = required_MCs - completed_MCs;
+        remainingMCs = requiredMCs - completedMCs;
         Print.printModuleTypeRequirements(listOfGeneralElectives,
-                completed_MCs, remaining_MCs, required_MCs, moduleType);
+                completedMCs, remainingMCs, requiredMCs, moduleType);
+
     }
 
     /**

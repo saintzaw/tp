@@ -31,7 +31,7 @@ public class Duke {
         try {
             moduleList = new ModuleList(Storage.getSavedModules());
         } catch (FileNotFoundException e) {
-            Print.printFileLoadingError();
+            Print.printModulesFileLoadingError();
             moduleList = new ModuleList();
         }
     }
@@ -53,10 +53,17 @@ public class Duke {
      */
     public static void run(Duke chatBot) {
         LOGGER.log(Level.INFO, "Modganiser is starting up!");
-        Scanner in = new Scanner(System.in);
         Print.printLogo();
-        System.out.println("What is your name?");
-        String name = in.nextLine();
+
+        Scanner in = new Scanner(System.in);
+        String name;
+        try {
+            name = getUserName(in);
+        } catch (FileNotFoundException e) {
+            Print.printNameFileLoadingError();
+            return;
+        }
+
         if (isNameBye(name.trim())) {
             printFarewellMessage();
             LOGGER.log(Level.INFO, "Name was given as 'bye', exiting Modganiser.");
@@ -64,6 +71,7 @@ public class Duke {
         }
         assert !(name.equalsIgnoreCase("bye")) : "name is bye";
         Print.printHelloMessage(name);
+
         while (in.hasNextLine()) {
             String line = in.nextLine().toUpperCase();
             try {
@@ -72,6 +80,41 @@ public class Duke {
                 Print.printErrorMessage(e);
             }
         }
+    }
+
+    public static String getUserName(Scanner in) throws FileNotFoundException{
+        String savedName = Storage.getSavedName();
+        String name = "";
+        boolean nameIsValid = true;
+
+        if (isNameSaved(savedName)) {
+            name = savedName;
+        } else {
+            Print.promptForName();
+            do {
+                if (!nameIsValid) {
+                    Print.printInvalidNameMessage();
+                }
+                name = in.nextLine().trim();
+                if (name.trim().length() == 0) {
+                    nameIsValid = false;
+                } else {
+                    nameIsValid = true;
+                }
+            } while (!nameIsValid);
+            assert !(name.equalsIgnoreCase("bye")) : "name is bye";
+            if (!name.equalsIgnoreCase("bye")) {
+                Storage.saveName(name);
+            }
+        }
+        return name;
+    }
+
+    public static boolean isNameSaved(String name) {
+        if (name.length() == 0) {
+            return false;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
