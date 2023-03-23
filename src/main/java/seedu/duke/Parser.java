@@ -389,22 +389,42 @@ public class Parser {
         }
     }
 
+    /**
+     * Checks if the grade input by the user is a valid grade string.
+     *
+     * @param inputGrade the string containing grade input by user.
+     * @throws DukeException when the input grade is invalid
+     */
     private void checkGradeInput (String inputGrade) throws DukeException {
         switch (inputGrade) {
         case "A+":
+            //Fallthrough
         case "A":
+            //Fallthrough
         case "A-":
+            //Fallthrough
         case "B+":
+            //Fallthrough
         case "B":
+            //Fallthrough
         case "B-":
+            //Fallthrough
         case "C+":
+            //Fallthrough
         case "C":
+            //Fallthrough
         case "D+":
+            //Fallthrough
         case "D":
+            //Fallthrough
         case "F":
+            //Fallthrough
         case "S":
+            //Fallthrough
         case "U":
+            //Fallthrough
         case "CS":
+            //Fallthrough
         case "CU":
             break;
         default:

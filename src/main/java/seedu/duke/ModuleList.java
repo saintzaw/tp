@@ -249,6 +249,13 @@ public class ModuleList {
 
     }
 
+    /**
+     * Updates the grade attribute for the module code specified by the user.
+     *
+     * @param moduleCode the string containing the name of the module code.
+     * @param moduleGrade the string containing the grade input by user.
+     * @return the module object with the updated grade attribute.
+     */
     public Module updateModuleGrade(String moduleCode, String moduleGrade) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
@@ -259,6 +266,9 @@ public class ModuleList {
         return null;
     }
 
+    /**
+     * Calculates the CAP for the user based on existing modules in the list.
+     */
     public void calculateCAP() {
         double calculatedCAP;
         double sumOfWeightage = 0;
@@ -275,6 +285,12 @@ public class ModuleList {
         Print.printCalculatedCAP(roundedOffCAP);
     }
 
+    /**
+     * Checks if a module's grade should be counted in the CAP for the user.
+     *
+     * @param moduleGrade the string containing the grade input by user.
+     * @return a boolean that is set to true if the module grade should be counted, else set to false.
+     */
     public boolean shouldCountModuleGrade(String moduleGrade) {
         boolean shouldCount;
         switch(moduleGrade) {
@@ -308,6 +324,12 @@ public class ModuleList {
         return shouldCount;
     }
 
+    /**
+     * Gets the grade value corresponding to the module grade string given by the user.
+     *
+     * @param moduleGrade the string containing the grade input by user.
+     * @return the double value corresponding to the module grade given.
+     */
     public double getGradeValue(String moduleGrade) {
         double gradeValue;
         switch(moduleGrade) {
