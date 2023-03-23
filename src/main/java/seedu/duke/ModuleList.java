@@ -121,7 +121,7 @@ public class ModuleList {
                 }
             }
             break;
-        case "Internship":
+        case "INTERNSHIP":
             for (Module module : listOfModules) {
                 if (module instanceof Internship) {
                     foundModules.add(module);
@@ -129,7 +129,7 @@ public class ModuleList {
             }
             break;
         default:
-            throw new DukeException("Make sure your types are CORE,GE,UE or Internship");
+            throw new DukeException("Make sure your types are CORE, GE, UE or Internship");
         }
         return foundModules;
     }
@@ -360,7 +360,7 @@ public class ModuleList {
         int completedMCs = 0;
         int requiredMCs = 20;
         int remainingMCs = 0;
-        for (Module module : listOfModules) {
+        for (Module module : listOfGeneralElectives) {
             if (!(module.getGrade().equals(" "))) {
                 completedMCs += Integer.parseInt(module.getModularCredits());
             } else {
@@ -370,7 +370,6 @@ public class ModuleList {
         remainingMCs = requiredMCs - completedMCs;
         Print.printModuleTypeRequirements(listOfGeneralElectives,
                 completedMCs, remainingMCs, requiredMCs, moduleType);
-
     }
 
     /**

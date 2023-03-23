@@ -237,7 +237,7 @@ public class Parser {
             }
             assert userCommands.length == 2;
             try {
-                trackGraduationRequirements(moduleList, userCommands);
+                trackGraduationRequirements(moduleList, userCommands[1].trim());
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
             }
@@ -416,11 +416,10 @@ public class Parser {
      * Check how far the user is from meeting the requirement for each module type
      *
      * @param listOfModules list of modules that the user has
-     * @param userCommands user inputted command
+     * @param moduleType module type that the user wants to check
      * @throws DukeException if the moduleType the user input is not valid
      */
-    private void trackGraduationRequirements (ModuleList listOfModules, String[] userCommands) throws DukeException {
-        String moduleType = userCommands[1].trim();
+    private void trackGraduationRequirements (ModuleList listOfModules, String moduleType) throws DukeException {
         ArrayList<Module> foundModules = new ArrayList<>();
         switch(moduleType) {
         case "GE":
