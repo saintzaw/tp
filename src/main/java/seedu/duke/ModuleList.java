@@ -362,7 +362,7 @@ public class ModuleList {
         int remainingMCs = 0;
         for (Module module : listOfModules) {
             if (!(module.getGrade().equals(" "))) {
-                completed_MCs += Integer.parseInt(module.getModularCredits());
+                completedMCs += Integer.parseInt(module.getModularCredits());
             } else {
                 listOfGeneralElectives.remove(module);
             }
