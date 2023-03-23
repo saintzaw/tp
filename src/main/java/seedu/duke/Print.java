@@ -22,6 +22,14 @@ public class Print {
         System.out.println("Hello from\n" + logo);
     }
 
+    public static void promptForName() {
+        System.out.println("What is your name?");
+    }
+
+    public static void printInvalidNameMessage() {
+        System.out.println("Please key in a valid name:");
+    }
+
     public static void printFoundModule(ArrayList<Module> foundModules) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Here are the matching modules in your list:");
@@ -95,21 +103,39 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
-    public static void printCreateFileError() {
+    public static void printCreateNameFileError() {
         System.out.println("    ____________________________________________________________");
-        System.out.println("    An error occurred when creating the data file");
-        System.out.println("    ____________________________________________________________");
-    }
-
-    public static void printSavingError() {
-        System.out.println("    ____________________________________________________________");
-        System.out.println("    Data was not saved to file");
+        System.out.println("    An error occurred when creating the name file");
         System.out.println("    ____________________________________________________________");
     }
 
-    public static void printFileLoadingError() {
+    public static void printCreateModulesFileError() {
         System.out.println("    ____________________________________________________________");
-        System.out.println("    Data file was not found");
+        System.out.println("    An error occurred when creating the modules file");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printModulesSavingError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    Modules were not saved to file");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printNameSavingError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    Name was not saved to file");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printModulesFileLoadingError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    Modules file was not found");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printNameFileLoadingError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    Name file was not found");
         System.out.println("    ____________________________________________________________");
     }
 

@@ -372,17 +372,17 @@ public class ModuleList {
 
     public void trackGeneralElectives() {
         ArrayList<Module> completedModules = new ArrayList<>();
-        int completed_MCs = 0;
-        int required_MCs = 20;
-        int remaining_MCs = 0;
+        int completedMCs = 0;
+        int requiredMCs = 20;
+        int remainingMCs = 0;
         for (Module module : listOfModules) {
             if (module instanceof GeneralElective && !(module.getGrade().equals(" "))) {
                 completedModules.add(module);
-                completed_MCs += Integer.parseInt(module.getModularCredits());
+                completedMCs += Integer.parseInt(module.getModularCredits());
             }
         }
-        remaining_MCs = required_MCs - completed_MCs;
-        Print.printGeneralElectiveRequirements(completedModules, completed_MCs, remaining_MCs, required_MCs);
+        remainingMCs = requiredMCs - completedMCs;
+        Print.printGeneralElectiveRequirements(completedModules, completedMCs, remainingMCs, requiredMCs);
     }
 
     public void trackUnrestrictedElectives() {

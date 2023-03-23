@@ -11,12 +11,13 @@ import java.util.logging.Level;
 import static seedu.duke.Duke.LOGGER;
 
 public class Storage {
-    private static final String FILE_PATH = "data/modules.txt";
+    private static final String MODULES_FILE_PATH = "data/modules.txt";
+    private static final String NAME_FILE_PATH = "data/name.txt";
     private static final String DIRECTORY = "data";
 
-    public static ArrayList<String> getSavedModules() throws FileNotFoundException {
+    public static String getSavedName() throws FileNotFoundException {
         File dir = new File(DIRECTORY);
-        File f = new File(FILE_PATH);
+        File f = new File(NAME_FILE_PATH);
 
         // Creates directory for file if it does not exist
         if (!dir.exists()){
@@ -27,7 +28,49 @@ public class Storage {
         try {
             f.createNewFile();
         } catch (IOException e) {
-            Print.printCreateFileError();
+            Print.printCreateNameFileError();
+        }
+
+        // Reading from text file to get stored data
+        Scanner s = new Scanner(f);
+        String name = "";
+        if (s.hasNext()) {
+            name = s.nextLine();
+        }
+        return name;
+    }
+
+    public static void saveName(String name) {
+        LOGGER.log(Level.INFO, "Starting process to save name to text file");
+        try {
+            writeNameToFile(name);
+            LOGGER.log(Level.INFO, "Finished saving name to text file");
+        } catch (IOException e) {
+            Print.printNameSavingError();
+            LOGGER.log(Level.WARNING, "Failed to save name to text file");
+        }
+    }
+
+    public static void writeNameToFile(String name) throws IOException {
+        FileWriter fw = new FileWriter(NAME_FILE_PATH);
+        fw.write(name);
+        fw.close();
+    }
+
+    public static ArrayList<String> getSavedModules() throws FileNotFoundException {
+        File dir = new File(DIRECTORY);
+        File f = new File(MODULES_FILE_PATH);
+
+        // Creates directory for file if it does not exist
+        if (!dir.exists()){
+            dir.mkdirs();
+        }
+
+        // Create file if it does not exist
+        try {
+            f.createNewFile();
+        } catch (IOException e) {
+            Print.printCreateModulesFileError();
         }
 
         // Reading from text file to get stored data
@@ -43,16 +86,16 @@ public class Storage {
     public static void saveModules(ArrayList<Module> savedModules) {
         LOGGER.log(Level.INFO, "Starting process to save modules to text file");
         try {
-            writeToFile(savedModules);
+            writeModulesToFile(savedModules);
             LOGGER.log(Level.INFO, "Finished saving modules to text file");
         } catch (IOException e) {
-            Print.printSavingError();
+            Print.printModulesSavingError();
             LOGGER.log(Level.WARNING, "Failed to save modules to text file");
         }
     }
 
-    private static void writeToFile(ArrayList<Module> savedModules) throws IOException {
-        FileWriter fw = new FileWriter(FILE_PATH);
+    private static void writeModulesToFile(ArrayList<Module> savedModules) throws IOException {
+        FileWriter fw = new FileWriter(MODULES_FILE_PATH);
         for (int i = 0; i < savedModules.size(); i++) {
             Module currModule = savedModules.get(i);
 

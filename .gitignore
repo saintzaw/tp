@@ -18,3 +18,4 @@ text-ui-test/EXPECTED-UNIX.TXT
 modganiserLog.txt*
 modganiserLog.txt.lck
 /data/modules.txt
+name.txt
