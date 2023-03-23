@@ -431,5 +431,4 @@ public class Parser {
             throw new DukeException("Make sure you're trying to track COre, GE, UE or Internship.");
         }
     }
-
 }
