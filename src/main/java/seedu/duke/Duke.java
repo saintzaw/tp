@@ -122,6 +122,10 @@ public class Duke {
         Duke.run(chatBot);
     }
 
+    /**
+     * Initialises the logger to log information about processes throughout the runtime of the program.
+     * Logging information is written into the file "modganiserLog.txt".
+     */
     private static void initialiseLogger() {
         LOGGER.setUseParentHandlers(false);
         LOGGER.setLevel(Level.ALL);
