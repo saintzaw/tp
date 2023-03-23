@@ -40,7 +40,7 @@ public class Duke {
      * Checks if user key in name is bye as it indicates that user wants exit program
      *
      * @param name The string that the user inputs
-     * @return
+     * @return a boolean that is set to true if the string given is "bye", else set to false.
      */
     public static boolean isNameBye(String name) {
         return name.equalsIgnoreCase("bye");
