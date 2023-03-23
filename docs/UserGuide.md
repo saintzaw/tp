@@ -2,7 +2,11 @@
 
 ## Introduction
 
-{Give a product intro}
+Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI). 
+It helps Information security students graduate in time by giving you a platform to plan all 4 
+years of your modules to ensure that you meet graduation requirements (UE/GEs).  If you can type
+fast, Modganiser can get your schedule up  faster than traditional GUI apps.
+
 
 ## Quick Start
 
@@ -11,23 +15,25 @@
 1. Ensure that you have Java 11 or above installed.
 1. Down the latest version of `Duke` from [here](http://link.to/duke).
 
+Type the command in the command box and press Enter to execute it. e.g. typing man and pressing Enter will open the manual.
+Some example commands you can try:
+
+
 ## Features 
 
-{Give detailed description of each feature}
+### ManPage: `man`
 
-### Adding a todo: `todo`
-Adds a new item to the list of todo items.
+List the command summary and shows more commands to get a better description of each feature. 
 
-Format: `todo n/TODO_NAME d/DEADLINE`
-
-* The `DEADLINE` can be in a natural language format.
-* The `TODO_NAME` cannot contain punctuation.  
-
-Example of usage: 
-
-`todo n/Write the rest of the User Guide d/next week`
-
-`todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
+1. `man`
+2. `man /add `
+3. `man /list`
+4. `man/edit`
+5. `man /find`
+6. `man/delete`
+7. `man/calculator`
+8. `man/grade`
+9. `man /bye`
 
 ## FAQ
 
@@ -36,7 +42,16 @@ Example of usage:
 **A**: {your answer here}
 
 ## Command Summary
+| Feature                         |                           Command                           |         
+|---------------------------------|:-----------------------------------------------------------:|
+| Viewing manual: command summary |                            `man`                            |
+| Adding a module                 | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` |
+| Listing all modules in 4 years  |                         `list all`                          |
+| Listing all modules in 1 year   |                        `list /Year`                         |
+| Editing a module                |          `edit /MODULE_CODE /fieldToEdit /newInfo`          |
+| Locating module by code         |         `find /MODULE_CODE or MODULE_TYPE /keyword`         |
+| Deleting a module from the list |                    `delete /MODULE_CODE`                    |
+| Grade Calculator                |                       `calculatecap`                        |
+| Input/Update Grades             |                 `grade /MODULE_CODE /GRADE`                 |
+| Exiting the program             |                            `bye`                            |
 
-{Give a 'cheat sheet' of commands here}
-
-* Add todo `todo n/TODO_NAME d/DEADLINE`
