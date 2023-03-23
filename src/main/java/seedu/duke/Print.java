@@ -159,24 +159,10 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
-    public static void printGeneralElectiveRequirements(ArrayList<Module> completedModules, int completed_MCs,
-                                                        int remaining_MCs, int required_MCs) {
+    public static void printModuleTypeRequirements(ArrayList<Module> completedModules, int completed_MCs,
+                                                        int remaining_MCs, int required_MCs, String moduleType) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Here are the GE modules that you have completed so far:");
-        System.out.println("    ____________________________________________________________");
-        for (int i = 0; i < completedModules.size(); i++) {
-            System.out.println("     " + (i + 1) + ". " + completedModules.get(i));
-        }
-        System.out.println("     Congratulations! You have completed " + completed_MCs + " of the "
-                + required_MCs + " MCs required :)");
-        System.out.println("     You need to complete " + remaining_MCs + " MCs more.");
-        System.out.println("    ____________________________________________________________");
-    }
-
-    public static void printUnrestrictedElectiveRequirements(ArrayList<Module> completedModules, int completed_MCs,
-                                                        int remaining_MCs, int required_MCs) {
-        System.out.println("    ____________________________________________________________");
-        System.out.println("     Here are the UE modules that you have completed so far:");
+        System.out.println("     Here are the " + moduleType + " modules that you have completed so far:");
         System.out.println("    ____________________________________________________________");
         for (int i = 0; i < completedModules.size(); i++) {
             System.out.println("     " + (i + 1) + ". " + completedModules.get(i));
@@ -187,17 +173,4 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
-    public static void printInternshipRequirements(ArrayList<Module> completedModules, int completed_MCs,
-                                                   int remaining_MCs, int required_MCs) {
-        System.out.println("    ____________________________________________________________");
-        System.out.println("     Here are the Internships that you have completed so far:");
-        System.out.println("    ____________________________________________________________");
-        for (int i = 0; i < completedModules.size(); i++) {
-            System.out.println("     " + (i + 1) + ". " + completedModules.get(i));
-        }
-        System.out.println("     Congratulations! You have completed " + completed_MCs + " of the "
-                + required_MCs + " MCs required :)");
-        System.out.println("     You need to complete " + remaining_MCs + " MCs more.");
-        System.out.println("    ____________________________________________________________");
-    }
 }

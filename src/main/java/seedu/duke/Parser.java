@@ -101,20 +101,29 @@ public class Parser {
                 return;
             }
             assert userCommands.length == 3;
+            ArrayList<Module> foundModules = new ArrayList<>();
             if (userCommands[1].trim().equals("NAME")) {
                 try {
-                    moduleList.findModuleByName(userCommands[2].trim());
+                    foundModules = moduleList.findModuleByName(userCommands[2].trim());
                 } catch (DukeException e) {
                     Print.printErrorMessage(e);
                 }
             } else if (userCommands[1].trim().equals("TYPE")) {
                 try {
-                    moduleList.findModuleByType(userCommands[2].trim());
+                    foundModules = moduleList.findModuleByType(userCommands[2].trim());
                 } catch (DukeException e) {
                     Print.printErrorMessage(e);
                 }
             } else {
                 throw new DukeException("Please specify type of search with /Name or /Type");
+            }
+            if (foundModules.isEmpty()) {
+                Print.printNoModuleFound(userCommands[2].trim());
+                LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
+
+            } else {
+                LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
+                Print.printFoundModule(foundModules);
             }
             break;
         case "DELETE":
@@ -403,22 +412,35 @@ public class Parser {
         }
     }
 
+    /**
+     * Check how far the user is from meeting the requirement for each module type
+     *
+     * @param listOfModules list of modules that the user has
+     * @param userCommands user inputted command
+     * @throws DukeException if the moduleType the user input is not valid
+     */
     private void trackGraduationRequirements (ModuleList listOfModules, String[] userCommands) throws DukeException {
         String moduleType = userCommands[1].trim();
-
+        ArrayList<Module> foundModules = new ArrayList<>();
         switch(moduleType) {
         case "GE":
-            listOfModules.trackGeneralElectives();
+            foundModules = listOfModules.findModuleByType("GE");
+            listOfModules.trackGeneralElectives(foundModules, moduleType);
             break;
         case "UE":
-            listOfModules.trackUnrestrictedElectives();
+            foundModules = listOfModules.findModuleByType("UE");
+            listOfModules.trackUnrestrictedElectives(foundModules, moduleType);
             break;
         case "INTERNSHIP":
-            listOfModules.trackInternship();
+            foundModules = listOfModules.findModuleByType("INTERNSHIP");
+            listOfModules.trackInternship(foundModules, moduleType);
+            break;
+        case "CORE":
+            foundModules = listOfModules.findModuleByType("CORE");
+            listOfModules.trackCoreModules(foundModules, moduleType);
             break;
         default:
-            throw new DukeException("Make sure you're trying to track GE or UE.");
+            throw new DukeException("Make sure you're trying to track Core, GE, UE or Internship.");
         }
     }
-
 }

@@ -71,27 +71,19 @@ public class ModuleList {
      * @param keyword The word that the user would like to search for
      * @throws DukeException if the list of modules is currently empty
      */
-    public void findModuleByName(String keyword) throws DukeException {
+    public ArrayList<Module> findModuleByName(String keyword) throws DukeException {
         if (listOfModules.size() == 0) {
             throw new DukeException("There are currently no modules in your list");
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModuleByName process");
-        boolean isFound = false;
         ArrayList<Module> foundModules = new ArrayList<>();
         for (Module module : listOfModules) {
             if (module.getModuleCode().contains(keyword)) {
-                isFound = true;
                 foundModules.add(module);
             }
         }
-        if (isFound) {
-            LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
-            Print.printFoundModule(foundModules);
-        } else {
-            Print.printNoModuleFound(keyword);
-            LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
-        }
+        return foundModules;
     }
 
     /**
@@ -100,19 +92,17 @@ public class ModuleList {
      * @param type The module type that the user wants to search for
      * @throws DukeException if the module type the user input is invalid or if the list of modules is currently empty
      */
-    public void findModuleByType(String type) throws DukeException {
+    public ArrayList<Module> findModuleByType(String type) throws DukeException {
         if (listOfModules.size() == 0) {
             throw new DukeException("There are currently no modules in your list");
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModuleByType process");
-        boolean isFound = false;
         ArrayList<Module> foundModules = new ArrayList<>();
         switch (type) {
         case "CORE":
             for (Module module : listOfModules) {
                 if (module instanceof Core) {
-                    isFound = true;
                     foundModules.add(module);
                 }
             }
@@ -120,7 +110,6 @@ public class ModuleList {
         case "GE":
             for (Module module : listOfModules) {
                 if (module instanceof GeneralElective) {
-                    isFound = true;
                     foundModules.add(module);
                 }
             }
@@ -128,7 +117,6 @@ public class ModuleList {
         case "UE":
             for (Module module : listOfModules) {
                 if (module instanceof UnrestrictedElective) {
-                    isFound = true;
                     foundModules.add(module);
                 }
             }
@@ -136,7 +124,6 @@ public class ModuleList {
         case "Internship":
             for (Module module : listOfModules) {
                 if (module instanceof Internship) {
-                    isFound = true;
                     foundModules.add(module);
                 }
             }
@@ -144,14 +131,7 @@ public class ModuleList {
         default:
             throw new DukeException("Make sure your types are CORE,GE,UE or Internship");
         }
-
-        if (isFound) {
-            LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
-            Print.printFoundModule(foundModules);
-        } else {
-            Print.printNoModuleFound(type);
-            LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
-        }
+        return foundModules;
     }
 
     public Module deleteModule(String moduleCode) throws DukeException {
@@ -370,48 +350,91 @@ public class ModuleList {
         return gradeValue;
     }
 
-    public void trackGeneralElectives() {
-        ArrayList<Module> completedModules = new ArrayList<>();
+    /**
+     * Track the number of GE Modules completed
+     *
+     * @param listOfGeneralElectives list of Core Modules that are in the list
+     * @param moduleType String variable that holds the moduleType, "GE"
+     */
+    public void trackGeneralElectives(ArrayList<Module> listOfGeneralElectives, String moduleType) {
         int completedMCs = 0;
         int requiredMCs = 20;
         int remainingMCs = 0;
         for (Module module : listOfModules) {
-            if (module instanceof GeneralElective && !(module.getGrade().equals(" "))) {
-                completedModules.add(module);
-                completedMCs += Integer.parseInt(module.getModularCredits());
+            if (!(module.getGrade().equals(" "))) {
+                completed_MCs += Integer.parseInt(module.getModularCredits());
+            } else {
+                listOfGeneralElectives.remove(module);
             }
         }
         remainingMCs = requiredMCs - completedMCs;
-        Print.printGeneralElectiveRequirements(completedModules, completedMCs, remainingMCs, requiredMCs);
+        Print.printModuleTypeRequirements(listOfGeneralElectives,
+                completedMCs, remainingMCs, requiredMCs, moduleType);
+
     }
 
-    public void trackUnrestrictedElectives() {
-        ArrayList<Module> completedModules = new ArrayList<>();
+    /**
+     * Track the number of UE Modules completed
+     *
+     * @param listOfUnRestrictedElectives list of UE Modules that are in the list
+     * @param moduleType String variable that holds the moduleType, "UE"
+     */
+    public void trackUnrestrictedElectives(ArrayList<Module> listOfUnRestrictedElectives, String moduleType) {
         int completed_MCs = 0;
         int required_MCs = 32;
         int remaining_MCs = 0;
-        for (Module module : listOfModules) {
-            if (module instanceof UnrestrictedElective && !(module.getGrade().equals(" "))) {
-                completedModules.add(module);
+        for (Module module : listOfUnRestrictedElectives) {
+            if (!(module.getGrade().equals(" "))) {
                 completed_MCs += Integer.parseInt(module.getModularCredits());
+            } else {
+                listOfUnRestrictedElectives.remove(module);
             }
         }
         remaining_MCs = required_MCs - completed_MCs;
-        Print.printUnrestrictedElectiveRequirements(completedModules, completed_MCs, remaining_MCs, required_MCs);
+        Print.printModuleTypeRequirements(listOfUnRestrictedElectives,
+                completed_MCs, remaining_MCs, required_MCs, moduleType);
     }
 
-    public void trackInternship() {
-        ArrayList<Module> completedModules = new ArrayList<>();
+    /**
+     * Track the number of Internship Modules completed
+     *
+     * @param listOfInternship list of Internship Modules that are in the list
+     * @param moduleType String variable that holds the moduleType, "Internship"
+     */
+    public void trackInternship(ArrayList<Module> listOfInternship, String moduleType) {
         int completed_MCs = 0;
         int required_MCs = 12;
         int remaining_MCs = 0;
-        for (Module module : listOfModules) {
-            if (module instanceof Internship && !(module.getGrade().equals(" "))) {
-                completedModules.add(module);
+        for (Module module : listOfInternship) {
+            if (!(module.getGrade().equals(" "))) {
                 completed_MCs += Integer.parseInt(module.getModularCredits());
+            } else {
+                listOfInternship.remove(module);
             }
         }
         remaining_MCs = required_MCs - completed_MCs;
-        Print.printInternshipRequirements(completedModules, completed_MCs, remaining_MCs, required_MCs);
+        Print.printModuleTypeRequirements(listOfInternship,
+                completed_MCs, remaining_MCs, required_MCs, moduleType);
+    }
+
+    /**
+     * Track the number of Core Modules completed
+     *
+     * @param listOfCoreModules list of Core Modules that are in the list
+     * @param moduleType String variable that holds the moduleType, "CORE"
+     */
+    public void trackCoreModules(ArrayList<Module> listOfCoreModules, String moduleType) {
+        int completed_MCs = 0;
+        int required_MCs = 96;
+        int remaining_MCs = 0;
+        for (Module module : listOfCoreModules) {
+            if (!(module.getGrade().equals(" "))) {
+                completed_MCs += Integer.parseInt(module.getModularCredits());
+            } else {
+                listOfCoreModules.remove(module);
+            }
+        }
+        remaining_MCs = required_MCs - completed_MCs;
+        Print.printModuleTypeRequirements(listOfCoreModules, completed_MCs, remaining_MCs, required_MCs, moduleType);
     }
 }
