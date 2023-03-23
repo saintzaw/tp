@@ -412,6 +412,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Check how far the user is from meeting the requirement for each module type
+     *
+     * @param listOfModules list of modules that the user has
+     * @param userCommands user inputted command
+     * @throws DukeException if the moduleType the user input is not valid
+     */
     private void trackGraduationRequirements (ModuleList listOfModules, String[] userCommands) throws DukeException {
         String moduleType = userCommands[1].trim();
         ArrayList<Module> foundModules = new ArrayList<>();
@@ -433,7 +440,7 @@ public class Parser {
             listOfModules.trackCoreModules(foundModules, moduleType);
             break;
         default:
-            throw new DukeException("Make sure you're trying to track COre, GE, UE or Internship.");
+            throw new DukeException("Make sure you're trying to track Core, GE, UE or Internship.");
         }
     }
 }
