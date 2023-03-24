@@ -157,7 +157,27 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 1;
-            moduleList.listModules();
+            moduleList.listModulesByYear("1");
+            moduleList.listModulesByYear("2");
+            moduleList.listModulesByYear("3");
+            moduleList.listModulesByYear("4");
+            break;
+        case "LIST":
+            try {
+                int numberOfFields = 2;
+                checkNumberOfFields(numberOfFields, userCommands);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+            }
+            assert userCommands.length == 2;
+            String year = userCommands[1].trim();
+            try {
+                checkYearInput(year);
+            } catch (DukeException e) {
+                Print.printErrorMessage(e);
+                return;
+            }
+            moduleList.listModulesByYear(year);
             break;
         case "EDIT":
             try {
@@ -349,6 +369,19 @@ public class Parser {
                 throw new DukeException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
             }
         } catch (NumberFormatException e) {
+            throw new DukeException("Make sure Year of Study is a number from 0-6");
+        }
+    }
+
+    private void checkYearInput(String year) throws DukeException {
+
+        int yearOfStudy;
+        try {
+            yearOfStudy = Integer.parseInt(year);
+        } catch (NumberFormatException e) {
+            throw new DukeException("Make sure Year of Study is a number from 0-6");
+        }
+        if (yearOfStudy < 0 || yearOfStudy > 6) {
             throw new DukeException("Make sure Year of Study is a number from 0-6");
         }
     }

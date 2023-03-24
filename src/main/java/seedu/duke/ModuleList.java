@@ -161,7 +161,55 @@ public class ModuleList {
         if (getModuleListSize() > 0) {
             Print.printModuleList(listOfModules);
         } else {
-            Print.printEmptyModuleList();
+            String year = "0";
+            Print.printEmptyModuleList(year);
+        }
+        LOGGER.log(Level.INFO, "Finished listModules process");
+    }
+
+    public void listModulesByYear(String year) {
+        LOGGER.log(Level.INFO, "Starting listModules process");
+        ArrayList<Module> moduleListByYear = new ArrayList<>();
+        ArrayList<String> moduleListSemOne = new ArrayList<>();
+        ArrayList<String> moduleListSpecialTermOne = new ArrayList<>();
+        ArrayList<String> moduleListSemTwo = new ArrayList<>();
+        ArrayList<String> moduleListSpecialTermTwo = new ArrayList<>();
+
+        if (getModuleListSize() > 0) {
+            for (Module module : listOfModules) {
+                String mod = "[\"" + module.getModuleType() + "\"]" + "[\"" + module.getGrade() + "\"] "
+                        + module.getModuleCode() + " " + module.getModularCredits() + " MCs";
+                if (module.getYear().equals(year)) {
+                    switch (module.getSemester()) {
+                    case "1":
+                        moduleListSemOne.add(mod);
+                        moduleListByYear.add(module);
+                        break;
+                    case "1.5":
+                        moduleListSpecialTermOne.add(mod);
+                        moduleListByYear.add(module);
+                        break;
+                    case "2":
+                        moduleListSemTwo.add(mod);
+                        moduleListByYear.add(module);
+                        break;
+                    case "2.5":
+                        moduleListSpecialTermTwo.add(mod);
+                        moduleListByYear.add(module);
+                        break;
+                    default:
+                        moduleListByYear.add(module);
+                    }
+                }
+            }
+            if (moduleListByYear.size() != 0 ) {
+                Print.printModuleListByYear(moduleListSemOne, moduleListSpecialTermOne,
+                        moduleListSemTwo, moduleListSpecialTermTwo, year);
+            } else {
+                Print.printEmptyModuleList(year);
+            }
+        } else {
+            Print.printEmptyModuleList(year);
         }
         LOGGER.log(Level.INFO, "Finished listModules process");
     }
@@ -401,19 +449,19 @@ public class ModuleList {
      * @param moduleType String variable that holds the moduleType, "UE"
      */
     public void trackUnrestrictedElectives(ArrayList<Module> listOfUnRestrictedElectives, String moduleType) {
-        int completed_MCs = 0;
-        int required_MCs = 32;
-        int remaining_MCs = 0;
+        int completedMCs = 0;
+        int requiredMCs = 32;
+        int remainingMCs = 0;
         for (Module module : listOfUnRestrictedElectives) {
             if (!(module.getGrade().equals(" "))) {
-                completed_MCs += Integer.parseInt(module.getModularCredits());
+                completedMCs += Integer.parseInt(module.getModularCredits());
             } else {
                 listOfUnRestrictedElectives.remove(module);
             }
         }
-        remaining_MCs = required_MCs - completed_MCs;
+        remainingMCs = requiredMCs - completedMCs;
         Print.printModuleTypeRequirements(listOfUnRestrictedElectives,
-                completed_MCs, remaining_MCs, required_MCs, moduleType);
+                completedMCs, remainingMCs, requiredMCs, moduleType);
     }
 
     /**
@@ -423,19 +471,19 @@ public class ModuleList {
      * @param moduleType String variable that holds the moduleType, "Internship"
      */
     public void trackInternship(ArrayList<Module> listOfInternship, String moduleType) {
-        int completed_MCs = 0;
-        int required_MCs = 12;
-        int remaining_MCs = 0;
+        int completedMCs = 0;
+        int requiredMCs = 12;
+        int remainingMCs = 0;
         for (Module module : listOfInternship) {
             if (!(module.getGrade().equals(" "))) {
-                completed_MCs += Integer.parseInt(module.getModularCredits());
+                completedMCs += Integer.parseInt(module.getModularCredits());
             } else {
                 listOfInternship.remove(module);
             }
         }
-        remaining_MCs = required_MCs - completed_MCs;
+        remainingMCs = requiredMCs - completedMCs;
         Print.printModuleTypeRequirements(listOfInternship,
-                completed_MCs, remaining_MCs, required_MCs, moduleType);
+                completedMCs, remainingMCs, requiredMCs, moduleType);
     }
 
     /**
@@ -445,17 +493,17 @@ public class ModuleList {
      * @param moduleType String variable that holds the moduleType, "CORE"
      */
     public void trackCoreModules(ArrayList<Module> listOfCoreModules, String moduleType) {
-        int completed_MCs = 0;
-        int required_MCs = 96;
-        int remaining_MCs = 0;
+        int completedMCs = 0;
+        int requiredMCs = 96;
+        int remainingMCs = 0;
         for (Module module : listOfCoreModules) {
             if (!(module.getGrade().equals(" "))) {
-                completed_MCs += Integer.parseInt(module.getModularCredits());
+                completedMCs += Integer.parseInt(module.getModularCredits());
             } else {
                 listOfCoreModules.remove(module);
             }
         }
-        remaining_MCs = required_MCs - completed_MCs;
-        Print.printModuleTypeRequirements(listOfCoreModules, completed_MCs, remaining_MCs, required_MCs, moduleType);
+        remainingMCs = requiredMCs - completedMCs;
+        Print.printModuleTypeRequirements(listOfCoreModules, completedMCs, remainingMCs, requiredMCs, moduleType);
     }
 }
