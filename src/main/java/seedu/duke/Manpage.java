@@ -2,6 +2,7 @@
 package seedu.duke;
 public class Manpage {
 
+    private static String line= "-----------------------------------------------------\n ";
     public Manpage() {
 
     }
@@ -66,7 +67,7 @@ public class Manpage {
      */
     public static void printManPageAdd() {
         System.out.println("\n\n" +
-                "-----------------------------------------------------\n"+
+                line+
                 "Adding a module:  add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM\n "+
                 "Adds a module to the list of modules.\n " +
                 "Year includes {1, 2, 3, 4, 5, 6}\n "+
@@ -81,7 +82,7 @@ public class Manpage {
                 "GE (General modules)\n " +
                 "UE (Unrestricted Electives)\n " +
                 "INTERNSHIP (Module Code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)\n\n " +
-                "-----------------------------------------------------\n");
+                line);
     }
 
     /**
@@ -89,16 +90,16 @@ public class Manpage {
      * use the list feature.
      */
     public static void printManPageList() {
-        System.out.println("\n\n" + "-----------------------------------------------------\n" +
+        System.out.println("\n\n" + line +
 
                 "List all modules: list all \n " +
                 "Shows a list of all modules in the module planner along with the module type.\n " +
-                "Example: list all\n\n" +
+                "Example: list all\n\n " +
 
                 "List all modules: list /(Year) \n " +
                 "Shows a list of all modules in that year along with the module type.\n " +
-                "Example: list 1\n\n" +
-                "-----------------------------------------------------\n");
+                "Example: list /1\n\n" +
+                line);
     }
 
     /**
@@ -106,7 +107,7 @@ public class Manpage {
      * use the edit feature.
      */
     public static void printManPageEdit() {
-        System.out.println("\n\n" + "-----------------------------------------------------\n" +
+        System.out.println("\n\n" + line +
 
                 "Edit modules: edit /MODULE_CODE /fieldToEdit /newInfo  \n " +
                 "Shows a list of all modules in that year along with the module type.\n " +
@@ -118,8 +119,7 @@ public class Manpage {
                 "2. MODULE_TYPE will be /TYPE\n " +
                 "3. Year will be /YEAR\n "+
                 "4. Semester will be /SEMESTER\n\n " +
-
-                "-----------------------------------------------------\n");
+                line);
     }
 
     /**
@@ -127,15 +127,14 @@ public class Manpage {
      * use the find feature.
      */
     public static void printManPageFind() {
-        System.out.println("\n\n" + "-----------------------------------------------------\n" +
+        System.out.println("\n\n" + line +
 
                 "Find module: find /MODULE_CODE or MODULE_TYPE /keyword\n " +
                 "Find which year and semester I plan to take the module.\n\n " +
                 "Example: In a list with CS2113T and CS2101 as both core modules.\n "+
                 "1.  find /name /CS2113 will show the CS2113T module only\n "+
                 "2.  find /type /CORE  will show both CS2113T and CS2101 modules\n\n " +
-
-                "-----------------------------------------------------\n");
+               line);
     }
 
     /**
@@ -144,10 +143,10 @@ public class Manpage {
      */
     public static void printManPageDelete() {
         System.out.println("\n\n" +
-                "-----------------------------------------------------\n"+
+                line+
                 "Delete module: delete /(Module Code)\n " +
                 "Shows a list of all modules in the module planner.\n " +
-                "Example: delete /CS2113T\n\n " + "-----------------------------------------------------\n" );
+                "Example: delete /CS2113T\n\n " + line );
     }
 
     /**
@@ -155,12 +154,11 @@ public class Manpage {
      * use the Grade calculator.
      */
     public static void printManPageCalculator() {
-        System.out.println("\n\n" + "-----------------------------------------------------\n" +
+        System.out.println("\n\n" + line +
 
                 "Grade calculator: calculatecap \n " +
                 "Calculates your cap\n\n " +
-
-                "-----------------------------------------------------\n");
+                line);
     }
 
     /**
@@ -169,7 +167,7 @@ public class Manpage {
      */
     public static void printManPageUpdateGrade() {
         System.out.println("\n\n" +
-                "-----------------------------------------------------\n"+
+               line+
 
                 "Input/Update Grades: grade /MODULE_CODE /GRADE\n " +
                 "Updates your cap\n "+
@@ -190,7 +188,7 @@ public class Manpage {
                         "U  [-]\n " +
                         "CS [-]\n " +
                         "CU [-]\n\n " +
-                "-----------------------------------------------------\n");
+                line);
     }
 
     /**
@@ -199,11 +197,11 @@ public class Manpage {
      */
     public static void printManPageExit() {
         System.out.println("\n\n" +
-                "-----------------------------------------------------\n"+
+                 line+
                 "Exit program: bye\n " +
                 "Exit module planner.\n " +
                 "Format: bye\n\n"
-                +"-----------------------------------------------------\n");
+                +line);
     }
 
 }

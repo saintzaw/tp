@@ -388,7 +388,7 @@ public class PrintTest {
                 "List all modules: list /(Year) "+System.lineSeparator()+" " +
                 "Shows a list of all modules in that year along with the module type."
                 + System.lineSeparator() + " " +
-                "Example: list 1" + System.lineSeparator() + System.lineSeparator() + " " +
+                "Example: list /1" + System.lineSeparator() + System.lineSeparator() + " " +
                 "-----------------------------------------------------\n";
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
