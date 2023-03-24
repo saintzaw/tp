@@ -184,10 +184,10 @@ public class Manpage {
                         "D+ [1.5]\n " +
                         "D  [1.0]\n " +
                         "F  [0]\n " +
-                        "S  [-]\n " +
-                        "U  [-]\n " +
-                        "CS [-]\n " +
-                        "CU [-]\n\n " +
+                        "S  [N.A.]\n " +
+                        "U  [N.A.]\n " +
+                        "CS [N.A.]\n " +
+                        "CU [N.A.]\n\n " +
                 line);
     }
 

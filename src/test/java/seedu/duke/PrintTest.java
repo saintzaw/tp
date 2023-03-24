@@ -492,10 +492,10 @@ public class PrintTest {
                 "D+ [1.5]" +System.lineSeparator() + " " +
                 "D  [1.0]" +System.lineSeparator() + " " +
                 "F  [0]" +System.lineSeparator() + " " +
-                "S  [-]" +System.lineSeparator() + " " +
-                "U  [-]" +System.lineSeparator() + " " +
-                "CS [-]" +System.lineSeparator() + " " +
-                "CU [-]" +System.lineSeparator()+System.lineSeparator() + " " +
+                "S  [N.A.]" +System.lineSeparator() + " " +
+                "U  [N.A.]" +System.lineSeparator() + " " +
+                "CS [N.A.]" +System.lineSeparator() + " " +
+                "CU [N.A.]" +System.lineSeparator()+System.lineSeparator() + " " +
                 line ;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
