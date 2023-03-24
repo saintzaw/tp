@@ -89,11 +89,13 @@ public class Print {
                                              ArrayList<String> specialTermOneModuleList,
                                              ArrayList<String> semTwoModuleList,
                                              ArrayList<String> specialTermTwoModuleList ,String year) {
-        System.out.println("    ____________________________________________________________");
-        System.out.println("     Here are the modules in your list for Year " + year + " :");
-        System.out.println("    ____________________________________________________________");
-        System.out.printf("       %-30s %-10s %-30s %-10s %-30s %-10s %-30s\n", "Semester One", ":",
-                "Special Term One", ":", "Semester Two", ":", "Special Term Two");
+        System.out.println("    __________");
+        System.out.println("   | Year " + year + "   |");
+        System.out.println("   |__________|");
+        System.out.printf("       %-28s %-10s %-28s %-10s %-28s %-10s %-28s\n", "Semester 1", " ",
+                "Special Term 1", " ", "Semester 2", " ", "Special Term 2");
+        System.out.printf("       %-28s %-10s %-28s %-10s %-28s %-10s %-28s\n", "===========", " ",
+                "===============", " ", "===========", " ", "===============");
 
 
         int max = Math.max(Math.max(semOneModuleList.size(), specialTermOneModuleList.size()),
@@ -129,8 +131,8 @@ public class Print {
                 specialTermTwo = " ";
             }
 
-            System.out.printf("       %-30s %-10s %-30s %-10s %-30s %-10s %-30s\n", semOne, ":", specialTermOne, ":",
-                    semTwo, ":", specialTermTwo);
+            System.out.printf("       %-28s %-10s %-28s %-10s %-28s %-10s %-28s\n", semOne, "|", specialTermOne, "|",
+                    semTwo, "|", specialTermTwo);
         }
     }
 

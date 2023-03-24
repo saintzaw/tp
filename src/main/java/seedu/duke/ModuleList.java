@@ -177,7 +177,7 @@ public class ModuleList {
 
         if (getModuleListSize() > 0) {
             for (Module module : listOfModules) {
-                String mod = "[\"" + module.getModuleType() + "\"] " + "[\"" + module.getGrade() + "\"] "
+                String mod = "[\"" + module.getModuleType() + "\"]" + "[\"" + module.getGrade() + "\"] "
                         + module.getModuleCode() + " " + module.getModularCredits() + " MCs";
                 if (module.getYear().equals(year)) {
                     switch (module.getSemester()) {
