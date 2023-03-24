@@ -41,7 +41,7 @@ public class Parser {
             Manpage.printManPageCalculator();
             break;
         case "GRADE":
-            Manpage.printManPageCalculatorInput();
+            Manpage.printManPageUpdateGrade();
             break;
         case "BYE":
             Manpage.printManPageExit();

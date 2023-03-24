@@ -47,9 +47,9 @@ List the command summary and shows more commands to get a better description of 
 | Viewing manual: command summary |                            `man`                            |
 | Adding a module                 | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` |
 | Listing all modules in 4 years  |                         `list all`                          |
-| Listing all modules in 1 year   |                        `list /Year`                         |
-| Editing a module                |          `edit /MODULE_CODE /fieldToEdit /newInfo`          |
-| Locating module by code         |         `find /MODULE_CODE or MODULE_TYPE /keyword`         |
+| Listing all modules in 1 year   |                        `list /YEAR`                         |
+| Editing a module                |        `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`         |
+| Locating module by code         |         `find /MODULE_CODE or MODULE_TYPE /KEYWORD`         |
 | Deleting a module from the list |                    `delete /MODULE_CODE`                    |
 | Grade Calculator                |                       `calculatecap`                        |
 | Input/Update Grades             |                 `grade /MODULE_CODE /GRADE`                 |

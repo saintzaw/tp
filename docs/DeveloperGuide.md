@@ -33,7 +33,7 @@ The sequence by which the ManPage class handles the `man` command is as follows:
 
 `Manpage#printManPageCalculator()` - Prints description of how to use the grade calculator.
 
-`Manpage#printManPageCalculatorInput()` - Prints description of how to input grades.
+`Manpage#printManPageUpdateGrade()` - Prints description of how to input grades.
 
 `Manpage#printManPageExit()` - Prints description of how to use the exit feature.
 
