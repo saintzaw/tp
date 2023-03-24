@@ -58,7 +58,7 @@ public class Manpage {
                 "9. Exit\n " +
                 "Command: bye\n "+
                 "To find out more, use the command: man /bye\n " +
-                "-----------------------------------------------------\n" );
+                line);
     }
 
     /**

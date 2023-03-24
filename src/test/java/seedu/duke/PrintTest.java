@@ -7,7 +7,7 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrintTest {
-
+    private static String line= "-----------------------------------------------------"+System.lineSeparator()+" ";
     @Test
     public void printAddedModuleTest() {
         ModuleList moduleList = new ModuleList();
@@ -331,7 +331,7 @@ public class PrintTest {
                 "Command: bye" + System.lineSeparator() + " "+
                 "To find out more, use the command: man /bye"
                 + System.lineSeparator() + System.lineSeparator() + " "
-                +"-----------------------------------------------------\n";
+                +line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -343,7 +343,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageAdd();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
-                + "-----------------------------------------------------\n"+
+                + line+
 
                 "Adding a module: add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM"
                 + System.lineSeparator() + " " +
@@ -366,7 +366,7 @@ public class PrintTest {
                 "UE (Unrestricted Electives)" + System.lineSeparator() +" "+
                 "INTERNSHIP (Module Code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)"+ System.lineSeparator()
                 +System.lineSeparator()
-                + " " +"-----------------------------------------------------\n";
+                + " " +line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -379,7 +379,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageList();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
-                +"-----------------------------------------------------\n"+
+                +line+
                 "List all modules: list all " + System.lineSeparator() + " " +
                 "Shows a list of all modules in the module planner along with the module type." +
                 System.lineSeparator() + " " +
@@ -389,7 +389,7 @@ public class PrintTest {
                 "Shows a list of all modules in that year along with the module type."
                 + System.lineSeparator() + " " +
                 "Example: list /1" + System.lineSeparator() + System.lineSeparator() + " " +
-                "-----------------------------------------------------\n";
+                line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -401,7 +401,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageEdit();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
-                + "-----------------------------------------------------"+System.lineSeparator() +" "+
+                + line+
                 "Edit modules: edit /MODULE_CODE /fieldToEdit /newInfo" +System.lineSeparator() +" "+
                 "Shows a list of all modules in that year along with the module type." +System.lineSeparator() +" "+
                 "Example: To change CS1010 modular credits field from 6 to 4, the command" +
@@ -413,7 +413,7 @@ public class PrintTest {
                 "3. Year will be /YEAR"+ System.lineSeparator() +" "+
                 "4. Semester will be /SEMESTER" +System.lineSeparator() +System.lineSeparator() +" "+
 
-                "-----------------------------------------------------\n";
+                line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -425,7 +425,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageFind();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
-                + "-----------------------------------------------------\n"+
+                + line+
 
                 "Find module: find /MODULE_CODE or MODULE_TYPE /keyword" + System.lineSeparator() + " " +
                 "Find which year and semester I plan to take the module." + System.lineSeparator() + " " +
@@ -433,7 +433,7 @@ public class PrintTest {
                 "1.  find /name /CS2113 will show the CS2113T module only" + System.lineSeparator() + " " +
                 "2.  find /type /CORE  will show both CS2113T and CS2101 modules" +
                 System.lineSeparator() + System.lineSeparator() + " "
-                +"-----------------------------------------------------\n";
+                +line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -445,12 +445,12 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageDelete();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
-                + "-----------------------------------------------------\n"+
+                + line+
 
                 "Delete module: delete /(Module Code)" + System.lineSeparator() + " " +
                 "Shows a list of all modules in the module planner." + System.lineSeparator() + " " +
                 "Example: delete /CS2113T" + System.lineSeparator() + System.lineSeparator() + " "
-                +"-----------------------------------------------------\n";
+                +line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -461,10 +461,10 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageCalculator();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
-                + "-----------------------------------------------------"+ System.lineSeparator() + " " +
+                + line +
                 "Grade calculator: calculatecap" + System.lineSeparator() + " " +
                 "Calculates your cap" +System.lineSeparator()+  System.lineSeparator() + " " +
-                "-----------------------------------------------------"+System.lineSeparator() + " " ;
+                line ;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -475,7 +475,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageUpdateGrade();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
-                + "-----------------------------------------------------"+ System.lineSeparator() + " " +
+                + line +
                 "Input/Update Grades: grade /MODULE_CODE /GRADE"+  System.lineSeparator() + " " +
                 "Updates your cap"+  System.lineSeparator() + " " +
                 "Example: grade /CS2101 /A+"
@@ -496,7 +496,7 @@ public class PrintTest {
                 "U  [-]" +System.lineSeparator() + " " +
                 "CS [-]" +System.lineSeparator() + " " +
                 "CU [-]" +System.lineSeparator()+System.lineSeparator() + " " +
-                "-----------------------------------------------------"+System.lineSeparator() + " " ;
+                line ;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
@@ -507,12 +507,12 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         Manpage.printManPageExit();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
-                +"-----------------------------------------------------\n"+
+                +line+
 
                 "Exit program: bye" + System.lineSeparator() + " " +
                 "Exit module planner." + System.lineSeparator() + " " +
                 "Format: bye" + System.lineSeparator() + System.lineSeparator()
-                +"-----------------------------------------------------\n";
+                +line;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
                 outContent.toString().replaceAll("\\s+",""));
