@@ -167,7 +167,7 @@ public class Manpage {
      * Prints a more detailed description on how to
      * input grades.
      */
-    public static void printManPageCalculatorInput() {
+    public static void printManPageUpdateGrade() {
         System.out.println("\n\n" +
                 "-----------------------------------------------------\n"+
 
@@ -176,16 +176,20 @@ public class Manpage {
                 "Example: grade /CS2101 /A+\n "+
                 "Grades: \n " +
                         "A+ [5.0]\n " +
-                        "A [5.0]\n " +
+                        "A  [5.0]\n " +
                         "A- [4.5]\n " +
                         "B+ [4.0]\n " +
-                        "B [3.5]\n " +
+                        "B  [3.5]\n " +
                         "B- [3.0]\n " +
                         "C+ [2.5]\n " +
-                        "C [2.0]\n " +
+                        "C  [2.0]\n " +
                         "D+ [1.5]\n " +
-                        "D [1.0]\n " +
-                        "F [0]\n\n " +
+                        "D  [1.0]\n " +
+                        "F  [0]\n " +
+                        "S  [-]\n " +
+                        "U  [-]\n " +
+                        "CS [-]\n " +
+                        "CU [-]\n\n " +
                 "-----------------------------------------------------\n");
     }
 

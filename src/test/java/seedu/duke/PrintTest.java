@@ -260,7 +260,7 @@ public class PrintTest {
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
-    /*
+
     @Test
     public void printManPageTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -470,10 +470,10 @@ public class PrintTest {
                 outContent.toString().replaceAll("\\s+",""));
     }
     @Test
-    public void printManPageCalculatorInputTest() {
+    public void printManPageUpdateGradeTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPageCalculatorInput();
+        Manpage.printManPageUpdateGrade();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + "-----------------------------------------------------"+ System.lineSeparator() + " " +
                 "Input/Update Grades: grade /MODULE_CODE /GRADE"+  System.lineSeparator() + " " +
@@ -482,16 +482,20 @@ public class PrintTest {
                 +  System.lineSeparator()+  System.lineSeparator() + " " +
                 "Grades:" +System.lineSeparator() + " " +
                 "A+ [5.0]" +System.lineSeparator() + " " +
-                "A [5.0]" +System.lineSeparator() + " " +
+                "A  [5.0]" +System.lineSeparator() + " " +
                 "A- [4.5]"+System.lineSeparator() + " " +
                 "B+ [4.0]"+System.lineSeparator() + " " +
-                "B [3.5]" +System.lineSeparator() + " " +
+                "B  [3.5]" +System.lineSeparator() + " " +
                 "B- [3.0]" +System.lineSeparator() + " " +
                 "C+ [2.5]" +System.lineSeparator() + " " +
-                "C [2.0]" +System.lineSeparator() + " " +
+                "C  [2.0]" +System.lineSeparator() + " " +
                 "D+ [1.5]" +System.lineSeparator() + " " +
-                "D [1.0]" +System.lineSeparator() + " " +
-                "F [0]" +System.lineSeparator()+System.lineSeparator() + " " +
+                "D  [1.0]" +System.lineSeparator() + " " +
+                "F  [0]" +System.lineSeparator() + " " +
+                "S  [-]" +System.lineSeparator() + " " +
+                "U  [-]" +System.lineSeparator() + " " +
+                "CS [-]" +System.lineSeparator() + " " +
+                "CU [-]" +System.lineSeparator()+System.lineSeparator() + " " +
                 "-----------------------------------------------------"+System.lineSeparator() + " " ;
 
         assertEquals(expectedOutput.replaceAll("\\s+",""),
@@ -514,7 +518,7 @@ public class PrintTest {
                 outContent.toString().replaceAll("\\s+",""));
     }
 
-*/
+
     @Test
     public void updateModuleGradeTest() {
         ModuleList moduleList = new ModuleList();
