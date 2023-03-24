@@ -114,7 +114,7 @@ public class Manpage {
                 "Example: To change CS1010 modular credits field from 6 to 4, the command" +
                 "will be : edit /CS1010 /MC /4\n\n " +
 
-                "fieldToEdit includes:\n "+
+                "FIELD_TO_EDIT includes:\n "+
                 "1. modular credits will be /MC\n "+
                 "2. MODULE_TYPE will be /TYPE\n " +
                 "3. Year will be /YEAR\n "+
@@ -171,7 +171,7 @@ public class Manpage {
 
                 "Input/Update Grades: grade /MODULE_CODE /GRADE\n " +
                 "Updates your cap\n "+
-                "Example: grade /CS2101 /A+\n "+
+                "Example: grade /CS2101 /A+\n\n "+
                 "Grades: \n " +
                         "A+ [5.0]\n " +
                         "A  [5.0]\n " +

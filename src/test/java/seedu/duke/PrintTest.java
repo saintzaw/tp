@@ -407,7 +407,7 @@ public class PrintTest {
                 "Example: To change CS1010 modular credits field from 6 to 4, the command" +
                 "will be : edit /CS1010 /MC /4" +System.lineSeparator() +System.lineSeparator() +" "+
 
-                "fieldToEdit includes:"+System.lineSeparator() +" "+
+                "FIELD_TO_EDIT includes:"+System.lineSeparator() +" "+
                 "1. modular credits will be /MC"+System.lineSeparator() +" "+
                 "2. MODULE_TYPE will be /TYPE" +System.lineSeparator() +" "+
                 "3. Year will be /YEAR"+ System.lineSeparator() +" "+
