@@ -295,19 +295,19 @@ public class PrintTest {
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "3. List" + System.lineSeparator() + " " +
-                "Command: list all or list /Year" + System.lineSeparator()
+                "Command: list all or list /YEAR" + System.lineSeparator()
                 + " " +
                 "To find out more, use the command: man /list"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "4. Edit" + System.lineSeparator() + " " +
-                "Command: edit /MODULE_CODE /fieldToEdit /newInfo" +
+                "Command: edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO" +
                 System.lineSeparator() + " " +
                 "To find out more, use the command: man /edit"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "5. Find" + System.lineSeparator() + " " +
-                "Command: find /MODULE_CODE or MODULE_TYPE /keyword" + System.lineSeparator()
+                "Command: find /MODULE_CODE or MODULE_TYPE /KEYWORD" + System.lineSeparator()
                 + " " +
                 "To find out more, use the command: man /find"
                 + System.lineSeparator() + System.lineSeparator() + " " +
@@ -385,7 +385,7 @@ public class PrintTest {
                 System.lineSeparator() + " " +
                 "Example: list all" + System.lineSeparator() + System.lineSeparator() + " " +
 
-                "List all modules: list /(Year) "+System.lineSeparator()+" " +
+                "List all modules: list /YEAR "+System.lineSeparator()+" " +
                 "Shows a list of all modules in that year along with the module type."
                 + System.lineSeparator() + " " +
                 "Example: list /1" + System.lineSeparator() + System.lineSeparator() + " " +
@@ -402,7 +402,7 @@ public class PrintTest {
         Manpage.printManPageEdit();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line+
-                "Edit modules: edit /MODULE_CODE /fieldToEdit /newInfo" +System.lineSeparator() +" "+
+                "Edit modules: edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO" +System.lineSeparator() +" "+
                 "Shows a list of all modules in that year along with the module type." +System.lineSeparator() +" "+
                 "Example: To change CS1010 modular credits field from 6 to 4, the command" +
                 "will be : edit /CS1010 /MC /4" +System.lineSeparator() +System.lineSeparator() +" "+
@@ -427,7 +427,7 @@ public class PrintTest {
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line+
 
-                "Find module: find /MODULE_CODE or MODULE_TYPE /keyword" + System.lineSeparator() + " " +
+                "Find module: find /MODULE_CODE or MODULE_TYPE /KEYWORD" + System.lineSeparator() + " " +
                 "Find which year and semester I plan to take the module." + System.lineSeparator() + " " +
                 "Example: In a list with CS2113T and CS2101 as both core modules."+ System.lineSeparator() + " " +
                 "1.  find /name /CS2113 will show the CS2113T module only" + System.lineSeparator() + " " +
@@ -447,7 +447,7 @@ public class PrintTest {
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line+
 
-                "Delete module: delete /(Module Code)" + System.lineSeparator() + " " +
+                "Delete module: delete /MODULE_CODE" + System.lineSeparator() + " " +
                 "Shows a list of all modules in the module planner." + System.lineSeparator() + " " +
                 "Example: delete /CS2113T" + System.lineSeparator() + System.lineSeparator() + " "
                 +line;

@@ -32,15 +32,15 @@ public class Manpage {
                 "To find out more, use the command: man /add\n\n " +
 
                 "3. List\n " +
-                "Command: list all or list /Year\n " +
+                "Command: list all or list /YEAR\n " +
                 "To find out more, use the command: man /list\n\n " +
 
                 "4. Edit\n " +
-                "Command: edit /MODULE_CODE /fieldToEdit /newInfo\n " +
+                "Command: edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO\n " +
                 "To find out more, use the command: man /edit\n\n " +
 
                 "5. Find\n " +
-                "Command: find /MODULE_CODE or MODULE_TYPE /keyword\n " +
+                "Command: find /MODULE_CODE or MODULE_TYPE /KEYWORD\n " +
                 "To find out more, use the command: man /find\n\n " +
 
                 "6. Delete\n " +
@@ -96,7 +96,7 @@ public class Manpage {
                 "Shows a list of all modules in the module planner along with the module type.\n " +
                 "Example: list all\n\n " +
 
-                "List all modules: list /(Year) \n " +
+                "List all modules: list /YEAR \n " +
                 "Shows a list of all modules in that year along with the module type.\n " +
                 "Example: list /1\n\n" +
                 line);
@@ -109,7 +109,7 @@ public class Manpage {
     public static void printManPageEdit() {
         System.out.println("\n\n" + line +
 
-                "Edit modules: edit /MODULE_CODE /fieldToEdit /newInfo  \n " +
+                "Edit modules: edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  \n " +
                 "Shows a list of all modules in that year along with the module type.\n " +
                 "Example: To change CS1010 modular credits field from 6 to 4, the command" +
                 "will be : edit /CS1010 /MC /4\n\n " +
@@ -129,7 +129,7 @@ public class Manpage {
     public static void printManPageFind() {
         System.out.println("\n\n" + line +
 
-                "Find module: find /MODULE_CODE or MODULE_TYPE /keyword\n " +
+                "Find module: find /MODULE_CODE or MODULE_TYPE /KEYWORD\n " +
                 "Find which year and semester I plan to take the module.\n\n " +
                 "Example: In a list with CS2113T and CS2101 as both core modules.\n "+
                 "1.  find /name /CS2113 will show the CS2113T module only\n "+
@@ -144,7 +144,7 @@ public class Manpage {
     public static void printManPageDelete() {
         System.out.println("\n\n" +
                 line+
-                "Delete module: delete /(Module Code)\n " +
+                "Delete module: delete /MODULE_CODE\n " +
                 "Shows a list of all modules in the module planner.\n " +
                 "Example: delete /CS2113T\n\n " + line );
     }
