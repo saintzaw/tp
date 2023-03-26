@@ -35,6 +35,16 @@ public class ModuleList {
         return listOfModules.size();
     }
 
+    /**
+     * Adds a module to the moduleList.
+     *
+     * @param moduleCode The unique identifier of modules.
+     * @param modularCredits The amount of credits prescribed to the module.
+     * @param moduleType The type of module to be added. [Core, GeneralElective, UnrestrictedElective, Internship]
+     * @param year The year that the module is taken or to be taken in. [1-6]
+     * @param semester The semester that the module is taken or to be taken in. [1, 1.5, 2, 2.5]
+     * @return
+     */
     public Module addModule(String moduleCode, String modularCredits,
                           String moduleType, String year, String semester) {
         int oldSizeOfList = listOfModules.size();

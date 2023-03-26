@@ -268,14 +268,19 @@ public class Parser {
 
     }
 
+    /**
+     * Checks all the fields of addInput, which is the input captured when add command is called by user.
+     * @param listOfModules The currently stored list of modules. Can be loaded or during the session.
+     * @param userCommands The input that the user keyed in.
+     * @throws DukeException if the user input is invalid.
+     */
     private void checkAddInput(ModuleList listOfModules, String[] userCommands) throws DukeException {
         //check for correct number of fields
         int numberOfFields = 6;
         checkNumberOfFields(numberOfFields, userCommands);
+        assert userCommands.length == 6 : "Expected 6 fields";
 
-        assert userCommands.length == 6 : "Expected 6 fields"; //change to 6 after year and sem added.
-
-        //check for non-empty moduleCode field
+        //check for non-empty and correct number of characters in the moduleCode field
         checkAddInputCorrectModuleCode(userCommands);
 
         //check for correct field in MC
@@ -316,6 +321,9 @@ public class Parser {
     private void checkAddInputCorrectModuleCode(String[] userCommands) throws DukeException {
         if (userCommands[1].trim().equals("")) {
             throw new DukeException("Module Code cannot be empty");
+        }
+        if (userCommands[1].trim().length() < 6) {
+            throw new DukeException("Module Code cannot be less than 6 characters!");
         }
     }
 
