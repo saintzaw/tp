@@ -35,6 +35,38 @@ List the command summary and shows more commands to get a better description of 
 8. `man/grade`
 9. `man /bye`
 
+### Add command: `add`
+
+The add command is used to add a module to the module tracker. It is case and space insensitive.
+
+Command: `add /{Module Code} /{Modular Credits} /{Module Type} /{Year} /{Semester}`
+
+Accepted Inputs:
+
+Module Code: Cannot be empty, must be 6 or more characters.
+
+Modular Credits: [0-6, 8, 12]
+
+Module Types: [Core, GE, UE, Internship] referring to Core, General Electives, Unrestricted Electives and Internships.
+
+Year: [0-6]
+
+Semester: [1, 1.5, 2, 2.5] referring to Semester 1, Semester 1 break (Special Term I), 
+Semester 2, Semester 2 break (Special Term II)
+
+Example Input: `add /CS2113T /4 /CORE /2 /2`
+
+Expected Output: 
+```    
+    ____________________________________________________________
+     Got it. I've added this module:
+       [C][" "] CS2113T 4 MCs (Year: 2, Sem: 2)
+     Now you have 1 modules in the list.
+    ____________________________________________________________
+```
+
+
+
 ## FAQ
 
 **Q**: How do I transfer my data to another computer? 

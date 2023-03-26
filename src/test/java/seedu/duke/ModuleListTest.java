@@ -22,14 +22,37 @@ class ModuleListTest {
     }
 
     @Test
-    public void addDifferentModuleTest() {
+    public void addDifferentModuleTypeTest() {
         ModuleList moduleList = new ModuleList();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
-        assertEquals(1, moduleList.getModuleList().size());
+        assertEquals(1, moduleList.getModuleListSize());
         moduleList.addModule("GEA1000", "4", "GE", "1", "1");
-        assertEquals(2, moduleList.getModuleList().size());
+        assertEquals(2, moduleList.getModuleListSize());
         moduleList.addModule("PC1201", "4", "UE", "1", "1");
-        assertEquals(3, moduleList.getModuleList().size());
+        assertEquals(3, moduleList.getModuleListSize());
+        moduleList.addModule("ATAP", "8", "INTERNSHIP", "1", "1");
+        assertEquals(4,moduleList.getModuleListSize());
+    }
+
+    @Test
+    public void addDifferentModuleCodeTest() {
+        ModuleList moduleList = new ModuleList();
+        Parser parser = new Parser();
+        ArrayList<String> userInputs = new ArrayList<>();
+        // expected
+        userInputs.add("add /CS2113T /4 /CORE /1 /1");
+        // case insensitive
+        userInputs.add("add /iS4231 /4 /CorE /1 /1");
+        // Space insensitive
+        userInputs.add("add /     CS1010     / 4 /   CORE     /   1  /1              ");
+        for (int i = 0; i < 3; i++) {
+            try {
+                parser.checkUserInput(userInputs.get(i), moduleList);
+            } catch (DukeException e) {
+                System.out.println(e);
+            }
+            assertEquals(i + 1, moduleList.getModuleListSize());
+        }
     }
 
     @Test
