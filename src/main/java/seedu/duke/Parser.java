@@ -7,6 +7,11 @@ import static java.lang.System.exit;
 import static seedu.duke.Duke.LOGGER;
 
 public class Parser {
+    private static final int REQUIRED_MC_FOR_CORE = 96;
+    private static final int REQUIRED_MC_FOR_GE = 20;
+    private static final int REQUIRED_MC_FOR_UE = 32;
+    private static final int REQUIRED_MC_FOR_INTERNSHIP = 12;
+
     public Parser() {
 
     }
@@ -487,19 +492,19 @@ public class Parser {
         switch(moduleType) {
         case "GE":
             foundModules = listOfModules.findModuleByType("GE");
-            listOfModules.trackGeneralElectives(foundModules, moduleType);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_GE);
             break;
         case "UE":
             foundModules = listOfModules.findModuleByType("UE");
-            listOfModules.trackUnrestrictedElectives(foundModules, moduleType);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_UE);
             break;
         case "INTERNSHIP":
             foundModules = listOfModules.findModuleByType("INTERNSHIP");
-            listOfModules.trackInternship(foundModules, moduleType);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_INTERNSHIP);
             break;
         case "CORE":
             foundModules = listOfModules.findModuleByType("CORE");
-            listOfModules.trackCoreModules(foundModules, moduleType);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_CORE);
             break;
         default:
             throw new DukeException("Make sure you're trying to track Core, GE, UE or Internship.");
