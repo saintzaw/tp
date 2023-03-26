@@ -168,6 +168,7 @@ public class Parser {
                 checkNumberOfFields(numberOfFields, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
+                return;
             }
             assert userCommands.length == 2;
             String year = userCommands[1].trim();
@@ -254,6 +255,7 @@ public class Parser {
                 checkNumberOfFields(numberOfFields, userCommands);
             } catch (DukeException e) {
                 Print.printErrorMessage(e);
+                return;
             }
             assert userCommands.length == 2;
             try {
