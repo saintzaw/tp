@@ -28,11 +28,11 @@ List the command summary and shows more commands to get a better description of 
 1. `man`
 2. `man /add `
 3. `man /list`
-4. `man/edit`
+4. `man /edit`
 5. `man /find`
-6. `man/delete`
-7. `man/calculator`
-8. `man/grade`
+6. `man /delete`
+7. `man /calculator`
+8. `man /grade`
 9. `man /bye`
 
 ### Add command: `add`

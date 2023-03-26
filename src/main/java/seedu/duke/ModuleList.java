@@ -187,7 +187,7 @@ public class ModuleList {
 
         if (getModuleListSize() > 0) {
             for (Module module : listOfModules) {
-                String mod = "[\"" + module.getModuleType() + "\"]" + "[\"" + module.getGrade() + "\"] "
+                String mod = "[" + module.getModuleType() + "]" + "[\"" + module.getGrade() + "\"] "
                         + module.getModuleCode() + " " + module.getModularCredits() + " MCs";
                 if (module.getYear().equals(year)) {
                     switch (module.getSemester()) {
@@ -431,89 +431,26 @@ public class ModuleList {
     }
 
     /**
-     * Track the number of GE Modules completed
+     * Based on a user-specified type of module, track the number of modules of this type that have
+     * been completed
      *
-     * @param listOfGeneralElectives list of Core Modules that are in the list
-     * @param moduleType String variable that holds the moduleType, "GE"
+     * @param moduleList list of modules of the same type that are in the list
+     * @param moduleType String variable that holds the type of module
+     * @param requiredMCs Integer representing the total required MCs for the type of module in moduleType
      */
-    public void trackGeneralElectives(ArrayList<Module> listOfGeneralElectives, String moduleType) {
+    public void trackModules(ArrayList<Module> moduleList, String moduleType, int requiredMCs) {
         int completedMCs = 0;
-        int requiredMCs = 20;
         int remainingMCs = 0;
-        for (Module module : listOfGeneralElectives) {
-            if (!(module.getGrade().equals(" "))) {
-                completedMCs += Integer.parseInt(module.getModularCredits());
-            } else {
-                listOfGeneralElectives.remove(module);
-            }
-        }
-        remainingMCs = requiredMCs - completedMCs;
-        Print.printModuleTypeRequirements(listOfGeneralElectives,
-                completedMCs, remainingMCs, requiredMCs, moduleType);
-    }
+        ArrayList<Module> listOfCompletedModules = new ArrayList<>();
 
-    /**
-     * Track the number of UE Modules completed
-     *
-     * @param listOfUnRestrictedElectives list of UE Modules that are in the list
-     * @param moduleType String variable that holds the moduleType, "UE"
-     */
-    public void trackUnrestrictedElectives(ArrayList<Module> listOfUnRestrictedElectives, String moduleType) {
-        int completedMCs = 0;
-        int requiredMCs = 32;
-        int remainingMCs = 0;
-        for (Module module : listOfUnRestrictedElectives) {
+        for (Module module : moduleList) {
             if (!(module.getGrade().equals(" "))) {
                 completedMCs += Integer.parseInt(module.getModularCredits());
-            } else {
-                listOfUnRestrictedElectives.remove(module);
+                listOfCompletedModules.add(module);
             }
         }
         remainingMCs = requiredMCs - completedMCs;
-        Print.printModuleTypeRequirements(listOfUnRestrictedElectives,
+        Print.printModuleTypeRequirements(listOfCompletedModules,
                 completedMCs, remainingMCs, requiredMCs, moduleType);
-    }
-
-    /**
-     * Track the number of Internship Modules completed
-     *
-     * @param listOfInternship list of Internship Modules that are in the list
-     * @param moduleType String variable that holds the moduleType, "Internship"
-     */
-    public void trackInternship(ArrayList<Module> listOfInternship, String moduleType) {
-        int completedMCs = 0;
-        int requiredMCs = 12;
-        int remainingMCs = 0;
-        for (Module module : listOfInternship) {
-            if (!(module.getGrade().equals(" "))) {
-                completedMCs += Integer.parseInt(module.getModularCredits());
-            } else {
-                listOfInternship.remove(module);
-            }
-        }
-        remainingMCs = requiredMCs - completedMCs;
-        Print.printModuleTypeRequirements(listOfInternship,
-                completedMCs, remainingMCs, requiredMCs, moduleType);
-    }
-
-    /**
-     * Track the number of Core Modules completed
-     *
-     * @param listOfCoreModules list of Core Modules that are in the list
-     * @param moduleType String variable that holds the moduleType, "CORE"
-     */
-    public void trackCoreModules(ArrayList<Module> listOfCoreModules, String moduleType) {
-        int completedMCs = 0;
-        int requiredMCs = 96;
-        int remainingMCs = 0;
-        for (Module module : listOfCoreModules) {
-            if (!(module.getGrade().equals(" "))) {
-                completedMCs += Integer.parseInt(module.getModularCredits());
-            } else {
-                listOfCoreModules.remove(module);
-            }
-        }
-        remainingMCs = requiredMCs - completedMCs;
-        Print.printModuleTypeRequirements(listOfCoreModules, completedMCs, remainingMCs, requiredMCs, moduleType);
     }
 }
