@@ -5,7 +5,7 @@
 Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI). 
 It helps Information security students graduate in time by giving you a platform to plan all 4 
 years of your modules to ensure that you meet graduation requirements (UE/GEs).  If you can type
-fast, Modganiser can get your schedule up  faster than traditional GUI apps.
+fast, Modganiser can get your schedule up faster than traditional GUI apps.
 
 
 ## Quick Start
@@ -13,7 +13,7 @@ fast, Modganiser can get your schedule up  faster than traditional GUI apps.
 {Give steps to get started quickly}
 
 1. Ensure that you have Java 11 or above installed.
-1. Down the latest version of `Duke` from [here](http://link.to/duke).
+2. Download the latest version of `Duke` from [here](http://link.to/duke).
 
 Type the command in the command box and press Enter to execute it. e.g. typing man and pressing Enter will open the manual.
 Some example commands you can try:
@@ -65,7 +65,56 @@ Expected Output:
     ____________________________________________________________
 ```
 
+### Find command: `find`
 
+The find command can be used to find modules by its module code. It will list all modules that contains the KEYWORD in its module_code
+
+Command: `find /NAME /{KEYWORD}`
+
+Example: find /NAME /CS
+
+Expected Output:
+![FindCommand](UG_Screenshots/FindModulesByName_Full.png)
+<small><i>Figure ???</i></small>
+
+Example: find /NAME /CS2113T
+
+Expected Output:
+
+![FindCommand](UG_Screenshots/FindModulesByName_Substring.png)
+<small><i>Figure ???</i></small>
+
+The find command can also be used to find all modules of a module type. It will list all modules of a certain module type.
+
+Command: `find /TYPE /{MODULE_TYPE}`
+
+Accepted Inputs:
+
+Module Types: [Core, GE, UE, Internship] referring to Core, General Electives, Unrestricted Electives and Internships.
+
+Example: find /TYPE /CORE
+
+Expected Output:
+
+![FindCommand](UG_Screenshots/FindModulesByType.png)
+<small><i>Figure ???</i></small>
+
+### Track command: `track`
+
+Track command shows the completion status of each module type, ensuring that you have fulfilled all graduation requirements.
+
+Command: `track /{MODULE_TYPE}`
+
+Accepted Inputs:
+
+Module Types: [Core, GE, UE, Internship] referring to Core, General Electives, Unrestricted Electives and Internships.
+
+Example: `track /CORE`
+
+Expected Output:
+
+![TrackCommand](UG_Screenshots/TrackCommand.png)
+<small><i>Figure ???</i></small>
 
 ## FAQ
 

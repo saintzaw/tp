@@ -76,7 +76,7 @@ Step 2: The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two module
 feature
 
 The following object diagram shows the current state of the ChatBot:
-![FindModule](diagrams/AddTwoModules.png)
+![FindModule](diagrams/FindTwoModules.png)
 
 <small><i>Figure ???</i></small>
 
