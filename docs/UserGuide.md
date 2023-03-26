@@ -35,6 +35,15 @@ List the command summary and shows more commands to get a better description of 
 8. `man /grade`
 9. `man /bye`
 
+Viewing the full manpage:
+
+![ViewManPage](UG_Screenshots/ViewEntireManual.png)
+
+Viewing the manpage for a single feature (ex. add):
+
+![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
+
+
 ### Add command: `add`
 
 The add command is used to add a module to the module tracker. It is case and space insensitive.
@@ -64,6 +73,7 @@ Expected Output:
      Now you have 1 modules in the list.
     ____________________________________________________________
 ```
+
 
 ### Find command: `find`
 
@@ -99,6 +109,7 @@ Expected Output:
 ![FindCommand](UG_Screenshots/FindModulesByType.png)
 <small><i>Figure ???</i></small>
 
+
 ### Track command: `track`
 
 Track command shows the completion status of each module type, ensuring that you have fulfilled all graduation requirements.
@@ -116,11 +127,13 @@ Expected Output:
 ![TrackCommand](UG_Screenshots/TrackCommand.png)
 <small><i>Figure ???</i></small>
 
+
 ## FAQ
 
 **Q**: How do I transfer my data to another computer? 
 
 **A**: {your answer here}
+
 
 ## Command Summary
 | Feature                         |                           Command                           |         
