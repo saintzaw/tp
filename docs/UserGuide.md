@@ -99,6 +99,29 @@ Expected Output:
 ![FindCommand](UG_Screenshots/FindModulesByType.png)
 <small><i>Figure ???</i></small>
 
+### Grade command: `grade`
+
+The `grade` command can be used to input a valid grade when the user has completed a module.  
+The `grade` command can also be used to update the grade for a module.
+
+Command: `grade /MODULE_CODE /GRADE`
+
+Example: `grade /CS2113T /A`
+
+Expected Output:  
+
+![GradeCommand](UG_Screenshots/InputGrade.png)  
+<small><i>Figure ???</i></small>
+
+Example: `grade /CS2113T /B` after previous command
+
+Expected Output:  
+
+![GradeCommand](UG_Screenshots/UpdateGrade.png)  
+<small><i>Figure ???</i></small>
+
+
+
 ### Track command: `track`
 
 Track command shows the completion status of each module type, ensuring that you have fulfilled all graduation requirements.
