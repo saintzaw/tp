@@ -109,6 +109,43 @@ Expected Output:
 ![FindCommand](UG_Screenshots/FindModulesByType.png)
 <small><i>Figure ???</i></small>
 
+### Grade command: `grade`
+
+The `grade` command can be used to input a valid grade when the user has completed a module.  
+The `grade` command can also be used to update the grade for a module.
+
+Command: `grade /MODULE_CODE /GRADE`
+
+Example: `grade /CS2113T /A`
+
+Expected Output:  
+
+![GradeCommand](UG_Screenshots/InputGrade.png)  
+<small><i>Figure ???</i></small>
+
+Example: `grade /CS2113T /B` after previous command
+
+Expected Output:  
+
+![GradeCommand](UG_Screenshots/UpdateGrade.png)  
+<small><i>Figure ???</i></small>
+
+### CalculateCAP command: `calculatecap`
+
+The `calculatecap` command can be used to calculate your Cumulative Average Point (CAP) across completed modules
+based on grade values that you obtained.  
+The result would be rounded off to 2 decimal places for the user.
++ Grades obtained correspond to a number that is used to calculate your cap. To find out more, do visit the
+  official [NUS website](https://www.nus.edu.sg/registrar/academic-information-policies/modular-system) :)
+
+Command: `calculatecap`
+
+Example: `calculatecap`
+
+Expected Output:
+
+![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png)  
+<small><i>Figure ???</i></small>
 
 ### Track command: `track`
 
