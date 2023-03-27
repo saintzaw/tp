@@ -79,16 +79,16 @@ Expected Output:
 
 The find command can be used to find modules by its module code. It will list all modules that contains the KEYWORD in its module code
 
-Command: `find /NAME /{KEYWORD}`
+Command: `find /CODE /{KEYWORD}`
 
-Example: `find /NAME /CS`
+Example: `find /CODE /CS`
 
 Expected Output:
 
 ![FindCommand](UG_Screenshots/FindModulesByName_Substring.png)
 <small><i>Figure ???</i></small>
 
-Example: `find /NAME /CS2113T`
+Example: `find /CODE /CS2113T`
 
 Expected Output:
 
