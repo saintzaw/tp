@@ -56,12 +56,12 @@ class ModuleListTest {
     }
 
     @Test
-    public void foundModuleByNameTest() {
+    public void foundModuleByCodeTest() {
         ModuleList moduleList = new ModuleList();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         ArrayList<Module> foundModules = new ArrayList<>();
         try {
-            foundModules = moduleList.findModuleByName("CS2113T");
+            foundModules = moduleList.findModuleByCode("CS2113T");
         } catch (DukeException e) {
             System.out.println(e);
         }
@@ -69,13 +69,13 @@ class ModuleListTest {
     }
 
     @Test
-    public void foundMultipleModuleByNameTest() {
+    public void foundMultipleModuleByCodeTest() {
         ModuleList moduleList = new ModuleList();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         moduleList.addModule("CS2101", "4", "CORE", "1", "1");
         ArrayList<Module> foundModules = new ArrayList<>();
         try {
-            foundModules = moduleList.findModuleByName("CS");
+            foundModules = moduleList.findModuleByCode("CS");
         } catch (DukeException e) {
             System.out.println(e);
         }
@@ -83,12 +83,12 @@ class ModuleListTest {
     }
 
     @Test
-    public void foundNoModuleByNameTest() {
+    public void foundNoModuleByCodeTest() {
         ModuleList moduleList = new ModuleList();
         moduleList.addModule("IS4231", "4", "CORE", "1", "1");
         ArrayList<Module> foundModules = new ArrayList<>();
         try {
-            foundModules = moduleList.findModuleByName("CS");
+            foundModules = moduleList.findModuleByCode("CS");
         } catch (DukeException e) {
             System.out.println(e);
         }

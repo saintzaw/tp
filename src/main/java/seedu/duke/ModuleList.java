@@ -81,7 +81,7 @@ public class ModuleList {
      * @param keyword The word that the user would like to search for
      * @throws DukeException if the list of modules is currently empty
      */
-    public ArrayList<Module> findModuleByName(String keyword) throws DukeException {
+    public ArrayList<Module> findModuleByCode(String keyword) throws DukeException {
         if (listOfModules.size() == 0) {
             throw new DukeException("There are currently no modules in your list");
         }
