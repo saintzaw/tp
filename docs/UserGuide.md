@@ -6,18 +6,30 @@
 
 ## 0. Acknowledgements
 --- ---
-We would like to thank you for choosing Modganiser to help you with your module planning. Modganiser will be sure to make this arduous task a breeze while ensuring you meet all your graduation requirements, so that you can focus on the other aspects of university that really matter. Should you have any feedback or enquiries, please do not hesitate to reach out to us!
+We would like to thank you for choosing Modganiser to help you with your module planning. 
+Modganiser will be sure to make this arduous task a breeze while ensuring you meet all your graduation requirements, 
+so that you can focus on the other aspects of university that really matter. 
+Should you have any feedback or enquiries, please do not hesitate to reach out to us!
 
 ## 1. Introduction
 --- ---
 ### 1.1 What is Modganiser?
-Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI), focused on helping Information Security Undergraduates graduate in 4 years. It does so by giving you a platform to plan all 4 years of your modules to ensure that you meet the graduation requirements (Core/UE/GE/Internships). If you can type fast, Modganiser can get your schedule up faster than traditional GUI apps.
+Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI), 
+focused on helping Information Security Undergraduates graduate in 4 years. It does so by giving you a platform to 
+plan all 4 years of your modules to ensure that you meet the graduation requirements (Core/UE/GE/Internships). 
+If you can type fast, Modganiser can get your schedule up faster than traditional GUI apps.
 
 ### 1.2 Who Is This User Guide Meant For?
-Are you a current information security undergraduate at NUS? Or are you a prospective student, about to begin your journey into information security? Well, Modganiser is exactly what you are looking for! This user guide will help you as you navigate through Modganiser and its features. If you are a new user, do go to the set up section to learn how to install and run Modganiser. To learn more about Modganiser’s features, do head over to the features section!
+Are you a current information security undergraduate at NUS? Or are you a prospective student, 
+about to begin your journey into information security? Well, Modganiser is exactly what you are looking for! 
+This user guide will help you as you navigate through Modganiser and its features. If you are a new user, do go to the 
+set-up section to learn how to install and run Modganiser. To learn more about Modganiser’s features, do head over to 
+the features section!
 
 ### 1.3 How To Use This User Guide
-Modganiser uses a Command Line Interface (CLI) which may be new to some users. We strongly recommend that you read this User Guide from start to finish if you are new to Modganiser, although you may choose to skip to more relevant sections if you are used to Java, CLI or Modganiser, which are described below:
+Modganiser uses a Command Line Interface (CLI) which may be new to some users. We strongly recommend that you read this 
+User Guide from start to finish if you are new to Modganiser, although you may choose to skip to more relevant sections 
+if you are used to Java, CLI or Modganiser, which are described below:
 * Refer to our Table of Contents to navigate between the different sections
 * Refer to our Command Line Interface (CLI) tutorial to learn how to use CLI
 * Refer to our Set Up Guide to learn how to install Modganiser
@@ -91,7 +103,6 @@ Viewing the manpage for a single feature (ex. add):
 
 ![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
 
-
 ### Add command: `add`
 
 The add command is used to add a module to the module tracker. It is case and space insensitive.
@@ -125,7 +136,8 @@ Expected Output:
 
 ### Find command: `find`
 
-The find command can be used to find modules by its module code. It will list all modules that contains the KEYWORD in its module code
+The find command can be used to find modules by its module code. It will list all modules that contains the KEYWORD in 
+its module code
 
 Command: `find /CODE /{KEYWORD}`
 
@@ -215,24 +227,40 @@ Expected Output:
 <small><i>Figure ???</i></small>
 
 
-## FAQ
+## 5. FAQ
+--- ---
+| Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| I am unable to install java?                                                                                                  | Please click here to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                                |
+| Why is Modganiser not running?                                                                                                | Please follow our Command Line Interface Tutorial and our Set Up Guide closely. If Modganiser still fails to run, please contact us at this email.                                                                                                                                                                                                                                                             |
+| Where is my save file?                                                                                                        | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                   |
+| What if I change my device? How do I bring the save data to my new device                                                     | You can locate your save file, which is just a normal text file. You can then use any form of messaging applications like Telegram, email applications like Gmail or online cloud storage like Google Drive to send this save file to yourself or store this save file. You can then retrieve this save file with your new device.                                                                             |
+| Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto NUSMods to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the Information Security Student requirements before deciding on the module type.   |
+| Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                           |
 
-**Q**: How do I transfer my data to another computer? 
+## 6. Command Summary
+| Feature                         |                           Format                            |                                Example                                |  
+|---------------------------------|:-----------------------------------------------------------:|:---------------------------------------------------------------------:|
+| Add modules                     | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` | `add /CS2113T /4 /CORE /1 /1` or `add /IS4231 CS2101 /4 /CORE /1 /1`  |
+| Add grade obtained              |                 `grade /MODULE_CODE /GRADE`                 |                         `grade /CS2113T /A+`                          |
+| Edit details of existing module |   `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `            |                       `edit /CS2113T /TYPE /UE`                       |
+| Delete existing module          |                    `delete /MODULE_CODE`                    |                           `delete /CS2113T`                           |
+| List module plan                |                        `list /YEAR`                         |                               `list /2`                               |
+| Find module in module plan      |               `find /TYPE_OF_SEARCH /KEYWORD`               |                  `find /CODE /CS or find /TYPE /GE`                   |
+| Track progress of module type   |                    `track /MODULE_TYPE`                     |                          `track /INTERNSHIP`                          |
+| Calculate current CAP           |                       `calculatecap`                        |                            `calculatecap`                             |
+| View Manual Page                |                   `man` or `man /FEATURE`                   |                          `man` or `man /add`                          |
+| Exit Modganiser                 |                            `bye`                            |                                 `bye`                                 |
 
-**A**: {your answer here}
+## 7. Glossary
+| Technical Term         | Explanation                                                                                                                   |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| Command Line Interface | Text based user interface to run programs                                                                                     |
+| Parameter              | Additional input fields that require user inputs for the command word                                                         |
+| Core Module Type       | Any module that does not fall under UE, GE or Internship module type                                                          |
+| GE Module Type         | Stands for General Elective Module Type. Please refer to the NUS Website for more information on the General Elective Modules |
+| UE Module Type         | Stands for Unrestricted Elective Module Type. Please refer to the NUS Website for more information on the UE Module           |
+| Internship Module Type | Please refer to the NUS Website for more information on Internships                                                           |
+| Local storage          | Data that is stored on your device and can be accessed without an internet connection                                         |
 
-
-## Command Summary
-| Feature                         |                           Command                           |         
-|---------------------------------|:-----------------------------------------------------------:|
-| Viewing manual: command summary |                            `man`                            |
-| Adding a module                 | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` |
-| Listing all modules in 4 years  |                         `list all`                          |
-| Listing all modules in 1 year   |                        `list /YEAR`                         |
-| Editing a module                |        `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`         |
-| Locating module by code         |         `find /MODULE_CODE or MODULE_TYPE /KEYWORD`         |
-| Deleting a module from the list |                    `delete /MODULE_CODE`                    |
-| Grade Calculator                |                       `calculatecap`                        |
-| Input/Update Grades             |                 `grade /MODULE_CODE /GRADE`                 |
-| Exiting the program             |                            `bye`                            |
 
