@@ -7,10 +7,10 @@ import static java.lang.System.exit;
 import static seedu.duke.Duke.LOGGER;
 
 public class Parser {
-    private static final int REQUIRED_MC_FOR_CORE = 96;
-    private static final int REQUIRED_MC_FOR_GE = 20;
-    private static final int REQUIRED_MC_FOR_UE = 32;
-    private static final int REQUIRED_MC_FOR_INTERNSHIP = 12;
+    private static final int REQUIRED_MC_CORE = 96;
+    private static final int REQUIRED_MC_GE = 20;
+    private static final int REQUIRED_MC_UE = 32;
+    private static final int REQUIRED_MC_INTERNSHIP = 12;
 
     public Parser() {
 
@@ -107,9 +107,9 @@ public class Parser {
             }
             assert userCommands.length == 3;
             ArrayList<Module> foundModules = new ArrayList<>();
-            if (userCommands[1].trim().equals("NAME")) {
+            if (userCommands[1].trim().equals("CODE")) {
                 try {
-                    foundModules = moduleList.findModuleByName(userCommands[2].trim());
+                    foundModules = moduleList.findModuleByCode(userCommands[2].trim());
                 } catch (DukeException e) {
                     Print.printErrorMessage(e);
                 }
@@ -120,7 +120,7 @@ public class Parser {
                     Print.printErrorMessage(e);
                 }
             } else {
-                throw new DukeException("Please specify type of search with /Name or /Type");
+                throw new DukeException("Please specify type of search with /Code or /Type");
             }
             if (foundModules.isEmpty()) {
                 Print.printNoModuleFound(userCommands[2].trim());
@@ -154,19 +154,6 @@ public class Parser {
             }
 
             break;
-        case "LIST ALL":
-            try {
-                int numberOfFields = 1;
-                checkNumberOfFields(numberOfFields, userCommands);
-            } catch (DukeException e) {
-                Print.printErrorMessage(e);
-            }
-            assert userCommands.length == 1;
-            moduleList.listModulesByYear("1");
-            moduleList.listModulesByYear("2");
-            moduleList.listModulesByYear("3");
-            moduleList.listModulesByYear("4");
-            break;
         case "LIST":
             try {
                 int numberOfFields = 2;
@@ -176,14 +163,7 @@ public class Parser {
                 return;
             }
             assert userCommands.length == 2;
-            String year = userCommands[1].trim();
-            try {
-                checkYearInput(year);
-            } catch (DukeException e) {
-                Print.printErrorMessage(e);
-                return;
-            }
-            moduleList.listModulesByYear(year);
+            listModules(moduleList, userCommands[1].trim());
             break;
         case "EDIT":
             try {
@@ -388,16 +368,28 @@ public class Parser {
         }
     }
 
-    private void checkYearInput(String year) throws DukeException {
-
-        int yearOfStudy;
-        try {
-            yearOfStudy = Integer.parseInt(year);
-        } catch (NumberFormatException e) {
-            throw new DukeException("Make sure Year of Study is a number from 0-6");
-        }
-        if (yearOfStudy < 0 || yearOfStudy > 6) {
-            throw new DukeException("Make sure Year of Study is a number from 0-6");
+    private void listModules(ModuleList listOfModules, String year) throws DukeException {
+        switch(year) {
+        case "ALL":
+            listOfModules.listModulesByYear("1");
+            listOfModules.listModulesByYear("2");
+            listOfModules.listModulesByYear("3");
+            listOfModules.listModulesByYear("4");
+            break;
+        case "1":
+            listOfModules.listModulesByYear("1");
+            break;
+        case "2":
+            listOfModules.listModulesByYear("2");
+            break;
+        case "3":
+            listOfModules.listModulesByYear("3");
+            break;
+        case "4":
+            listOfModules.listModulesByYear("4");
+            break;
+        default:
+            throw new DukeException("Make sure Year of Study is a number from 0-4 or \"all\"");
         }
     }
 
@@ -409,22 +401,31 @@ public class Parser {
         //the new information to replace in the indicated field
         String update = userCommands[3].trim();
 
+        // Checks if the specified module exists
+        ArrayList<Module> modules = listOfModules.getModuleList();
+        boolean moduleIsFound = false;
+        for (Module module : modules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                moduleIsFound = true;
+                break;
+            }
+        }
+        if (!moduleIsFound) {
+            throw new DukeException("The module you are trying to edit does not exist in the module plan. " +
+                    System.lineSeparator() +
+                    "\t Please add the module using the add command if you wish to take the module in the future.");
+        }
+
         switch (moduleField) {
         case "MC":
             listOfModules.editModularCredits(moduleCode, update);
             break;
         case "TYPE":
-            ArrayList<Module> modules = listOfModules.getModuleList();
-            for (Module module : modules) {
-                if (module.getModuleCode().equals(moduleCode)) {
-                    String modularCredits = module.getModularCredits();
-                    String year = module.getYear();
-                    String semester = module.getSemester();
-                    String grade = module.getGrade();
-                    listOfModules.editModuleType(moduleCode, modularCredits, update, year, semester, grade);
-                    break;
-                }
-            }
+            listOfModules.editModuleType(moduleCode, update);
+            break;
+        case "CODE":
+            checkAddInputNoDuplicates(update, listOfModules.getModuleList());
+            listOfModules.editModuleCode(moduleCode, update);
             break;
         case "YEAR":
             listOfModules.editYear(moduleCode, update);
@@ -432,8 +433,12 @@ public class Parser {
         case "SEMESTER":
             listOfModules.editSemester(moduleCode, update);
             break;
+        case "GRADE":
+            listOfModules.editModuleGrade(moduleCode, update);
+            break;
         default:
-            throw new DukeException("Make sure the field to edit is MC, type, year or semester");
+            throw new DukeException("Make sure the field to edit is MC, type, code, " +
+                    "year, semester or grade");
         }
     }
 
@@ -443,7 +448,7 @@ public class Parser {
      * @param inputGrade the string containing grade input by user.
      * @throws DukeException when the input grade is invalid
      */
-    private void checkGradeInput (String inputGrade) throws DukeException {
+    private void checkGradeInput(String inputGrade) throws DukeException {
         switch (inputGrade) {
         case "A+":
             //Fallthrough
@@ -487,24 +492,32 @@ public class Parser {
      * @param moduleType module type that the user wants to check
      * @throws DukeException if the moduleType the user input is not valid
      */
-    private void trackGraduationRequirements (ModuleList listOfModules, String moduleType) throws DukeException {
+    private void trackGraduationRequirements(ModuleList listOfModules, String moduleType) throws DukeException {
         ArrayList<Module> foundModules = new ArrayList<>();
         switch(moduleType) {
+        case "ALL":
+            String[] moduleTypes = {"CORE", "GE" , "UE", "INTERNSHIP"};
+            int[] requiredMCs = {REQUIRED_MC_CORE, REQUIRED_MC_GE, REQUIRED_MC_UE, REQUIRED_MC_INTERNSHIP};
+            for (int i = 0; i < moduleTypes.length; i++) {
+                foundModules = listOfModules.findModuleByType(moduleTypes[i]);
+                listOfModules.trackModules(foundModules, moduleTypes[i], requiredMCs[i]);
+            }
+            break;
         case "GE":
             foundModules = listOfModules.findModuleByType("GE");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_GE);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_GE);
             break;
         case "UE":
             foundModules = listOfModules.findModuleByType("UE");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_UE);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_UE);
             break;
         case "INTERNSHIP":
             foundModules = listOfModules.findModuleByType("INTERNSHIP");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_INTERNSHIP);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_INTERNSHIP);
             break;
         case "CORE":
             foundModules = listOfModules.findModuleByType("CORE");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_CORE);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_CORE);
             break;
         default:
             throw new DukeException("Make sure you're trying to track Core, GE, UE or Internship.");

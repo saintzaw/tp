@@ -81,7 +81,7 @@ public class ModuleList {
      * @param keyword The word that the user would like to search for
      * @throws DukeException if the list of modules is currently empty
      */
-    public ArrayList<Module> findModuleByName(String keyword) throws DukeException {
+    public ArrayList<Module> findModuleByCode(String keyword) throws DukeException {
         if (listOfModules.size() == 0) {
             throw new DukeException("There are currently no modules in your list");
         }
@@ -251,18 +251,51 @@ public class ModuleList {
         }
     }
 
-    public void editModuleType(String moduleCode, String modularCredits,
-                               String moduleType, String year, String semester, String grade) {
-        //delete module with old moduleType
+    public void editModuleGrade(String moduleCode, String newGrade) {
+        updateModuleGrade(moduleCode, newGrade);
+        for (Module module : listOfModules) {
+            if (module.getModuleCode().equals(moduleCode)) {
+                module.setGrade(newGrade);
+                Print.printEditedModule(module, listOfModules.size());
+            }
+        }
+    }
+
+    public void editModuleType(String moduleCode, String moduleType) {
         try {
-            deleteModule(moduleCode);
+            // Delete module with old moduleType
+            Module oldModule = deleteModule(moduleCode);
+            String modularCredits = oldModule.getModularCredits();
+            String year = oldModule.getYear();
+            String semester = oldModule.getSemester();
+            String grade = oldModule.getGrade();
+
+            // Add new module
+            Module moduleEdited = addModule(moduleCode, modularCredits, moduleType, year, semester);
+            updateModuleGrade(moduleCode, grade);
+            Print.printEditedModule(moduleEdited, listOfModules.size());
         } catch (DukeException e) {
             Print.printErrorMessage(e);
         }
-        //add module with new moduleType
-        Module moduleEdited = addModule(moduleCode, modularCredits, moduleType, year, semester);
-        updateModuleGrade(moduleCode, grade);
-        Print.printEditedModule(moduleEdited, listOfModules.size());
+    }
+
+    public void editModuleCode(String oldModuleCode, String newModuleCode) {
+        try {
+            // Delete module with old moduleType
+            Module oldModule = deleteModule(oldModuleCode);
+            String moduleType = oldModule.getModuleType();
+            String modularCredits = oldModule.getModularCredits();
+            String year = oldModule.getYear();
+            String semester = oldModule.getSemester();
+            String grade = oldModule.getGrade();
+
+            // Add new module
+            Module moduleEdited = addModule(newModuleCode, modularCredits, moduleType, year, semester);
+            updateModuleGrade(newModuleCode, grade);
+            Print.printEditedModule(moduleEdited, listOfModules.size());
+        } catch (DukeException e) {
+            Print.printErrorMessage(e);
+        }
     }
 
     /**
@@ -331,16 +364,26 @@ public class ModuleList {
         double calculatedCAP;
         double sumOfWeightage = 0;
         int totalModularCredits = 0;
+        boolean hasGradedModules = false;
+        if (listOfModules.size() == 0) {
+            Print.printNoModulesToCalculateCAP();
+            return;
+        }
         for (Module module : listOfModules) {
             if(shouldCountModuleGrade(module.getGrade())) {
                 sumOfWeightage += getGradeValue(module.getGrade()) * Integer.parseInt(module.getModularCredits());
                 totalModularCredits += Integer.parseInt(module.getModularCredits());
+                hasGradedModules = true;
             }
         }
-        calculatedCAP = sumOfWeightage/(double)totalModularCredits;
-        double roundedOffCAP = Math.round(calculatedCAP*100.0)/100.0;
-        LOGGER.log(Level.INFO, "CAP has been calculated, proceeding to print.");
-        Print.printCalculatedCAP(roundedOffCAP);
+        if (hasGradedModules) {
+            calculatedCAP = sumOfWeightage / (double) totalModularCredits;
+            double roundedOffCAP = Math.round(calculatedCAP * 100.0) / 100.0;
+            LOGGER.log(Level.INFO, "CAP has been calculated, proceeding to print.");
+            Print.printCalculatedCAP(roundedOffCAP);
+        } else {
+            Print.printNoGradedModulesToCalculateCAP();
+        }
     }
 
     /**

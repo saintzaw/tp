@@ -30,14 +30,14 @@ public class PrintTest {
     }
 
     @Test
-    public void printFoundModuleByNameTest() {
+    public void printFoundModuleByCodeTest() {
         ModuleList moduleList = new ModuleList();
         Parser parser = new Parser ();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            parser.checkUserInput("find/name/CS", moduleList);
+            parser.checkUserInput("find/code/CS", moduleList);
         } catch (DukeException e) {
             return;
         }
@@ -50,7 +50,7 @@ public class PrintTest {
     }
 
     @Test
-    public void printMultipleFoundModuleByNameTest() {
+    public void printMultipleFoundModuleByCodeTest() {
         ModuleList moduleList = new ModuleList();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -58,7 +58,7 @@ public class PrintTest {
         moduleList.addModule("CS2101", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            parser.checkUserInput("find/name/CS", moduleList);
+            parser.checkUserInput("find/code/CS", moduleList);
         } catch (DukeException e) {
             return;
         }
@@ -72,14 +72,14 @@ public class PrintTest {
     }
 
     @Test
-    public void printNoFoundModuleByNameTest() {
+    public void printNoFoundModuleByCodeTest() {
         ModuleList moduleList = new ModuleList();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
-            parser.checkUserInput("find/name/IS", moduleList);
+            parser.checkUserInput("find/code/IS", moduleList);
         } catch (DukeException e) {
             return;
         }
@@ -194,8 +194,7 @@ public class PrintTest {
         moduleList.addModule("CS2113T", "4", "GE", "2", "2");
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        moduleList.editModuleType("CS2113T", "4", "CORE", "2", "2",
-                " ");
+        moduleList.editModuleType("CS2113T", "CORE");
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Got it. I've edited the information for this module:"
                 + System.lineSeparator()
@@ -295,7 +294,7 @@ public class PrintTest {
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "3. List" + System.lineSeparator() + " " +
-                "Command: list all or list /YEAR" + System.lineSeparator()
+                "Command: list /all or list /YEAR" + System.lineSeparator()
                 + " " +
                 "To find out more, use the command: man /list"
                 + System.lineSeparator() + System.lineSeparator() + " " +

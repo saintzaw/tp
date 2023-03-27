@@ -32,7 +32,7 @@ public class Manpage {
                 "To find out more, use the command: man /add\n\n " +
 
                 "3. List\n " +
-                "Command: list all or list /YEAR\n " +
+                "Command: list /all or list /YEAR\n " +
                 "To find out more, use the command: man /list\n\n " +
 
                 "4. Edit\n " +
