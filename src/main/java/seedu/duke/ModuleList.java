@@ -364,16 +364,26 @@ public class ModuleList {
         double calculatedCAP;
         double sumOfWeightage = 0;
         int totalModularCredits = 0;
+        boolean hasGradedModules = false;
+        if (listOfModules.size() == 0) {
+            Print.printNoModulesToCalculateCAP();
+            return;
+        }
         for (Module module : listOfModules) {
             if(shouldCountModuleGrade(module.getGrade())) {
                 sumOfWeightage += getGradeValue(module.getGrade()) * Integer.parseInt(module.getModularCredits());
                 totalModularCredits += Integer.parseInt(module.getModularCredits());
+                hasGradedModules = true;
             }
         }
-        calculatedCAP = sumOfWeightage/(double)totalModularCredits;
-        double roundedOffCAP = Math.round(calculatedCAP*100.0)/100.0;
-        LOGGER.log(Level.INFO, "CAP has been calculated, proceeding to print.");
-        Print.printCalculatedCAP(roundedOffCAP);
+        if (hasGradedModules) {
+            calculatedCAP = sumOfWeightage / (double) totalModularCredits;
+            double roundedOffCAP = Math.round(calculatedCAP * 100.0) / 100.0;
+            LOGGER.log(Level.INFO, "CAP has been calculated, proceeding to print.");
+            Print.printCalculatedCAP(roundedOffCAP);
+        } else {
+            Print.printNoGradedModulesToCalculateCAP();
+        }
     }
 
     /**

@@ -230,4 +230,16 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    public static void printNoModulesToCalculateCAP() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     Unable to calculate your CAP as there are no modules in your list :(");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    public static void printNoGradedModulesToCalculateCAP() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     Unable to calculate your CAP as there are no graded modules in your list :(");
+        System.out.println("    ____________________________________________________________");
+    }
+
 }

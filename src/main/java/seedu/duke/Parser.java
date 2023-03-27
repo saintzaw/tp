@@ -499,7 +499,8 @@ public class Parser {
             String[] moduleTypes = {"CORE", "GE" , "UE", "INTERNSHIP"};
             int[] requiredMCs = {REQUIRED_MC_CORE, REQUIRED_MC_GE, REQUIRED_MC_UE, REQUIRED_MC_INTERNSHIP};
             for (int i = 0; i < moduleTypes.length; i++) {
-                listOfModules.trackModules(listOfModules.getModuleList(), moduleTypes[i], requiredMCs[i]);
+                foundModules = listOfModules.findModuleByType(moduleTypes[i]);
+                listOfModules.trackModules(foundModules, moduleTypes[i], requiredMCs[i]);
             }
             break;
         case "GE":
