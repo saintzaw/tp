@@ -1,23 +1,71 @@
-# User Guide
+# Modganiser User Guide
 
-## Introduction
-
-Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI). 
-It helps Information security students graduate in time by giving you a platform to plan all 4 
-years of your modules to ensure that you meet graduation requirements (UE/GEs).  If you can type
-fast, Modganiser can get your schedule up faster than traditional GUI apps.
+## Table of Contents
+--- ---
 
 
-## Quick Start
+## 0. Acknowledgements
+--- ---
+We would like to thank you for choosing Modganiser to help you with your module planning. Modganiser will be sure to make this arduous task a breeze while ensuring you meet all your graduation requirements, so that you can focus on the other aspects of university that really matter. Should you have any feedback or enquiries, please do not hesitate to reach out to us!
 
-{Give steps to get started quickly}
+## 1. Introduction
+--- ---
+### 1.1 What is Modganiser?
+Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI), focused on helping Information Security Undergraduates graduate in 4 years. It does so by giving you a platform to plan all 4 years of your modules to ensure that you meet the graduation requirements (Core/UE/GE/Internships). If you can type fast, Modganiser can get your schedule up faster than traditional GUI apps.
 
-1. Ensure that you have Java 11 or above installed.
-2. Download the latest version of `Duke` from [here](http://link.to/duke).
+### 1.2 Who Is This User Guide Meant For?
+Are you a current information security undergraduate at NUS? Or are you a prospective student, about to begin your journey into information security? Well, Modganiser is exactly what you are looking for! This user guide will help you as you navigate through Modganiser and its features. If you are a new user, do go to the set up section to learn how to install and run Modganiser. To learn more about Modganiser’s features, do head over to the features section!
 
-Type the command in the command box and press Enter to execute it. e.g. typing man and pressing Enter will open the manual.
-Some example commands you can try:
+### 1.3 How To Use This User Guide
+Modganiser uses a Command Line Interface (CLI) which may be new to some users. We strongly recommend that you read this User Guide from start to finish if you are new to Modganiser, although you may choose to skip to more relevant sections if you are used to Java, CLI or Modganiser, which are described below:
+* Refer to our Table of Contents to navigate between the different sections
+* Refer to our Command Line Interface (CLI) tutorial to learn how to use CLI
+* Refer to our Set Up Guide to learn how to install Modganiser
+* Refer to our Features to learn more about Modganiser’s functions
+* Refer to our FAQ for answers to frequently ask questions
+* Refer to our Command Summary to get an overview of the different commands available in Modganiser and their formats
+* Refer to our Glossary to learn more about the key terms in this
 
+## 2. Command Line Interface Tutorial
+--- ---
+To open up the Command Line Interface (CLI)
+* For Windows
+  * Click on the Windows button and search for “Command Prompt”.
+* For MacOS
+  * Press on the command and spacebar button together and search for “Terminal”
+* The window that comes up is the CLI on your computer. We will be using this interface to run Modganiser.
+* To run commands in the CLI, just type the command out, press enter and the command will run
+![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
+
+<small><i>Figure 1: Windows version of CLI with a command typed out</i></small>
+
+![MacOSCLI](UG_Screenshots/Terminal.png)
+
+<small><i>Figure 2: MacOS version of CLI with a command typed out</i></small>
+
+## 3. Set Up Guide
+--- ---
+To set up Modganiser, please follow the steps below:
+1. Download Java
+   * For Windows:
+     * Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) for the Java Developer Webpage and choose the x64 installer.
+   * For Mac
+     * Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) for the Java Developer Webpage and choose the Arm 64 DMG Installer.
+2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the tp.jar file, which contains Modganiser.
+3. Save the file into a new folder on your Desktop and title the folder “Modganiser”
+4. Open the CLI interface on your device. If you are unsure of how to do so, please refer to our CLI tutorial.
+   * Type “cd Desktop” and press enter
+   * Type “cd Modganiser” and press enter
+   * Type “java -jar tp.jar” and press enter
+5. If successful, you should see the following displayed on your screen:
+![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
+
+<small><i>Figure 3: Modganiser Successful Start Up</i></small>
+6. Type your name in and press enter. If successful, you should see the following:
+![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
+
+<small><i>Figure 4: Enter Name Successful</i></small>
+7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
 ## Features 
 
