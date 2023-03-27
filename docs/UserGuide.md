@@ -156,7 +156,8 @@ Command: `track /{MODULE_TYPE}`
 
 Accepted Inputs:
 
-Module Types: [Core, GE, UE, Internship] referring to Core, General Electives, Unrestricted Electives and Internships.
+Module Types: [Core, GE, UE, INTERNSHIP, all] referring to Core, General Electives, Unrestricted Electives and Internships. 
+ALL will show the completion status of all the above-mentioned module types.  
 
 Example: `track /CORE`
 
