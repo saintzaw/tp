@@ -194,8 +194,7 @@ public class PrintTest {
         moduleList.addModule("CS2113T", "4", "GE", "2", "2");
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        moduleList.editModuleType("CS2113T", "4", "CORE", "2", "2",
-                " ");
+        moduleList.editModuleType("CS2113T", "CORE");
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Got it. I've edited the information for this module:"
                 + System.lineSeparator()
