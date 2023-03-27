@@ -79,16 +79,16 @@ Expected Output:
 
 The find command can be used to find modules by its module code. It will list all modules that contains the KEYWORD in its module code
 
-Command: `find /NAME /{KEYWORD}`
+Command: `find /CODE /{KEYWORD}`
 
-Example: `find /NAME /CS`
+Example: `find /CODE /CS`
 
 Expected Output:
 
 ![FindCommand](UG_Screenshots/FindModulesByName_Substring.png)
 <small><i>Figure ???</i></small>
 
-Example: `find /NAME /CS2113T`
+Example: `find /CODE /CS2113T`
 
 Expected Output:
 
@@ -156,7 +156,8 @@ Command: `track /{MODULE_TYPE}`
 
 Accepted Inputs:
 
-Module Types: [Core, GE, UE, Internship] referring to Core, General Electives, Unrestricted Electives and Internships.
+Module Types: [CORE, GE, UE, INTERNSHIP, ALL] referring to Core, General Electives, Unrestricted Electives and Internships. 
+ALL will show the completion status of all the above-mentioned module types.  
 
 Example: `track /CORE`
 
