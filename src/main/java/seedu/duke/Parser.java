@@ -490,6 +490,14 @@ public class Parser {
     private void trackGraduationRequirements (ModuleList listOfModules, String moduleType) throws DukeException {
         ArrayList<Module> foundModules = new ArrayList<>();
         switch(moduleType) {
+        case "ALL":
+            String[] moduleTypes = {"CORE", "GE" , "UE", "INTERNSHIP"};
+            int[] requiredMCs = {REQUIRED_MC_FOR_CORE, REQUIRED_MC_FOR_GE,
+                    REQUIRED_MC_FOR_UE, REQUIRED_MC_FOR_INTERNSHIP};
+            for (int i =0; i < moduleTypes.length; i++) {
+                listOfModules.trackModules(listOfModules.getModuleList(), moduleTypes[i], requiredMCs[i]);
+            }
+            break;
         case "GE":
             foundModules = listOfModules.findModuleByType("GE");
             listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_GE);
