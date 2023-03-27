@@ -77,21 +77,22 @@ Expected Output:
 
 ### Find command: `find`
 
-The find command can be used to find modules by its module code. It will list all modules that contains the KEYWORD in its module_code
+The find command can be used to find modules by its module code. It will list all modules that contains the KEYWORD in its module code
 
 Command: `find /NAME /{KEYWORD}`
 
-Example: find /NAME /CS
-
-Expected Output:
-![FindCommand](UG_Screenshots/FindModulesByName_Full.png)
-<small><i>Figure ???</i></small>
-
-Example: find /NAME /CS2113T
+Example: `find /NAME /CS`
 
 Expected Output:
 
 ![FindCommand](UG_Screenshots/FindModulesByName_Substring.png)
+<small><i>Figure ???</i></small>
+
+Example: `find /NAME /CS2113T`
+
+Expected Output:
+
+![FindCommand](UG_Screenshots/FindModulesByName_Full.png)
 <small><i>Figure ???</i></small>
 
 The find command can also be used to find all modules of a module type. It will list all modules of a certain module type.
@@ -102,7 +103,7 @@ Accepted Inputs:
 
 Module Types: [Core, GE, UE, Internship] referring to Core, General Electives, Unrestricted Electives and Internships.
 
-Example: find /TYPE /CORE
+Example: `find /TYPE /CORE`
 
 Expected Output:
 
