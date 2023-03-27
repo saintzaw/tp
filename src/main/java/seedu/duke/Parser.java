@@ -7,10 +7,10 @@ import static java.lang.System.exit;
 import static seedu.duke.Duke.LOGGER;
 
 public class Parser {
-    private static final int REQUIRED_MC_FOR_CORE = 96;
-    private static final int REQUIRED_MC_FOR_GE = 20;
-    private static final int REQUIRED_MC_FOR_UE = 32;
-    private static final int REQUIRED_MC_FOR_INTERNSHIP = 12;
+    private static final int REQUIRED_MC_CORE = 96;
+    private static final int REQUIRED_MC_GE = 20;
+    private static final int REQUIRED_MC_UE = 32;
+    private static final int REQUIRED_MC_INTERNSHIP = 12;
 
     public Parser() {
 
@@ -492,27 +492,26 @@ public class Parser {
         switch(moduleType) {
         case "ALL":
             String[] moduleTypes = {"CORE", "GE" , "UE", "INTERNSHIP"};
-            int[] requiredMCs = {REQUIRED_MC_FOR_CORE, REQUIRED_MC_FOR_GE,
-                    REQUIRED_MC_FOR_UE, REQUIRED_MC_FOR_INTERNSHIP};
+            int[] requiredMCs = {REQUIRED_MC_CORE, REQUIRED_MC_GE, REQUIRED_MC_UE, REQUIRED_MC_INTERNSHIP};
             for (int i =0; i < moduleTypes.length; i++) {
                 listOfModules.trackModules(listOfModules.getModuleList(), moduleTypes[i], requiredMCs[i]);
             }
             break;
         case "GE":
             foundModules = listOfModules.findModuleByType("GE");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_GE);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_GE);
             break;
         case "UE":
             foundModules = listOfModules.findModuleByType("UE");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_UE);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_UE);
             break;
         case "INTERNSHIP":
             foundModules = listOfModules.findModuleByType("INTERNSHIP");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_INTERNSHIP);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_INTERNSHIP);
             break;
         case "CORE":
             foundModules = listOfModules.findModuleByType("CORE");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_FOR_CORE);
+            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_CORE);
             break;
         default:
             throw new DukeException("Make sure you're trying to track Core, GE, UE or Internship.");
