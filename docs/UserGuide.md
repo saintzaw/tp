@@ -79,29 +79,70 @@ To set up Modganiser, please follow the steps below:
 <small><i>Figure 4: Enter Name Successful</i></small>
 7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
-## Features 
+## 4. Features
+--- ---
+Before we begin with the features, here are some special notations that we will be using. Please familiarize yourself with these notations as it will enhance your experience with the user guide.
 
-### ManPage: `man`
+Tips
 
-List the command summary and shows more commands to get a better description of each feature. 
+Tips are useful suggestions that will help you have a better experience with Modganiser
+```diff
+💡 Tip: Tips are useful
+```
+Notes
 
-1. `man`
-2. `man /add `
-3. `man /list`
-4. `man /edit`
-5. `man /find`
-6. `man /delete`
-7. `man /calculator`
-8. `man /grade`
-9. `man /bye`
+Notes are important information that you should pay attention to when using Modganiser
 
-Viewing the full manpage:
+```diff
+📓 Note: Notes are important, take them down
+```
 
-![ViewManPage](UG_Screenshots/ViewEntireManual.png)
+Warnings
 
-Viewing the manpage for a single feature (ex. add):
+Warnings are to warn you of potential pitfalls that new users may encounter. For example: commands like delete /MODULE_CODE  deletes the module from your plan and the action is irreversible.
+```diff
+❗ Warning: Read this section carefully when you see it
+```
 
-![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
+### 4.1 Notes on the Command Format
+```diff
+📓 Note: 
+1. Command Words
+  - Command words are not case-sensitive
+    Eg. BYE will be accepted as the bye command
+2. Parameters
+  - Words in UPPER_CASE refers to the inputs from the user
+  - All inputs for the command parameters should come with a slash “/” before it to indicate that it is a user input and not a Command Word.
+  - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before they are executed. Therefore, parameters like /cs2113t will be treated as /CS2113T by default
+    Eg. find /CODE /Cs2113t will be treated as FIND /CODE /CS2113T by Modganiser
+  - You should provide as many inputs as there are parameter fields for the command. Missing or Additional Inputs will trigger an error by Modganiser
+3. Markdown Texts
+  - Markdown texts are texts that look like this, which indicates that this is a command and the parameters that the user can input.
+4. Errors and Warnings
+  - If you are receiving an error or warning, do check that you do not have missing or additional inputs and that your inputs are in the list of accepted input
+```
+![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
+<small><i>Figure 5: Missing Inputs to Parameters</i></small>
+![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
+<small><i>Figure 6: Additional Inputs to Parameters</i></small>
+
+### 4.2 Summary Of Features
+Below is a summary of features that Modganiser has. Type the corresponding command in the Command Line Interface and press Enter to execute it.
+* Adding a module:  `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM`
+* Input grade for module: `grade /MODULE_CODE /GRADE`
+* Editing a module: `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`
+* Listing modules by year : `list /YEAR`
+* Locating module by code or type : `find /TYPE_OF_SEARCH /KEYWORD`
+* Track Module Type Completion: `track /MODULE_TYPE`
+* Grade Calculator: `calculatecap`
+* Viewing manual: `man`
+* Viewing a specific manual for a feature: m`an /FEATURE`
+* Exiting the program : `bye`
+
+### 4.3 Managing Modules
+
+#### 4.3.1 Adding Modules: `add`
+
 
 ### Add command: `add`
 
@@ -119,12 +160,12 @@ Module Types: [Core, GE, UE, Internship] referring to Core, General Electives, U
 
 Year: [0-6]
 
-Semester: [1, 1.5, 2, 2.5] referring to Semester 1, Semester 1 break (Special Term I), 
+Semester: [1, 1.5, 2, 2.5] referring to Semester 1, Semester 1 break (Special Term I),
 Semester 2, Semester 2 break (Special Term II)
 
 Example Input: `add /CS2113T /4 /CORE /2 /2`
 
-Expected Output: 
+Expected Output:
 ```    
     ____________________________________________________________
      Got it. I've added this module:
@@ -133,42 +174,8 @@ Expected Output:
     ____________________________________________________________
 ```
 
+#### 4.3.2 Adding Grade Obtained for Module: `grade`
 
-### Find command: `find`
-
-The find command can be used to find modules by its module code. It will list all modules that contains the KEYWORD in 
-its module code
-
-Command: `find /CODE /{KEYWORD}`
-
-Example: `find /CODE /CS`
-
-Expected Output:
-
-![FindCommand](UG_Screenshots/FindModulesByName_Substring.png)
-<small><i>Figure ???</i></small>
-
-Example: `find /CODE /CS2113T`
-
-Expected Output:
-
-![FindCommand](UG_Screenshots/FindModulesByName_Full.png)
-<small><i>Figure ???</i></small>
-
-The find command can also be used to find all modules of a module type. It will list all modules of a certain module type.
-
-Command: `find /TYPE /{MODULE_TYPE}`
-
-Accepted Inputs:
-
-Module Types: [Core, GE, UE, Internship] referring to Core, General Electives, Unrestricted Electives and Internships.
-
-Example: `find /TYPE /CORE`
-
-Expected Output:
-
-![FindCommand](UG_Screenshots/FindModulesByType.png)
-<small><i>Figure ???</i></small>
 
 ### Grade command: `grade`
 
@@ -179,17 +186,68 @@ Command: `grade /MODULE_CODE /GRADE`
 
 Example: `grade /CS2113T /A`
 
-Expected Output:  
+Expected Output:
 
 ![GradeCommand](UG_Screenshots/InputGrade.png)  
 <small><i>Figure ???</i></small>
 
 Example: `grade /CS2113T /B` after previous command
 
-Expected Output:  
+Expected Output:
 
 ![GradeCommand](UG_Screenshots/UpdateGrade.png)  
 <small><i>Figure ???</i></small>
+
+#### 4.3.3 Editing Module Details: `edit`
+
+#### 4.3.4 Deleting Module From Module Plan: `delete`
+
+### 4.4 Managing Display of Module Plan
+
+#### 4.4.1 Viewing Module Plan: `list`
+
+#### 4.4.2 Finding Modules in the Module Plan: `find`
+**Function**
+
+Searches for the module who’s module code contains the keyword inputted by the user, or the modules who’s module type is the module type inputted by the user.
+
+|   Parameter    |                          Description                           |                                                                Accepted Inputs                                                                |
+|:--------------:|:--------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
+| TYPE_OF_SEARCH |    Specifies to search using the module code or module type    |                                                                  CODE, TYPE                                                                   |
+|    KEYWORD     |                   The keyword to search for                    | If TYPE_OF_SEARCH is CODE, all inputs will be accepted. However, if TYPE_OF_SEARCH is TYPE, only CORE, GE, UE and INTERNSHIP will be accepted |
+
+**Command Format**
+
+`find/TYPE_OF_SEARCH /KEYWORD`
+
+Example: find /TYPE /CORE finds all modules that contains CS2113T
+![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
+<small><i>Figure 18: Finding a module with its full module code</i></small>
+
+Example: `find /CODE /CS` finds all modules whose module code contains the keyword “CS”
+![Findallthatcontains](UG_Screenshots/FindModulesByName_Substring.png)
+<small><i>Figure 19: Finding a module by substring of name</i></small>
+
+Example: find /TYPE /CORE Find all modules whose module type is Core
+![FindModuleType](UG_Screenshots/FindModulesByType.png)
+<small><i>Figure 20: Finding a module by type</i></small>
+
+### 4.5 Tracking Graduation Progress
+#### 4.5.1 Tracking the Completion of Each Module Type: `track`
+**Function**
+Tracks how many modular credits of a module type you have finished and Modganiser will list out all the modules that you have taken under that module type and how many more modular credits you need before you complete the requirements for that module type.
+
+|  Parameter  |                   Description                    |        Accepted Inputs        |
+|:-----------:|:------------------------------------------------:|:-----------------------------:|
+| MODULE_TYPE | The module type whose status you want to look up | ALL, CORE, GE, UE, INTERNSHIP |
+
+**Command Format**
+`track /MODULE_TYPE`
+Example: `track/CORE` tracks the completion status of your core modules.
+![trackCore](UG_Screenshots/TrackCommand.png)
+<small><i>Figure 21: Tracking Module Type Completion Status</i></small>
+
+### 4.5.2 Calculating Your Current CAP: `calculatcap`
 
 ### CalculateCAP command: `calculatecap`
 
@@ -208,24 +266,64 @@ Expected Output:
 ![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png)  
 <small><i>Figure ???</i></small>
 
-### Track command: `track`
+### 4.6 Miscellaneous
+#### 4.6.1 Viewing the Entire Manual: `man`
 
-Track command shows the completion status of each module type, ensuring that you have fulfilled all graduation requirements.
+List the command summary and shows more commands to get a better description of each feature.
 
-Command: `track /{MODULE_TYPE}`
+1. `man`
+2. `man /add `
+3. `man /list`
+4. `man /edit`
+5. `man /find`
+6. `man /delete`
+7. `man /calculator`
+8. `man /grade`
+9. `man /bye`
 
-Accepted Inputs:
+Viewing the full manpage:
 
-Module Types: [CORE, GE, UE, INTERNSHIP, ALL] referring to Core, General Electives, Unrestricted Electives and Internships. 
-ALL will show the completion status of all the above-mentioned module types.  
+![ViewManPage](UG_Screenshots/ViewEntireManual.png)
 
-Example: `track /CORE`
+#### 4.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
 
-Expected Output:
+Viewing the manpage for a single feature (ex. add):
 
-![TrackCommand](UG_Screenshots/TrackCommand.png)
-<small><i>Figure ???</i></small>
+![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
 
+#### 4.6.3 Exiting Modganiser: `bye`
+**Function**
+
+Exits Modganiser
+
+**Command Format**
+
+`bye`
+Example: `bye` exits the program
+![ByeCommand](UG_Screenshots/ExitCommand.png)
+<small><i>Figure 25: Modganiser Exits</i></small>
+
+```diff
+📓 Note: 
+Typing bye during any time when the Modganiser is running will exit the program. When Modganiser asks for your name during its first start up, typing bye will also exit the program. If your name is “bye”, please do consider using an alias. Thank you and sorry for the inconvenience caused.
+```
+
+#### 4.6.4 Saving Module Plan
+
+Modganiser automatically saves your module plan into your local storage onto your device after every command you input
+
+To find your save file:
+1. Go to your Desktop and find the folder titled “Modganiser” or find the folder where tp.jar is saved.
+2. Double click on the folder and find the folder titled “data”
+3. Double click on the folder and the file titled “modules.txt” is the save file
+
+```diff
+❗ Warning: Please do not edit this save file to prevent corrupting your saved data.
+```
+Your saved module plan will be automatically loaded when you run Modganiser.
+```diff
+📓 Note: If you switch device, and want to import your module plan from your old device to the new one, firstly locate your save file on the old device, which is just a normal text file. You can then use any form of messaging applications like telegram, email applications like gmail or online cloud storage like google drive to send this save file to yourself or store this save file. You can then retrieve this save file from your new device.
+```
 
 ## 5. FAQ
 --- ---
