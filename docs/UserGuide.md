@@ -25,22 +25,31 @@ Some example commands you can try:
 
 List the command summary and shows more commands to get a better description of each feature. 
 
-1. `man`
-2. `man /add `
-3. `man /list`
-4. `man /edit`
-5. `man /find`
-6. `man /delete`
-7. `man /calculator`
-8. `man /grade`
-9. `man /bye`
+Example inputs other than `man`: 
 
-Viewing the full manpage:
+1. `man /add `
+2. `man /list`
+3. `man /edit`
+4. `man /find`
+5. `man /delete`
+6. `man /calculator`
+7. `man /grade`
+8. `man /bye`
+
+
+**Viewing the full manpage:**
+
+Expected Input : `man`
+
+Expected Output:
 
 ![ViewManPage](UG_Screenshots/ViewEntireManual.png)
 
-Viewing the manpage for a single feature (ex. add):
+**Viewing the manpage for a single feature (ex. add):**
 
+Expected Input: `man /add`
+
+Expected Output: 
 ![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
 
 
