@@ -107,9 +107,9 @@ public class Parser {
             }
             assert userCommands.length == 3;
             ArrayList<Module> foundModules = new ArrayList<>();
-            if (userCommands[1].trim().equals("NAME")) {
+            if (userCommands[1].trim().equals("CODE")) {
                 try {
-                    foundModules = moduleList.findModuleByName(userCommands[2].trim());
+                    foundModules = moduleList.findModuleByCode(userCommands[2].trim());
                 } catch (DukeException e) {
                     Print.printErrorMessage(e);
                 }
@@ -120,7 +120,7 @@ public class Parser {
                     Print.printErrorMessage(e);
                 }
             } else {
-                throw new DukeException("Please specify type of search with /Name or /Type");
+                throw new DukeException("Please specify type of search with /Code or /Type");
             }
             if (foundModules.isEmpty()) {
                 Print.printNoModuleFound(userCommands[2].trim());
@@ -493,7 +493,7 @@ public class Parser {
         case "ALL":
             String[] moduleTypes = {"CORE", "GE" , "UE", "INTERNSHIP"};
             int[] requiredMCs = {REQUIRED_MC_CORE, REQUIRED_MC_GE, REQUIRED_MC_UE, REQUIRED_MC_INTERNSHIP};
-            for (int i =0; i < moduleTypes.length; i++) {
+            for (int i = 0; i < moduleTypes.length; i++) {
                 listOfModules.trackModules(listOfModules.getModuleList(), moduleTypes[i], requiredMCs[i]);
             }
             break;
