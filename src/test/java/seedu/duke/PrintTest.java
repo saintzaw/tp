@@ -294,7 +294,7 @@ public class PrintTest {
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "3. List" + System.lineSeparator() + " " +
-                "Command: list all or list /YEAR" + System.lineSeparator()
+                "Command: list /all or list /YEAR" + System.lineSeparator()
                 + " " +
                 "To find out more, use the command: man /list"
                 + System.lineSeparator() + System.lineSeparator() + " " +
