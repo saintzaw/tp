@@ -408,7 +408,10 @@ public class Parser {
         String moduleField = userCommands[2].trim();
         //the new information to replace in the indicated field
         String update = userCommands[3].trim();
-
+        if (!listOfModules.getModuleList().contains(moduleCode)) {
+            throw new DukeException("The module you are trying to edit does not exist in the module plan. " +
+                    "Please add the module using the add command if you wish to take the module in the future");
+        }
         switch (moduleField) {
         case "MC":
             listOfModules.editModularCredits(moduleCode, update);
@@ -432,8 +435,11 @@ public class Parser {
         case "SEMESTER":
             listOfModules.editSemester(moduleCode, update);
             break;
+        case "GRADE":
+            listOfModules.updateModuleGrade(moduleCode, update);
+            break;
         default:
-            throw new DukeException("Make sure the field to edit is MC, type, year or semester");
+            throw new DukeException("Make sure the field to edit is MC, type, year, semester or grade");
         }
     }
 
