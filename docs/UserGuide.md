@@ -333,25 +333,24 @@ Example: `track/CORE` tracks the completion status of your core modules.
 ```
 **<p align="right">[Return to Top](#table-of-contents)</p>**
 ### 4.5.2 Calculating Your Current CAP: `calculatecap`
+**Function**
 
+Calculate your current CAP based on the grades you obtained. Grades obtained correspond to a number that is used to calculate your CAP.  
+To find out more, do visit the official [NUS website](https://www.nus.edu.sg/registrar/academic-information-policies/modular-system) :)
+  
+|  Parameter  |                   Description                    |        Accepted Inputs        |
+|:-----------:|:------------------------------------------------:|:-----------------------------:|
+| NIL | NIL | NIL |
 
-### CalculateCAP command: `calculatecap`
+**Command Format**
 
-The `calculatecap` command can be used to calculate your Cumulative Average Point (CAP) across completed modules
-based on grade values that you obtained.  
-The result would be rounded off to 2 decimal places for the user.
-+ Grades obtained correspond to a number that is used to calculate your cap. To find out more, do visit the
-  official [NUS website](https://www.nus.edu.sg/registrar/academic-information-policies/modular-system) :)
+`calculatecap`
 
-Command: `calculatecap`
-
-Example: `calculatecap`
-
-Expected Output:
+Example: `calculatecap` calculates your current CAP
 
 ![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png) 
 
-<small><i>Figure ???</i></small>
+<small><i>Figure 22: Calculate CAP across graded modules</i></small>
 **<p align="right">[Return to Top](#table-of-contents)</p>**
 --- ---
 <div style="page-break-after: always;"></div>
