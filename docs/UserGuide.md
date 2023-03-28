@@ -1,7 +1,9 @@
 # Modganiser User Guide
 
 ## Table of Contents
---- ---
+
+---
+
 0. [Acknowledgements](#0-acknowledgements)
 1. [Introduction](#1-introduction)
    + 1.1 [What Is Modganiser](#11-what-is-modganiser)
@@ -34,11 +36,14 @@
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ## 0. Acknowledgements
---- ---
+
+---
+
 We would like to thank you for choosing Modganiser to help you with your module planning.
 Modganiser will be sure to make this arduous task a breeze while ensuring you meet all your graduation requirements,
 so that you can focus on the other aspects of university that really matter.
@@ -46,11 +51,14 @@ Should you have any feedback or enquiries, please do not hesitate to reach out t
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ## 1. Introduction
---- ---
+
+---
+
 ### 1.1 What is Modganiser?
 Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI),
 focused on helping Information Security Undergraduates graduate in 4 years. It does so by giving you a platform to
@@ -77,11 +85,14 @@ if you are used to Java, CLI or Modganiser, which are described below:
 * Refer to our Glossary to learn more about the key terms in this
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ## 2. Command Line Interface Tutorial
---- ---
+
+---
+
 To open up the Command Line Interface (CLI)
 * For Windows
     * Click on the Windows button and search for “Command Prompt”.
@@ -99,11 +110,14 @@ To open up the Command Line Interface (CLI)
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ## 3. Set-Up Guide
---- ---
+
+---
+
 To set up Modganiser, please follow the steps below:
 1. Download Java
     * For Windows:
@@ -128,11 +142,14 @@ To set up Modganiser, please follow the steps below:
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ## 4. Features
---- ---
+
+---
+
 Before we begin with the features, here are some special notations that we will be using. Please familiarize yourself with these notations as it will enhance your experience with the user guide.
 
 **Tips**
@@ -155,7 +172,8 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ### 4.1 Notes on the Command Format
@@ -189,7 +207,8 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ### 4.2 Summary Of Features
@@ -206,7 +225,8 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 * Exiting the program : `bye`
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ### 4.3 Managing Modules
@@ -244,7 +264,8 @@ Expected Output:
 ```
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 #### 4.3.2 Adding Grade Obtained for Module: `grade`
@@ -282,7 +303,8 @@ Example: `grade /CS2113T /A` adds a grade “A” to CS2113T, meaning you have o
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 #### 4.3.3 Editing Module Details: `edit`
@@ -310,7 +332,8 @@ Expected Output:
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 #### 4.3.4 Deleting Module From Module Plan: `delete`
@@ -342,7 +365,8 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ### 4.4 Managing Display of Module Plan
@@ -369,7 +393,8 @@ Example: `list /1` lists Year 1's module plan.
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 #### 4.4.2 Finding Modules in the Module Plan: `find`
@@ -405,7 +430,8 @@ Example: `find /TYPE /CORE` finds all modules whose module type is Core.
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ### 4.5 Tracking Graduation Progress
@@ -431,7 +457,8 @@ will not be considered as completed and hence counted.
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ### 4.5.2 Calculating Your Current CAP: `calculatecap`
@@ -455,7 +482,8 @@ Example: `calculatecap` calculates your current CAP
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ### 4.6 Miscellaneous
@@ -484,7 +512,8 @@ Expected Output:
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 #### 4.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
@@ -508,7 +537,8 @@ Example: `man /add` displays the manual page for the add feature
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 #### 4.6.3 Exiting Modganiser: `bye`
@@ -532,7 +562,8 @@ Thank you and sorry for the inconvenience caused.
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 #### 4.6.4 Saving Module Plan
@@ -560,12 +591,14 @@ store this save file. You can then retrieve this save file from your new device.
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 
 ## 5. FAQ
---- ---
+
+---
 
 | Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -578,10 +611,13 @@ store this save file. You can then retrieve this save file from your new device.
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ## 6. Command Summary
+
+---
 
 |             Feature             |                           Format                            |                                   Example                                    |
 |:-------------------------------:|:-----------------------------------------------------------:|:----------------------------------------------------------------------------:|
@@ -598,10 +634,13 @@ store this save file. You can then retrieve this save file from your new device.
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
 
 ## 7. Glossary
+
+---
 
 | Technical Term         | Explanation                                                                                                                   |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------|
@@ -615,5 +654,6 @@ store this save file. You can then retrieve this save file from your new device.
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
---- ---
+---
+
 <div style="page-break-after: always;"></div>
