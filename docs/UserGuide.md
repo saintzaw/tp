@@ -267,7 +267,7 @@ Example: `track/CORE` tracks the completion status of your core modules.
 <small><i>Figure 21: Tracking Module Type Completion Status</i></small>
 
 
-### 4.5.2 Calculating Your Current CAP: `calculatcap`
+### 4.5.2 Calculating Your Current CAP: `calculatecap`
 
 
 ### CalculateCAP command: `calculatecap`
@@ -294,28 +294,47 @@ Expected Output:
 ### 4.6 Miscellaneous
 #### 4.6.1 Viewing the Entire Manual: `man`
 
-List the command summary and shows more commands to get a better description of each feature.
+**Function**
 
-1. `man`
-2. `man /add `
-3. `man /list`
-4. `man /edit`
-5. `man /find`
-6. `man /delete`
-7. `man /calculator`
-8. `man /grade`
-9. `man /bye`
+Shows a summary of all the available commands
 
-Viewing the full manpage:
+| Parameter | Description | Accepted Inputs |
+|:---------:|:-----------:|:---------------:|
+|    NIL    |     NIL     |       NIL       |
+
+
+**Command format** 
+
+`man`
+
+Example : `man` Displays the manual page
+
+Expected Output:
 
 ![ViewManPage](UG_Screenshots/ViewEntireManual.png)
+
+<small><i>Figure 23: Displaying part of entire manual</i></small>
 
 
 #### 4.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
 
-Viewing the manpage for a single feature (ex. add):
+**Function**
+
+Shows a detailed instruction page for the specific command requested
+
+| Parameter |                    Description                     |                    Accepted Inputs                    |
+|:---------:|:--------------------------------------------------:|:-----------------------------------------------------:|
+|  FEATURE  | The command that you would like to know more about | add, list, edit, find, delete, calculator, grade, bye |
+
+**Command format**
+
+`man /FEATURE`
+
+Example: `man /add` Displays the manual page for the add feature
 
 ![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
+
+<small><i>Figure 24: Displaying manual of specific feature</i></small>
 
 
 #### 4.6.3 Exiting Modganiser: `bye`
@@ -357,31 +376,29 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 ## 5. FAQ
 --- ---
 
-| Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                        |
-|-------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I am unable to install java?                                                                                                  | Please click here to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                                |
-| Why is Modganiser not running?                                                                                                | Please follow our Command Line Interface Tutorial and our Set Up Guide closely. If Modganiser still fails to run, please contact us at this email.                                                                                                                                                                                                                                                             |
-| Where is my save file?                                                                                                        | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                   |
-| What if I change my device? How do I bring the save data to my new device                                                     | You can locate your save file, which is just a normal text file. You can then use any form of messaging applications like Telegram, email applications like Gmail or online cloud storage like Google Drive to send this save file to yourself or store this save file. You can then retrieve this save file with your new device.                                                                             |
-| Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto NUSMods to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the Information Security Student requirements before deciding on the module type.   |
-| Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                     
-
+| Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                      |
+|-------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| I am unable to install java?                                                                                                  | Please click here to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                              |
+| Why is Modganiser not running?                                                                                                | Please follow our Command Line Interface Tutorial and our Set Up Guide closely. If Modganiser still fails to run, please contact us at this email.                                                                                                                                                                                                                                                           |
+| Where is my save file?                                                                                                        | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                 |
+| What if I change my device? How do I bring the save data to my new device                                                     | You can locate your save file, which is just a normal text file. You can then use any form of messaging applications like Telegram, email applications like Gmail or online cloud storage like Google Drive to send this save file to yourself or store this save file. You can then retrieve this save file with your new device.                                                                           |
+| Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto NUSMods to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the Information Security Student requirements before deciding on the module type. |
+| Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                         |
 
 ## 6. Command Summary
 
-Feature | Format | Example
-| :----: | :----: | :-----: |
- Add modules                     | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` |   `add /CS2113T /4 /CORE /1 /1` or `add /CS2113T CS2101 IS4231 /4 /CORE /1 /1`    
- Add grade obtained              |                 `grade /MODULE_CODE /GRADE`                 |        `grade /CS2113T /A+`        
- Edit details of existing module |   `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `            |     `edit /CS2113T /TYPE /UE`      
- Delete existing module          |                    `delete /MODULE_CODE`                    |         `delete /CS2113T`          
- List module plan                |                        `list /YEAR`                         |             `list /2`              
- Find module in module plan      |               `find /TYPE_OF_SEARCH /KEYWORD`               | `find /CODE /CS or find /TYPE /GE` 
- Track progress of module type   |                    `track /MODULE_TYPE`                     |        `track /INTERNSHIP`         
- Calculate current CAP           |                       `calculatecap`                        |           `calculatecap`           
- View Manual Page                |                   `man` or `man /FEATURE`                   |        `man` or `man /add`         
- Exit Modganiser                 |                            `bye`                            |               `bye`                
-
+|             Feature             |                           Format                            |                                   Example                                    |
+|:-------------------------------:|:-----------------------------------------------------------:|:----------------------------------------------------------------------------:|
+|           Add modules           | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` | `add /CS2113T /4 /CORE /1 /1` or `add /CS2113T CS2101 IS4231 /4 /CORE /1 /1` |
+|       Add grade obtained        |                 `grade /MODULE_CODE /GRADE`                 |                             `grade /CS2113T /A+`                             |
+| Edit details of existing module |       `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `        |                          `edit /CS2113T /TYPE /UE`                           |
+|     Delete existing module      |                    `delete /MODULE_CODE`                    |                              `delete /CS2113T`                               |
+|        List module plan         |                        `list /YEAR`                         |                                  `list /2`                                   |
+|   Find module in module plan    |               `find /TYPE_OF_SEARCH /KEYWORD`               |                      `find /CODE /CS or find /TYPE /GE`                      |
+|  Track progress of module type  |                    `track /MODULE_TYPE`                     |                             `track /INTERNSHIP`                              |
+|      Calculate current CAP      |                       `calculatecap`                        |                                `calculatecap`                                |
+|        View Manual Page         |                   `man` or `man /FEATURE`                   |                             `man` or `man /add`                              |
+|         Exit Modganiser         |                            `bye`                            |                                    `bye`                                     |
 
 ## 7. Glossary
 
