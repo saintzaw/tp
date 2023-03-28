@@ -209,30 +209,37 @@ Expected Output:
 ```
 **<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.3.2 Adding Grade Obtained for Module: `grade`
+**Function**
 
+Input the grade you got for the module once you have taken it in the planned semester.  
+This grade will then be used to calculate your CAP with the `calculatecap` command.
 
-### Grade command: `grade`
+|   Parameter    |                          Description                           |                                                                Accepted Inputs                                                                |
+|:--------------:|:--------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
+| MODULE_CODE |    The module's code    |                                                                  All inputs will be accepted                                                                   |
+|    GRADE     |                   The grade you obtained for the module                    | A+, A, B+, B, B-, C+, C, C-, D+, D, F, S, U, CS, CU |
 
-The `grade` command can be used to input a valid grade when the user has completed a module.  
-The `grade` command can also be used to update the grade for a module.
+**Command Format**
 
-Command: `grade /MODULE_CODE /GRADE`
+`grade /MODULE_CODE /GRADE`
 
-Example: `grade /CS2113T /A`
-
-Expected Output:
+Example: `grade /CS2113T /A` adds a grade “A” to CS2113T, meaning you have obtained grade A for that module.
 
 ![GradeCommand](UG_Screenshots/InputGrade.png)  
 
-<small><i>Figure ???</i></small>
+<small><i>Figure 9: Input grade for module</i></small>
 
-Example: `grade /CS2113T /B` after previous command
+```diff
+📓 Note:  Modules which do not have a grade yet will have a blank 2nd square bracket [“ ”].  
+           When modules are added, the grades will all be empty initially and will need to be updated via this command.
+```
+```diff
+❗ Warning: Trying to add grades to a module that is not present will cause Modganiser to throw an error.
+```
 
-Expected Output:
+![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)  
 
-![GradeCommand](UG_Screenshots/UpdateGrade.png)  
-
-<small><i>Figure ???</i></small>
+<small><i>Figure 10: Module not in list when attempting grade command</i></small>
 **<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.3.3 Editing Module Details: `edit`
 
