@@ -51,11 +51,11 @@ To open up the Command Line Interface (CLI)
 * To run commands in the CLI, just type the command out, press enter and the command will run
 
 ![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
-<small><i>Figure 1: Windows version of CLI with a command typed out</i></small>
+<p style = "text-align:center"><small>Figure 1: Windows version of CLI with a command typed out</small></p>
 
 ![MacOSCLI](UG_Screenshots/Terminal.png)
 
-<small><i>Figure 2: MacOS version of CLI with a command typed out</i></small>
+<small><p style = "text-align:center">>Figure 2: MacOS version of CLI with a command typed out</p></small>
 
 
 ## 3. Set Up Guide
@@ -75,11 +75,11 @@ To set up Modganiser, please follow the steps below:
 5. If successful, you should see the following displayed on your screen:
    ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
 
-<small><i>Figure 3: Modganiser Successful Start Up</i></small>
+<small><p style = "text-align:center">Figure 3: Modganiser Successful Start Up</p></small>
 6. Type your name in and press enter. If successful, you should see the following:
    ![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
 
-<small><i>Figure 4: Enter Name Successful</i></small>
+<small><p style = "text-align:center">Figure 4: Enter Name Successful</p></small>
 7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
 ## 4. Features
@@ -128,9 +128,9 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >    - If you are receiving an error or warning, do check that you do not have missing or 
     additional inputs and that your inputs are in the list of accepted input
 ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
-<small><i>Figure 5: Missing Inputs to Parameters</i></small>
+<small><p style = "text-align:center">Figure 5: Missing Inputs to Parameters</p></small>
 ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
-<small><i>Figure 6: Additional Inputs to Parameters</i></small>
+<small><p style = "text-align:center">Figure 6: Additional Inputs to Parameters</p></small>
 
 ### 4.2 Summary Of Features
 Below is a summary of features that Modganiser has. Type the corresponding command in the Command Line Interface and press Enter to execute it.
@@ -196,7 +196,7 @@ Expected Output:
 
 ![GradeCommand](UG_Screenshots/InputGrade.png)
 
-<small><i>Figure ???</i></small>
+<small><p style = "text-align:center">Figure ???</p></small>
 
 Example: `grade /CS2113T /B` after previous command
 
@@ -204,7 +204,7 @@ Expected Output:
 
 ![GradeCommand](UG_Screenshots/UpdateGrade.png)
 
-<small><i>Figure ???</i></small>
+<small><p style = "text-align:center">Figure ???</p></small>
 
 #### 4.3.3 Editing Module Details: `edit`
 
@@ -237,19 +237,19 @@ Example: find /TYPE /CORE finds all modules that contains CS2113T
 
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
 
-<small><i>Figure 18: Finding a module with its full module code</i></small>
+<small><p style = "text-align:center">Figure 18: Finding a module with its full module code</p></small>
 
 Example: `find /CODE /CS` finds all modules whose module code contains the keyword “CS”
 
 ![Findallthatcontains](UG_Screenshots/FindModulesByName_Substring.png)
 
-<small><i>Figure 19: Finding a module by substring of name</i></small>
+<small><p style = "text-align:center">Figure 19: Finding a module by substring of name</p></small>
 
 Example: find /TYPE /CORE Find all modules whose module type is Core
 
 ![FindModuleType](UG_Screenshots/FindModulesByType.png)
 
-<small><i>Figure 20: Finding a module by type</i></small>
+<small><p style = "text-align:center">Figure 20: Finding a module by type</p></small>
 
 
 ### 4.5 Tracking Graduation Progress
@@ -267,7 +267,7 @@ Example: `track/CORE` tracks the completion status of your core modules.
 
 ![trackCore](UG_Screenshots/TrackCommand.png)
 
-<small><i>Figure 21: Tracking Module Type Completion Status</i></small>
+<small><p style = "text-align:center">Figure 21: Tracking Module Type Completion Status</p></small>
 
 
 > 📓 **Note** 
@@ -295,7 +295,7 @@ Expected Output:
 
 ![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png)
 
-<small><i>Figure ???</i></small>
+<small><p style = "text-align:center">Figure ???</p></small>
 
 --- ---
 <div style="page-break-after: always;"></div>
@@ -322,7 +322,7 @@ Expected Output:
 
 ![ViewManPage](UG_Screenshots/ViewEntireManual.png)
 
-<small><i>Figure 23: Displaying part of entire manual</i></small>
+<small><p style = "text-align:center">Figure 23: Displaying part of entire manual</p></small>
 
 
 #### 4.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
@@ -343,7 +343,7 @@ Example: `man /add` Displays the manual page for the add feature
 
 ![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
 
-<small><i>Figure 24: Displaying manual of specific feature</i></small>
+<small><p style = "text-align:center">Figure 24: Displaying manual of specific feature</p></small>
 
 
 #### 4.6.3 Exiting Modganiser: `bye`
@@ -356,7 +356,7 @@ Exits Modganiser
 `bye`
 Example: `bye` exits the program
 ![ByeCommand](UG_Screenshots/ExitCommand.png)
-<small><i>Figure 25: Modganiser Exits</i></small>
+<small><p style = "text-align:center">Figure 25: Modganiser Exits</p></small>
 
 
 > 📓 **Note** 
