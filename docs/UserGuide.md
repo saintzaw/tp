@@ -15,7 +15,7 @@
    + 4.1 [Notes On The Command Format](#41-notes-on-the-command-format)
    + 4.2 [Summary Of Features](#42-summary-of-features)
    + 4.3 [Managing Modules](#43-managing-modules)
-     - 4.3.1 [Adding Modules: add](#431-adding-modules--add)
+     - 4.3.1 [Adding Modules: add](#431-adding-modules-add)
      - 4.3.2 [Adding Grade Obtained for Module: grade](#432-adding-grade-obtained-for-module-grade)
      - 4.3.3 [Editing Module Details: edit](#433-editing-module-details-edit)
      - 4.3.4 [Deleting Module From Module Plan: delete](#434-deleting-module-from-module-plan-delete)
@@ -255,7 +255,7 @@ Adds a module to the module plan with the following [parameters](#7-glossary).
 
 >❗ **Warning**
 >
-> We do not check for the validity of the module code as we cannot maintain a database of modules. Please double-check the module code on NUSMods before entering it into Modganiser. If you have entered the wrong MODULE_CODE, you may edit it using the [edit command](#433-editing-module-details--edit).
+> We do not check for the validity of the module code as we cannot maintain a database of modules. Please double-check the module code on NUSMods before entering it into Modganiser. If you have entered the wrong MODULE_CODE, you may edit it using the [edit command](#433-editing-module-details-edit).
 
 **Command Format**
 
