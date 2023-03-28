@@ -43,7 +43,11 @@ We would like to thank you for choosing Modganiser to help you with your module 
 Modganiser will be sure to make this arduous task a breeze while ensuring you meet all your graduation requirements,
 so that you can focus on the other aspects of university that really matter.
 Should you have any feedback or enquiries, please do not hesitate to reach out to us!
+
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+
+--- ---
+<div style="page-break-after: always;"></div>
 
 ## 1. Introduction
 --- ---
