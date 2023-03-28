@@ -64,9 +64,9 @@ User Guide from start to finish if you are new to Modganiser, although you may c
 if you are used to Java, CLI or Modganiser, which are described below:
 * Refer to our Table of Contents to navigate between the different sections
 * Refer to our Command Line Interface (CLI) tutorial to learn how to use CLI
-* Refer to our Set Up Guide to learn how to install Modganiser
+* Refer to our Set-Up Guide to learn how to install Modganiser
 * Refer to our Features to learn more about Modganiser’s functions
-* Refer to our FAQ for answers to frequently ask questions
+* Refer to our FAQ for answers to frequently asked questions
 * Refer to our Command Summary to get an overview of the different commands available in Modganiser and their formats
 * Refer to our Glossary to learn more about the key terms in this
 **<p align="right">[Return to Top](#table-of-contents)</p>**
@@ -75,7 +75,7 @@ if you are used to Java, CLI or Modganiser, which are described below:
 To open up the Command Line Interface (CLI)
 * For Windows
     * Click on the Windows button and search for “Command Prompt”.
-* For MacOS
+* For macOS
     * Press on the command and spacebar button together and search for “Terminal”
 * The window that comes up is the CLI on your computer. We will be using this interface to run Modganiser.
 * To run commands in the CLI, just type the command out, press enter and the command will run
@@ -83,13 +83,13 @@ To open up the Command Line Interface (CLI)
 ![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
 <p style = "text-align:center"><small>Figure 1: Windows version of CLI with a command typed out</small></p>
 
-![MacOSCLI](UG_Screenshots/Terminal.png)
+![macOSCLI](UG_Screenshots/Terminal.png)
 
-<small><p style = "text-align:center">>Figure 2: MacOS version of CLI with a command typed out</p></small>
+<small><p style = "text-align:center">Figure 2: macOS version of CLI with a command typed out</p></small>
 **<p align="right">[Return to Top](#table-of-contents)</p>**
 
 
-## 3. Set Up Guide
+## 3. Set-Up Guide
 --- ---
 To set up Modganiser, please follow the steps below:
 1. Download Java
@@ -154,7 +154,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >    that it is a user input and not a Command Word.
 >   - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before 
     they are executed. Therefore, parameters like `/cs2113t` will be treated as `/CS2113T` by 
-    default. Eg. `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
+    default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
 >   - You should provide as many inputs as there are parameter fields for the command. 
     Missing or Additional Inputs will trigger an error by Modganiser
 > 4. Errors and Warnings
@@ -482,8 +482,8 @@ Modganiser automatically saves your module plan into your local storage onto you
 
 To find your save file:
 1. Go to your Desktop and find the folder titled “Modganiser” or find the folder where tp.jar is saved.
-2. Double click on the folder and find the folder titled “data”
-3. Double click on the folder and the file titled “modules.txt” is the save file
+2. Double-click on the folder and find the folder titled “data”
+3. Double-click on the folder and the file titled “modules.txt” is the save file
 
 
 > ❗ **Warning** 
@@ -496,8 +496,8 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 > 
 > If you switch device, and want to import your module plan from your old device to 
 the new one, firstly locate your save file on the old device, which is just a normal text 
-file. You can then use any form of messaging applications like telegram, email applications 
-like gmail or online cloud storage like google drive to send this save file to yourself or 
+file. You can then use any form of messaging applications like Telegram, email applications 
+like Gmail or online cloud storage like Google Drive to send this save file to yourself or 
 store this save file. You can then retrieve this save file from your new device.
 
 **<p align="right">[Return to Top](#table-of-contents)</p>**
