@@ -93,9 +93,7 @@ Notes
 
 Notes are important information that you should pay attention to when using Modganiser
 
-```diff
-📓 Note: Notes are important, take them down
-```
+`#0969DA` `:notebook:` Note: Notes are important, take them down
 
 Warnings
 
