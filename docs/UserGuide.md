@@ -1,8 +1,38 @@
 # Modganiser User Guide
 
 ## Table of Contents
-{:toc}
 --- ---
+0. [Acknowledgements](#0-acknowledgements)
+1. [Introduction](#1-introduction)
+   + 1.1 [What Is Modganiser](#11-what-is-modganiser)
+   + 1.2 [Who Is This User Guide Meant For?](#12-who-is-this-user-guide-meant-for)
+   + 1.3 [How To Use This User Guide](#13-how-to-use-this-user-guide)
+2. [Command Line Interface Tutorial](#2-command-line-interface-tutorial)
+3. [Set Up Guide](#3-set-up-guide)
+4. [Features](#4-features)
+   + 4.1 [Notes On The Command Format](#41-notes-on-the-command-format)
+   + 4.2 [Summary Of Features](#42-summary-of-features)
+   + 4.3 [Managing Modules](#43-managing-modules)
+     - 4.3.1 [Adding Modules: add](#431-adding-modules-add)
+     - 4.3.2 [Adding Grade Obtained for Module: grade](#432-adding-grade-obtained-for-module-grade)
+     - 4.3.3 [Editing Module Details: edit](#433-editing-module-details-edit)
+     - 4.3.4 [Deleting Module From Module Plan: delete](#434-deleting-module-from-module-plan-delete)
+   + 4.4 [Managing Display of Module Plan](#44-managing-display-of-module-plan)
+     - 4.4.1 [Viewing Module Plan: list](#441-viewing-module-plan-list)
+     - 4.4.2 [Finding Modules In The Module Plan: find](#442-finding-modules-in-the-module-plan-find)
+   + 4.5 [Tracking Graduation Progress](#45-tracking-graduation-progress)
+     - 4.5.1 [Tracking the Completion of Each Module Type: track](#451-tracking-the-completion-of-each-module-type-track)
+     - 4.5.2 [Calculating Your Current CAP: calculatecap](#452-calculating-your-current-cap-calculatecap)
+   + 4.6 [Miscellaneous](#46-miscellaneous)
+     - 4.6.1 [Viewing the Entire Manual: man](#461-viewing-the-entire-manual-man)
+     - 4.6.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#462-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
+     - 4.6.3 [Exiting Modganiser: bye](#463-exiting-modganiser-bye)
+     - 4.6.4 [Saving Module Plan](#464-saving-module-plan)
+5. [FAQ](#5-faq)
+6. [Command Summary](#6-command-summary)
+7. [Glossary](#7-glossary)
+
+<p align="right">Return to Top</p>
 
 <div style="page-break-after: always;"></div>
 
@@ -210,7 +240,31 @@ Expected Output:
 
 
 #### 4.3.4 Deleting Module From Module Plan: `delete`
+**Function**
 
+Deletes an existing module that corresponds to the module code inputted.
+
+|  Parameter  |        Description        |                                                               Accepted Inputs                                                                |
+|:-----------:|:-------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------:|
+| MODULE_CODE |     The module's code     |                                                         All inputs will be accepted                                                          |
+
+
+**Command Format**
+
+`delete /MODULE_CODE`
+
+Example: `delete /CS2113T` deletes CS2113T module from the module plan
+
+![DeleteCommand](UG_Screenshots/DeleteExistingModule.png)
+
+<small><i>Figure 14: Deleting a module</i></small>
+
+```diff
+❗ Warning: Trying to delete a module that is not present will cause Modganiser to throw an error.
+```
+
+![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png)
+<small><i>Figure 15: Module not in list when attempting delete command</i></small>
 
 ### 4.4 Managing Display of Module Plan
 
@@ -222,7 +276,7 @@ Expected Output:
 #### 4.4.2 Finding Modules in the Module Plan: `find`
 **Function**
 
-Searches for the module who’s module code contains the keyword inputted by the user, or the modules who’s module type is the module type inputted by the user.
+Searches for the module whose module code contains the keyword inputted by the user, or the modules whose module type is the module type inputted by the user.
 
 |   Parameter    |                          Description                           |                                                                Accepted Inputs                                                                |
 |:--------------:|:--------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -231,9 +285,9 @@ Searches for the module who’s module code contains the keyword inputted by the
 
 **Command Format**
 
-`find/TYPE_OF_SEARCH /KEYWORD`
+`find /TYPE_OF_SEARCH /KEYWORD`
 
-Example: find /TYPE /CORE finds all modules that contains CS2113T
+Example: `find /TYPE /CORE` finds all modules that contains CS2113T
 
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
 
@@ -245,7 +299,7 @@ Example: `find /CODE /CS` finds all modules whose module code contains the keywo
 
 <small><i>Figure 19: Finding a module by substring of name</i></small>
 
-Example: find /TYPE /CORE Find all modules whose module type is Core
+Example: `find /TYPE /CORE` Find all modules whose module type is Core
 
 ![FindModuleType](UG_Screenshots/FindModulesByType.png)
 
@@ -269,12 +323,10 @@ Example: `track/CORE` tracks the completion status of your core modules.
 
 <small><i>Figure 21: Tracking Module Type Completion Status</i></small>
 
-
 > 📓 **Note** 
 > 
 >Completed modules are modules which have a grade. Modules which do not have a grade 
 will not be considered as completed and hence counted.
-
 
 ### 4.5.2 Calculating Your Current CAP: `calculatecap`
 
