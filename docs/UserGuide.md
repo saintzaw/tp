@@ -208,6 +208,24 @@ Expected Output:
 
 #### 4.3.4 Deleting Module From Module Plan: `delete`
 
+### Delete command: `delete`
+
+The `delete` command deletes an existing module that corresponds to the module code inputted.  
+
+Command: `delete /MODULE_CODE`
+
+Example: `delete /CS2113T`
+
+Expected Output:
+
+![GradeCommand](UG_Screenshots/DeleteExistingModule.png)
+
+
+<small><i>Figure ???</i></small>
+
+```diff
+❗ Warning: Trying to delete a module that is not present will cause Modganiser to throw an error.
+```
 
 ### 4.4 Managing Display of Module Plan
 
@@ -219,7 +237,7 @@ Expected Output:
 #### 4.4.2 Finding Modules in the Module Plan: `find`
 **Function**
 
-Searches for the module who’s module code contains the keyword inputted by the user, or the modules who’s module type is the module type inputted by the user.
+Searches for the module whose module code contains the keyword inputted by the user, or the modules whose module type is the module type inputted by the user.
 
 |   Parameter    |                          Description                           |                                                                Accepted Inputs                                                                |
 |:--------------:|:--------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -228,7 +246,7 @@ Searches for the module who’s module code contains the keyword inputted by the
 
 **Command Format**
 
-`find/TYPE_OF_SEARCH /KEYWORD`
+`find /TYPE_OF_SEARCH /KEYWORD`
 
 Example: find /TYPE /CORE finds all modules that contains CS2113T
 
@@ -267,7 +285,7 @@ Example: `track/CORE` tracks the completion status of your core modules.
 <small><i>Figure 21: Tracking Module Type Completion Status</i></small>
 
 ```diff
-📓 Note: Completed modules are modules which have a grade. Modules which do not have a grade will not be considered as completed and hence counted.
+📓 Note: Completed modules are modules which have a grade. Modules which do not have a grade will not be considered as completed and hence not counted.
 ```
 
 ### 4.5.2 Calculating Your Current CAP: `calculatecap`
