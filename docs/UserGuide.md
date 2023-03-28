@@ -115,19 +115,19 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
     Eg. BYE will be accepted as the bye command
 2. Parameters
   - Words in UPPER_CASE refers to the inputs from the user
-  - All inputs for the command parameters should come with a slash “/” before it to indicate that it is a user input 
-    and not a Command Word.
-  - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before they are executed. 
-    Therefore, parameters like /cs2113t will be treated as /CS2113T by default
-    Eg. find /CODE /Cs2113t will be treated as FIND /CODE /CS2113T by Modganiser
-  - You should provide as many inputs as there are parameter fields for the command. Missing or Additional Inputs will 
-    trigger an error by Modganiser
+  - All inputs for the command parameters should come with a slash “/” before it to indicate 
+    that it is a user input and not a Command Word.
+  - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before 
+    they are executed. Therefore, parameters like /cs2113t will be treated as /CS2113T by 
+    default. Eg. find /CODE /Cs2113t will be treated as FIND /CODE /CS2113T by Modganiser
+  - You should provide as many inputs as there are parameter fields for the command. 
+    Missing or Additional Inputs will trigger an error by Modganiser
 3. Markdown Texts
-  - Markdown texts are texts that look like this, which indicates that this is a command and the parameters that the 
-    user can input.
+  - Markdown texts are texts that look like this, which indicates that this is a command 
+    and the parameters that the user can input.
 4. Errors and Warnings
-  - If you are receiving an error or warning, do check that you do not have missing or additional inputs and that 
-    your inputs are in the list of accepted input
+  - If you are receiving an error or warning, do check that you do not have missing or 
+    additional inputs and that your inputs are in the list of accepted input
 ```
 ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
 <small><i>Figure 5: Missing Inputs to Parameters</i></small>
@@ -272,7 +272,8 @@ Example: `track/CORE` tracks the completion status of your core modules.
 <small><i>Figure 21: Tracking Module Type Completion Status</i></small>
 
 ```diff
-📓 Note: Completed modules are modules which have a grade. Modules which do not have a grade will not be considered as completed and hence counted.
+📓 Note: Completed modules are modules which have a grade. Modules which do not have a grade 
+will not be considered as completed and hence counted.
 ```
 
 ### 4.5.2 Calculating Your Current CAP: `calculatecap`
@@ -359,8 +360,9 @@ Example: `bye` exits the program
 
 ```diff
 📓 Note: Typing bye during any time when the Modganiser is running will exit the program. 
-When Modganiser asks for your name during its first start up, typing bye will also exit the program. 
-If your name is “bye”, please do consider using an alias. Thank you and sorry for the inconvenience caused.
+When Modganiser asks for your name during its first start up, typing bye will also exit the 
+program. If your name is “bye”, please do consider using an alias.
+Thank you and sorry for the inconvenience caused.
 ```
 
 #### 4.6.4 Saving Module Plan
@@ -377,13 +379,12 @@ To find your save file:
 ```
 Your saved module plan will be automatically loaded when you run Modganiser.
 ```diff
-📓 Note: If you switch device, and want to import your module plan from your old device to the new one, 
-firstly locate your save file on the old device, which is just a normal text file. You can then use any form of 
-messaging applications like telegram, email applications like gmail or online cloud storage like google drive to 
-send this save file to yourself or store this save file. You can then retrieve this save file from your new device.
+📓 Note: If you switch device, and want to import your module plan from your old device to 
+the new one, firstly locate your save file on the old device, which is just a normal text 
+file. You can then use any form of messaging applications like telegram, email applications 
+like gmail or online cloud storage like google drive to send this save file to yourself or 
+store this save file. You can then retrieve this save file from your new device.
 ```
-
-
 
 ## 5. FAQ
 --- ---
