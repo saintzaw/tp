@@ -249,6 +249,30 @@ Example: `grade /CS2113T /A` adds a grade “A” to CS2113T, meaning you have o
 **<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.3.3 Editing Module Details: `edit`
 
+### Edit command: `edit`
+
+The `edit` command edits the information in a specified field of an existing module.
+The field to edit can be `CODE`, `MC`, `TYPE`, `YEAR`, `SEMESTER` or `GRADE`.
+
+Command: `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`
+
+Example: `edit /CS2113T /TYPE /UE`
+
+Expected Output: 
+
+![EditExistingModule_ByType.png](UG_Screenshots/EditExistingModule_ByType.png)
+
+<small><i>Figure ???</i></small>
+
+Example: `edit /CS2113T /MC /8`
+
+Expected Output:
+
+![EditExistingModule_ByMC.png](UG_Screenshots/EditExistingModule_ByMC.png)
+
+<small><i>Figure ???</i></small>
+
+
 **<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.3.4 Deleting Module From Module Plan: `delete`
 **Function**
@@ -281,8 +305,29 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 #### 4.4.1 Viewing Module Plan: `list`
 
+### List command: `list`
+
+The `list` command allows you to view your 4-year module plan, separated by year.
+The `list` command also allows you to choose to only view a specific year in your module plan.
+The accepted inputs for the `YEAR` field are `all`, `1`, `2`, `3` and `4`.
+
+Command: `list /YEAR`
+
+Example: `list /all`
+
+![ListingAllModules.png](UG_Screenshots/ListingAllModules.png)
+
+
+<small><i>Figure ???</i></small>
+
+Example: `list /1`
+
+![ListAllModulesByYear.png](UG_Screenshots/ListAllModulesByYear.png)
+
+<small><i>Figure ???</i></small>
 
 **<p align="right">[Return to Top](#table-of-contents)</p>**
+
 #### 4.4.2 Finding Modules in the Module Plan: `find`
 **Function**
 
