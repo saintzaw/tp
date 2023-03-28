@@ -32,7 +32,7 @@
 6. [Command Summary](#6-command-summary)
 7. [Glossary](#7-glossary)
 
-<p align="right">Return to Top</p>
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 
 <div style="page-break-after: always;"></div>
 
@@ -42,7 +42,7 @@ We would like to thank you for choosing Modganiser to help you with your module 
 Modganiser will be sure to make this arduous task a breeze while ensuring you meet all your graduation requirements, 
 so that you can focus on the other aspects of university that really matter. 
 Should you have any feedback or enquiries, please do not hesitate to reach out to us!
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ## 1. Introduction
 --- ---
 ### 1.1 What is Modganiser?
@@ -69,7 +69,7 @@ if you are used to Java, CLI or Modganiser, which are described below:
 * Refer to our FAQ for answers to frequently ask questions
 * Refer to our Command Summary to get an overview of the different commands available in Modganiser and their formats
 * Refer to our Glossary to learn more about the key terms in this
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ## 2. Command Line Interface Tutorial
 --- ---
 To open up the Command Line Interface (CLI)
@@ -86,7 +86,7 @@ To open up the Command Line Interface (CLI)
 ![MacOSCLI](UG_Screenshots/Terminal.png)
 
 <small><i>Figure 2: MacOS version of CLI with a command typed out</i></small>
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 
 ## 3. Set Up Guide
 --- ---
@@ -112,6 +112,7 @@ To set up Modganiser, please follow the steps below:
 <small><i>Figure 4: Enter Name Successful</i></small>
 7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ## 4. Features
 --- ---
 Before we begin with the features, here are some special notations that we will be using. Please familiarize yourself with these notations as it will enhance your experience with the user guide.
@@ -136,7 +137,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 ```diff
 ❗ Warning: Read this section carefully when you see it
 ```
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ### 4.1 Notes on the Command Format
 ```diff
 📓 Note: 
@@ -158,7 +159,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 <small><i>Figure 5: Missing Inputs to Parameters</i></small>
 ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 <small><i>Figure 6: Additional Inputs to Parameters</i></small>
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ### 4.2 Summary Of Features
 Below is a summary of features that Modganiser has. Type the corresponding command in the Command Line Interface and press Enter to execute it.
 * Adding a module:  `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM`
@@ -171,7 +172,7 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 * Viewing manual: `man`
 * Viewing a specific manual for a feature: m`an /FEATURE`
 * Exiting the program : `bye`
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ### 4.3 Managing Modules
 
 #### 4.3.1 Adding Modules: `add`
@@ -206,7 +207,7 @@ Expected Output:
      Now you have 1 modules in the list.
     ____________________________________________________________
 ```
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.3.2 Adding Grade Obtained for Module: `grade`
 
 
@@ -232,10 +233,10 @@ Expected Output:
 ![GradeCommand](UG_Screenshots/UpdateGrade.png)  
 
 <small><i>Figure ???</i></small>
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.3.3 Editing Module Details: `edit`
 
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.3.4 Deleting Module From Module Plan: `delete`
 **Function**
 
@@ -262,14 +263,14 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 ![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png)
 <small><i>Figure 15: Module not in list when attempting delete command</i></small>
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ### 4.4 Managing Display of Module Plan
 
 
 #### 4.4.1 Viewing Module Plan: `list`
 
 
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.4.2 Finding Modules in the Module Plan: `find`
 **Function**
 
@@ -302,7 +303,7 @@ Example: `find /TYPE /CORE` Find all modules whose module type is Core
 
 <small><i>Figure 20: Finding a module by type</i></small>
 
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ### 4.5 Tracking Graduation Progress
 #### 4.5.1 Tracking the Completion of Each Module Type: `track`
 **Function**
@@ -323,7 +324,7 @@ Example: `track/CORE` tracks the completion status of your core modules.
 ```diff
 📓 Note: Completed modules are modules which have a grade. Modules which do not have a grade will not be considered as completed and hence not counted.
 ```
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ### 4.5.2 Calculating Your Current CAP: `calculatecap`
 
 
@@ -344,7 +345,7 @@ Expected Output:
 ![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png) 
 
 <small><i>Figure ???</i></small>
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 --- ---
 <div style="page-break-after: always;"></div>
 
@@ -372,7 +373,7 @@ Expected Output:
 
 <small><i>Figure 23: Displaying part of entire manual</i></small>
 
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
 
 **Function**
@@ -393,7 +394,7 @@ Example: `man /add` Displays the manual page for the add feature
 
 <small><i>Figure 24: Displaying manual of specific feature</i></small>
 
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.6.3 Exiting Modganiser: `bye`
 **Function**
 
@@ -410,7 +411,7 @@ Example: `bye` exits the program
 📓 Note: 
 Typing bye during any time when the Modganiser is running will exit the program. When Modganiser asks for your name during its first start up, typing bye will also exit the program. If your name is “bye”, please do consider using an alias. Thank you and sorry for the inconvenience caused.
 ```
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 #### 4.6.4 Saving Module Plan
 
 Modganiser automatically saves your module plan into your local storage onto your device after every command you input
@@ -427,7 +428,7 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 ```diff
 📓 Note: If you switch device, and want to import your module plan from your old device to the new one, firstly locate your save file on the old device, which is just a normal text file. You can then use any form of messaging applications like telegram, email applications like gmail or online cloud storage like google drive to send this save file to yourself or store this save file. You can then retrieve this save file from your new device.
 ```
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 
 
 ## 5. FAQ
@@ -442,6 +443,7 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 | Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto NUSMods to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the Information Security Student requirements before deciding on the module type. |
 | Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                         |
 
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ## 6. Command Summary
 
 |             Feature             |                           Format                            |                                   Example                                    |
@@ -457,6 +459,7 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 |        View Manual Page         |                   `man` or `man /FEATURE`                   |                             `man` or `man /add`                              |
 |         Exit Modganiser         |                            `bye`                            |                                    `bye`                                     |
 
+**<p align="right">[Return to Top](#table-of-contents)</p>**
 ## 7. Glossary
 
 | Technical Term         | Explanation                                                                                                                   |
@@ -469,4 +472,4 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 | Internship Module Type | Please refer to the NUS Website for more information on Internships                                                           |
 | Local storage          | Data that is stored on your device and can be accessed without an internet connection                                         |
 
-
+**<p align="right">[Return to Top](#table-of-contents)</p>**
