@@ -96,18 +96,18 @@ Before we begin with the features, here are some special notations that we will 
 **Tips**
 
 Tips are useful suggestions that will help you have a better experience with Modganiser
-<div markdown="span" class="alert alert-tip">:bulb:
-**Tip**: Tips are useful
- </div>
 
-Notes
+```diff
+💡 Tip: Tips are useful
+```
+**Notes**
 
 Notes are important information that you should pay attention to when using Modganiser
-<div markdown="span" class="alert alert-note">:notebook:
-Note: Notes are important, take them down
-</span>
+```diff
+📓Note: Notes are important, take them down
+```
 
-Warnings
+**Warnings**
 
 Warnings are to warn you of potential pitfalls that new users may encounter. For example: commands like delete /MODULE_CODE  deletes the module from your plan and the action is irreversible.
 <div markdown="span" class="alert alert-warnings">:warning:
@@ -207,6 +207,7 @@ Example: `grade /CS2113T /A`
 Expected Output:
 
 ![GradeCommand](UG_Screenshots/InputGrade.png)  
+
 <small><i>Figure ???</i></small>
 
 Example: `grade /CS2113T /B` after previous command
@@ -214,6 +215,7 @@ Example: `grade /CS2113T /B` after previous command
 Expected Output:
 
 ![GradeCommand](UG_Screenshots/UpdateGrade.png)  
+
 <small><i>Figure ???</i></small>
 --- ---
 <div style="page-break-after: always;"></div>
@@ -253,15 +255,21 @@ Searches for the module who’s module code contains the keyword inputted by the
 `find/TYPE_OF_SEARCH /KEYWORD`
 
 Example: find /TYPE /CORE finds all modules that contains CS2113T
+
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
+
 <small><i>Figure 18: Finding a module with its full module code</i></small>
 
 Example: `find /CODE /CS` finds all modules whose module code contains the keyword “CS”
+
 ![Findallthatcontains](UG_Screenshots/FindModulesByName_Substring.png)
+
 <small><i>Figure 19: Finding a module by substring of name</i></small>
 
 Example: find /TYPE /CORE Find all modules whose module type is Core
+
 ![FindModuleType](UG_Screenshots/FindModulesByType.png)
+
 <small><i>Figure 20: Finding a module by type</i></small>
 --- ---
 <div style="page-break-after: always;"></div>
@@ -278,7 +286,9 @@ Tracks how many modular credits of a module type you have finished and Modganise
 **Command Format**
 `track /MODULE_TYPE`
 Example: `track/CORE` tracks the completion status of your core modules.
+
 ![trackCore](UG_Screenshots/TrackCommand.png)
+
 <small><i>Figure 21: Tracking Module Type Completion Status</i></small>
 
 --- ---
@@ -303,7 +313,8 @@ Example: `calculatecap`
 
 Expected Output:
 
-![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png)  
+![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png) 
+
 <small><i>Figure ???</i></small>
 
 --- ---
@@ -391,18 +402,18 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 <div style="page-break-after: always;"></div>|
 
 ## 6. Command Summary
-| Feature                         |                           Format                            |                                Example                                |  
-|---------------------------------|:-----------------------------------------------------------:|:---------------------------------------------------------------------:|
-| Add modules                     | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` | `add /CS2113T /4 /CORE /1 /1` or `add /IS4231 CS2101 /4 /CORE /1 /1`  |
-| Add grade obtained              |                 `grade /MODULE_CODE /GRADE`                 |                         `grade /CS2113T /A+`                           |
-| Edit details of existing module |   `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `            |                       `edit /CS2113T /TYPE /UE`                       |
-| Delete existing module          |                    `delete /MODULE_CODE`                    |                           `delete /CS2113T`                           |
-| List module plan                |                        `list /YEAR`                         |                               `list /2`                               |
-| Find module in module plan      |               `find /TYPE_OF_SEARCH /KEYWORD`               |                  `find /CODE /CS or find /TYPE /GE`                   |
-| Track progress of module type   |                    `track /MODULE_TYPE`                     |                          `track /INTERNSHIP`                           |
-| Calculate current CAP           |                       `calculatecap`                        |                            `calculatecap`                             |
-| View Manual Page                |                   `man` or `man /FEATURE`                   |                          `man` or `man /add`                           |
-| Exit Modganiser                 |                            `bye`                            |                                 `bye`                                 |
+| Feature                         |                           Format                            |              Example               |  
+|---------------------------------|:-----------------------------------------------------------:|:----------------------------------:|
+| Add modules                     | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` |   `add /CS2113T /4 /CORE /1 /1`    |
+| Add grade obtained              |                 `grade /MODULE_CODE /GRADE`                 |        `grade /CS2113T /A+`        |
+| Edit details of existing module |   `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `            |     `edit /CS2113T /TYPE /UE`      |
+| Delete existing module          |                    `delete /MODULE_CODE`                    |         `delete /CS2113T`          |
+| List module plan                |                        `list /YEAR`                         |             `list /2`              |
+| Find module in module plan      |               `find /TYPE_OF_SEARCH /KEYWORD`               | `find /CODE /CS or find /TYPE /GE` |
+| Track progress of module type   |                    `track /MODULE_TYPE`                     |        `track /INTERNSHIP`         |
+| Calculate current CAP           |                       `calculatecap`                        |           `calculatecap`           |
+| View Manual Page                |                   `man` or `man /FEATURE`                   |        `man` or `man /add`         |
+| Exit Modganiser                 |                            `bye`                            |               `bye`                |
 
 --- ---
 <div style="page-break-after: always;"></div>
