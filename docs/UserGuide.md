@@ -266,17 +266,17 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 ![AddCommand](UG_Screenshots/AddingAModule.png)
 <p style = "text-align:center"><small>Figure 7: Adding a module</small></p>
 
-> 📓 Note
+> 📓 **Note**
 > 
 > The C represents Core Module. GE, UE and Internship Modules are represented with “GE”, “UE” and “I” respectively.
 
->❗ Warning 
+>❗ **Warning**
 > 
 > Missing inputs for the various [parameters](#7-glossary) or having too many inputs for the [parameters](#7-glossary) will cause Modganiser to throw you a warning.
 > 
 > e.g. `add /CS2113T /4 /1 /1` or `add /CS2113T /4 /CORE /1 /1 /1`
 
-> 💡 Tip
+> 💡 **Tip**
 > 
 > Multiple modules can be added in a single line. 
 > 
@@ -284,7 +284,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 > ![AddCommand](UG_Screenshots/AddingMultipleModules.png)
 > <p style = "text-align:center"><small>Figure 8: Adding multiple modules </small></p>
 
->❗ Warning
+>❗ **Warning**
 > 
 > Adding multiple modules should only be used if all the modules have the same inputs for the other [parameters](#7-glossary). Example, SIP3200 and CS2113T should not be added together in a single line as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
 
