@@ -252,7 +252,7 @@ Example: find /TYPE /CORE Find all modules whose module type is Core
 ### 4.5 Tracking Graduation Progress
 #### 4.5.1 Tracking the Completion of Each Module Type: `track`
 **Function**
-Tracks how many modular credits of a module type you have finished and Modganiser will list out all the modules that you have taken under that module type and how many more modular credits you need before you complete the requirements for that module type.
+Tracks how many modular credits of a module type you have completed and Modganiser will list out all the modules that you have completed under that module type and how many more modular credits you need before you meet the requirements for that module type.
 
 |  Parameter  |                   Description                    |        Accepted Inputs        |
 |:-----------:|:------------------------------------------------:|:-----------------------------:|
@@ -266,6 +266,9 @@ Example: `track/CORE` tracks the completion status of your core modules.
 
 <small><i>Figure 21: Tracking Module Type Completion Status</i></small>
 
+```diff
+📓 Note: Completed modules are modules which have a grade. Modules which do not have a grade will not be considered as completed and hence counted.
+```
 
 ### 4.5.2 Calculating Your Current CAP: `calculatcap`
 
