@@ -237,25 +237,31 @@ Expected Output:
 
 
 #### 4.3.4 Deleting Module From Module Plan: `delete`
+**Function**
 
-### Delete command: `delete`
+Deletes an existing module that corresponds to the module code inputted.
 
-The `delete` command deletes an existing module that corresponds to the module code inputted.  
-
-Command: `delete /MODULE_CODE`
-
-Example: `delete /CS2113T`
-
-Expected Output:
-
-![GradeCommand](UG_Screenshots/DeleteExistingModule.png)
+|  Parameter  |        Description        |                                                               Accepted Inputs                                                                |
+|:-----------:|:-------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------:|
+| MODULE_CODE |     The module's code     |                                                         All inputs will be accepted                                                          |
 
 
-<small><i>Figure ???</i></small>
+**Command Format**
+
+`delete /MODULE_CODE`
+
+Example: `delete /CS2113T` deletes CS2113T module from the module plan
+
+![DeleteCommand](UG_Screenshots/DeleteExistingModule.png)
+
+<small><i>Figure 14: Deleting a module</i></small>
 
 ```diff
 ❗ Warning: Trying to delete a module that is not present will cause Modganiser to throw an error.
 ```
+
+![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png)
+<small><i>Figure 15: Module not in list when attempting delete command</i></small>
 
 ### 4.4 Managing Display of Module Plan
 
@@ -278,7 +284,7 @@ Searches for the module whose module code contains the keyword inputted by the u
 
 `find /TYPE_OF_SEARCH /KEYWORD`
 
-Example: find /TYPE /CORE finds all modules that contains CS2113T
+Example: `find /TYPE /CORE` finds all modules that contains CS2113T
 
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
 
@@ -290,7 +296,7 @@ Example: `find /CODE /CS` finds all modules whose module code contains the keywo
 
 <small><i>Figure 19: Finding a module by substring of name</i></small>
 
-Example: find /TYPE /CORE Find all modules whose module type is Core
+Example: `find /TYPE /CORE` Find all modules whose module type is Core
 
 ![FindModuleType](UG_Screenshots/FindModulesByType.png)
 
