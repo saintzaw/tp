@@ -367,18 +367,18 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 
 
 ## 6. Command Summary
-| Feature | Format | Example |  
-|:---:|:---:|:---:|
-| Add modules                     | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` |   `add /CS2113T /4 /CORE /1 /1`    |
-| Add grade obtained              |                 `grade /MODULE_CODE /GRADE`                 |        `grade /CS2113T /A+`        |
-| Edit details of existing module |   `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `            |     `edit /CS2113T /TYPE /UE`      |
-| Delete existing module          |                    `delete /MODULE_CODE`                    |         `delete /CS2113T`          |
-| List module plan                |                        `list /YEAR`                         |             `list /2`              |
-| Find module in module plan      |               `find /TYPE_OF_SEARCH /KEYWORD`               | `find /CODE /CS or find /TYPE /GE` |
-| Track progress of module type   |                    `track /MODULE_TYPE`                     |        `track /INTERNSHIP`         |
-| Calculate current CAP           |                       `calculatecap`                        |           `calculatecap`           |
-| View Manual Page                |                   `man` or `man /FEATURE`                   |        `man` or `man /add`         |
-| Exit Modganiser                 |                            `bye`                            |               `bye`                |
+Feature | Format | Example   
+|----|----|----|
+ Add modules                     | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` |   `add /CS2113T /4 /CORE /1 /1`    
+ Add grade obtained              |                 `grade /MODULE_CODE /GRADE`                 |        `grade /CS2113T /A+`        
+ Edit details of existing module |   `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `            |     `edit /CS2113T /TYPE /UE`      
+ Delete existing module          |                    `delete /MODULE_CODE`                    |         `delete /CS2113T`          
+ List module plan                |                        `list /YEAR`                         |             `list /2`              
+ Find module in module plan      |               `find /TYPE_OF_SEARCH /KEYWORD`               | `find /CODE /CS or find /TYPE /GE` 
+ Track progress of module type   |                    `track /MODULE_TYPE`                     |        `track /INTERNSHIP`         
+ Calculate current CAP           |                       `calculatecap`                        |           `calculatecap`           
+ View Manual Page                |                   `man` or `man /FEATURE`                   |        `man` or `man /add`         
+ Exit Modganiser                 |                            `bye`                            |               `bye`                
 
 
 ## 7. Glossary
