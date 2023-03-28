@@ -1,8 +1,10 @@
 # Modganiser User Guide
 
 ## Table of Contents
+{:toc}
 --- ---
 
+<div style="page-break-after: always;"></div>
 
 ## 0. Acknowledgements
 --- ---
@@ -37,6 +39,8 @@ if you are used to Java, CLI or Modganiser, which are described below:
 * Refer to our FAQ for answers to frequently ask questions
 * Refer to our Command Summary to get an overview of the different commands available in Modganiser and their formats
 * Refer to our Glossary to learn more about the key terms in this
+--- ---
+<div style="page-break-after: always;"></div>
 
 ## 2. Command Line Interface Tutorial
 --- ---
@@ -54,6 +58,9 @@ To open up the Command Line Interface (CLI)
 ![MacOSCLI](UG_Screenshots/Terminal.png)
 
 <small><i>Figure 2: MacOS version of CLI with a command typed out</i></small>
+
+--- ---
+<div style="page-break-after: always;"></div>
 
 ## 3. Set Up Guide
 --- ---
@@ -79,28 +86,35 @@ To set up Modganiser, please follow the steps below:
 <small><i>Figure 4: Enter Name Successful</i></small>
 7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
+--- ---
+<div style="page-break-after: always;"></div>
+
 ## 4. Features
 --- ---
 Before we begin with the features, here are some special notations that we will be using. Please familiarize yourself with these notations as it will enhance your experience with the user guide.
 
-Tips
+**Tips**
 
 Tips are useful suggestions that will help you have a better experience with Modganiser
-```diff
-💡 Tip: Tips are useful
-```
+<div markdown="span" class="alert alert-tip">:bulb:
+**Tip**: Tips are useful
+ </div>
+
 Notes
 
 Notes are important information that you should pay attention to when using Modganiser
-
-`#0969DA` `:notebook:` Note: Notes are important, take them down
+<div markdown="span" class="alert alert-note">:notebook:
+Note: Notes are important, take them down
+</span>
 
 Warnings
 
 Warnings are to warn you of potential pitfalls that new users may encounter. For example: commands like delete /MODULE_CODE  deletes the module from your plan and the action is irreversible.
-```diff
-❗ Warning: Read this section carefully when you see it
-```
+<div markdown="span" class="alert alert-warnings">:warning:
+Warning: Read this section carefully when you see it
+</span>
+--- ---
+<div style="page-break-after: always;"></div>
 
 ### 4.1 Notes on the Command Format
 ```diff
@@ -123,6 +137,8 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 <small><i>Figure 5: Missing Inputs to Parameters</i></small>
 ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 <small><i>Figure 6: Additional Inputs to Parameters</i></small>
+--- ---
+<div style="page-break-after: always;"></div>
 
 ### 4.2 Summary Of Features
 Below is a summary of features that Modganiser has. Type the corresponding command in the Command Line Interface and press Enter to execute it.
@@ -136,6 +152,8 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 * Viewing manual: `man`
 * Viewing a specific manual for a feature: m`an /FEATURE`
 * Exiting the program : `bye`
+--- ---
+<div style="page-break-after: always;"></div>
 
 ### 4.3 Managing Modules
 
@@ -171,6 +189,8 @@ Expected Output:
      Now you have 1 modules in the list.
     ____________________________________________________________
 ```
+--- ---
+<div style="page-break-after: always;"></div>
 
 #### 4.3.2 Adding Grade Obtained for Module: `grade`
 
@@ -195,14 +215,28 @@ Expected Output:
 
 ![GradeCommand](UG_Screenshots/UpdateGrade.png)  
 <small><i>Figure ???</i></small>
+--- ---
+<div style="page-break-after: always;"></div>
 
 #### 4.3.3 Editing Module Details: `edit`
 
+--- ---
+<div style="page-break-after: always;"></div>
+
 #### 4.3.4 Deleting Module From Module Plan: `delete`
+
+--- ---
+<div style="page-break-after: always;"></div>
 
 ### 4.4 Managing Display of Module Plan
 
+--- ---
+<div style="page-break-after: always;"></div>
+
 #### 4.4.1 Viewing Module Plan: `list`
+
+--- ---
+<div style="page-break-after: always;"></div>
 
 #### 4.4.2 Finding Modules in the Module Plan: `find`
 **Function**
@@ -229,6 +263,8 @@ Example: `find /CODE /CS` finds all modules whose module code contains the keywo
 Example: find /TYPE /CORE Find all modules whose module type is Core
 ![FindModuleType](UG_Screenshots/FindModulesByType.png)
 <small><i>Figure 20: Finding a module by type</i></small>
+--- ---
+<div style="page-break-after: always;"></div>
 
 ### 4.5 Tracking Graduation Progress
 #### 4.5.1 Tracking the Completion of Each Module Type: `track`
@@ -245,7 +281,13 @@ Example: `track/CORE` tracks the completion status of your core modules.
 ![trackCore](UG_Screenshots/TrackCommand.png)
 <small><i>Figure 21: Tracking Module Type Completion Status</i></small>
 
+--- ---
+<div style="page-break-after: always;"></div>
+
 ### 4.5.2 Calculating Your Current CAP: `calculatcap`
+
+--- ---
+<div style="page-break-after: always;"></div>
 
 ### CalculateCAP command: `calculatecap`
 
@@ -263,6 +305,9 @@ Expected Output:
 
 ![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png)  
 <small><i>Figure ???</i></small>
+
+--- ---
+<div style="page-break-after: always;"></div>
 
 ### 4.6 Miscellaneous
 #### 4.6.1 Viewing the Entire Manual: `man`
@@ -282,12 +327,16 @@ List the command summary and shows more commands to get a better description of 
 Viewing the full manpage:
 
 ![ViewManPage](UG_Screenshots/ViewEntireManual.png)
+--- ---
+<div style="page-break-after: always;"></div>
 
 #### 4.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
 
 Viewing the manpage for a single feature (ex. add):
 
 ![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
+--- ---
+<div style="page-break-after: always;"></div>
 
 #### 4.6.3 Exiting Modganiser: `bye`
 **Function**
@@ -305,6 +354,8 @@ Example: `bye` exits the program
 📓 Note: 
 Typing bye during any time when the Modganiser is running will exit the program. When Modganiser asks for your name during its first start up, typing bye will also exit the program. If your name is “bye”, please do consider using an alias. Thank you and sorry for the inconvenience caused.
 ```
+--- ---
+<div style="page-break-after: always;"></div>
 
 #### 4.6.4 Saving Module Plan
 
@@ -322,6 +373,9 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 ```diff
 📓 Note: If you switch device, and want to import your module plan from your old device to the new one, firstly locate your save file on the old device, which is just a normal text file. You can then use any form of messaging applications like telegram, email applications like gmail or online cloud storage like google drive to send this save file to yourself or store this save file. You can then retrieve this save file from your new device.
 ```
+--- ---
+<div style="page-break-after: always;"></div>
+
 
 ## 5. FAQ
 --- ---
@@ -332,21 +386,26 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 | Where is my save file?                                                                                                        | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                   |
 | What if I change my device? How do I bring the save data to my new device                                                     | You can locate your save file, which is just a normal text file. You can then use any form of messaging applications like Telegram, email applications like Gmail or online cloud storage like Google Drive to send this save file to yourself or store this save file. You can then retrieve this save file with your new device.                                                                             |
 | Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto NUSMods to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the Information Security Student requirements before deciding on the module type.   |
-| Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                           |
+| Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                     
+--- ---
+<div style="page-break-after: always;"></div>|
 
 ## 6. Command Summary
 | Feature                         |                           Format                            |                                Example                                |  
 |---------------------------------|:-----------------------------------------------------------:|:---------------------------------------------------------------------:|
 | Add modules                     | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` | `add /CS2113T /4 /CORE /1 /1` or `add /IS4231 CS2101 /4 /CORE /1 /1`  |
-| Add grade obtained              |                 `grade /MODULE_CODE /GRADE`                 |                         `grade /CS2113T /A+`                          |
+| Add grade obtained              |                 `grade /MODULE_CODE /GRADE`                 |                         `grade /CS2113T /A+`                           |
 | Edit details of existing module |   `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `            |                       `edit /CS2113T /TYPE /UE`                       |
 | Delete existing module          |                    `delete /MODULE_CODE`                    |                           `delete /CS2113T`                           |
 | List module plan                |                        `list /YEAR`                         |                               `list /2`                               |
 | Find module in module plan      |               `find /TYPE_OF_SEARCH /KEYWORD`               |                  `find /CODE /CS or find /TYPE /GE`                   |
-| Track progress of module type   |                    `track /MODULE_TYPE`                     |                          `track /INTERNSHIP`                          |
+| Track progress of module type   |                    `track /MODULE_TYPE`                     |                          `track /INTERNSHIP`                           |
 | Calculate current CAP           |                       `calculatecap`                        |                            `calculatecap`                             |
-| View Manual Page                |                   `man` or `man /FEATURE`                   |                          `man` or `man /add`                          |
+| View Manual Page                |                   `man` or `man /FEATURE`                   |                          `man` or `man /add`                           |
 | Exit Modganiser                 |                            `bye`                            |                                 `bye`                                 |
+
+--- ---
+<div style="page-break-after: always;"></div>
 
 ## 7. Glossary
 | Technical Term         | Explanation                                                                                                                   |
