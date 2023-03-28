@@ -352,8 +352,8 @@ public class Parser {
     private void checkAddInputYearAndSemester(String[] userCommands) throws DukeException {
         try {
             int year = Integer.parseInt(userCommands[4].trim());
-            if (year < 0 || year > 6) {
-                throw new DukeException("Make sure Year of Study is a number from 0-6");
+            if (year < 0 || year > 4) {
+                throw new DukeException("Make sure Year of Study is a number from 0-4");
             }
             String semester = userCommands[5].trim();
             boolean isCorrectSemester = semester.equals("1")
@@ -364,7 +364,7 @@ public class Parser {
                 throw new DukeException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
             }
         } catch (NumberFormatException e) {
-            throw new DukeException("Make sure Year of Study is a number from 0-6");
+            throw new DukeException("Make sure Year of Study is a number from 0-4");
         }
     }
 

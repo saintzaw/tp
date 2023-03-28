@@ -15,7 +15,7 @@
    + 4.1 [Notes On The Command Format](#41-notes-on-the-command-format)
    + 4.2 [Summary Of Features](#42-summary-of-features)
    + 4.3 [Managing Modules](#43-managing-modules)
-     - 4.3.1 [Adding Modules: add](#431-adding-modules-add)
+     - 4.3.1 [Adding Modules: add](#431-adding-modules--add)
      - 4.3.2 [Adding Grade Obtained for Module: grade](#432-adding-grade-obtained-for-module-grade)
      - 4.3.3 [Editing Module Details: edit](#433-editing-module-details-edit)
      - 4.3.4 [Deleting Module From Module Plan: delete](#434-deleting-module-from-module-plan-delete)
@@ -233,35 +233,61 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 
 #### 4.3.1 Adding Modules: `add`
 
-### Add command: `add`
+**Function**
 
-The add command is used to add a module to the module tracker. It is case and space insensitive.
+Adds a module to the module plan with the following [parameters](#7-glossary).
 
-Command: `add /{Module Code} /{Modular Credits} /{Module Type} /{Year} /{Semester}`
+| [Parameter](#7-glossary) | Description                                                           | Accepted Inputs                         |
+|--------------------------|-----------------------------------------------------------------------|-----------------------------------------|
+| MODULE_CODE              | Please refer to [NUSMods](https://nusmods.com) for the Module's Code  | All inputs will be accepted             |
+| MODULAR_CREDITS          | The number of modular credits the module is worth                     | 1, 2, 3, 4, 5, 6, 8, 12                 |
+| MODULE_TYPE              | Which category the module falls under                                 | [CORE, GE, UE, INTERNSHIP](#7-glossary) |
+| YEAR                     | Which year you plan to take the module                                | 1, 2, 3, 4                              |
+| SEMESTER                 | Which semester you plan to take the module                            | 1, 1.5, 2, 2.5                          |
 
-Accepted Inputs:
+> 📓 **Note**
+> 
+> CORE refers to modules that do not fall under the other 3 categories.
 
-Module Code: Cannot be empty, must be 6 or more characters.
+> 📓 **Note**
+>
+> 1.5 and 2.5 in SEMESTER refer to winter and summer break respectively.
 
-Modular Credits: [0-6, 8, 12]
+>❗ **Warning**
+>
+> We do not check for the validity of the module code as we cannot maintain a database of modules. Please double-check the module code on NUSMods before entering it into Modganiser. If you have entered the wrong MODULE_CODE, you may edit it using the [edit command](#433-editing-module-details--edit).
 
-Module Types: [Core, GE, UE, Internship] referring to Core, General Electives, Unrestricted Electives and Internships.
+**Command Format**
 
-Year: [0-4]
+`add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEMESTER`
 
-Semester: [1, 1.5, 2, 2.5] referring to Semester 1, Semester 1 break (Special Term I),
-Semester 2, Semester 2 break (Special Term II)
+Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Credits(MCs) and is a Core module into Year 1 Semester 1.
 
-Example Input: `add /CS2113T /4 /CORE /2 /2`
+![AddCommand](UG_Screenshots/AddingAModule.png)
+<p style = "text-align:center"><small>Figure 7: Adding a module</small></p>
 
-Expected Output:
-```    
-    ____________________________________________________________
-     Got it. I've added this module:
-       [C][" "] CS2113T 4 MCs (Year: 2, Sem: 2)
-     Now you have 1 modules in the list.
-    ____________________________________________________________
-```
+> 📓 Note
+> 
+> The C represents Core Module. GE, UE and Internship Modules are represented with “GE”, “UE” and “I” respectively.
+
+>❗ Warning 
+> 
+> Missing inputs for the various [parameters](#7-glossary) or having too many inputs for the [parameters](#7-glossary) will cause Modganiser to throw you a warning.
+> 
+> e.g. `add /CS2113T /4 /1 /1` or `add /CS2113T /4 /CORE /1 /1 /1`
+
+> 💡 Tip
+> 
+> Multiple modules can be added in a single line. 
+> 
+> For example: `add /CS2113T IS4231 CS3235 /4 /CORE /2 /2` will add CS2113T, IS4231 and CS3235 into the module plan. All 3 modules will be reflected as Core modules worth 4 MCs, and will be taken in Year 2 Semester 2.
+> ![AddCommand](UG_Screenshots/AddingMultipleModules.png)
+> <p style = "text-align:center"><small>Figure 8: Adding multiple modules </small></p>
+
+>❗ Warning
+> 
+> Adding multiple modules should only be used if all the modules have the same inputs for the other [parameters](#7-glossary). Example, SIP3200 and CS2113T should not be added together in a single line as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
+
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
 ---
