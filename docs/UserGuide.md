@@ -1,8 +1,38 @@
 # Modganiser User Guide
 
 ## Table of Contents
-{:toc}
 --- ---
+0. [Acknowledgements](#0-acknowledgements)
+1. [Introduction](#1-introduction)
+   + 1.1 [What Is Modganiser](#11-what-is-modganiser)
+   + 1.2 [Who Is This User Guide Meant For?](#12-who-is-this-user-guide-meant-for)
+   + 1.3 [How To Use This User Guide](#13-how-to-use-this-user-guide)
+2. [Command Line Interface Tutorial](#2-command-line-interface-tutorial)
+3. [Set Up Guide](#3-set-up-guide)
+4. [Features](#4-features)
+   + 4.1 [Notes On The Command Format](#41-notes-on-the-command-format)
+   + 4.2 [Summary Of Features](#42-summary-of-features)
+   + 4.3 [Managing Modules](#43-managing-modules)
+     - 4.3.1 [Adding Modules: add](#431-adding-modules-add)
+     - 4.3.2 [Adding Grade Obtained for Module: grade](#432-adding-grade-obtained-for-module-grade)
+     - 4.3.3 [Editing Module Details: edit](#433-editing-module-details-edit)
+     - 4.3.4 [Deleting Module From Module Plan: delete](#434-deleting-module-from-module-plan-delete)
+   + 4.4 [Managing Display of Module Plan](#44-managing-display-of-module-plan)
+     - 4.4.1 [Viewing Module Plan: list](#441-viewing-module-plan-list)
+     - 4.4.2 [Finding Modules In The Module Plan: find](#442-finding-modules-in-the-module-plan-find)
+   + 4.5 [Tracking Graduation Progress](#45-tracking-graduation-progress)
+     - 4.5.1 [Tracking the Completion of Each Module Type: track](#451-tracking-the-completion-of-each-module-type-track)
+     - 4.5.2 [Calculating Your Current CAP: calculatecap](#452-calculating-your-current-cap-calculatecap)
+   + 4.6 [Miscellaneous](#46-miscellaneous)
+     - 4.6.1 [Viewing the Entire Manual: man](#461-viewing-the-entire-manual-man)
+     - 4.6.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#462-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
+     - 4.6.3 [Exiting Modganiser: bye](#463-exiting-modganiser-bye)
+     - 4.6.4 [Saving Module Plan](#464-saving-module-plan)
+5. [FAQ](#5-faq)
+6. [Command Summary](#6-command-summary)
+7. [Glossary](#7-glossary)
+
+<p align="right">Return to Top</p>
 
 <div style="page-break-after: always;"></div>
 
