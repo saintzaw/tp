@@ -49,8 +49,8 @@ To open up the Command Line Interface (CLI)
   * Press on the command and spacebar button together and search for “Terminal”
 * The window that comes up is the CLI on your computer. We will be using this interface to run Modganiser.
 * To run commands in the CLI, just type the command out, press enter and the command will run
-![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
 
+![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
 <small><i>Figure 1: Windows version of CLI with a command typed out</i></small>
 
 ![MacOSCLI](UG_Screenshots/Terminal.png)

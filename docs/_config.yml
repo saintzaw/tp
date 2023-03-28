@@ -1,3 +1,17 @@
-remote_theme: pages-themes/cayman@v0.2.0
+title: Modganiser
+
+header_pages:
+  - UserGuide.md
+  - DeveloperGuide.md
+  - AboutUs.md
+
+markdown: kramdown
+
+repository: "AY2223S1-CS2103T-T15-2/tp"
+github_icon: "images/github-icon.png"
+
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jemoji
+  - - jekyll-remote-theme # add this line to the plugins list if you already have one
+
+remote_theme: pages-themes/cayman@v0.2.0
