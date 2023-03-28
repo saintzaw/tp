@@ -134,6 +134,7 @@ public class Print {
             System.out.printf("       %-28s %-10s %-28s %-10s %-28s %-10s %-28s\n", semOne, "|", specialTermOne, "|",
                     semTwo, "|", specialTermTwo);
         }
+        System.out.println("    ____________________________________________________________");
     }
 
     public static void printEmptyModuleList(String year) {
