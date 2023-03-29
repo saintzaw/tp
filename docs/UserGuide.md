@@ -4,43 +4,43 @@
 
 ---
 
-0. [Acknowledgements](#0-acknowledgements)
-1. [Introduction](#1-introduction)
-   + 1.1 [What Is Modganiser](#11-what-is-modganiser)
-   + 1.2 [Who Is This User Guide Meant For?](#12-who-is-this-user-guide-meant-for)
-   + 1.3 [How To Use This User Guide](#13-how-to-use-this-user-guide)
-2. [Command Line Interface Tutorial](#2-command-line-interface-tutorial)
-3. [Set Up Guide](#3-set-up-guide)
-4. [Features](#4-features)
-   + 4.1 [Notes On The Command Format](#41-notes-on-the-command-format)
-   + 4.2 [Summary Of Features](#42-summary-of-features)
-   + 4.3 [Managing Modules](#43-managing-modules)
-     - 4.3.1 [Adding Modules: add](#431-adding-modules-add)
-     - 4.3.2 [Adding Grade Obtained for Module: grade](#432-adding-grade-obtained-for-module-grade)
-     - 4.3.3 [Editing Module Details: edit](#433-editing-module-details-edit)
-     - 4.3.4 [Deleting Module From Module Plan: delete](#434-deleting-module-from-module-plan-delete)
-   + 4.4 [Managing Display of Module Plan](#44-managing-display-of-module-plan)
-     - 4.4.1 [Viewing Module Plan: list](#441-viewing-module-plan-list)
-     - 4.4.2 [Finding Modules In The Module Plan: find](#442-finding-modules-in-the-module-plan-find)
-   + 4.5 [Tracking Graduation Progress](#45-tracking-graduation-progress)
-     - 4.5.1 [Tracking the Completion of Each Module Type: track](#451-tracking-the-completion-of-each-module-type-track)
-     - 4.5.2 [Calculating Your Current CAP: calculatecap](#452-calculating-your-current-cap-calculatecap)
-   + 4.6 [Miscellaneous](#46-miscellaneous)
-     - 4.6.1 [Viewing the Entire Manual: man](#461-viewing-the-entire-manual-man)
-     - 4.6.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#462-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
-     - 4.6.3 [Exiting Modganiser: bye](#463-exiting-modganiser-bye)
-     - 4.6.4 [Saving Module Plan](#464-saving-module-plan)
-5. [FAQ](#5-faq)
-6. [Command Summary](#6-command-summary)
-7. [Glossary](#7-glossary)
+1. [Acknowledgements](#0-acknowledgements)
+2. [Introduction](#1-introduction)
+   + 2.1 [What Is Modganiser](#11-what-is-modganiser)
+   + 2.2 [Who Is This User Guide Meant For?](#12-who-is-this-user-guide-meant-for)
+   + 2.3 [How To Use This User Guide](#13-how-to-use-this-user-guide)
+3. [Command Line Interface Tutorial](#2-command-line-interface-tutorial)
+4. [Set Up Guide](#3-set-up-guide)
+5. [Features](#4-features)
+   + 5.1 [Notes On The Command Format](#41-notes-on-the-command-format)
+   + 5.2 [Summary Of Features](#42-summary-of-features)
+   + 5.3 [Managing Modules](#43-managing-modules)
+     - 5.3.1 [Adding Modules: add](#431-adding-modules-add)
+     - 5.3.2 [Adding Grade Obtained for Module: grade](#432-adding-grade-obtained-for-module-grade)
+     - 5.3.3 [Editing Module Details: edit](#433-editing-module-details-edit)
+     - 5.3.4 [Deleting Module From Module Plan: delete](#434-deleting-module-from-module-plan-delete)
+   + 5.4 [Managing Display of Module Plan](#44-managing-display-of-module-plan)
+     - 5.4.1 [Viewing Module Plan: list](#441-viewing-module-plan-list)
+     - 5.4.2 [Finding Modules In The Module Plan: find](#442-finding-modules-in-the-module-plan-find)
+   + 5.5 [Tracking Graduation Progress](#45-tracking-graduation-progress)
+     - 5.5.1 [Tracking the Completion of Each Module Type: track](#451-tracking-the-completion-of-each-module-type-track)
+     - 5.5.2 [Calculating Your Current CAP: calculatecap](#452-calculating-your-current-cap-calculatecap)
+   + 5.6 [Miscellaneous](#46-miscellaneous)
+     - 5.6.1 [Viewing the Entire Manual: man](#461-viewing-the-entire-manual-man)
+     - 5.6.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#462-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
+     - 5.6.3 [Exiting Modganiser: bye](#463-exiting-modganiser-bye)
+     - 5.6.4 [Saving Module Plan](#464-saving-module-plan)
+6. [FAQ](#5-faq)
+7. [Command Summary](#6-command-summary)
+8. [Glossary](#7-glossary)
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-## 0. Acknowledgements
+## 1. Acknowledgements
 
 ---
 
@@ -49,30 +49,30 @@ Modganiser will be sure to make this arduous task a breeze while ensuring you me
 so that you can focus on the other aspects of university that really matter.
 Should you have any feedback or enquiries, please do not hesitate to reach out to us!
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-## 1. Introduction
+## 2. Introduction
 
 ---
 
-### 1.1 What is Modganiser?
+### 2.1 What is Modganiser?
 Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI),
 focused on helping Information Security Undergraduates graduate in 4 years. It does so by giving you a platform to
 plan all 4 years of your modules to ensure that you meet the graduation requirements (Core/UE/GE/Internships).
 If you can type fast, Modganiser can get your schedule up faster than traditional GUI apps.
 
-### 1.2 Who Is This User Guide Meant For?
+### 2.2 Who Is This User Guide Meant For?
 Are you a current information security undergraduate at NUS? Or are you a prospective student,
 about to begin your journey into information security? Well, Modganiser is exactly what you are looking for!
 This user guide will help you as you navigate through Modganiser and its features. If you are a new user, do go to the
 set-up section to learn how to install and run Modganiser. To learn more about Modganiser’s features, do head over to
 the features section!
 
-### 1.3 How To Use This User Guide
+### 2.3 How To Use This User Guide
 Modganiser uses a Command Line Interface (CLI) which may be new to some users. We strongly recommend that you read this
 User Guide from start to finish if you are new to Modganiser, although you may choose to skip to more relevant sections
 if you are used to Java, CLI or Modganiser, which are described below:
@@ -83,13 +83,14 @@ if you are used to Java, CLI or Modganiser, which are described below:
 * Refer to our FAQ for answers to frequently asked questions
 * Refer to our Command Summary to get an overview of the different commands available in Modganiser and their formats
 * Refer to our Glossary to learn more about the key terms in this
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-## 2. Command Line Interface Tutorial
+## 3. Command Line Interface Tutorial
 
 ---
 
@@ -102,28 +103,26 @@ To open up the Command Line Interface (CLI)
 * To run commands in the CLI, just type the command out, press enter and the command will run
 
 ![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
-<p style = "text-align:center"><small>Figure 1: Windows version of CLI with a command typed out</small></p>
+<p style = "text-align:center"><small>Windows version of CLI with a command typed out</small></p>
 
 ![macOSCLI](UG_Screenshots/Terminal.png)
 
-<p style = "text-align:center"><small>Figure 2: macOS version of CLI with a command typed out</small></p>
+<p style = "text-align:center"><small>macOS version of CLI with a command typed out</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-## 3. Set-Up Guide
+## 4. Set-Up Guide
 
 ---
 
 To set up Modganiser, please follow the steps below:
-1. Download Java
-    * For Windows:
-        * Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) for the Java Developer Webpage and choose the x64 installer.
-    * For Mac
-        * Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) for the Java Developer Webpage and choose the Arm 64 DMG Installer.
+1. Download Java from the Java Developer Webpage
+    * For Windows, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) and choose the x64 installer.
+    * For macOS, Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer.
 2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the tp.jar file, which contains Modganiser.
 3. Save the file into a new folder on your Desktop and title the folder “Modganiser”
 4. Open the CLI interface on your device. If you are unsure of how to do so, please refer to our CLI tutorial.
@@ -131,22 +130,20 @@ To set up Modganiser, please follow the steps below:
     * Type “cd Modganiser” and press enter
     * Type “java -jar tp.jar” and press enter
 5. If successful, you should see the following displayed on your screen:
-   ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
 
-<p style = "text-align:center"><small>Figure 3: Modganiser Successful Start Up</small></p>
+    ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
+    
 6. Type your name in and press enter. If successful, you should see the following:
-
-![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
-<p style = "text-align:center"><small>Figure 4: Enter Name Successful</small></p>
+    
+    ![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
+    
 7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
-<div style="page-break-after: always;"></div>
-
-## 4. Features
+## 5. Features
 
 ---
 
@@ -170,13 +167,13 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 > ❗ **Warning**: Read this section carefully when you see it
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### 4.1 Notes on the Command Format
+### 5.1 Notes on the Command Format
 
 > 📓 **Note**  
 > 1. Markdown Texts
@@ -200,18 +197,16 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
     additional inputs and that your inputs are in the list of accepted input
 > 
 > ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
-> <p style = "text-align:center"><small>Figure 5: Missing Inputs to Parameters</small></p>
 > 
 > ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
-> <p style = "text-align:center"><small>Figure 6: Additional Inputs to Parameters</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### 4.2 Summary Of Features
+### 5.2 Summary Of Features
 Below is a summary of features that Modganiser has. Type the corresponding command in the Command Line Interface and press Enter to execute it.
 * Adding a module:  `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM`
 * Input grade for module: `grade /MODULE_CODE /GRADE`
@@ -221,17 +216,17 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 * Track Module Type Completion: `track /MODULE_TYPE`
 * Grade Calculator: `calculatecap`
 * Viewing manual: `man`
-* Viewing a specific manual for a feature: m`an /FEATURE`
+* Viewing a specific manual for a feature: `man /FEATURE`
 * Exiting the program : `bye`
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### 4.3 Managing Modules
+### 5.3 Managing Modules
 
-#### 4.3.1 Adding Modules: `add`
+#### 5.3.1 Adding Modules: `add`
 
 **Function**
 
@@ -257,6 +252,12 @@ Adds a module to the module plan with the following [parameters](#7-glossary).
 >
 > We do not check for the validity of the module code as we cannot maintain a database of modules. Please double-check the module code on NUSMods before entering it into Modganiser. If you have entered the wrong MODULE_CODE, you may edit it using the [edit command](#433-editing-module-details-edit).
 
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+<div style="page-break-after: always;"></div>
+
 **Command Format**
 
 `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEMESTER`
@@ -264,7 +265,6 @@ Adds a module to the module plan with the following [parameters](#7-glossary).
 Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Credits(MCs) and is a Core module into Year 1 Semester 1.
 
 ![AddCommand](UG_Screenshots/AddingAModule.png)
-<p style = "text-align:center"><small>Figure 7: Adding a module</small></p>
 
 > 📓 **Note**
 > 
@@ -276,25 +276,30 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 > 
 > e.g. `add /CS2113T /4 /1 /1` or `add /CS2113T /4 /CORE /1 /1 /1`
 
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+<div style="page-break-after: always;"></div>
+
 > 💡 **Tip**
 > 
 > Multiple modules can be added in a single line. 
 > 
 > For example: `add /CS2113T IS4231 CS3235 /4 /CORE /2 /2` will add CS2113T, IS4231 and CS3235 into the module plan. All 3 modules will be reflected as Core modules worth 4 MCs, and will be taken in Year 2 Semester 2.
 > ![AddCommand](UG_Screenshots/AddingMultipleModules.png)
-> <p style = "text-align:center"><small>Figure 8: Adding multiple modules </small></p>
 
 >❗ **Warning**
 > 
 > Adding multiple modules should only be used if all the modules have the same inputs for the other [parameters](#7-glossary). Example, SIP3200 and CS2113T should not be added together in a single line as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-#### 4.3.2 Adding Grade Obtained for Module: `grade`
+#### 5.3.2 Adding Grade Obtained for Module: `grade`
 **Function**
 
 Input the grade you got for the module once you have taken it in the planned semester.  
@@ -309,31 +314,26 @@ This grade will then be used to calculate your CAP with the `calculatecap` comma
 
 `grade /MODULE_CODE /GRADE`
 
-Example: `grade /CS2113T /A` adds a grade “A” to CS2113T, meaning you have obtained grade A for that module.
+Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 ![GradeCommand](UG_Screenshots/InputGrade.png)
-<p style = "text-align:center"><small>Figure 9: Input grade for module</small></p>
 
 
 > 📓 **Note** 
-> 
-> Modules which do not have a grade yet will have a blank 2nd square bracket [“ ”].  
-> When modules are added, the grades will all be empty initially and will need to be updated via this command.
+>
+> The grades for modules will be empty initially and will have a blank 2nd square bracket [“ ”] which needs to be updated via this command.
 
 
 >❗ **Warning** 
 > 
-> Trying to add grades to a module that is not present will cause Modganiser to throw an error.
-![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)  
-<p style = "text-align:center"><small>Figure 10: Module not in list when attempting grade command</small></p>
+> Modganiser will show an error if you add grades to a module that doesn't exist.
+![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
-<div style="page-break-after: always;"></div>
-
-#### 4.3.3 Editing Module Details: `edit`
+#### 5.3.3 Editing Module Details: `edit`
 
 ### Edit command: `edit`
 
@@ -347,22 +347,32 @@ Example: `edit /CS2113T /TYPE /UE` edits the Module Type of CS2113T to UE
 Expected Output: 
 
 ![EditExistingModule_ByType.png](UG_Screenshots/EditExistingModule_ByType.png)
-<p style = "text-align:center"><small>Figure 11: Editing module type for an existing module</small></p>
 
 Example: `edit /CS2113T /MC /8` edits the current Modular Credits that CS2113T is worth to 8.
 
-Expected Output:
-
-![EditExistingModule_ByMC.png](UG_Screenshots/EditExistingModule_ByMC.png)
-<p style = "text-align:center"><small>Figure 12: Editing MCs for an existing module</small></p>
-
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-#### 4.3.4 Deleting Module From Module Plan: `delete`
+Expected Output:
+
+![EditExistingModule_ByMC.png](UG_Screenshots/EditExistingModule_ByMC.png)
+
+> ❗ **Warning**
+>
+> Modganiser will show an error if you edit a module that doesn't exist.
+>
+>![EditError](UG_Screenshots/Edit_Module_Not_In_List.png)
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+<div style="page-break-after: always;"></div>
+
+#### 5.3.4 Deleting Module From Module Plan: `delete`
 **Function**
 
 Deletes an existing module that corresponds to the module code inputted.
@@ -380,24 +390,21 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 ![DeleteCommand](UG_Screenshots/DeleteExistingModule.png)
 
-<p style = "text-align:center"><small>Figure 14: Deleting a module</small></p>
-
 > ❗ **Warning** 
 > 
-> Trying to delete a module that is not present will cause Modganiser to throw an error.
+> Modganiser will show an error if you delete a module that doesn't exist.
+> 
+>![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png) 
 
-![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png)
-<small><i>Figure 15: Module not in list when attempting delete command</i></small>
-
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### 4.4 Managing Display of Module Plan
+### 5.4 Managing Display of Module Plan
 
-#### 4.4.1 Viewing Module Plan: `list`
+#### 5.4.1 Viewing Module Plan: `list`
 
 ### List command: `list`
 
@@ -410,20 +417,18 @@ Command: `list /YEAR`
 Example: `list /all` lists the entire module plan.
 
 ![ListingAllModules.png](UG_Screenshots/ListingAllModules.png)
-<p style = "text-align:center"><small>Figure 16: Listing all modules</small></p>
 
 Example: `list /1` lists Year 1's module plan.
 
 ![ListAllModulesByYear.png](UG_Screenshots/ListAllModulesByYear.png)
-<p style = "text-align:center"><small>Figure 17: Listing modules by year</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-#### 4.4.2 Finding Modules in the Module Plan: `find`
+#### 5.4.2 Finding Modules in the Module Plan: `find`
 **Function**
 
 Searches for the module whose module code contains the keyword inputted by the user, or the modules whose module type is the module type inputted by the user.
@@ -437,31 +442,32 @@ Searches for the module whose module code contains the keyword inputted by the u
 
 `find /TYPE_OF_SEARCH /KEYWORD`
 
-Example: `find /TYPE /CORE` finds all modules that contains CS2113T.
+Example: `find /TYPE /CS2113T` finds all modules that contains CS2113T.
 
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
 
-<p style = "text-align:center"><small>Figure 18: Finding a module with its full module code</small></p>
-
-Example: `find /CODE /CS` finds all modules whose module code contains the keyword “CS”.
-
-![Findallthatcontains](UG_Screenshots/FindModulesByName_Substring.png)
-
-<p style = "text-align:center"><small>Figure 19: Finding a module by substring of name</small></p>
-
-Example: `find /TYPE /CORE` finds all modules whose module type is Core.
-
-![FindModuleType](UG_Screenshots/FindModulesByType.png)
-<p style = "text-align:center"><small>Figure 20: Finding a module by type</small></p>
-
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### 4.5 Tracking Graduation Progress
-#### 4.5.1 Tracking the Completion of Each Module Type: `track`
+Example: `find /CODE /CS` finds all modules whose module code contains the keyword “CS”.
+
+![Findallthatcontains](UG_Screenshots/FindModulesByName_Substring.png)
+
+Example: `find /TYPE /CORE` finds all modules whose module type is Core.
+
+![FindModuleType](UG_Screenshots/FindModulesByType.png)
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+<div style="page-break-after: always;"></div>
+
+### 5.5 Tracking Graduation Progress
+#### 5.5.1 Tracking the Completion of Each Module Type: `track`
 **Function**
 Tracks how many modular credits of a module type you have completed and Modganiser will list out all the modules that you have completed under that module type and how many more modular credits you need before you meet the requirements for that module type.
 
@@ -474,20 +480,19 @@ Tracks how many modular credits of a module type you have completed and Modganis
 Example: `track/CORE` tracks the completion status of your core modules.
 
 ![trackCore](UG_Screenshots/TrackCommand.png)
-<p style = "text-align:center"><small>Figure 21: Tracking Module Type Completion Status</small></p>
 
 > 📓 **Note** 
 > 
 >Completed modules are modules which have a grade. Modules which do not have a grade 
 will not be considered as completed and hence counted.
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### 4.5.2 Calculating Your Current CAP: `calculatecap`
+### 5.5.2 Calculating Your Current CAP: `calculatecap`
 **Function**
 
 Calculate your current CAP based on the grades you obtained. Grades obtained correspond to a number that is used to calculate your CAP.  
@@ -504,16 +509,15 @@ To find out more, do visit the official [NUS website](https://www.nus.edu.sg/reg
 Example: `calculatecap` calculates your current CAP
 
 ![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png)
-<p style = "text-align:center"><small>Figure 22: Calculate CAP across graded modules</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### 4.6 Miscellaneous
-#### 4.6.1 Viewing the Entire Manual: `man`
+### 5.6 Miscellaneous
+#### 5.6.1 Viewing the Entire Manual: `man`
 
 **Function**
 
@@ -534,15 +538,11 @@ Expected Output:
 
 ![ViewManPage](UG_Screenshots/ViewEntireManual.png)
 
-<p style = "text-align:center"><small>Figure 23: Displaying part of entire manual</small></p>
-
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
-<div style="page-break-after: always;"></div>
-
-#### 4.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
+#### 5.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
 
 **Function**
 
@@ -559,15 +559,14 @@ Shows a detailed instruction page for the specific command requested
 Example: `man /add` displays the manual page for the add feature
 
 ![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
-<p style = "text-align:center"><small>Figure 24: Displaying manual of specific feature</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-#### 4.6.3 Exiting Modganiser: `bye`
+#### 5.6.3 Exiting Modganiser: `bye`
 **Function**
 
 Exits Modganiser
@@ -577,7 +576,6 @@ Exits Modganiser
 `bye`
 Example: `bye` exits the program
 ![ByeCommand](UG_Screenshots/ExitCommand.png)
-<p style = "text-align:center"><small>Figure 25: Modganiser Exits</small></p>
 
 > 📓 **Note** 
 > 
@@ -586,13 +584,13 @@ When Modganiser asks for your name during its first start up, typing bye will al
 program. If your name is “bye”, please do consider using an alias.
 Thank you and sorry for the inconvenience caused.
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-#### 4.6.4 Saving Module Plan
+#### 5.6.4 Saving Module Plan
 
 Modganiser automatically saves your module plan into your local storage onto your device after every command you input
 
@@ -615,14 +613,14 @@ file. You can then use any form of messaging applications like Telegram, email a
 like Gmail or online cloud storage like Google Drive to send this save file to yourself or 
 store this save file. You can then retrieve this save file from your new device.
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
 
-## 5. FAQ
+## 6. FAQ
 
 ---
 
@@ -635,13 +633,13 @@ store this save file. You can then retrieve this save file from your new device.
 | Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto NUSMods to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the Information Security Student requirements before deciding on the module type. |
 | Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                         |
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-## 6. Command Summary
+## 7. Command Summary
 
 ---
 
@@ -658,13 +656,13 @@ store this save file. You can then retrieve this save file from your new device.
 |        View Manual Page         |                   `man` or `man /FEATURE`                   |                             `man` or `man /add`                              |
 |         Exit Modganiser         |                            `bye`                            |                                    `bye`                                     |
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-## 7. Glossary
+## 8. Glossary
 
 ---
 
@@ -678,7 +676,7 @@ store this save file. You can then retrieve this save file from your new device.
 | Internship Module Type | Please refer to the NUS Website for more information on Internships                                                           |
 | Local storage          | Data that is stored on your device and can be accessed without an internet connection                                         |
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
