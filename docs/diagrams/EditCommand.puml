@@ -6,51 +6,91 @@ participant ":Module" as Mod
 participant ":Print" as Print
 [->Parser : CheckUserInput\n(userInput:String, moduleList:ModuleList)
 activate Parser
-Parser->Parser : editModuleField\n(moduleList:ModuleList, userInput:String[])
-activate ML
+Parser -> Parser : editModuleField\n(moduleList:ModuleList, userInput:String[])
+activate Parser
+
+
 alt MC
-    Parser -> ML : editModularCredits(moduleCode:String, update:String)
+    Parser -> ML : editModularCredits(moduleCode:String, newModularCredits:String)
+    activate ML
     ML -> Print : printEditedModule(module:Module, moduleListSize:int)
     activate Print
     Print --> ML
     deactivate Print
     ML --> Parser
-else TYPE
-    activate Mod
-    ML -> Mod: getModuleCode()
-    Mod --> ML
-    ML -> Mod: getModularCredits()
-    Mod --> ML
-    ML -> Mod: getYear()
-    Mod --> ML
-    ML -> Mod: getSemester()
-    Mod --> ML
-    ML -> Mod: getGrade()
-    Mod --> ML
-    deactivate Mod
-    Parser -> ML : editModuleType(moduleCode:String, modularCredits:String, update:String, year:String, semester:String, grade:String)
-    ML -> Print : printEditedModule(module:Module, moduleListSize:int)
-    activate Print
-    Print --> ML
-    deactivate Print
-    ML --> Parser
+    deactivate ML
 else YEAR
-    Parser -> ML : editYear(moduleCode:String, update:String)
+    Parser -> ML : editYear(moduleCode:String, newYear:String)
+    activate ML
     ML -> Print : printEditedModule(module:Module, moduleListSize:int)
     activate Print
     Print --> ML
     deactivate Print
     ML --> Parser
+    deactivate ML
 else SEMESTER
-    Parser -> ML : editSemester(moduleCode:String, update:String)
+    Parser -> ML : editSemester(moduleCode:String, newSemester:String)
+    activate ML
     ML -> Print : printEditedModule(module:Module, moduleListSize:int)
     activate Print
     Print --> ML
     deactivate Print
     ML --> Parser
+    deactivate ML
+else GRADE
+    Parser -> ML : editModuleGrade(moduleCode:String, newGrade:String)
+    activate ML
+    ML -> ML: updateModuleGrade(moduleCode:String, grade:String)
+
+    ML -> Print : printEditedModule(module:Module, moduleListSize:int)
+    activate Print
+    Print --> ML
+    deactivate Print
+    ML --> Parser
+    deactivate ML
+else TYPE
+    Parser -> ML : editModuleType(moduleCode:String, moduleType:String)
+    activate ML
+        ML -> Mod: deleteModule(moduleCode:String)
+        ML -> Mod: getModularCredits()
+        ML -> Mod: getYear()
+        ML -> Mod: getSemester()
+        ML -> Mod: getGrade()
+
+        ML -> ML: addModule(moduleCode:String, modularCredits:String, moduleType:String, year:String, semester:String)
+
+        ML -> ML: updateModuleGrade(moduleCode:String, grade:String)
+
+        ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
+        activate Print
+        Print --> ML
+        deactivate Print
+    ML --> Parser
+    deactivate ML
+else CODE
+    Parser -> ML : editModuleCode(moduleCode:String, moduleType:String)
+    activate ML
+        ML -> Mod: deleteModule(moduleCode:String)
+        ML -> Mod: getModuleType()
+        ML -> Mod: getModularCredits()
+        ML -> Mod: getYear()
+        ML -> Mod: getSemester()
+        ML -> Mod: getGrade()
+
+        ML -> ML: addModule(moduleCode:String, modularCredits:String, moduleType:String, year:String, semester:String)
+
+        ML -> ML: updateModuleGrade(moduleCode:String, grade:String)
+
+        ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
+        activate Print
+        Print --> ML
+        deactivate Print
+    ML --> Parser
+    deactivate ML
 end
-ML --> Parser
-deactivate ML
+Parser --> Parser
+deactivate Parser
+
 Parser-->[
 deactivate Parser
 

@@ -252,12 +252,9 @@ public class ModuleList {
     }
 
     public void editModuleGrade(String moduleCode, String newGrade) {
-        updateModuleGrade(moduleCode, newGrade);
-        for (Module module : listOfModules) {
-            if (module.getModuleCode().equals(moduleCode)) {
-                module.setGrade(newGrade);
-                Print.printEditedModule(module, listOfModules.size());
-            }
+        Module updatedModule = updateModuleGrade(moduleCode, newGrade);
+        if (updatedModule != null) {
+            Print.printEditedModule(updatedModule, listOfModules.size());
         }
     }
 
