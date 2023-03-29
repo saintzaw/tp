@@ -13,67 +13,113 @@ Modganiser is **effortless module planning, at your fingertips via the Command L
 [Introduction](#introduction)
 
 [Table of contents](#table-of-contents) 
-0. [Acknowledgements](#0-acknowledgements)
-1. [Product Scope](#1-product-scope)
-2. [Target User Profile](#2-target-user-profile)
-3. [User Stories](#3-user-stories)
-4. [Non-Functional Requirements](#4-non-functional-requirements)
-5. [Design & Implementation: Manpage](#5-design--implementation--manpage)
-   + 5.1 [Implementation](#51-implementation)
-   + 5.2 [Design Considerations](#52-design-considerations)
-6. [Design & Implementation: Parser](#6-design--implementation--parser)
-7. [Design & implementation: Add Modules](#7-design--implementation--add-modules)
-8. [Design & implementation: Find Modules](#8-design--implementation--find-modules)
-9. [Design & implementation: Delete Modules](#9-design--implementation--delete-modules)
-10. [Design & implementation: Edit Modules](#10-design--implementation--edit-modules)
-11. [Design & implementation: Add or Update Grade](#11-design--implementation--add-or-update-grade)
-12. [Design & implementation: Calculate CAP](#12-design--implementation--calculate-cap)
-13. [Glossary](#13-glossary)
-14. [Instructions for manual testing](#14-instructions-for-manual-testing)
+0. [Acknowledgements](#acknowledgements)
+1. [Setting Up](#setting-up)
+2. [Architecture](#architecture)
+   + 2.1. [Storage](#1-storage-component)
+   + 2.2. [Parser](#2-parser-component)
+   + 2.3. [ModuleList](#3-modulelist-component)
+   + 2.4. [Print](#4-print-component)
+3. [Design and Implementation](#3-design-and-implementation)
+   + 3.1. [Manpage](#31-manpage)
+   + 3.2. [Parser](#32-parser)
+   + 3.3. [Add Modules](#33-add-modules)
+   + 3.4. [Find Modules](#34-find-modules)
+   + 3.5. [Delete Modules](#35-delete-modules)
+   + 3.6. [Edit Modules](#36-edit-modules)
+   + 3.7. [Add or Update Grade](#37-add-or-update-grade)
+   + 3.8. [Calculate CAP](#38-calculate-cap)
+4. [Appendix: Requirements](#appendix--requirements)
+   + 4.1. [Product Scope](#product-scope)
+   + 4.2. [Target User Profile](#target-user-profile)
+   + 4.3. [User Stories](#user-stories)
+   + 4.4. [Non-Functional Requirements](#non-functional-requirements)
+   + 4.5. [Glossary](#glossary)
+5. [Appendix: Instructions for manual testing](#appendix--instructions-for-manual-testing)
 
-## 0. Acknowledgements
+
+## Introduction 
+
+
+## Acknowledgements
 
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
 
-## 1. Product Scope
+## Setting Up
+
+## Architecture
 
 ---
 
-### 2. Target User Profile
+The Diagram below shows an overview of how components are linked together to produce Modganiser.
 
-Our target user profile is Information Security students in NUS.
+{image}
 
-## 3. User Stories
+Main components of the architecture
+`Duke` has a class called `Duke`.
 
-| Version | As a...      | I want to...                                    | So that I can...                                                               |
-|---------|--------------|-------------------------------------------------|--------------------------------------------------------------------------------|
-| v1.0    | New user     | See usage instructions                          | Refer to them when I forget the commands                                       |
-| v1.0    | New user     | See usage instructions based on feature         | Get more in depth knowledge on the feature that I require                      |
-| v1.0    | New user     | Find a module by its code                       | Locate the module code without having to go through the entire list of modules |
-| v2.0    | Current user | Find a module by its type                       | Locate all modules in a category without having to go through the entire list  |
-| v1.0    | New user     | Add modules                                     | To plan out my 4 years in uni                                                  |
-| v1.0    | New user     | Delete modules                                  | To edit my plan when necessary                                                 |
-| v1.0    | New user     | View all my modules                             | Visualise my 4 year plan                                                       |
-| v2.0    | Current user | View my modules by year                         | Focus better on one year rather than all 4 years                               |
-| v1.0    | New user     | Categorise my modules by type                   | Ensure that all requirements are met                                           |
-| v2.0    | Current user | Track the completion status of each module type | Ensure that all requirements are met                                           |
-| v2.0    | Current user | Update the grade I got for a module             | Keep track of my grades                                                        |
-| v2.0    | Current user | Calculate my CAP                                | Know my current CAP and project what honours I’ll graduate with                |
-| v2.0    | Current user | Edit the details of current modules             | Change the details should I made a mistake or there was an update from NUS     |
+* It starts the app up at the beginning and passes the relevant inputs to the `Parser` to be parsed.
+* It saves the name of the user for future uses.
+* It ends the program when called to.
 
-## 4. Non-Functional Requirements
+Modganiser consists of :
 
-1. Should work on any mainstream OS as long as it has Java 11 or above installed
-2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+1. `Storage`
+2. `Parser`
+3. `ModuleList`
+4. `Print`
+
+**How the components interact with each other**
+
+When using the command `add /CS2113T /4 /CORE /1 /1` ,
+The Sequence Diagram shows how the components interact with each other:
+
+{image}
+
+### 1. **Storage Component**
+
+Firstly, the {explain workflow}
+
+{uses}
+*  It can save the name of the user into a file.
+* The program can load data from the file when Modganiser starts up again.
+* It can save changes to the file after each change such as an addition or deletion.
+  This is done by using the methods
 
 
-## 5. Design & Implementation: Manpage 
+### 2. **Parser Component**
+
+Firstly, the {explain workflow}
+
+{uses}
+* It calls the relevant methods according to the user input
+
+
+### 3. **ModuleList Component**
+
+Firstly, the {explain workflow}
+
+{uses}
+*
+
+### 4. **Print Component**
+
+
+Firstly, the {explain workflow}
+
+{uses}
+*
+
+## 3. Design and Implementation
+
+---
+
+### 3.1. Manpage 
 
 The Manpage is a class that is used to display parts of the manpage that is requested by the user.
 It has multiple methods for separate features.
 
-### 5.1. Implementation
+**Implementation**
 
 The sequence by which the ManPage class handles the `man` command is as follows:
 1) The `Parser` class extracts the other fields of the user input, and calls upon the `checkUserInput()` method
@@ -101,7 +147,7 @@ The sequence by which the ManPage class handles the `man` command is as follows:
 
 ![ManPage](diagrams/ManPage.png)
 
-### 5.2. Design Considerations
+**Design Considerations**
 
 **Alternative 1** : Prints the manual page individually as features. 
 Pros: Avoids wordy and long manual page when command is man, ability to have more description
@@ -113,7 +159,7 @@ Pros: Avoid extra step of typing another command to understand a feature well.
 Cons: Wordy and long manual page when command is man, user has to scroll through
 a long manual page to find what they need. Long method.
 
-## 6. Design & Implementation: Parser
+### 3.2. Parser
 
 The `Parser` is a class that handles the commands keyed in by the user.  
 It has multiple checks to ensure that the user keys in valid commands. 
@@ -121,7 +167,7 @@ It has multiple checks to ensure that the user keys in valid commands.
 <!---elaborate more on the class, still unsure of the format...--->
 <!---insert other commands here, still unsure of the format...(should it all be under Parser class or separate?)--->
 
-## 7. Design & implementation: Add Modules
+### 3.3. Add Modules
 
 `add` command:
 
@@ -142,7 +188,7 @@ The sequence of events above can be represented with the following sequence diag
 
 <small><i>Figure ???</i></small>
 
-## 8. Design & implementation: Find Modules
+### 3.4. Find Modules
 
 The find modules features is facilitated by the `Parser`, `ModuleList` and `Module` Classes. `Parser` helps to check
 for user input to determine is user doing a search via a module name or module type, which will then invoke the 
@@ -173,14 +219,7 @@ The following sequence diagram shows how the `findModuleByName` operation works:
 
 <small><i>Figure ???</i></small>
 
-9. [Design & implementation: Delete Modules]()
-10. [Design & implementation: Edit Modules]()
-11. [Design & implementation: Add or Update Grade]()
-12. [Design & implementation: Calculate CAP]()
-13. [Glossary]()
-14. [Instructions for manual testing]()
-
-## 9. Design & implementation: Delete Modules
+### 3.5. Delete Modules
 
 `delete` command:
 
@@ -201,7 +240,7 @@ The sequence in which the `Parser` class handles the `delete` command is as foll
 
 <small><i>Figure ???</i></small>
 
-## 10. Design & implementation: Edit Modules
+### 3.6. Edit Modules
 
 `edit` command:
 
@@ -229,7 +268,7 @@ The sequence in which the `Parser` class handles the `edit` command is as follow
 
 <small><i>Figure ???</i></small>
 
-## 11. Design & implementation: Add or Update Grade
+### 3.7. Add or Update Grade
 
 `grade` command:
 
@@ -250,7 +289,7 @@ The sequence of events above can be represented with the following sequence diag
 <small><i>Figure ???</i></small>
 
 
-## 12. Design & implementation: Calculate CAP
+### 3.8. Calculate CAP
 
 `calculateCAP` command:
 
@@ -271,11 +310,51 @@ The sequence of events above can be represented with the following sequence diag
 
 <small><i>Figure ???</i></small>
 
-## 13. Glossary
+## Appendix: Requirements
+
+###  Product Scope
+
+---
+
+### Target User Profile
+
+Our target user profile is Information Security students in NUS.
+
+### User Stories
+
+| Version | As a...      | I want to...                                    | So that I can...                                                               |
+|---------|--------------|-------------------------------------------------|--------------------------------------------------------------------------------|
+| v1.0    | New user     | See usage instructions                          | Refer to them when I forget the commands                                       |
+| v1.0    | New user     | See usage instructions based on feature         | Get more in depth knowledge on the feature that I require                      |
+| v1.0    | New user     | Find a module by its code                       | Locate the module code without having to go through the entire list of modules |
+| v2.0    | Current user | Find a module by its type                       | Locate all modules in a category without having to go through the entire list  |
+| v1.0    | New user     | Add modules                                     | To plan out my 4 years in uni                                                  |
+| v1.0    | New user     | Delete modules                                  | To edit my plan when necessary                                                 |
+| v1.0    | New user     | View all my modules                             | Visualise my 4 year plan                                                       |
+| v2.0    | Current user | View my modules by year                         | Focus better on one year rather than all 4 years                               |
+| v1.0    | New user     | Categorise my modules by type                   | Ensure that all requirements are met                                           |
+| v2.0    | Current user | Track the completion status of each module type | Ensure that all requirements are met                                           |
+| v2.0    | Current user | Update the grade I got for a module             | Keep track of my grades                                                        |
+| v2.0    | Current user | Calculate my CAP                                | Know my current CAP and project what honours I’ll graduate with                |
+| v2.0    | Current user | Edit the details of current modules             | Change the details should I made a mistake or there was an update from NUS     |
+
+### Non-Functional Requirements
+
+1. Should work on any mainstream OS as long as it has Java 11 or above installed
+2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+
+### Glossary
 
 Mainstream OS: Windows, Linux, Unix, OS-X, MacOS
 
-## 14. Instructions for manual testing
+## Appendix: Instructions for manual testing
 
-#NIL
+### Launch and ShutDown
+
+### Adding a module 
+
+### Saving Data
+
+
 
