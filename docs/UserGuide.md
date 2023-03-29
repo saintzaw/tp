@@ -34,7 +34,7 @@
 7. [Command Summary](#6-command-summary)
 8. [Glossary](#7-glossary)
 
-p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -320,9 +320,8 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 
 > 📓 **Note** 
-> 
-> Modules which do not have a grade yet will have a blank 2nd square bracket [“ ”].  
-> The grades for modules will be empty initially and needs to be updated via this command.
+>
+> The grades for modules will be empty initially will have a blank 2nd square bracket [“ ”] and needs to be updated via this command.
 
 
 >❗ **Warning** 
