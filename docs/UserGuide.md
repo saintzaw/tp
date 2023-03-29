@@ -102,11 +102,11 @@ To open up the Command Line Interface (CLI)
 * To run commands in the CLI, just type the command out, press enter and the command will run
 
 ![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
-<p style = "text-align:center"><small>Figure 1: Windows version of CLI with a command typed out</small></p>
+<p style = "text-align:center"><small>Windows version of CLI with a command typed out</small></p>
 
 ![macOSCLI](UG_Screenshots/Terminal.png)
 
-<p style = "text-align:center"><small>Figure 2: macOS version of CLI with a command typed out</small></p>
+<p style = "text-align:center"><small>macOS version of CLI with a command typed out</small></p>
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
 
@@ -129,11 +129,13 @@ To set up Modganiser, please follow the steps below:
     * Type “cd Modganiser” and press enter
     * Type “java -jar tp.jar” and press enter
 5. If successful, you should see the following displayed on your screen:
-   ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
-    <p style = "text-align:center"><small>Figure 3: Modganiser Successful Start Up</small></p>
+
+    ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
+    
 6. Type your name in and press enter. If successful, you should see the following:
+    
     ![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
-    <p style = "text-align:center"><small>Figure 4: Enter Name Successful</small></p>
+    
 7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
