@@ -1,9 +1,9 @@
 
 package seedu.duke;
-public class Manpage {
+public class ManPage {
 
     private static String line= "-----------------------------------------------------\n ";
-    public Manpage() {
+    public ManPage() {
 
     }
 
