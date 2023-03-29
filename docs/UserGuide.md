@@ -4,35 +4,35 @@
 
 ---
 
-0. [Acknowledgements](#0-acknowledgements)
-1. [Introduction](#1-introduction)
-   + 1.1 [What Is Modganiser](#11-what-is-modganiser)
-   + 1.2 [Who Is This User Guide Meant For?](#12-who-is-this-user-guide-meant-for)
-   + 1.3 [How To Use This User Guide](#13-how-to-use-this-user-guide)
-2. [Command Line Interface Tutorial](#2-command-line-interface-tutorial)
-3. [Set Up Guide](#3-set-up-guide)
-4. [Features](#4-features)
-   + 4.1 [Notes On The Command Format](#41-notes-on-the-command-format)
-   + 4.2 [Summary Of Features](#42-summary-of-features)
-   + 4.3 [Managing Modules](#43-managing-modules)
-     - 4.3.1 [Adding Modules: add](#431-adding-modules-add)
-     - 4.3.2 [Adding Grade Obtained for Module: grade](#432-adding-grade-obtained-for-module-grade)
-     - 4.3.3 [Editing Module Details: edit](#433-editing-module-details-edit)
-     - 4.3.4 [Deleting Module From Module Plan: delete](#434-deleting-module-from-module-plan-delete)
-   + 4.4 [Managing Display of Module Plan](#44-managing-display-of-module-plan)
-     - 4.4.1 [Viewing Module Plan: list](#441-viewing-module-plan-list)
-     - 4.4.2 [Finding Modules In The Module Plan: find](#442-finding-modules-in-the-module-plan-find)
-   + 4.5 [Tracking Graduation Progress](#45-tracking-graduation-progress)
-     - 4.5.1 [Tracking the Completion of Each Module Type: track](#451-tracking-the-completion-of-each-module-type-track)
-     - 4.5.2 [Calculating Your Current CAP: calculatecap](#452-calculating-your-current-cap-calculatecap)
-   + 4.6 [Miscellaneous](#46-miscellaneous)
-     - 4.6.1 [Viewing the Entire Manual: man](#461-viewing-the-entire-manual-man)
-     - 4.6.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#462-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
-     - 4.6.3 [Exiting Modganiser: bye](#463-exiting-modganiser-bye)
-     - 4.6.4 [Saving Module Plan](#464-saving-module-plan)
-5. [FAQ](#5-faq)
-6. [Command Summary](#6-command-summary)
-7. [Glossary](#7-glossary)
+1. [Acknowledgements](#0-acknowledgements)
+2. [Introduction](#1-introduction)
+   + 2.1 [What Is Modganiser](#11-what-is-modganiser)
+   + 2.2 [Who Is This User Guide Meant For?](#12-who-is-this-user-guide-meant-for)
+   + 2.3 [How To Use This User Guide](#13-how-to-use-this-user-guide)
+3. [Command Line Interface Tutorial](#2-command-line-interface-tutorial)
+4. [Set Up Guide](#3-set-up-guide)
+5. [Features](#4-features)
+   + 5.1 [Notes On The Command Format](#41-notes-on-the-command-format)
+   + 5.2 [Summary Of Features](#42-summary-of-features)
+   + 5.3 [Managing Modules](#43-managing-modules)
+     - 5.3.1 [Adding Modules: add](#431-adding-modules-add)
+     - 5.3.2 [Adding Grade Obtained for Module: grade](#432-adding-grade-obtained-for-module-grade)
+     - 5.3.3 [Editing Module Details: edit](#433-editing-module-details-edit)
+     - 5.3.4 [Deleting Module From Module Plan: delete](#434-deleting-module-from-module-plan-delete)
+   + 5.4 [Managing Display of Module Plan](#44-managing-display-of-module-plan)
+     - 5.4.1 [Viewing Module Plan: list](#441-viewing-module-plan-list)
+     - 5.4.2 [Finding Modules In The Module Plan: find](#442-finding-modules-in-the-module-plan-find)
+   + 5.5 [Tracking Graduation Progress](#45-tracking-graduation-progress)
+     - 5.5.1 [Tracking the Completion of Each Module Type: track](#451-tracking-the-completion-of-each-module-type-track)
+     - 5.5.2 [Calculating Your Current CAP: calculatecap](#452-calculating-your-current-cap-calculatecap)
+   + 5.6 [Miscellaneous](#46-miscellaneous)
+     - 5.6.1 [Viewing the Entire Manual: man](#461-viewing-the-entire-manual-man)
+     - 5.6.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#462-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
+     - 5.6.3 [Exiting Modganiser: bye](#463-exiting-modganiser-bye)
+     - 5.6.4 [Saving Module Plan](#464-saving-module-plan)
+6. [FAQ](#5-faq)
+7. [Command Summary](#6-command-summary)
+8. [Glossary](#7-glossary)
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
@@ -40,7 +40,7 @@
 
 <div style="page-break-after: always;"></div>
 
-## 0. Acknowledgements
+## 1. Acknowledgements
 
 ---
 
@@ -55,24 +55,24 @@ Should you have any feedback or enquiries, please do not hesitate to reach out t
 
 <div style="page-break-after: always;"></div>
 
-## 1. Introduction
+## 2. Introduction
 
 ---
 
-### 1.1 What is Modganiser?
+### 2.1 What is Modganiser?
 Modganiser is effortless module planning, at your fingertips via the Command Line Interface (CLI),
 focused on helping Information Security Undergraduates graduate in 4 years. It does so by giving you a platform to
 plan all 4 years of your modules to ensure that you meet the graduation requirements (Core/UE/GE/Internships).
 If you can type fast, Modganiser can get your schedule up faster than traditional GUI apps.
 
-### 1.2 Who Is This User Guide Meant For?
+### 2.2 Who Is This User Guide Meant For?
 Are you a current information security undergraduate at NUS? Or are you a prospective student,
 about to begin your journey into information security? Well, Modganiser is exactly what you are looking for!
 This user guide will help you as you navigate through Modganiser and its features. If you are a new user, do go to the
 set-up section to learn how to install and run Modganiser. To learn more about Modganiser’s features, do head over to
 the features section!
 
-### 1.3 How To Use This User Guide
+### 2.3 How To Use This User Guide
 Modganiser uses a Command Line Interface (CLI) which may be new to some users. We strongly recommend that you read this
 User Guide from start to finish if you are new to Modganiser, although you may choose to skip to more relevant sections
 if you are used to Java, CLI or Modganiser, which are described below:
@@ -90,7 +90,7 @@ if you are used to Java, CLI or Modganiser, which are described below:
 
 <div style="page-break-after: always;"></div>
 
-## 2. Command Line Interface Tutorial
+## 3. Command Line Interface Tutorial
 
 ---
 
@@ -115,7 +115,7 @@ To open up the Command Line Interface (CLI)
 
 <div style="page-break-after: always;"></div>
 
-## 3. Set-Up Guide
+## 4. Set-Up Guide
 
 ---
 
@@ -143,9 +143,7 @@ To set up Modganiser, please follow the steps below:
 
 ---
 
-<div style="page-break-after: always;"></div>
-
-## 4. Features
+## 5. Features
 
 ---
 
@@ -175,7 +173,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 <div style="page-break-after: always;"></div>
 
-### 4.1 Notes on the Command Format
+### 5.1 Notes on the Command Format
 
 > 📓 **Note**  
 > 1. Markdown Texts
@@ -208,7 +206,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 <div style="page-break-after: always;"></div>
 
-### 4.2 Summary Of Features
+### 5.2 Summary Of Features
 Below is a summary of features that Modganiser has. Type the corresponding command in the Command Line Interface and press Enter to execute it.
 * Adding a module:  `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM`
 * Input grade for module: `grade /MODULE_CODE /GRADE`
@@ -226,9 +224,9 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 
 <div style="page-break-after: always;"></div>
 
-### 4.3 Managing Modules
+### 5.3 Managing Modules
 
-#### 4.3.1 Adding Modules: `add`
+#### 5.3.1 Adding Modules: `add`
 
 **Function**
 
@@ -254,6 +252,10 @@ Adds a module to the module plan with the following [parameters](#7-glossary).
 >
 > We do not check for the validity of the module code as we cannot maintain a database of modules. Please double-check the module code on NUSMods before entering it into Modganiser. If you have entered the wrong MODULE_CODE, you may edit it using the [edit command](#433-editing-module-details-edit).
 
+---
+
+<div style="page-break-after: always;"></div>
+
 **Command Format**
 
 `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEMESTER`
@@ -272,6 +274,10 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 > 
 > e.g. `add /CS2113T /4 /1 /1` or `add /CS2113T /4 /CORE /1 /1 /1`
 
+---
+
+<div style="page-break-after: always;"></div>
+
 > 💡 **Tip**
 > 
 > Multiple modules can be added in a single line. 
@@ -289,7 +295,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 
 <div style="page-break-after: always;"></div>
 
-#### 4.3.2 Adding Grade Obtained for Module: `grade`
+#### 5.3.2 Adding Grade Obtained for Module: `grade`
 **Function**
 
 Input the grade you got for the module once you have taken it in the planned semester.  
@@ -304,7 +310,7 @@ This grade will then be used to calculate your CAP with the `calculatecap` comma
 
 `grade /MODULE_CODE /GRADE`
 
-Example: `grade /CS2113T /A` adds a grade “A” to CS2113T, meaning you have obtained grade A for that module.
+Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 ![GradeCommand](UG_Screenshots/InputGrade.png)
 
@@ -312,7 +318,7 @@ Example: `grade /CS2113T /A` adds a grade “A” to CS2113T, meaning you have o
 > 📓 **Note** 
 > 
 > Modules which do not have a grade yet will have a blank 2nd square bracket [“ ”].  
-> When modules are added, the grades will all be empty initially and will need to be updated via this command.
+> The grades for all modules will be empty initially and will need to be updated via this command.
 
 
 >❗ **Warning** 
@@ -326,7 +332,7 @@ Example: `grade /CS2113T /A` adds a grade “A” to CS2113T, meaning you have o
 
 <div style="page-break-after: always;"></div>
 
-#### 4.3.3 Editing Module Details: `edit`
+#### 5.3.3 Editing Module Details: `edit`
 
 ### Edit command: `edit`
 
@@ -342,6 +348,10 @@ Expected Output:
 ![EditExistingModule_ByType.png](UG_Screenshots/EditExistingModule_ByType.png)
 
 Example: `edit /CS2113T /MC /8` edits the current Modular Credits that CS2113T is worth to 8.
+
+---
+
+<div style="page-break-after: always;"></div>
 
 Expected Output:
 
@@ -359,7 +369,7 @@ Expected Output:
 
 <div style="page-break-after: always;"></div>
 
-#### 4.3.4 Deleting Module From Module Plan: `delete`
+#### 5.3.4 Deleting Module From Module Plan: `delete`
 **Function**
 
 Deletes an existing module that corresponds to the module code inputted.
@@ -389,9 +399,9 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 <div style="page-break-after: always;"></div>
 
-### 4.4 Managing Display of Module Plan
+### 5.4 Managing Display of Module Plan
 
-#### 4.4.1 Viewing Module Plan: `list`
+#### 5.4.1 Viewing Module Plan: `list`
 
 ### List command: `list`
 
@@ -415,7 +425,7 @@ Example: `list /1` lists Year 1's module plan.
 
 <div style="page-break-after: always;"></div>
 
-#### 4.4.2 Finding Modules in the Module Plan: `find`
+#### 5.4.2 Finding Modules in the Module Plan: `find`
 **Function**
 
 Searches for the module whose module code contains the keyword inputted by the user, or the modules whose module type is the module type inputted by the user.
@@ -429,9 +439,13 @@ Searches for the module whose module code contains the keyword inputted by the u
 
 `find /TYPE_OF_SEARCH /KEYWORD`
 
-Example: `find /TYPE /CORE` finds all modules that contains CS2113T.
+Example: `find /TYPE /CS2113T` finds all modules that contains CS2113T.
 
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
+
+---
+
+<div style="page-break-after: always;"></div>
 
 Example: `find /CODE /CS` finds all modules whose module code contains the keyword “CS”.
 
@@ -447,8 +461,8 @@ Example: `find /TYPE /CORE` finds all modules whose module type is Core.
 
 <div style="page-break-after: always;"></div>
 
-### 4.5 Tracking Graduation Progress
-#### 4.5.1 Tracking the Completion of Each Module Type: `track`
+### 5.5 Tracking Graduation Progress
+#### 5.5.1 Tracking the Completion of Each Module Type: `track`
 **Function**
 Tracks how many modular credits of a module type you have completed and Modganiser will list out all the modules that you have completed under that module type and how many more modular credits you need before you meet the requirements for that module type.
 
@@ -473,7 +487,7 @@ will not be considered as completed and hence counted.
 
 <div style="page-break-after: always;"></div>
 
-### 4.5.2 Calculating Your Current CAP: `calculatecap`
+### 5.5.2 Calculating Your Current CAP: `calculatecap`
 **Function**
 
 Calculate your current CAP based on the grades you obtained. Grades obtained correspond to a number that is used to calculate your CAP.  
@@ -497,8 +511,8 @@ Example: `calculatecap` calculates your current CAP
 
 <div style="page-break-after: always;"></div>
 
-### 4.6 Miscellaneous
-#### 4.6.1 Viewing the Entire Manual: `man`
+### 5.6 Miscellaneous
+#### 5.6.1 Viewing the Entire Manual: `man`
 
 **Function**
 
@@ -521,11 +535,7 @@ Expected Output:
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
----
-
-<div style="page-break-after: always;"></div>
-
-#### 4.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
+#### 5.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
 
 **Function**
 
@@ -549,7 +559,7 @@ Example: `man /add` displays the manual page for the add feature
 
 <div style="page-break-after: always;"></div>
 
-#### 4.6.3 Exiting Modganiser: `bye`
+#### 5.6.3 Exiting Modganiser: `bye`
 **Function**
 
 Exits Modganiser
@@ -573,7 +583,7 @@ Thank you and sorry for the inconvenience caused.
 
 <div style="page-break-after: always;"></div>
 
-#### 4.6.4 Saving Module Plan
+#### 5.6.4 Saving Module Plan
 
 Modganiser automatically saves your module plan into your local storage onto your device after every command you input
 
@@ -603,7 +613,7 @@ store this save file. You can then retrieve this save file from your new device.
 <div style="page-break-after: always;"></div>
 
 
-## 5. FAQ
+## 6. FAQ
 
 ---
 
@@ -622,7 +632,7 @@ store this save file. You can then retrieve this save file from your new device.
 
 <div style="page-break-after: always;"></div>
 
-## 6. Command Summary
+## 7. Command Summary
 
 ---
 
@@ -645,7 +655,7 @@ store this save file. You can then retrieve this save file from your new device.
 
 <div style="page-break-after: always;"></div>
 
-## 7. Glossary
+## 8. Glossary
 
 ---
 
