@@ -119,11 +119,9 @@ To open up the Command Line Interface (CLI)
 ---
 
 To set up Modganiser, please follow the steps below:
-1. Download Java
-    * For Windows:
-        * Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) for the Java Developer Webpage and choose the x64 installer.
-    * For Mac
-        * Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) for the Java Developer Webpage and choose the Arm 64 DMG Installer.
+1. Download Java from the Java Developer Webpage
+    * For Windows, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) and choose the x64 installer.
+    * For macOS, Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer.
 2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the tp.jar file, which contains Modganiser.
 3. Save the file into a new folder on your Desktop and title the folder “Modganiser”
 4. Open the CLI interface on your device. If you are unsure of how to do so, please refer to our CLI tutorial.
@@ -132,12 +130,10 @@ To set up Modganiser, please follow the steps below:
     * Type “java -jar tp.jar” and press enter
 5. If successful, you should see the following displayed on your screen:
    ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
-
-<p style = "text-align:center"><small>Figure 3: Modganiser Successful Start Up</small></p>
+    <p style = "text-align:center"><small>Figure 3: Modganiser Successful Start Up</small></p>
 6. Type your name in and press enter. If successful, you should see the following:
-
-![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
-<p style = "text-align:center"><small>Figure 4: Enter Name Successful</small></p>
+    ![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
+    <p style = "text-align:center"><small>Figure 4: Enter Name Successful</small></p>
 7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
 **<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
