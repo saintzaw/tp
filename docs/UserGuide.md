@@ -326,7 +326,7 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 >❗ **Warning** 
 > 
-> Trying to add grades to a module that is not present will cause Modganiser to throw an error.
+> Adding grades to a module that is not present will cause Modganiser to throw an error.
 ![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
@@ -364,7 +364,7 @@ Expected Output:
 
 > ❗ **Warning**
 >
-> Trying to edit a module that is not present will cause Modganiser to throw an error.
+> Editing a module that is not present will cause Modganiser to throw an error.
 >
 >![EditError](UG_Screenshots/Edit_Module_Not_In_List.png)
 
@@ -394,7 +394,7 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 > ❗ **Warning** 
 > 
-> Trying to delete a module that is not present will cause Modganiser to throw an error.
+> Deleting a module that is not present will cause Modganiser to throw an error.
 > 
 >![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png) 
 
