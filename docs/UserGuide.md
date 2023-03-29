@@ -338,12 +338,27 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 ### Edit command: `edit`
 
-The `edit` command edits the information in a specified field of an existing module.
-The field to edit can be `CODE`, `MC`, `TYPE`, `YEAR`, `SEMESTER` or `GRADE`.
+**Function**
 
-Command: `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`
+Edits the various details of an existing module
 
-Example: `edit /CS2113T /TYPE /UE` edits the Module Type of CS2113T to UE
+|   [Parameter](#8-glossary) |                                       Description                                       |                                                                         Accepted Inputs                                                                         |
+|:--------------------------:|:---------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|        MODULE_CODE         |                                    The module's code                                    |                                                                   All inputs will be accepted                                                                   |
+|       FIELD_TO_EDIT        |                    The parameter of the module that you wish to edit                    |                                                              CODE, MC, TYPE, YEAR, SEMESTER, GRADE                                                              |
+|          NEW_INFO          | The new information to replace the incorrect or outdated information for that parameter | Accepted inputs will be based on the field to edit. Please refer to the accepted inputs for the respective fields in the [add command](#531-adding-module-add). |
+
+> 📓 Note 
+> 
+> * CODE represents MODULE_CODE 
+> * MC represents MODULAR_CREDITS
+> * TYPE represents MODULE_TYPE
+
+**Command Format** 
+
+`edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`
+
+Example: `edit /CS2113T /TYPE /UE` edits the Module Type of CS2113T to [UE](#8-glossary)
 
 Expected Output: 
 
@@ -409,11 +424,18 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 ### List command: `list`
 
-The `list` command allows you to view your 4-year module plan, separated by year.
-The `list` command also allows you to choose to only view a specific year in your module plan.
-The accepted inputs for the `YEAR` field are `all`, `1`, `2`, `3` and `4`.
+**Function**
 
-Command: `list /YEAR`
+Displays your 4 year module plan, separated by year. You can also choose to only show a specific year of your module plan
+
+
+| [Parameter](#8-glossary) |                      Description                       | Accepted Inputs |
+|:------------------------:|:------------------------------------------------------:|:---------------:|
+|           YEAR           | The specific year of your module plan you wish to view | ALL, 1, 2, 3, 4 |
+
+**Command Format** 
+
+`list /YEAR`
 
 Example: `list /all` lists the entire module plan.
 
