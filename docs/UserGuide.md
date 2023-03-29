@@ -34,7 +34,7 @@
 7. [Command Summary](#6-command-summary)
 8. [Glossary](#7-glossary)
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -252,6 +252,8 @@ Adds a module to the module plan with the following [parameters](#7-glossary).
 >
 > We do not check for the validity of the module code as we cannot maintain a database of modules. Please double-check the module code on NUSMods before entering it into Modganiser. If you have entered the wrong MODULE_CODE, you may edit it using the [edit command](#433-editing-module-details-edit).
 
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
 ---
 
 <div style="page-break-after: always;"></div>
@@ -273,6 +275,8 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 > Missing inputs for the various [parameters](#7-glossary) or having too many inputs for the [parameters](#7-glossary) will cause Modganiser to throw you a warning.
 > 
 > e.g. `add /CS2113T /4 /1 /1` or `add /CS2113T /4 /CORE /1 /1 /1`
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -318,7 +322,7 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 > 📓 **Note** 
 > 
 > Modules which do not have a grade yet will have a blank 2nd square bracket [“ ”].  
-> The grades for all modules will be empty initially and will need to be updated via this command.
+> The grades for modules will be empty initially and needs to be updated via this command.
 
 
 >❗ **Warning** 
@@ -348,6 +352,8 @@ Expected Output:
 ![EditExistingModule_ByType.png](UG_Screenshots/EditExistingModule_ByType.png)
 
 Example: `edit /CS2113T /MC /8` edits the current Modular Credits that CS2113T is worth to 8.
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -443,6 +449,8 @@ Example: `find /TYPE /CS2113T` finds all modules that contains CS2113T.
 
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
 
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
 ---
 
 <div style="page-break-after: always;"></div>
@@ -534,6 +542,8 @@ Expected Output:
 ![ViewManPage](UG_Screenshots/ViewEntireManual.png)
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
 
 #### 5.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
 
