@@ -418,8 +418,6 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 #### 5.4.1 Viewing Module Plan: `list`
 
-### List command: `list`
-
 **Function**
 
 Displays your 4 year module plan, separated by year. You can also choose to only show a specific year of your module plan
@@ -492,8 +490,11 @@ Example: `find /TYPE /CORE` finds all modules whose [module type](#8-glossary) i
 <div style="page-break-after: always;"></div>
 
 ### 5.5 Tracking Graduation Progress
+
 #### 5.5.1 Tracking the Completion of Each Module Type: `track`
+
 **Function**
+
 Tracks how many modular credits of a [module type](#8-glossary) you have completed and Modganiser will list out all the modules that you have completed under that [module type](#8-glossary) and how many more modular credits you need before you meet the requirements for it.
 
 |  [Parameter](#8-glossary)  |                   Description                    |        Accepted Inputs        |
