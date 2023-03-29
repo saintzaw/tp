@@ -364,13 +364,11 @@ Expected Output:
 
 ![EditExistingModule_ByType.png](UG_Screenshots/EditExistingModule_ByType.png)
 
-Example: `edit /CS2113T /MC /8` edits the current Modular Credits that CS2113T is worth to 8.
-
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
-<div style="page-break-after: always;"></div>
+Example: `edit /CS2113T /MC /8` edits the current Modular Credits that CS2113T is worth to 8.
 
 Expected Output:
 
@@ -440,6 +438,12 @@ Displays your 4 year module plan, separated by year. You can also choose to only
 Example: `list /all` lists the entire module plan.
 
 ![ListingAllModules.png](UG_Screenshots/ListingAllModules.png)
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+<div style="page-break-after: always;"></div>
 
 Example: `list /1` lists Year 1's module plan.
 
