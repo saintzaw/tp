@@ -47,7 +47,7 @@
 We would like to thank you for choosing Modganiser to help you with your module planning.
 Modganiser will be sure to make this arduous task a breeze while ensuring you meet all your graduation requirements,
 so that you can focus on the other aspects of university that really matter.
-Should you have any feedback or enquiries, please do not hesitate to reach out to us!
+Should you have any feedback or enquiries, please do not hesitate to [reach out to us](https://github.com/AY2223S2-CS2113T-T09-4/tp)!
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
@@ -62,7 +62,7 @@ Should you have any feedback or enquiries, please do not hesitate to reach out t
 ### 2.1 What is Modganiser?
 Modganiser is effortless module planning, at your fingertips via the [Command Line Interface (CLI)](#8-glossary),
 focused on helping Information Security Undergraduates graduate in 4 years. It does so by giving you a platform to
-plan all 4 years of your modules to ensure that you meet the graduation requirements (Core/UE/GE/Internships).
+plan all 4 years of your modules to ensure that you meet your [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/).
 If you can type fast, Modganiser can get your schedule up faster than traditional GUI apps.
 
 ### 2.2 Who Is This User Guide Meant For?
@@ -185,10 +185,10 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >   - Example: `BYE` will be accepted as the `bye` command
 > 3. Parameters
 >   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
->   - All inputs for the command [parameters](#8-glossary) should come with a slash “/” before it to indicate 
->    that it is a user input and not a Command Word.
+>   - All inputs for the [parameters](#8-glossary) should come with a slash “/” before it to indicate 
+>    that it is a user input and not the Command Word.
 >   - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before 
-    they are executed. Therefore, [parameters](#8-glossary) like `/cs2113t` will be treated as `/CS2113T` by 
+    they are executed. Therefore, inputs to [parameters](#8-glossary) like `/cs2113t` will be treated as `/CS2113T` by 
     default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
 >   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command. 
     Missing or Additional Inputs will trigger an error by Modganiser
@@ -243,7 +243,7 @@ Adds a module to the module plan with the following [parameters](#8-glossary).
 
 > 📓 **Note**
 > 
-> CORE refers to modules that do not fall under the other 3 categories.
+> [CORE](#8-glossary) refers to modules that do not fall under the other 3 categories.
 
 > 📓 **Note**
 >
@@ -263,13 +263,13 @@ Adds a module to the module plan with the following [parameters](#8-glossary).
 
 `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEMESTER`
 
-Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Credits(MCs) and is a Core module into Year 1 Semester 1.
+Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Credits(MCs) and is a [Core module](#8-glossary) into Year 1 Semester 1.
 
 ![AddCommand](UG_Screenshots/AddingAModule.png)
 
 > 📓 **Note**
 > 
-> The C represents Core Module. GE, UE and Internship Modules are represented with “GE”, “UE” and “I” respectively.
+> The C represents [Core Module](#8-glossary). [GE](#8-glossary), [UE](#8-glossary) and [Internship](#8-glossary) Modules are represented with “GE”, “UE” and “I” respectively.
 
 >❗ **Warning**
 > 
@@ -287,7 +287,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 > 
 > Multiple modules can be added in a single line. 
 > 
-> For example: `add /CS2113T IS4231 CS3235 /4 /CORE /2 /2` will add CS2113T, IS4231 and CS3235 into the module plan. All 3 modules will be reflected as Core modules worth 4 MCs, and will be taken in Year 2 Semester 2.
+> For example: `add /CS2113T IS4231 CS3235 /4 /CORE /2 /2` will add CS2113T, IS4231 and CS3235 into the module plan. All 3 modules will be reflected as [Core](#8-glossary) modules worth 4 MCs, and will be taken in Year 2 Semester 2.
 > ![AddCommand](UG_Screenshots/AddingMultipleModules.png)
 
 >❗ **Warning**
@@ -338,24 +338,37 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 ### Edit command: `edit`
 
-The `edit` command edits the information in a specified field of an existing module.
-The field to edit can be `CODE`, `MC`, `TYPE`, `YEAR`, `SEMESTER` or `GRADE`.
+**Function**
 
-Command: `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`
+Edits the various details of an existing module
 
-Example: `edit /CS2113T /TYPE /UE` edits the Module Type of CS2113T to UE
+|   [Parameter](#8-glossary) |                                              Description                                               |                                                                         Accepted Inputs                                                                         |
+|:--------------------------:|:------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|        MODULE_CODE         |                                           The module's code                                            |                                                                   All inputs will be accepted                                                                   |
+|       FIELD_TO_EDIT        |                    The [parameter](#8-glossary) of the module that you wish to edit                    |                                                              CODE, MC, TYPE, YEAR, SEMESTER, GRADE                                                              |
+|          NEW_INFO          | The new information to replace the incorrect or outdated information for that [parameter](#8-glossary) | Accepted inputs will be based on the field to edit. Please refer to the accepted inputs for the respective fields in the [add command](#531-adding-module-add). |
+
+> 📓 Note 
+> 
+> * CODE represents MODULE_CODE 
+> * MC represents MODULAR_CREDITS
+> * TYPE represents MODULE_TYPE
+
+**Command Format** 
+
+`edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`
+
+Example: `edit /CS2113T /TYPE /UE` edits the [Module Type](#8-glossary) of CS2113T to [UE](#8-glossary)
 
 Expected Output: 
 
 ![EditExistingModule_ByType.png](UG_Screenshots/EditExistingModule_ByType.png)
 
-Example: `edit /CS2113T /MC /8` edits the current Modular Credits that CS2113T is worth to 8.
-
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
-<div style="page-break-after: always;"></div>
+Example: `edit /CS2113T /MC /8` edits the current Modular Credits that CS2113T is worth to 8.
 
 Expected Output:
 
@@ -409,15 +422,28 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 ### List command: `list`
 
-The `list` command allows you to view your 4-year module plan, separated by year.
-The `list` command also allows you to choose to only view a specific year in your module plan.
-The accepted inputs for the `YEAR` field are `all`, `1`, `2`, `3` and `4`.
+**Function**
 
-Command: `list /YEAR`
+Displays your 4 year module plan, separated by year. You can also choose to only show a specific year of your module plan
+
+
+| [Parameter](#8-glossary) |                      Description                       | Accepted Inputs |
+|:------------------------:|:------------------------------------------------------:|:---------------:|
+|           YEAR           | The specific year of your module plan you wish to view | ALL, 1, 2, 3, 4 |
+
+**Command Format** 
+
+`list /YEAR`
 
 Example: `list /all` lists the entire module plan.
 
 ![ListingAllModules.png](UG_Screenshots/ListingAllModules.png)
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+<div style="page-break-after: always;"></div>
 
 Example: `list /1` lists Year 1's module plan.
 
@@ -432,11 +458,11 @@ Example: `list /1` lists Year 1's module plan.
 #### 5.4.2 Finding Modules in the Module Plan: `find`
 **Function**
 
-Searches for the module whose module code contains the keyword inputted by the user, or the modules whose module type is the module type inputted by the user.
+Searches for the module whose module code contains the keyword inputted by the user, or the modules whose [module type](#8-glossary) corresponds to the user's input.
 
 |   [Parameter](#8-glossary)    |                          Description                           |                                                                Accepted Inputs                                                                |
 |:--------------:|:--------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
-| TYPE_OF_SEARCH |    Specifies to search using the module code or module type    |                                                                  CODE, TYPE                                                                   |
+| TYPE_OF_SEARCH |    Specifies to search using the module code or [module type](#8-glossary)    |                                                                  CODE, TYPE                                                                   |
 |    KEYWORD     |                   The keyword to search for                    | If TYPE_OF_SEARCH is CODE, all inputs will be accepted. However, if TYPE_OF_SEARCH is TYPE, only [CORE, GE, UE and INTERNSHIP](#8-glossary) will be accepted |
 
 **Command Format**
@@ -457,7 +483,7 @@ Example: `find /CODE /CS` finds all modules whose module code contains the keywo
 
 ![Findallthatcontains](UG_Screenshots/FindModulesByName_Substring.png)
 
-Example: `find /TYPE /CORE` finds all modules whose module type is Core.
+Example: `find /TYPE /CORE` finds all modules whose [module type](#8-glossary) is [Core](#8-glossary).
 
 ![FindModuleType](UG_Screenshots/FindModulesByType.png)
 
@@ -470,15 +496,15 @@ Example: `find /TYPE /CORE` finds all modules whose module type is Core.
 ### 5.5 Tracking Graduation Progress
 #### 5.5.1 Tracking the Completion of Each Module Type: `track`
 **Function**
-Tracks how many modular credits of a module type you have completed and Modganiser will list out all the modules that you have completed under that module type and how many more modular credits you need before you meet the requirements for that module type.
+Tracks how many modular credits of a [module type](#8-glossary) you have completed and Modganiser will list out all the modules that you have completed under that [module type](#8-glossary) and how many more modular credits you need before you meet the requirements for it.
 
 |  [Parameter](#8-glossary)  |                   Description                    |        Accepted Inputs        |
 |:-----------:|:------------------------------------------------:|:-----------------------------:|
-| MODULE_TYPE | The module type whose status you want to look up | ALL, [CORE, GE, UE, INTERNSHIP](#8-glossary) |
+| MODULE_TYPE | The [module type](#8-glossary) whose status you want to look up | ALL, [CORE, GE, UE, INTERNSHIP](#8-glossary) |
 
 **Command Format**
 `track /MODULE_TYPE`
-Example: `track/CORE` tracks the completion status of your core modules.
+Example: `track/CORE` tracks the completion status of your [core modules](#8-glossary).
 
 ![trackCore](UG_Screenshots/TrackCommand.png)
 
@@ -497,7 +523,7 @@ will not be considered as completed and hence counted.
 **Function**
 
 Calculate your current CAP based on the grades you obtained. Grades obtained correspond to a number that is used to calculate your CAP.  
-To find out more, do visit the official [NUS website](https://www.nus.edu.sg/registrar/academic-information-policies/modular-system) :)
+To find out more about how your CAP is calculated, do visit the official [NUS website](https://www.nus.edu.sg/registrar/academic-information-policies/modular-system) :)
   
 |  [Parameter](#8-glossary)  |                   Description                    |        Accepted Inputs        |
 |:-----------:|:------------------------------------------------:|:-----------------------------:|
@@ -625,14 +651,14 @@ store this save file. You can then retrieve this save file from your new device.
 
 ---
 
-| Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                      |
-|-------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I am unable to install java?                                                                                                  | Please click [here](https://www.oracle.com/sg/java/technologies/downloads/) to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                              |
-| Why is Modganiser not running?                                                                                                | Please follow our [Command Line Interface Tutorial](#3-command-line-interface-tutorial) and our [Set Up Guide](#4-set-up-guide) closely. If Modganiser still fails to run, please contact us at this email.                                                                                                                                                                                                                                                           |
-| Where is my save file?                                                                                                        | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                 |
-| What if I change my device? How do I transfer the save data to my new device?                                                     | You can locate your save file, which is just a normal text file. You can then use any form of messaging applications like [Telegram](https://telegram.org/), email applications like [Gmail](https://mail.google.com/) or online cloud storage like [Google Drive](https://drive.google.com/) to send this save file to yourself or store this save file. You can then retrieve this save file with your new device.                                                                           |
-| Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto [NUSMods](https://nusmods.com) to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the [Information Security Student requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before deciding on the module type. |
-| Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                         |
+| Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| I am unable to install java?                                                                                                  | Please click [here](https://www.oracle.com/sg/java/technologies/downloads/) to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                                                                               |
+| Why is Modganiser not running?                                                                                                | Please follow our [Command Line Interface Tutorial](#3-command-line-interface-tutorial) and our [Set-Up Guide](#4-set-up-guide) closely. If Modganiser still fails to run, please [contact us](https://github.com/AY2223S2-CS2113T-T09-4/tp).                                                                                                                                                                                                                                                                                                                       |
+| Where is my save file?                                                                                                        | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                                                                                                                            |
+| What if I change my device? How do I transfer the save data to my new device?                                                     | You can locate your save file, which is just a normal text file. You can then use any form of messaging applications like [Telegram](https://telegram.org/), email applications like [Gmail](https://mail.google.com/) or online cloud storage like [Google Drive](https://drive.google.com/) to send this save file to yourself or store this save file. You can then retrieve this save file with your new device.                                                                                                    |
+| Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto [NUSMods](https://nusmods.com) to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the [Information Security Student requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before deciding on the [module type](#8-glossary). |
+| Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                                                                                                                                    |
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
@@ -652,7 +678,7 @@ store this save file. You can then retrieve this save file from your new device.
 |     Delete existing module      |                    `delete /MODULE_CODE`                    |                              `delete /CS2113T`                               |
 |        List module plan         |                        `list /YEAR`                         |                                  `list /2`                                   |
 |   Find module in module plan    |               `find /TYPE_OF_SEARCH /KEYWORD`               |                      `find /CODE /CS or find /TYPE /GE`                      |
-|  Track progress of module type  |                    `track /MODULE_TYPE`                     |                             `track /INTERNSHIP`                              |
+|  Track progress of [module type](#8-glossary)  |                    `track /MODULE_TYPE`                     |                             `track /INTERNSHIP`                              |
 |      Calculate current CAP      |                       `calculatecap`                        |                                `calculatecap`                                |
 |        View Manual Page         |                   `man` or `man /FEATURE`                   |                             `man` or `man /add`                              |
 |         Exit Modganiser         |                            `bye`                            |                                    `bye`                                     |
@@ -667,15 +693,16 @@ store this save file. You can then retrieve this save file from your new device.
 
 ---
 
-| Technical Term         | Explanation                                                                                                                   |
-|------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| Command Line Interface | Text based user interface to run programs                                                                                     |
-| Parameter              | Additional input fields that require user inputs for the [command word](#51-notes-on-the-command-format)                                                         |
-| Core Module Type       | Any module that does not fall under UE, GE or Internship module type                                                          |
+| Technical Term         | Explanation                                                                                                                                                                                                                                                                   |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Command Line Interface | Text based user interface to run programs                                                                                                                                                                                                                                     |
+| Parameter              | Additional input fields that require user inputs for the [command word](#51-notes-on-the-command-format)                                                                                                                                                                      |
+| Module Type            | Refers to one of Core, GE, UE, INTERNSHIP or all of them.                                                                                                                                                                                                                     | 
+| Core Module Type       | Any module that does not fall under UE, GE or Internship module type                                                                                                                                                                                                          |
 | GE Module Type         | Stands for General Elective Module Type. Please refer to the [NUS Website](https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/general-education/for-students-admitted-from-ay2021-22) for more information on the General Elective Modules |
-| UE Module Type         | Stands for Unrestricted Elective Module Type. Please refer to the [NUS Website](https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/curriculum-structure) for more information on the UE Module           |
-| Internship Module Type | Please refer to the [NUS Website](https://www.comp.nus.edu.sg/industry/intern/student/) for more information on Internships                                                           |
-| Local storage          | Data that is stored on your device and can be accessed without an internet connection                                         |
+| UE Module Type         | Stands for Unrestricted Elective Module Type. Please refer to the [NUS Website](https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/curriculum-structure) for more information on the UE Module                                             |
+| Internship Module Type | Please refer to the [NUS Website](https://www.comp.nus.edu.sg/industry/intern/student/) for more information on Internships                                                                                                                                                   |
+| Local storage          | Data that is stored on your device and can be accessed without an internet connection                                                                                                                                                                                         |
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
