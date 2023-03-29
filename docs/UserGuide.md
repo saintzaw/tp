@@ -216,7 +216,7 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 * Track Module Type Completion: `track /MODULE_TYPE`
 * Grade Calculator: `calculatecap`
 * Viewing manual: `man`
-* Viewing a specific manual for a feature: m`an /FEATURE`
+* Viewing a specific manual for a feature: `man /FEATURE`
 * Exiting the program : `bye`
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
