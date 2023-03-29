@@ -34,7 +34,7 @@
 6. [Command Summary](#6-command-summary)
 7. [Glossary](#7-glossary)
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -49,7 +49,7 @@ Modganiser will be sure to make this arduous task a breeze while ensuring you me
 so that you can focus on the other aspects of university that really matter.
 Should you have any feedback or enquiries, please do not hesitate to reach out to us!
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -83,7 +83,8 @@ if you are used to Java, CLI or Modganiser, which are described below:
 * Refer to our FAQ for answers to frequently asked questions
 * Refer to our Command Summary to get an overview of the different commands available in Modganiser and their formats
 * Refer to our Glossary to learn more about the key terms in this
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -108,7 +109,7 @@ To open up the Command Line Interface (CLI)
 
 <p style = "text-align:center"><small>macOS version of CLI with a command typed out</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -138,7 +139,7 @@ To set up Modganiser, please follow the steps below:
     
 7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -168,7 +169,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 > ❗ **Warning**: Read this section carefully when you see it
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -198,12 +199,10 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
     additional inputs and that your inputs are in the list of accepted input
 > 
 > ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
-> <p style = "text-align:center"><small>Figure 5: Missing Inputs to Parameters</small></p>
 > 
 > ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
-> <p style = "text-align:center"><small>Figure 6: Additional Inputs to Parameters</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -221,7 +220,7 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 * Viewing manual: `man`
 * Viewing a specific manual for a feature: m`an /FEATURE`
 * Exiting the program : `bye`
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -262,7 +261,6 @@ Adds a module to the module plan with the following [parameters](#7-glossary).
 Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Credits(MCs) and is a Core module into Year 1 Semester 1.
 
 ![AddCommand](UG_Screenshots/AddingAModule.png)
-<p style = "text-align:center"><small>Figure 7: Adding a module</small></p>
 
 > 📓 **Note**
 > 
@@ -280,13 +278,12 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 > 
 > For example: `add /CS2113T IS4231 CS3235 /4 /CORE /2 /2` will add CS2113T, IS4231 and CS3235 into the module plan. All 3 modules will be reflected as Core modules worth 4 MCs, and will be taken in Year 2 Semester 2.
 > ![AddCommand](UG_Screenshots/AddingMultipleModules.png)
-> <p style = "text-align:center"><small>Figure 8: Adding multiple modules </small></p>
 
 >❗ **Warning**
 > 
 > Adding multiple modules should only be used if all the modules have the same inputs for the other [parameters](#7-glossary). Example, SIP3200 and CS2113T should not be added together in a single line as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -310,7 +307,6 @@ This grade will then be used to calculate your CAP with the `calculatecap` comma
 Example: `grade /CS2113T /A` adds a grade “A” to CS2113T, meaning you have obtained grade A for that module.
 
 ![GradeCommand](UG_Screenshots/InputGrade.png)
-<p style = "text-align:center"><small>Figure 9: Input grade for module</small></p>
 
 
 > 📓 **Note** 
@@ -322,10 +318,9 @@ Example: `grade /CS2113T /A` adds a grade “A” to CS2113T, meaning you have o
 >❗ **Warning** 
 > 
 > Trying to add grades to a module that is not present will cause Modganiser to throw an error.
-![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)  
-<p style = "text-align:center"><small>Figure 10: Module not in list when attempting grade command</small></p>
+![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -345,16 +340,20 @@ Example: `edit /CS2113T /TYPE /UE` edits the Module Type of CS2113T to UE
 Expected Output: 
 
 ![EditExistingModule_ByType.png](UG_Screenshots/EditExistingModule_ByType.png)
-<p style = "text-align:center"><small>Figure 11: Editing module type for an existing module</small></p>
 
 Example: `edit /CS2113T /MC /8` edits the current Modular Credits that CS2113T is worth to 8.
 
 Expected Output:
 
 ![EditExistingModule_ByMC.png](UG_Screenshots/EditExistingModule_ByMC.png)
-<p style = "text-align:center"><small>Figure 12: Editing MCs for an existing module</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+> ❗ **Warning**
+>
+> Trying to edit a module that is not present will cause Modganiser to throw an error.
+>
+>![EditError](UG_Screenshots/Edit_Module_Not_In_List.png)
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -378,16 +377,13 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 ![DeleteCommand](UG_Screenshots/DeleteExistingModule.png)
 
-<p style = "text-align:center"><small>Figure 14: Deleting a module</small></p>
-
 > ❗ **Warning** 
 > 
 > Trying to delete a module that is not present will cause Modganiser to throw an error.
+> 
+>![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png) 
 
-![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png)
-<small><i>Figure 15: Module not in list when attempting delete command</i></small>
-
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -408,14 +404,12 @@ Command: `list /YEAR`
 Example: `list /all` lists the entire module plan.
 
 ![ListingAllModules.png](UG_Screenshots/ListingAllModules.png)
-<p style = "text-align:center"><small>Figure 16: Listing all modules</small></p>
 
 Example: `list /1` lists Year 1's module plan.
 
 ![ListAllModulesByYear.png](UG_Screenshots/ListAllModulesByYear.png)
-<p style = "text-align:center"><small>Figure 17: Listing modules by year</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -439,20 +433,15 @@ Example: `find /TYPE /CORE` finds all modules that contains CS2113T.
 
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
 
-<p style = "text-align:center"><small>Figure 18: Finding a module with its full module code</small></p>
-
 Example: `find /CODE /CS` finds all modules whose module code contains the keyword “CS”.
 
 ![Findallthatcontains](UG_Screenshots/FindModulesByName_Substring.png)
 
-<p style = "text-align:center"><small>Figure 19: Finding a module by substring of name</small></p>
-
 Example: `find /TYPE /CORE` finds all modules whose module type is Core.
 
 ![FindModuleType](UG_Screenshots/FindModulesByType.png)
-<p style = "text-align:center"><small>Figure 20: Finding a module by type</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -472,14 +461,13 @@ Tracks how many modular credits of a module type you have completed and Modganis
 Example: `track/CORE` tracks the completion status of your core modules.
 
 ![trackCore](UG_Screenshots/TrackCommand.png)
-<p style = "text-align:center"><small>Figure 21: Tracking Module Type Completion Status</small></p>
 
 > 📓 **Note** 
 > 
 >Completed modules are modules which have a grade. Modules which do not have a grade 
 will not be considered as completed and hence counted.
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -502,9 +490,8 @@ To find out more, do visit the official [NUS website](https://www.nus.edu.sg/reg
 Example: `calculatecap` calculates your current CAP
 
 ![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png)
-<p style = "text-align:center"><small>Figure 22: Calculate CAP across graded modules</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -532,9 +519,7 @@ Expected Output:
 
 ![ViewManPage](UG_Screenshots/ViewEntireManual.png)
 
-<p style = "text-align:center"><small>Figure 23: Displaying part of entire manual</small></p>
-
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -557,9 +542,8 @@ Shows a detailed instruction page for the specific command requested
 Example: `man /add` displays the manual page for the add feature
 
 ![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
-<p style = "text-align:center"><small>Figure 24: Displaying manual of specific feature</small></p>
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -575,7 +559,6 @@ Exits Modganiser
 `bye`
 Example: `bye` exits the program
 ![ByeCommand](UG_Screenshots/ExitCommand.png)
-<p style = "text-align:center"><small>Figure 25: Modganiser Exits</small></p>
 
 > 📓 **Note** 
 > 
@@ -584,7 +567,7 @@ When Modganiser asks for your name during its first start up, typing bye will al
 program. If your name is “bye”, please do consider using an alias.
 Thank you and sorry for the inconvenience caused.
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -613,7 +596,7 @@ file. You can then use any form of messaging applications like Telegram, email a
 like Gmail or online cloud storage like Google Drive to send this save file to yourself or 
 store this save file. You can then retrieve this save file from your new device.
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -633,7 +616,7 @@ store this save file. You can then retrieve this save file from your new device.
 | Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto NUSMods to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the Information Security Student requirements before deciding on the module type. |
 | Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                         |
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -656,7 +639,7 @@ store this save file. You can then retrieve this save file from your new device.
 |        View Manual Page         |                   `man` or `man /FEATURE`                   |                             `man` or `man /add`                              |
 |         Exit Modganiser         |                            `bye`                            |                                    `bye`                                     |
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -676,7 +659,7 @@ store this save file. You can then retrieve this save file from your new device.
 | Internship Module Type | Please refer to the NUS Website for more information on Internships                                                           |
 | Local storage          | Data that is stored on your device and can be accessed without an internet connection                                         |
 
-**<p style = "text-align:right"><small>[Return to Top](#table-of-contents)</small></p>**
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
