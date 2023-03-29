@@ -21,7 +21,7 @@ Modganiser is **effortless module planning, at your fingertips via the Command L
    + 2.3. [ModuleList](#3-modulelist-component)
    + 2.4. [Print](#4-print-component)
 3. [Design and Implementation](#3-design-and-implementation)
-   + 3.1. [Manpage](#31-manpage)
+   + 3.1. [ManPage](#31-manpage)
    + 3.2. [Parser](#32-parser)
    + 3.3. [Add Modules](#33-add-modules)
    + 3.4. [Find Modules](#34-find-modules)
@@ -114,9 +114,9 @@ Firstly, the {explain workflow}
 
 ---
 
-### 3.1. Manpage 
+### 3.1. ManPage 
 
-The Manpage is a class that is used to display parts of the manpage that is requested by the user.
+The ManPage is a class that is used to display parts of the manual page that is requested by the user.
 It has multiple methods for separate features.
 
 **Implementation**
@@ -127,23 +127,23 @@ The sequence by which the ManPage class handles the `man` command is as follows:
 
 2) The method then uses the methods in the ManPage class to print out the requested feature.
 
-`Manpage#printManPage()` - Prints the Command Summary.
+`ManPage#printManPage()` - Prints the Command Summary.
 
-`Manpage#printManPageAdd()` - Prints description of how to use the add feature.
+`ManPage#printManPageAdd()` - Prints description of how to use the add feature.
 
-`Manpage#printManPageList()` - Prints description of how to use the list feature.
+`ManPage#printManPageList()` - Prints description of how to use the list feature.
 
-`Manpage#printManPageEdit()` - Prints description of how to use the edit feature.
+`ManPage#printManPageEdit()` - Prints description of how to use the edit feature.
 
-`Manpage#printManPageFind()` - Prints description of how to use the find feature.
+`ManPage#printManPageFind()` - Prints description of how to use the find feature.
 
-`Manpage#printManPageDelete()` - Prints description of how to use the delete feature.
+`ManPage#printManPageDelete()` - Prints description of how to use the delete feature.
 
-`Manpage#printManPageCalculator()` - Prints description of how to use the grade calculator.
+`ManPage#printManPageCalculator()` - Prints description of how to use the grade calculator.
 
-`Manpage#printManPageUpdateGrade()` - Prints description of how to input grades.
+`ManPage#printManPageUpdateGrade()` - Prints description of how to input grades.
 
-`Manpage#printManPageExit()` - Prints description of how to use the exit feature.
+`ManPage#printManPageExit()` - Prints description of how to use the exit feature.
 
 ![ManPage](diagrams/ManPage.png)
 

@@ -28,28 +28,28 @@ public class Parser {
 
         switch (userCommands[1]) {
         case "ADD":
-            Manpage.printManPageAdd();
+            ManPage.printManPageAdd();
             break;
         case "LIST":
-            Manpage.printManPageList();
+            ManPage.printManPageList();
             break;
         case "EDIT":
-            Manpage.printManPageEdit();
+            ManPage.printManPageEdit();
             break;
         case "FIND":
-            Manpage.printManPageFind();
+            ManPage.printManPageFind();
             break;
         case "DELETE":
-            Manpage.printManPageDelete();
+            ManPage.printManPageDelete();
             break;
         case "CALCULATOR":
-            Manpage.printManPageCalculator();
+            ManPage.printManPageCalculator();
             break;
         case "GRADE":
-            Manpage.printManPageUpdateGrade();
+            ManPage.printManPageUpdateGrade();
             break;
         case "BYE":
-            Manpage.printManPageExit();
+            ManPage.printManPageExit();
             break;
         default:
             break;
@@ -81,7 +81,7 @@ public class Parser {
                     LOGGER.log(Level.WARNING, "User Input is invalid");
                 }
                 assert userCommands.length == 1;
-                Manpage.printManPage();
+                ManPage.printManPage();
             }
 
             LOGGER.log(Level.INFO, "End of manpage process");

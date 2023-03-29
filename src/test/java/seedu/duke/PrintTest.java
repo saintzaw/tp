@@ -264,7 +264,7 @@ public class PrintTest {
     public void printManPageTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPage();
+        ManPage.printManPage();
         String expectedOutput = System.lineSeparator() + System.lineSeparator() +
 
                 "--------------------USER GUIDE--------------------" +
@@ -340,7 +340,7 @@ public class PrintTest {
     public void printManPageAddTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPageAdd();
+        ManPage.printManPageAdd();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line+
 
@@ -376,7 +376,7 @@ public class PrintTest {
     public void printManPageListTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPageList();
+        ManPage.printManPageList();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 +line+
                 "List all modules: list all " + System.lineSeparator() + " " +
@@ -398,7 +398,7 @@ public class PrintTest {
     public void printManPageEditTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPageEdit();
+        ManPage.printManPageEdit();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line+
                 "Edit modules: edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO" +System.lineSeparator() +" "+
@@ -422,7 +422,7 @@ public class PrintTest {
     public void printManPageFindTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPageFind();
+        ManPage.printManPageFind();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line+
 
@@ -442,7 +442,7 @@ public class PrintTest {
     public void printManPageDeleteTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPageDelete();
+        ManPage.printManPageDelete();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line+
 
@@ -458,7 +458,7 @@ public class PrintTest {
     public void printManPageCalculatorTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPageCalculator();
+        ManPage.printManPageCalculator();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line +
                 "Grade calculator: calculatecap" + System.lineSeparator() + " " +
@@ -472,7 +472,7 @@ public class PrintTest {
     public void printManPageUpdateGradeTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPageUpdateGrade();
+        ManPage.printManPageUpdateGrade();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line +
                 "Input/Update Grades: grade /MODULE_CODE /GRADE"+  System.lineSeparator() + " " +
@@ -504,7 +504,7 @@ public class PrintTest {
     public void printManPageExitTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Manpage.printManPageExit();
+        ManPage.printManPageExit();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 +line+
 
