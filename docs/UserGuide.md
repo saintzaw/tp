@@ -1,4 +1,32 @@
-# Modganiser User Guide 
+# Modganiser User Guide
+
+## 1. Acknowledgements
+
+---
+
+We would like to thank you for choosing Modganiser to help you with your module planning.
+Modganiser will be sure to make this arduous task a breeze while ensuring you meet all your graduation requirements,
+so that you can focus on the other aspects of university that really matter.
+Should you have any feedback or enquiries, please do not hesitate to [reach out to us](https://github.com/AY2223S2-CS2113T-T09-4/tp)!
+
+## 2. Introduction
+
+---
+
+Are you a current information security undergraduate at NUS? Or are you a prospective student,
+about to begin your journey into information security? Well, Modganiser is exactly what you are looking for!
+
+So why Modganiser? We have seen and heard of case of Information Security undergraduates not being able to graduate on time as they have missed out certain requirements. Modganiser hence provides you a platform to effortless plan for all the modules you plan to take and is targeted at Information Security students who aim to graduate in 4 years, ensuring that you are able to clear all the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) needed. 
+
+Modganiser works via the [Command Line Interface (CLI)](#8-glossary), and while it is a big difference compared to traditional GUI applications, If you can type fast, Modganiser is actually much more efficient.
+
+This user guide will now help you navigate through Modganiser and its features. If you are a new user, do go to the
+[set-up section](#4-set-up-guide) to learn how to install and run Modganiser. To learn more about Modganiser’s features, do head over to
+the [features section](#52-summary-of-features)!
+
+---
+
+<div style="page-break-after: always;"></div>
 
 ## Table of Contents
 
@@ -40,114 +68,24 @@
 
 <div style="page-break-after: always;"></div>
 
-## 1. Acknowledgements
+## 3. How To Utilise The User Guide
 
----
-
-We would like to thank you for choosing Modganiser to help you with your module planning.
-Modganiser will be sure to make this arduous task a breeze while ensuring you meet all your graduation requirements,
-so that you can focus on the other aspects of university that really matter.
-Should you have any feedback or enquiries, please do not hesitate to [reach out to us](https://github.com/AY2223S2-CS2113T-T09-4/tp)!
-
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
-
----
-
-<div style="page-break-after: always;"></div>
-
-## 2. Introduction
-
----
-
-### 2.1 What is Modganiser?
-Modganiser is effortless module planning at your fingertips via the [Command Line Interface (CLI)](#8-glossary),
-focused on helping Information Security Undergraduates graduate in 4 years. It does so by giving you a platform to
-plan all 4 years of your modules to ensure that you meet your [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/).
-If you can type fast, Modganiser can get your schedule up faster than traditional GUI apps.
-
-### 2.2 Who Is This User Guide Meant For?
-Are you a current information security undergraduate at NUS? Or are you a prospective student,
-about to begin your journey into information security? Well, Modganiser is exactly what you are looking for!
-This user guide will help you as you navigate through Modganiser and its features. If you are a new user, do go to the
-[set-up section](#4-set-up-guide) to learn how to install and run Modganiser. To learn more about Modganiser’s features, do head over to
-the [features section](#5-features)!
-
-### 2.3 How To Use This User Guide
+### 3.1 How To Use This User Guide
 Modganiser uses a [Command Line Interface (CLI)](#8-glossary) which may be new to some users. We strongly recommend that you read this
 User Guide from start to finish if you are new to Modganiser, although you may choose to skip to more relevant sections
 if you are used to Java, CLI or Modganiser, which are described below:
-* Refer to our [Table of Contents](#table-of-contents) to navigate between the different sections
-* Refer to our [Command Line Interface (CLI) tutorial](#3-command-line-interface-tutorial) to learn how to use CLI
-* Refer to our [Set-Up Guide](#4-set-up-guide) to learn how to install Modganiser
-* Refer to our [Features](#5-features) to learn more about Modganiser’s functions
-* Refer to our [FAQ](#6-faq) for answers to frequently asked questions
-* Refer to our [Command Summary](#7-command-summary) to get an overview of the different commands available in Modganiser and their formats
-* Refer to our [Glossary](#8-glossary) to learn more about the key terms in this User Guide
+* Our [Table of Contents](#table-of-contents) helps you to  navigate between the different sections quickly
+* The [Command Line Interface (CLI) tutorial](#3-command-line-interface-tutorial) teaches you how to use CLI effectively
+* Our [Set-Up Guide](#4-set-up-guide) provides step by step instructions on how to install Modganiser
+* Look at the [Features](#52-summary-of-features) that Modganiser offers
+* Our [FAQ](#6-faq) has answers to the most frequently asked questions
+* A [Command Summary](#7-command-summary) provides an overview of the different commands available in Modganiser and their formats
+* The [Glossary](#8-glossary) provides an explanation to the more technical terms in our guide
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
----
-
-<div style="page-break-after: always;"></div>
-
-## 3. Command Line Interface Tutorial
-
----
-
-To open up the [Command Line Interface (CLI)](#8-glossary)
-* For Windows
-    * Click on the Windows button and search for “Command Prompt”.
-* For macOS
-    * Press on the command and spacebar button together and search for “Terminal”
-* The window that comes up is the CLI on your computer. We will be using this interface to run Modganiser.
-* To run commands in the CLI, just type the command out, press enter and the command will run
-
-![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
-<p style = "text-align:center"><small>Windows version of CLI with a command typed out</small></p>
-
-![macOSCLI](UG_Screenshots/Terminal.png)
-
-<p style = "text-align:center"><small>macOS version of CLI with a command typed out</small></p>
-
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
-
----
-
-<div style="page-break-after: always;"></div>
-
-## 4. Set-Up Guide
-
----
-
-To set up Modganiser, please follow the steps below:
-1. Download Java from the Java Developer Webpage
-    * For Windows, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) and choose the x64 installer.
-    * For macOS, Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer.
-2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the tp.jar file, which contains Modganiser.
-3. Save the file into a new folder on your Desktop and title the folder “Modganiser”
-4. Open the CLI interface on your device. If you are unsure of how to do so, please refer to our [CLI tutorial](#3-command-line-interface-tutorial).
-    * Type “cd Desktop” and press enter
-    * Type “cd Modganiser” and press enter
-    * Type “java -jar tp.jar” and press enter
-5. If successful, you should see the following displayed on your screen:
-
-    ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
-    
-6. Type your name in and press enter. If successful, you should see the following:
-    
-    ![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
-    
-7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
-
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
-
----
-
-## 5. Features
-
----
-
-Before we begin with the features, here are some special notations that we will be using. Please familiarize yourself with these notations as it will enhance your experience with the user guide.
+### 3.2 Special Notations
+Before we begin, here are some special notations that we will be using. Please familiarize yourself with these notations as it will enhance your experience with the user guide.
 
 **Tips**
 
@@ -173,31 +111,31 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 <div style="page-break-after: always;"></div>
 
-### 5.1 Notes on the Command Format
+### 3.1 Notes on the Commands
 
-> 📓 **Note**  
+> 📓 **Note**
 > 1. Markdown Texts
->   - Markdown texts are texts that look like `this`, which indicates that these are user inputs
+     >   - Markdown texts are texts that look like `this`, which indicates that these are user inputs
 > 2. Command Words
->   - Command words are used to invoke the various features of Modganiser. 
->   You may refer to the [summary of features](#52-summary-of-features) here. 
+     >   - Command words are used to invoke the various features of Modganiser.
+           >   You may refer to the [summary of features](#52-summary-of-features) here.
 >   - Command words are not case-sensitive
 >   - Example: `BYE` will be accepted as the `bye` command
 > 3. Parameters
->   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
->   - All inputs for the [parameters](#8-glossary) should come with a slash “/” before it to indicate 
->    that it is a user input and not the Command Word.
->   - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before 
-    they are executed. Therefore, inputs to [parameters](#8-glossary) like `/cs2113t` will be treated as `/CS2113T` by 
-    default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
->   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command. 
-    Missing or Additional Inputs will trigger an error by Modganiser
+     >   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
+>   - All inputs for the [parameters](#8-glossary) should come with a slash “/” before it to indicate
+      >    that it is a user input and not the Command Word.
+>   - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before
+      they are executed. Therefore, inputs to [parameters](#8-glossary) like `/cs2113t` will be treated as `/CS2113T` by
+      default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
+>   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command.
+      Missing or Additional Inputs will trigger an error by Modganiser
 > 4. Errors and Warnings
->    - If you are receiving an error or warning, do check that you do not have missing or 
-    additional inputs and that your inputs are in the list of accepted input
-> 
+     >    - If you are receiving an error or warning, do check that you do not have missing or
+            additional inputs and that your inputs are in the list of accepted input
+>
 > ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
-> 
+>
 > ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
@@ -206,7 +144,66 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 <div style="page-break-after: always;"></div>
 
-### 5.2 Summary Of Features
+
+## 3. Set-Up Guide
+
+---
+
+To set up Modganiser, please follow the steps below:
+1. Download Java from the Java Developer Webpage
+    * For Windows, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) and choose the x64 installer.
+    * For macOS, Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer.
+2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the tp.jar file, which contains Modganiser.
+3. Save the file into a new folder on your Desktop and title the folder “Modganiser”
+4. Open the CLI interface on your device. If you are unsure of how to do so, please refer to our [CLI tutorial](#3-command-line-interface-tutorial).
+    * Type “cd Desktop” and press enter
+    * Type “cd Modganiser” and press enter
+    * Type “java -jar tp.jar” and press enter
+5. If successful, you should see the following displayed on your screen:
+
+   ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
+
+6. Type your name in and press enter. If successful, you should see the following:
+
+   ![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
+
+7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+## 4. Command Line Interface Tutorial
+
+---
+
+To open up the [Command Line Interface (CLI)](#8-glossary)
+* For Windows
+    * Click on the Windows button and search for “Command Prompt”.
+* For macOS
+    * Press on the command and spacebar button together and search for “Terminal”
+* The window that appears is the CLI on your computer. We will be using this interface to run Modganiser.
+* To run commands in the CLI, just type the command out, press enter and the command will run
+
+![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
+<p style = "text-align:center"><small>Windows version of CLI with a command typed out</small></p>
+
+![macOSCLI](UG_Screenshots/Terminal.png)
+
+<p style = "text-align:center"><small>macOS version of CLI with a command typed out</small></p>
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+<div style="page-break-after: always;"></div>
+
+
+## 5. Features
+
+---
+
+### 5.1 Summary Of Features
 Below is a summary of features that Modganiser has. Type the corresponding command in the [Command Line Interface](#8-glossary) and press Enter to execute it.
 * [Adding a module:](#531-adding-modules-add)  `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM`
 * [Input grade for module:](#532-adding-grade-obtained-for-module-grade) `grade /MODULE_CODE /GRADE`
@@ -231,7 +228,7 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 
 **Function**
 
-Adds a module to the module plan with the following [parameters](#8-glossary).
+When you have found a module that you would wish to take, you can use this command to adds the module to the module plan with the following [parameters](#8-glossary).
 
 | [Parameter](#8-glossary) | Description                                                           | Accepted Inputs                         |
 |--------------------------|-----------------------------------------------------------------------|-----------------------------------------|
@@ -263,7 +260,7 @@ Adds a module to the module plan with the following [parameters](#8-glossary).
 
 `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEMESTER`
 
-Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Credits(MCs) and is a [Core module](#8-glossary) into Year 1 Semester 1.
+Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 Modular Credits(MCs) and is a [Core module](#8-glossary) into Year 1 Semester 1.
 
 ![AddCommand](UG_Screenshots/AddingAModule.png)
 
@@ -273,9 +270,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 
 >❗ **Warning**
 > 
-> Missing inputs for the various [parameters](#8-glossary) or having too many inputs for the [parameters](#8-glossary) will cause Modganiser to throw you a warning.
-> 
-> e.g. `add /CS2113T /4 /1 /1` or `add /CS2113T /4 /CORE /1 /1 /1`
+> Missing inputs for the various [parameters](#8-glossary) or having too many inputs for the [parameters](#8-glossary) will cause Modganiser to throw you a warning as shown in the Notes On The Commands section.
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
@@ -285,14 +280,14 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 
 > 💡 **Tip**
 > 
-> Multiple modules can be added in a single line. 
+> As you will likely take an average of 5 modules in a semester, multiple modules can be together. 
 > 
 > For example: `add /CS2113T IS4231 CS3235 /4 /CORE /2 /2` will add CS2113T, IS4231 and CS3235 into the module plan. All 3 modules will be reflected as [Core](#8-glossary) modules worth 4 MCs, and will be taken in Year 2 Semester 2.
 > ![AddCommand](UG_Screenshots/AddingMultipleModules.png)
 
 >❗ **Warning**
 > 
-> Adding multiple modules should only be used if all the modules have the same inputs for the other [parameters](#8-glossary). Example, SIP3200 and CS2113T should not be added together in a single line as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
+> Adding multiple modules should only be used if all the modules have the same inputs for MODULE_TYPE, MODULAR_CREDITS, YEAR and SEMESTER. Example, SIP3200 and CS2113T should not be added together in a single line as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
@@ -303,8 +298,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. Adds CS2113T that is worth 4 Modular Cre
 #### 5.3.2 Adding Grade Obtained for Module: `grade`
 **Function**
 
-Input the grade you got for the module once you have taken it in the planned semester.  
-This grade will then be used to [calculate your CAP](#552-calculating-your-current-cap-calculatecap) with the `calculatecap` command.
+After you have finished the module, you will receive a grade for it. Input the grade you got for the module into Modganiser using this command and Modganiser will use these grades to [calculate your CAP](#552-calculating-your-current-cap-calculatecap) with the `calculatecap` command.
 
 |   [Parameter](#8-glossary)    |                          Description                           |                                                                Accepted Inputs                                                                |
 |:--------------:|:--------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -340,7 +334,7 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 **Function**
 
-Edits the various details of an existing module
+If you entered wrong details for a module when adding it to your module plan with the add command or if the details of the module changed over time, you can use this command to change the various details of the module.
 
 |   [Parameter](#8-glossary) |                                              Description                                               |                                                                         Accepted Inputs                                                                         |
 |:--------------------------:|:------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -376,7 +370,7 @@ Expected Output:
 
 > ❗ **Warning**
 >
-> Modganiser will show an error if you edit a module that doesn't exist.
+> Modganiser will show an error if you edit a module that doesn't exist in your module plan.
 >
 >![EditError](UG_Screenshots/Edit_Module_Not_In_List.png)
 
@@ -389,7 +383,7 @@ Expected Output:
 #### 5.3.4 Deleting Module From Module Plan: `delete`
 **Function**
 
-Deletes an existing module that corresponds to the module code inputted.
+Should you have no longer wish to take a module, you can use this command to delete the module from your module plan.
 
 |  [Parameter](#8-glossary)  |        Description        |                                                               Accepted Inputs                                                                |
 |:-----------:|:-------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -406,7 +400,7 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 > ❗ **Warning** 
 > 
-> Modganiser will show an error if you delete a module that doesn't exist.
+> Modganiser will show an error if you delete a module that doesn't exist in your module plan.
 > 
 >![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png) 
 
@@ -424,8 +418,7 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 **Function**
 
-Displays your 4 year module plan, separated by year. You can also choose to only show a specific year of your module plan
-
+When you want to view your 4 year module plan or a specific year of your module plan, you can use this command to do so.
 
 | [Parameter](#8-glossary) |                      Description                       | Accepted Inputs |
 |:------------------------:|:------------------------------------------------------:|:---------------:|
@@ -458,7 +451,7 @@ Example: `list /1` lists Year 1's module plan.
 #### 5.4.2 Finding Modules in the Module Plan: `find`
 **Function**
 
-Searches for the module whose module code contains the keyword inputted by the user, or the modules whose [module type](#8-glossary) corresponds to the user's input.
+You can use this command to find all the modules that contain the your keyword, module type or a specific module.
 
 |   [Parameter](#8-glossary)    |                          Description                           |                                                                Accepted Inputs                                                                |
 |:--------------:|:--------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -469,7 +462,7 @@ Searches for the module whose module code contains the keyword inputted by the u
 
 `find /TYPE_OF_SEARCH /KEYWORD`
 
-Example: `find /TYPE /CS2113T` finds all modules that contains CS2113T.
+Example: `find /TYPE /CS2113T` finds all modules that contains CS2113T in their module code.
 
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
 
@@ -496,7 +489,8 @@ Example: `find /TYPE /CORE` finds all modules whose [module type](#8-glossary) i
 ### 5.5 Tracking Graduation Progress
 #### 5.5.1 Tracking the Completion of Each Module Type: `track`
 **Function**
-Tracks how many modular credits of a [module type](#8-glossary) you have completed and Modganiser will list out all the modules that you have completed under that [module type](#8-glossary) and how many more modular credits you need before you meet the requirements for it.
+
+When you want to know how far away you are from completing your graduation requirements, you can use this command to tracks how many modular credits of a [module type](#8-glossary) you have completed. Modganiser will list out all the modules that you have completed under that [module type](#8-glossary) and how many more modular credits you need before you meet the requirements for it.
 
 |  [Parameter](#8-glossary)  |                   Description                    |        Accepted Inputs        |
 |:-----------:|:------------------------------------------------:|:-----------------------------:|
@@ -522,8 +516,8 @@ will not be considered as completed and hence counted.
 ### 5.5.2 Calculating Your Current CAP: `calculatecap`
 **Function**
 
-Calculate your current CAP based on the grades you obtained. Grades obtained correspond to a number that is used to calculate your CAP.  
-To find out more about how your CAP is calculated, do visit the official [NUS website](https://www.nus.edu.sg/registrar/academic-information-policies/modular-system) :)
+When you want to know your current CAP, you can use this command to calculate it based on the grades you obtained. Grades obtained correspond to a number that is used to calculate your CAP.  
+To find out more about how your CAP is calculated, do visit the official [NUS website](https://www.nus.edu.sg/registrar/academic-information-policies/modular-system)
   
 |  [Parameter](#8-glossary)  |                   Description                    |        Accepted Inputs        |
 |:-----------:|:------------------------------------------------:|:-----------------------------:|
@@ -539,6 +533,10 @@ Example: `calculatecap` calculates your current CAP
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
+> 📓 **Note**
+>
+> To update the grade you obtained for the module, please refer to the grade command. 
+
 ---
 
 <div style="page-break-after: always;"></div>
@@ -548,7 +546,7 @@ Example: `calculatecap` calculates your current CAP
 
 **Function**
 
-Shows a summary of all the available commands
+While using Modganiser, you may forget the various commands or the parameters of the commands. You may use this command to show a summary of all the available commands.
 
 | [Parameter](#8-glossary) | Description | Accepted Inputs |
 |:---------:|:-----------:|:---------------:|
@@ -573,7 +571,7 @@ Expected Output:
 
 **Function**
 
-Shows a detailed instruction page for the specific command requested
+When using Modganiser, you may forget details related to a specific feature. You can use this command to show a detailed instruction page for the specific feature requested
 
 | [Parameter](#8-glossary) |                    Description                     |                    Accepted Inputs                    |
 |:---------:|:--------------------------------------------------:|:-----------------------------------------------------:|
@@ -596,7 +594,7 @@ Example: `man /add` displays the manual page for the add feature
 #### 5.6.3 Exiting Modganiser: `bye`
 **Function**
 
-Exits Modganiser
+When you are done using Modganiser, you can use this command to exit Modganiser.
 
 **Command Format**
 
@@ -619,7 +617,7 @@ Thank you and sorry for the inconvenience caused.
 
 #### 5.6.4 Saving Module Plan
 
-Modganiser automatically saves your module plan into your [local storage](#8-glossary) onto your device after every command you input
+To ensure that your painstakingly created module plan is not lost, Modganiser automatically saves your module plan into your [local storage](#8-glossary) in your device after every command you input.
 
 To find your save file:
 1. Go to your Desktop and find the folder titled “Modganiser” or find the folder where tp.jar is saved.
