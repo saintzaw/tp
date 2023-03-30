@@ -133,15 +133,15 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >   - We will be providing screenshots as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser yourself.
 >   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right slightly.
 >   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
-> 
-> ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
+>   
+>   ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
 > 5. Errors and Warnings
 >   - If you are receiving an error or warning, do check that you do not have missing or
       additional inputs and that your inputs are in the list of accepted input
 >
-> ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
+>   ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
 >
-> ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
+>   ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 
 Now that you are better acquainted with this guide, let's talk about how to install Modganiser! 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
@@ -159,7 +159,7 @@ To set up Modganiser, please follow the steps below:
 1. Download Java from the Java Developer Webpage
     * For Windows, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) and choose the x64 installer.
     * For macOS, Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer.
-   
+
 2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the tp.jar file, which contains Modganiser.
 
 3. Save the file into a new folder on your Desktop and title the folder “Modganiser”
@@ -203,37 +203,19 @@ All right! Modganiser is now installed onto your device. Move on to the next sec
 ---
 
 ### 5.1 Summary Of Features
-Below is a summary of features that Modganiser has. Type the corresponding command in the [Command Line Interface](#8-glossary) and press Enter to execute it.
-<details>
-<summary> Managing Modules in the Module Plan </summary>
+Below is a summary of features that Modganiser has. To use the features, please refer to the command summary for their respective command formats.
 
-* [Adding a module:](#531-adding-modules-add)  `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM`
-* [Input grade for module:](#532-adding-grade-obtained-for-module-grade) `grade /MODULE_CODE /GRADE`
-* [Editing a module:](#533-editing-module-details-edit) `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`
-* [Deleting a module from the list:](#534-deleting-module-from-module-plan-delete) `delete /MODULE_CODE`
-</details>
+Managing Modules in the Module Plan </summary>
+- Add, Edit, Delete Modules and input grade obtained for the module
 
-<details>
-<summary> Displaying Modules in the Module Plan </summary>
+Displaying Modules in the Module Plan
+- Listing modules by year and finding module by module code or module type
 
-* [Listing modules by year:](#541-viewing-module-plan-list) `list /YEAR`
-* [Locating module by code or type:](#542-finding-modules-in-the-module-plan-find) `find /TYPE_OF_SEARCH /KEYWORD`
-</details>
+Tracking Graduation Progress
+- Track Completion status of module type and calculate your CAP
 
-<details>
-<summary>Tracking Graduation Progress</summary>
-
-* [Track Module Type Completion:](#551-tracking-the-completion-of-each-module-type-track) `track /MODULE_TYPE`
-* [Grade Calculator:](#552-calculating-your-current-cap-calculatecap) `calculatecap`
-</details>
-
-<details>
-<summary>Miscellaneous</summary>
-
-* [Viewing manual:](#561-viewing-the-entire-manual-man) `man`
-* [Viewing a specific manual for a feature:](#562-viewing-the-detailed-manual-page-for-a-single-feature-man-feature) `man /FEATURE`
-* [Exiting the program:](#563-exiting-modganiser-bye) `bye`
-</details>
+Miscellaneous
+- Viewing the manual in Modganiser, exiting Modganiser and saving your module plan
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
@@ -516,7 +498,9 @@ When you want to know how far away you are from completing your graduation requi
 | MODULE_TYPE | The [module type](#8-glossary) whose status you want to look up | ALL, [CORE, GE, UE, INTERNSHIP](#8-glossary) |
 
 **Command Format**
+
 `track /MODULE_TYPE`
+
 Example: `track/CORE` tracks the completion status of your [core modules](#8-glossary).
 
 ![trackCore](UG_Screenshots/TrackCommand.png)
@@ -618,7 +602,9 @@ When you are done using Modganiser, you can use this command to exit Modganiser.
 **Command Format**
 
 `bye`
+
 Example: `bye` exits the program
+
 ![ByeCommand](UG_Screenshots/ExitCommand.png)
 
 > 📓 **Note** 
@@ -666,9 +652,9 @@ store this save file. You can then retrieve this save file from your new device.
 
 ## 6. FAQ
 
----
+In this section, you will find the most commonly asked questions and answers. If your question is not here, please look at the Table of Contents to find the relevant section. Thank you
 
-In this section, you will find the most commonly asked questions and the answers to them. If your question is not in this FAQ table, please look at the Table of Contents to find the relevant section. Thank you
+---
 
 | Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
