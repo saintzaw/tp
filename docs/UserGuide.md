@@ -60,7 +60,7 @@ Should you have any feedback or enquiries, please do not hesitate to [reach out 
 ---
 
 ### 2.1 What is Modganiser?
-Modganiser is effortless module planning, at your fingertips via the [Command Line Interface (CLI)](#8-glossary),
+Modganiser is effortless module planning at your fingertips via the [Command Line Interface (CLI)](#8-glossary),
 focused on helping Information Security Undergraduates graduate in 4 years. It does so by giving you a platform to
 plan all 4 years of your modules to ensure that you meet your [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/).
 If you can type fast, Modganiser can get your schedule up faster than traditional GUI apps.
