@@ -287,7 +287,14 @@ public class ModuleList {
             String grade = oldModule.getGrade();
 
             // Add new module
-            Module moduleEdited = addModule(newModuleCode, modularCredits, moduleType, year, semester);
+            Module moduleEdited;
+            if (moduleType == "C") {
+                moduleEdited = addModule(newModuleCode, modularCredits, "CORE", year, semester);
+            } else if (moduleType == "I") {
+                moduleEdited = addModule(newModuleCode, modularCredits, "INTERNSHIP", year, semester);
+            } else {
+                moduleEdited = addModule(newModuleCode, modularCredits, moduleType, year, semester);
+            }
             updateModuleGrade(newModuleCode, grade);
             Print.printEditedModule(moduleEdited, listOfModules.size());
         } catch (DukeException e) {

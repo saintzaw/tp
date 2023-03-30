@@ -331,8 +331,6 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 #### 5.3.3 Editing Module Details: `edit`
 
-### Edit command: `edit`
-
 **Function**
 
 If you entered wrong details for a module when adding it to your module plan with the add command or if the details of the module changed over time, you can use this command to change the various details of the module.
@@ -415,8 +413,6 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 #### 5.4.1 Viewing Module Plan: `list`
 
-### List command: `list`
-
 **Function**
 
 When you want to view your 4 year module plan or a specific year of your module plan, you can use this command to do so.
@@ -488,7 +484,9 @@ Example: `find /TYPE /CORE` finds all modules whose [module type](#8-glossary) i
 <div style="page-break-after: always;"></div>
 
 ### 5.5 Tracking Graduation Progress
+
 #### 5.5.1 Tracking the Completion of Each Module Type: `track`
+
 **Function**
 
 When you want to know how far away you are from completing your graduation requirements, you can use this command to tracks how many modular credits of a [module type](#8-glossary) you have completed. Modganiser will list out all the modules that you have completed under that [module type](#8-glossary) and how many more modular credits you need before you meet the requirements for it.
