@@ -202,24 +202,44 @@ All right! Modganiser is now installed onto your device. Move on to the next sec
 
 ### 5.1 Summary Of Features
 Below is a summary of features that Modganiser has. Type the corresponding command in the [Command Line Interface](#8-glossary) and press Enter to execute it.
+<details>
+<summary> Managing Modules in the Module Plan </summary>
+
 * [Adding a module:](#531-adding-modules-add)  `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM`
 * [Input grade for module:](#532-adding-grade-obtained-for-module-grade) `grade /MODULE_CODE /GRADE`
 * [Editing a module:](#533-editing-module-details-edit) `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`
 * [Deleting a module from the list:](#534-deleting-module-from-module-plan-delete) `delete /MODULE_CODE`
+</details>
+
+<details>
+<summary> Displaying Modules in the Module Plan </summary>
+
 * [Listing modules by year:](#541-viewing-module-plan-list) `list /YEAR`
 * [Locating module by code or type:](#542-finding-modules-in-the-module-plan-find) `find /TYPE_OF_SEARCH /KEYWORD`
+</details>
+
+<details>
+<summary>Tracking Graduation Progress</summary>
+
 * [Track Module Type Completion:](#551-tracking-the-completion-of-each-module-type-track) `track /MODULE_TYPE`
 * [Grade Calculator:](#552-calculating-your-current-cap-calculatecap) `calculatecap`
+</details>
+
+<details>
+<summary>Miscellaneous</summary>
+
 * [Viewing manual:](#561-viewing-the-entire-manual-man) `man`
 * [Viewing a specific manual for a feature:](#562-viewing-the-detailed-manual-page-for-a-single-feature-man-feature) `man /FEATURE`
 * [Exiting the program:](#563-exiting-modganiser-bye) `bye`
+</details>
+
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### 5.2 Managing Modules
+### 5.2 Managing Modules in the Module Plan
 
 #### 5.2.1 Adding Modules: `add`
 
@@ -407,7 +427,7 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 <div style="page-break-after: always;"></div>
 
-### 5.4 Managing Display of Module Plan
+### 5.4 Display Modules in the Module Plan
 
 #### 5.4.1 Viewing Module Plan: `list`
 
@@ -645,6 +665,8 @@ store this save file. You can then retrieve this save file from your new device.
 ## 6. FAQ
 
 ---
+
+In this section, you will find the most commonly asked questions and the answers to them. If your question is not in this FAQ table, please look at the Table of Contents to find the relevant section. Thank you
 
 | Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
