@@ -205,7 +205,7 @@ All right! Modganiser is now installed onto your device. Move on to the next sec
 ### 5.1 Summary Of Features
 Below is a summary of features that Modganiser has. To use the features, please refer to the command summary for their respective command formats.
 
-Managing Modules in the Module Plan </summary>
+Managing Modules in the Module Plan
 - Add, Edit, Delete Modules and input grade obtained for the module
 
 Displaying Modules in the Module Plan
@@ -263,11 +263,15 @@ When you have found a module that you would wish to take, you can use this comma
 
 Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 Modular Credits(MCs) and is a [Core module](#8-glossary) into Year 1 Semester 1.
 
-![AddCommand](UG_Screenshots/NotesInputOutputExample.png)
+![AddCommand](UG_Screenshots/AddingAModule.png)
 
 > 📓 **Note**
 > 
-> The C represents [Core Module](#8-glossary). [GE](#8-glossary), [UE](#8-glossary) and [Internship](#8-glossary) Modules are represented with “GE”, “UE” and “I” respectively.
+> The C in the first square bracket represents [Core Module](#8-glossary). [GE](#8-glossary), [UE](#8-glossary) and [Internship](#8-glossary) Modules are represented with “GE”, “UE” and “I” respectively as shown in the images below.
+> 
+> ![GEmodule](UG_Screenshots/GE_Module.png)
+> ![UEmodule](UG_Screenshots/UE_Module.png)
+> ![Internship](UG_Screenshots/Internship_Module.png)
 
 >❗ **Warning**
 > 
