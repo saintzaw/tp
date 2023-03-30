@@ -34,30 +34,28 @@ the [features section](#52-summary-of-features)!
 
 1. [Acknowledgements](#1-acknowledgements)
 2. [Introduction](#2-introduction)
-   + 2.1 [What Is Modganiser](#21-what-is-modganiser)
-   + 2.2 [Who Is This User Guide Meant For?](#22-who-is-this-user-guide-meant-for)
-   + 2.3 [How To Use This User Guide](#23-how-to-use-this-user-guide)
-3. [Command Line Interface Tutorial](#3-command-line-interface-tutorial)
-4. [Set Up Guide](#4-set-up-guide)
+3. [How To Use The User Guide](#3-how-to-use-the-user-guide)
+   + 3.1 [Special Notations](#31-special-notations)
+   + 3.2 [Notes on the Commands](#32-notes-on-the-commands)
+4. [Set-Up Guide](#4-set-up-guide)
 5. [Features](#5-features)
-   + 5.1 [Notes On The Command Format](#51-notes-on-the-command-format)
-   + 5.2 [Summary Of Features](#52-summary-of-features)
-   + 5.3 [Managing Modules](#53-managing-modules)
-     - 5.3.1 [Adding Modules: add](#531-adding-modules-add)
-     - 5.3.2 [Adding Grade Obtained for Module: grade](#532-adding-grade-obtained-for-module-grade)
-     - 5.3.3 [Editing Module Details: edit](#533-editing-module-details-edit)
-     - 5.3.4 [Deleting Module From Module Plan: delete](#534-deleting-module-from-module-plan-delete)
-   + 5.4 [Managing Display of Module Plan](#54-managing-display-of-module-plan)
-     - 5.4.1 [Viewing Module Plan: list](#541-viewing-module-plan-list)
-     - 5.4.2 [Finding Modules In The Module Plan: find](#542-finding-modules-in-the-module-plan-find)
-   + 5.5 [Tracking Graduation Progress](#55-tracking-graduation-progress)
-     - 5.5.1 [Tracking the Completion of Each Module Type: track](#551-tracking-the-completion-of-each-module-type-track)
-     - 5.5.2 [Calculating Your Current CAP: calculatecap](#552-calculating-your-current-cap-calculatecap)
-   + 5.6 [Miscellaneous](#56-miscellaneous)
-     - 5.6.1 [Viewing the Entire Manual: man](#561-viewing-the-entire-manual-man)
-     - 5.6.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#562-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
-     - 5.6.3 [Exiting Modganiser: bye](#563-exiting-modganiser-bye)
-     - 5.6.4 [Saving Module Plan](#564-saving-module-plan)
+   + 5.1 [Summary Of Features](#51-summary-of-features)
+   + 5.2 [Managing Modules in the Module Plan](#52-managing-modules-in-the-module-plan)
+     - 5.2.1 [Adding Modules: add](#521-adding-modules-add)
+     - 5.2.2 [Adding Grade Obtained for Module: grade](#522-adding-grade-obtained-for-module-grade)
+     - 5.2.3 [Editing Module Details: edit](#523-editing-module-details-edit)
+     - 5.2.4 [Deleting Module From Module Plan: delete](#524-deleting-module-from-module-plan-delete)
+   + 5.3 [Displaying Modules in the Module Plan](#53-managing-display-of-module-plan)
+     - 5.3.1 [Viewing Module Plan: list](#531-viewing-module-plan-list)
+     - 5.3.2 [Finding Modules In The Module Plan: find](#532-finding-modules-in-the-module-plan-find)
+   + 5.4 [Tracking Graduation Progress](#55-tracking-graduation-progress)
+     - 5.4.1 [Tracking the Completion of Each Module Type: track](#541-tracking-the-completion-of-each-module-type-track)
+     - 5.4.2 [Calculating Your Current CAP: calculatecap](#542-calculating-your-current-cap-calculatecap)
+   + 5.5 [Miscellaneous](#56-miscellaneous)
+     - 5.5.1 [Viewing the Entire Manual: man](#551-viewing-the-entire-manual-man)
+     - 5.5.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#552-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
+     - 5.5.3 [Exiting Modganiser: bye](#553-exiting-modganiser-bye)
+     - 5.5.4 [Saving Module Plan](#554-saving-module-plan)
 6. [FAQ](#6-faq)
 7. [Command Summary](#7-command-summary)
 8. [Glossary](#8-glossary)
@@ -70,16 +68,17 @@ the [features section](#52-summary-of-features)!
 
 ## 3. How To Use The User Guide
 
+---
+
 Modganiser uses a [Command Line Interface (CLI)](#8-glossary) which may be new to some users. We strongly recommend that you read this
 User Guide from start to finish if you are new to Modganiser, although you may choose to skip to more relevant sections
 if you are used to Java, CLI or Modganiser, which are described below:
 * Our [Table of Contents](#table-of-contents) helps you to  navigate between the different sections quickly
-* The [Command Line Interface (CLI) tutorial](#3-command-line-interface-tutorial) teaches you how to use CLI effectively
-* Our [Set-Up Guide](#4-set-up-guide) provides a step-by-step instructions on how to install Modganiser
-* Look at the [Features](#52-summary-of-features) that Modganiser offers
+* Our [Set-Up Guide](#4-set-up-guide) provides a step-by-step instructions on how to install Modganiser, and how to use the [Command Line Interface](#8-glossary).
+* Have a look at the [Features](#52-summary-of-features) that Modganiser offers!
 * Our [FAQ](#6-faq) has answers to the most frequently asked questions
-* A [Command Summary](#7-command-summary) provides an overview of the different commands available in Modganiser and their formats
-* The [Glossary](#8-glossary) provides an explanation to the more technical terms in our guide
+* A [Command Summary](#7-command-summary) provides an overview of the different commands available in Modganiser and their respective formats
+* The [Glossary](#8-glossary) provides an explanation to the more technical terms in our user guide
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
@@ -114,22 +113,22 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 > 📓 **Note**
 > 1. Markdown Texts
-     >   - Markdown texts are texts that look like `this`, which indicates that these are user inputs
+>   - Markdown texts are texts that look like `this`, which indicates that these are user inputs
 > 2. Command Words
-     >   - Command words are used to invoke the various features of Modganiser.
-           >   You may refer to the [summary of features](#52-summary-of-features) here.
+>   - Command words are used to invoke the various features of Modganiser.
+>     + You may refer to the [summary of features](#52-summary-of-features) here.
 >   - Command words are not case-sensitive
 >   - Example: `BYE` will be accepted as the `bye` command
 > 3. Parameters
 >   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
 >   - All inputs for the [parameters](#8-glossary) should come with a slash “/” before it to indicate
-      >    that it is a user input and not the Command Word.
+      that it is a user input and not the Command Word.
 >   - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before
       they are executed. Therefore, inputs to [parameters](#8-glossary) like `/cs2113t` will be treated as `/CS2113T` by
       default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
 >   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command.
       Missing or Additional Inputs will trigger an error by Modganiser
-> 4. How TO Interpret Screenshots 
+> 4. How To Interpret Screenshots  
 >   - We will be providing screenshots as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser yourself.
 >   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right slightly.
 >   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
@@ -179,7 +178,7 @@ To set up Modganiser, please follow the steps below:
     * Type “cd Desktop” and press enter
     * Type “cd Modganiser” and press enter
     * Type “java -jar tp.jar” and press enter
-   
+
 6. If successful, you should see the following displayed on your screen:
 
    ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
@@ -190,9 +189,9 @@ To set up Modganiser, please follow the steps below:
 
 8. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
-
 All right! Modganiser is now installed onto your device. Move on to the next section to find out more about the various features that Modganiser has.
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -296,7 +295,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 
 
 <div style="page-break-after: always;"></div>
 
-#### 5.3.2 Adding Grade Obtained for Module: `grade`
+#### 5.2.2 Adding Grade Obtained for Module: `grade`
 **Function**
 
 After you have finished the module, you will receive a grade for it. Input the grade you got for the module into Modganiser using this command and Modganiser will use these grades to [calculate your CAP](#552-calculating-your-current-cap-calculatecap) with the `calculatecap` command.
@@ -329,7 +328,7 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 ---
 
-#### 5.3.3 Editing Module Details: `edit`
+#### 5.2.3 Editing Module Details: `edit`
 
 **Function**
 
@@ -379,7 +378,7 @@ Expected Output:
 
 <div style="page-break-after: always;"></div>
 
-#### 5.3.4 Deleting Module From Module Plan: `delete`
+#### 5.2.4 Deleting Module From Module Plan: `delete`
 **Function**
 
 Should you have no longer wish to take a module, you can use this command to delete the module from your module plan.
@@ -409,9 +408,9 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 <div style="page-break-after: always;"></div>
 
-### 5.4 Display Modules in the Module Plan
+### 5.3 Display Modules in the Module Plan
 
-#### 5.4.1 Viewing Module Plan: `list`
+#### 5.3.1 Viewing Module Plan: `list`
 
 **Function**
 
@@ -445,7 +444,7 @@ Example: `list /1` lists Year 1's module plan.
 
 <div style="page-break-after: always;"></div>
 
-#### 5.4.2 Finding Modules in the Module Plan: `find`
+#### 5.3.2 Finding Modules in the Module Plan: `find`
 **Function**
 
 You can use this command to find all the modules that contain your keyword, module type or a specific module.
@@ -483,9 +482,9 @@ Example: `find /TYPE /CORE` finds all modules whose [module type](#8-glossary) i
 
 <div style="page-break-after: always;"></div>
 
-### 5.5 Tracking Graduation Progress
+### 5.4 Tracking Graduation Progress
 
-#### 5.5.1 Tracking the Completion of Each Module Type: `track`
+#### 5.4.1 Tracking the Completion of Each Module Type: `track`
 
 **Function**
 
@@ -514,7 +513,7 @@ will not be considered as completed and hence counted.
 
 <div style="page-break-after: always;"></div>
 
-### 5.5.2 Calculating Your Current CAP: `calculatecap`
+#### 5.4.2 Calculating Your Current CAP: `calculatecap`
 **Function**
 
 When you want to know your current CAP, you can use this command to calculate it based on the grades you obtained. Grades obtained correspond to a number that is used to calculate your CAP.  
@@ -542,8 +541,8 @@ Example: `calculatecap` calculates your current CAP
 
 <div style="page-break-after: always;"></div>
 
-### 5.6 Miscellaneous
-#### 5.6.1 Viewing the Entire Manual: `man`
+### 5.5 Miscellaneous
+#### 5.5.1 Viewing the Entire Manual: `man`
 
 **Function**
 
@@ -568,7 +567,7 @@ Expected Output:
 
 ---
 
-#### 5.6.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
+#### 5.5.2 Viewing the Detailed Manual Page for A Single Feature: `man /FEATURE`
 
 **Function**
 
@@ -592,7 +591,7 @@ Example: `man /add` displays the manual page for the add feature
 
 <div style="page-break-after: always;"></div>
 
-#### 5.6.3 Exiting Modganiser: `bye`
+#### 5.5.3 Exiting Modganiser: `bye`
 **Function**
 
 When you are done using Modganiser, you can use this command to exit Modganiser.
@@ -618,7 +617,7 @@ Thank you and sorry for the inconvenience caused.
 
 <div style="page-break-after: always;"></div>
 
-#### 5.6.4 Saving Module Plan
+#### 5.5.4 Saving Module Plan
 
 To ensure that your painstakingly created module plan is not lost, Modganiser automatically saves your module plan into your [local storage](#8-glossary) in your device after every command you input.
 
