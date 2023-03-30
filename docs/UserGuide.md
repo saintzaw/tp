@@ -1,5 +1,3 @@
-# Modganiser User Guide
-
 ## 1. Acknowledgements
 
 ---
