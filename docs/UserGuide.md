@@ -20,7 +20,7 @@ So why Modganiser? We have seen and heard of case of Information Security underg
 
 Modganiser works via the [Command Line Interface (CLI)](#8-glossary), and while it is a big difference compared to traditional GUI applications, If you can type fast, Modganiser is actually much more efficient.
 
-This user guide will now help you navigate through Modganiser and its features. If you are a new user, do go to the
+This user guide will now help you navigate through Modganiser and its features. To find out about the various sections in this guide, please refer to the Table of Contents on the next page. If you are a new user, do go to the
 [set-up section](#4-set-up-guide) to learn how to install and run Modganiser. To learn more about Modganiser’s features, do head over to
 the [features section](#52-summary-of-features)!
 
@@ -68,15 +68,14 @@ the [features section](#52-summary-of-features)!
 
 <div style="page-break-after: always;"></div>
 
-## 3. How To Utilise The User Guide
+## 3. How To Use The User Guide
 
-### 3.1 How To Use This User Guide
 Modganiser uses a [Command Line Interface (CLI)](#8-glossary) which may be new to some users. We strongly recommend that you read this
 User Guide from start to finish if you are new to Modganiser, although you may choose to skip to more relevant sections
 if you are used to Java, CLI or Modganiser, which are described below:
 * Our [Table of Contents](#table-of-contents) helps you to  navigate between the different sections quickly
 * The [Command Line Interface (CLI) tutorial](#3-command-line-interface-tutorial) teaches you how to use CLI effectively
-* Our [Set-Up Guide](#4-set-up-guide) provides step by step instructions on how to install Modganiser
+* Our [Set-Up Guide](#4-set-up-guide) provides a step-by-step instructions on how to install Modganiser
 * Look at the [Features](#52-summary-of-features) that Modganiser offers
 * Our [FAQ](#6-faq) has answers to the most frequently asked questions
 * A [Command Summary](#7-command-summary) provides an overview of the different commands available in Modganiser and their formats
@@ -84,7 +83,7 @@ if you are used to Java, CLI or Modganiser, which are described below:
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
-### 3.2 Special Notations
+### 3.1 Special Notations
 Before we begin, here are some special notations that we will be using. Please familiarize yourself with these notations as it will enhance your experience with the user guide.
 
 **Tips**
@@ -111,7 +110,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 <div style="page-break-after: always;"></div>
 
-### 3.1 Notes on the Commands
+### 3.2 Notes on the Commands
 
 > 📓 **Note**
 > 1. Markdown Texts
@@ -122,7 +121,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >   - Command words are not case-sensitive
 >   - Example: `BYE` will be accepted as the `bye` command
 > 3. Parameters
-     >   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
+>   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
 >   - All inputs for the [parameters](#8-glossary) should come with a slash “/” before it to indicate
       >    that it is a user input and not the Command Word.
 >   - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before
@@ -130,14 +129,19 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
       default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
 >   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command.
       Missing or Additional Inputs will trigger an error by Modganiser
-> 4. Errors and Warnings
-     >    - If you are receiving an error or warning, do check that you do not have missing or
-            additional inputs and that your inputs are in the list of accepted input
+> 4. How TO Interpret Screenshots 
+>   - We will be providing screenshots as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser yourself.
+>   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right slightly.
+>   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
+> 5. Errors and Warnings
+>   - If you are receiving an error or warning, do check that you do not have missing or
+      additional inputs and that your inputs are in the list of accepted input
 >
 > ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
 >
 > ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 
+Now that you are better acquainted with this guide, let's talk about how to install Modganiser! 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
@@ -145,7 +149,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 <div style="page-break-after: always;"></div>
 
 
-## 3. Set-Up Guide
+## 4. Set-Up Guide
 
 ---
 
@@ -153,51 +157,44 @@ To set up Modganiser, please follow the steps below:
 1. Download Java from the Java Developer Webpage
     * For Windows, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) and choose the x64 installer.
     * For macOS, Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer.
+   
 2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the tp.jar file, which contains Modganiser.
+
 3. Save the file into a new folder on your Desktop and title the folder “Modganiser”
-4. Open the CLI interface on your device. If you are unsure of how to do so, please refer to our [CLI tutorial](#3-command-line-interface-tutorial).
+
+4. Open the CLI interface on your device
+   * For Windows, click on the Windows button and search for “Command Prompt”.
+   * For macOS, press on the command and spacebar button together and search for “Terminal”
+   * The window that appears is the CLI on your computer. We will be using this interface to run Modganiser.
+
+   ![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
+   <p style = "text-align:center"><small>Windows version of CLI with a command typed out</small></p>
+
+   ![macOSCLI](UG_Screenshots/Terminal.png)
+   <p style = "text-align:center"><small>macOS version of CLI with a command typed out</small></p>
+
+5. Run the following commands:
     * Type “cd Desktop” and press enter
     * Type “cd Modganiser” and press enter
     * Type “java -jar tp.jar” and press enter
-5. If successful, you should see the following displayed on your screen:
+   
+6. If successful, you should see the following displayed on your screen:
 
    ![Modganiser Starting](UG_Screenshots/Modganiser_Start_Up.png)
 
-6. Type your name in and press enter. If successful, you should see the following:
+7. Type your name in and press enter. If successful, you should see the following:
 
    ![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
 
-7. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
+8. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
----
-
-## 4. Command Line Interface Tutorial
-
----
-
-To open up the [Command Line Interface (CLI)](#8-glossary)
-* For Windows
-    * Click on the Windows button and search for “Command Prompt”.
-* For macOS
-    * Press on the command and spacebar button together and search for “Terminal”
-* The window that appears is the CLI on your computer. We will be using this interface to run Modganiser.
-* To run commands in the CLI, just type the command out, press enter and the command will run
-
-![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
-<p style = "text-align:center"><small>Windows version of CLI with a command typed out</small></p>
-
-![macOSCLI](UG_Screenshots/Terminal.png)
-
-<p style = "text-align:center"><small>macOS version of CLI with a command typed out</small></p>
-
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+All right! Modganiser is now installed onto your device. Move on to the next section to find out more about the various features that Modganiser has.
 
 ---
 
 <div style="page-break-after: always;"></div>
-
 
 ## 5. Features
 
@@ -222,13 +219,13 @@ Below is a summary of features that Modganiser has. Type the corresponding comma
 
 <div style="page-break-after: always;"></div>
 
-### 5.3 Managing Modules
+### 5.2 Managing Modules
 
-#### 5.3.1 Adding Modules: `add`
+#### 5.2.1 Adding Modules: `add`
 
 **Function**
 
-When you have found a module that you would wish to take, you can use this command to adds the module to the module plan with the following [parameters](#8-glossary).
+When you have found a module that you would wish to take, you can use this command to add the module to the module plan with the following [parameters](#8-glossary).
 
 | [Parameter](#8-glossary) | Description                                                           | Accepted Inputs                         |
 |--------------------------|-----------------------------------------------------------------------|-----------------------------------------|
@@ -451,7 +448,7 @@ Example: `list /1` lists Year 1's module plan.
 #### 5.4.2 Finding Modules in the Module Plan: `find`
 **Function**
 
-You can use this command to find all the modules that contain the your keyword, module type or a specific module.
+You can use this command to find all the modules that contain your keyword, module type or a specific module.
 
 |   [Parameter](#8-glossary)    |                          Description                           |                                                                Accepted Inputs                                                                |
 |:--------------:|:--------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
