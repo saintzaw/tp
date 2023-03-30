@@ -133,6 +133,8 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >   - We will be providing screenshots as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser yourself.
 >   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right slightly.
 >   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
+> 
+> ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
 > 5. Errors and Warnings
 >   - If you are receiving an error or warning, do check that you do not have missing or
       additional inputs and that your inputs are in the list of accepted input
@@ -279,7 +281,7 @@ When you have found a module that you would wish to take, you can use this comma
 
 Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 Modular Credits(MCs) and is a [Core module](#8-glossary) into Year 1 Semester 1.
 
-![AddCommand](UG_Screenshots/AddingAModule.png)
+![AddCommand](UG_Screenshots/NotesInputOutputExample.png)
 
 > 📓 **Note**
 > 
@@ -685,9 +687,11 @@ In this section, you will find the most commonly asked questions and the answers
 
 ## 7. Command Summary
 
+A summary of Modganiser's various features and their respective command formats
+
 ---
 
-|             Feature             |                           Format                            |                                   Example                                    |
+|             Feature             |                       Command Format                        |                                   Example                                    |
 |:-------------------------------:|:-----------------------------------------------------------:|:----------------------------------------------------------------------------:|
 |           Add modules           | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` | `add /CS2113T /4 /CORE /1 /1` or `add /CS2113T CS2101 IS4231 /4 /CORE /1 /1` |
 |       Add grade obtained        |                 `grade /MODULE_CODE /GRADE`                 |                             `grade /CS2113T /A+`                             |
@@ -707,6 +711,8 @@ In this section, you will find the most commonly asked questions and the answers
 <div style="page-break-after: always;"></div>
 
 ## 8. Glossary
+
+A explanation of the technical terms frequently used in this guide or unique to Modganiser.
 
 ---
 
