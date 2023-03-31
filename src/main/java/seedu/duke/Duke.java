@@ -117,6 +117,12 @@ public class Duke {
         return true;
     }
 
+    /**
+     * Main of the whole application.
+     * It will instantiate all the classes needed for execution.
+     *
+     * @param args The additional system arguments when Modganiser starts up.
+     */
     public static void main(String[] args) {
         Duke chatBot = new Duke();
         Duke.run(chatBot);
