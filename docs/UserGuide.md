@@ -45,7 +45,7 @@ the [features section](#51-summary-of-features)!
      - 5.2.2 [Adding Grade Obtained for Module: grade](#522-adding-grade-obtained-for-module-grade)
      - 5.2.3 [Editing Module Details: edit](#523-editing-module-details-edit)
      - 5.2.4 [Deleting Module From Module Plan: delete](#524-deleting-module-from-module-plan-delete)
-   + 5.3 [Displaying Modules in the Module Plan](#53-managing-display-of-module-plan)
+   + 5.3 [Display Modules in the Module Plan](#53-display-modules-in-the-module-plan)
      - 5.3.1 [Viewing Module Plan: list](#531-viewing-module-plan-list)
      - 5.3.2 [Finding Modules In The Module Plan: find](#532-finding-modules-in-the-module-plan-find)
    + 5.4 [Tracking Graduation Progress](#54-tracking-graduation-progress)
@@ -103,6 +103,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 > ❗ **Warning**: Read this section carefully when you see it
 
+<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
@@ -204,16 +205,16 @@ All right! Modganiser is now installed onto your device. Move on to the next sec
 ### 5.1 Summary Of Features
 Below is a summary of features that Modganiser has. To use the features, please refer to the [command summary](#7-command-summary) for their respective command formats.
 
-[Managing Modules in the Module Plan](#52-managing-modules-in-the-module-plan)
-- [Add](#521-adding-modules-add), [Edit](#523-editing-module-details-edit), [Delete](#524-deleting-module-from-module-plan-delete) Modules and [input grade](#522-adding-grade-obtained-for-module-grade obtained for the module)
+[Managing Modules in the Module Plan:](#52-managing-modules-in-the-module-plan)
+- [Add](#521-adding-modules-add), [Edit](#523-editing-module-details-edit), [Delete](#524-deleting-module-from-module-plan-delete) Modules and [input grade](#522-adding-grade-obtained-for-module-grade)
 
-[Displaying Modules in the Module Plan](#53-managing-display-of-module-plan)
+[Display Modules in the Module Plan:](#53-display-modules-in-the-module-plan)
 - [Listing modules by year](#531-viewing-module-plan-list) and [finding module by module code or module type](#532-finding-modules-in-the-module-plan-find)
 
-[Tracking Graduation Progress](#54-tracking-graduation-progress)
+[Tracking Graduation Progress:](#54-tracking-graduation-progress)
 - [Track Completion status of module type](#541-tracking-the-completion-of-each-module-type-track) and [calculate your CAP](#542-calculating-your-current-cap-calculatecap)
 
-[Miscellaneous](#55-miscellaneous)
+[Miscellaneous:](#55-miscellaneous)
 - [Viewing the manual](#551-viewing-the-entire-manual-man) in Modganiser, [exiting Modganiser](#553-exiting-modganiser-bye) and [saving your module plan](#554-saving-module-plan)
 
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
