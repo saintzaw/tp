@@ -14,7 +14,7 @@ Should you have any feedback or enquiries, please do not hesitate to [reach out 
 Are you a current information security undergraduate at NUS? Or are you a prospective student,
 about to begin your journey into information security? Well, Modganiser is exactly what you are looking for!
 
-So why Modganiser? We have seen and heard of case of Information Security undergraduates not being able to graduate on time as they have missed out certain requirements. Modganiser hence provides you a platform to effortless plan for all the modules you plan to take and is targeted at Information Security students who aim to graduate in 4 years, ensuring that you are able to clear all the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) needed. 
+So why Modganiser? We have seen and heard of cases of undergraduates not being able to graduate on time as they have missed out certain requirements. Modganiser hence provides you a platform to effortless plan for all the modules you plan to take and is targeted at Information Security students who aim to graduate in 4 years, ensuring that you are able to clear all the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) needed. 
 
 Modganiser works via the [Command Line Interface (CLI)](#8-glossary), and while it is a big difference compared to traditional GUI applications, If you can type fast, Modganiser is actually much more efficient.
 
@@ -127,12 +127,13 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
       default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
 >   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command.
       Missing or Additional Inputs will trigger an error by Modganiser
-> 4. How TO Interpret Screenshots 
->   - We will be providing screenshots as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser yourself.
->   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right slightly.
+> 4. How To Interpret Screenshots 
+>   - Screenshots serve as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser.
+>   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right.
 >   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
 >   
 >   ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
+> 
 > 5. Errors and Warnings
 >   - If you are receiving an error or warning, do check that you do not have missing or
       additional inputs and that your inputs are in the list of accepted input
@@ -141,7 +142,8 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >
 >   ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 
-Now that you are better acquainted with this guide, let's talk about how to install Modganiser! 
+Now that you are better acquainted with this guide, let's talk about how to install Modganiser!
+
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
@@ -188,9 +190,9 @@ To set up Modganiser, please follow the steps below:
 
 8. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
-
 All right! Modganiser is now installed onto your device. Move on to the next section to find out more about the various features that Modganiser has.
+
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
