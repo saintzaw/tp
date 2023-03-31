@@ -80,6 +80,7 @@ if you are used to Java, CLI or Modganiser, which are described below:
 * A [Command Summary](#7-command-summary) provides an overview of the different commands available in Modganiser and their respective formats
 * The [Glossary](#8-glossary) provides an explanation to the more technical terms in our user guide
 
+<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to jump to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ### 3.1 Special Notations
