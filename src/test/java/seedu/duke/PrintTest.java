@@ -678,7 +678,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Incorrect Module Type, Accepted Module Types are: (CORE, UE ,GE ,INTERNSHIP)"
+                + System.lineSeparator() + "     Error: Incorrect Module Type, Accepted Module Types are: "
+                + "(CORE, UE ,GE ,INTERNSHIP)"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
