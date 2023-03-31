@@ -1,4 +1,4 @@
-# Modganiser User Guide
+# Modganiser
 
 ## 1. Acknowledgements
 
@@ -16,7 +16,7 @@ Should you have any feedback or enquiries, please do not hesitate to [reach out 
 Are you a current information security undergraduate at NUS? Or are you a prospective student,
 about to begin your journey into information security? Well, Modganiser is exactly what you are looking for!
 
-So why Modganiser? We have seen and heard cases of Information Security undergraduates not being able to graduate on time as they have missed out on certain requirements. Modganiser hence provides you a platform to facilitate effortless module planning, targeted at Information Security students who aim to graduate in 4 years, to ensure that you are able to clear all the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) on time! 
+So why Modganiser? We have seen and heard of cases of undergraduates not being able to graduate on time as they have missed out certain requirements. Modganiser hence provides you a platform to effortless plan for all the modules you plan to take and is targeted at Information Security students who aim to graduate in 4 years, ensuring that you are able to clear all the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) needed. 
 
 Modganiser works via the [Command Line Interface (CLI)](#8-glossary), and while it is a big difference compared to traditional Graphical User Interface (GUI) applications, If you can type fast, Modganiser is much more efficient!
 
@@ -130,12 +130,13 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
       default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
 >   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command.
       Missing or Additional Inputs will trigger an error by Modganiser
-> 4. How To Interpret Screenshots  
->   - We will be providing screenshots as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser yourself.
->   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right slightly.
+> 4. How To Interpret Screenshots 
+>   - Screenshots serve as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser.
+>   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right.
 >   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
 >   
 >   ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
+> 
 > 5. Errors and Warnings
 >   - If you are receiving an error or warning, do check that you do not have missing or
       additional inputs and that your inputs are in the list of accepted input
@@ -144,7 +145,8 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >
 >   ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 
-Now that you are better acquainted with this guide, let's talk about how to set-up Modganiser! 
+Now that you are better acquainted with this guide, let's talk about how to install Modganiser!
+
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
@@ -265,11 +267,15 @@ When you have found a module that you would wish to take, you can use this comma
 
 Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 Modular Credits(MCs) and is a [Core module](#8-glossary) into Year 1 Semester 1.
 
-![AddCommand](UG_Screenshots/NotesInputOutputExample.png)
+![AddCommand](UG_Screenshots/AddingAModule.png)
 
 > 📓 [**Note**](#31-special-notations)
 > 
-> The C represents [Core Module](#8-glossary). [GE](#8-glossary), [UE](#8-glossary) and [Internship](#8-glossary) Modules are represented with “GE”, “UE” and “I” respectively.
+> The C in the first square bracket represents [Core Module](#8-glossary). [GE](#8-glossary), [UE](#8-glossary) and [Internship](#8-glossary) Modules are represented with “GE”, “UE” and “I” respectively as shown in the images below.
+> 
+> ![GEmodule](UG_Screenshots/GE_Module.png)
+> ![UEmodule](UG_Screenshots/UE_Module.png)
+> ![Internship](UG_Screenshots/Internship_Module.png)
 
 >❗ [**Warning**](#31-special-notations)
 > 
