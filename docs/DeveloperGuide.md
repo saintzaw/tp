@@ -20,6 +20,7 @@ Modganiser is **effortless module planning, at your fingertips via the Command L
    + 2.2. [Parser](#2-parser-component)
    + 2.3. [ModuleList](#3-modulelist-component)
    + 2.4. [Print](#4-print-component)
+   + 2.5. [Module](#5-module-component)
 3. [Design and Implementation](#3-design-and-implementation)
    + 3.1. [ManPage](#31-manpage)
    + 3.2. [Parser](#32-parser)
@@ -53,10 +54,11 @@ Modganiser is **effortless module planning, at your fingertips via the Command L
 
 The Diagram below shows an overview of how components are linked together to produce Modganiser.
 
-{image}
+![Architecture](diagrams/Architecture.png)
+
 
 Main components of the architecture
-`Duke` has a class called `Duke`.
+Modganiser has a class called `Duke`.
 
 * It starts the app up at the beginning and passes the relevant inputs to the `Parser` to be parsed.
 * It saves the name of the user for future uses.
@@ -68,6 +70,7 @@ Modganiser consists of :
 2. `Parser`
 3. `ModuleList`
 4. `Print`
+5. `Module`
 
 **How the components interact with each other**
 
@@ -97,13 +100,42 @@ Firstly, the {explain workflow}
 
 ### 3. **ModuleList Component**
 
+Firstly, when the ModuleList is called, it will execute one of the 7 types of methods.
+
+The 7 types of methods are:
+1. AddModule
+2. EditModule
+3. DeleteModule
+4. FindModule
+5. ListModule
+6. CalculateCap
+7. TrackModule
+
+The ListOfModules is the ArrayList containing Module objects up to the current point of execution.
+
+For the first 2 methods, it will interact with the Module component. The result will then update the ListOfModules.
+
+The remaining methods will interact with the ListOfModules directly.
+
+ListOfModules will then interact with the Print component to display the results of the executed command to the user.
+
+ModuleList component will also interact with Storage component to save the updated ListofModules.
+
+
+{uses}
+*
+
+![ModuleList Diagram](diagrams/ModuleList.png)
+
+### 4. **Print Component**
+
+
 Firstly, the {explain workflow}
 
 {uses}
 *
 
-### 4. **Print Component**
-
+### 5. **Module Component**
 
 Firstly, the {explain workflow}
 

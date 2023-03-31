@@ -1,0 +1,80 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor UI_COLOR_T4
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor LOGIC_COLOR_T4
+skinparam classBackgroundColor LOGIC_COLOR
+
+package ModuleList {
+
+/'Class AddressBookParser'/
+/'Class XYZCommand'/
+Class AddModule
+/'Class Command'/
+Class FindModule
+Class EditModule
+Class DeleteModule
+Class ListModule
+Class CalculateCap
+Class TrackModule
+Class ListOfModules
+Class "<<interface>>\nModuleList" as ModuleListInterface
+}
+
+package Print{
+Class HiddenModel #FFFFFF
+}
+
+package Storage{
+Class HiddenModel #FFFFFF
+}
+
+package Module{
+Class HiddenModel #FFFFFF
+}
+
+Class HiddenOutside #FFFFFF
+HiddenOutside..> ModuleListInterface
+
+ModuleListInterface --> AddModule : executes >
+ModuleListInterface --> FindModule : executes >
+ModuleListInterface --> DeleteModule : executes >
+ModuleListInterface --> EditModule: executes >
+ModuleListInterface --> ListModule : executes >
+ModuleListInterface --> TrackModule : executes >
+ModuleListInterface --> CalculateCap : executes >
+
+Module .up.> ListOfModules
+
+AddModule -.> Module
+EditModule ..> Module
+
+DeleteModule --> ListOfModules : interacts >
+FindModule --> ListOfModules : interacts >
+ListModule --> ListOfModules : interacts >
+TrackModule --> ListOfModules : interacts >
+CalculateCap --> ListOfModules : interacts >
+
+ListOfModules ..> Print
+ListOfModules ..> Storage
+
+
+
+
+/'AddressBookParser ..> XYZCommand : creates > '/
+
+/'XYZCommand -up-|> Command'/
+
+
+/'Storage --[hidden] Model'/
+/'
+Command .[hidden]up.> Storage
+Command .right.> Model
+note right of XYZCommand: XYZCommand = AddCommand, \nFindCommand, etc
+'/
+
+/' Command .up.> AddModule : produces > '/
+@enduml
