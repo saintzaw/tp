@@ -1,0 +1,49 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor UI_COLOR_T4
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor LOGIC_COLOR_T4
+skinparam classBackgroundColor LOGIC_COLOR
+
+package Parser {
+Class checkUserInput
+Class checkValidInput
+Class editModuleInfo
+Class trackGraduationRequirements
+Class listModules
+Class "<<interface>>\nParser" as ParserInterface
+}
+
+package Print{
+Class HiddenModel #FFFFFF
+}
+
+package Storage{
+Class HiddenModel #FFFFFF
+}
+
+package ModuleList{
+Class HiddenModel #FFFFFF
+}
+
+Class HiddenOutside #FFFFFF
+HiddenOutside..> ParserInterface
+
+ParserInterface --> checkUserInput : executes >
+checkUserInput --> editModuleInfo : executes >
+checkUserInput --> checkValidInput : executes >
+checkUserInput --> trackGraduationRequirements : executes >
+checkUserInput --> listModules : executes >
+
+checkUserInput ..> Print
+checkValidInput ..> Print
+checkUserInput ..> Storage
+checkUserInput ..> ModuleList
+trackGraduationRequirements ..> ModuleList
+editModuleInfo ..> ModuleList
+listModules ..> ModuleList
+
+@enduml

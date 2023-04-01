@@ -710,5 +710,83 @@ public class PrintTest {
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
+
+    @Test
+    public void printIncorrectYearTest() {
+        ModuleList moduleList = new ModuleList();
+        new Main();
+        Parser parser = new Parser();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        try {
+            parser.checkUserInput("add /IS4231 /4 /CORE /5 /1", moduleList);
+        } catch (MainException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Error: Make sure Year of Study is a number from 0-4"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void printIncorrectSemesterTest() {
+        ModuleList moduleList = new ModuleList();
+        new Main();
+        Parser parser = new Parser();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        try {
+            parser.checkUserInput("add /IS4231 /4 /CORE /1 /3", moduleList);
+        } catch (MainException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Error: Make sure Semester is 1, 1.5 (Sem 1 break), 2 or " +
+                "2.5 (Sem 2 break)"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void printYearNotIntegerTest() {
+        ModuleList moduleList = new ModuleList();
+        new Main();
+        Parser parser = new Parser();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        try {
+            parser.checkUserInput("add /IS4231 /4 /CORE /a /3", moduleList);
+        } catch (MainException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Error: Make sure Year of Study is a number from 0-4"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void printSemesterNotAcceptedTest() {
+        ModuleList moduleList = new ModuleList();
+        new Main();
+        Parser parser = new Parser();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        try {
+            parser.checkUserInput("add /IS4231 /4 /CORE /1 /1.6", moduleList);
+        } catch (MainException e) {
+            return;
+        }
+        String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Error: Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 " +
+                "(Sem 2 break)"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator();
+        assertEquals(expectedOutput, outContent.toString());
+    }
 }
 

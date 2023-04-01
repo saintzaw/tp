@@ -144,39 +144,53 @@ modules
 
 
 ### 2. **Parser Component**
+How the `Parser` component works:
 
-Firstly, the {explain workflow}
+* Firstly, when the `Parser` is called upon, it executes the `checkUserInput` method which parses the user input and
+  calls the relevant methods according to the user input.
+* According to the user input, it may execute some methods that are categorised as `checkValidInput` to check whether
+  the input fields are valid
+* The `Parser` interacts with the `Print` component to print error messages to the user if necessary.
+* The `Parser` also interacts with the `Storage` component to save the updated list of modules after calling upon
+  methods in the `ModuleList` component.
+* If the user input is `list`, the `Parser` executes the `listModules` method, which interacts with relevant methods in
+  the `ModuleList` component.
+* If the user input is `edit`, the `Parser` executes the `editModuleInfo` method, which interacts with relevant methods
+  in the `ModuleList` component.
+* If the user input is `track`, the `Parser` executes the `trackGraduationRequirements` method, which interacts with
+  relevant methods in the `ModuleList` component.
+* For the remaining valid user inputs, the `Parser` will interact with the `ModuleList` component to execute relevant
+  methods inside that component.
 
-{uses}
-* It calls the relevant methods according to the user input
-
+![Parser Diagram](diagrams/Parser.png)
 
 ### 3. **ModuleList Component**
 
-Firstly, when the ModuleList is called, it will execute one of the 7 types of methods.
+How the `ModuleList` component works:
 
-The 7 types of methods are:
-1. AddModule
-2. EditModule
-3. DeleteModule
-4. FindModule
-5. ListModule
-6. CalculateCap
-7. TrackModule
+* Firstly, when the `ModuleList` component is called, it will execute one of the following 7 types of methods.
 
-The ListOfModules is the ArrayList containing Module objects up to the current point of execution.
+* The 7 types of methods are:
+1. `addModule`
+2. `editModule`
+3. `deleteModule`
+4. `findModule`
+5. `listModule`
+6. `calculateCap`
+7. `trackModule`
 
-For the first 2 methods, it will interact with the Module component. The result will then update the ListOfModules.
+* The `listOfModules` is the ArrayList containing `Module` objects up to the current point of execution.
 
-The remaining methods will interact with the ListOfModules directly.
+* For the first 2 methods, it will interact with the `Module` component. The result will then update the
+  `listOfModules`.
 
-ListOfModules will then interact with the Print component to display the results of the executed command to the user.
+* The remaining methods will interact with the `listOfModules` directly.
 
-ModuleList component will also interact with Storage component to save the updated ListofModules.
+* `listOfModules` will then interact with the `Print` component to display the results of the executed command to the
+  user.
 
+* The `ModuleList` component will also interact with `Storage` component to save the updated `listofModules`.
 
-{uses}
-*
 
 ![ModuleList Diagram](diagrams/ModuleList.png)
 
@@ -433,6 +447,11 @@ The sequence of events above can be represented with the following sequence diag
 <small><i>Figure ???</i></small>
 
 ---
+## Documentation, logging and testing
+
+* [Documentation guide](Documentation.md)
+* [Testing guide](Testing.md)
+* [Logging guide](Logging.md)
 
 ## Appendix: Requirements
 
