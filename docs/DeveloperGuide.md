@@ -324,7 +324,7 @@ The following sequence diagram shows how the `editModuleField` operation works:
 
 > 📓 **Note**
 >
-> Some method calls from ModuleList are intentionally left out to keep the diagram simple.
+> Some method calls from ModuleList are intentionally left out of the diagram to keep it simple.
 
 The following sequence diagram shows more details on how the `editModuleType` operation works:
 
@@ -376,43 +376,109 @@ The sequence of events above can be represented with the following sequence diag
 
 <small><i>Figure ???</i></small>
 
+---
+
 ## Appendix: Requirements
 
 ###  Product Scope
 
----
+**Target User Profile**
 
-### Target User Profile
++ Information Security students in NUS
++ Has a need to organise and manage their modules
++ Can type fast
++ Prefers typing to mouse interactions
 
-Our target user profile is Information Security students in NUS.
+**Value Proposition**
+
+Better organisation of modules across 4 years in NUS, where planning can be done in a more convenient manner compared to 
+using typical applications
+
 
 ### User Stories
 
-| Version | As a...      | I want to...                                    | So that I can...                                                               |
-|---------|--------------|-------------------------------------------------|--------------------------------------------------------------------------------|
-| v1.0    | New user     | See usage instructions                          | Refer to them when I forget the commands                                       |
-| v1.0    | New user     | See usage instructions based on feature         | Get more in depth knowledge on the feature that I require                      |
-| v1.0    | New user     | Find a module by its code                       | Locate the module code without having to go through the entire list of modules |
-| v2.0    | Current user | Find a module by its type                       | Locate all modules in a category without having to go through the entire list  |
-| v1.0    | New user     | Add modules                                     | To plan out my 4 years in uni                                                  |
-| v1.0    | New user     | Delete modules                                  | To edit my plan when necessary                                                 |
-| v1.0    | New user     | View all my modules                             | Visualise my 4 year plan                                                       |
-| v2.0    | Current user | View my modules by year                         | Focus better on one year rather than all 4 years                               |
-| v1.0    | New user     | Categorise my modules by type                   | Ensure that all requirements are met                                           |
-| v2.0    | Current user | Track the completion status of each module type | Ensure that all requirements are met                                           |
-| v2.0    | Current user | Update the grade I got for a module             | Keep track of my grades                                                        |
-| v2.0    | Current user | Calculate my CAP                                | Know my current CAP and project what honours I’ll graduate with                |
-| v2.0    | Current user | Edit the details of current modules             | Change the details should I made a mistake or there was an update from NUS     |
+| Priority | As a...      | I want to...                                    | So that I can...                                                               |
+|----------|--------------|-------------------------------------------------|--------------------------------------------------------------------------------|
+| High     | New user     | See usage instructions                          | Refer to them when I forget the commands                                       |
+| High     | Current user | Add modules                                     | To plan out my 4 years in uni                                                  |
+| High     | Current user | Delete modules                                  | To edit my plan when necessary                                                 |
+| High     | Current user | Edit the details of current modules             | Change the details should I made a mistake or there was an update from NUS     |
+| High     | Current user | View all my modules                             | Visualise my 4 year plan                                                       |
+| High     | Current user | View my modules by year                         | Focus better on one year rather than all 4 years                               |
+| Medium   | Current user | Track my modules by type                        | Have an overview of my completion status of all types of modules               |
+| Medium   | Current user | Track the completion status of each module type | Ensure that the MC requirements of each type of module is met                  |
+| Medium   | Current user | Update the grade I got for a module             | Keep track of my grades                                                        |
+| Medium   | Current user | Calculate my CAP                                | Know my current CAP and project what honours I’ll graduate with                |
+| Medium   | New user     | See usage instructions based on feature         | Get more in depth knowledge on the feature that I require                      |
+| Medium   | Current user | Find a module by its code                       | Locate the module code without having to go through the entire list of modules |
+| Medium   | Current user | Find a module by its type                       | Locate all modules in a category without having to go through the entire list  |
+| Low      | Current user | Sort a module by its module code                | Find similarly coded modules easily                                            |
+
+### Use Cases
+
+For all use cases below, the **System** is the `Modganiser` and the **Actor** is the `user`
+
+**Use case: Edit a module's year**
+
+**Main Success Scenario (MSS):**
+1. User requests to list all modules
+2. Modganiser shows the list of modules in the plan
+3. User requests to edit the year of a specific module
+4. Modganiser edits the year of the specific module and displays the details of the updated module
+
+**Extensions:**
++ 2a. The list of modules is empty.
+  + 2a1. Modganiser displays a relevant error message.
+
+    Use case ends.
+
++ 3a. The specified module does not exist.
+  + 3a1. Modganiser displays a relevant error message.
+  
+    Use case resumes at step 2.
+
++ 3b. The newly specified year is invalid.
+   + 3b1. Modganiser displays a relevant error message.
+
+     Use case resumes at step 2.
+
+**Use case: Delete a module**
+
+**Main Success Scenario (MSS):**
+1. User requests to list all modules
+2. Modganiser shows the list of modules in the plan
+3. User requests to delete a specific module in the list
+4. Modganiser deletes the specific module and displays the details of the deleted module
+
+**Extensions:**
++ 2a. The list of modules is empty.
+   + 2a1. Modganiser displays a relevant error message.
+
+     Use case ends.
+
++ 3a. The specified module does not exist.
+   + 3a1. Modganiser displays an error message.
+
+     Use case resumes at step 2.
+
 
 ### Non-Functional Requirements
 
 1. Should work on any mainstream OS as long as it has Java 11 or above installed
-2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+2. Should be able to hold up to 1000 modules without a noticeable sluggishness in performance for typical usage.
+3. A user should be clear about the required inputs without any confusion about the commands.
+4. A user should easily understand the visual feedback displayed to them in response to their commands.
+5. A user should find the required inputs intuitive such that they do not need to constantly refer to the manual page
+   for help
+6. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be 
+   able to accomplish most of the tasks faster using commands than using the mouse.
+
 
 ### Glossary
 
 Mainstream OS: Windows, Linux, Unix, OS-X, MacOS
+
+---
 
 ## Appendix: Instructions for manual testing
 
