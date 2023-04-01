@@ -144,7 +144,7 @@ The `Print` component,
 
 ![Print](diagrams/Print.png)
 
-> 📓 **Note**
+> ❗ **Note**
 >
 > Only some methods of `Print` are listed in the diagram above with many others omitted due to limited space.
 
@@ -322,7 +322,7 @@ The following sequence diagram shows how the `editModuleField` operation works:
 
 ![editCommand](diagrams/EditCommand.png)
 
-> 📓 **Note**
+> ❗ **Note**
 >
 > Some method calls from ModuleList are intentionally left out of the diagram to keep it simple.
 
@@ -416,7 +416,7 @@ using typical applications
 
 ### Use Cases
 
-For all use cases below, the **System** is the `Modganiser` and the **Actor** is the `user`
+For all use cases below, the **System** is `Modganiser` and the **Actor** is the `user`
 
 **Use case: Edit a module's year**
 
@@ -482,11 +482,96 @@ Mainstream OS: Windows, Linux, Unix, OS-X, MacOS
 
 ## Appendix: Instructions for manual testing
 
-### Launch and ShutDown
+Below are some instructions to test the application manually.
+
+> ❗ **Note**
+>
+> The following instructions merely serve as a reference by providing a starting point for testers to work on. Testers 
+> are expected to do more exploratory testing by themselves.
+
+### Launch and shutdown
+
+1. Initial launch
+   1. Download the jar file and move it into an empty folder
+   2. Using terminal or command prompt, navigate to the folder containing the jar file
+   3. Enter the command `java -jar tp.jar`
+   
+      Expected: Shows the welcome message and prompts the user for his/her name.
+
+
+2. Quitting the application
+   1. Quit the application using the command `bye`
+      
+      Expected: Shows the goodbye message and the application is shut down 
+
 
 ### Adding a module 
 
+1. Adding a module when there are no modules in the list
+   1. Test case: `add /CS1010 /4 /CORE /1 /1`
+      
+      Expected: Module is successfully added to the list and a success message displayed. The number of modules
+      in the list should be 1 at this point.
+
+   2. Test case: `add /CS1010 /4 /EASY /1 /1`
+
+      Expected: Module is not added to the list. An error message is displayed along with the error details being shown 
+      in the message.
+
+   3. Other incorrect add commands to try: `add`, `add CS1010 /4 /CORE /1 /1`, `add /CS1010 /20 /CORE /1 /1`,
+   `add /CS1010 /4 /CORE /x /y` (where x is > 4 or < 1 and y is not 1, 1.5, 2, or 2.5)
+
+      Expected: Similar to previous erroneous case.
+   
+
+2. Adding a module when there are modules in the list
+   1. Test case: `add /CS2106 /4 /CORE /2 /1`
+
+      Expected: Module is successfully added to the list and a success message is displayed. The number of modules
+      in the list should increase by 1.
+
+   2. Other incorrect add commands to try: `add`, `add CS1010 /4 /CORE /1 /1`, `add /CS1010 /20 /CORE /1 /1`,
+      `add /CS1010 /4 /CORE /x /y` (where x is > 4 or < 1 and y is not 1, 1.5, 2, or 2.5)
+
+      Expected: Similar to previous erroneous cases.
+
+
+### Deleting a module
+
+1. Deleting a module when there are no modules in the list
+   1. Test case: `delete /CS2105`
+
+      Expected: No module is deleted. An error message is displayed along with the error details being shown
+      in the message.
+
+2. Deleting a module when there are modules in the list
+   1. Test case: `delete /CS1010`
+
+      Expected: Module is successfully deleted and a success message is displayed. The number of modules
+      in the list should decrease by 1.
+
+   2. Other incorrect add commands to try: `delete`, `delete CS1010`, `delete CORE`,
+
+      Expected: No module is deleted. An error message is displayed along with the error details being shown
+      in the message.
+
+3. Deleting a module which does not exist in the list
+   1. Ensure that the module CS2107 is not in your list currently
+   2. Test case: `delete /CS2107`
+
+      Expected: No module is deleted. An error message is displayed along with the error details being shown
+      in the message.
+
+
 ### Saving Data
 
+1. Dealing with missing data files
+   1. Go to the folder containing the jar file which you have downloaded 
+   2. In the same folder, find the "data" folder and navigate to it
+   3. Find the "modules.txt" and "name.txt" files and delete both of them
+   4. Launch the application as per normal
+   
+      Expected: Shows the welcome message and prompts the user for his/her name. `list /all` command shows that the
+      list of modules is now empty.
 
 
