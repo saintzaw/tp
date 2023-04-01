@@ -391,28 +391,28 @@ The sequence of events above can be represented with the following sequence diag
 
 **Value Proposition**
 
-Better organisation of modules across 4 years in NUS, where planning can be done in a more convenient manner compared to 
-using typical applications
+Better organisation of modules across 4 years in NUS and allow for more convenient planning as 
+compared to when using other applications
 
 
 ### User Stories
 
-| Priority | As a...      | I want to...                                    | So that I can...                                                               |
-|----------|--------------|-------------------------------------------------|--------------------------------------------------------------------------------|
-| High     | New user     | See usage instructions                          | Refer to them when I forget the commands                                       |
-| High     | Current user | Add modules                                     | To plan out my 4 years in uni                                                  |
-| High     | Current user | Delete modules                                  | To edit my plan when necessary                                                 |
-| High     | Current user | Edit the details of current modules             | Change the details should I made a mistake or there was an update from NUS     |
-| High     | Current user | View all my modules                             | Visualise my 4 year plan                                                       |
-| High     | Current user | View my modules by year                         | Focus better on one year rather than all 4 years                               |
-| Medium   | Current user | Track my modules by type                        | Have an overview of my completion status of all types of modules               |
-| Medium   | Current user | Track the completion status of each module type | Ensure that the MC requirements of each type of module is met                  |
-| Medium   | Current user | Update the grade I got for a module             | Keep track of my grades                                                        |
-| Medium   | Current user | Calculate my CAP                                | Know my current CAP and project what honours I’ll graduate with                |
-| Medium   | New user     | See usage instructions based on feature         | Get more in depth knowledge on the feature that I require                      |
-| Medium   | Current user | Find a module by its code                       | Locate the module code without having to go through the entire list of modules |
-| Medium   | Current user | Find a module by its type                       | Locate all modules in a category without having to go through the entire list  |
-| Low      | Current user | Sort a module by its module code                | Find similarly coded modules easily                                            |
+| Priority | As a...      | I want to...                                       | So that I can...                                                                       |
+|----------|--------------|----------------------------------------------------|----------------------------------------------------------------------------------------|
+| High     | New user     | See usage instructions                             | Refer to them when I forget the commands                                               |
+| High     | Current user | Add modules                                        | To plan out my 4 years in NUS                                                          |
+| High     | Current user | Delete modules                                     | To edit my plan when necessary                                                         |
+| High     | Current user | Edit the details of current modules                | Change the details should I made a mistake or there was an update from NUS             |
+| High     | Current user | View all my modules                                | Visualise my 4 year plan                                                               |
+| High     | Current user | View my modules by year                            | Focus better on 1 year rather than all 4 years                                         |
+| Medium   | Current user | Track my modules by type                           | Have an overview of my completion status of all types of modules                       |
+| Medium   | Current user | Track the completion status of each module type    | Ensure that the MC requirements of each type of module is met                          |
+| Medium   | Current user | Update the grade I got for a module                | Keep track of my grades                                                                |
+| Medium   | Current user | Calculate my CAP                                   | Know my current CAP and project what honours I’ll graduate with                        |
+| Medium   | New user     | See usage instructions based on feature            | Get more in-depth knowledge on the feature that I require                              |
+| Medium   | Current user | Find a module by its code                          | Locate a specific module without having to go through the entire list of modules       |
+| Medium   | Current user | Find a module by its type                          | Locate all modules in a specific category without having to go through the entire list |
+| Low      | Current user | Sort modules by their module codes when listed out | Find similarly coded modules easily                                                    |
 
 ### Use Cases
 
