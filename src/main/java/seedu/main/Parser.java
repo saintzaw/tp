@@ -1,10 +1,10 @@
-package seedu.duke;
+package seedu.main;
 
 import java.util.ArrayList;
 import java.util.logging.Level;
 
 import static java.lang.System.exit;
-import static seedu.duke.Duke.LOGGER;
+import static seedu.main.Main.LOGGER;
 
 public class Parser {
     private static final int REQUIRED_MC_CORE = 96;
@@ -60,9 +60,9 @@ public class Parser {
      * Checks for valid user commands
      *
      * @param userInput The command that the user inputs to the ChatBot
-     * @throws DukeException if user command is invalid
+     * @throws MainException if user command is invalid
      */
-    public void checkUserInput(String userInput, ModuleList moduleList) throws DukeException {
+    public void checkUserInput(String userInput, ModuleList moduleList) throws MainException {
 
         String[] userCommands = userInput.toUpperCase().split("/");
 
@@ -76,7 +76,7 @@ public class Parser {
                 try {
                     int numberOfFields = 1;
                     checkNumberOfFields(numberOfFields, userCommands);
-                } catch (DukeException e) {
+                } catch (MainException e) {
                     Print.printErrorMessage(e);
                     LOGGER.log(Level.WARNING, "User Input is invalid");
                 }
@@ -91,7 +91,7 @@ public class Parser {
                 LOGGER.log(Level.INFO, "Starting addModule process");
                 checkAddInput(moduleList, userCommands);
                 Storage.saveModules(moduleList.getModuleList());
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 LOGGER.log(Level.WARNING, "addModule Check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
             }
@@ -101,7 +101,7 @@ public class Parser {
             try {
                 int numberOfFields = 3;
                 checkNumberOfFields(numberOfFields, userCommands);
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 Print.printErrorMessage(e);
                 return;
             }
@@ -110,17 +110,17 @@ public class Parser {
             if (userCommands[1].trim().equals("CODE")) {
                 try {
                     foundModules = moduleList.findModuleByCode(userCommands[2].trim());
-                } catch (DukeException e) {
+                } catch (MainException e) {
                     Print.printErrorMessage(e);
                 }
             } else if (userCommands[1].trim().equals("TYPE")) {
                 try {
                     foundModules = moduleList.findModuleByType(userCommands[2].trim());
-                } catch (DukeException e) {
+                } catch (MainException e) {
                     Print.printErrorMessage(e);
                 }
             } else {
-                throw new DukeException("Please specify type of search with /Code or /Type");
+                throw new MainException("Please specify type of search with /Code or /Type");
             }
             if (foundModules.isEmpty()) {
                 Print.printNoModuleFound(userCommands[2].trim());
@@ -135,7 +135,7 @@ public class Parser {
             try {
                 int numberOfFields = 2;
                 checkNumberOfFields(numberOfFields, userCommands);
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 Print.printErrorMessage(e);
                 return;
             }
@@ -149,7 +149,7 @@ public class Parser {
 
                 }
                 Storage.saveModules(moduleList.getModuleList());
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 Print.printErrorMessage(e);
             }
 
@@ -158,7 +158,7 @@ public class Parser {
             try {
                 int numberOfFields = 2;
                 checkNumberOfFields(numberOfFields, userCommands);
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 Print.printErrorMessage(e);
                 return;
             }
@@ -169,7 +169,7 @@ public class Parser {
             try {
                 int numberOfFields = 4;
                 checkNumberOfFields(numberOfFields, userCommands);
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 Print.printErrorMessage(e);
                 return;
             }
@@ -177,7 +177,7 @@ public class Parser {
             try {
                 editModuleField(moduleList, userCommands);
                 Storage.saveModules(moduleList.getModuleList());
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 Print.printErrorMessage(e);
             }
             break;
@@ -186,7 +186,7 @@ public class Parser {
                 LOGGER.log(Level.INFO, "Starting Grade process");
                 int numberOfFields = 3;
                 checkNumberOfFields(numberOfFields, userCommands);
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 LOGGER.log(Level.WARNING, "grade input length check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
                 return;
@@ -203,7 +203,7 @@ public class Parser {
                     Print.printInvalidModule(userCommands[1].trim());
                 }
                 Storage.saveModules(moduleList.getModuleList());
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 LOGGER.log(Level.WARNING, "valid grade input check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
             }
@@ -213,7 +213,7 @@ public class Parser {
                 LOGGER.log(Level.INFO, "Starting process to calculate CAP");
                 int numberOfFields = 1;
                 checkNumberOfFields(numberOfFields, userCommands);
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 LOGGER.log(Level.WARNING, "calculatecap input length check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
                 return;
@@ -226,7 +226,7 @@ public class Parser {
             try {
                 int numberOfFields = 1;
                 checkNumberOfFields(numberOfFields, userCommands);
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 1;
@@ -238,19 +238,19 @@ public class Parser {
             try {
                 int numberOfFields = 2;
                 checkNumberOfFields(numberOfFields, userCommands);
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 Print.printErrorMessage(e);
                 return;
             }
             assert userCommands.length == 2;
             try {
                 trackGraduationRequirements(moduleList, userCommands[1].trim());
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 Print.printErrorMessage(e);
             }
             break;
         default:
-            throw new DukeException("Invalid Command");
+            throw new MainException("Invalid Command");
         }
 
     }
@@ -260,9 +260,9 @@ public class Parser {
      *
      * @param listOfModules The currently stored list of modules. Can be loaded or during the session.
      * @param userCommands The input that the user keyed in.
-     * @throws DukeException if the user input is invalid.
+     * @throws MainException if the user input is invalid.
      */
-    private void checkAddInput(ModuleList listOfModules, String[] userCommands) throws DukeException {
+    private void checkAddInput(ModuleList listOfModules, String[] userCommands) throws MainException {
         //check for correct number of fields
         int numberOfFields = 6;
         checkNumberOfFields(numberOfFields, userCommands);
@@ -296,13 +296,13 @@ public class Parser {
      *
      * @param numberOfFields The number of fields that the user should input for the command
      * @param userCommands the user input split into the respective fields and stored in an array
-     * @throws DukeException if user command is invalid
+     * @throws MainException if user command is invalid
      */
-    public void checkNumberOfFields(int numberOfFields, String[] userCommands) throws DukeException {
+    public void checkNumberOfFields(int numberOfFields, String[] userCommands) throws MainException {
         if (userCommands.length > numberOfFields) {
-            throw new DukeException("Too many fields");
+            throw new MainException("Too many fields");
         } else if (userCommands.length < numberOfFields) {
-            throw new DukeException("Missing fields");
+            throw new MainException("Missing fields");
         }
     }
 
@@ -312,14 +312,14 @@ public class Parser {
      * Currently checks for the correct number of parameters.
      *
      * @param userCommands the user input split into the respective fields and stored in an array
-     * @throws DukeException if user command is invalid
+     * @throws MainException if user command is invalid
      */
-    private void checkAddInputCorrectModuleCode(String[] userCommands) throws DukeException {
+    private void checkAddInputCorrectModuleCode(String[] userCommands) throws MainException {
         if (userCommands[1].trim().equals("")) {
-            throw new DukeException("Module Code cannot be empty");
+            throw new MainException("Module Code cannot be empty");
         }
         if (userCommands[1].trim().length() < 6) {
-            throw new DukeException("Module Code cannot be less than 6 characters!");
+            throw new MainException("Module Code cannot be less than 6 characters!");
         }
     }
 
@@ -329,17 +329,17 @@ public class Parser {
      * Currently checks for the modular credit to be an integer.
      *
      * @param userCommands the user input split into the respective fields and stored in an array
-     * @throws DukeException if user command is invalid
+     * @throws MainException if user command is invalid
      */
-    private void checkAddInputCorrectModularCreditField(String[] userCommands) throws DukeException {
+    private void checkAddInputCorrectModularCreditField(String[] userCommands) throws MainException {
         try {
             int moduleCredits = Integer.parseInt(userCommands[2].trim());
             if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
                     || moduleCredits == 10 || moduleCredits == 11) {
-                throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+                throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
             }
         } catch (NumberFormatException e) {
-            throw new DukeException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+            throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
         }
     }
 
@@ -348,16 +348,16 @@ public class Parser {
      * Currently checks for whether they belong to [Core, UE, GE, Internship]
      *
      * @param userCommands the user input split into the respective fields and stored in an array
-     * @throws DukeException if user command is invalid
+     * @throws MainException if user command is invalid
      */
-    private void checkAddInputCorrectTypeOfModule(String[] userCommands) throws DukeException {
+    private void checkAddInputCorrectTypeOfModule(String[] userCommands) throws MainException {
         String typeOfModule = userCommands[3].trim();
         boolean isCorrectModuleType = typeOfModule.equals("CORE")
                 || typeOfModule.equals("UE")
                 || typeOfModule.equals("GE")
                 || typeOfModule.equals("INTERNSHIP") ;
         if (!isCorrectModuleType) {
-            throw new DukeException("Incorrect Module Type, Accepted Module Types are: (CORE, UE ,GE ,INTERNSHIP)");
+            throw new MainException("Incorrect Module Type, Accepted Module Types are: (CORE, UE ,GE ,INTERNSHIP)");
         }
     }
 
@@ -366,12 +366,12 @@ public class Parser {
      *
      * @param moduleCode The unique identifier of modules.
      * @param listOfModules The currently stored list of modules.
-     * @throws DukeException if the user input is invalid.
+     * @throws MainException if the user input is invalid.
      */
-    private void checkAddInputNoDuplicates(String moduleCode, ArrayList<Module> listOfModules) throws DukeException {
+    private void checkAddInputNoDuplicates(String moduleCode, ArrayList<Module> listOfModules) throws MainException {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                throw new DukeException(moduleCode + " is already in the list");
+                throw new MainException(moduleCode + " is already in the list");
             }
         }
     }
@@ -383,13 +383,13 @@ public class Parser {
      * Currently checks for year being an integer.
      *
      * @param userCommands the user input split into the respective fields and stored in an array
-     * @throws DukeException if user command is invalid
+     * @throws MainException if user command is invalid
      */
-    private void checkAddInputYearAndSemester(String[] userCommands) throws DukeException {
+    private void checkAddInputYearAndSemester(String[] userCommands) throws MainException {
         try {
             int year = Integer.parseInt(userCommands[4].trim());
             if (year < 0 || year > 4) {
-                throw new DukeException("Make sure Year of Study is a number from 0-4");
+                throw new MainException("Make sure Year of Study is a number from 0-4");
             }
             String semester = userCommands[5].trim();
             boolean isCorrectSemester = semester.equals("1")
@@ -397,14 +397,14 @@ public class Parser {
                     || semester.equals("2")
                     || semester.equals("2.5");
             if (!isCorrectSemester) {
-                throw new DukeException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
+                throw new MainException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
             }
         } catch (NumberFormatException e) {
-            throw new DukeException("Make sure Year of Study is a number from 0-4");
+            throw new MainException("Make sure Year of Study is a number from 0-4");
         }
     }
 
-    private void listModules(ModuleList listOfModules, String year) throws DukeException {
+    private void listModules(ModuleList listOfModules, String year) throws MainException {
         switch(year) {
         case "ALL":
             listOfModules.listModulesByYear("1");
@@ -425,11 +425,11 @@ public class Parser {
             listOfModules.listModulesByYear("4");
             break;
         default:
-            throw new DukeException("Make sure Year of Study is a number from 0-4 or \"all\"");
+            throw new MainException("Make sure Year of Study is a number from 0-4 or \"all\"");
         }
     }
 
-    private void editModuleField(ModuleList listOfModules, String[] userCommands) throws DukeException {
+    private void editModuleField(ModuleList listOfModules, String[] userCommands) throws MainException {
         //format: edit /moduleCode /field /update
         String moduleCode = userCommands[1].trim();
         //the field that the user wants to update
@@ -447,7 +447,7 @@ public class Parser {
             }
         }
         if (!moduleIsFound) {
-            throw new DukeException("The module you are trying to edit does not exist in the module plan. " +
+            throw new MainException("The module you are trying to edit does not exist in the module plan. " +
                     System.lineSeparator() +
                     "\t Please add the module using the add command if you wish to take the module in the future.");
         }
@@ -473,7 +473,7 @@ public class Parser {
             listOfModules.editModuleGrade(moduleCode, update);
             break;
         default:
-            throw new DukeException("Make sure the field to edit is MC, type, code, " +
+            throw new MainException("Make sure the field to edit is MC, type, code, " +
                     "year, semester or grade");
         }
     }
@@ -482,9 +482,9 @@ public class Parser {
      * Checks if the grade input by the user is a valid grade string.
      *
      * @param inputGrade the string containing grade input by user.
-     * @throws DukeException when the input grade is invalid
+     * @throws MainException when the input grade is invalid
      */
-    private void checkGradeInput(String inputGrade) throws DukeException {
+    private void checkGradeInput(String inputGrade) throws MainException {
         switch (inputGrade) {
         case "A+":
             //Fallthrough
@@ -517,7 +517,7 @@ public class Parser {
         case "CU":
             break;
         default:
-            throw new DukeException("Please input a valid grade!");
+            throw new MainException("Please input a valid grade!");
         }
     }
 
@@ -526,9 +526,9 @@ public class Parser {
      *
      * @param listOfModules list of modules that the user has
      * @param moduleType module type that the user wants to check
-     * @throws DukeException if the moduleType the user input is not valid
+     * @throws MainException if the moduleType the user input is not valid
      */
-    private void trackGraduationRequirements(ModuleList listOfModules, String moduleType) throws DukeException {
+    private void trackGraduationRequirements(ModuleList listOfModules, String moduleType) throws MainException {
         ArrayList<Module> foundModules = new ArrayList<>();
         switch(moduleType) {
         case "ALL":
@@ -556,7 +556,7 @@ public class Parser {
             listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_CORE);
             break;
         default:
-            throw new DukeException("Make sure you're trying to track Core, GE, UE or Internship.");
+            throw new MainException("Make sure you're trying to track Core, GE, UE or Internship.");
         }
     }
 }

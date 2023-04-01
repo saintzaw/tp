@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 
 /**
  * GeneralElective is a subclass of Modules.

@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +15,7 @@ class ModuleListTest {
         assertEquals(1, moduleList.getModuleList().size());
         try {
             moduleList.deleteModule("CS2113T");
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         assertEquals(0, moduleList.getModuleList().size());
@@ -48,7 +48,7 @@ class ModuleListTest {
         for (int i = 0; i < 3; i++) {
             try {
                 parser.checkUserInput(userInputs.get(i), moduleList);
-            } catch (DukeException e) {
+            } catch (MainException e) {
                 System.out.println(e);
             }
             assertEquals(i + 1, moduleList.getModuleListSize());
@@ -62,7 +62,7 @@ class ModuleListTest {
         ArrayList<Module> foundModules = new ArrayList<>();
         try {
             foundModules = moduleList.findModuleByCode("CS2113T");
-        } catch (DukeException e) {
+        } catch (MainException e) {
             System.out.println(e);
         }
         assertEquals(1, foundModules.size());
@@ -76,7 +76,7 @@ class ModuleListTest {
         ArrayList<Module> foundModules = new ArrayList<>();
         try {
             foundModules = moduleList.findModuleByCode("CS");
-        } catch (DukeException e) {
+        } catch (MainException e) {
             System.out.println(e);
         }
         assertEquals(2, foundModules.size());
@@ -89,7 +89,7 @@ class ModuleListTest {
         ArrayList<Module> foundModules = new ArrayList<>();
         try {
             foundModules = moduleList.findModuleByCode("CS");
-        } catch (DukeException e) {
+        } catch (MainException e) {
             System.out.println(e);
         }
         assertEquals(0, foundModules.size());
@@ -102,7 +102,7 @@ class ModuleListTest {
         ArrayList<Module> foundModules = new ArrayList<>();
         try {
             foundModules = moduleList.findModuleByType("CORE");
-        } catch (DukeException e) {
+        } catch (MainException e) {
             System.out.println(e);
         }
         assertEquals(1, foundModules.size());
@@ -116,7 +116,7 @@ class ModuleListTest {
         ArrayList<Module> foundModules = new ArrayList<>();
         try {
             foundModules = moduleList.findModuleByType("CORE");
-        } catch (DukeException e) {
+        } catch (MainException e) {
             System.out.println(e);
         }
         assertEquals(2, foundModules.size());
@@ -129,7 +129,7 @@ class ModuleListTest {
         ArrayList<Module> foundModules = new ArrayList<>();
         try {
             foundModules = moduleList.findModuleByType("GE");
-        } catch (DukeException e) {
+        } catch (MainException e) {
             System.out.println(e);
         }
         assertEquals(0, foundModules.size());

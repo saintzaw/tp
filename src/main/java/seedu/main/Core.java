@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 
 /**
  * Core is a subclass of Modules.
