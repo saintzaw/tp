@@ -128,14 +128,19 @@ The Sequence Diagram shows how the components interact with each other:
 The sections below give more details of each component.
 
 ### 1. **Storage Component**
+The main job of this component is to ensure the proper storage of details regarding the modules in the user's plans and 
+the user's name. The `Storage` component will be called immediately when Modganiser starts up to read the previously 
+saved data and also called whenever the user enters a command which modifies the details of modules in 
+their plan.
 
-Firstly, the {explain workflow}
+![Storage Diagram](diagrams/Storage.png)
 
-{uses}
-*  It can save the name of the user into a file.
-* The program can load data from the file when Modganiser starts up again.
-* It can save changes to the file after each change such as an addition or deletion.
-  This is done by using the methods
+
+The `Storage` component,
+* can save the name of the user into a text file.
+* is able to save changes to a text file after each change made by the user, such as an addition or deletion of 
+modules
+* can read saved data from the text file back into corresponding objects
 
 
 ### 2. **Parser Component**
@@ -177,11 +182,18 @@ ModuleList component will also interact with Storage component to save the updat
 
 ### 4. **Print Component**
 
+When the `Print` component is called, it helps to print messages to the User Interface (UI) to allow for interaction with the user. 
 
-Firstly, the {explain workflow}
 
-{uses}
-*
+The `Print` component,
+* contains many methods where each method represents a single type of response to a specific type of user input.
+* executes the relevant method to print a message when called in other components.
+
+![Print](diagrams/Print.png)
+
+> 📓 **Note**
+>
+> Only some methods of `Print` are listed in the diagram above with many others omitted due to limited space.
 
 ### 5. **Module Component**
 
@@ -325,9 +337,10 @@ The sequence in which the `Parser` class handles the `delete` command is as foll
    `printDeletedModule()` of the `Print` class. Otherwise, the `Parser` class calls upon `printNoDeletedModuleFound()`
    of the `Print` class. This displays to the user the result of the `delete` command.
 
+The following sequence diagram shows how the `deleteModule` operation works:
+
 ![deleteModule](diagrams/DeleteModule.png)
 
-<small><i>Figure ???</i></small>
 
 ### 3.6. Edit Modules
 
@@ -343,19 +356,39 @@ The sequence in which the `Parser` class handles the `edit` command is as follow
    make the changes specified by the user.
 4) If the user wants to update Modular Credits, the `editModularCredits()` method is called.
    This method directly modifies the `modularCredits` attribute of the `Module` object.
-5) If the user wants to update Module Type, the `editModuleType()` method is called.
+5) If the user wants to update the Year, the `editYear()` method is called.
+   This method directly modifies the `year` attribute of the `Module` object.
+6) If the user wants to update the Semester, the `editSemester()` method is called.
+   This method directly modifies the `semester` attribute of the `Module` object.
+7) If the user wants to update the grade, the `editModuleGrade` method is called.
+   This method calls the `updateModuleGrade` method which directly modifies the `grade` attribute of the `Module` 
+   object. 
+8) If the user wants to update Module Type, the `editModuleType()` method is called.
    This method removes the existing `Module` object and adds a new `Module` object of the new type specified
-   by the user. The `getModuleCode()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
+   by the user. The `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
    methods in the `Module` class are also called upon to obtain the respective fields required to create the new
    `Module` object.
-6) If the user wants to update the Year, the `editYear()` method is called.
-   This method directly modifies the `year` attribute of the `Module` object.
-7) If the user wants to update the Semester, the `editSemester()` method is called.
-   This method directly modifies the `semester` attribute of the `Module` object.
+9) If the user wants to update Module Code, the `editModuleCode()` method is called.
+   This method removes the existing `Module` object and adds a new `Module` object with the new module code specified
+   by the user. The `getModuleType()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
+   methods in the `Module` class are also called upon to obtain the respective fields required to create the new
+   `Module` object.
+
+The following sequence diagram shows how the `editModuleField` operation works:
 
 ![editCommand](diagrams/EditCommand.png)
 
-<small><i>Figure ???</i></small>
+> 📓 **Note**
+>
+> Some method calls from ModuleList are intentionally left out of the diagram to keep it simple.
+
+The following sequence diagram shows more details on how the `editModuleType` operation works:
+
+![editCommand](diagrams/editModuleType.png)
+
+The following sequence diagram shows more details on how the `editModuleCode` operation works:
+
+![editCommand](diagrams/editModuleCode.png)
 
 ### 3.7. Add or Update Grade
 
@@ -399,51 +432,202 @@ The sequence of events above can be represented with the following sequence diag
 
 <small><i>Figure ???</i></small>
 
+---
+
 ## Appendix: Requirements
 
 ###  Product Scope
 
----
+**Target User Profile**
 
-### Target User Profile
++ Information Security students in NUS
++ Has a need to organise and manage their modules
++ Can type fast
++ Prefers typing to mouse interactions
 
-Our target user profile is Information Security students in NUS.
+**Value Proposition**
+
+Better organisation of modules across 4 years in NUS and allow for more convenient planning as 
+compared to when using other applications
+
 
 ### User Stories
 
-| Version | As a...      | I want to...                                    | So that I can...                                                               |
-|---------|--------------|-------------------------------------------------|--------------------------------------------------------------------------------|
-| v1.0    | New user     | See usage instructions                          | Refer to them when I forget the commands                                       |
-| v1.0    | New user     | See usage instructions based on feature         | Get more in depth knowledge on the feature that I require                      |
-| v1.0    | New user     | Find a module by its code                       | Locate the module code without having to go through the entire list of modules |
-| v2.0    | Current user | Find a module by its type                       | Locate all modules in a category without having to go through the entire list  |
-| v1.0    | New user     | Add modules                                     | To plan out my 4 years in uni                                                  |
-| v1.0    | New user     | Delete modules                                  | To edit my plan when necessary                                                 |
-| v1.0    | New user     | View all my modules                             | Visualise my 4 year plan                                                       |
-| v2.0    | Current user | View my modules by year                         | Focus better on one year rather than all 4 years                               |
-| v1.0    | New user     | Categorise my modules by type                   | Ensure that all requirements are met                                           |
-| v2.0    | Current user | Track the completion status of each module type | Ensure that all requirements are met                                           |
-| v2.0    | Current user | Update the grade I got for a module             | Keep track of my grades                                                        |
-| v2.0    | Current user | Calculate my CAP                                | Know my current CAP and project what honours I’ll graduate with                |
-| v2.0    | Current user | Edit the details of current modules             | Change the details should I made a mistake or there was an update from NUS     |
+| Priority | As a...      | I want to...                                       | So that I can...                                                                       |
+|----------|--------------|----------------------------------------------------|----------------------------------------------------------------------------------------|
+| High     | New user     | See usage instructions                             | Refer to them when I forget the commands                                               |
+| High     | Current user | Add modules                                        | To plan out my 4 years in NUS                                                          |
+| High     | Current user | Delete modules                                     | To edit my plan when necessary                                                         |
+| High     | Current user | Edit the details of current modules                | Change the details should I made a mistake or there was an update from NUS             |
+| High     | Current user | View all my modules                                | Visualise my 4 year plan                                                               |
+| High     | Current user | View my modules by year                            | Focus better on 1 year rather than all 4 years                                         |
+| Medium   | Current user | Track my modules by type                           | Have an overview of my completion status of all types of modules                       |
+| Medium   | Current user | Track the completion status of each module type    | Ensure that the MC requirements of each type of module is met                          |
+| Medium   | Current user | Update the grade I got for a module                | Keep track of my grades                                                                |
+| Medium   | Current user | Calculate my CAP                                   | Know my current CAP and project what honours I’ll graduate with                        |
+| Medium   | New user     | See usage instructions based on feature            | Get more in-depth knowledge on the feature that I require                              |
+| Medium   | Current user | Find a module by its code                          | Locate a specific module without having to go through the entire list of modules       |
+| Medium   | Current user | Find a module by its type                          | Locate all modules in a specific category without having to go through the entire list |
+| Low      | Current user | Sort modules by their module codes when listed out | Find similarly coded modules easily                                                    |
+
+### Use Cases
+
+For all use cases below, the **System** is `Modganiser` and the **Actor** is the `user`
+
+**Use case: Edit a module's year**
+
+**Main Success Scenario (MSS):**
+1. User requests to list all modules
+2. Modganiser shows the list of modules in the plan
+3. User requests to edit the year of a specific module
+4. Modganiser edits the year of the specific module and displays the details of the updated module
+
+**Extensions:**
++ 2a. The list of modules is empty.
+  + 2a1. Modganiser displays a relevant error message.
+
+    Use case ends.
+
++ 3a. The specified module does not exist.
+  + 3a1. Modganiser displays a relevant error message.
+  
+    Use case resumes at step 2.
+
++ 3b. The newly specified year is invalid.
+   + 3b1. Modganiser displays a relevant error message.
+
+     Use case resumes at step 2.
+
+**Use case: Delete a module**
+
+**Main Success Scenario (MSS):**
+1. User requests to list all modules
+2. Modganiser shows the list of modules in the plan
+3. User requests to delete a specific module in the list
+4. Modganiser deletes the specific module and displays the details of the deleted module
+
+**Extensions:**
++ 2a. The list of modules is empty.
+   + 2a1. Modganiser displays a relevant error message.
+
+     Use case ends.
+
++ 3a. The specified module does not exist.
+   + 3a1. Modganiser displays an error message.
+
+     Use case resumes at step 2.
+
 
 ### Non-Functional Requirements
 
 1. Should work on any mainstream OS as long as it has Java 11 or above installed
-2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+2. Should be able to hold up to 1000 modules without a noticeable sluggishness in performance for typical usage.
+3. A user should be clear about the required inputs without any confusion about the commands.
+4. A user should easily understand the visual feedback displayed to them in response to their commands.
+5. A user should find the required inputs intuitive such that they do not need to constantly refer to the manual page
+   for help
+6. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be 
+   able to accomplish most of the tasks faster using commands than using the mouse.
+
 
 ### Glossary
 
 Mainstream OS: Windows, Linux, Unix, OS-X, MacOS
 
+---
+
 ## Appendix: Instructions for manual testing
 
-### Launch and ShutDown
+Below are some instructions to test the application manually.
+
+> 📓 **Note**
+>
+> The following instructions merely serve as a reference by providing a starting point for testers to work on. Testers 
+> are expected to do more exploratory testing by themselves.
+
+### Launch and shutdown
+
+1. Initial launch
+   1. Download the jar file and move it into an empty folder
+   2. Using terminal or command prompt, navigate to the folder containing the jar file
+   3. Enter the command `java -jar tp.jar`
+   
+      Expected: Shows the welcome message and prompts the user for his/her name.
+
+
+2. Quitting the application
+   1. Quit the application using the command `bye`
+      
+      Expected: Shows the goodbye message and the application is shut down 
+
 
 ### Adding a module 
 
+1. Adding a module when there are no modules in the list
+   1. Test case: `add /CS1010 /4 /CORE /1 /1`
+      
+      Expected: Module is successfully added to the list and a success message displayed. The number of modules
+      in the list should be 1 at this point.
+
+   2. Test case: `add /CS1010 /4 /EASY /1 /1`
+
+      Expected: Module is not added to the list. An error message is displayed along with the error details being shown 
+      in the message.
+
+   3. Other incorrect add commands to try: `add`, `add CS1010 /4 /CORE /1 /1`, `add /CS1010 /20 /CORE /1 /1`,
+   `add /CS1010 /4 /CORE /x /y` (where x is > 4 or < 1 and y is not 1, 1.5, 2, or 2.5)
+
+      Expected: Similar to previous erroneous case.
+   
+
+2. Adding a module when there are modules in the list
+   1. Test case: `add /CS2106 /4 /CORE /2 /1`
+
+      Expected: Module is successfully added to the list and a success message is displayed. The number of modules
+      in the list should increase by 1.
+
+   2. Other incorrect add commands to try: `add`, `add CS1010 /4 /CORE /1 /1`, `add /CS1010 /20 /CORE /1 /1`,
+      `add /CS1010 /4 /CORE /x /y` (where x is > 4 or < 1 and y is not 1, 1.5, 2, or 2.5)
+
+      Expected: Similar to previous erroneous cases.
+
+
+### Deleting a module
+
+1. Deleting a module when there are no modules in the list
+   1. Test case: `delete /CS2105`
+
+      Expected: No module is deleted. An error message is displayed along with the error details being shown
+      in the message.
+
+2. Deleting a module when there are modules in the list
+   1. Test case: `delete /CS1010`
+
+      Expected: Module is successfully deleted and a success message is displayed. The number of modules
+      in the list should decrease by 1.
+
+   2. Other incorrect add commands to try: `delete`, `delete CS1010`, `delete CORE`,
+
+      Expected: No module is deleted. An error message is displayed along with the error details being shown
+      in the message.
+
+3. Deleting a module which does not exist in the list
+   1. Ensure that the module CS2107 is not in your list currently
+   2. Test case: `delete /CS2107`
+
+      Expected: No module is deleted. An error message is displayed along with the error details being shown
+      in the message.
+
+
 ### Saving Data
 
+1. Dealing with missing data files
+   1. Go to the folder containing the jar file which you have downloaded 
+   2. In the same folder, find the "data" folder and navigate to it
+   3. Find the "modules.txt" and "name.txt" files and delete both of them
+   4. Launch the application as per normal
+   
+      Expected: Shows the welcome message and prompts the user for his/her name. `list /all` command shows that the
+      list of modules is now empty.
 
 

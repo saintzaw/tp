@@ -40,8 +40,6 @@ else SEMESTER
 else GRADE
     Parser -> ML : editModuleGrade(moduleCode:String, newGrade:String)
     activate ML
-    ML -> ML: updateModuleGrade(moduleCode:String, grade:String)
-
     ML -> Print : printEditedModule(module:Module, moduleListSize:int)
     activate Print
     Print --> ML
@@ -51,16 +49,6 @@ else GRADE
 else TYPE
     Parser -> ML : editModuleType(moduleCode:String, moduleType:String)
     activate ML
-        ML -> Mod: deleteModule(moduleCode:String)
-        ML -> Mod: getModularCredits()
-        ML -> Mod: getYear()
-        ML -> Mod: getSemester()
-        ML -> Mod: getGrade()
-
-        ML -> ML: addModule(moduleCode:String, modularCredits:String, moduleType:String, year:String, semester:String)
-
-        ML -> ML: updateModuleGrade(moduleCode:String, grade:String)
-
         ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
         activate Print
         Print --> ML
@@ -70,17 +58,6 @@ else TYPE
 else CODE
     Parser -> ML : editModuleCode(moduleCode:String, moduleType:String)
     activate ML
-        ML -> Mod: deleteModule(moduleCode:String)
-        ML -> Mod: getModuleType()
-        ML -> Mod: getModularCredits()
-        ML -> Mod: getYear()
-        ML -> Mod: getSemester()
-        ML -> Mod: getGrade()
-
-        ML -> ML: addModule(moduleCode:String, modularCredits:String, moduleType:String, year:String, semester:String)
-
-        ML -> ML: updateModuleGrade(moduleCode:String, grade:String)
-
         ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
         activate Print
         Print --> ML
