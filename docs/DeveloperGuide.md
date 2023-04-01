@@ -57,7 +57,8 @@ The Diagram below shows an overview of how components are linked together to pro
 ![Architecture](diagrams/Architecture.png)
 
 
-Main components of the architecture
+**Main components of the architecture**
+
 Modganiser has a class called `Duke`.
 
 * It starts the app up at the beginning and passes the relevant inputs to the `Parser` to be parsed.
@@ -80,14 +81,19 @@ The Sequence Diagram shows how the components interact with each other:
 {image}
 
 ### 1. **Storage Component**
+The main job of this component is to ensure the proper storage of details regarding the modules in the user's plans and 
+the user's name. The `Storage` component will be called immediately when Modganiser starts up to read the previously 
+saved data and also called whenever the user enters a command which modifies the details of modules in 
+their plan.
 
-Firstly, the {explain workflow}
+![Storage Diagram](diagrams/Storage.png)
 
-{uses}
-*  It can save the name of the user into a file.
-* The program can load data from the file when Modganiser starts up again.
-* It can save changes to the file after each change such as an addition or deletion.
-  This is done by using the methods
+
+The `Storage` component,
+* can save the name of the user into a text file.
+* is able to save changes to a text file after each change made by the user, such as an addition or deletion of 
+modules
+* can read saved data from the text file back into corresponding objects
 
 
 ### 2. **Parser Component**
@@ -129,11 +135,18 @@ ModuleList component will also interact with Storage component to save the updat
 
 ### 4. **Print Component**
 
+When the `Print` component is called, it helps to print messages to the User Interface (UI) to allow for interaction with the user. 
 
-Firstly, the {explain workflow}
 
-{uses}
-*
+The `Print` component,
+* contains many methods where each method represents a single type of response to a specific type of user input.
+* executes the relevant method to print a message when called in other components.
+
+![Print](diagrams/Print.png)
+
+> 📓 **Note**
+>
+> Only some methods of `Print` are listed in the diagram above with many others omitted due to limited space.
 
 ### 5. **Module Component**
 
@@ -268,9 +281,10 @@ The sequence in which the `Parser` class handles the `delete` command is as foll
    `printDeletedModule()` of the `Print` class. Otherwise, the `Parser` class calls upon `printNoDeletedModuleFound()`
    of the `Print` class. This displays to the user the result of the `delete` command.
 
+The following sequence diagram shows how the `deleteModule` operation works:
+
 ![deleteModule](diagrams/DeleteModule.png)
 
-<small><i>Figure ???</i></small>
 
 ### 3.6. Edit Modules
 
@@ -286,19 +300,39 @@ The sequence in which the `Parser` class handles the `edit` command is as follow
    make the changes specified by the user.
 4) If the user wants to update Modular Credits, the `editModularCredits()` method is called.
    This method directly modifies the `modularCredits` attribute of the `Module` object.
-5) If the user wants to update Module Type, the `editModuleType()` method is called.
+5) If the user wants to update the Year, the `editYear()` method is called.
+   This method directly modifies the `year` attribute of the `Module` object.
+6) If the user wants to update the Semester, the `editSemester()` method is called.
+   This method directly modifies the `semester` attribute of the `Module` object.
+7) If the user wants to update the grade, the `editModuleGrade` method is called.
+   This method calls the `updateModuleGrade` method which directly modifies the `grade` attribute of the `Module` 
+   object. 
+8) If the user wants to update Module Type, the `editModuleType()` method is called.
    This method removes the existing `Module` object and adds a new `Module` object of the new type specified
-   by the user. The `getModuleCode()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
+   by the user. The `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
    methods in the `Module` class are also called upon to obtain the respective fields required to create the new
    `Module` object.
-6) If the user wants to update the Year, the `editYear()` method is called.
-   This method directly modifies the `year` attribute of the `Module` object.
-7) If the user wants to update the Semester, the `editSemester()` method is called.
-   This method directly modifies the `semester` attribute of the `Module` object.
+9) If the user wants to update Module Code, the `editModuleCode()` method is called.
+   This method removes the existing `Module` object and adds a new `Module` object with the new module code specified
+   by the user. The `getModuleType()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
+   methods in the `Module` class are also called upon to obtain the respective fields required to create the new
+   `Module` object.
+
+The following sequence diagram shows how the `editModuleField` operation works:
 
 ![editCommand](diagrams/EditCommand.png)
 
-<small><i>Figure ???</i></small>
+> 📓 **Note**
+>
+> Some method calls from ModuleList are intentionally left out to keep the diagram simple.
+
+The following sequence diagram shows more details on how the `editModuleType` operation works:
+
+![editCommand](diagrams/editModuleType.png)
+
+The following sequence diagram shows more details on how the `editModuleCode` operation works:
+
+![editCommand](diagrams/editModuleCode.png)
 
 ### 3.7. Add or Update Grade
 
