@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 
 /**
  * Internship is a subclass of Modules.

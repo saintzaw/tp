@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 
 /**
  * Superclass of ModuleTypes: Core, GeneralElective, UnrestrictedElective, Internship

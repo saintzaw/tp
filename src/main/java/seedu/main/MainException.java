@@ -1,6 +1,6 @@
-package seedu.duke;
+package seedu.main;
 
-public class DukeException extends Exception {
+public class MainException extends Exception {
     public String description;
 
     /**
@@ -9,7 +9,7 @@ public class DukeException extends Exception {
      *
      * @param description This will contain the description of the error found in Parser.
      */
-    public DukeException(String description) {
+    public MainException(String description) {
         this.description = description;
     }
 

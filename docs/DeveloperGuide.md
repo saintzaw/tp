@@ -48,6 +48,52 @@ Modganiser is **effortless module planning, at your fingertips via the Command L
 
 ## Setting Up
 
+> ❗ **Warning**
+> : Follow the steps in the following guide precisely. Things will not work out if you deviate in some steps. 
+
+First, fork Modganiser's repo : https://github.com/AY2223S2-CS2113T-T09-4/tp , and clone the fork into your computer.
+
+**If you plan to use Intellij IDEA (highly recommended):**
+
+1.    Configure the JDK to ensure Intellij is configured to use JDK 11.
+https://se-education.org/guides/tutorials/intellijJdk.html
+
+
+2. Import the project as a Gradle project into IDEA.
+   https://se-education.org/guides/tutorials/intellijImportGradleProject.html
+   
+   > 📓 **Note**
+   : Importing a Gradle project is slightly different from importing a normal Java project.
+
+3. Verify the setup:
+   Run the seedu.main.Main and try a few commands.
+   Run the tests to ensure they all pass.
+
+
+### Before writing code
+
+1. **Configure coding style**
+
+   If using IDEA:
+   Configure the code style to set up IDEA’s coding style to match ours :
+   https://se-education.org/guides/tutorials/intellijCodeStyle.html
+   
+   > 💡 **Tip**
+   : Optionally, you can follow the guide : https://se-education.org/guides/tutorials/checkstyle.html
+   > To find how to use the CheckStyle within IDEA e.g., to report problems as you write code
+
+2. **Set up CI**
+   
+   This project comes with a GitHub Actions config files (in .github/workflows folder). When GitHub detects those files,
+   it will run the CI for your project automatically at each push to the master branch or to any PR. No set up required.
+   
+
+3. **Learn the design**
+   
+   When you are ready to start coding, we recommend that you get some sense of the overall design by 
+   reading about Modganiser's architecture.
+
+
 ## Architecture
 
 ---
@@ -58,7 +104,7 @@ The Diagram below shows an overview of how components are linked together to pro
 
 
 Main components of the architecture
-Modganiser has a class called `Duke`.
+Modganiser has a class called `Main`.
 
 * It starts the app up at the beginning and passes the relevant inputs to the `Parser` to be parsed.
 * It saves the name of the user for future uses.
@@ -66,18 +112,20 @@ Modganiser has a class called `Duke`.
 
 Modganiser consists of :
 
-1. `Storage`
-2. `Parser`
-3. `ModuleList`
-4. `Print`
-5. `Module`
+1. `Storage` : Reads data from, and writes data to, the hard disk.
+2. `Parser` : Executes User's input.
+3. `ModuleList` : Stores the modules.
+4. `Print` : Displays the outcome.
+5. `Module` : Creates the module and its attributes.
 
 **How the components interact with each other**
 
 When using the command `add /CS2113T /4 /CORE /1 /1` ,
 The Sequence Diagram shows how the components interact with each other:
 
-{image}
+![ModuleList Diagram](diagrams/Interaction.png)
+
+The sections below give more details of each component.
 
 ### 1. **Storage Component**
 
@@ -137,10 +185,19 @@ Firstly, the {explain workflow}
 
 ### 5. **Module Component**
 
-Firstly, the {explain workflow}
+When the Module is called, it will execute to set and get these variables.
+Mostly used for the Storage component and the ModuleList component that works
+more with the Module component to create, update and retrieve any of the 5 attributes.
 
-{uses}
-*
+Module is a component that has these attributes:
+
+1. moduleCode
+2. modularCredits
+3. year
+4. semester
+5. grade
+
+![ModuleList Diagram](diagrams/Module.png)
 
 ## 3. Design and Implementation
 
