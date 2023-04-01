@@ -447,6 +447,11 @@ The sequence of events above can be represented with the following sequence diag
 <small><i>Figure ???</i></small>
 
 ---
+## Documentation, logging and testing
+
+* [Documentation guide](Documentation.md)
+* [Testing guide](Testing.md)
+* [Logging guide](Logging.md)
 
 ## Appendix: Requirements
 
