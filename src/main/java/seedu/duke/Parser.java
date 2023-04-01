@@ -257,6 +257,7 @@ public class Parser {
 
     /**
      * Checks all the fields of addInput, which is the input captured when add command is called by user.
+     *
      * @param listOfModules The currently stored list of modules. Can be loaded or during the session.
      * @param userCommands The input that the user keyed in.
      * @throws DukeException if the user input is invalid.
@@ -305,6 +306,14 @@ public class Parser {
         }
     }
 
+    /**
+     * Checks the moduleCode section of addInput command.
+     * Currently checks for empty strings.
+     * Currently checks for the correct number of parameters.
+     *
+     * @param userCommands the user input split into the respective fields and stored in an array
+     * @throws DukeException if user command is invalid
+     */
     private void checkAddInputCorrectModuleCode(String[] userCommands) throws DukeException {
         if (userCommands[1].trim().equals("")) {
             throw new DukeException("Module Code cannot be empty");
@@ -315,9 +324,13 @@ public class Parser {
     }
 
     /**
-     * Add Command Checks below this point is correct even for new addModule
+     * Checks the modularCredit section of addInput command.
+     * Currently checks for the correct modular credit of [0-6, 8, 12]
+     * Currently checks for the modular credit to be an integer.
+     *
+     * @param userCommands the user input split into the respective fields and stored in an array
+     * @throws DukeException if user command is invalid
      */
-
     private void checkAddInputCorrectModularCreditField(String[] userCommands) throws DukeException {
         try {
             int moduleCredits = Integer.parseInt(userCommands[2].trim());
@@ -330,6 +343,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Checks the moduleType section of addInput command.
+     * Currently checks for whether they belong to [Core, UE, GE, Internship]
+     *
+     * @param userCommands the user input split into the respective fields and stored in an array
+     * @throws DukeException if user command is invalid
+     */
     private void checkAddInputCorrectTypeOfModule(String[] userCommands) throws DukeException {
         String typeOfModule = userCommands[3].trim();
         boolean isCorrectModuleType = typeOfModule.equals("CORE")
@@ -341,6 +361,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Checks the listOfModules to ensure that there are no duplicates.
+     *
+     * @param moduleCode The unique identifier of modules.
+     * @param listOfModules The currently stored list of modules.
+     * @throws DukeException if the user input is invalid.
+     */
     private void checkAddInputNoDuplicates(String moduleCode, ArrayList<Module> listOfModules) throws DukeException {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
@@ -349,6 +376,15 @@ public class Parser {
         }
     }
 
+    /**
+     * Checks the year and semester section of addInput command.
+     * Currently checks for year being [0-4].
+     * Currently checks for semester being [1, 1.5, 2, 2.5].
+     * Currently checks for year being an integer.
+     *
+     * @param userCommands the user input split into the respective fields and stored in an array
+     * @throws DukeException if user command is invalid
+     */
     private void checkAddInputYearAndSemester(String[] userCommands) throws DukeException {
         try {
             int year = Integer.parseInt(userCommands[4].trim());

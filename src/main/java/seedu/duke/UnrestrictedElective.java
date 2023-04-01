@@ -1,5 +1,9 @@
 package seedu.duke;
 
+/**
+ * UnrestrictedElective is a subclass of Modules.
+ * It has a custom moduleType and toString method.
+ */
 public class UnrestrictedElective extends Module {
 
     /**
@@ -14,11 +18,23 @@ public class UnrestrictedElective extends Module {
         super(moduleCode, modularCredits, year, semester);
     }
 
+    /**
+     * Returns the letter that signifies the moduleType of UnrestrictedElective.
+     * Overrides the parent implementation.
+     *
+     * @return The letter that signifies an UnrestrictedElective module.
+     */
     @Override
     public String getModuleType() {
         return "UE";
     }
 
+    /**
+     * Formats the proper string to be printed when the UnrestrictedElective Module object is referenced.
+     * Overrides the parent implementation.
+     *
+     * @return The correctly formatted string of the UnrestrictedElective Module object.
+     */
     @Override
     public String toString() {
         return "[UE]" + super.toString();
