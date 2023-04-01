@@ -1,8 +1,8 @@
-package seedu.duke;
+package seedu.main;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import static seedu.duke.Duke.LOGGER;
+import static seedu.main.Main.LOGGER;
 
 public class ModuleList {
     private static final int MODULE_TYPE_INDEX = 0;
@@ -79,11 +79,11 @@ public class ModuleList {
      * List all the modules that contains the keyword in their module code
      *
      * @param keyword The word that the user would like to search for
-     * @throws DukeException if the list of modules is currently empty
+     * @throws MainException if the list of modules is currently empty
      */
-    public ArrayList<Module> findModuleByCode(String keyword) throws DukeException {
+    public ArrayList<Module> findModuleByCode(String keyword) throws MainException {
         if (listOfModules.size() == 0) {
-            throw new DukeException("There are currently no modules in your list");
+            throw new MainException("There are currently no modules in your list");
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModuleByName process");
@@ -100,11 +100,11 @@ public class ModuleList {
      * List all the modules that are of the corresponding module type
      *
      * @param type The module type that the user wants to search for
-     * @throws DukeException if the module type the user input is invalid or if the list of modules is currently empty
+     * @throws MainException if the module type the user input is invalid or if the list of modules is currently empty
      */
-    public ArrayList<Module> findModuleByType(String type) throws DukeException {
+    public ArrayList<Module> findModuleByType(String type) throws MainException {
         if (listOfModules.size() == 0) {
-            throw new DukeException("There are currently no modules in your list");
+            throw new MainException("There are currently no modules in your list");
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModuleByType process");
@@ -139,14 +139,14 @@ public class ModuleList {
             }
             break;
         default:
-            throw new DukeException("Make sure your types are CORE, GE, UE or Internship");
+            throw new MainException("Make sure your types are CORE, GE, UE or Internship");
         }
         return foundModules;
     }
 
-    public Module deleteModule(String moduleCode) throws DukeException {
+    public Module deleteModule(String moduleCode) throws MainException {
         if (listOfModules.size() == 0) {
-            throw new DukeException("There are currently no modules in your list");
+            throw new MainException("There are currently no modules in your list");
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting deleteModule process");
@@ -271,7 +271,7 @@ public class ModuleList {
             Module moduleEdited = addModule(moduleCode, modularCredits, moduleType, year, semester);
             updateModuleGrade(moduleCode, grade);
             Print.printEditedModule(moduleEdited, listOfModules.size());
-        } catch (DukeException e) {
+        } catch (MainException e) {
             Print.printErrorMessage(e);
         }
     }
@@ -297,7 +297,7 @@ public class ModuleList {
             }
             updateModuleGrade(newModuleCode, grade);
             Print.printEditedModule(moduleEdited, listOfModules.size());
-        } catch (DukeException e) {
+        } catch (MainException e) {
             Print.printErrorMessage(e);
         }
     }

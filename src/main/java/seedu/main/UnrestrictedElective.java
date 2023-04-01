@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 
 /**
  * UnrestrictedElective is a subclass of Modules.

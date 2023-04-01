@@ -1,5 +1,5 @@
 
-package seedu.duke;
+package seedu.main;
 public class ManPage {
 
     private static String line= "-----------------------------------------------------\n ";
@@ -92,9 +92,9 @@ public class ManPage {
     public static void printManPageList() {
         System.out.println("\n\n" + line +
 
-                "List all modules: list all \n " +
+                "List all modules: list /all \n " +
                 "Shows a list of all modules in the module planner along with the module type.\n " +
-                "Example: list all\n\n " +
+                "Example: list /all\n\n " +
 
                 "List all modules: list /YEAR \n " +
                 "Shows a list of all modules in that year along with the module type.\n " +

@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 
-import static seedu.duke.Duke.LOGGER;
+import static seedu.main.Main.LOGGER;
 
 /**
  * Represents a storage mainly in charge of saving data to text files in the "data" directory.

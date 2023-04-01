@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,13 +13,13 @@ public class PrintTest {
     @Test
     public void printAddedModuleTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("add /CS2113T /4 /CORE /1 /1", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -40,7 +40,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("find/code/CS", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -61,7 +61,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("find/code/CS", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -82,7 +82,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("find/code/IS", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -101,7 +101,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("find/type/Core", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -122,7 +122,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("find/type/Core", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -143,7 +143,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("find/type/GE", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -156,14 +156,14 @@ public class PrintTest {
     @Test
     public void printDeletedModuleTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("delete /CS2113T", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -382,10 +382,10 @@ public class PrintTest {
         ManPage.printManPageList();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line +
-                "List all modules: list all " + System.lineSeparator() + " " +
+                "List all modules: list /all " + System.lineSeparator() + " " +
                 "Shows a list of all modules in the module planner along with the module type." +
                 System.lineSeparator() + " " +
-                "Example: list all" + System.lineSeparator() + System.lineSeparator() + " " +
+                "Example: list /all" + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "List all modules: list /YEAR " + System.lineSeparator() + " " +
                 "Shows a list of all modules in that year along with the module type."
@@ -527,14 +527,14 @@ public class PrintTest {
     @Test
     public void updateModuleGradeTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         try {
             parser.checkUserInput("grade /CS2113T /A", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -558,7 +558,7 @@ public class PrintTest {
         moduleList.updateModuleGrade("CS2101", "B");
         try {
             parser.checkUserInput("calculateCAP", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -572,13 +572,13 @@ public class PrintTest {
     @Test
     public void printInvalidModuleTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("grade /CS2113T /A", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -592,13 +592,13 @@ public class PrintTest {
     @Test
     public void printInvalidModularCreditTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("add /CS2113T /-1 /CORE /1 /1", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -611,13 +611,13 @@ public class PrintTest {
     @Test
     public void printEmptyModuleCodeTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("add / /4 /CORE /1 /1", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -630,13 +630,13 @@ public class PrintTest {
     @Test
     public void printLessThanSixCharacterModuleCodeTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("add /IS42 /4 /CORE /1 /1", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -649,13 +649,13 @@ public class PrintTest {
     @Test
     public void printIncorrectNumberOfAddFieldTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("add /IS4231 /CORE /1", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -668,13 +668,13 @@ public class PrintTest {
     @Test
     public void printIncorrectModuleTypeTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("add /IS4231 /4 /UEGE /1 /1", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
@@ -688,14 +688,14 @@ public class PrintTest {
     @Test
     public void printDuplicateModuleTypeTest() {
         ModuleList moduleList = new ModuleList();
-        new Duke();
+        new Main();
         Parser parser = new Parser();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         try {
             parser.checkUserInput("add /IS4231 /4 /CORE /1 /1", moduleList);
             parser.checkUserInput("add /IS4231 /4 /CORE /2 /2", moduleList);
-        } catch (DukeException e) {
+        } catch (MainException e) {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"

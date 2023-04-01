@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -8,12 +8,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-import static seedu.duke.Print.printFarewellMessage;
+import static seedu.main.Print.printFarewellMessage;
 
 /**
  * Represents a ChatBot that acts as a Module Planner
  */
-public class Duke {
+public class Main {
     /**
      * Main entry-point for the java.duke.Duke application.
      */
@@ -25,7 +25,7 @@ public class Duke {
     /**
      * Loads users saved tasks if any
      */
-    public Duke() {
+    public Main() {
         initialiseLogger();
         parser = new Parser();
         try {
@@ -51,7 +51,7 @@ public class Duke {
      *
      * @param chatBot Chatbot represents the module planner
      */
-    public static void run(Duke chatBot) {
+    public static void run(Main chatBot) {
         LOGGER.log(Level.INFO, "Modganiser is starting up!");
         Print.printLogo();
 
@@ -76,7 +76,7 @@ public class Duke {
             String line = in.nextLine().toUpperCase();
             try {
                 chatBot.parser.checkUserInput(line, chatBot.moduleList);
-            } catch (DukeException e){
+            } catch (MainException e){
                 Print.printErrorMessage(e);
             }
         }
@@ -124,8 +124,8 @@ public class Duke {
      * @param args The additional system arguments when Modganiser starts up.
      */
     public static void main(String[] args) {
-        Duke chatBot = new Duke();
-        Duke.run(chatBot);
+        Main chatBot = new Main();
+        Main.run(chatBot);
     }
 
     /**

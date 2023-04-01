@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.main;
 import java.util.ArrayList;
 
 public class Print {
@@ -150,7 +150,7 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
-    public static void printErrorMessage(DukeException e) {
+    public static void printErrorMessage(MainException e) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Error: " + e.getDescription());
         System.out.println("    ____________________________________________________________");
