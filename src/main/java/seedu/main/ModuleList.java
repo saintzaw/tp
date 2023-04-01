@@ -144,6 +144,12 @@ public class ModuleList {
         return foundModules;
     }
 
+    /**
+     * Deletes a module from the moduleList.
+     *
+     * @param moduleCode The unique identifier of modules.
+     * @return the module object that was deleted from the moduleList.
+     */
     public Module deleteModule(String moduleCode) throws MainException {
         if (listOfModules.size() == 0) {
             throw new MainException("There are currently no modules in your list");
@@ -166,6 +172,9 @@ public class ModuleList {
         return deletedModule;
     }
 
+    /**
+     * Lists all the modules in the moduleList.
+     */
     public void listModules() {
         LOGGER.log(Level.INFO, "Starting listModules process");
         if (getModuleListSize() > 0) {
@@ -177,6 +186,11 @@ public class ModuleList {
         LOGGER.log(Level.INFO, "Finished listModules process");
     }
 
+    /**
+     * Lists all the modules in the moduleList that have the year attribute specified by the user input.
+     *
+     * @param year The year that the module is taken or to be taken in. [1-4]
+     */
     public void listModulesByYear(String year) {
         LOGGER.log(Level.INFO, "Starting listModules process");
         ArrayList<Module> moduleListByYear = new ArrayList<>();
@@ -224,6 +238,12 @@ public class ModuleList {
         LOGGER.log(Level.INFO, "Finished listModules process");
     }
 
+    /**
+     * Edits the Modular Credits attribute of a specified module.
+     *
+     * @param moduleCode The unique identifier of the module.
+     * @param newModularCredits The updated amount of credits that are to be prescribed to the module.
+     */
     public void editModularCredits(String moduleCode, String newModularCredits) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
@@ -233,6 +253,12 @@ public class ModuleList {
         }
     }
 
+    /**
+     * Edits the Year attribute of a specified module.
+     *
+     * @param moduleCode The unique identifier of the module.
+     * @param newYear The updated year that the module is taken or to be taken in. [1-6]
+     */
     public void editYear(String moduleCode, String newYear) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
@@ -242,6 +268,12 @@ public class ModuleList {
         }
     }
 
+    /**
+     * Edits the Semester attribute of a specified module.
+     *
+     * @param moduleCode The unique identifier of the module.
+     * @param newSemester The updated semester that the module is taken or to be taken in. [1, 1.5, 2, 2.5]
+     */
     public void editSemester(String moduleCode, String newSemester) {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
@@ -251,6 +283,12 @@ public class ModuleList {
         }
     }
 
+    /**
+     * Edits the Grade attribute of a specified module.
+     *
+     * @param moduleCode The unique identifier of the module.
+     * @param newGrade The updated grade that is to be prescribed to the module.
+     */
     public void editModuleGrade(String moduleCode, String newGrade) {
         Module updatedModule = updateModuleGrade(moduleCode, newGrade);
         if (updatedModule != null) {
@@ -258,6 +296,12 @@ public class ModuleList {
         }
     }
 
+    /**
+     * Edits the Module Type attribute of a specified module.
+     *
+     * @param moduleCode The unique identifier of the module.
+     * @param moduleType The updated type of module. [Core, GeneralElective, UnrestrictedElective, Internship]
+     */
     public void editModuleType(String moduleCode, String moduleType) {
         try {
             // Delete module with old moduleType
@@ -276,6 +320,12 @@ public class ModuleList {
         }
     }
 
+    /**
+     * Edits the Module Code attribute of a specified module.
+     *
+     * @param oldModuleCode The original unique identifier of the module.
+     * @param newModuleCode The updated unique identifier of the module.
+     */
     public void editModuleCode(String oldModuleCode, String newModuleCode) {
         try {
             // Delete module with old moduleType
