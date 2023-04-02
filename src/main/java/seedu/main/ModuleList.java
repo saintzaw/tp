@@ -139,7 +139,7 @@ public class ModuleList {
             }
             break;
         default:
-            throw new MainException("Make sure your types are CORE, GE, UE or Internship");
+            throw new MainException("Make sure your module type input is CORE, GE, UE or Internship");
         }
         return foundModules;
     }
