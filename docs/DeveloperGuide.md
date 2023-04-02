@@ -51,16 +51,15 @@ Modganiser is **effortless module planning, at your fingertips via the Command L
 > ❗ **Warning**
 > : Follow the steps in the following guide precisely. Things will not work out if you deviate in some steps. 
 
-First, fork Modganiser's repo : https://github.com/AY2223S2-CS2113T-T09-4/tp , and clone the fork into your computer.
+First, fork [Modganiser's repo](https://github.com/AY2223S2-CS2113T-T09-4/tp) , and clone the fork into your computer.
 
 **If you plan to use Intellij IDEA (highly recommended):**
 
-1.    Configure the JDK to ensure Intellij is configured to use JDK 11.
-https://se-education.org/guides/tutorials/intellijJdk.html
+1. [Configure the JDK](https://se-education.org/guides/tutorials/intellijJdk.html) 
+to ensure Intellij is configured to use JDK 11.
 
 
-2. Import the project as a Gradle project into IDEA.
-   https://se-education.org/guides/tutorials/intellijImportGradleProject.html
+2. [Import the project as a Gradle project into IDEA.](https://se-education.org/guides/tutorials/intellijImportGradleProject.html)
    
    > 📓 **Note**
    : Importing a Gradle project is slightly different from importing a normal Java project.
@@ -75,11 +74,11 @@ https://se-education.org/guides/tutorials/intellijJdk.html
 1. **Configure coding style**
 
    If using IDEA:
-   Configure the code style to set up IDEA’s coding style to match ours :
-   https://se-education.org/guides/tutorials/intellijCodeStyle.html
+   [Configure the code style](https://se-education.org/guides/tutorials/intellijCodeStyle.html) to set up IDEA’s coding style to match ours :
+ 
    
    > 💡 **Tip**
-   : Optionally, you can follow the guide : https://se-education.org/guides/tutorials/checkstyle.html
+   : Optionally, you can [follow the guide](https://se-education.org/guides/tutorials/checkstyle.html)
    > To find how to use the CheckStyle within IDEA e.g., to report problems as you write code
 
 2. **Set up CI**
@@ -123,7 +122,7 @@ Modganiser consists of :
 When using the command `add /CS2113T /4 /CORE /1 /1` ,
 The Sequence Diagram shows how the components interact with each other:
 
-![ModuleList Diagram](diagrams/Interaction.png)
+![Interaction Diagram](diagrams/Interaction.png)
 
 The sections below give more details of each component.
 
@@ -223,7 +222,7 @@ Module is a component that has these attributes:
 4. semester
 5. grade
 
-![ModuleList Diagram](diagrams/Module.png)
+![Module Diagram](diagrams/Module.png)
 
 ## 3. Design and Implementation
 
