@@ -313,23 +313,27 @@ public class PrintTest {
                 "To find out more, use the command: man /find"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
+                "6. Track"+ System.lineSeparator() + " " +
+                "Command: track /MODULE_TYPE" + System.lineSeparator() + " " +
+                "To find out more, use the command: man /track"
+                + System.lineSeparator() + System.lineSeparator() + " " +
 
-                "6. Delete" + System.lineSeparator() + " " +
+                "7. Delete" + System.lineSeparator() + " " +
                 "Command: delete /MODULE_CODE" + System.lineSeparator()
                 + " " + "To find out more, use the command: man /delete"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
-                "7. Grade Calculator" + System.lineSeparator() + " " +
+                "8. Grade Calculator" + System.lineSeparator() + " " +
                 "Command: calculatecap" + System.lineSeparator()
                 + " " + "To find out more, use the command: man /calculator"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
-                "8. Input/Update Grades" + System.lineSeparator() + " " +
+                "9. Input/Update Grades" + System.lineSeparator() + " " +
                 "Command: grade /MODULE_CODE /GRADE" + System.lineSeparator()
                 + " " + "To find out more, use the command: man /grade"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
-                "9. Exit" + System.lineSeparator() + " " +
+                "10. Exit" + System.lineSeparator() + " " +
                 "Command: bye" + System.lineSeparator() + " " +
                 "To find out more, use the command: man /bye"
                 + System.lineSeparator() + System.lineSeparator() + " "
@@ -432,7 +436,8 @@ public class PrintTest {
                 + line +
 
                 "Find module: find /MODULE_CODE or MODULE_TYPE /KEYWORD" + System.lineSeparator() + " " +
-                "Find which year and semester you plan to take the module." + System.lineSeparator() + " " +
+                "Find out which year and semester you plan to take the module." +
+                System.lineSeparator() + System.lineSeparator() + " " +
                 "Example: In a list with CS2113T and CS2101 as both core modules." + System.lineSeparator() + " " +
                 "1.  find /code /CS2113 will show the CS2113T module only" + System.lineSeparator() + " " +
                 "2.  find /type /CORE  will show both CS2113T and CS2101 modules" +
