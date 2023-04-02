@@ -66,7 +66,7 @@ public class Parser {
 
         String[] userCommands = userInput.toUpperCase().split("/");
         for (String userCommand : userCommands) {
-            if (userCommand.isEmpty()) {
+            if (userCommand.isBlank()) {
                 throw new MainException("user input cannot be empty for any parameter");
             }
         }
