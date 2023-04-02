@@ -309,7 +309,7 @@ public class Parser {
     /**
      * Checks the moduleCode section of addInput command.
      * Currently checks for empty strings.
-     * Currently checks for the correct number of parameters.
+     * Currently checks for the correct number of parameters. [6-10]
      *
      * @param userCommands the user input split into the respective fields and stored in an array
      * @throws MainException if user command is invalid
@@ -320,6 +320,9 @@ public class Parser {
         }
         if (userCommands[1].trim().length() < 6) {
             throw new MainException("Module Code cannot be less than 6 characters!");
+        }
+        if (userCommands[1].trim().length() > 10) {
+            throw new MainException("Module Code cannot be more than 10 characters!");
         }
     }
 
@@ -404,6 +407,100 @@ public class Parser {
         }
     }
 
+    /**
+     * Checks the Module Code field of an Edit Module Code command.
+     * Currently checks for empty strings.
+     * Currently checks for the correct number of characters. [6-10]
+     * Currently checks listOfModules to ensure there are no duplicates.
+     *
+     * @param moduleCode the new unique identifier of the module
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
+        if (moduleCode.equals("")) {
+            throw new MainException("Module Code cannot be empty");
+        }
+        if (moduleCode.length() < 6) {
+            throw new MainException("Module Code cannot be less than 6 characters!");
+        }
+        if (moduleCode.trim().length() > 10) {
+            throw new MainException("Module Code cannot be more than 10 characters!");
+        }
+    }
+
+    /**
+     * Checks the Modular Credits field of an Edit Modular Credits command.
+     * Currently checks for the correct modular credit of [0-6, 8, 12]
+     * Currently checks for the modular credit to be an integer.
+     *
+     * @param modularCredits the new number of Modular Credits to be prescribed to the module
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
+        try {
+            int moduleCredits = Integer.parseInt(modularCredits);
+            if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
+                    || moduleCredits == 10 || moduleCredits == 11) {
+                throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+            }
+        } catch (NumberFormatException e) {
+            throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+        }
+    }
+
+    /**
+     * Checks the Module Type field of an Edit Module Type command.
+     * Currently checks for whether they belong to [Core, UE, GE, Internship]
+     *
+     * @param typeOfModule the user input split into the respective fields and stored in an array
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputCorrectTypeOfModule(String typeOfModule) throws MainException {
+        boolean isCorrectModuleType = typeOfModule.equals("CORE")
+                || typeOfModule.equals("UE")
+                || typeOfModule.equals("GE")
+                || typeOfModule.equals("INTERNSHIP") ;
+        if (!isCorrectModuleType) {
+            throw new MainException("Incorrect Module Type, Accepted Module Types are: (CORE, UE ,GE ,INTERNSHIP)");
+        }
+    }
+
+    /**
+     * Checks the year field of an Edit Year command.
+     * Currently checks for year being [0-4].
+     * Currently checks for year being an integer.
+     *
+     * @param year the updated year that the module is taken or to be taken in
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputYear(String year) throws MainException {
+        try {
+            int newYear = Integer.parseInt(year);
+            if (newYear < 0 || newYear > 4) {
+                throw new MainException("Make sure Year of Study is a number from 0-4");
+            }
+        } catch (NumberFormatException e) {
+            throw new MainException("Make sure Year of Study is a number from 0-4");
+        }
+    }
+
+    /**
+     * Checks the semester field of an Edit Semester command.
+     * Currently checks for semester being [1, 1.5, 2, 2.5].
+     *
+     * @param semester the updated semester that the module is taken or to be taken in
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputSemester(String semester) throws MainException {
+        boolean isCorrectSemester = semester.equals("1")
+                || semester.equals("1.5")
+                || semester.equals("2")
+                || semester.equals("2.5");
+        if (!isCorrectSemester) {
+            throw new MainException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
+        }
+    }
+
     private void listModules(ModuleList listOfModules, String year) throws MainException {
         switch(year) {
         case "ALL":
@@ -425,7 +522,7 @@ public class Parser {
             listOfModules.listModulesByYear("4");
             break;
         default:
-            throw new MainException("Make sure Year of Study is a number from 0-4 or \"all\"");
+            throw new MainException("Make sure Year of Study is a number from 1-4 or \"all\"");
         }
     }
 
@@ -454,22 +551,28 @@ public class Parser {
 
         switch (moduleField) {
         case "MC":
+            checkEditInputCorrectModularCreditField(update);
             listOfModules.editModularCredits(moduleCode, update);
             break;
         case "TYPE":
+            checkEditInputCorrectTypeOfModule(update);
             listOfModules.editModuleType(moduleCode, update);
             break;
         case "CODE":
             checkAddInputNoDuplicates(update, listOfModules.getModuleList());
+            checkEditInputCorrectModuleCode(update);
             listOfModules.editModuleCode(moduleCode, update);
             break;
         case "YEAR":
+            checkEditInputYear(update);
             listOfModules.editYear(moduleCode, update);
             break;
         case "SEMESTER":
+            checkEditInputSemester(update);
             listOfModules.editSemester(moduleCode, update);
             break;
         case "GRADE":
+            checkGradeInput(update);
             listOfModules.editModuleGrade(moduleCode, update);
             break;
         default:
