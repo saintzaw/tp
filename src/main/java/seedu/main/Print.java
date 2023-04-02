@@ -316,7 +316,12 @@ public class Print {
             System.out.println("     Congratulations! You have completed " + completedMCs + " of the "
                     + requiredMCs + " MCs required :)");
         }
-        System.out.println("     You need to complete " + remainingMCs + " MCs more.");
+        if (remainingMCs > 0) {
+            System.out.println("     You need to complete " + remainingMCs + " MCs more.");
+        } else {
+            System.out.println("     You have met all the graduation requirements for this module type! " +
+                    "Congratulations!");
+        }
         System.out.println("    ____________________________________________________________");
     }
 
