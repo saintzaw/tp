@@ -281,25 +281,44 @@ public class Parser {
         checkNumberOfFields(numberOfFields, userCommands);
         assert userCommands.length == 6 : "Expected 6 fields";
 
-        //check for non-empty and correct number of characters in the moduleCode field
-        checkAddInputCorrectModuleCode(userCommands);
 
+        //check for non-empty and correct number of characters in the moduleCode field
+        String[] moduleList = userCommands[1].trim().split(" ");
+        boolean hasErrors = false;
+        try {
+            checkAddInputCorrectModuleCode(moduleList);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            hasErrors = true;
+            //check for duplicate names and then returns sanitised list
+            moduleList = sanitiseModuleCodeList(moduleList, listOfModules.getModuleList());
+        }
         //check for correct field in MC
         checkAddInputCorrectModularCreditField(userCommands);
+        int moduleCredit = (int) Double.parseDouble(userCommands[2].trim());
+        String modularCredit = Integer.toString(moduleCredit);
 
         //check for correct field in type of module
         checkAddInputCorrectTypeOfModule(userCommands);
 
         //check for correct year and semester
         checkAddInputYearAndSemester(userCommands);
+        int year = ((int) Double.parseDouble(userCommands[4].trim()));
+        String inputYear = Integer.toString(year).trim();
 
-        //check for duplicate names and then add
-        String[] moduleList = userCommands[1].trim().split(" ");
 
+        if (hasErrors) {
+            Print.printAddingCorrectModuleCode();
+        } else {
+            moduleList = sanitiseModuleCodeList(moduleList, listOfModules.getModuleList());
+        }
+        // add all the modules
         for (String moduleCode: moduleList) {
-            checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
-            Module addedModule = listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(),
-                    userCommands[3].trim(), userCommands[4].trim(), userCommands[5].trim());
+            if (moduleCode.equals("fail")) {
+                continue;
+            }
+            Module addedModule = listOfModules.addModule(moduleCode.trim(), modularCredit,
+                    userCommands[3].trim(), inputYear, userCommands[5].trim());
             Print.printAddedModule(addedModule, listOfModules.getModuleListSize());
         }
     }
@@ -324,18 +343,20 @@ public class Parser {
      * Currently checks for empty strings.
      * Currently checks for the correct number of parameters. [6-10]
      *
-     * @param userCommands the user input split into the respective fields and stored in an array
+     * @param moduleList the moduleCode field split into the respective fields and stored in an array
      * @throws MainException if user command is invalid
      */
-    private void checkAddInputCorrectModuleCode(String[] userCommands) throws MainException {
-        if (userCommands[1].trim().equals("")) {
-            throw new MainException("Module Code cannot be empty");
-        }
-        if (userCommands[1].trim().length() < 6) {
-            throw new MainException("Module Code cannot be less than 6 characters!");
-        }
-        if (userCommands[1].trim().length() > 10) {
-            throw new MainException("Module Code cannot be more than 10 characters!");
+    private void checkAddInputCorrectModuleCode(String[] moduleList) throws MainException {
+        for (int i = 0; i < moduleList.length; i++) {
+            if (moduleList[i].equals("")) {
+                throw new MainException("Module Code cannot be empty and must be between 6-10 characters");
+            }
+            if (moduleList[i].trim().length() < 6) {
+                throw new MainException("Module Code cannot be empty and must be between 6-10 characters");
+            }
+            if (moduleList[i].length() > 10) {
+                throw new MainException("Module Code cannot be empty and must be between 6-10 characters");
+            }
         }
     }
 
@@ -349,13 +370,20 @@ public class Parser {
      */
     private void checkAddInputCorrectModularCreditField(String[] userCommands) throws MainException {
         try {
-            int moduleCredits = Integer.parseInt(userCommands[2].trim());
-            if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
+            int moduleCredits;
+            double checkModuleCredits = Double.parseDouble(userCommands[2].trim());
+            double decimalRemainder = checkModuleCredits % 1;
+            if (decimalRemainder != 0) {
+                throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
+
+            }
+            moduleCredits = (int) checkModuleCredits;
+            if (moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
                     || moduleCredits == 10 || moduleCredits == 11) {
-                throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+                throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+            throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
         }
     }
 
@@ -394,7 +422,7 @@ public class Parser {
 
     /**
      * Checks the year and semester section of addInput command.
-     * Currently checks for year being [0-4].
+     * Currently checks for year being [1-4].
      * Currently checks for semester being [1, 1.5, 2, 2.5].
      * Currently checks for year being an integer.
      *
@@ -403,9 +431,13 @@ public class Parser {
      */
     private void checkAddInputYearAndSemester(String[] userCommands) throws MainException {
         try {
-            int year = Integer.parseInt(userCommands[4].trim());
-            if (year < 0 || year > 4) {
-                throw new MainException("Make sure Year of Study is a number from 0-4");
+            double checkYear = Double.parseDouble(userCommands[4].trim());
+            if ((checkYear % 1) != 0) {
+                throw new MainException("Make sure Year of Study is an integer from 1-4");
+            }
+            int year = (int) checkYear;
+            if (year < 1 || year > 4) {
+                throw new MainException("Make sure Year of Study is an integer from 1-4");
             }
             String semester = userCommands[5].trim();
             boolean isCorrectSemester = semester.equals("1")
@@ -416,7 +448,7 @@ public class Parser {
                 throw new MainException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Year of Study is a number from 0-4");
+            throw new MainException("Make sure Year of Study is an integer from 1-4");
         }
     }
 
@@ -433,7 +465,7 @@ public class Parser {
         if (moduleCode.equals("")) {
             throw new MainException("Module Code cannot be empty");
         }
-        if (moduleCode.length() < 6) {
+        if (moduleCode.trim().length() < 6) {
             throw new MainException("Module Code cannot be less than 6 characters!");
         }
         if (moduleCode.trim().length() > 10) {
@@ -451,13 +483,20 @@ public class Parser {
      */
     private void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
         try {
-            int moduleCredits = Integer.parseInt(modularCredits);
-            if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
+            int moduleCredits;
+            double checkModuleCredits = Double.parseDouble(modularCredits);
+            double decimalRemainder = checkModuleCredits % 1;
+            if (decimalRemainder != 0) {
+                throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
+
+            }
+            moduleCredits = (int) checkModuleCredits;
+            if (moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
                     || moduleCredits == 10 || moduleCredits == 11) {
-                throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+                throw new MainException("Make sure Modular Credits is an integer 0-6, 8 or 12");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+            throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
         }
     }
 
@@ -480,7 +519,7 @@ public class Parser {
 
     /**
      * Checks the year field of an Edit Year command.
-     * Currently checks for year being [0-4].
+     * Currently checks for year being [1-4].
      * Currently checks for year being an integer.
      *
      * @param year the updated year that the module is taken or to be taken in
@@ -488,12 +527,20 @@ public class Parser {
      */
     private void checkEditInputYear(String year) throws MainException {
         try {
+            double checkYear = Double.parseDouble(year);
+            if ((checkYear % 1) != 0) {
+                throw new MainException("Make sure Year of Study is an integer from 1-4");
+            }
+            int checkedYear = (int) checkYear;
+            if (checkedYear < 1 || checkedYear > 4) {
+                throw new MainException("Make sure Year of Study is an integer from 1-4");
+            }
             int newYear = Integer.parseInt(year);
-            if (newYear < 0 || newYear > 4) {
-                throw new MainException("Make sure Year of Study is a number from 0-4");
+            if (newYear < 1 || newYear > 4) {
+                throw new MainException("Make sure Year of Study is an integer from 1-4");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Year of Study is a number from 0-4");
+            throw new MainException("Make sure Year of Study is an integer from 1-4");
         }
     }
 
@@ -535,7 +582,7 @@ public class Parser {
             listOfModules.listModulesByYear("4");
             break;
         default:
-            throw new MainException("Make sure Year of Study is a number from 1-4 or \"all\"");
+            throw new MainException("Make sure Year of Study is an integer from 1-4 or \"all\"");
         }
     }
 
@@ -674,5 +721,25 @@ public class Parser {
         default:
             throw new MainException("Make sure you're trying to track Core, GE, UE or Internship.");
         }
+    }
+    private String[] sanitiseModuleCodeList(String[] moduleList, ArrayList<Module> listOfModules) {
+        String[] sanitisedModuleList = moduleList;
+        boolean hasDuplicate = false;
+        for (int i = 0; i < sanitisedModuleList.length; i++) {
+            boolean unacceptedInput = sanitisedModuleList[i].equals("")
+                    || sanitisedModuleList[i].trim().length() < 6
+                    || sanitisedModuleList[i].trim().length() > 10;
+
+            if (unacceptedInput) {
+                sanitisedModuleList[i] = "fail";
+            }
+            try {
+                checkAddInputNoDuplicates(sanitisedModuleList[i].trim(), listOfModules);
+            } catch(MainException e) {
+                Print.printErrorMessage(e);
+                sanitisedModuleList[i] = "fail";
+            }
+        }
+        return sanitisedModuleList;
     }
 }

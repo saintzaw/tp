@@ -70,7 +70,7 @@ public class ManPage {
                 line+
                 "Adding a module:  add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM\n "+
                 "Adds a module to the list of modules.\n " +
-                "Year includes {1, 2, 3, 4, 5, 6}\n "+
+                "Year includes {1, 2, 3, 4}\n "+
                 "Semester includes  {1, 1.5(semester 1 break), 2, 2.5(semester 2 break)}\n "+
                 "Multiple modules could be added at the same time, like: "+
                 "add /CS2113T IS4231 CS1010 /4 /CORE /1 /1 for year 1 semester 1\n "+

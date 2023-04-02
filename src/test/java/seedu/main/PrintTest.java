@@ -351,7 +351,7 @@ public class PrintTest {
                 + System.lineSeparator() + " " +
                 "Adds a module to the list of modules."
                 + System.lineSeparator() + " " +
-                "Year includes {1, 2, 3, 4, 5, 6}"
+                "Year includes {1, 2, 3, 4}"
                 + System.lineSeparator() + " " +
                 "Semester includes  {1, 1.5(semester 1 break), 2, 2.5(semester 2 break)}" +
                 System.lineSeparator() + " " +
@@ -602,7 +602,7 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Make sure Modular Credits is a number from 0-6, 8 or 12"
+                + System.lineSeparator() + "     Error: Make sure Modular Credits is an integer from 0-6, 8 or 12"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -640,8 +640,15 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Module Code cannot be less than 6 characters!"
+                + System.lineSeparator()
+                + "     Error: Module Code cannot be empty and must be between 6-10 characters"
                 + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator()
+                + "    ____________________________________________________________"
+                + System.lineSeparator()
+                + "     Attempting to add modules with the correct module code!"
+                + System.lineSeparator()
+                + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -724,7 +731,7 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Make sure Year of Study is a number from 0-4"
+                + System.lineSeparator() + "     Error: Make sure Year of Study is an integer from 1-4"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -763,7 +770,7 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Make sure Year of Study is a number from 0-4"
+                + System.lineSeparator() + "     Error: Make sure Year of Study is an integer from 1-4"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
