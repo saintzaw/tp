@@ -39,6 +39,9 @@ public class Parser {
         case "FIND":
             ManPage.printManPageFind();
             break;
+        case "TRACK":
+            ManPage.printManPageTrack();
+            break;
         case "DELETE":
             ManPage.printManPageDelete();
             break;
