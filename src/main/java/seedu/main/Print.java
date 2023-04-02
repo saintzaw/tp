@@ -343,4 +343,13 @@ public class Print {
         System.out.println("    ____________________________________________________________");
     }
 
+    /**
+     * Prints a message to user that Modganiser is adding other modules with the correct module code
+     */
+    public static void printAddingCorrectModuleCode() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     Attempting to add modules with the correct module code!");
+        System.out.println("    ____________________________________________________________");
+    }
+
 }
