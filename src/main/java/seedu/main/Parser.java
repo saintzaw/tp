@@ -284,13 +284,12 @@ public class Parser {
 
         //check for non-empty and correct number of characters in the moduleCode field
         String[] moduleList = userCommands[1].trim().split(" ");
-        boolean hasErrors = false;
         try {
             checkAddInputCorrectModuleCode(moduleList);
         } catch (MainException e) {
             Print.printErrorMessage(e);
-            hasErrors = true;
-            //check for duplicate names and then returns sanitised list
+            Print.printAddingCorrectModuleCode();
+            // returns sanitised list
             moduleList = sanitiseModuleCodeList(moduleList, listOfModules.getModuleList());
         }
         //check for correct field in MC
@@ -306,15 +305,15 @@ public class Parser {
         int year = ((int) Double.parseDouble(userCommands[4].trim()));
         String inputYear = Integer.toString(year).trim();
 
-
-        if (hasErrors) {
-            Print.printAddingCorrectModuleCode();
-        } else {
-            moduleList = sanitiseModuleCodeList(moduleList, listOfModules.getModuleList());
-        }
-        // add all the modules
+        // add all the modules and checks for duplicates
         for (String moduleCode: moduleList) {
             if (moduleCode.equals("fail")) {
+                continue;
+            }
+            try {
+                checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
+            } catch (MainException e) {
+                Print.printErrorMessage(e);
                 continue;
             }
             Module addedModule = listOfModules.addModule(moduleCode.trim(), modularCredit,
@@ -724,19 +723,12 @@ public class Parser {
     }
     private String[] sanitiseModuleCodeList(String[] moduleList, ArrayList<Module> listOfModules) {
         String[] sanitisedModuleList = moduleList;
-        boolean hasDuplicate = false;
         for (int i = 0; i < sanitisedModuleList.length; i++) {
             boolean unacceptedInput = sanitisedModuleList[i].equals("")
                     || sanitisedModuleList[i].trim().length() < 6
                     || sanitisedModuleList[i].trim().length() > 10;
 
             if (unacceptedInput) {
-                sanitisedModuleList[i] = "fail";
-            }
-            try {
-                checkAddInputNoDuplicates(sanitisedModuleList[i].trim(), listOfModules);
-            } catch(MainException e) {
-                Print.printErrorMessage(e);
                 sanitisedModuleList[i] = "fail";
             }
         }
