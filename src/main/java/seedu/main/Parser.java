@@ -65,6 +65,11 @@ public class Parser {
     public void checkUserInput(String userInput, ModuleList moduleList) throws MainException {
 
         String[] userCommands = userInput.toUpperCase().split("/");
+        for (String userCommand : userCommands) {
+            if (userCommand.isEmpty()) {
+                throw new MainException("user input cannot be empty for any parameter");
+            }
+        }
 
         switch (userCommands[0].trim()) {
         case "MAN":
