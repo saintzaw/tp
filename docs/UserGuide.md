@@ -248,7 +248,7 @@ When you have found a module that you would wish to take, you can use this comma
 
 > 📓 [**Note**](#31-special-notations)
 >
-> 1.5 and 2.5 in SEMESTER refer to winter and summer break respectively.
+> 1.5 and 2.5 in SEMESTER refer to Special Term 1 and Special Term 2 respectively.
 
 >❗ [**Warning**](#31-special-notations)
 >
