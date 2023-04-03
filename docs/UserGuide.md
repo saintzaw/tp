@@ -16,7 +16,7 @@ Should you have any feedback or enquiries, please do not hesitate to [reach out 
 Are you a current information security undergraduate at NUS? Or are you a prospective student,
 about to begin your journey into information security? Well, Modganiser is exactly what you are looking for!
 
-So why Modganiser? We have seen and heard of cases of undergraduates not being able to graduate on time as they have missed out certain requirements. Modganiser hence provides you a platform to effortless plan for all the modules you plan to take and is targeted at Information Security students who aim to graduate in 4 years, ensuring that you are able to clear all the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) needed. 
+So why Modganiser? We have seen and heard of cases of undergraduates not being able to graduate on time as they have missed out certain requirements. Modganiser hence provides you a platform to effortless plan for all the modules you plan to take and is targeted at Information Security students who aim to graduate in 4 years, ensuring that you are able to clear all the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) needed.
 
 Modganiser works via the [Command Line Interface (CLI)](#8-glossary), and while it is a big difference compared to traditional Graphical User Interface (GUI) applications, If you can type fast, Modganiser is much more efficient!
 
@@ -35,27 +35,27 @@ the [features section](#51-summary-of-features)!
 1. [Acknowledgements](#1-acknowledgements)
 2. [Introduction](#2-introduction)
 3. [How To Use The User Guide](#3-how-to-use-the-user-guide)
-   + 3.1 [Special Notations](#31-special-notations)
-   + 3.2 [Notes on the Commands](#32-notes-on-the-commands)
+    + 3.1 [Special Notations](#31-special-notations)
+    + 3.2 [Notes on the Commands](#32-notes-on-the-commands)
 4. [Set-Up Guide](#4-set-up-guide)
 5. [Features](#5-features)
-   + 5.1 [Summary Of Features](#51-summary-of-features)
-   + 5.2 [Managing Modules in the Module Plan](#52-managing-modules-in-the-module-plan)
-     - 5.2.1 [Adding Modules: add](#521-adding-modules-add)
-     - 5.2.2 [Adding Grade Obtained for Module: grade](#522-adding-grade-obtained-for-module-grade)
-     - 5.2.3 [Editing Module Details: edit](#523-editing-module-details-edit)
-     - 5.2.4 [Deleting Module From Module Plan: delete](#524-deleting-module-from-module-plan-delete)
-   + 5.3 [Display Modules in the Module Plan](#53-display-modules-in-the-module-plan)
-     - 5.3.1 [Viewing Module Plan: list](#531-viewing-module-plan-list)
-     - 5.3.2 [Finding Modules In The Module Plan: find](#532-finding-modules-in-the-module-plan-find)
-   + 5.4 [Tracking Graduation Progress](#54-tracking-graduation-progress)
-     - 5.4.1 [Tracking the Completion of Each Module Type: track](#541-tracking-the-completion-of-each-module-type-track)
-     - 5.4.2 [Calculating Your Current CAP: calculatecap](#542-calculating-your-current-cap-calculatecap)
-   + 5.5 [Miscellaneous](#55-miscellaneous)
-     - 5.5.1 [Viewing the Entire Manual: man](#551-viewing-the-entire-manual-man)
-     - 5.5.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#552-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
-     - 5.5.3 [Exiting Modganiser: bye](#553-exiting-modganiser-bye)
-     - 5.5.4 [Saving Module Plan](#554-saving-module-plan)
+    + 5.1 [Summary Of Features](#51-summary-of-features)
+    + 5.2 [Managing Modules in the Module Plan](#52-managing-modules-in-the-module-plan)
+        - 5.2.1 [Adding Modules: add](#521-adding-modules-add)
+        - 5.2.2 [Adding Grade Obtained for Module: grade](#522-adding-grade-obtained-for-module-grade)
+        - 5.2.3 [Editing Module Details: edit](#523-editing-module-details-edit)
+        - 5.2.4 [Deleting Module From Module Plan: delete](#524-deleting-module-from-module-plan-delete)
+    + 5.3 [Display Modules in the Module Plan](#53-display-modules-in-the-module-plan)
+        - 5.3.1 [Viewing Module Plan: list](#531-viewing-module-plan-list)
+        - 5.3.2 [Finding Modules In The Module Plan: find](#532-finding-modules-in-the-module-plan-find)
+    + 5.4 [Tracking Graduation Progress](#54-tracking-graduation-progress)
+        - 5.4.1 [Tracking the Completion of Each Module Type: track](#541-tracking-the-completion-of-each-module-type-track)
+        - 5.4.2 [Calculating Your Current CAP: calculatecap](#542-calculating-your-current-cap-calculatecap)
+    + 5.5 [Miscellaneous](#55-miscellaneous)
+        - 5.5.1 [Viewing the Entire Manual: man](#551-viewing-the-entire-manual-man)
+        - 5.5.2 [Viewing the Detailed Manual Page for A Single Feature: man /FEATURE](#552-viewing-the-detailed-manual-page-for-a-single-feature-man-feature)
+        - 5.5.3 [Exiting Modganiser: bye](#553-exiting-modganiser-bye)
+        - 5.5.4 [Saving Module Plan](#554-saving-module-plan)
 6. [FAQ](#6-faq)
 7. [Command Summary](#7-command-summary)
 8. [Glossary](#8-glossary)
@@ -115,14 +115,14 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 > 📓 [**Note**](#31-special-notations)
 > 1. Markdown Texts
->   - Markdown texts are texts that look like `this`, which indicates that these are user inputs
+     >   - Markdown texts are texts that look like `this`, which indicates that these are user inputs
 > 2. Command Words
->   - Command words are used to invoke the various features of Modganiser.
->     - You may refer to the [summary of features](#51-summary-of-features) here.
+     >   - Command words are used to invoke the various features of Modganiser.
+           >     - You may refer to the [summary of features](#51-summary-of-features) here.
 >   - Command words are not case-sensitive
 >   - Example: `BYE` will be accepted as the `bye` command
 > 3. Parameters
->   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
+     >   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
 >   - All inputs for the [parameters](#8-glossary) should come with a slash “/” before it to indicate
       that it is a user input and not the Command Word.
 >   - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before
@@ -130,20 +130,20 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
       default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser
 >   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command.
       Missing or Additional Inputs will trigger an error by Modganiser
-> 4. How To Interpret Screenshots 
->   - Screenshots serve as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser.
+> 4. How To Interpret Screenshots
+     >   - Screenshots serve as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser.
 >   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right.
 >   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
->   
->   ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
-> 
+     >
+     >   ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
+>
 > 5. Errors and Warnings
->   - If you are receiving an error or warning, do check that you do not have missing or
-      additional inputs and that your inputs are in the list of accepted input
->
->   ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
->
->   ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
+     >   - If you are receiving an error or warning, do check that you do not have missing or
+           additional inputs and that your inputs are in the list of accepted input
+     >
+     >   ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
+     >
+     >   ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 
 Now that you are better acquainted with this guide, let's talk about how to install Modganiser!
 
@@ -161,16 +161,17 @@ Now that you are better acquainted with this guide, let's talk about how to inst
 To set up Modganiser, please follow the steps below:
 1. Download Java from the Java Developer Webpage
     * For Windows, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) and choose the x64 installer.
-    * For macOS, Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer.  
+    * For macOS, Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer.
 
 2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the tp.jar file, which contains Modganiser.
 
 3. Save the file into a new folder on your Desktop and title the folder “Modganiser”
 
 4. Open the [CLI interface](#8-glossary) on your device
-   * For Windows, click on the Windows button and search for “Command Prompt”.
-   * For macOS, press on the command and spacebar button together and search for “Terminal”
-   * The window that appears is the CLI on your computer. We will be using this interface to run Modganiser.
+    * For Windows, click on the Windows button and search for “Command Prompt”.
+    * For macOS, press on the command and spacebar button together and search for “Terminal”
+    * The window that appears is the CLI on your computer. We will be using this interface to run Modganiser.
+    * Make the window full screen by click on the square icon on the top right if you are using a Windows device or the green button on the top left if you are using a macOS device.
 
    ![WindowsCLI](UG_Screenshots/Windows_cmd_prompt.PNG)
    <p style = "text-align:center"><small>Windows version of CLI with a command typed out</small></p>
@@ -181,7 +182,7 @@ To set up Modganiser, please follow the steps below:
 5. Run the following commands:
     * Type “cd Desktop” and press enter
     * Type “cd Modganiser” and press enter
-    * Type “java -jar tp.jar” and press enter  
+    * Type “java -jar tp.jar” and press enter
 
 6. If successful, you should see the following displayed on your screen:
 
@@ -243,7 +244,7 @@ When you have found a module that you would wish to take, you can use this comma
 | SEMESTER                 | Which semester you plan to take the module                            | 1, 1.5, 2, 2.5                          |
 
 > 📓 [**Note**](#31-special-notations)
-> 
+>
 > [CORE](#8-glossary) refers to modules that do not fall under the other 3 categories.
 
 > 📓 [**Note**](#31-special-notations)
@@ -270,15 +271,15 @@ Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 
 ![AddCommand](UG_Screenshots/AddingAModule.png)
 
 > 📓 [**Note**](#31-special-notations)
-> 
+>
 > The C in the first square bracket represents [Core Module](#8-glossary). [GE](#8-glossary), [UE](#8-glossary) and [Internship](#8-glossary) Modules are represented with “GE”, “UE” and “I” respectively as shown in the images below.
-> 
+>
 > ![GEmodule](UG_Screenshots/GE_Module.png)
 > ![UEmodule](UG_Screenshots/UE_Module.png)
 > ![Internship](UG_Screenshots/Internship_Module.png)
 
 >❗ [**Warning**](#31-special-notations)
-> 
+>
 > Missing inputs for the various [parameters](#8-glossary) or having too many inputs for the [parameters](#8-glossary) will cause Modganiser to throw you a warning as shown in the Notes On The Commands section.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
@@ -289,14 +290,14 @@ Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 
 <div style="page-break-after: always;"></div>
 
 > 💡 [**Tip**](#31-special-notations)
-> 
-> As you will likely take an average of 5 modules in a semester, multiple modules can be together. 
-> 
+>
+> As you will likely take an average of 5 modules in a semester, multiple modules can be together.
+>
 > For example: `add /CS2113T IS4231 CS3235 /4 /CORE /2 /2` will add CS2113T, IS4231 and CS3235 into the module plan. All 3 modules will be reflected as [Core](#8-glossary) modules worth 4 MCs, and will be taken in Year 2 Semester 2.
 > ![AddCommand](UG_Screenshots/AddingMultipleModules.png)
 
 >❗ [**Warning**](#31-special-notations)
-> 
+>
 > Adding multiple modules should only be used if all the modules have the same inputs for MODULE_TYPE, MODULAR_CREDITS, YEAR and SEMESTER. Example, SIP3200 and CS2113T should not be added together in a single line as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
@@ -330,8 +331,8 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 > The grades for modules will be empty initially and will have a blank 2nd square bracket [“ ”] which needs to be updated via this command.
 
 
->❗ [**Warning**](#31-special-notations) 
-> 
+>❗ [**Warning**](#31-special-notations)
+>
 > Modganiser will show an error if you add grades to a module that doesn't exist.
 ![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)
 
@@ -352,19 +353,19 @@ If you entered wrong details for a module when adding it to your module plan wit
 |       FIELD_TO_EDIT        |                    The [parameter](#8-glossary) of the module that you wish to edit                    |                                                              CODE, MC, TYPE, YEAR, SEMESTER, GRADE                                                              |
 |          NEW_INFO          | The new information to replace the incorrect or outdated information for that [parameter](#8-glossary) | Accepted inputs will be based on the field to edit. Please refer to the accepted inputs for the respective fields in the [add command](#521-adding-modules-add). |
 
-> 📓 [**Note**](#31-special-notations) 
-> 
-> * CODE represents MODULE_CODE 
+> 📓 [**Note**](#31-special-notations)
+>
+> * CODE represents MODULE_CODE
 > * MC represents MODULAR_CREDITS
 > * TYPE represents MODULE_TYPE
 
-**Command Format** 
+**Command Format**
 
 `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO`
 
 Example: `edit /CS2113T /TYPE /UE` edits the [Module Type](#8-glossary) of CS2113T to [UE](#8-glossary)
 
-Expected Output: 
+Expected Output:
 
 ![EditExistingModule_ByType.png](UG_Screenshots/EditExistingModule_ByType.png)
 
@@ -410,11 +411,11 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 ![DeleteCommand](UG_Screenshots/DeleteExistingModule.png)
 
-> ❗ [**Warning**](#31-special-notations) 
-> 
+> ❗ [**Warning**](#31-special-notations)
+>
 > Modganiser will show an error if you delete a module that doesn't exist in your module plan.
-> 
->![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png) 
+>
+>![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
@@ -435,7 +436,7 @@ When you want to view your 4 year module plan or a specific year of your module 
 |:------------------------:|:------------------------------------------------------:|:---------------:|
 |           YEAR           | The specific year of your module plan you wish to view | ALL, 1, 2, 3, 4 |
 
-**Command Format** 
+**Command Format**
 
 `list /YEAR`
 
@@ -494,6 +495,12 @@ Example: `find /TYPE /CORE` finds all modules whose [module type](#8-glossary) i
 
 ![FindModuleType](UG_Screenshots/FindModulesByType.png)
 
+> ❗ [**Warning**](#31-special-notations)
+>
+> Modganiser will show an error if you use the find command when your module plan is empty.
+>
+>![DeleteError](UG_Screenshots/FindModulePlanEmpty.png)
+
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
@@ -521,9 +528,9 @@ Example: `track/CORE` tracks the completion status of your [core modules](#8-glo
 
 ![trackCore](UG_Screenshots/TrackCommand.png)
 
-> 📓 [**Note**](#31-special-notations) 
-> 
->Completed modules are modules which have a grade. Modules which do not have a grade 
+> 📓 [**Note**](#31-special-notations)
+>
+>Completed modules are modules which have a grade. Modules which do not have a grade
 will not be considered as completed and hence counted.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
@@ -538,7 +545,7 @@ will not be considered as completed and hence counted.
 
 When you want to know your current CAP, you can use this command to calculate it based on the grades you obtained. Grades obtained correspond to a number that is used to calculate your CAP.  
 To find out more about how your CAP is calculated, do visit the official [NUS website](https://www.nus.edu.sg/registrar/academic-information-policies/modular-system)
-  
+
 |  [Parameter](#8-glossary)  |                   Description                    |        Accepted Inputs        |
 |:-----------:|:------------------------------------------------:|:-----------------------------:|
 | NIL | NIL | NIL |
@@ -556,7 +563,7 @@ Example: `calculatecap` calculates your current CAP
 
 > 📓 [**Note**](#31-special-notations)
 >
-> To update the grade you obtained for the module, please refer to the [grade command](#522-adding-grade-obtained-for-module-grade). 
+> To update the grade you obtained for the module, please refer to the [grade command](#522-adding-grade-obtained-for-module-grade).
 
 ---
 
@@ -627,10 +634,10 @@ Example: `bye` exits the program
 
 ![ByeCommand](UG_Screenshots/ExitCommand.png)
 
-> 📓 [**Note**](#31-special-notations) 
-> 
->Typing bye during any time when the Modganiser is running will exit the program. 
-When Modganiser asks for your name during its first start up, typing bye will also exit the 
+> 📓 [**Note**](#31-special-notations)
+>
+>Typing bye during any time when the Modganiser is running will exit the program.
+When Modganiser asks for your name during its first start up, typing bye will also exit the
 program. If your name is “bye”, please do consider using an alias.
 Thank you and sorry for the inconvenience caused.
 
@@ -650,18 +657,20 @@ To find your save file:
 2. Double-click on the folder and find the folder titled “data”
 3. Double-click on the folder and the file titled “modules.txt” is the save file
 
-> ❗ [**Warning**](#31-special-notations) 
-> 
+> ❗ [**Warning**](#31-special-notations)
+>
 > Please do not edit this save file to prevent corrupting your saved data.
+> If Modganiser detects a corrupted save file, Modganiser will remove the corrupted save file and create a blank save file (ie. Your entire module plan will be deleted).
+> Hence, please do not tamper with the save file if you are not certain that your actions will not corrupt the save file.
 
 Your saved module plan will be automatically loaded when you run Modganiser.
 
 > 📓 [**Note**](#31-special-notations)
-> 
-> If you switch devices, and want to import your module plan from your old device to 
-the new one, firstly locate your save file on the old device, which is just a normal text 
-file. You can then use any form of messaging applications like [Telegram](https://telegram.org/), email applications 
-like [Gmail](https://mail.google.com/) or online cloud storage like [Google Drive](https://drive.google.com/) to send this save file to yourself or 
+>
+> If you switch devices, and want to import your module plan from your old device to
+the new one, firstly locate your save file on the old device, which is just a normal text
+file. You can then use any form of messaging applications like [Telegram](https://telegram.org/), email applications
+like [Gmail](https://mail.google.com/) or online cloud storage like [Google Drive](https://drive.google.com/) to send this save file to yourself or
 store this save file. You can then retrieve this save file from your new device.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>

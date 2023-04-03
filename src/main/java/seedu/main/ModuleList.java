@@ -46,7 +46,7 @@ public class ModuleList {
      * @return
      */
     public Module addModule(String moduleCode, String modularCredits,
-                          String moduleType, String year, String semester) {
+                            String moduleType, String year, String semester) {
         int oldSizeOfList = listOfModules.size();
         LOGGER.log(Level.INFO, "Starting addModule process");
         switch (moduleType.toUpperCase()) {
@@ -83,7 +83,7 @@ public class ModuleList {
      */
     public ArrayList<Module> findModuleByCode(String keyword) throws MainException {
         if (listOfModules.size() == 0) {
-            throw new MainException("There are currently no modules in your list");
+            throw new MainException("There are currently no modules in your module plan.");
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModuleByName process");
@@ -104,7 +104,7 @@ public class ModuleList {
      */
     public ArrayList<Module> findModuleByType(String type) throws MainException {
         if (listOfModules.size() == 0) {
-            throw new MainException("There are currently no modules in your list");
+            throw new MainException("There are currently no modules in your module plan.");
         }
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModuleByType process");
@@ -139,7 +139,7 @@ public class ModuleList {
             }
             break;
         default:
-            throw new MainException("Make sure your types are CORE, GE, UE or Internship");
+            throw new MainException("Make sure your module type input is CORE, GE, UE or Internship");
         }
         return foundModules;
     }
