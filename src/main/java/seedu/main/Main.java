@@ -84,39 +84,53 @@ public class Main {
 
     /**
      * If the user has previously entered his/her name, extract the name from the save file.
-     * Otherwise, prompt the user for his/her name and save it to the save file.
+     * Otherwise, prompt the user for his/her name
+     * @param in the Scanner object to get input from stdin
      * @return the user's name
      */
     public static String getUserName(Scanner in) throws FileNotFoundException{
         String savedName = Storage.getSavedName();
-        String name = "";
-        boolean nameIsValid = true;
+        String name;
 
         if (isNameSaved(savedName)) {
             name = savedName;
         } else {
-            Print.promptForName();
-            do {
-                if (!nameIsValid) {
-                    Print.printInvalidNameMessage();
-                }
-                name = in.nextLine().trim();
-                if (name.trim().length() == 0) {
-                    nameIsValid = false;
-                } else {
-                    nameIsValid = true;
-                }
-            } while (!nameIsValid);
-            assert !(name.equalsIgnoreCase("bye")) : "name is bye";
-            if (!name.equalsIgnoreCase("bye")) {
-                Storage.saveName(name);
+           name = promptUserForName(in);
+        }
+        return name;
+    }
+
+    /**
+     * Continuously prompt the user for his/her name and save it to the save file.
+     * @param in the Scanner object to get input from stdin
+     * @return the user's name
+     */
+    public static String promptUserForName(Scanner in) {
+        Print.promptForName();
+        String name = "";
+        boolean nameIsValid = true;
+        do {
+            if (!nameIsValid) {
+                Print.printInvalidNameMessage();
             }
+            name = in.nextLine().trim();
+            if (name.trim().length() == 0) {
+                nameIsValid = false;
+            } else {
+                nameIsValid = true;
+            }
+        } while (!nameIsValid);
+        assert !(name.equalsIgnoreCase("bye")) : "name is bye";
+        if (!name.equalsIgnoreCase("bye")) {
+            Storage.saveName(name);
         }
         return name;
     }
 
     /**
      * Determine if the user's name has been saved to the save file previously.
+     * @param name the string which represents the user's name if present, otherwise it will
+     *             be an empty string
      * @return true if the user's name has been previously saved, returns false otherwise.
      */
     public static boolean isNameSaved(String name) {

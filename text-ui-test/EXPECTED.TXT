@@ -7,7 +7,8 @@ Hello from
                            |___/
 What is your name?
     ____________________________________________________________
-     Hello James Gosling! I'm your personal Modganiser.
+     Hello James Gosling!
+     I'm your personal Modganiser.
      What would you like to plan today?
      To find out more, type `man` and press enter :)
     ____________________________________________________________
