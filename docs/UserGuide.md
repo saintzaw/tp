@@ -236,7 +236,7 @@ When you have found a module that you would wish to take, you can use this comma
 
 | [Parameter](#8-glossary) | Description                                                           | Accepted Inputs                                   |
 |--------------------------|-----------------------------------------------------------------------|---------------------------------------------------|
-| MODULE_CODE              | Please refer to [NUSMods](https://nusmods.com) for the Module's Code  | All [alphanumeric](#8-glossary) inputs                       |
+| MODULE_CODE              | Please refer to [NUSMods](https://nusmods.com) for the Module's Code  | All inputs consisting of [alphanumeric](#8-glossary) characters                       |
 | MODULAR_CREDITS          | The number of modular credits the module is worth                     | 0-41, with no decimal places                      |
 | MODULE_TYPE              | Which category the module falls under                                 | [CORE, GE, UE, INTERNSHIP](#8-glossary)           |
 | YEAR                     | Which year you plan to take the module                                | 1, 2, 3, 4, with no decimal places                |
@@ -448,7 +448,7 @@ When you want to view your 4 year module plan or a specific year of your module 
 
 `list /YEAR`
 
-Example: `list /all` lists the entire module plan.
+Example: `list /ALL` lists the entire module plan.
 
 ![ListingAllModules.png](UG_Screenshots/ListingAllModules.png)
 
@@ -522,7 +522,9 @@ Example: `find /TYPE /CORE` finds all modules whose [module type](#8-glossary) i
 
 **Function**
 
-When you want to know how far away you are from completing your graduation requirements, you can use this command to tracks how many modular credits of a [module type](#8-glossary) you have completed. Modganiser will list out all the modules that you have completed under that [module type](#8-glossary) and how many more modular credits you need before you meet the requirements for it.
+To know how many more planned modules is needed to fulfil your graduation requirements, you can use this command to track how many modular credits of a [module type](#8-glossary) you have already added to the module planner.   
+Modganiser will list out all the modules that you have planned under that specific [module type](#8-glossary) and display how many more modular credits is needed before you meet the graduation requirements for it.  
+Additionally, you can also track all the planned modules filtered by their [module type](#8-glossary) at once if you wish to do so.
 
 |  [Parameter](#8-glossary)  |                   Description                    |        Accepted Inputs        |
 |:-----------:|:------------------------------------------------:|:-----------------------------:|
@@ -532,14 +534,18 @@ When you want to know how far away you are from completing your graduation requi
 
 `track /MODULE_TYPE`
 
-Example: `track/CORE` tracks the completion status of your [core modules](#8-glossary).
+Example: `track /ALL` tracks all the planned modules filtered by [module type](#8-glossary).
+
+![trackAll](UG_Screenshots/TrackAllCommand.png)
+
+<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+Example: `track /CORE` tracks the completion status of your [core modules](#8-glossary).
 
 ![trackCore](UG_Screenshots/TrackCommand.png)
-
-> 📓 [**Note**](#31-special-notations)
->
->Completed modules are modules which have a grade. Modules which do not have a grade
-will not be considered as completed and hence counted.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
@@ -752,6 +758,8 @@ A explanation of the technical terms frequently used in this guide or unique to 
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Command Line Interface | Text based user interface to run programs                                                                                                                                                                                                                                     |
 | Parameter              | Additional input fields that require user inputs for the [command word](#51-notes-on-the-command-format)                                                                                                                                                                      |
+| Alphanumeric          | Numbers from 0-9, letters from a-z and A-Z                                                                                                                                                                                          |
+| Numerals         | Data that is stored on your device and can be accessed without an internet conn                                                                                                                                                                                       |
 | Module Type            | Refers to one of Core, GE, UE, INTERNSHIP or all of them.                                                                                                                                                                                                                     | 
 | Core Module Type       | Any module that does not fall under UE, GE or Internship module type                                                                                                                                                                                                          |
 | GE Module Type         | Stands for General Elective Module Type. Please refer to the [NUS Website](https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/general-education/for-students-admitted-from-ay2021-22) for more information on the General Elective Modules |
