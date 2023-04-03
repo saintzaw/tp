@@ -95,7 +95,7 @@ public class Main {
         if (isNameSaved(savedName)) {
             name = savedName;
         } else {
-           name = promptUserForName(in);
+            name = promptUserForName(in);
         }
         return name;
     }
