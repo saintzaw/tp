@@ -236,8 +236,8 @@ When you have found a module that you would wish to take, you can use this comma
 
 | [Parameter](#8-glossary) | Description                                                           | Accepted Inputs                                   |
 |--------------------------|-----------------------------------------------------------------------|---------------------------------------------------|
-| MODULE_CODE              | Please refer to [NUSMods](https://nusmods.com) for the Module's Code  | All inputs will be accepted                       |
-| MODULAR_CREDITS          | The number of modular credits the module is worth                     | 0-30, with no decimal places                      |
+| MODULE_CODE              | Please refer to [NUSMods](https://nusmods.com) for the Module's Code  | All [alphanumeric](#8-glossary) inputs                       |
+| MODULAR_CREDITS          | The number of modular credits the module is worth                     | 0-41, with no decimal places                      |
 | MODULE_TYPE              | Which category the module falls under                                 | [CORE, GE, UE, INTERNSHIP](#8-glossary)           |
 | YEAR                     | Which year you plan to take the module                                | 1, 2, 3, 4, with no decimal places                |
 | SEMESTER                 | Which semester you plan to take the module                            | 1, 1.5, 2, 2.5, with no additional decimal places |
@@ -253,6 +253,15 @@ When you have found a module that you would wish to take, you can use this comma
 >❗ [**Warning**](#31-special-notations)
 >
 > We do not check for the validity of the module code as we cannot maintain a database of modules. Please double-check the module code on [NUSMods](https://nusmods.com) before entering it into Modganiser. If you have entered the wrong MODULE_CODE, you may edit it using the [edit command](#523-editing-module-details-edit).
+
+>❗ [**Warning**](#31-special-notations)
+>
+> We do not check for the validity of the module credits as we cannot maintain a database of modules. Please double-check the module credits for the module on [NUSMods](https://nusmods.com) before entering it into Modganiser. If you have entered the wrong MODULAR_CREDITS, you may edit it using the [edit command](#523-editing-module-details-edit).
+
+>❗ [**Warning**](#31-special-notations)
+>
+> We do not check for the validity of the module type as we cannot maintain a database of modules. Furthermore, what may be taken as a [GE module](#8-glossary) to you could be taken as a [UE module](#8-glossary) for another user.  
+> Please double-check the module type for the module on [NUSMods](https://nusmods.com) before entering it into Modganiser. If you have entered the wrong MODULE_TYPE, you may edit it using the [edit command](#523-editing-module-details-edit).
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
@@ -279,7 +288,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 
 
 >❗ [**Warning**](#31-special-notations)
 >
-> Missing inputs for the various [parameters](#8-glossary) or having too many inputs for the [parameters](#8-glossary) will cause Modganiser to throw you a warning as shown in the Notes On The Commands section.
+> Missing inputs for the various [parameters](#8-glossary) or having too many inputs for the [parameters](#8-glossary) will cause Modganiser to throw you a warning as shown in the [Notes On The Commands](#32-notes-on-the-commands) section.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
@@ -562,7 +571,12 @@ Example: `calculatecap` calculates your current CAP
 
 > 📓 [**Note**](#31-special-notations)
 >
-> To update the grade you obtained for the module, please refer to the [grade command](#522-adding-grade-obtained-for-module-grade).
+> To update the grade you obtained for the module, please refer to the [grade command](#522-adding-grade-obtained-for-module-grade).  
+
+> 📓 [**Note**](#31-special-notations)
+> 
+> Modules that are graded with S, U, CS or CU will **not** be calculated to your CAP, since they are modules with no grade value.  
+> This aligns with how [NUS calculates your CAP](https://www.nus.edu.sg/registrar/academic-information-policies/non-graduating/modular-system).
 
 ---
 
