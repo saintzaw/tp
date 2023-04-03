@@ -29,14 +29,14 @@ public class Main {
         try {
             moduleList = new ModuleList(Storage.getSavedModules());
         } catch (FileNotFoundException e) {
-            Print.printModulesFileLoadingError();
+            Print.printMissingModulesFileError();
             moduleList = new ModuleList();
         } catch (MainException e) {
-            moduleList = new ModuleList();
             Print.printLoadingSaveFileError();
+            moduleList = new ModuleList();
         } catch (ArrayIndexOutOfBoundsException e) {
-            moduleList = new ModuleList();
             Print.printLoadingSaveFileError();
+            moduleList = new ModuleList();
         }
     }
 

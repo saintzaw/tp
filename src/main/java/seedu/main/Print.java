@@ -260,7 +260,7 @@ public class Print {
     /**
      * Prints a message to user that there was an error in loading the modules file.
      */
-    public static void printModulesFileLoadingError() {
+    public static void printMissingModulesFileError() {
         System.out.println("    ____________________________________________________________");
         System.out.println("    Modules file was not found");
         System.out.println("    ____________________________________________________________");
