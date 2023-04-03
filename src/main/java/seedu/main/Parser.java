@@ -405,7 +405,7 @@ public class Parser {
     private void checkAddInputNoDuplicates(String moduleCode, ArrayList<Module> listOfModules) throws MainException {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                throw new MainException(moduleCode + " is already in the list");
+                throw new MainException(moduleCode + " is already in your module plan");
             }
         }
     }
@@ -469,20 +469,12 @@ public class Parser {
      */
     private void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
         try {
-            int moduleCredits;
-            double checkModuleCredits = Double.parseDouble(modularCredits);
-            double decimalRemainder = checkModuleCredits % 1;
-            if (decimalRemainder != 0) {
-                throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
-
-            }
-            moduleCredits = (int) checkModuleCredits;
-            if (moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
-                    || moduleCredits == 10 || moduleCredits == 11) {
-                throw new MainException("Make sure Modular Credits is an integer 0-6, 8 or 12");
+            int moduleCredits = Integer.parseInt(modularCredits);
+            if (moduleCredits < 0 || moduleCredits > 41) {
+                throw new MainException("Make sure Modular Credits is an integer from 0-41");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
+            throw new MainException("Make sure Modular Credits is an integer from 0-41");
         }
     }
 
@@ -513,14 +505,6 @@ public class Parser {
      */
     private void checkEditInputYear(String year) throws MainException {
         try {
-            double checkYear = Double.parseDouble(year);
-            if ((checkYear % 1) != 0) {
-                throw new MainException("Make sure Year of Study is an integer from 1-4");
-            }
-            int checkedYear = (int) checkYear;
-            if (checkedYear < 1 || checkedYear > 4) {
-                throw new MainException("Make sure Year of Study is an integer from 1-4");
-            }
             int newYear = Integer.parseInt(year);
             if (newYear < 1 || newYear > 4) {
                 throw new MainException("Make sure Year of Study is an integer from 1-4");
