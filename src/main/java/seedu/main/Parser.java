@@ -39,6 +39,9 @@ public class Parser {
         case "FIND":
             ManPage.printManPageFind();
             break;
+        case "TRACK":
+            ManPage.printManPageTrack();
+            break;
         case "DELETE":
             ManPage.printManPageDelete();
             break;
@@ -65,6 +68,11 @@ public class Parser {
     public void checkUserInput(String userInput, ModuleList moduleList) throws MainException {
 
         String[] userCommands = userInput.toUpperCase().split("/");
+        for (String userCommand : userCommands) {
+            if (userCommand.isBlank()) {
+                throw new MainException("user input cannot be empty for any parameter");
+            }
+        }
 
         switch (userCommands[0].trim()) {
         case "MAN":
@@ -110,25 +118,33 @@ public class Parser {
             if (userCommands[1].trim().equals("CODE")) {
                 try {
                     foundModules = moduleList.findModuleByCode(userCommands[2].trim());
+                    if (foundModules.isEmpty()) {
+                        Print.printNoModuleFound(userCommands[2].trim());
+                        LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
+
+                    } else {
+                        LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
+                        Print.printFoundModule(foundModules);
+                    }
                 } catch (MainException e) {
                     Print.printErrorMessage(e);
                 }
             } else if (userCommands[1].trim().equals("TYPE")) {
                 try {
                     foundModules = moduleList.findModuleByType(userCommands[2].trim());
+                    if (foundModules.isEmpty()) {
+                        Print.printNoModuleFound(userCommands[2].trim());
+                        LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
+
+                    } else {
+                        LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
+                        Print.printFoundModule(foundModules);
+                    }
                 } catch (MainException e) {
                     Print.printErrorMessage(e);
                 }
             } else {
                 throw new MainException("Please specify type of search with /Code or /Type");
-            }
-            if (foundModules.isEmpty()) {
-                Print.printNoModuleFound(userCommands[2].trim());
-                LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
-
-            } else {
-                LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
-                Print.printFoundModule(foundModules);
             }
             break;
         case "DELETE":
@@ -268,9 +284,17 @@ public class Parser {
         checkNumberOfFields(numberOfFields, userCommands);
         assert userCommands.length == 6 : "Expected 6 fields";
 
-        //check for non-empty and correct number of characters in the moduleCode field
-        checkAddInputCorrectModuleCode(userCommands);
 
+        //check for non-empty and correct number of characters in the moduleCode field
+        String[] moduleList = userCommands[1].trim().split(" ");
+        try {
+            checkAddInputCorrectModuleCode(moduleList);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            Print.printAddingCorrectModuleCode();
+            // returns sanitised list
+            moduleList = sanitiseModuleCodeList(moduleList, listOfModules.getModuleList());
+        }
         //check for correct field in MC
         checkAddInputCorrectModularCreditField(userCommands);
 
@@ -280,11 +304,17 @@ public class Parser {
         //check for correct year and semester
         checkAddInputYearAndSemester(userCommands);
 
-        //check for duplicate names and then add
-        String[] moduleList = userCommands[1].trim().split(" ");
-
+        // add all the modules and checks for duplicates
         for (String moduleCode: moduleList) {
-            checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
+            if (moduleCode.equals("fail")) {
+                continue;
+            }
+            try {
+                checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
+            } catch (MainException e) {
+                Print.printErrorMessage(e);
+                continue;
+            }
             Module addedModule = listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(),
                     userCommands[3].trim(), userCommands[4].trim(), userCommands[5].trim());
             Print.printAddedModule(addedModule, listOfModules.getModuleListSize());
@@ -309,17 +339,22 @@ public class Parser {
     /**
      * Checks the moduleCode section of addInput command.
      * Currently checks for empty strings.
-     * Currently checks for the correct number of parameters.
+     * Currently checks for the correct number of parameters. [6-10]
      *
-     * @param userCommands the user input split into the respective fields and stored in an array
+     * @param moduleList the moduleCode field split into the respective fields and stored in an array
      * @throws MainException if user command is invalid
      */
-    private void checkAddInputCorrectModuleCode(String[] userCommands) throws MainException {
-        if (userCommands[1].trim().equals("")) {
-            throw new MainException("Module Code cannot be empty");
-        }
-        if (userCommands[1].trim().length() < 6) {
-            throw new MainException("Module Code cannot be less than 6 characters!");
+    private void checkAddInputCorrectModuleCode(String[] moduleList) throws MainException {
+        for (int i = 0; i < moduleList.length; i++) {
+            if (moduleList[i].equals("")) {
+                throw new MainException("Module Code cannot be empty and must be between 6-10 characters");
+            }
+            if (moduleList[i].trim().length() < 6) {
+                throw new MainException("Module Code cannot be empty and must be between 6-10 characters");
+            }
+            if (moduleList[i].length() > 10) {
+                throw new MainException("Module Code cannot be empty and must be between 6-10 characters");
+            }
         }
     }
 
@@ -334,12 +369,11 @@ public class Parser {
     private void checkAddInputCorrectModularCreditField(String[] userCommands) throws MainException {
         try {
             int moduleCredits = Integer.parseInt(userCommands[2].trim());
-            if ( moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
-                    || moduleCredits == 10 || moduleCredits == 11) {
-                throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+            if (moduleCredits < 0 || moduleCredits > 41) {
+                throw new MainException("Make sure Modular Credits is an integer from 0-41");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Modular Credits is a number from 0-6, 8 or 12");
+            throw new MainException("Make sure Modular Credits is an integer from 0-41");
         }
     }
 
@@ -371,14 +405,14 @@ public class Parser {
     private void checkAddInputNoDuplicates(String moduleCode, ArrayList<Module> listOfModules) throws MainException {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                throw new MainException(moduleCode + " is already in the list");
+                throw new MainException(moduleCode + " is already in your module plan");
             }
         }
     }
 
     /**
      * Checks the year and semester section of addInput command.
-     * Currently checks for year being [0-4].
+     * Currently checks for year being [1-4].
      * Currently checks for semester being [1, 1.5, 2, 2.5].
      * Currently checks for year being an integer.
      *
@@ -388,8 +422,8 @@ public class Parser {
     private void checkAddInputYearAndSemester(String[] userCommands) throws MainException {
         try {
             int year = Integer.parseInt(userCommands[4].trim());
-            if (year < 0 || year > 4) {
-                throw new MainException("Make sure Year of Study is a number from 0-4");
+            if (year < 1 || year > 4) {
+                throw new MainException("Make sure Year of Study is an integer from 1-4");
             }
             String semester = userCommands[5].trim();
             boolean isCorrectSemester = semester.equals("1")
@@ -400,7 +434,100 @@ public class Parser {
                 throw new MainException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Year of Study is a number from 0-4");
+            throw new MainException("Make sure Year of Study is an integer from 1-4");
+        }
+    }
+
+    /**
+     * Checks the Module Code field of an Edit Module Code command.
+     * Currently checks for empty strings.
+     * Currently checks for the correct number of characters. [6-10]
+     * Currently checks listOfModules to ensure there are no duplicates.
+     *
+     * @param moduleCode the new unique identifier of the module
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
+        if (moduleCode.equals("")) {
+            throw new MainException("Module Code cannot be empty");
+        }
+        if (moduleCode.trim().length() < 6) {
+            throw new MainException("Module Code cannot be less than 6 characters!");
+        }
+        if (moduleCode.trim().length() > 10) {
+            throw new MainException("Module Code cannot be more than 10 characters!");
+        }
+    }
+
+    /**
+     * Checks the Modular Credits field of an Edit Modular Credits command.
+     * Currently checks for the correct modular credit of [0-6, 8, 12]
+     * Currently checks for the modular credit to be an integer.
+     *
+     * @param modularCredits the new number of Modular Credits to be prescribed to the module
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
+        try {
+            int moduleCredits = Integer.parseInt(modularCredits);
+            if (moduleCredits < 0 || moduleCredits > 41) {
+                throw new MainException("Make sure Modular Credits is an integer from 0-41");
+            }
+        } catch (NumberFormatException e) {
+            throw new MainException("Make sure Modular Credits is an integer from 0-41");
+        }
+    }
+
+    /**
+     * Checks the Module Type field of an Edit Module Type command.
+     * Currently checks for whether they belong to [Core, UE, GE, Internship]
+     *
+     * @param typeOfModule the user input split into the respective fields and stored in an array
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputCorrectTypeOfModule(String typeOfModule) throws MainException {
+        boolean isCorrectModuleType = typeOfModule.equals("CORE")
+                || typeOfModule.equals("UE")
+                || typeOfModule.equals("GE")
+                || typeOfModule.equals("INTERNSHIP") ;
+        if (!isCorrectModuleType) {
+            throw new MainException("Incorrect Module Type, Accepted Module Types are: (CORE, UE ,GE ,INTERNSHIP)");
+        }
+    }
+
+    /**
+     * Checks the year field of an Edit Year command.
+     * Currently checks for year being [1-4].
+     * Currently checks for year being an integer.
+     *
+     * @param year the updated year that the module is taken or to be taken in
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputYear(String year) throws MainException {
+        try {
+            int newYear = Integer.parseInt(year);
+            if (newYear < 1 || newYear > 4) {
+                throw new MainException("Make sure Year of Study is an integer from 1-4");
+            }
+        } catch (NumberFormatException e) {
+            throw new MainException("Make sure Year of Study is an integer from 1-4");
+        }
+    }
+
+    /**
+     * Checks the semester field of an Edit Semester command.
+     * Currently checks for semester being [1, 1.5, 2, 2.5].
+     *
+     * @param semester the updated semester that the module is taken or to be taken in
+     * @throws MainException if user command is invalid
+     */
+    private void checkEditInputSemester(String semester) throws MainException {
+        boolean isCorrectSemester = semester.equals("1")
+                || semester.equals("1.5")
+                || semester.equals("2")
+                || semester.equals("2.5");
+        if (!isCorrectSemester) {
+            throw new MainException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
         }
     }
 
@@ -425,7 +552,7 @@ public class Parser {
             listOfModules.listModulesByYear("4");
             break;
         default:
-            throw new MainException("Make sure Year of Study is a number from 0-4 or \"all\"");
+            throw new MainException("Make sure Year of Study is an integer from 1-4 or \"all\"");
         }
     }
 
@@ -454,22 +581,28 @@ public class Parser {
 
         switch (moduleField) {
         case "MC":
+            checkEditInputCorrectModularCreditField(update);
             listOfModules.editModularCredits(moduleCode, update);
             break;
         case "TYPE":
+            checkEditInputCorrectTypeOfModule(update);
             listOfModules.editModuleType(moduleCode, update);
             break;
         case "CODE":
             checkAddInputNoDuplicates(update, listOfModules.getModuleList());
+            checkEditInputCorrectModuleCode(update);
             listOfModules.editModuleCode(moduleCode, update);
             break;
         case "YEAR":
+            checkEditInputYear(update);
             listOfModules.editYear(moduleCode, update);
             break;
         case "SEMESTER":
+            checkEditInputSemester(update);
             listOfModules.editSemester(moduleCode, update);
             break;
         case "GRADE":
+            checkGradeInput(update);
             listOfModules.editModuleGrade(moduleCode, update);
             break;
         default:
@@ -517,7 +650,8 @@ public class Parser {
         case "CU":
             break;
         default:
-            throw new MainException("Please input a valid grade!");
+            throw new MainException("Invalid command format / invalid grade input! Please follow the format " +
+                    "`grade /<module code> /<valid grade>` as per the user guide.");
         }
     }
 
@@ -558,5 +692,18 @@ public class Parser {
         default:
             throw new MainException("Make sure you're trying to track Core, GE, UE or Internship.");
         }
+    }
+    private String[] sanitiseModuleCodeList(String[] moduleList, ArrayList<Module> listOfModules) {
+        String[] sanitisedModuleList = moduleList;
+        for (int i = 0; i < sanitisedModuleList.length; i++) {
+            boolean unacceptedInput = sanitisedModuleList[i].equals("")
+                    || sanitisedModuleList[i].trim().length() < 6
+                    || sanitisedModuleList[i].trim().length() > 10;
+
+            if (unacceptedInput) {
+                sanitisedModuleList[i] = "fail";
+            }
+        }
+        return sanitisedModuleList;
     }
 }

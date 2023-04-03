@@ -18,7 +18,7 @@ public class ManPage {
                 "Command Line Interface (CLI).\n" +
                 "It helps Information security students graduate in time by " +
                 "giving you a platform to plan all 4 years\n" +
-                "of your modules to ensure that you meet graduation requirements (UE/GEs).\nIf you can type fast," +
+                "of your modules to ensure that you meet graduation requirements (UE/GEs).\nIf you can type fast, " +
                 "Modganiser can get your schedule up  faster than traditional GUI apps.\n\n" +
 
                 "----------COMMAND SUMMARY----------\n\n " +
@@ -43,19 +43,23 @@ public class ManPage {
                 "Command: find /MODULE_CODE or MODULE_TYPE /KEYWORD\n " +
                 "To find out more, use the command: man /find\n\n " +
 
-                "6. Delete\n " +
+                "6. Track\n " +
+                "Command: track /MODULE_TYPE\n " +
+                "To find out more, use the command: man /track\n\n " +
+
+                "7. Delete\n " +
                 "Command: delete /MODULE_CODE\n " +
                 "To find out more, use the command: man /delete\n\n " +
 
-                "7. Grade Calculator\n " +
+                "8. Grade Calculator\n " +
                 "Command: calculatecap\n " +
                 "To find out more, use the command: man /calculator\n\n " +
 
-                "8. Input/Update Grades\n " +
+                "9. Input/Update Grades\n " +
                 "Command: grade /MODULE_CODE /GRADE\n " +
                 "To find out more, use the command: man /grade\n\n " +
 
-                "9. Exit\n " +
+                "10. Exit\n " +
                 "Command: bye\n "+
                 "To find out more, use the command: man /bye\n " +
                 line);
@@ -70,7 +74,7 @@ public class ManPage {
                 line+
                 "Adding a module:  add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM\n "+
                 "Adds a module to the list of modules.\n " +
-                "Year includes {1, 2, 3, 4, 5, 6}\n "+
+                "Year includes {1, 2, 3, 4}\n "+
                 "Semester includes  {1, 1.5(semester 1 break), 2, 2.5(semester 2 break)}\n "+
                 "Multiple modules could be added at the same time, like: "+
                 "add /CS2113T IS4231 CS1010 /4 /CORE /1 /1 for year 1 semester 1\n "+
@@ -115,10 +119,12 @@ public class ManPage {
                 "will be : edit /CS1010 /MC /4\n\n " +
 
                 "FIELD_TO_EDIT includes:\n "+
-                "1. modular credits will be /MC\n "+
-                "2. MODULE_TYPE will be /TYPE\n " +
-                "3. Year will be /YEAR\n "+
-                "4. Semester will be /SEMESTER\n\n " +
+                "1. MODULE_CODE will be /CODE\n " +
+                "2. modular credits will be /MC\n "+
+                "3. MODULE_TYPE will be /TYPE\n " +
+                "4. Year will be /YEAR\n "+
+                "5. Semester will be /SEMESTER\n " +
+                "6. Grade will be /GRADE\n\n " +
                 line);
     }
 
@@ -130,12 +136,36 @@ public class ManPage {
         System.out.println("\n\n" + line +
 
                 "Find module: find /MODULE_CODE or MODULE_TYPE /KEYWORD\n " +
-                "Find which year and semester I plan to take the module.\n\n " +
+                "Find out which year and semester you plan to take the module.\n\n " +
                 "Example: In a list with CS2113T and CS2101 as both core modules.\n "+
-                "1.  find /name /CS2113 will show the CS2113T module only\n "+
+                "1.  find /code /CS2113 will show the CS2113T module only\n "+
                 "2.  find /type /CORE  will show both CS2113T and CS2101 modules\n\n " +
                line);
     }
+
+    /**
+     * Prints a more detailed description on how to
+     * use the track feature.
+     */
+    public static void printManPageTrack() {
+        System.out.println("\n\n" + line +
+
+                "To track module type: track /MODULE_TYPE\n " +
+                "Tracks how many modular credits of a module type you have finished\n " +
+                "and Modganiser will list out all the modules that you have taken\n " +
+                "under that module type and how many more modular credits you need\n " +
+                "before you complete the requirements for that module type.\n\n " +
+                "Example: track /CORE\n " +
+                "Tracks the completion status of your core modules\n\n " +
+
+                "--Module Types--\n " +
+                "CORE\n " +
+                "GE (General modules)\n " +
+                "UE (Unrestricted Electives)\n " +
+                "INTERNSHIP (Module Code : ATAP, SIP1, SIP2, IIP, NOC, CVWO1, CVWO2)\n\n " +
+                line);
+    }
+
 
     /**
      * Prints a more detailed description on how to

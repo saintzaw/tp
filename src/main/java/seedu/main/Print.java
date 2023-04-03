@@ -47,7 +47,7 @@ public class Print {
      */
     public static void printFoundModule(ArrayList<Module> foundModules) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Here are the matching modules in your list:");
+        System.out.println("     Here are the matching modules in your module plan:");
         System.out.println("    ____________________________________________________________");
         for (int i = 0; i < foundModules.size(); i++) {
             System.out.println("     " + (i + 1) + ". " + foundModules.get(i));
@@ -60,7 +60,7 @@ public class Print {
      */
     public static void printNoModuleFound(String keyword) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     There are no modules that match the keyword: " + keyword + " in your list");
+        System.out.println("     There are no modules that match the keyword: " + keyword + " in your module plan");
         System.out.println("    ____________________________________________________________");
     }
 
@@ -71,7 +71,7 @@ public class Print {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Noted. I've removed this module:");
         System.out.println("       " + deletedModule);
-        System.out.println("     Now you have " + numOfModules + " modules in the list.");
+        System.out.println("     Now you have " + numOfModules + " modules in your module plan.");
         System.out.println("    ____________________________________________________________");
     }
 
@@ -80,7 +80,8 @@ public class Print {
      */
     public static void printNoDeletedModuleFound(String moduleCode) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     There is no module that matches the module code: " + moduleCode + " in your list");
+        System.out.println("     There is no module that matches the module code: " + moduleCode +
+                " in your module plan");
         System.out.println("    ____________________________________________________________");
     }
 
@@ -91,7 +92,7 @@ public class Print {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Got it. I've added this module:");
         System.out.println("       " + addedModule);
-        System.out.println("     Now you have " + numOfModules + " modules in the list.");
+        System.out.println("     Now you have " + numOfModules + " modules in your module plan.");
         System.out.println("    ____________________________________________________________");
     }
 
@@ -102,7 +103,7 @@ public class Print {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Got it. I've edited the information for this module:");
         System.out.println("       " + editedModule);
-        System.out.println("     Now you have " + numOfModules + " modules in the list.");
+        System.out.println("     Now you have " + numOfModules + " modules in your module plan.");
         System.out.println("    ____________________________________________________________");
     }
 
@@ -111,7 +112,7 @@ public class Print {
      */
     public static void printModuleList(ArrayList<Module> listOfModules) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Here are the modules in your list:");
+        System.out.println("     Here are the modules in your module plan:");
         for (int i = 0; i < listOfModules.size(); i++) {
             System.out.println("     " + (i + 1) + "." + listOfModules.get(i));
         }
@@ -186,7 +187,7 @@ public class Print {
      */
     public static void printEmptyModuleList(String year) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     There are currently no modules in your list for Year " + year);
+        System.out.println("     There are currently no modules in your module plan for Year " + year);
         System.out.println("    ____________________________________________________________");
     }
 
@@ -278,7 +279,7 @@ public class Print {
      */
     public static void printInvalidModule(String moduleCode) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Unable to update the grade for " + moduleCode + " as it's not in your list!");
+        System.out.println("     Unable to update the grade for " + moduleCode + " as it's not in your module plan!");
         System.out.println("    ____________________________________________________________");
     }
 
@@ -334,7 +335,7 @@ public class Print {
      */
     public static void printNoModulesToCalculateCAP() {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Unable to calculate your CAP as there are no modules in your list :(");
+        System.out.println("     Unable to calculate your CAP as there are no modules in your module plan :(");
         System.out.println("    ____________________________________________________________");
     }
 
@@ -343,7 +344,18 @@ public class Print {
      */
     public static void printNoGradedModulesToCalculateCAP() {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Unable to calculate your CAP as there are no graded modules in your list :(");
+        System.out.println("     Unable to calculate your CAP as there are no graded modules that should be counted " +
+                "towards your CAP :(");
+        System.out.println("     (Note: Modules with grade S, U, CS or CU will not be counted in towards your CAP!)");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    /**
+     * Prints a message to user that Modganiser is adding other modules with the correct module code
+     */
+    public static void printAddingCorrectModuleCode() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("     Attempting to add modules with the correct module code!");
         System.out.println("    ____________________________________________________________");
     }
 
