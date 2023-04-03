@@ -115,14 +115,14 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 > 📓 [**Note**](#31-special-notations)
 > 1. Markdown Texts
-     >   - Markdown texts are texts that look like `this`, which indicates that these are user inputs
+>   - Markdown texts are texts that look like `this`, which indicates that these are user inputs
 > 2. Command Words
-     >   - Command words are used to invoke the various features of Modganiser.
-           >     - You may refer to the [summary of features](#51-summary-of-features) here.
+>   - Command words are used to invoke the various features of Modganiser.
+>   - You may refer to the [summary of features](#51-summary-of-features) here.
 >   - Command words are not case-sensitive
 >   - Example: `BYE` will be accepted as the `bye` command
 > 3. Parameters
-     >   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
+>   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
 >   - All inputs for the [parameters](#8-glossary) should come with a slash “/” before it to indicate
       that it is a user input and not the Command Word.
 >   - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before
@@ -131,19 +131,18 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command.
       Missing or Additional Inputs will trigger an error by Modganiser
 > 4. How To Interpret Screenshots
-     >   - Screenshots serve as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser.
+>   - Screenshots serve as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser.
 >   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right.
 >   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
-     >
-     >   ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
+>
+>   ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
 >
 > 5. Errors and Warnings
-     >   - If you are receiving an error or warning, do check that you do not have missing or
-           additional inputs and that your inputs are in the list of accepted input
-     >
-     >   ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
-     >
-     >   ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
+>   - If you are receiving an error or warning, do check that you do not have missing or additional inputs and that your inputs are in the list of accepted input
+>
+>   ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
+>
+>   ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 
 Now that you are better acquainted with this guide, let's talk about how to install Modganiser!
 
@@ -235,13 +234,13 @@ Below is a summary of features that Modganiser has. To use the features, please 
 
 When you have found a module that you would wish to take, you can use this command to add the module to the module plan with the following [parameters](#8-glossary).
 
-| [Parameter](#8-glossary) | Description                                                           | Accepted Inputs                         |
-|--------------------------|-----------------------------------------------------------------------|-----------------------------------------|
-| MODULE_CODE              | Please refer to [NUSMods](https://nusmods.com) for the Module's Code  | All inputs will be accepted             |
-| MODULAR_CREDITS          | The number of modular credits the module is worth                     | 1, 2, 3, 4, 5, 6, 8, 12                 |
-| MODULE_TYPE              | Which category the module falls under                                 | [CORE, GE, UE, INTERNSHIP](#8-glossary) |
-| YEAR                     | Which year you plan to take the module                                | 1, 2, 3, 4                              |
-| SEMESTER                 | Which semester you plan to take the module                            | 1, 1.5, 2, 2.5                          |
+| [Parameter](#8-glossary) | Description                                                           | Accepted Inputs                                   |
+|--------------------------|-----------------------------------------------------------------------|---------------------------------------------------|
+| MODULE_CODE              | Please refer to [NUSMods](https://nusmods.com) for the Module's Code  | All inputs will be accepted                       |
+| MODULAR_CREDITS          | The number of modular credits the module is worth                     | 0-30, with no decimal places                      |
+| MODULE_TYPE              | Which category the module falls under                                 | [CORE, GE, UE, INTERNSHIP](#8-glossary)           |
+| YEAR                     | Which year you plan to take the module                                | 1, 2, 3, 4, with no decimal places                |
+| SEMESTER                 | Which semester you plan to take the module                            | 1, 1.5, 2, 2.5, with no additional decimal places |
 
 > 📓 [**Note**](#31-special-notations)
 >
@@ -312,10 +311,10 @@ Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 
 
 After you have finished the module, you will receive a grade for it. Input the grade you got for the module into Modganiser using this command and Modganiser will use these grades to [calculate your CAP](#542-calculating-your-current-cap-calculatecap) with the `calculatecap` command.
 
-|   [Parameter](#8-glossary)    |                          Description                           |                                                                Accepted Inputs                                                                |
-|:--------------:|:--------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
-| MODULE_CODE |    The module's code    |                                                                  All inputs will be accepted                                                                   |
-|    GRADE     |                   The grade you obtained for the module                    | A+, A, B+, B, B-, C+, C, C-, D+, D, F, S, U, CS, CU |
+|   [Parameter](#8-glossary)    |                          Description                           |                     Accepted Inputs                     |
+|:--------------:|:--------------------------------------------------------------:|:-------------------------------------------------------:|
+| MODULE_CODE |    The module's code    |               All inputs will be accepted               |
+|    GRADE     |                   The grade you obtained for the module                    | A+, A, A-, B+, B, B-, C+, C, C-, D+, D, F, S, U, CS, CU |
 
 **Command Format**
 
@@ -432,9 +431,9 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 
 When you want to view your 4 year module plan or a specific year of your module plan, you can use this command to do so.
 
-| [Parameter](#8-glossary) |                      Description                       | Accepted Inputs |
-|:------------------------:|:------------------------------------------------------:|:---------------:|
-|           YEAR           | The specific year of your module plan you wish to view | ALL, 1, 2, 3, 4 |
+| [Parameter](#8-glossary) |                      Description                       |                  Accepted Inputs                  |
+|:------------------------:|:------------------------------------------------------:|:-------------------------------------------------:|
+|           YEAR           | The specific year of your module plan you wish to view | ALL, 1, 2, 3, 4 with no additional decimal places |
 
 **Command Format**
 
