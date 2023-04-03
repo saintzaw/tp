@@ -14,16 +14,14 @@ import static seedu.main.Print.printFarewellMessage;
  * Represents a ChatBot that acts as a Module Planner
  */
 public class Main {
-    /**
-     * Main entry-point for the java.duke.Duke application.
-     */
     public static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     private Parser parser;
     private ModuleList moduleList;
 
     /**
-     * Loads users saved tasks if any
+     * Loads users saved modules if any.
+     * Instantiates any classes needed for execution.
      */
     public Main() {
         initialiseLogger();
@@ -31,14 +29,16 @@ public class Main {
         try {
             moduleList = new ModuleList(Storage.getSavedModules());
         } catch (FileNotFoundException e) {
-            Print.printModulesFileLoadingError();
+            Print.printMissingModulesFileError();
+            moduleList = new ModuleList();
+        } catch (MainException | ArrayIndexOutOfBoundsException e) {
+            Print.printLoadingSaveFileError();
             moduleList = new ModuleList();
         }
     }
 
     /**
      * Checks if user key in name is bye as it indicates that user wants exit program
-     *
      * @param name The string that the user inputs
      * @return a boolean that is set to true if the string given is "bye", else set to false.
      */
@@ -47,11 +47,9 @@ public class Main {
     }
 
     /**
-     * Starts Chatbot and reads in user input
-     *
-     * @param chatBot Chatbot represents the module planner
+     * Starts the Chatbot and continuously reads in user input until the application exits
      */
-    public static void run(Main chatBot) {
+    public void run() {
         LOGGER.log(Level.INFO, "Modganiser is starting up!");
         Print.printLogo();
 
@@ -66,6 +64,7 @@ public class Main {
 
         if (isNameBye(name.trim())) {
             printFarewellMessage();
+            Storage.saveModules(moduleList.getModuleList());
             LOGGER.log(Level.INFO, "Name was given as 'bye', exiting Modganiser.");
             return;
         }
@@ -75,41 +74,65 @@ public class Main {
         while (in.hasNextLine()) {
             String line = in.nextLine().toUpperCase();
             try {
-                chatBot.parser.checkUserInput(line, chatBot.moduleList);
+                parser.checkUserInput(line, moduleList);
+                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e){
                 Print.printErrorMessage(e);
             }
         }
     }
 
+    /**
+     * If the user has previously entered his/her name, extract the name from the save file.
+     * Otherwise, prompt the user for his/her name
+     * @param in the Scanner object to get input from stdin
+     * @return the user's name
+     */
     public static String getUserName(Scanner in) throws FileNotFoundException{
         String savedName = Storage.getSavedName();
-        String name = "";
-        boolean nameIsValid = true;
+        String name;
 
         if (isNameSaved(savedName)) {
             name = savedName;
         } else {
-            Print.promptForName();
-            do {
-                if (!nameIsValid) {
-                    Print.printInvalidNameMessage();
-                }
-                name = in.nextLine().trim();
-                if (name.trim().length() == 0) {
-                    nameIsValid = false;
-                } else {
-                    nameIsValid = true;
-                }
-            } while (!nameIsValid);
-            assert !(name.equalsIgnoreCase("bye")) : "name is bye";
-            if (!name.equalsIgnoreCase("bye")) {
-                Storage.saveName(name);
-            }
+            name = promptUserForName(in);
         }
         return name;
     }
 
+    /**
+     * Continuously prompt the user for his/her name and save it to the save file.
+     * @param in the Scanner object to get input from stdin
+     * @return the user's name
+     */
+    public static String promptUserForName(Scanner in) {
+        Print.promptForName();
+        String name = "";
+        boolean nameIsValid = true;
+        do {
+            if (!nameIsValid) {
+                Print.printInvalidNameMessage();
+            }
+            name = in.nextLine().trim();
+            if (name.trim().length() == 0) {
+                nameIsValid = false;
+            } else {
+                nameIsValid = true;
+            }
+        } while (!nameIsValid);
+        assert !(name.equalsIgnoreCase("bye")) : "name is bye";
+        if (!name.equalsIgnoreCase("bye")) {
+            Storage.saveName(name);
+        }
+        return name;
+    }
+
+    /**
+     * Determine if the user's name has been saved to the save file previously.
+     * @param name the string which represents the user's name if present, otherwise it will
+     *             be an empty string
+     * @return true if the user's name has been previously saved, returns false otherwise.
+     */
     public static boolean isNameSaved(String name) {
         if (name.length() == 0) {
             return false;
@@ -118,14 +141,12 @@ public class Main {
     }
 
     /**
-     * Main of the whole application.
-     * It will instantiate all the classes needed for execution.
+     * Main entry-point of the whole Modganiser application.
      *
      * @param args The additional system arguments when Modganiser starts up.
      */
     public static void main(String[] args) {
-        Main chatBot = new Main();
-        Main.run(chatBot);
+        new Main().run();
     }
 
     /**

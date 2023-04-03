@@ -1,4 +1,5 @@
 package seedu.main;
+
 import java.util.ArrayList;
 import java.util.logging.Level;
 
@@ -14,11 +15,18 @@ public class ModuleList {
 
     private ArrayList<Module> listOfModules;
 
+    /**
+     * Initialises listOfModules to an empty ArrayList of modules
+     */
     public ModuleList() {
         this.listOfModules = new ArrayList<>();
     }
 
-    public ModuleList(ArrayList<String> savedModules) {
+    /**
+     * Initialise listOfModules to an ArrayList containing all the previously saved modules
+     * @param savedModules An ArrayList containing string representations of saved modules
+     */
+    public ModuleList(ArrayList<String> savedModules) throws MainException {
         this.listOfModules = new ArrayList<>();
         LOGGER.log(Level.INFO, "Starting process to load previously saved modules");
         for (String line : savedModules) {
@@ -353,10 +361,11 @@ public class ModuleList {
     }
 
     /**
-     * Based on the existing saved modules, add these modules to listOfModules
+     * Based on an existing saved module, add this module to listOfModules
      * @param line A string representation of a module, containing all its relevant information
+     * @throws MainException If any of the parameters of the module is not valid
      */
-    public void addExistingModule(String line) {
+    public void addExistingModule(String line) throws MainException {
         String[] moduleData = line.split("\\|");
 
         String moduleGrade = moduleData[MODULE_GRADE_INDEX];
@@ -364,6 +373,8 @@ public class ModuleList {
         String modularCredits = moduleData[MODULAR_CREDITS_INDEX];
         String moduleYear = moduleData[MODULE_YEAR_INDEX];
         String moduleSemester = moduleData[MODULE_SEMESTER_INDEX];
+
+        checkIfTampered(moduleGrade, moduleCode, modularCredits, moduleYear, moduleSemester);
 
         switch (moduleData[MODULE_TYPE_INDEX]) {
         case "C":
@@ -389,9 +400,29 @@ public class ModuleList {
             listOfModules.add(internshipModule);
             break;
         default:
-            break;
+            throw new MainException("Invalid module type");
         }
+    }
 
+    /**
+     * Given all the parameters of a saved module, check if the parameters are valid or tampered with
+     * @param moduleGrade A string representation of a module's grade
+     * @param moduleCode A string representation of a module's code
+     * @param modularCredits A string representation of a module's modular credits
+     * @param moduleYear A string representation of a module's year
+     * @param moduleSemester A string representation of a module's semester
+     * @throws MainException If any of the parameters provided is not valid
+     */
+    public void checkIfTampered(String moduleGrade, String moduleCode, String modularCredits,
+                                   String moduleYear, String moduleSemester) throws MainException {
+        Parser p = new Parser();
+        if (!moduleGrade.equals(" ")) {
+            p.checkGradeInput(moduleGrade);
+        }
+        p.checkEditInputCorrectModuleCode(moduleCode);
+        p.checkEditInputCorrectModularCreditField(modularCredits);
+        p.checkEditInputYear(moduleYear);
+        p.checkEditInputSemester(moduleSemester);
     }
 
     /**

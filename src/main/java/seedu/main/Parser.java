@@ -98,7 +98,6 @@ public class Parser {
             try {
                 LOGGER.log(Level.INFO, "Starting addModule process");
                 checkAddInput(moduleList, userCommands);
-                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e) {
                 LOGGER.log(Level.WARNING, "addModule Check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
@@ -164,7 +163,6 @@ public class Parser {
                     Print.printDeletedModule(deletedModule, moduleList.getModuleListSize());
 
                 }
-                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e) {
                 Print.printErrorMessage(e);
             }
@@ -192,7 +190,6 @@ public class Parser {
             assert userCommands.length == 4;
             try {
                 editModuleField(moduleList, userCommands);
-                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e) {
                 Print.printErrorMessage(e);
             }
@@ -218,7 +215,6 @@ public class Parser {
                 } else {
                     Print.printInvalidModule(userCommands[1].trim());
                 }
-                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e) {
                 LOGGER.log(Level.WARNING, "valid grade input check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
@@ -246,6 +242,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 1;
+            Storage.saveModules(moduleList.getModuleList());
             Print.printFarewellMessage();
             LOGGER.log(Level.INFO, "Exiting Modganiser.");
             exit(0);
@@ -451,7 +448,7 @@ public class Parser {
      * @param moduleCode the new unique identifier of the module
      * @throws MainException if user command is invalid
      */
-    private void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
+    public void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
         if (moduleCode.equals("")) {
             throw new MainException("Module Code cannot be empty!");
         }
@@ -475,7 +472,7 @@ public class Parser {
      * @param modularCredits the new number of Modular Credits to be prescribed to the module
      * @throws MainException if user command is invalid
      */
-    private void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
+    public void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
         try {
             int moduleCredits = Integer.parseInt(modularCredits);
             if (moduleCredits < 0 || moduleCredits > 41) {
@@ -511,7 +508,7 @@ public class Parser {
      * @param year the updated year that the module is taken or to be taken in
      * @throws MainException if user command is invalid
      */
-    private void checkEditInputYear(String year) throws MainException {
+    public void checkEditInputYear(String year) throws MainException {
         try {
             int newYear = Integer.parseInt(year);
             if (newYear < 1 || newYear > 4) {
@@ -529,7 +526,7 @@ public class Parser {
      * @param semester the updated semester that the module is taken or to be taken in
      * @throws MainException if user command is invalid
      */
-    private void checkEditInputSemester(String semester) throws MainException {
+    public void checkEditInputSemester(String semester) throws MainException {
         boolean isCorrectSemester = semester.equals("1")
                 || semester.equals("1.5")
                 || semester.equals("2")
@@ -625,7 +622,7 @@ public class Parser {
      * @param inputGrade the string containing grade input by user.
      * @throws MainException when the input grade is invalid
      */
-    private void checkGradeInput(String inputGrade) throws MainException {
+    public void checkGradeInput(String inputGrade) throws MainException {
         switch (inputGrade) {
         case "A+":
             //Fallthrough
