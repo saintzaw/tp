@@ -295,29 +295,38 @@ public class Print {
     /**
      * Prints a message to user that about their graduation requirements.
      *
-     * @param completedModules The list of completed modules.
-     * @param completedMCs The number of Modular Credits completed for the specified Module Type.
+     * @param plannedModules The list of planned modules.
+     * @param plannedMCs The number of Modular Credits planned for the specified Module Type.
      * @param remainingMCs The number of Modular Credits left to be completed for the specified Module Type.
      * @param requiredMCs The total number of Modular to be Credits completed for the specified Module Type.
      * @param moduleType The type of module. [Core, GeneralElective, UnrestrictedElective, Internship]
      */
-    public static void printModuleTypeRequirements(ArrayList<Module> completedModules, int completedMCs,
+    public static void printModuleTypeRequirements(ArrayList<Module> plannedModules, int plannedMCs,
                                                         int remainingMCs, int requiredMCs, String moduleType) {
         System.out.println("    ____________________________________________________________");
-        if (completedModules.size() == 0) {
-            System.out.println("     You have not completed any " + moduleType + " modules yet");
+        if (plannedModules.size() == 0) {
+            System.out.println("     You have not planned any " + moduleType + " modules yet.");
+            System.out.println("     You need to plan " + remainingMCs + " MCs of " + moduleType + " modules to " +
+                    "meet the graduation requirements.");
             System.out.println("    ____________________________________________________________");
         } else {
-            System.out.println("     Here are the " + moduleType + " modules that you have completed so far:");
-            System.out.println("    ____________________________________________________________");
-            for (int i = 0; i < completedModules.size(); i++) {
-                System.out.println("     " + (i + 1) + ". " + completedModules.get(i));
+            System.out.println("     Here are the " + moduleType + " modules that you have planned for so far:");
+            for (int i = 0; i < plannedModules.size(); i++) {
+                System.out.println("     " + (i + 1) + ". " + plannedModules.get(i));
             }
-            System.out.println("     Congratulations! You have completed " + completedMCs + " of the "
-                    + requiredMCs + " MCs required :)");
+
+            if (remainingMCs <= 0) {
+                System.out.println("     Congratulations! Your plan meets all the graduation requirements for this " +
+                        "module type :)");
+            } else {
+                System.out.println("     Congratulations! You have planned for " + plannedMCs + " of the "
+                        + requiredMCs + " MCs required :)");
+
+                System.out.println("     You need to plan " + remainingMCs + " MCs more to meet the " +
+                        "graduation requirements.");
+            }
+            System.out.println("    ____________________________________________________________");
         }
-        System.out.println("     You need to complete " + remainingMCs + " MCs more.");
-        System.out.println("    ____________________________________________________________");
     }
 
     /**

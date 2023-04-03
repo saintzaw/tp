@@ -536,18 +536,14 @@ public class ModuleList {
      * @param requiredMCs Integer representing the total required MCs for the type of module in moduleType
      */
     public void trackModules(ArrayList<Module> moduleList, String moduleType, int requiredMCs) {
-        int completedMCs = 0;
+        int plannedMCs = 0;
         int remainingMCs = 0;
-        ArrayList<Module> listOfCompletedModules = new ArrayList<>();
 
         for (Module module : moduleList) {
-            if (!(module.getGrade().equals(" "))) {
-                completedMCs += Integer.parseInt(module.getModularCredits());
-                listOfCompletedModules.add(module);
-            }
+            plannedMCs += Integer.parseInt(module.getModularCredits());
         }
-        remainingMCs = requiredMCs - completedMCs;
-        Print.printModuleTypeRequirements(listOfCompletedModules,
-                completedMCs, remainingMCs, requiredMCs, moduleType);
+
+        remainingMCs = requiredMCs - plannedMCs;
+        Print.printModuleTypeRequirements(moduleList, plannedMCs, remainingMCs, requiredMCs, moduleType);
     }
 }
