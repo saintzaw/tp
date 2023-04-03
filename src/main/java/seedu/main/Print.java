@@ -9,9 +9,9 @@ public class Print {
     public static void printHelloMessage(String name) {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Hello " + name + "!");
-        System.out.println("     I'm your personal Modganiser.                              ");
-        System.out.println("     What would you like to plan today?                         ");
-        System.out.println("     To find out more, type `man` and press enter :)            ");
+        System.out.println("     I'm your personal Modganiser.");
+        System.out.println("     What would you like to plan today?");
+        System.out.println("     To find out more, type `man` and press enter :)");
         System.out.println("    ____________________________________________________________");
     }
 
