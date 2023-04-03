@@ -8,9 +8,10 @@ public class Print {
      */
     public static void printHelloMessage(String name) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Hello " + name + "! I'm your personal Modganiser.");
-        System.out.println("     What would you like to plan today?");
-        System.out.println("     To find out more, type `man` and press enter :)");
+        System.out.println("     Hello " + name);
+        System.out.println("     I'm your personal Modganiser.                              ");
+        System.out.println("     What would you like to plan today?                         ");
+        System.out.println("     To find out more, type `man` and press enter :)            ");
         System.out.println("    ____________________________________________________________");
     }
 
@@ -224,6 +225,17 @@ public class Print {
     public static void printCreateModulesFileError() {
         System.out.println("    ____________________________________________________________");
         System.out.println("    An error occurred when creating the modules file");
+        System.out.println("    ____________________________________________________________");
+    }
+
+    /**
+     * Prints a message to user that there was an error in creating the modules file.
+     */
+    public static void printLoadingSaveFileError() {
+        System.out.println("    ____________________________________________________________");
+        System.out.println("    An error occurred when loading modules from the save file   ");
+        System.out.println("    as it is corrupted.                                         ");
+        System.out.println("    Your saved modules could not be retrieved :(                ");
         System.out.println("    ____________________________________________________________");
     }
 

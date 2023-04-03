@@ -246,6 +246,7 @@ public class Parser {
                 Print.printErrorMessage(e);
             }
             assert userCommands.length == 1;
+            Storage.saveModules(moduleList.getModuleList());
             Print.printFarewellMessage();
             LOGGER.log(Level.INFO, "Exiting Modganiser.");
             exit(0);
@@ -463,7 +464,7 @@ public class Parser {
      * @param moduleCode the new unique identifier of the module
      * @throws MainException if user command is invalid
      */
-    private void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
+    public void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
         if (moduleCode.equals("")) {
             throw new MainException("Module Code cannot be empty");
         }
@@ -483,7 +484,7 @@ public class Parser {
      * @param modularCredits the new number of Modular Credits to be prescribed to the module
      * @throws MainException if user command is invalid
      */
-    private void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
+    public void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
         try {
             int moduleCredits;
             double checkModuleCredits = Double.parseDouble(modularCredits);
@@ -527,7 +528,7 @@ public class Parser {
      * @param year the updated year that the module is taken or to be taken in
      * @throws MainException if user command is invalid
      */
-    private void checkEditInputYear(String year) throws MainException {
+    public void checkEditInputYear(String year) throws MainException {
         try {
             double checkYear = Double.parseDouble(year);
             if ((checkYear % 1) != 0) {
@@ -553,7 +554,7 @@ public class Parser {
      * @param semester the updated semester that the module is taken or to be taken in
      * @throws MainException if user command is invalid
      */
-    private void checkEditInputSemester(String semester) throws MainException {
+    public void checkEditInputSemester(String semester) throws MainException {
         boolean isCorrectSemester = semester.equals("1")
                 || semester.equals("1.5")
                 || semester.equals("2")
@@ -649,7 +650,7 @@ public class Parser {
      * @param inputGrade the string containing grade input by user.
      * @throws MainException when the input grade is invalid
      */
-    private void checkGradeInput(String inputGrade) throws MainException {
+    public void checkGradeInput(String inputGrade) throws MainException {
         switch (inputGrade) {
         case "A+":
             //Fallthrough
