@@ -297,16 +297,12 @@ public class Parser {
         }
         //check for correct field in MC
         checkAddInputCorrectModularCreditField(userCommands);
-        int moduleCredit = (int) Double.parseDouble(userCommands[2].trim());
-        String modularCredit = Integer.toString(moduleCredit);
 
         //check for correct field in type of module
         checkAddInputCorrectTypeOfModule(userCommands);
 
         //check for correct year and semester
         checkAddInputYearAndSemester(userCommands);
-        int year = ((int) Double.parseDouble(userCommands[4].trim()));
-        String inputYear = Integer.toString(year).trim();
 
         // add all the modules and checks for duplicates
         for (String moduleCode: moduleList) {
@@ -319,8 +315,8 @@ public class Parser {
                 Print.printErrorMessage(e);
                 continue;
             }
-            Module addedModule = listOfModules.addModule(moduleCode.trim(), modularCredit,
-                    userCommands[3].trim(), inputYear, userCommands[5].trim());
+            Module addedModule = listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(),
+                    userCommands[3].trim(), userCommands[4].trim(), userCommands[5].trim());
             Print.printAddedModule(addedModule, listOfModules.getModuleListSize());
         }
     }
@@ -372,20 +368,12 @@ public class Parser {
      */
     private void checkAddInputCorrectModularCreditField(String[] userCommands) throws MainException {
         try {
-            int moduleCredits;
-            double checkModuleCredits = Double.parseDouble(userCommands[2].trim());
-            double decimalRemainder = checkModuleCredits % 1;
-            if (decimalRemainder != 0) {
-                throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
-
-            }
-            moduleCredits = (int) checkModuleCredits;
-            if (moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
-                    || moduleCredits == 10 || moduleCredits == 11) {
-                throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
+            int moduleCredits = Integer.parseInt(userCommands[2].trim());
+            if (moduleCredits < 0 || moduleCredits > 41) {
+                throw new MainException("Make sure Modular Credits is an integer from 0-41");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
+            throw new MainException("Make sure Modular Credits is an integer from 0-41");
         }
     }
 
@@ -417,7 +405,7 @@ public class Parser {
     private void checkAddInputNoDuplicates(String moduleCode, ArrayList<Module> listOfModules) throws MainException {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
-                throw new MainException(moduleCode + " is already in the list");
+                throw new MainException(moduleCode + " is already in your module plan");
             }
         }
     }
@@ -433,11 +421,7 @@ public class Parser {
      */
     private void checkAddInputYearAndSemester(String[] userCommands) throws MainException {
         try {
-            double checkYear = Double.parseDouble(userCommands[4].trim());
-            if ((checkYear % 1) != 0) {
-                throw new MainException("Make sure Year of Study is an integer from 1-4");
-            }
-            int year = (int) checkYear;
+            int year = Integer.parseInt(userCommands[4].trim());
             if (year < 1 || year > 4) {
                 throw new MainException("Make sure Year of Study is an integer from 1-4");
             }
@@ -485,20 +469,12 @@ public class Parser {
      */
     private void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
         try {
-            int moduleCredits;
-            double checkModuleCredits = Double.parseDouble(modularCredits);
-            double decimalRemainder = checkModuleCredits % 1;
-            if (decimalRemainder != 0) {
-                throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
-
-            }
-            moduleCredits = (int) checkModuleCredits;
-            if (moduleCredits < 0 || moduleCredits > 13 || moduleCredits == 7 || moduleCredits == 9
-                    || moduleCredits == 10 || moduleCredits == 11) {
-                throw new MainException("Make sure Modular Credits is an integer 0-6, 8 or 12");
+            int moduleCredits = Integer.parseInt(modularCredits);
+            if (moduleCredits < 0 || moduleCredits > 41) {
+                throw new MainException("Make sure Modular Credits is an integer from 0-41");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Modular Credits is an integer from 0-6, 8 or 12");
+            throw new MainException("Make sure Modular Credits is an integer from 0-41");
         }
     }
 
@@ -529,14 +505,6 @@ public class Parser {
      */
     private void checkEditInputYear(String year) throws MainException {
         try {
-            double checkYear = Double.parseDouble(year);
-            if ((checkYear % 1) != 0) {
-                throw new MainException("Make sure Year of Study is an integer from 1-4");
-            }
-            int checkedYear = (int) checkYear;
-            if (checkedYear < 1 || checkedYear > 4) {
-                throw new MainException("Make sure Year of Study is an integer from 1-4");
-            }
             int newYear = Integer.parseInt(year);
             if (newYear < 1 || newYear > 4) {
                 throw new MainException("Make sure Year of Study is an integer from 1-4");
@@ -682,7 +650,8 @@ public class Parser {
         case "CU":
             break;
         default:
-            throw new MainException("Please input a valid grade!");
+            throw new MainException("Invalid command format / invalid grade input! Please follow the format " +
+                    "`grade /<module code> /<valid grade>` as per the user guide.");
         }
     }
 
