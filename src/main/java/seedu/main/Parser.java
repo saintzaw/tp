@@ -432,7 +432,7 @@ public class Parser {
                     || semester.equals("2")
                     || semester.equals("2.5");
             if (!isCorrectSemester) {
-                throw new MainException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
+                throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)");
             }
         } catch (NumberFormatException e) {
             throw new MainException("Make sure Year of Study is an integer from 1-4");
@@ -532,7 +532,7 @@ public class Parser {
                 || semester.equals("2")
                 || semester.equals("2.5");
         if (!isCorrectSemester) {
-            throw new MainException("Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 (Sem 2 break)");
+            throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)");
         }
     }
 
