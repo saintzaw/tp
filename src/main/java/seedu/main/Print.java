@@ -351,7 +351,7 @@ public class Print {
      */
     public static void printAddingCorrectModuleCode() {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Attempting to add modules with the correct module code!");
+        System.out.println("     Attempting to add modules (if any) with the correct module code!");
         System.out.println("    ____________________________________________________________");
     }
 

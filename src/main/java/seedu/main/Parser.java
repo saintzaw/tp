@@ -284,7 +284,6 @@ public class Parser {
         checkNumberOfFields(numberOfFields, userCommands);
         assert userCommands.length == 6 : "Expected 6 fields";
 
-
         //check for non-empty and correct number of characters in the moduleCode field
         String[] moduleList = userCommands[1].trim().split(" ");
         try {
@@ -293,7 +292,7 @@ public class Parser {
             Print.printErrorMessage(e);
             Print.printAddingCorrectModuleCode();
             // returns sanitised list
-            moduleList = sanitiseModuleCodeList(moduleList, listOfModules.getModuleList());
+            moduleList = sanitiseModuleCodeList(moduleList);
         }
         //check for correct field in MC
         checkAddInputCorrectModularCreditField(userCommands);
@@ -340,6 +339,7 @@ public class Parser {
      * Checks the moduleCode section of addInput command.
      * Currently checks for empty strings.
      * Currently checks for the correct number of parameters. [6-10]
+     * Currently checks for the entire string to be alphanumeric.
      *
      * @param moduleList the moduleCode field split into the respective fields and stored in an array
      * @throws MainException if user command is invalid
@@ -347,20 +347,24 @@ public class Parser {
     private void checkAddInputCorrectModuleCode(String[] moduleList) throws MainException {
         for (int i = 0; i < moduleList.length; i++) {
             if (moduleList[i].equals("")) {
-                throw new MainException("Module Code cannot be empty and must be between 6-10 characters");
+                throw new MainException("Module Code cannot be empty");
             }
             if (moduleList[i].trim().length() < 6) {
-                throw new MainException("Module Code cannot be empty and must be between 6-10 characters");
+                throw new MainException("Module Code cannot be less than 6 characters!");
             }
             if (moduleList[i].length() > 10) {
-                throw new MainException("Module Code cannot be empty and must be between 6-10 characters");
+                throw new MainException("Module Code cannot be more than 10 characters!");
+            }
+            boolean isAlphaNumeric = moduleList[i].trim().matches("^[A-Z0-9]*$");
+            if (!isAlphaNumeric) {
+                throw new MainException("Module Code is not alphanumeric!");
             }
         }
     }
 
     /**
      * Checks the modularCredit section of addInput command.
-     * Currently checks for the correct modular credit of [0-6, 8, 12]
+     * Currently checks for the correct modular credit of [0-41]
      * Currently checks for the modular credit to be an integer.
      *
      * @param userCommands the user input split into the respective fields and stored in an array
@@ -449,7 +453,7 @@ public class Parser {
      */
     private void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
         if (moduleCode.equals("")) {
-            throw new MainException("Module Code cannot be empty");
+            throw new MainException("Module Code cannot be empty!");
         }
         if (moduleCode.trim().length() < 6) {
             throw new MainException("Module Code cannot be less than 6 characters!");
@@ -457,11 +461,15 @@ public class Parser {
         if (moduleCode.trim().length() > 10) {
             throw new MainException("Module Code cannot be more than 10 characters!");
         }
+        boolean isAlphanumeric = moduleCode.matches("^[A-Z0-9]*$");
+        if (!isAlphanumeric) {
+            throw new MainException("Module Code is not alphanumeric!");
+        }
     }
 
     /**
      * Checks the Modular Credits field of an Edit Modular Credits command.
-     * Currently checks for the correct modular credit of [0-6, 8, 12]
+     * Currently checks for the correct modular credit of [0-41]
      * Currently checks for the modular credit to be an integer.
      *
      * @param modularCredits the new number of Modular Credits to be prescribed to the module
@@ -693,12 +701,22 @@ public class Parser {
             throw new MainException("Make sure you're trying to track Core, GE, UE or Internship.");
         }
     }
-    private String[] sanitiseModuleCodeList(String[] moduleList, ArrayList<Module> listOfModules) {
+
+    /**
+     * Checks for correct inputs for module code, discards invalid inputs.
+     * The invalid inputs are lazy deleted with "fail".
+     * Returns the list of corrected inputs.
+     *
+     * @param moduleList The broken down array of module codes
+     * @return sanitisedModuleList The broken down array of module codes, but with only the correct inputs remaining.
+     */
+    private String[] sanitiseModuleCodeList(String[] moduleList) {
         String[] sanitisedModuleList = moduleList;
         for (int i = 0; i < sanitisedModuleList.length; i++) {
             boolean unacceptedInput = sanitisedModuleList[i].equals("")
                     || sanitisedModuleList[i].trim().length() < 6
-                    || sanitisedModuleList[i].trim().length() > 10;
+                    || sanitisedModuleList[i].trim().length() > 10
+                    || !sanitisedModuleList[i].trim().matches("^[A-Z0-9]*$");
 
             if (unacceptedInput) {
                 sanitisedModuleList[i] = "fail";

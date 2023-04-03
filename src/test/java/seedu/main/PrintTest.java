@@ -678,12 +678,12 @@ public class PrintTest {
         }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator()
-                + "     Error: Module Code cannot be empty and must be between 6-10 characters"
+                + "     Error: Module Code cannot be less than 6 characters!"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator()
-                + "     Attempting to add modules with the correct module code!"
+                + "     Attempting to add modules (if any) with the correct module code!"
                 + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator();
