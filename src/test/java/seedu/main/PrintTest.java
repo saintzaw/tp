@@ -25,7 +25,7 @@ public class PrintTest {
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Got it. I've added this module:" + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
-                + "     Now you have 1 modules in the list."
+                + "     Now you have 1 modules in your module plan."
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -44,7 +44,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
+                + System.lineSeparator() + "     Here are the matching modules in your module plan:"
+                + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator()
                 + "     1. [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
@@ -65,7 +66,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
+                + System.lineSeparator() + "     Here are the matching modules in your module plan:"
+                + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator()
                 + "     1. [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "     2. [C][\" \"] CS2101 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
@@ -86,7 +88,7 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     There are no modules that match the keyword: IS in your list"
+                + System.lineSeparator() + "     There are no modules that match the keyword: IS in your module plan"
                 + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -105,7 +107,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
+                + System.lineSeparator() + "     Here are the matching modules in your module plan:"
+                + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator()
                 + "     1. [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
@@ -126,7 +129,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Here are the matching modules in your list:" + System.lineSeparator()
+                + System.lineSeparator() + "     Here are the matching modules in your module plan:"
+                + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator()
                 + "     1. [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
                 + "     2. [C][\" \"] CS2101 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
@@ -148,7 +152,7 @@ public class PrintTest {
         }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator()
-                + "     There are no modules that match the keyword: GE in your list" + System.lineSeparator()
+                + "     There are no modules that match the keyword: GE in your module plan" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -169,7 +173,7 @@ public class PrintTest {
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Noted. I've removed this module:" + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
-                + "     Now you have 0 modules in the list."
+                + "     Now you have 0 modules in your module plan."
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -183,7 +187,7 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         moduleList.listModules();
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Here are the modules in your list:" + System.lineSeparator()
+                + System.lineSeparator() + "     Here are the modules in your module plan:" + System.lineSeparator()
                 + "     1.[C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator();
@@ -201,7 +205,7 @@ public class PrintTest {
                 + System.lineSeparator() + "     Got it. I've edited the information for this module:"
                 + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
-                + "     Now you have 1 modules in the list."
+                + "     Now you have 1 modules in your module plan."
                 + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator();
@@ -219,7 +223,7 @@ public class PrintTest {
                 + System.lineSeparator() + "     Got it. I've edited the information for this module:"
                 + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
-                + "     Now you have 1 modules in the list."
+                + "     Now you have 1 modules in your module plan."
                 + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator();
@@ -237,7 +241,7 @@ public class PrintTest {
                 + System.lineSeparator() + "     Got it. I've edited the information for this module:"
                 + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
-                + "     Now you have 1 modules in the list."
+                + "     Now you have 1 modules in your module plan."
                 + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator();
@@ -255,7 +259,7 @@ public class PrintTest {
                 + System.lineSeparator() + "     Got it. I've edited the information for this module:"
                 + System.lineSeparator()
                 + "       [C][\" \"] CS2113T 4 MCs (Year: 2, Sem: 2)" + System.lineSeparator()
-                + "     Now you have 1 modules in the list."
+                + "     Now you have 1 modules in your module plan."
                 + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator();
@@ -615,8 +619,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Unable to update the grade for CS2113T as it's not in your list!"
-                + System.lineSeparator()
+                + System.lineSeparator() + "     Unable to update the grade for CS2113T as it's not in " +
+                "your module plan!" + System.lineSeparator()
                 + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -635,7 +639,7 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Make sure Modular Credits is an integer from 0-6, 8 or 12"
+                + System.lineSeparator() + "     Error: Make sure Modular Credits is an integer from 0-41"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -741,11 +745,11 @@ public class PrintTest {
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Got it. I've added this module:" + System.lineSeparator()
                 + "       [C][\" \"] IS4231 4 MCs (Year: 1, Sem: 1)" + System.lineSeparator()
-                + "     Now you have 1 modules in the list."
+                + "     Now you have 1 modules in your module plan."
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator()
                 + "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: IS4231 is already in the list"
+                + System.lineSeparator() + "     Error: IS4231 is already in your module plan"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
