@@ -98,7 +98,6 @@ public class Parser {
             try {
                 LOGGER.log(Level.INFO, "Starting addModule process");
                 checkAddInput(moduleList, userCommands);
-                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e) {
                 LOGGER.log(Level.WARNING, "addModule Check failed: " + e.getDescription());
                 Print.printErrorMessage(e);
@@ -164,7 +163,6 @@ public class Parser {
                     Print.printDeletedModule(deletedModule, moduleList.getModuleListSize());
 
                 }
-                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e) {
                 Print.printErrorMessage(e);
             }
@@ -192,7 +190,6 @@ public class Parser {
             assert userCommands.length == 4;
             try {
                 editModuleField(moduleList, userCommands);
-                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e) {
                 Print.printErrorMessage(e);
             }
@@ -218,7 +215,6 @@ public class Parser {
                 } else {
                     Print.printInvalidModule(userCommands[1].trim());
                 }
-                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e) {
                 LOGGER.log(Level.WARNING, "valid grade input check failed: " + e.getDescription());
                 Print.printErrorMessage(e);

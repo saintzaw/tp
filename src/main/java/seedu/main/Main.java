@@ -31,10 +31,7 @@ public class Main {
         } catch (FileNotFoundException e) {
             Print.printMissingModulesFileError();
             moduleList = new ModuleList();
-        } catch (MainException e) {
-            Print.printLoadingSaveFileError();
-            moduleList = new ModuleList();
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (MainException | ArrayIndexOutOfBoundsException e) {
             Print.printLoadingSaveFileError();
             moduleList = new ModuleList();
         }
@@ -78,6 +75,7 @@ public class Main {
             String line = in.nextLine().toUpperCase();
             try {
                 parser.checkUserInput(line, moduleList);
+                Storage.saveModules(moduleList.getModuleList());
             } catch (MainException e){
                 Print.printErrorMessage(e);
             }
