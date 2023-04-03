@@ -787,8 +787,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Make sure Semester is 1, 1.5 (Sem 1 break), 2 or " +
-                "2.5 (Sem 2 break)"
+                + System.lineSeparator() + "     Error: Make sure Semester is 1, 1.5 (Special Term 1), 2 or " +
+                "2.5 (Special Term 2)"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -826,8 +826,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Make sure Semester is 1, 1.5 (Sem 1 break), 2 or 2.5 " +
-                "(Sem 2 break)"
+                + System.lineSeparator() + "     Error: Make sure Semester is 1, 1.5 (Special Term 1), 2 or " +
+                "2.5 (Special Term 2)"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
