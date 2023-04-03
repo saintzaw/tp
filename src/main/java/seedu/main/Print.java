@@ -339,7 +339,9 @@ public class Print {
      */
     public static void printNoGradedModulesToCalculateCAP() {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     Unable to calculate your CAP as there are no graded modules in your list :(");
+        System.out.println("     Unable to calculate your CAP as there are no graded modules that should be counted " +
+                "towards your CAP :(");
+        System.out.println("     (Note: Modules with grade S, U, CS or CU will not be counted in towards your CAP!)");
         System.out.println("    ____________________________________________________________");
     }
 

@@ -666,7 +666,8 @@ public class Parser {
         case "CU":
             break;
         default:
-            throw new MainException("Please input a valid grade!");
+            throw new MainException("Invalid command format / invalid grade input! Please follow the format " +
+                    "`grade /<module code> /<valid grade>` as per the user guide.");
         }
     }
 
