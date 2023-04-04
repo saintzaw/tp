@@ -14,12 +14,21 @@ public class Command {
     public Command () {
 
     }
+
     //@@author anthea-pr0g
+    /**
+     * Checks for valid manpage command in the user input
+     *
+     * @param userCommands The command that the user inputs to the ChatBot
+     */
+
     public void manPageCommand(String[] userCommands) {
         LOGGER.log(Level.INFO, "Starting manpage process");
+
         if (userCommands.length == 2) {
             checkInput.checkManPageInput(userCommands);
         } else {
+
             try {
                 int numberOfFields = 1;
                 checkInput.checkNumberOfFields(numberOfFields, userCommands);
@@ -30,6 +39,7 @@ public class Command {
             assert userCommands.length == 1;
             ManPage.printManPage();
         }
+
         LOGGER.log(Level.INFO, "End of manpage process");
     }
 
