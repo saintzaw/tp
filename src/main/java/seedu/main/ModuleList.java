@@ -12,7 +12,6 @@ public class ModuleList {
     private static final int MODULAR_CREDITS_INDEX = 3;
     private static final int MODULE_YEAR_INDEX = 4;
     private static final int MODULE_SEMESTER_INDEX = 5;
-
     private ArrayList<Module> listOfModules;
 
     /**
@@ -117,37 +116,27 @@ public class ModuleList {
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModuleByType process");
         ArrayList<Module> foundModules = new ArrayList<>();
+        Class searchForType = null;
         switch (type) {
         case "CORE":
-            for (Module module : listOfModules) {
-                if (module instanceof Core) {
-                    foundModules.add(module);
-                }
-            }
+            searchForType = Core.class;
             break;
         case "GE":
-            for (Module module : listOfModules) {
-                if (module instanceof GeneralElective) {
-                    foundModules.add(module);
-                }
-            }
+            searchForType = GeneralElective.class;
             break;
         case "UE":
-            for (Module module : listOfModules) {
-                if (module instanceof UnrestrictedElective) {
-                    foundModules.add(module);
-                }
-            }
+            searchForType = UnrestrictedElective.class;
             break;
         case "INTERNSHIP":
-            for (Module module : listOfModules) {
-                if (module instanceof Internship) {
-                    foundModules.add(module);
-                }
-            }
+            searchForType = Internship.class;
             break;
         default:
             throw new MainException("Make sure your module type input is CORE, GE, UE or Internship");
+        }
+        for (Module module : listOfModules) {
+            if(module.getClass().equals(searchForType)) {
+                foundModules.add(module);
+            }
         }
         return foundModules;
     }
@@ -415,14 +404,14 @@ public class ModuleList {
      */
     public void checkIfTampered(String moduleGrade, String moduleCode, String modularCredits,
                                    String moduleYear, String moduleSemester) throws MainException {
-        Parser p = new Parser();
+        InputChecker checkInput = new InputChecker();;
         if (!moduleGrade.equals(" ")) {
-            p.checkGradeInput(moduleGrade);
+            checkInput.checkGradeInput(moduleGrade);
         }
-        p.checkEditInputCorrectModuleCode(moduleCode);
-        p.checkEditInputCorrectModularCreditField(modularCredits);
-        p.checkEditInputYear(moduleYear);
-        p.checkEditInputSemester(moduleSemester);
+        checkInput.checkEditInputCorrectModuleCode(moduleCode);
+        checkInput.checkEditInputCorrectModularCreditField(modularCredits);
+        checkInput.checkEditInputYear(moduleYear);
+        checkInput.checkEditInputSemester(moduleSemester);
     }
 
     /**
