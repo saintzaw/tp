@@ -266,6 +266,7 @@ public class InputChecker {
         return sanitisedModuleList;
     }
 
+    //@@author saintzaw
     /**
      * Checks the Module Code field of an Edit Module Code command.
      * Currently checks for empty strings.
@@ -275,7 +276,6 @@ public class InputChecker {
      * @param moduleCode the new unique identifier of the module
      * @throws MainException if user command is invalid
      */
-    //@author - saintzaw
     public void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
         if (moduleCode.equals("")) {
             throw new MainException("Module Code cannot be empty!");
@@ -292,6 +292,7 @@ public class InputChecker {
         }
     }
 
+    //@@author saintzaw
     /**
      * Checks the Modular Credits field of an Edit Modular Credits command.
      * Currently checks for the correct modular credit of [0-41]
@@ -300,7 +301,6 @@ public class InputChecker {
      * @param modularCredits the new number of Modular Credits to be prescribed to the module
      * @throws MainException if user command is invalid
      */
-    //@author - saintzaw
     public void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
         try {
             int moduleCredits = Integer.parseInt(modularCredits);
@@ -312,6 +312,7 @@ public class InputChecker {
         }
     }
 
+    //@@author saintzaw
     /**
      * Checks the Module Type field of an Edit Module Type command.
      * Currently checks for whether they belong to [Core, UE, GE, Internship]
@@ -319,7 +320,6 @@ public class InputChecker {
      * @param typeOfModule the user input split into the respective fields and stored in an array
      * @throws MainException if user command is invalid
      */
-    //@author - saintzaw
     public void checkEditInputCorrectTypeOfModule(String typeOfModule) throws MainException {
         boolean isCorrectModuleType = typeOfModule.equals("CORE")
                 || typeOfModule.equals("UE")
@@ -330,6 +330,7 @@ public class InputChecker {
         }
     }
 
+    //@@author saintzaw
     /**
      * Checks the year field of an Edit Year command.
      * Currently checks for year being [1-4].
@@ -338,7 +339,6 @@ public class InputChecker {
      * @param year the updated year that the module is taken or to be taken in
      * @throws MainException if user command is invalid
      */
-    //@author - saintzaw
     public void checkEditInputYear(String year) throws MainException {
         try {
             int newYear = Integer.parseInt(year);
@@ -350,6 +350,7 @@ public class InputChecker {
         }
     }
 
+    //@@author saintzaw
     /**
      * Checks the semester field of an Edit Semester command.
      * Currently checks for semester being [1, 1.5, 2, 2.5].
@@ -357,7 +358,6 @@ public class InputChecker {
      * @param semester the updated semester that the module is taken or to be taken in
      * @throws MainException if user command is invalid
      */
-    //@author - saintzaw
     public void checkEditInputSemester(String semester) throws MainException {
         boolean isCorrectSemester = semester.equals(SEMESTER_ONE)
                 || semester.equals(SPECIAL_TERM_ONE)
