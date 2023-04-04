@@ -107,6 +107,13 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 > ❗ **Warning**: Read this section carefully when you see it
 
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+<div style="page-break-after: always;"></div>
+
+
 ### 3.2 Notes on the Commands
 
 >❗ **Warning**
@@ -239,23 +246,23 @@ Below is a summary of features that Modganiser has. To use the features, please 
 
 When you have found a module that you would wish to take, you can use this command to add the module to the module plan with the following [parameters](#8-glossary):
 
-| [Parameter](#8-glossary) | Description                                                           | Accepted Inputs                                   |
-|--------------------------|-----------------------------------------------------------------------|---------------------------------------------------|
-| MODULE_CODE              | Please refer to [NUSMods](https://nusmods.com) for the Module's Code  | All inputs consisting of [alphanumeric](#8-glossary) characters                       |
-| MODULAR_CREDITS          | The number of modular credits the module is worth                     | 0-41, with no decimal places                      |
-| MODULE_TYPE              | Which category the module falls under                                 | [CORE, GE, UE, INTERNSHIP](#8-glossary)           |
-| YEAR                     | Which year you plan to take the module                                | 1, 2, 3, 4, with no decimal places                |
-| SEMESTER                 | Which semester you plan to take the module                            | 1, 1.5, 2, 2.5, with no additional decimal places |
+| [Parameter](#8-glossary) | Description                                                           | Accepted Inputs                                                 |
+|--------------------------|-----------------------------------------------------------------------|-----------------------------------------------------------------|
+| MODULE_CODE              | Please refer to [NUSMods](https://nusmods.com) for the Module's Code  | All inputs consisting of [alphanumeric](#8-glossary) characters |
+| MODULAR_CREDITS          | The number of modular credits the module is worth                     | 0-41, with no decimal places                                    |
+| MODULE_TYPE              | Which category the module falls under                                 | [CORE, GE, UE, INTERNSHIP](#8-glossary)                         |
+| YEAR                     | Which year you plan to take the module                                | 1, 2, 3, 4, with no decimal places                              |
+| SEMESTER                 | Which semester you plan to take the module                            | 1, 1.5, 2, 2.5, with no additional decimal places               |
 
 > 📓 [**Note**](#31-special-notations)
 >
-> 1.5 and 2.5 in the accepted inputs for SEMESTER refer to Special Term 1 and Special Term 2 respectively.
+> 1.5 and 2.5 for SEMESTER refers to Special Term 1 and Special Term 2 respectively.
 
 >❗ [**Warning**](#31-special-notations)
 >
-> - We do not check for the validity of the inputs for MODULE_CODE, MODULAR_CREDITS and MODULE_TYPE as we cannot maintain a database of modules. 
+> - Validity of inputs for MODULE_CODE, MODULAR_CREDITS and MODULE_TYPE is not checked as we cannot maintain a database of modules. 
 > - Please double-check the module code and credits on [NUSMods](https://nusmods.com) before entering it into Modganiser. 
-> - Furthermore, a module may be taken as a [GE module](#8-glossary) for you but could be taken as a [UE module](#8-glossary) for another user. Please consider the module type of the module by referring to the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before entering it into Modganiser.
+> - Furthermore, a module may be taken as a [GE module](#8-glossary) for you but could be taken as a [UE module](#8-glossary) for another user. Please determine the module type by referring to the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before entering it into Modganiser.
 > - If you have entered the wrong input for the aforementioned [parameters](#8-glossary), you may edit it using the [edit command](#523-editing-module-details-edit).
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
@@ -328,10 +335,12 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 ![GradeCommand](UG_Screenshots/InputGrade.png)
 
+<div style="page-break-after: always;"></div>
 
 > 📓 [**Note**](#31-special-notations)
 >
 > The grades for modules will be empty initially and will have a blank 2nd square bracket [“ ”] which needs to be updated via this command.
+> ![gradeEmpty](UG_Screenshots/AddingAModule.png)
 
 
 >❗ [**Warning**](#31-special-notations)
@@ -343,6 +352,8 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### 5.2.3 Editing Module Details: `edit`
 
@@ -523,11 +534,16 @@ Additionally, you can also track all the planned modules filtered by their [modu
 
 **Command Format**
 
+`track /MODULE_TYPE`
+
 Example: `track /CORE` tracks the completion status of your [core modules](#8-glossary).
 
 ![trackCore](UG_Screenshots/TrackCommand.png)
 
-`track /MODULE_TYPE`
+<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+<div style="page-break-after: always;"></div>
 
 Example: `track /ALL` tracks all the planned modules filtered by [module type](#8-glossary).
 
@@ -690,16 +706,15 @@ store this save file. You can then retrieve this save file from your new device.
 
 In this section, you will find the most commonly asked questions and answers. If your question is not here, please look at the [Table of Contents](#table-of-contents) to find the relevant section. Thank you!
 
-| Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I am unable to install java?                                                                                                  | Please click [here](https://www.oracle.com/sg/java/technologies/downloads/) to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                                                                               |
-| Why is Modganiser not running?                                                                                                | Please follow our [Set-Up Guide](#4-set-up-guide) closely. If Modganiser still fails to run, please [contact us](https://github.com/AY2223S2-CS2113T-T09-4/tp/issues) by clicking on the green "new issue" button and submitting it.                                                                                                                                                                                                                                                                                    |
-| Where is my save file?                                                                                                        | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                                                                                                                            |
-| What if I change my device? How do I transfer the save data to my new device?                                                     | You can locate your save file, which is just a normal text file. You can then use any form of messaging applications like [Telegram](https://telegram.org/), email applications like [Gmail](https://mail.google.com/) or online cloud storage like [Google Drive](https://drive.google.com/) to send this save file to yourself or store this save file. You can then retrieve this save file with your new device.                                                                                                    |
-| Why am I able to add CS0000 even though it is not a valid module?                                                             | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto [NUSMods](https://nusmods.com) to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the [Information Security Student requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before deciding on the [module type](#8-glossary). |
-| Why is it that when the Modganiser ask for my name and I type bye, the Modganiser will quit instead of saving my name as bye? | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                                                                                                                                    |
+| Questions                                                                                                                            | Answers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|--------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| I am unable to install java?                                                                                                         | Please click [here](https://www.oracle.com/sg/java/technologies/downloads/) to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                                                                               |
+| Why is Modganiser not running?                                                                                                       | Please follow our [Set-Up Guide](#4-set-up-guide) closely. If Modganiser still fails to run, please [contact us](https://github.com/AY2223S2-CS2113T-T09-4/tp/issues) by clicking on the green "new issue" button and submitting it.                                                                                                                                                                                                                                                                                    |
+| Where is my save file?                                                                                                               | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                                                                                                                            |
+| What if I change my device? How do I transfer the save data to my new device?                                                        | You can locate your save file, which is just a normal text file. You can then use any form of messaging applications like [Telegram](https://telegram.org/), email applications like [Gmail](https://mail.google.com/) or online cloud storage like [Google Drive](https://drive.google.com/) to send this save file to yourself or store this save file. You can then retrieve this save file with your new device.                                                                                                    |
+| Why am I able to add CS0000 even though it is not a valid module? Or input the wrong MCs for the module? Or use a wrong module type? | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto [NUSMods](https://nusmods.com) to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the [Information Security Student requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before deciding on the [module type](#8-glossary). |
+| Why is it that when I type bye for my name, Modganiser will quit instead of saving my name as bye?                                   | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                                                                                                                                    |
 
-<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
@@ -728,8 +743,6 @@ A summary of Modganiser's various features and their respective command formats
 
 ---
 
-<div style="page-break-after: always;"></div>
-
 ## 8. Glossary
 
 A explanation of the technical terms frequently used in this guide or unique to Modganiser.
@@ -746,7 +759,6 @@ A explanation of the technical terms frequently used in this guide or unique to 
 | Internship Module Type  | Please refer to the [NUS Website](https://www.comp.nus.edu.sg/industry/intern/student/) for more information on Internships                                                                                                                                                |
 | Local storage           | Data that is stored on your device and can be accessed without an internet connection                                                                                                                                                                                      |
 
-<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
