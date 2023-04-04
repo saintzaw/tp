@@ -250,7 +250,7 @@ public class ModuleList {
                     , moduleListSpecialTermTwo);
 
             if (moduleListByYear.size() != 0 ) {
-            Print.printModuleListByYear(moduleListSemOne, moduleListSpecialTermOne,
+                Print.printModuleListByYear(moduleListSemOne, moduleListSpecialTermOne,
                         moduleListSemTwo, moduleListSpecialTermTwo, year);
             } else {
                 Print.printEmptyModuleList(year);
