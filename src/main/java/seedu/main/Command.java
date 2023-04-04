@@ -226,6 +226,12 @@ public class Command {
     }
 
     //@@author denzelcjy
+    /**
+     * Updates the module grade of the given module in the module list.
+     *
+     * @param userCommands the command that the user inputs into the ChatBot
+     * @param moduleList the list of modules in the module plan
+     */
     public void gradeCommand(String[] userCommands, ModuleList moduleList) {
         try {
             LOGGER.log(Level.INFO, "Starting Grade process");
@@ -253,6 +259,12 @@ public class Command {
         }
     }
 
+    /**
+     * Allows calculation of user's CAP based on grades with valid grade values.
+     *
+     * @param userCommands the command that the user inputs into the ChatBot
+     * @param moduleList the list of modules in the module plan
+     */
     public void calculateCAPCommand(String[] userCommands, ModuleList moduleList) {
         try {
             LOGGER.log(Level.INFO, "Starting process to calculate CAP");

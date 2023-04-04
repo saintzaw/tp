@@ -347,7 +347,7 @@ public class InputChecker {
      * Checks if the grade input by the user is a valid grade string.
      *
      * @param inputGrade the string containing grade input by user.
-     * @throws MainException when the input grade is invalid
+     * @throws MainException when the input grade is invalid / in an invalid command format
      */
     public void checkGradeInput(String inputGrade) throws MainException {
         switch (inputGrade) {
