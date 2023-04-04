@@ -36,10 +36,10 @@ Given below are my contributions to the project:
     * Added 2 UML diagrams to find modules
     * See [PR#110](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/110)
 
-//left this
 #### Reviewing / Mentoring contributions
+* [#1238](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/238)
 * [#177](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/177)
-* [#100](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/100)
+
 
 #### Contributions beyond the project team
 * Peer reviewed User Guides and Developer Guides of other teams in the same tutorial group.
