@@ -4,10 +4,26 @@ import java.util.ArrayList;
 
 public class InputChecker {
 
+    public static final String GRADE_A_PLUS = "A+";
+    public static final String GRADE_A = "A";
+    public static final String GRADE_A_MINUS = "A-";
+    public static final String GRADE_B_PLUS = "B+";
+    public static final String GRADE_B = "B";
+    public static final String GRADE_B_MINUS = "B-";
+    public static final String GRADE_C_PLUS = "C+";
+    public static final String GRADE_C = "C";
+    public static final String GRADE_D_PLUS = "D+";
+    public static final String GRADE_D =  "D";
+    public static final String GRADE_F = "F";
+    public static final String GRADE_SATISFACTORY = "S";
+    public static final String GRADE_UNSATISFACTORY = "U";
+    public static final String GRADE_COMPLETED_SATISFACTORILY = "CS";
+    public static final String GRADE_COMPLETED_UNSATISFACTORILY = "CU";
     private static final String SEMESTER_ONE = "1";
     private static final String SPECIAL_TERM_ONE = "1.5";
     private static final String SEMESTER_TWO = "2";
     private static final String SPECIAL_TERM_TWO = "2.5";
+
     public InputChecker () {
 
     }
@@ -55,6 +71,7 @@ public class InputChecker {
         }
     }
 
+    //@@author
     /**
      * Checks all the fields of addInput, which is the input captured when add command is called by user.
      *
@@ -351,43 +368,44 @@ public class InputChecker {
         }
     }
 
+    //@@author denzelcjy
     /**
      * Checks if the grade input by the user is a valid grade string.
      *
      * @param inputGrade the string containing grade input by user.
-     * @throws MainException when the input grade is invalid
+     * @throws MainException when the input grade is invalid / in an invalid command format
      */
     public void checkGradeInput(String inputGrade) throws MainException {
         switch (inputGrade) {
-        case "A+":
+        case GRADE_A_PLUS:
             //Fallthrough
-        case "A":
+        case GRADE_A:
             //Fallthrough
-        case "A-":
+        case GRADE_A_MINUS:
             //Fallthrough
-        case "B+":
+        case GRADE_B_PLUS:
             //Fallthrough
-        case "B":
+        case GRADE_B:
             //Fallthrough
-        case "B-":
+        case GRADE_B_MINUS:
             //Fallthrough
-        case "C+":
+        case GRADE_C_PLUS:
             //Fallthrough
-        case "C":
+        case GRADE_C:
             //Fallthrough
-        case "D+":
+        case GRADE_D_PLUS:
             //Fallthrough
-        case "D":
+        case GRADE_D:
             //Fallthrough
-        case "F":
+        case GRADE_F:
             //Fallthrough
-        case "S":
+        case GRADE_SATISFACTORY:
             //Fallthrough
-        case "U":
+        case GRADE_UNSATISFACTORY:
             //Fallthrough
-        case "CS":
+        case GRADE_COMPLETED_SATISFACTORILY:
             //Fallthrough
-        case "CU":
+        case GRADE_COMPLETED_UNSATISFACTORILY:
             break;
         default:
             throw new MainException("Invalid command format / invalid grade input! Please follow the format " +
