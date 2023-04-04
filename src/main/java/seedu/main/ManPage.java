@@ -40,11 +40,11 @@ public class ManPage {
                 "To find out more, use the command: man /edit\n\n " +
 
                 "5. Find\n " +
-                "Command: find /MODULE_CODE or MODULE_TYPE /KEYWORD\n " +
+                "Command: find /MODULE_CODE /KEYWORD or find /MODULE_TYPE /KEYWORD\n " +
                 "To find out more, use the command: man /find\n\n " +
 
                 "6. Track\n " +
-                "Command: track /MODULE_TYPE\n " +
+                "Command: track /all or track /MODULE_TYPE\n " +
                 "To find out more, use the command: man /track\n\n " +
 
                 "7. Delete\n " +
@@ -151,6 +151,7 @@ public class ManPage {
         System.out.println("\n\n" + LINE +
 
                 "To track module type: track /MODULE_TYPE\n " +
+                "or to track all modules progresses: track /all\n\n "+
                 "Tracks how many modular credits of a module type you have finished\n " +
                 "and Modganiser will list out all the modules that you have taken\n " +
                 "under that module type and how many more modular credits you need\n " +

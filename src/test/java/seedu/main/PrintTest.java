@@ -312,13 +312,13 @@ public class PrintTest {
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "5. Find" + System.lineSeparator() + " " +
-                "Command: find /MODULE_CODE or MODULE_TYPE /KEYWORD" + System.lineSeparator()
-                + " " +
+                "Command: find /MODULE_CODE /KEYWORD or find /MODULE_TYPE /KEYWORD" +
+                System.lineSeparator() + " " +
                 "To find out more, use the command: man /find"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "6. Track"+ System.lineSeparator() + " " +
-                "Command: track /MODULE_TYPE" + System.lineSeparator() + " " +
+                "Command: track /all or track /MODULE_TYPE" + System.lineSeparator() + " " +
                 "To find out more, use the command: man /track"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
@@ -459,6 +459,8 @@ public class PrintTest {
         String expectedOutput = System.lineSeparator() + System.lineSeparator() + line +
 
                  "To track module type: track /MODULE_TYPE"+ System.lineSeparator() + " " +
+                 "or to track all modules progresses: track /all"  +
+                System.lineSeparator() +System.lineSeparator() + " " +
                  "Tracks how many modular credits of a module type you have finished"+ System.lineSeparator() + " " +
                  "and Modganiser will list out all the modules that you have taken"+ System.lineSeparator() + " " +
                  "under that module type and how many more modular credits you need"+ System.lineSeparator() + " " +
