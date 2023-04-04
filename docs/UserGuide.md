@@ -150,9 +150,9 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
       default. For example, `find /CODE /Cs2113t` will be treated as `FIND /CODE /CS2113T` by Modganiser.
 >   - You should provide as many inputs as there are [parameter](#8-glossary) fields for the command.
 > 4. How To Interpret Screenshots
->   - Screenshots serve as a visual aid for the various commands and they are exact replicas of what you would see when you run Modganiser.
+>   - Screenshots serve as a visual aid to help you understand Modganiser's various features and they are exact replicas of what you would see.
 >   - User inputs will always be flushed to the left of the Command Line Interface window while Modganiser responses will be indented right.
->   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
+>   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green while Modaganiser's responses are in white.
 >   
 >   ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
 
@@ -341,12 +341,14 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 > 📓 [**Note**](#31-special-notations)
 >
 > The grades for modules will be empty initially and will have a blank 2nd square bracket [“ ”] which needs to be updated via this command.
+> 
 > ![gradeEmpty](UG_Screenshots/AddingAModule.png)
 
 
 >❗ [**Warning**](#31-special-notations)
 >
 > Modganiser will show an error if you add grades to a module that doesn't exist.
+> 
 ![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
