@@ -12,6 +12,10 @@ public class ModuleList {
     private static final int MODULAR_CREDITS_INDEX = 3;
     private static final int MODULE_YEAR_INDEX = 4;
     private static final int MODULE_SEMESTER_INDEX = 5;
+    private static final String SEMESTER_ONE = "1";
+    private static final String SPECIAL_TERM_ONE = "1.5";
+    private static final String SEMESTER_TWO = "2";
+    private static final String SPECIAL_TERM_TWO = "2.5";
     private ArrayList<Module> listOfModules;
 
     /**
@@ -184,12 +188,57 @@ public class ModuleList {
     }
 
     /**
+     * Creates a list of modules for Semester 1, Special Term 1, Semester 2 and Special Term 2 of a given year.
+     *
+     * @param year The year that the modules are taken or to be taken in. [1-4]
+     * @param moduleListByYear The list of modules in that year
+     * @param moduleListSemOne The list of modules in Semester 1
+     * @param moduleListSpecialTermOne  The list of modules in Special Term 1
+     * @param moduleListSemTwo  The list of modules in Semester 2
+     * @param moduleListSpecialTermTwo The list of modules in Special Term 2
+     */
+    public void addModulesToLists(String year, ArrayList<Module> moduleListByYear, ArrayList<String> moduleListSemOne,
+                                 ArrayList<String> moduleListSpecialTermOne, ArrayList<String> moduleListSemTwo,
+                                 ArrayList<String> moduleListSpecialTermTwo ) {
+
+        for (Module module : listOfModules) {
+            //the format for displaying the module in the module plan is
+            // [TYPE][GRADE] MODULE_CODE MODULAR_CREDITS 'MCs'
+            String mod = "[" + module.getModuleType() + "]" + "[\"" + module.getGrade() + "\"] "
+                    + module.getModuleCode() + " " + module.getModularCredits() + " MCs";
+
+            if (module.getYear().equals(year)) {
+                switch (module.getSemester()) {
+                case SEMESTER_ONE:
+                    moduleListSemOne.add(mod);
+                    moduleListByYear.add(module);
+                    break;
+                case SPECIAL_TERM_ONE:
+                    moduleListSpecialTermOne.add(mod);
+                    moduleListByYear.add(module);
+                    break;
+                case SEMESTER_TWO:
+                    moduleListSemTwo.add(mod);
+                    moduleListByYear.add(module);
+                    break;
+                case SPECIAL_TERM_TWO:
+                    moduleListSpecialTermTwo.add(mod);
+                    moduleListByYear.add(module);
+                    break;
+                default:
+                    moduleListByYear.add(module);
+                }
+            }
+        }
+    }
+
+    /**
      * Lists all the modules in the moduleList that have the year attribute specified by the user input.
      *
      * @param year The year that the module is taken or to be taken in. [1-4]
      */
     public void listModulesByYear(String year) {
-        LOGGER.log(Level.INFO, "Starting listModules process");
+        LOGGER.log(Level.INFO, "Starting listModulesByYear process");
         ArrayList<Module> moduleListByYear = new ArrayList<>();
         ArrayList<String> moduleListSemOne = new ArrayList<>();
         ArrayList<String> moduleListSpecialTermOne = new ArrayList<>();
@@ -197,32 +246,9 @@ public class ModuleList {
         ArrayList<String> moduleListSpecialTermTwo = new ArrayList<>();
 
         if (getModuleListSize() > 0) {
-            for (Module module : listOfModules) {
-                String mod = "[" + module.getModuleType() + "]" + "[\"" + module.getGrade() + "\"] "
-                        + module.getModuleCode() + " " + module.getModularCredits() + " MCs";
-                if (module.getYear().equals(year)) {
-                    switch (module.getSemester()) {
-                    case "1":
-                        moduleListSemOne.add(mod);
-                        moduleListByYear.add(module);
-                        break;
-                    case "1.5":
-                        moduleListSpecialTermOne.add(mod);
-                        moduleListByYear.add(module);
-                        break;
-                    case "2":
-                        moduleListSemTwo.add(mod);
-                        moduleListByYear.add(module);
-                        break;
-                    case "2.5":
-                        moduleListSpecialTermTwo.add(mod);
-                        moduleListByYear.add(module);
-                        break;
-                    default:
-                        moduleListByYear.add(module);
-                    }
-                }
-            }
+            addModulesToLists(year, moduleListByYear, moduleListSemOne, moduleListSpecialTermOne, moduleListSemTwo
+                    , moduleListSpecialTermTwo);
+
             if (moduleListByYear.size() != 0 ) {
                 Print.printModuleListByYear(moduleListSemOne, moduleListSpecialTermOne,
                         moduleListSemTwo, moduleListSpecialTermTwo, year);
@@ -232,7 +258,7 @@ public class ModuleList {
         } else {
             Print.printEmptyModuleList(year);
         }
-        LOGGER.log(Level.INFO, "Finished listModules process");
+        LOGGER.log(Level.INFO, "Finished listModulesByYear process");
     }
 
     /**
