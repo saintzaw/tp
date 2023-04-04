@@ -53,36 +53,26 @@ public class Command {
         }
         assert userCommands.length == 3;
         ArrayList<Module> foundModules = new ArrayList<>();
-        if (userCommands[1].trim().equals("CODE")) {
-            try {
+
+        try {
+            if (userCommands[1].trim().equals("CODE")) {
                 foundModules = moduleList.findModuleByCode(userCommands[2].trim());
-                if (foundModules.isEmpty()) {
-                    Print.printNoModuleFound(userCommands[2].trim());
-                    LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
-
-                } else {
-                    LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
-                    Print.printFoundModule(foundModules);
-                }
-            } catch (MainException e) {
-                Print.printErrorMessage(e);
-            }
-        } else if (userCommands[1].trim().equals("TYPE")) {
-            try {
+            } else if (userCommands[1].trim().equals("TYPE")) {
                 foundModules = moduleList.findModuleByType(userCommands[2].trim());
-                if (foundModules.isEmpty()) {
-                    Print.printNoModuleFound(userCommands[2].trim());
-                    LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
-
-                } else {
-                    LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
-                    Print.printFoundModule(foundModules);
-                }
-            } catch (MainException e) {
-                Print.printErrorMessage(e);
+            } else {
+                throw new MainException("Please specify type of search with /Code or /Type");
             }
-        } else {
-            throw new MainException("Please specify type of search with /Code or /Type");
+
+            if (foundModules.isEmpty()) {
+                Print.printNoModuleFound(userCommands[1].trim(), userCommands[2].trim());
+                LOGGER.log(Level.INFO, "Finished findModule process with no matching module found");
+
+            } else {
+                LOGGER.log(Level.INFO, "Finished findModule process with matching module found");
+                Print.printFoundModule(foundModules);
+            }
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
         }
     }
 

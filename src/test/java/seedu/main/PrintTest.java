@@ -152,7 +152,7 @@ public class PrintTest {
         }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator()
-                + "     There are no modules that match the keyword: GE in your module plan" + System.lineSeparator()
+                + "     There are no GE modules in your module plan" + System.lineSeparator()
                 + "    ____________________________________________________________" + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
     }

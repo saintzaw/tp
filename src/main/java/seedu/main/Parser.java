@@ -1,10 +1,6 @@
 package seedu.main;
 
-import java.util.ArrayList;
-import java.util.logging.Level;
-
 import static java.lang.System.exit;
-import static seedu.main.Main.LOGGER;
 
 public class Parser {
     private Command commands = new Command();

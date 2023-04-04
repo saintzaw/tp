@@ -59,9 +59,13 @@ public class Print {
     /**
      * Prints a message to user that finding modules by keyword was unsuccessful.
      */
-    public static void printNoModuleFound(String keyword) {
+    public static void printNoModuleFound(String searchType, String keyword) {
         System.out.println("    ____________________________________________________________");
-        System.out.println("     There are no modules that match the keyword: " + keyword + " in your module plan");
+        if (searchType.equals("CODE")) {
+            System.out.println("     There are no modules that match the keyword: " + keyword + " in your module plan");
+        } else if (searchType.equals("TYPE")) {
+            System.out.println("     There are no "+ keyword + " modules in your module plan");
+        }
         System.out.println("    ____________________________________________________________");
     }
 
