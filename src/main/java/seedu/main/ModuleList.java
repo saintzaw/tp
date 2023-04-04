@@ -12,7 +12,6 @@ public class ModuleList {
     private static final int MODULAR_CREDITS_INDEX = 3;
     private static final int MODULE_YEAR_INDEX = 4;
     private static final int MODULE_SEMESTER_INDEX = 5;
-
     private ArrayList<Module> listOfModules;
 
     /**
@@ -415,14 +414,14 @@ public class ModuleList {
      */
     public void checkIfTampered(String moduleGrade, String moduleCode, String modularCredits,
                                    String moduleYear, String moduleSemester) throws MainException {
-        Parser p = new Parser();
+        InputChecker checkInput = new InputChecker();;
         if (!moduleGrade.equals(" ")) {
-            p.checkGradeInput(moduleGrade);
+            checkInput.checkGradeInput(moduleGrade);
         }
-        p.checkEditInputCorrectModuleCode(moduleCode);
-        p.checkEditInputCorrectModularCreditField(modularCredits);
-        p.checkEditInputYear(moduleYear);
-        p.checkEditInputSemester(moduleSemester);
+        checkInput.checkEditInputCorrectModuleCode(moduleCode);
+        checkInput.checkEditInputCorrectModularCreditField(modularCredits);
+        checkInput.checkEditInputYear(moduleYear);
+        checkInput.checkEditInputSemester(moduleSemester);
     }
 
     /**
