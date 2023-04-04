@@ -469,27 +469,27 @@ public class ModuleList {
     public boolean shouldCountModuleGrade(String moduleGrade) {
         boolean shouldCount;
         switch(moduleGrade) {
-        case "A+":
+        case InputChecker.GRADE_A_PLUS:
             // Fallthrough
-        case "A":
+        case InputChecker.GRADE_A:
             // Fallthrough
-        case "A-":
+        case InputChecker.GRADE_A_MINUS:
             // Fallthrough
-        case "B+":
+        case InputChecker.GRADE_B_PLUS:
             // Fallthrough
-        case "B":
+        case InputChecker.GRADE_B:
             // Fallthrough
-        case "B-":
+        case InputChecker.GRADE_B_MINUS:
             // Fallthrough
-        case "C+":
+        case InputChecker.GRADE_C_PLUS:
             // Fallthrough
-        case "C":
+        case InputChecker.GRADE_C:
             // Fallthrough
-        case "D+":
+        case InputChecker.GRADE_D_PLUS:
             // Fallthrough
-        case "D":
+        case InputChecker.GRADE_D:
             // Fallthrough
-        case "F":
+        case InputChecker.GRADE_F:
             shouldCount = true;
             break;
         default:
@@ -508,36 +508,36 @@ public class ModuleList {
     public double getGradeValue(String moduleGrade) {
         double gradeValue;
         switch(moduleGrade) {
-        case "A+":
+        case InputChecker.GRADE_A_PLUS:
             // Fallthrough
-        case "A":
+        case InputChecker.GRADE_A:
             gradeValue = 5.0;
             break;
-        case "A-":
+        case InputChecker.GRADE_A_MINUS:
             gradeValue = 4.5;
             break;
-        case "B+":
+        case InputChecker.GRADE_B_PLUS:
             gradeValue = 4.0;
             break;
-        case "B":
+        case InputChecker.GRADE_B:
             gradeValue = 3.5;
             break;
-        case "B-":
+        case InputChecker.GRADE_B_MINUS:
             gradeValue = 3.0;
             break;
-        case "C+":
+        case InputChecker.GRADE_C_PLUS:
             gradeValue = 2.5;
             break;
-        case "C":
+        case InputChecker.GRADE_C:
             gradeValue = 2.0;
             break;
-        case "D+":
+        case InputChecker.GRADE_D_PLUS:
             gradeValue = 1.5;
             break;
-        case "D":
+        case InputChecker.GRADE_D:
             gradeValue = 1.0;
             break;
-        case "F":
+        case InputChecker.GRADE_F:
             gradeValue = 0.0;
             break;
         default:
