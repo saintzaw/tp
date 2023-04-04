@@ -60,7 +60,7 @@ the [features section](#51-summary-of-features)!
 7. [Command Summary](#7-command-summary)
 8. [Glossary](#8-glossary)
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -80,7 +80,7 @@ if you are used to Java, CLI or Modganiser, which are described below:
 * A [Command Summary](#7-command-summary) is provided to give an overview of the different commands available in Modganiser and their respective formats.
 * The [Glossary](#8-glossary) provides an explanation to the more technical terms in our user guide.
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -107,7 +107,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 > ❗ **Warning**: Read this section carefully when you see it
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -128,7 +128,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >   - Modganiser will also throw other types of errors and warnings when you do not follow the [command format](#7-command-summary) or accepted inputs for the respective commands. 
 >   - Please read the error message carefully to rectify the mistake in your input. Thank you!
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -158,7 +158,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 Now that you are better acquainted with this guide, let's talk about how to install Modganiser!
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -207,7 +207,7 @@ To set up Modganiser, please follow the steps below:
 
 All right! Modganiser is now installed onto your device. Move on to the next section to find out more about the various features that Modganiser has.
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -232,7 +232,7 @@ Below is a summary of features that Modganiser has. To use the features, please 
 [Miscellaneous:](#55-miscellaneous)
 - [Viewing the manual](#551-viewing-the-entire-manual-man) in Modganiser, [exiting Modganiser](#553-exiting-modganiser-bye) and [saving your module plan](#554-saving-module-plan).
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -266,7 +266,7 @@ When you have found a module that you would wish to take, you can use this comma
 > - If you have entered the wrong input for the aforementioned [parameters](#8-glossary), you may edit it using the [edit command](#523-editing-module-details-edit).
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 **Command Format**
 
@@ -289,7 +289,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 
 > Missing inputs for the various [parameters](#8-glossary) or having too many inputs for the [parameters](#8-glossary) will cause Modganiser to throw you a warning as shown in the [Notes On The Commands](#32-notes-on-the-commands) section.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -307,7 +307,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 
 > Adding multiple modules should only be used if all the modules have the same inputs for MODULE_TYPE, MODULAR_CREDITS, YEAR and SEMESTER. Example, SIP3200 and CS2113T should not be added together in a single line as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -332,7 +332,7 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 ![GradeCommand](UG_Screenshots/InputGrade.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -352,7 +352,7 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 ![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -399,7 +399,7 @@ Expected Output:
 >![EditError](UG_Screenshots/Edit_Module_Not_In_List.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -430,7 +430,7 @@ Example: `delete /CS2113T` deletes CS2113T module from the module plan
 >![DeleteError](UG_Screenshots/Delete_Error_Module_Not_In_List.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -457,7 +457,7 @@ Example: `list /ALL` lists the entire module plan.
 ![ListingAllModules.png](UG_Screenshots/ListingAllModules.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -468,7 +468,7 @@ Example: `list /1` lists Year 1's module plan.
 ![ListAllModulesByYear.png](UG_Screenshots/ListAllModulesByYear.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -493,7 +493,7 @@ Example: `find /TYPE /CS2113T` finds all modules that contains CS2113T in their 
 ![FindOneModule](UG_Screenshots/FindModulesByName_Full.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -514,7 +514,7 @@ Example: `find /TYPE /CORE` finds all modules whose [module type](#8-glossary) i
 >![DeleteError](UG_Screenshots/FindModulePlanEmpty.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -544,7 +544,7 @@ Example: `track /CORE` tracks the completion status of your [core modules](#8-gl
 ![trackCore](UG_Screenshots/TrackCommand.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 <div style="page-break-after: always;"></div>
 
@@ -553,7 +553,7 @@ Example: `track /ALL` tracks all the planned modules filtered by [module type](#
 ![trackAll](UG_Screenshots/TrackAllCommand.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -587,7 +587,7 @@ Example: `calculatecap` calculates your current CAP
 > This aligns with how [NUS calculates your CAP](https://www.nus.edu.sg/registrar/academic-information-policies/non-graduating/modular-system).
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -616,7 +616,7 @@ Expected Output:
 ![ViewManPage](UG_Screenshots/ViewEntireManual.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -639,7 +639,7 @@ Example: `man /add` displays the manual page for the add feature
 ![Viewspecificmanual](UG_Screenshots/ViewManualofSpecificFeature.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -666,7 +666,7 @@ program. If your name is “bye”, please do consider using an alias.
 Thank you and sorry for the inconvenience caused.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -698,7 +698,7 @@ like [Gmail](https://mail.google.com/) or online cloud storage like [Google Driv
 store this save file. You can then retrieve this save file from your new device.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -718,7 +718,7 @@ In this section, you will find the most commonly asked questions and answers. If
 | Why am I able to add CS0000 even though it is not a valid module? Or input the wrong MCs for the module? Or use a wrong module type? | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto [NUSMods](https://nusmods.com) to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the [Information Security Student requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before deciding on the [module type](#8-glossary). |
 | Why does Modganiser quit when I type "bye" instead of saving it as my name?                                                          | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                                                                                                                                    |
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -742,7 +742,7 @@ A summary of Modganiser's various features and their respective command formats
 |                 Exit Modganiser                 |     `bye`      |                            `bye`                            |                                      `bye`                                      |
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
@@ -754,7 +754,7 @@ A explanation of the technical terms frequently used in this guide or unique to 
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Command Line Interface  | Text based user interface to run programs                                                                                                                                                                                                                                  |
 | Parameter               | Additional input fields that require user inputs for the command to work as intended                                                                                                                                                                                       |
-| Alphanumeric            | Numbers from 0-9, letters from a-z and A-Z                                                                                                                                                                                                                                 |                                                                                                                                                                                          |
+| Alphanumeric            | Numbers from 0-9, letters from a-z and A-Z                                                                                                                                                                                                                                 |
 | Module Type             | Refers to one of Core, GE, UE, INTERNSHIP or all of them.                                                                                                                                                                                                                  | 
 | Core Module Type        | Any module that does not fall under UE, GE or Internship module type                                                                                                                                                                                                       |
 | GE Module Type          | Stands for General Elective Module Type. Please refer to the [NUS Website](https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/general-education/for-students-admitted-from-ay2021-22) for more information on General Elective Modules  |
@@ -763,7 +763,7 @@ A explanation of the technical terms frequently used in this guide or unique to 
 | Local storage           | Data that is stored on your device and can be accessed without an internet connection                                                                                                                                                                                      |
 
 
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+<p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
 
