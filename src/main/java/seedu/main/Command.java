@@ -95,7 +95,7 @@ public class Command {
             Print.printErrorMessage(e);
         }
     }
-    //@@author
+    //@@author chokyao
     public void deleteCommand(String[] userCommands, ModuleList moduleList) {
         try {
             int numberOfFields = 2;
