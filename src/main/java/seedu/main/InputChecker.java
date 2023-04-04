@@ -3,6 +3,11 @@ package seedu.main;
 import java.util.ArrayList;
 
 public class InputChecker {
+
+    private static final String SEMESTER_ONE = "1";
+    private static final String SPECIAL_TERM_ONE = "1.5";
+    private static final String SEMESTER_TWO = "2";
+    private static final String SPECIAL_TERM_TWO = "2.5";
     public InputChecker () {
 
     }
@@ -194,10 +199,10 @@ public class InputChecker {
                 throw new MainException("Make sure Year of Study is an integer from 1-4");
             }
             String semester = userCommands[5].trim();
-            boolean isCorrectSemester = semester.equals("1")
-                    || semester.equals("1.5")
-                    || semester.equals("2")
-                    || semester.equals("2.5");
+            boolean isCorrectSemester = semester.equals(SEMESTER_ONE)
+                    || semester.equals(SPECIAL_TERM_ONE)
+                    || semester.equals(SEMESTER_TWO)
+                    || semester.equals(SPECIAL_TERM_TWO);
             if (!isCorrectSemester) {
                 throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)");
             }
@@ -253,6 +258,7 @@ public class InputChecker {
      * @param moduleCode the new unique identifier of the module
      * @throws MainException if user command is invalid
      */
+    //@author - saintzaw
     public void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
         if (moduleCode.equals("")) {
             throw new MainException("Module Code cannot be empty!");
@@ -277,6 +283,7 @@ public class InputChecker {
      * @param modularCredits the new number of Modular Credits to be prescribed to the module
      * @throws MainException if user command is invalid
      */
+    //@author - saintzaw
     public void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
         try {
             int moduleCredits = Integer.parseInt(modularCredits);
@@ -295,6 +302,7 @@ public class InputChecker {
      * @param typeOfModule the user input split into the respective fields and stored in an array
      * @throws MainException if user command is invalid
      */
+    //@author - saintzaw
     public void checkEditInputCorrectTypeOfModule(String typeOfModule) throws MainException {
         boolean isCorrectModuleType = typeOfModule.equals("CORE")
                 || typeOfModule.equals("UE")
@@ -313,6 +321,7 @@ public class InputChecker {
      * @param year the updated year that the module is taken or to be taken in
      * @throws MainException if user command is invalid
      */
+    //@author - saintzaw
     public void checkEditInputYear(String year) throws MainException {
         try {
             int newYear = Integer.parseInt(year);
@@ -331,11 +340,12 @@ public class InputChecker {
      * @param semester the updated semester that the module is taken or to be taken in
      * @throws MainException if user command is invalid
      */
+    //@author - saintzaw
     public void checkEditInputSemester(String semester) throws MainException {
-        boolean isCorrectSemester = semester.equals("1")
-                || semester.equals("1.5")
-                || semester.equals("2")
-                || semester.equals("2.5");
+        boolean isCorrectSemester = semester.equals(SEMESTER_ONE)
+                || semester.equals(SPECIAL_TERM_ONE)
+                || semester.equals(SEMESTER_TWO)
+                || semester.equals(SPECIAL_TERM_TWO);
         if (!isCorrectSemester) {
             throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)");
         }

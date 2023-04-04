@@ -137,19 +137,30 @@ public class Print {
                                              ArrayList<String> specialTermOneModuleList,
                                              ArrayList<String> semTwoModuleList,
                                              ArrayList<String> specialTermTwoModuleList ,String year) {
+        //printing the title for the Year
         System.out.println("    __________");
         System.out.println("   | Year " + year + "   |");
         System.out.println("   |__________|");
-        System.out.printf("       %-28s %-10s %-28s %-10s %-28s %-10s %-28s\n", "Semester 1", " ",
-                "Special Term 1", " ", "Semester 2", " ", "Special Term 2");
-        System.out.printf("       %-28s %-10s %-28s %-10s %-28s %-10s %-28s\n", "===========", " ",
-                "===============", " ", "===========", " ", "===============");
 
+        //format specifier for each semester column
+        String semesterFormat = "       %-28s %-10s %-28s %-10s %-28s %-10s %-28s\n";
 
-        int max = Math.max(Math.max(semOneModuleList.size(), specialTermOneModuleList.size()),
+        //printing the titles for the semesters
+        String semesterUnderline = "===========";
+        String specialTermUnderline = "===============";
+        String whitespace = " ";
+        String columnSeparator = "|";
+        System.out.printf(semesterFormat, "Semester 1", whitespace,
+                "Special Term 1", whitespace, "Semester 2", whitespace, "Special Term 2");
+        System.out.printf(semesterFormat, semesterUnderline, whitespace,
+                specialTermUnderline, whitespace, semesterUnderline, whitespace, specialTermUnderline);
+
+        //maxNumOfModules is the largest number of modules in a semester in the given year
+        //it is used for the formatting of the length of the table of modules displayed to the user
+        int maxNumOfModules = Math.max(Math.max(semOneModuleList.size(), specialTermOneModuleList.size()),
                 Math.max(semTwoModuleList.size(), specialTermTwoModuleList.size()));
 
-        for (int i = 0; i < max; i++) {
+        for (int i = 0; i < maxNumOfModules; i++) {
             String semOne;
             String specialTermOne;
             String semTwo;
@@ -158,29 +169,34 @@ public class Print {
             if (i < semOneModuleList.size()) {
                 semOne = semOneModuleList.get(i);
             } else {
+                //print an empty string if there are no more modules in the list for that semester
                 semOne = " ";
             }
 
             if (i < specialTermOneModuleList.size()) {
                 specialTermOne = specialTermOneModuleList.get(i);
             } else {
+                //print an empty string if there are no more modules in the list for that semester
                 specialTermOne = " ";
             }
 
             if (i < semTwoModuleList.size()) {
                 semTwo = semTwoModuleList.get(i);
             } else {
+                //print an empty string if there are no more modules in the list for that semester
                 semTwo = " ";
             }
 
             if (i < specialTermTwoModuleList.size()) {
                 specialTermTwo = specialTermTwoModuleList.get(i);
             } else {
+                //print an empty string if there are no more modules in the list for that semester
                 specialTermTwo = " ";
             }
 
-            System.out.printf("       %-28s %-10s %-28s %-10s %-28s %-10s %-28s\n", semOne, "|", specialTermOne, "|",
-                    semTwo, "|", specialTermTwo);
+            //printing the modules in each semester of the specified year
+            System.out.printf(semesterFormat, semOne, columnSeparator, specialTermOne, columnSeparator,
+                    semTwo, columnSeparator, specialTermTwo);
         }
         System.out.println("    ____________________________________________________________");
     }

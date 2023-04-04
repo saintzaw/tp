@@ -117,6 +117,13 @@ public class Command {
         }
     }
 
+    /**
+     * Checks the user input to ensure its validity before running the listModules method
+     *
+     * @param userCommands the command that the user inputs into the ChatBot
+     * @param moduleList the list of modules in the module plan
+     */
+    //@author - saintzaw
     public void listCommand(String[] userCommands, ModuleList moduleList) throws MainException {
         try {
             int numberOfFields = 2;
@@ -129,6 +136,14 @@ public class Command {
         listModules(moduleList, userCommands[1].trim());
     }
 
+    /**
+     * Lists the modules in the year specified by the user.
+     *
+     * @param listOfModules the list of modules in the module plan
+     * @param year the year in which the modules are taken or to be taken in
+     * @throws MainException if the user input for the year is invalid
+     */
+    //@author - saintzaw
     private void listModules(ModuleList listOfModules, String year) throws MainException {
         switch(year) {
         case "ALL":
@@ -154,6 +169,13 @@ public class Command {
         }
     }
 
+    /**
+     * Checks the user input to ensure its validity before running the editModuleField method
+     *
+     * @param userCommands the command that the user inputs into the ChatBot
+     * @param moduleList the list of modules in the module plan
+     */
+    //@author - saintzaw
     public void editCommand(String[] userCommands, ModuleList moduleList) {
         try {
             int numberOfFields = 4;
@@ -170,6 +192,15 @@ public class Command {
         }
     }
 
+    /**
+     * Edits the existing information in a specific field of the module description with the
+     * new information provided by the user.
+     *
+     * @param listOfModules the list of modules in the module plan
+     * @param userCommands the command that the user inputs into the ChatBot
+     * @throws MainException if the user input for the field to edit is invalid
+     */
+    //@author - saintzaw
     private void editModuleField(ModuleList listOfModules, String[] userCommands) throws MainException {
         //format: edit /moduleCode /field /update
         String moduleCode = userCommands[1].trim();
