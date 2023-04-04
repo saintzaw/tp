@@ -80,8 +80,11 @@ if you are used to Java, CLI or Modganiser, which are described below:
 * A [Command Summary](#7-command-summary) is provided to give an overview of the different commands available in Modganiser and their respective formats.
 * The [Glossary](#8-glossary) provides an explanation to the more technical terms in our user guide.
 
-<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to jump to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
+
+---
+
+<div style="page-break-after: always;"></div>
 
 ### 3.1 Special Notations
 Before we begin, here are some special notations that we will be using. It would be good to familiarize yourself with these notations as it will enhance your experience with the user guide.
@@ -104,16 +107,25 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 
 > ❗ **Warning**: Read this section carefully when you see it
 
+### 3.2 Notes on the Commands
 
+>❗ **Warning**
+> 
+>  Errors and Warnings
+>   - When you have missing or additional inputs compared to the number of [parameter](#8-glossary) needed for that command, an error will be thrown by Modganiser.
+>
+>   ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
+>
+>   ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
+>
+>   - Modganiser will also throw other types of errors and warnings when you do not follow the [command format](#7-command-summary) or accepted inputs for the respective commands. 
+>   - Please read the error message carefully to rectify the mistake in your input. Thank you!
 
-<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
 <div style="page-break-after: always;"></div>
-
-### 3.2 Notes on the Commands
 
 > 📓 [**Note**](#31-special-notations)
 > 1. Markdown Texts
@@ -124,7 +136,7 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >   - Command words are not case-sensitive.
 >   - Example: `BYE` will be accepted as the `bye` command.
 > 3. Parameters
->   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command.
+>   - Words in UPPER_CASE refers to the [parameters](#8-glossary) of the command and require a user input.
 >   - All inputs for the [parameters](#8-glossary) should come with a slash “/” before it.
 >   - Inputs from you are not case-sensitive. All inputs will be converted to uppercase before
       they are executed. Therefore, inputs like `/cs2113t` will be treated as `/CS2113T` by
@@ -136,12 +148,6 @@ Warnings are to warn you of potential pitfalls that new users may encounter. For
 >   - However, to help you differentiate between a user input and Modganiser's response better in the user guide, all user inputs will be shown in green.
 >   
 >   ![ExampleInputOutput](UG_Screenshots/NotesInputOutputExample.png)
-> 5. Errors and Warnings
->   - If you are receiving an error or warning, do check that you do not have missing or additional inputs compared to the number of [parameter](#8-glossary) needed for that command.
->
->   ![ErrorMissingFields](UG_Screenshots/Error_Missing_Fields.png)
->
->   ![ErrorTooManyFields](UG_Screenshots/Error_Too_Many_Fields.png)
 
 Now that you are better acquainted with this guide, let's talk about how to install Modganiser!
 
@@ -158,8 +164,8 @@ Now that you are better acquainted with this guide, let's talk about how to inst
 
 To set up Modganiser, please follow the steps below:
 1. Download Java from the Java Developer Webpage.
-    * For Windows, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) and choose the x64 installer.
-    * For macOS, Please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer.
+    * For Windows, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-windows) and choose the x64 installer and follow the installer instructions.
+    * For macOS, please click [here](https://www.oracle.com/java/technologies/downloads/#jdk20-mac) and choose the Arm 64 DMG Installer and follow the installer instructions.
 
 2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the file titled "tp.jar" which contains Modganiser.
 
@@ -243,17 +249,14 @@ When you have found a module that you would wish to take, you can use this comma
 
 > 📓 [**Note**](#31-special-notations)
 >
-> [CORE](#8-glossary) refers to modules that do not fall under the other 3 categories.
-
-> 📓 [**Note**](#31-special-notations)
->
-> 1.5 and 2.5 in SEMESTER refer to Special Term 1 and Special Term 2 respectively.
+> 1.5 and 2.5 in the accepted inputs for SEMESTER refer to Special Term 1 and Special Term 2 respectively.
 
 >❗ [**Warning**](#31-special-notations)
 >
-> We do not check for the validity of the inputs for MODULE_CODE (whether the module exists), MODULAR_CREDITS (whether the modular credits inputted match the module) and MODULE_TYPE as we cannot maintain a database of modules. Please double-check the module code on [NUSMods](https://nusmods.com) before entering it into Modganiser. 
-> Furthermore, a module may be taken as a [GE module](#8-glossary) for you but could be taken as a [UE module](#8-glossary) for another user. Please consider the module type of the module by referring to the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before entering it into Modganiser.
-> If you have entered the wrong input for the aforementioned [parameters](#8-glossary), you may edit it using the [edit command](#523-editing-module-details-edit).
+> - We do not check for the validity of the inputs for MODULE_CODE, MODULAR_CREDITS and MODULE_TYPE as we cannot maintain a database of modules. 
+> - Please double-check the module code and credits on [NUSMods](https://nusmods.com) before entering it into Modganiser. 
+> - Furthermore, a module may be taken as a [GE module](#8-glossary) for you but could be taken as a [UE module](#8-glossary) for another user. Please consider the module type of the module by referring to the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before entering it into Modganiser.
+> - If you have entered the wrong input for the aforementioned [parameters](#8-glossary), you may edit it using the [edit command](#523-editing-module-details-edit).
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
@@ -310,7 +313,7 @@ Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 
 #### 5.2.2 Adding Grade Obtained for Module: `grade`
 **Function**
 
-After you have finished the module, you will receive a grade for it. Input the grade you got for the module into Modganiser using this command and Modganiser will use these grades to [calculate your CAP](#542-calculating-your-current-cap-calculatecap) with the `calculatecap` command.
+After you have finished the module, you will receive a grade for it. Input the grade you got for the module into Modganiser using this command which is used to [calculate your CAP](#542-calculating-your-current-cap-calculatecap).
 
 |   [Parameter](#8-glossary)    |              Description              |                     Accepted Inputs                     |
 |:--------------:|:-------------------------------------:|:-------------------------------------------------------:|
@@ -345,13 +348,13 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 **Function**
 
-If you entered wrong details for a module when adding it to your module plan with the add command or if the details of the module have been modified over time, you can use this command to change the various details of the module.
+If you entered wrong details for a module when adding it to your module plan or if the details of the module have changed over time, you can use this command to edit the module's details.
 
-|   [Parameter](#8-glossary) |                                              Description                                               |                                                                         Accepted Inputs                                                                         |
-|:--------------------------:|:------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|        MODULE_CODE         |               Please refer to [NUSMods](https://nusmods.com) for the correct module code               | All inputs consisting of [alphanumeric](#8-glossary) characters                       |
-|       FIELD_TO_EDIT        |                    The [parameter](#8-glossary) of the module that you wish to edit                    |                                                              CODE, MC, TYPE, YEAR, SEMESTER, GRADE                                                              |
-|          NEW_INFO          | The new information to replace the incorrect or outdated information for that [parameter](#8-glossary) | Accepted inputs will be based on the field to edit. Please refer to the accepted inputs for the respective fields in the [add command](#521-adding-modules-add). |
+|   [Parameter](#8-glossary) |                                Description                                 |                                                                         Accepted Inputs                                                                         |
+|:--------------------------:|:--------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|        MODULE_CODE         | Please refer to [NUSMods](https://nusmods.com) for the correct module code | All inputs consisting of [alphanumeric](#8-glossary) characters                       |
+|       FIELD_TO_EDIT        |      The [parameter](#8-glossary) of the module that you wish to edit      |                                                              CODE, MC, TYPE, YEAR, SEMESTER, GRADE                                                              |
+|          NEW_INFO          |   The new information to replace the incorrect or outdated information.    | Accepted inputs will be based on the field to edit. Please refer to the accepted inputs for the respective fields in the [add command](#521-adding-modules-add). |
 
 > 📓 [**Note**](#31-special-notations)
 > For the accepted inputs for FIELD_TO_EDIT:
@@ -368,11 +371,6 @@ Example: `edit /CS2113T /TYPE /UE` edits the [Module Type](#8-glossary) of CS211
 Expected Output:
 
 ![EditExistingModule_ByType.png](UG_Screenshots/EditExistingModule_ByType.png)
-
-<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
-
----
 
 Example: `edit /CS2113T /MC /8` edits the current Modular Credits that CS2113T is worth to 8.
 
@@ -522,22 +520,18 @@ Additionally, you can also track all the planned modules filtered by their [modu
 |:-----------:|:------------------------------------------------:|:-----------------------------:|
 | MODULE_TYPE | The [module type](#8-glossary) whose status you want to look up | ALL, [CORE, GE, UE, INTERNSHIP](#8-glossary) |
 
+
 **Command Format**
+
+Example: `track /CORE` tracks the completion status of your [core modules](#8-glossary).
+
+![trackCore](UG_Screenshots/TrackCommand.png)
 
 `track /MODULE_TYPE`
 
 Example: `track /ALL` tracks all the planned modules filtered by [module type](#8-glossary).
 
 ![trackAll](UG_Screenshots/TrackAllCommand.png)
-
-<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
-
----
-
-Example: `track /CORE` tracks the completion status of your [core modules](#8-glossary).
-
-![trackCore](UG_Screenshots/TrackCommand.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
@@ -564,9 +558,6 @@ Example: `calculatecap` calculates your current CAP
 
 ![CalculateCAPCommand](UG_Screenshots/GradeCalculator.png)
 
-<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
-<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
-
 > 📓 [**Note**](#31-special-notations)
 >
 > To input the grade you obtained for the module, please refer to the [grade command](#522-adding-grade-obtained-for-module-grade).
@@ -575,6 +566,9 @@ Example: `calculatecap` calculates your current CAP
 > 
 > Modules that are graded with S, U, CS or CU will **not** be calculated to your CAP, since they are modules with no grade value.  
 > This aligns with how [NUS calculates your CAP](https://www.nus.edu.sg/registrar/academic-information-policies/non-graduating/modular-system).
+
+<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
+<p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
 
 ---
 
@@ -696,8 +690,6 @@ store this save file. You can then retrieve this save file from your new device.
 
 In this section, you will find the most commonly asked questions and answers. If your question is not here, please look at the [Table of Contents](#table-of-contents) to find the relevant section. Thank you!
 
----
-
 | Questions                                                                                                                     | Answers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | I am unable to install java?                                                                                                  | Please click [here](https://www.oracle.com/sg/java/technologies/downloads/) to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                                                                               |
@@ -717,8 +709,6 @@ In this section, you will find the most commonly asked questions and answers. If
 ## 7. Command Summary
 
 A summary of Modganiser's various features and their respective command formats
-
----
 
 |                     Feature                     | Command Word |                       Command Format                        |                                     Example                                     |
 |:-----------------------------------------------:|:------------:|:-----------------------------------------------------------:|:-------------------------------------------------------------------------------:|
@@ -744,19 +734,17 @@ A summary of Modganiser's various features and their respective command formats
 
 A explanation of the technical terms frequently used in this guide or unique to Modganiser.
 
----
-
-| Technical Term         | Explanation                                                                                                                                                                                                                                                                   |
-|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Command Line Interface | Text based user interface to run programs                                                                                                                                                                                                                                     |
-| Parameter              | Additional input fields that require user inputs for the command                                                                                                                                                                                                              |
-| Alphanumeric          | Numbers from 0-9, letters from a-z and A-Z                                                                                                                                                                                                                                    |                                                                                                                                                                                          |
-| Module Type            | Refers to one of Core, GE, UE, INTERNSHIP or all of them.                                                                                                                                                                                                                     | 
-| Core Module Type       | Any module that does not fall under UE, GE or Internship module type                                                                                                                                                                                                          |
-| GE Module Type         | Stands for General Elective Module Type. Please refer to the [NUS Website](https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/general-education/for-students-admitted-from-ay2021-22) for more information on General Elective Modules |
-| UE Module Type         | Stands for Unrestricted Elective Module Type. Please refer to the [NUS Website](https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/curriculum-structure) for more information on UE Modules                                                |
-| Internship Module Type | Please refer to the [NUS Website](https://www.comp.nus.edu.sg/industry/intern/student/) for more information on Internships                                                                                                                                                   |
-| Local storage          | Data that is stored on your device and can be accessed without an internet connection                                                                                                                                                                                         |
+| Technical Term          | Explanation                                                                                                                                                                                                                                                                |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Command Line Interface  | Text based user interface to run programs                                                                                                                                                                                                                                  |
+| Parameter               | Additional input fields that require user inputs for the command to work as intended                                                                                                                                                                                       |
+| Alphanumeric            | Numbers from 0-9, letters from a-z and A-Z                                                                                                                                                                                                                                 |                                                                                                                                                                                          |
+| Module Type             | Refers to one of Core, GE, UE, INTERNSHIP or all of them.                                                                                                                                                                                                                  | 
+| Core Module Type        | Any module that does not fall under UE, GE or Internship module type                                                                                                                                                                                                       |
+| GE Module Type          | Stands for General Elective Module Type. Please refer to the [NUS Website](https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/general-education/for-students-admitted-from-ay2021-22) for more information on General Elective Modules  |
+| UE Module Type          | Stands for Unrestricted Elective Module Type. Please refer to the [NUS Website](https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/curriculum-structure) for more information on UE Modules                                             |
+| Internship Module Type  | Please refer to the [NUS Website](https://www.comp.nus.edu.sg/industry/intern/student/) for more information on Internships                                                                                                                                                |
+| Local storage           | Data that is stored on your device and can be accessed without an internet connection                                                                                                                                                                                      |
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#top">here</a> to return to the top</small></p>
