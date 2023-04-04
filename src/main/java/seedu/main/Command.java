@@ -285,33 +285,36 @@ public class Command {
      */
     private void trackGraduationRequirements(ModuleList listOfModules, String moduleType) throws MainException {
         ArrayList<Module> foundModules = new ArrayList<>();
+        String[] moduleTypes = {"CORE", "GE" , "UE", "INTERNSHIP"};
+        int[] requiredMCs = {REQUIRED_MC_CORE, REQUIRED_MC_GE, REQUIRED_MC_UE, REQUIRED_MC_INTERNSHIP};
+        int requiredMC = 0;
+        boolean isTrackAll = false;
         switch(moduleType) {
         case "ALL":
-            String[] moduleTypes = {"CORE", "GE" , "UE", "INTERNSHIP"};
-            int[] requiredMCs = {REQUIRED_MC_CORE, REQUIRED_MC_GE, REQUIRED_MC_UE, REQUIRED_MC_INTERNSHIP};
             for (int i = 0; i < moduleTypes.length; i++) {
                 foundModules = listOfModules.findModuleByType(moduleTypes[i]);
                 listOfModules.trackModules(foundModules, moduleTypes[i], requiredMCs[i]);
             }
-            break;
-        case "GE":
-            foundModules = listOfModules.findModuleByType("GE");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_GE);
-            break;
-        case "UE":
-            foundModules = listOfModules.findModuleByType("UE");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_UE);
-            break;
-        case "INTERNSHIP":
-            foundModules = listOfModules.findModuleByType("INTERNSHIP");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_INTERNSHIP);
+            isTrackAll = true;
             break;
         case "CORE":
-            foundModules = listOfModules.findModuleByType("CORE");
-            listOfModules.trackModules(foundModules, moduleType, REQUIRED_MC_CORE);
+            requiredMC = requiredMCs[0];
+            break;
+        case "GE":
+            requiredMC = requiredMCs[1];
+            break;
+        case "UE":
+            requiredMC = requiredMCs[2];
+            break;
+        case "INTERNSHIP":
+            requiredMC = requiredMCs[3];
             break;
         default:
-            throw new MainException("Make sure you're trying to track Core, GE, UE or Internship.");
+            throw new MainException("Make sure you're trying to track Core, GE, UE, Internship or All.");
+        }
+        if (!isTrackAll) {
+            foundModules = listOfModules.findModuleByType(moduleType);
+            listOfModules.trackModules(foundModules, moduleType, requiredMC);
         }
     }
 }
