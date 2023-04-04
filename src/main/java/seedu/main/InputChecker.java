@@ -13,6 +13,7 @@ public class InputChecker {
      *
      * @param userCommands the feature the user wants to find out more about
      */
+    //@@author anthea-pr0g
     public void checkManPageInput(String[] userCommands) {
         assert userCommands.length == 2;
 

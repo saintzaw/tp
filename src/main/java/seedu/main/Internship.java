@@ -5,6 +5,7 @@ package seedu.main;
  * It has a custom moduleType and toString method.
  */
 
+//@@author anthea-pr0g
 public class Internship extends Module {
 
     /**

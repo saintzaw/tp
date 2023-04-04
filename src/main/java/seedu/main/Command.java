@@ -14,6 +14,7 @@ public class Command {
     public Command () {
 
     }
+    //@@author anthea-pr0g
     public void manPageCommand(String[] userCommands) {
         LOGGER.log(Level.INFO, "Starting manpage process");
         if (userCommands.length == 2) {
