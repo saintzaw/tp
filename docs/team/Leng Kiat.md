@@ -20,6 +20,9 @@ Given below are my contributions to the project:
 * Help to implement the track graduation requirement command
     * Edited the code for the command to improve code quality and standards, see [PR#101](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/101)
     * Augmented the command to track all the modules, see [PR#148](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/148)
+  
+* Help to refactor the checkUserInput in parser class into different functions and place them into 2 new classes.
+    * See [PR#263](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/263) and [PR#266](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/266)  
 
 <div style="page-break-after: always;"></div>
 
@@ -36,10 +39,10 @@ Given below are my contributions to the project:
     * Added 2 UML diagrams to find modules
     * See [PR#110](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/110)
 
-//left this
 #### Reviewing / Mentoring contributions
+* [#1238](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/238)
 * [#177](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/177)
-* [#100](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/100)
+
 
 #### Contributions beyond the project team
 * Peer reviewed User Guides and Developer Guides of other teams in the same tutorial group.
