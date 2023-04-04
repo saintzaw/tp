@@ -50,6 +50,7 @@ public class InputChecker {
         }
     }
 
+    //@@author
     /**
      * Checks all the fields of addInput, which is the input captured when add command is called by user.
      *
@@ -341,6 +342,7 @@ public class InputChecker {
         }
     }
 
+    //@@author denzelcjy
     /**
      * Checks if the grade input by the user is a valid grade string.
      *

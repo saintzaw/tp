@@ -42,7 +42,7 @@ public class Command {
 
         LOGGER.log(Level.INFO, "End of manpage process");
     }
-
+    //@@author
     public void addCommand(String[] userCommands, ModuleList moduleList) {
         try {
             LOGGER.log(Level.INFO, "Starting addModule process");
@@ -53,7 +53,7 @@ public class Command {
         }
         LOGGER.log(Level.INFO, "End of addModule process");
     }
-
+    //@@author Thiolk
     /**
      * Finds module by 2 ways, via their module code or via their module type
      * Finding module by their module code will return every module that contains the keyword inputted by the user
@@ -95,7 +95,7 @@ public class Command {
             Print.printErrorMessage(e);
         }
     }
-
+    //@@author
     public void deleteCommand(String[] userCommands, ModuleList moduleList) {
         try {
             int numberOfFields = 2;
@@ -225,6 +225,7 @@ public class Command {
         }
     }
 
+    //@@author denzelcjy
     public void gradeCommand(String[] userCommands, ModuleList moduleList) {
         try {
             LOGGER.log(Level.INFO, "Starting Grade process");
@@ -267,6 +268,7 @@ public class Command {
         LOGGER.log(Level.INFO, "End of calculate CAP process");
     }
 
+    //@@author
     public void byeCommand(String[] userCommands, ModuleList moduleList) {
         try {
             int numberOfFields = 1;
@@ -280,6 +282,7 @@ public class Command {
         LOGGER.log(Level.INFO, "Exiting Modganiser.");
     }
 
+    //@@author Thiolk
     /**
      * Checks the user input to ensure its validity before running the trackGraduationRequirement method
      *
