@@ -116,37 +116,27 @@ public class ModuleList {
         assert listOfModules.size() > 0 : "no items in list";
         LOGGER.log(Level.INFO, "Starting findModuleByType process");
         ArrayList<Module> foundModules = new ArrayList<>();
+        Class searchForType = null;
         switch (type) {
         case "CORE":
-            for (Module module : listOfModules) {
-                if (module instanceof Core) {
-                    foundModules.add(module);
-                }
-            }
+            searchForType = Core.class;
             break;
         case "GE":
-            for (Module module : listOfModules) {
-                if (module instanceof GeneralElective) {
-                    foundModules.add(module);
-                }
-            }
+            searchForType = GeneralElective.class;
             break;
         case "UE":
-            for (Module module : listOfModules) {
-                if (module instanceof UnrestrictedElective) {
-                    foundModules.add(module);
-                }
-            }
+            searchForType = UnrestrictedElective.class;
             break;
         case "INTERNSHIP":
-            for (Module module : listOfModules) {
-                if (module instanceof Internship) {
-                    foundModules.add(module);
-                }
-            }
+            searchForType = Internship.class;
             break;
         default:
             throw new MainException("Make sure your module type input is CORE, GE, UE or Internship");
+        }
+        for (Module module : listOfModules) {
+            if(module.getClass().equals(searchForType)) {
+                foundModules.add(module);
+            }
         }
         return foundModules;
     }
