@@ -3,6 +3,11 @@ package seedu.main;
 import java.util.ArrayList;
 
 public class InputChecker {
+
+    private static final String SEMESTER_ONE = "1";
+    private static final String SPECIAL_TERM_ONE = "1.5";
+    private static final String SEMESTER_TWO = "2";
+    private static final String SPECIAL_TERM_TWO = "2.5";
     public InputChecker () {
 
     }
@@ -194,10 +199,10 @@ public class InputChecker {
                 throw new MainException("Make sure Year of Study is an integer from 1-4");
             }
             String semester = userCommands[5].trim();
-            boolean isCorrectSemester = semester.equals("1")
-                    || semester.equals("1.5")
-                    || semester.equals("2")
-                    || semester.equals("2.5");
+            boolean isCorrectSemester = semester.equals(SEMESTER_ONE)
+                    || semester.equals(SPECIAL_TERM_ONE)
+                    || semester.equals(SEMESTER_TWO)
+                    || semester.equals(SPECIAL_TERM_TWO);
             if (!isCorrectSemester) {
                 throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)");
             }
@@ -337,10 +342,10 @@ public class InputChecker {
      */
     //@author - saintzaw
     public void checkEditInputSemester(String semester) throws MainException {
-        boolean isCorrectSemester = semester.equals("1")
-                || semester.equals("1.5")
-                || semester.equals("2")
-                || semester.equals("2.5");
+        boolean isCorrectSemester = semester.equals(SEMESTER_ONE)
+                || semester.equals(SPECIAL_TERM_ONE)
+                || semester.equals(SEMESTER_TWO)
+                || semester.equals(SPECIAL_TERM_TWO);
         if (!isCorrectSemester) {
             throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)");
         }
