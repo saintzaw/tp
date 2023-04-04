@@ -23,6 +23,14 @@ public class InputChecker {
     private static final String SPECIAL_TERM_ONE = "1.5";
     private static final String SEMESTER_TWO = "2";
     private static final String SPECIAL_TERM_TWO = "2.5";
+    private static final int YEAR_LOWER_BOUND = 1;
+    private static final int YEAR_UPPER_BOUND = 4;
+    private static final int MODULE_CODE_LOWER_BOUND = 6;
+    private static final int MODULE_CODE_UPPER_BOUND = 10;
+    private static final String EMPTY_STRING = "";
+    private static final int MODULE_CREDIT_LOWER_BOUND = 0;
+    private static final int MODULE_CREDIT_UPPER_BOUND = 41;
+    private static final String INVALID_MODULE_CODE = "fail";
 
     public InputChecker () {
 
@@ -71,7 +79,7 @@ public class InputChecker {
         }
     }
 
-    //@@author
+    //@@author geraldkoh4
     /**
      * Checks all the fields of addInput, which is the input captured when add command is called by user.
      *
@@ -93,7 +101,7 @@ public class InputChecker {
             Print.printErrorMessage(e);
             Print.printAddingCorrectModuleCode();
             // returns sanitised list
-            moduleList = sanitiseModuleCodeList(moduleList);
+            moduleList = lazyDeleteInvalidInputsForModuleList(moduleList);
         }
         //check for correct field in MC
         checkAddInputCorrectModularCreditField(userCommands);
@@ -105,22 +113,10 @@ public class InputChecker {
         checkAddInputYearAndSemester(userCommands);
 
         // add all the modules and checks for duplicates
-        for (String moduleCode: moduleList) {
-            if (moduleCode.equals("fail")) {
-                continue;
-            }
-            try {
-                checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
-            } catch (MainException e) {
-                Print.printErrorMessage(e);
-                continue;
-            }
-            Module addedModule = listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(),
-                    userCommands[3].trim(), userCommands[4].trim(), userCommands[5].trim());
-            Print.printAddedModule(addedModule, listOfModules.getModuleListSize());
-        }
+        addModuleWithChecks(moduleList,listOfModules,userCommands);
     }
 
+    //@@author geraldkoh4
     /**
      * Checks the moduleCode section of addInput command.
      * Currently checks for empty strings.
@@ -132,13 +128,13 @@ public class InputChecker {
      */
     private void checkAddInputCorrectModuleCode(String[] moduleList) throws MainException {
         for (int i = 0; i < moduleList.length; i++) {
-            if (moduleList[i].equals("")) {
+            if (moduleList[i].equals(EMPTY_STRING)) {
                 throw new MainException("Module Code cannot be empty");
             }
-            if (moduleList[i].trim().length() < 6) {
+            if (moduleList[i].trim().length() < MODULE_CODE_LOWER_BOUND) {
                 throw new MainException("Module Code cannot be less than 6 characters!");
             }
-            if (moduleList[i].length() > 10) {
+            if (moduleList[i].length() > MODULE_CODE_UPPER_BOUND) {
                 throw new MainException("Module Code cannot be more than 10 characters!");
             }
             boolean isAlphaNumeric = moduleList[i].trim().matches("^[A-Z0-9]*$");
@@ -148,6 +144,7 @@ public class InputChecker {
         }
     }
 
+    //@@author geraldkoh4
     /**
      * Checks the modularCredit section of addInput command.
      * Currently checks for the correct modular credit of [0-41]
@@ -159,7 +156,7 @@ public class InputChecker {
     private void checkAddInputCorrectModularCreditField(String[] userCommands) throws MainException {
         try {
             int moduleCredits = Integer.parseInt(userCommands[2].trim());
-            if (moduleCredits < 0 || moduleCredits > 41) {
+            if (moduleCredits < MODULE_CREDIT_LOWER_BOUND || moduleCredits > MODULE_CREDIT_UPPER_BOUND) {
                 throw new MainException("Make sure Modular Credits is an integer from 0-41");
             }
         } catch (NumberFormatException e) {
@@ -167,6 +164,7 @@ public class InputChecker {
         }
     }
 
+    //@@author geraldkoh4
     /**
      * Checks the moduleType section of addInput command.
      * Currently checks for whether they belong to [Core, UE, GE, Internship]
@@ -185,6 +183,7 @@ public class InputChecker {
         }
     }
 
+    //@@author geraldkoh4
     /**
      * Checks the listOfModules to ensure that there are no duplicates.
      *
@@ -200,6 +199,7 @@ public class InputChecker {
         }
     }
 
+    //@@author geraldkoh4
     /**
      * Checks the year and semester section of addInput command.
      * Currently checks for year being [1-4].
@@ -212,7 +212,7 @@ public class InputChecker {
     private void checkAddInputYearAndSemester(String[] userCommands) throws MainException {
         try {
             int year = Integer.parseInt(userCommands[4].trim());
-            if (year < 1 || year > 4) {
+            if (year < YEAR_LOWER_BOUND || year > YEAR_UPPER_BOUND) {
                 throw new MainException("Make sure Year of Study is an integer from 1-4");
             }
             String semester = userCommands[5].trim();
@@ -228,6 +228,7 @@ public class InputChecker {
         }
     }
 
+    //@@author geraldkoh4
     /**
      * Checks for the correct number of fields for the respective command
      *
@@ -243,6 +244,7 @@ public class InputChecker {
         }
     }
 
+    //@@author geraldkoh4
     /**
      * Checks for correct inputs for module code, discards invalid inputs.
      * The invalid inputs are lazy deleted with "fail".
@@ -251,19 +253,45 @@ public class InputChecker {
      * @param moduleList The broken down array of module codes
      * @return sanitisedModuleList The broken down array of module codes, but with only the correct inputs remaining.
      */
-    private String[] sanitiseModuleCodeList(String[] moduleList) {
+    private String[] lazyDeleteInvalidInputsForModuleList(String[] moduleList) {
         String[] sanitisedModuleList = moduleList;
         for (int i = 0; i < sanitisedModuleList.length; i++) {
-            boolean unacceptedInput = sanitisedModuleList[i].equals("")
-                    || sanitisedModuleList[i].trim().length() < 6
-                    || sanitisedModuleList[i].trim().length() > 10
+            boolean unacceptedInput = sanitisedModuleList[i].equals(EMPTY_STRING)
+                    || sanitisedModuleList[i].trim().length() < MODULE_CODE_LOWER_BOUND
+                    || sanitisedModuleList[i].trim().length() > MODULE_CODE_UPPER_BOUND
                     || !sanitisedModuleList[i].trim().matches("^[A-Z0-9]*$");
 
             if (unacceptedInput) {
-                sanitisedModuleList[i] = "fail";
+                sanitisedModuleList[i] = INVALID_MODULE_CODE;
             }
         }
         return sanitisedModuleList;
+    }
+
+    //@@author geraldkoh4
+    /**
+     * Checks for duplicate before adding each module.
+     *
+     * @param moduleList This is the list of module codes.
+     * @param listOfModules This is the list of our currently stored modules.
+     * @param userCommands This the user command.
+     * @return
+     */
+    private void addModuleWithChecks(String[] moduleList, ModuleList listOfModules, String[] userCommands) {
+        for (String moduleCode: moduleList) {
+            if (moduleCode.equals(INVALID_MODULE_CODE)) {
+                continue;
+            }
+            try {
+                checkAddInputNoDuplicates(moduleCode.trim(), listOfModules.getModuleList());
+            } catch (MainException e) {
+                Print.printErrorMessage(e);
+                continue;
+            }
+            Module addedModule = listOfModules.addModule(moduleCode.trim(), userCommands[2].trim(),
+                    userCommands[3].trim(), userCommands[4].trim(), userCommands[5].trim());
+            Print.printAddedModule(addedModule, listOfModules.getModuleListSize());
+        }
     }
 
     //@@author saintzaw
@@ -277,13 +305,13 @@ public class InputChecker {
      * @throws MainException if user command is invalid
      */
     public void checkEditInputCorrectModuleCode(String moduleCode) throws MainException {
-        if (moduleCode.equals("")) {
+        if (moduleCode.equals(EMPTY_STRING)) {
             throw new MainException("Module Code cannot be empty!");
         }
-        if (moduleCode.trim().length() < 6) {
+        if (moduleCode.trim().length() < MODULE_CODE_LOWER_BOUND) {
             throw new MainException("Module Code cannot be less than 6 characters!");
         }
-        if (moduleCode.trim().length() > 10) {
+        if (moduleCode.trim().length() > MODULE_CODE_UPPER_BOUND) {
             throw new MainException("Module Code cannot be more than 10 characters!");
         }
         boolean isAlphanumeric = moduleCode.matches("^[A-Z0-9]*$");
@@ -304,7 +332,7 @@ public class InputChecker {
     public void checkEditInputCorrectModularCreditField(String modularCredits) throws MainException {
         try {
             int moduleCredits = Integer.parseInt(modularCredits);
-            if (moduleCredits < 0 || moduleCredits > 41) {
+            if (moduleCredits < MODULE_CREDIT_LOWER_BOUND || moduleCredits > MODULE_CREDIT_UPPER_BOUND) {
                 throw new MainException("Make sure Modular Credits is an integer from 0-41");
             }
         } catch (NumberFormatException e) {
@@ -342,7 +370,7 @@ public class InputChecker {
     public void checkEditInputYear(String year) throws MainException {
         try {
             int newYear = Integer.parseInt(year);
-            if (newYear < 1 || newYear > 4) {
+            if (newYear < YEAR_LOWER_BOUND || newYear > YEAR_UPPER_BOUND) {
                 throw new MainException("Make sure Year of Study is an integer from 1-4");
             }
         } catch (NumberFormatException e) {

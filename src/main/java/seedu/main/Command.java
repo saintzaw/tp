@@ -42,7 +42,8 @@ public class Command {
 
         LOGGER.log(Level.INFO, "End of manpage process");
     }
-    //@@author
+
+    //@@author geraldkoh4
     public void addCommand(String[] userCommands, ModuleList moduleList) {
         try {
             LOGGER.log(Level.INFO, "Starting addModule process");
@@ -53,11 +54,12 @@ public class Command {
         }
         LOGGER.log(Level.INFO, "End of addModule process");
     }
+
     //@@author Thiolk
     /**
      * Finds module by 2 ways, via their module code or via their module type
      * Finding module by their module code will return every module that contains the keyword inputted by the user
-     * Finding module by type will return every module that corresponds to the module type inpputted by the user
+     * Finding module by type will return every module that corresponds to the module type inputted by the user
      *
      * @param userCommands the command that the user inputs into the ChatBot
      * @param moduleList the list of modules in the module plan
@@ -95,6 +97,7 @@ public class Command {
             Print.printErrorMessage(e);
         }
     }
+
     //@@author
     public void deleteCommand(String[] userCommands, ModuleList moduleList) {
         try {
