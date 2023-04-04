@@ -54,6 +54,15 @@ public class Command {
         LOGGER.log(Level.INFO, "End of addModule process");
     }
 
+    /**
+     * Finds module by 2 ways, via their module code or via their module type
+     * Finding module by their module code will return every module that contains the keyword inputted by the user
+     * Finding module by type will return every module that corresponds to the module type inpputted by the user
+     *
+     * @param userCommands the command that the user inputs into the ChatBot
+     * @param moduleList the list of modules in the module plan
+     * @throws MainException if the user input is not valid
+     */
     public void findCommand(String[] userCommands, ModuleList moduleList) throws MainException {
         try {
             int numberOfFields = 3;
@@ -271,6 +280,12 @@ public class Command {
         LOGGER.log(Level.INFO, "Exiting Modganiser.");
     }
 
+    /**
+     * Checks the user input to ensure its validity before running the trackGraduationRequirement method
+     *
+     * @param userCommands the command that the user inputs into the ChatBot
+     * @param moduleList the list of modules in the module plan
+     */
     public void trackCommand(String[] userCommands, ModuleList moduleList) {
         try {
             int numberOfFields = 2;
