@@ -210,11 +210,11 @@ The `Print` component,
 
 ### 5. **Module Component**
 
-When the Module is called, it will execute to set and get these variables.
-Mostly used for the Storage component and the ModuleList component that works
-more with the Module component to create, update and retrieve any of the 5 attributes.
+When the `Module` is called, it will execute to set and get its attributes.
+Mostly used for the `Storage` component and the `ModuleList` component that works
+more with the `Module` component to create, update and retrieve any of the 5 attributes.
 
-Module is a component that has these attributes:
+`Module` is a component that has these attributes:
 
 1. moduleCode
 2. modularCredits
@@ -222,7 +222,7 @@ Module is a component that has these attributes:
 4. semester
 5. grade
 
-![Module Diagram](diagrams/Module.png)
+![Module Diagram](diagrams/ModuleClass.png)
 
 ## 3. Design and Implementation
 

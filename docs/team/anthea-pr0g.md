@@ -73,34 +73,42 @@ requirements (Core/UE/GE/Internships).
 **UML Diagrams I added:**
 
 Interaction Diagram in the Architecture component:
+
 ![Interaction Diagram](ppp_diagrams/Interaction.png)
 
 Module Component:
-![Module Diagram](ppp_diagrams/Module.png)
+
+![Module Diagram](ppp_diagrams/ModuleClass.png)
 
 ManPage Implementation:
+
 ![ManPage Diagram](ppp_diagrams/ManPage.png)
 
 
 **DG extract 1:**
 Table of contents with hyperlinks
+
 ![extract1 Diagram](ppp_diagrams/Anthea1.png)
 
 **DG extract 2:**
 Added some Tips and Warnings for setting up component
+
 ![extract2 Diagram](ppp_diagrams/Anthea2.png)
 
 **DG extract 3:**
 Explained how the components interact with each other
 in the modganiser’s architecture
+
 ![extract3 Diagram](ppp_diagrams/Anthea3.png)
 
 **DG extract 4:**
 Explained what the Module component consisted of  
+
 ![extract4 Diagram](ppp_diagrams/Anthea4.png)
 
 **DG extract 5:**
 Description of ManPage's design and implementation
+
 ![extract5 Diagram](ppp_diagrams/Anthea5.png)
 
 
@@ -108,8 +116,10 @@ Description of ManPage's design and implementation
 
 **UG extract 1:**
 Table of contents with hyperlinks
+
 ![extract1 Diagram](ppp_diagrams/Anthea6.png)
 
 **UG extract 2:**
 Added some Tips and Warnings for setting up component
+
 ![extract2 Diagram](ppp_diagrams/Anthea7.png)
