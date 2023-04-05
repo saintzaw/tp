@@ -241,23 +241,19 @@ The sequence by which the ManPage class handles the `man` command is as follows:
 
 2) The method then uses the methods in the ManPage class to print out the requested feature.
 
+**Some Examples of the methods in the ManPage class:**
+
 `ManPage#printManPage()` - Prints the Command Summary.
 
 `ManPage#printManPageAdd()` - Prints description of how to use the add feature.
 
 `ManPage#printManPageList()` - Prints description of how to use the list feature.
 
-`ManPage#printManPageEdit()` - Prints description of how to use the edit feature.
-
-`ManPage#printManPageFind()` - Prints description of how to use the find feature.
-
-`ManPage#printManPageDelete()` - Prints description of how to use the delete feature.
-
 `ManPage#printManPageCalculator()` - Prints description of how to use the grade calculator.
 
 `ManPage#printManPageUpdateGrade()` - Prints description of how to input grades.
 
-`ManPage#printManPageExit()` - Prints description of how to use the exit feature.
+
 
 ![ManPage](diagrams/ManPage.png)
 
