@@ -429,7 +429,7 @@ public class ModuleList {
      * @throws MainException If any of the parameters provided is not valid
      */
     public void checkIfTampered(String moduleGrade, String moduleCode, String modularCredits,
-                                   String moduleYear, String moduleSemester) throws MainException {
+            String moduleYear, String moduleSemester) throws MainException {
         InputChecker checkInput = new InputChecker();;
         if (!moduleGrade.equals(" ")) {
             checkInput.checkGradeInput(moduleGrade);

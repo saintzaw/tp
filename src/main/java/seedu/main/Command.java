@@ -98,7 +98,7 @@ public class Command {
         }
     }
 
-    //@@author
+    //@@author chokyao
     public void deleteCommand(String[] userCommands, ModuleList moduleList) {
         try {
             int numberOfFields = 2;
