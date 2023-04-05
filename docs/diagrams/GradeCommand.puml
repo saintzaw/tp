@@ -3,7 +3,7 @@
 participant ":Command" as Command
 participant ":ModuleList" as ML
 participant ":Module" as Mod
-participant ":Print" as Print
+participant "<<class>>\nPrint" as Print
 
 [->Command : gradeCommand\n(userCommands:String[], moduleList:ModuleList)
 activate Command
