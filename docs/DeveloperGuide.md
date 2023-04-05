@@ -145,23 +145,21 @@ modules
 ### 2. **Parser Component**
 How the `Parser` component works:
 
-* Firstly, when the `Parser` is called upon, it executes the `checkUserInput` method which parses the user input and
-  calls the relevant methods according to the user input.
-* According to the user input, it may execute some methods that are categorised as `checkValidInput` to check whether
-  the input fields are valid
-* The `Parser` interacts with the `Print` component to print error messages to the user if necessary.
-* The `Parser` also interacts with the `Storage` component to save the updated list of modules after calling upon
+* Firstly, when the `Parser` is called upon, it uses the `Command` class to parse the user command.
+* This results in the creation of a `Command` object which is then executed to parse the user command.
+* When the `Command` object is called upon, it uses the `InputChecker` class to check the user command for valid inputs. 
+* This results in the creation of a `InputChecker` object which is then executed to check the user command to ensure its 
+validity.
+* After the input validation, the appropriate methods in the `Command` class are executed according to the user command.
+* The `Command` class interacts with the `ModuleList` component to fulfil the requirements of the user command.
+* The `Command` class also interacts with the `Storage` component to save the updated list of modules after calling upon
   methods in the `ModuleList` component.
-* If the user input is `list`, the `Parser` executes the `listModules` method, which interacts with relevant methods in
-  the `ModuleList` component.
-* If the user input is `edit`, the `Parser` executes the `editModuleInfo` method, which interacts with relevant methods
-  in the `ModuleList` component.
-* If the user input is `track`, the `Parser` executes the `trackGraduationRequirements` method, which interacts with
-  relevant methods in the `ModuleList` component.
-* For the remaining valid user inputs, the `Parser` will interact with the `ModuleList` component to execute relevant
-  methods inside that component.
+* The `InputChecker` class also interacts with the `ModuleList` component for the checking of user input.
+* Both the `Command` and `InputChecker` classes interact with the `Print` component for the printing of messages 
+to the user.
 
 ![Parser Diagram](diagrams/Parser.png)
+![Parser Class Diagram](diagrams/ParserClass.png)
 
 ### 3. **ModuleList Component**
 
