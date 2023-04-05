@@ -13,18 +13,20 @@ Given below are my contributions to the project:
 
 #### Enhancements Implemented
 * Please find my contributions to the [FindCommand](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/src/main/java/seedu/duke/ModuleList.java) by referring to the lines 84-145.
-    * Implemented a new command to find modules by their module code.
-    * In v2.0, enhanced the function to find modules whose module code contains the keyword that the user inputted.
-    * in v2.0, enhanced the function to find modules by their type.
+  * Implemented a new command to find modules by their module code.
+  * In v2.0, enhanced the function to find modules whose module code contains the keyword that the user inputted.
+  * in v2.0, enhanced the function to find modules by their type.
 
 * Help to implement the track graduation requirement command
-    * Edited the code for the command to improve code quality and standards, see [PR#101](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/101)
-    * Augmented the command to track all the modules, see [PR#148](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/148)
-  
-* Help to refactor the checkUserInput in parser class into different functions and place them into 2 new classes.
-    * See [PR#263](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/263) and [PR#266](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/266)  
+  * Edited the code for the command to improve code quality and standards, see [PR#101](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/101)
+  * Augmented the command to track all the modules, see [PR#148](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/148)
 
 <div style="page-break-after: always;"></div>
+
+### Contributions to Team-based Tasks
+* Help to refactor the checkUserInput method in Parser class into different functions and place them into 2 new classes.
+  * See [PR#263](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/263) and [PR#266](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/266)
+
 
 #### Contributions to the UG
 * Reformatted most of the UG to make it look neater and easier to read
@@ -35,9 +37,9 @@ Given below are my contributions to the project:
 
 #### Contributions to the DG
 * [FindCommand](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#34-find-modules)
-    * Created a first draft of find command for DG
-    * Added 2 UML diagrams to find modules
-    * See [PR#110](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/110)
+  * Created a first draft of find command for DG
+  * Added 2 UML diagrams to find modules
+  * See [PR#110](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/110)
 
 #### Reviewing / Mentoring contributions
 * [#1238](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/238)
