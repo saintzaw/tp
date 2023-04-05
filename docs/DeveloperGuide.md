@@ -210,7 +210,7 @@ The `Print` component,
 
 ### 5. **Module Component**
 
-When the `Module` is called, it will execute to set and get these variables.
+When the `Module` is called, it will execute to set and get its attributes.
 Mostly used for the `Storage` component and the `ModuleList` component that works
 more with the `Module` component to create, update and retrieve any of the 5 attributes.
 
