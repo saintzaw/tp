@@ -404,21 +404,22 @@ The following sequence diagram shows more details on how the `editModuleCode` op
 
 `grade` command:
 
-The `grade` command is used by the user to update the grade of modules that have already been completed.
+The `grade` command is used by the user to update the grade of modules that are in the module plan.
 
 The sequence by which the Parser class handles the `grade` command is as follows:
-1. The `Parser` class extracts the other fields of the user input, and calls upon the `updateModuleGrade()` method
+1. The `Parser` class extracts the commands from the user input and calls upon the `gradeCommand()` method
+   in the `Command` class.
+2. The `Command` class extracts the other fields of the user input, and calls upon the `updateModuleGrade()` method
    in the `ModuleList` class.
-2. The method then loops through the moduleList array to find the moduleCode that requires a grade update.
-3. If the module is found, it calls the `Module` object method `setGrade()` to update the grade field
-   and prints a success message by calling the `printUpdatedModuleGrade()` method of the `Print` class.
-4. Else, it prints an error message by calling the `printInvalidModule()` method of the `Print` class.
+3. The method then loops through the moduleList array to find the moduleCode that requires a grade update by the user.
+4. If the module is found, it calls the `setGrade()` method of the `Module` class to update the grade field of the
+`Module` object and prints a success message by calling the `printUpdatedModuleGrade()` method of the `Print` class.
+5. Else, it prints an error message by calling the `printInvalidModule()` method of the `Print` class.
 
 The sequence of events above can be represented with the following sequence diagram:
 
 ![gradeCommand](diagrams/GradeCommand.png)
 
-<small><i>Figure ???</i></small>
 
 
 ### 3.8. Calculate CAP
@@ -428,19 +429,20 @@ The sequence of events above can be represented with the following sequence diag
 The `calculateCAP` command is used by the user to calculate the Cumulative Average Point (CAP) of graded modules.
 
 The sequence by which the Parser class handles the `calculateCAP` command is as follows:
-1. The `Parser` class extracts the other fields of the user input, and calls upon the `calculateCAP()` method
-   in the `ModuleList` class.
-2. The method then loops through the moduleList array to find modules that have been graded.
-3. It checks if the module grade should be counted by self-invocation of the `shouldCountModule()` method
-4. If it is, proceeds to obtain the grade value by self-invocation of the `getGradeValue()` method.
-5. Calculates the required grade values, and finally calls the `printCalculatedCAP()` of the `Print` class to display
-   the result to the user
+1. The `Parser` class extracts the commands from the user input and calls upon the `calculateCAPCommand()` method
+   in the `Command` class.
+2. The `calculateCAPCommand()` method extracts the other fields of the user input, and calls upon the 
+`calculateCAP()` method in the `ModuleList` class.
+3. The method then loops through the moduleList array to find modules that already have grades.
+4. It checks if the module grade should be counted by self-invocation of the `shouldCountModuleGrade()` method
+5. If it is, proceeds to obtain the grade value by self-invocation of the `getGradeValue()` method.
+6. Calculates the accumulated grade values and their weightages based on modular credits, and finally calls the
+`printCalculatedCAP()` of the `Print` class to display the calculated CAP to the user
 
 The sequence of events above can be represented with the following sequence diagram:
 
 ![calculateCAP](diagrams/CalculateCAP.png)
 
-<small><i>Figure ???</i></small>
 
 ---
 ## Documentation, logging and testing
