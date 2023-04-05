@@ -32,8 +32,8 @@ Modganiser is **effortless module planning, at your fingertips via the Command L
    + 3.8. [Calculate CAP](#38-calculate-cap)
 4. [Appendix: Requirements](#appendix--requirements)
    + 4.1. [Product Scope](#product-scope)
-   + 4.2. [Target User Profile](#target-user-profile)
-   + 4.3. [User Stories](#user-stories)
+   + 4.2. [User Stories](#user-stories)
+   + 4.3. [Use Cases](#use-cases)
    + 4.4. [Non-Functional Requirements](#non-functional-requirements)
    + 4.5. [Glossary](#glossary)
 5. [Appendix: Instructions for manual testing](#appendix--instructions-for-manual-testing)
@@ -288,13 +288,14 @@ It has multiple checks to ensure that the user keys in valid commands.
 The `add` command is used by the user to add a module or multiple modules at once.
 
 The sequence by which the Parser class handles the `add` command is as follows:
-1) The `Parser` class extracts the necessary fields from the user input, and calls upon the `addModule`
+
+1. The `Parser` class extracts the necessary fields from the user input, and calls upon the `addModule`
    method in the `ModuleList` class in a loop.
-2) The method then checks the type of module that is being added, then calls the relevant
+2. The method then checks the type of module that is being added, then calls the relevant
    constructor (`Core`, `UE`, `GE`, `Internship`).
-3) The `addModule` method returns the module that is added to the `Parser` class.
-4) The `getModuleListSize` method is called from `ModuleList` class.
-5) The `printAddedModule` method is called from the `Print` class to display the result to the user.
+3. The `addModule` method returns the module that is added to the `Parser` class.
+4. The `getModuleListSize` method is called from `ModuleList` class.
+5. The `printAddedModule` method is called from the `Print` class to display the result to the user.
 
 The sequence of events above can be represented with the following sequence diagram:
 
@@ -306,16 +307,16 @@ The sequence of events above can be represented with the following sequence diag
 
 The find modules features is facilitated by the `Parser`, `ModuleList` and `Module` Classes. `Parser` helps to check
 for user input to determine is user doing a search via a module name or module type, which will then invoke the 
-`findModuleByName` and `findModuleByType` methods respectively. If any modules are found, the ChatBot will print out
-all the modules, else the ChatBot will return a message to the user, saying that no modules were found with the search
+`findModuleByName` and `findModuleByType` methods respectively. If any modules are found, Modganiser will print out
+all the modules, else Modganiser will return a message to the user, saying that no modules were found with the search
 term they used.
 
 Given below is an example usage scenario and how the findModuleByName mechanism behaves at each step.
 
-Step 1: The user launches the application for the first time. The ChatBot will be initialised with an empty ArrayList
+Step 1: The user launches the application for the first time. Modganiser will be initialised with an empty ArrayList
 of Modules.
 
-Step 2: The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two modules into the ChatBot via the addModules 
+Step 2: The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two modules into Modganiser via the addModules 
 feature
 
 The following object diagram shows the current state of the ChatBot:
@@ -340,13 +341,13 @@ The following sequence diagram shows how the `findModuleByName` operation works:
 The `delete` command is used by the user to delete a module which is specified by the user.
 
 The sequence in which the `Parser` class handles the `delete` command is as follows:
-1) The `Parser` class extracts the necessary fields from the user input, and calls upon the `deleteModule`
+1. The `Parser` class extracts the necessary fields from the user input, and calls upon the `deleteModule`
    method in the `ModuleList` class.
-2) The method then loops through the moduleList array, attempting to find a module with the module code
+2. The method then loops through the moduleList array, attempting to find a module with the module code
    that was specified by the user.
-3) If a corresponding module is found, the `deleteModule` method will remove the module from the moduleList array
+3. If a corresponding module is found, the `deleteModule` method will remove the module from the moduleList array
    and return the deleted `Module` object. Otherwise, the `deleteModule` method returns `null`.
-4) If a deleted `Module` object is returned from `deleteModule`, the `Parser` class calls upon
+4. If a deleted `Module` object is returned from `deleteModule`, the `Parser` class calls upon
    `printDeletedModule()` of the `Print` class. Otherwise, the `Parser` class calls upon `printNoDeletedModuleFound()`
    of the `Print` class. This displays to the user the result of the `delete` command.
 
@@ -362,26 +363,26 @@ The following sequence diagram shows how the `deleteModule` operation works:
 The `edit` command is used by the user to make changes to fields in the module description.
 
 The sequence in which the `Parser` class handles the `edit` command is as follows:
-1) The `Parser` class extracts the other fields of the user input, and calls upon the `editModuleField()` method
+1. The `Parser` class extracts the other fields of the user input, and calls upon the `editModuleField()` method
    by self-invocation.
-2) The method then uses a `switch` statement to evaluate the module field that the user wants to update.
-3) After checking the field to be updated, the appropriate method within the `ModuleList` class is called upon to
+2. The method then uses a `switch` statement to evaluate the module field that the user wants to update.
+3. After checking the field to be updated, the appropriate method within the `ModuleList` class is called upon to
    make the changes specified by the user.
-4) If the user wants to update Modular Credits, the `editModularCredits()` method is called.
+4. If the user wants to update Modular Credits, the `editModularCredits()` method is called.
    This method directly modifies the `modularCredits` attribute of the `Module` object.
-5) If the user wants to update the Year, the `editYear()` method is called.
+5. If the user wants to update the Year, the `editYear()` method is called.
    This method directly modifies the `year` attribute of the `Module` object.
-6) If the user wants to update the Semester, the `editSemester()` method is called.
+6. If the user wants to update the Semester, the `editSemester()` method is called.
    This method directly modifies the `semester` attribute of the `Module` object.
-7) If the user wants to update the grade, the `editModuleGrade` method is called.
+7. If the user wants to update the grade, the `editModuleGrade` method is called.
    This method calls the `updateModuleGrade` method which directly modifies the `grade` attribute of the `Module` 
    object. 
-8) If the user wants to update Module Type, the `editModuleType()` method is called.
+8. If the user wants to update Module Type, the `editModuleType()` method is called.
    This method removes the existing `Module` object and adds a new `Module` object of the new type specified
    by the user. The `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
    methods in the `Module` class are also called upon to obtain the respective fields required to create the new
    `Module` object.
-9) If the user wants to update Module Code, the `editModuleCode()` method is called.
+9. If the user wants to update Module Code, the `editModuleCode()` method is called.
    This method removes the existing `Module` object and adds a new `Module` object with the new module code specified
    by the user. The `getModuleType()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
    methods in the `Module` class are also called upon to obtain the respective fields required to create the new
@@ -410,12 +411,12 @@ The following sequence diagram shows more details on how the `editModuleCode` op
 The `grade` command is used by the user to update the grade of modules that have already been completed.
 
 The sequence by which the Parser class handles the `grade` command is as follows:
-1) The `Parser` class extracts the other fields of the user input, and calls upon the `updateModuleGrade()` method
+1. The `Parser` class extracts the other fields of the user input, and calls upon the `updateModuleGrade()` method
    in the `ModuleList` class.
-2) The method then loops through the moduleList array to find the moduleCode that requires a grade update.
-3) If the module is found, it calls the `Module` object method `setGrade()` to update the grade field
+2. The method then loops through the moduleList array to find the moduleCode that requires a grade update.
+3. If the module is found, it calls the `Module` object method `setGrade()` to update the grade field
    and prints a success message by calling the `printUpdatedModuleGrade()` method of the `Print` class.
-4) Else, it prints an error message by calling the `printInvalidModule()` method of the `Print` class.
+4. Else, it prints an error message by calling the `printInvalidModule()` method of the `Print` class.
 
 The sequence of events above can be represented with the following sequence diagram:
 
@@ -431,12 +432,12 @@ The sequence of events above can be represented with the following sequence diag
 The `calculateCAP` command is used by the user to calculate the Cumulative Average Point (CAP) of graded modules.
 
 The sequence by which the Parser class handles the `calculateCAP` command is as follows:
-1) The `Parser` class extracts the other fields of the user input, and calls upon the `calculateCAP()` method
+1. The `Parser` class extracts the other fields of the user input, and calls upon the `calculateCAP()` method
    in the `ModuleList` class.
-2) The method then loops through the moduleList array to find modules that have been graded.
-3) It checks if the module grade should be counted by self-invocation of the `shouldCountModule()` method
-4) If it is, proceeds to obtain the grade value by self-invocation of the `getGradeValue()` method.
-5) Calculates the required grade values, and finally calls the `printCalculatedCAP()` of the `Print` class to display
+2. The method then loops through the moduleList array to find modules that have been graded.
+3. It checks if the module grade should be counted by self-invocation of the `shouldCountModule()` method
+4. If it is, proceeds to obtain the grade value by self-invocation of the `getGradeValue()` method.
+5. Calculates the required grade values, and finally calls the `printCalculatedCAP()` of the `Print` class to display
    the result to the user
 
 The sequence of events above can be represented with the following sequence diagram:

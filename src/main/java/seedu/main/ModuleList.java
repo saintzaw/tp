@@ -149,7 +149,7 @@ public class ModuleList {
      * Deletes a module from the moduleList.
      *
      * @param moduleCode The unique identifier of modules.
-     * @return the module object that was deleted from the moduleList.
+     * @return the Module object that was deleted from the moduleList, returns null if no module was deleted
      */
     public Module deleteModule(String moduleCode) throws MainException {
         if (listOfModules.size() == 0) {
