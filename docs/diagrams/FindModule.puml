@@ -2,38 +2,43 @@
 'https://plantuml.com/sequence-diagram
 
 box findModuleByName
-participant ":Parser" as Parser
+participant ":Command" as Command
 participant ":ModuleList" as ModuleList
 participant ":Module" as Module
-participant ":Print" as Print
+participant "<<class>>\nPrint" as Print
 end box
 
-[-> Parser: CheckUserInput("find /name /CS")
-activate Parser
+[-> Command: findCommand\n({"FIND", "CODE", "CS"},\n moduleList:ModuleList)
+activate Command
 
-Parser -> ModuleList : findModuleByName("CS")
+Command -> ModuleList : findModuleByCode("CS")
 activate ModuleList
 
-loop findModule
-    activate Module
+loop until module list ends
     ModuleList -> Module :getModuleCode()
-    Module --> ModuleList : contains("CS")
-    ModuleList -> ModuleList : Add foundModule into List
+    activate Module
+    Module --> ModuleList : moduleCode:String
     deactivate Module
-    activate Print
+
+    opt should include module
+        ModuleList -> ModuleList : Add foundModule into List
+    end
 end
 
-alt moduleIsFound
-    ModuleList -> Print : printFoundModule()
+ModuleList --> Command : foundModules:ArrayList<Module>
+deactivate ModuleList
 
-    Print -> Print : Message printed to stdout
-else
-    ModuleList -> Print : PrintNoModuleFound()
-    Print -> Print : Message printed to stdout
+alt module found
+    Command -> Print : printFoundModule()
+    activate Print
+    Print --> Command
+    deactivate Print
+else module not found
+    Command -> Print : PrintNoModuleFound()
+    activate Print
+    Print --> Command
     deactivate Print
 end
 
 return
-return
-
 @enduml

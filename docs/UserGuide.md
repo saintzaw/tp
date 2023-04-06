@@ -408,7 +408,7 @@ Expected Output:
 #### 5.2.4 Deleting Module From Module Plan: `delete`
 **Function**
 
-Should you have no longer wish to take a module, you can use this command to delete the module from your module plan.
+Should you no longer wish to take a module, you can use this command to delete the module from your module plan.
 
 |  [Parameter](#8-glossary)  |    Description    |                                                               Accepted Inputs                                                                |
 |:-----------:|:-----------------:|:--------------------------------------------------------------------------------------------------------------------------------------------:|
