@@ -78,6 +78,7 @@ public class Command {
 
         try {
             if (userCommands[1].trim().equals("CODE")) {
+                checkInput.checkAlphanumeric(userCommands[2].trim());
                 foundModules = moduleList.findModuleByCode(userCommands[2].trim());
             } else if (userCommands[1].trim().equals("TYPE")) {
                 foundModules = moduleList.findModuleByType(userCommands[2].trim());
@@ -109,6 +110,7 @@ public class Command {
         }
         assert userCommands.length == 2;
         try {
+            checkInput.checkAlphanumeric(userCommands[1].trim());
             Module deletedModule = moduleList.deleteModule(userCommands[1].trim());
             if (deletedModule == null) { // When no module matches the given module code
                 Print.printNoDeletedModuleFound(userCommands[1].trim());
@@ -278,6 +280,7 @@ public class Command {
         }
         assert userCommands.length == 3;
         try {
+            checkInput.checkAlphanumeric(userCommands[1].trim());
             checkInput.checkGradeInput(userCommands[2].trim());
             Module moduleGradeUpdated =
                     moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());

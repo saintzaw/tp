@@ -137,10 +137,7 @@ public class InputChecker {
             if (moduleList[i].length() > MODULE_CODE_UPPER_BOUND) {
                 throw new MainException("Module Code cannot be more than 10 characters!");
             }
-            boolean isAlphaNumeric = moduleList[i].trim().matches("^[A-Z0-9]*$");
-            if (!isAlphaNumeric) {
-                throw new MainException("Module Code is not alphanumeric!");
-            }
+            checkAlphanumeric(moduleList[i]);
         }
     }
 
@@ -438,6 +435,19 @@ public class InputChecker {
         default:
             throw new MainException("Invalid command format / invalid grade input! Please follow the format " +
                     "`grade /<module code> /<valid grade>` as per the user guide.");
+        }
+    }
+
+    /**
+     * Checks if the given module code by the user is alphanumeric.
+     *
+     * @param moduleCode the string containing grade input by user.
+     * @throws MainException when the module code input is not alphanumeric.
+     */
+    public void checkAlphanumeric(String moduleCode) throws MainException {
+        boolean isAlphaNumeric = moduleCode.trim().matches("^[A-Z0-9]*$");
+        if (!isAlphaNumeric) {
+            throw new MainException("Module Code is not alphanumeric!");
         }
     }
 }
