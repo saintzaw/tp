@@ -1,74 +1,73 @@
 @startuml
 
-participant ":Parser" as Parser
+participant ":Command" as Command
 participant ":ModuleList" as ML
-participant ":Module" as Mod
-participant ":Print" as Print
-[->Parser : CheckUserInput\n(userInput:String, moduleList:ModuleList)
-activate Parser
-Parser -> Parser : editModuleField\n(moduleList:ModuleList, userInput:String[])
-activate Parser
+participant "<<class>>\nPrint" as Print
+[->Command : editCommand\n(userCommands:String[],\n moduleList:ModuleList)
+activate Command
+Command -> Command : editModuleField\n(moduleList:ModuleList, userInput:String[])
+activate Command
 
 
 alt MC
-    Parser -> ML : editModularCredits(moduleCode:String, newModularCredits:String)
+    Command -> ML : editModularCredits(moduleCode:String, newModularCredits:String)
     activate ML
     ML -> Print : printEditedModule(module:Module, moduleListSize:int)
     activate Print
     Print --> ML
     deactivate Print
-    ML --> Parser
+    ML --> Command
     deactivate ML
 else YEAR
-    Parser -> ML : editYear(moduleCode:String, newYear:String)
+    Command -> ML : editYear(moduleCode:String, newYear:String)
     activate ML
     ML -> Print : printEditedModule(module:Module, moduleListSize:int)
     activate Print
     Print --> ML
     deactivate Print
-    ML --> Parser
+    ML --> Command
     deactivate ML
 else SEMESTER
-    Parser -> ML : editSemester(moduleCode:String, newSemester:String)
+    Command -> ML : editSemester(moduleCode:String, newSemester:String)
     activate ML
     ML -> Print : printEditedModule(module:Module, moduleListSize:int)
     activate Print
     Print --> ML
     deactivate Print
-    ML --> Parser
+    ML --> Command
     deactivate ML
 else GRADE
-    Parser -> ML : editModuleGrade(moduleCode:String, newGrade:String)
+    Command -> ML : editModuleGrade(moduleCode:String, newGrade:String)
     activate ML
     ML -> Print : printEditedModule(module:Module, moduleListSize:int)
     activate Print
     Print --> ML
     deactivate Print
-    ML --> Parser
+    ML --> Command
     deactivate ML
 else TYPE
-    Parser -> ML : editModuleType(moduleCode:String, moduleType:String)
+    Command -> ML : editModuleType(moduleCode:String, moduleType:String)
     activate ML
-        ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
-        activate Print
-        Print --> ML
-        deactivate Print
-    ML --> Parser
+    ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
+    activate Print
+    Print --> ML
+    deactivate Print
+    ML --> Command
     deactivate ML
 else CODE
-    Parser -> ML : editModuleCode(moduleCode:String, moduleType:String)
+    Command -> ML : editModuleCode(moduleCode:String, moduleType:String)
     activate ML
-        ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
-        activate Print
-        Print --> ML
-        deactivate Print
-    ML --> Parser
+    ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
+    activate Print
+    Print --> ML
+    deactivate Print
+    ML --> Command
     deactivate ML
 end
-Parser --> Parser
-deactivate Parser
+Command --> Command
+deactivate Command
 
-Parser-->[
-deactivate Parser
+Command-->[
+deactivate Command
 
 @enduml

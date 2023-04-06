@@ -1,9 +1,9 @@
 @startuml
 participant ":ModuleList" as ML
 participant ":Module" as Mod
-participant ":Print" as Print
+participant "<<class>>\nPrint" as Print
 
-[->ML : editModuleCode\n(moduleCode:String, moduleType:String)
+[->ML : editModuleCode\n(moduleCode:String,\n moduleType:String)
  activate ML
         ML -> ML: deleteModule(moduleCode:String)
         ML -> Mod: getModularType()
@@ -12,7 +12,7 @@ participant ":Print" as Print
         ML -> Mod: getSemester()
         ML -> Mod: getGrade()
 
-        ML -> ML: addModule(moduleCode:String, modularCredits:String, moduleType:String, year:String, semester:String)
+        ML -> ML: addModule(moduleCode:String, modularCredits:String,\n moduleType:String, year:String, semester:String)
         ML -> ML: updateModuleGrade(moduleCode:String, grade:String)
         ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
         activate Print

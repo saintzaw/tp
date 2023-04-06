@@ -1,32 +1,38 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-participant ":Parser" as Parser
+participant ":Command" as Command
+participant ":InputChecker" as IC
 participant ":ModuleList" as ML
-participant ":Module" as Module
-participant ":Print" as Print
-[->Parser : CheckUserInput\n(userInput:String, moduleList:ModuleList)
-activate Parser
+participant "<<class>>\nPrint" as Print
+[->Command : addCommand\n(userCommands:String[],\n moduleList:ModuleList)
+activate Command
 
+Command->IC : checkAddInput\n(listOfModules:ModuleList,\n userCommands:String[])
+activate IC
+
+IC->IC : addModuleWithChecks\n(moduleList:String[], listOfModules:ModuleList, userCommands:String[])
+activate IC
 
 loop until all modules are added
-    Parser->ML: addModule()
+    IC->ML: addModule()
     activate ML
-        ML->Module: Module(moduleCode:String, modularCredits:String, year:String, semester:String)
-        activate Module
-        Module-->ML: newModule:Module
-        deactivate Module
-        ML-->Parser: addedModule:Module
-
-    Parser->ML: getModuleListSize()
-    ML-->Parser: moduleListSize:Int
+    ML-->IC : addedModule:Module
     deactivate ML
-    Parser->Print: printAddedModule(addedModule:Module, moduleListSize:Int)
+
+    IC->Print: printAddedModule(addedModule:Module, moduleListSize:int)
     activate Print
-    Print-->Parser:
+    Print-->IC
     deactivate Print
 end
-Parser-->[
-deactivate Parser
+
+IC-->IC
+deactivate IC
+
+IC-->Command
+deactivate IC
+
+Command-->[
+deactivate Command
 
 @enduml

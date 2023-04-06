@@ -5,7 +5,7 @@ participant ":ModuleList" as ML
 participant ":Module" as Mod
 participant "<<class>>\nPrint" as Print
 
-[->Command : gradeCommand\n(userCommands:String[], moduleList:ModuleList)
+[->Command : gradeCommand\n(userCommands:String[],\n moduleList:ModuleList)
 activate Command
 Command->ML : updateModuleGrade\n(moduleCode:String, moduleGrade:String)
 

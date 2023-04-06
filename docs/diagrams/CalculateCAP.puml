@@ -4,7 +4,7 @@ participant ":Command" as Command
 participant ":ModuleList" as ML
 participant ":Module" as Mod
 participant "<<class>>\nPrint" as Print
-[->Command : calculateCAPCommand\n(userCommands:String[], moduleList:ModuleList)
+[->Command : calculateCAPCommand\n(userCommands:String[],\n moduleList:ModuleList)
 activate Command
 Command->ML : calculateCAP()
 

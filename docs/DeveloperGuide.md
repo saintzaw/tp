@@ -4,7 +4,7 @@
 
 ---
 
-Modganiser is **effortless module planning, at your fingertips via the Command Line Interface** (CLI). It helps Information security students graduate in time by giving you a platform to plan all 4 years of your modules to ensure that you meet graduation requirements (UE/GEs).  If you can type fast, Modganiser can get your schedule up  faster than traditional GUI apps.
+Modganiser is a platform that provides **effortless module planning, at your fingertips via the Command Line Interface** (CLI). It helps Information security students graduate in time by giving you a platform to plan all 4 years of your modules to ensure that you meet graduation requirements (UE/GEs).  If you can type fast, Modganiser can get your schedule up  faster than traditional GUI apps.
 
 ## Table of Contents
 
@@ -48,21 +48,19 @@ Modganiser is **effortless module planning, at your fingertips via the Command L
 
 ## Setting Up
 
-> ❗ **Warning**
-> : Follow the steps in the following guide precisely. Things will not work out if you deviate in some steps. 
+> ❗ **Warning** : Follow the steps in the following guide precisely. Things will not work out if you deviate in some steps. 
 
-First, fork [Modganiser's repo](https://github.com/AY2223S2-CS2113T-T09-4/tp) , and clone the fork into your computer.
+First, fork [Modganiser's repo](https://github.com/AY2223S2-CS2113T-T09-4/tp), and clone the fork into your computer.
 
 **If you plan to use Intellij IDEA (highly recommended):**
 
 1. [Configure the JDK](https://se-education.org/guides/tutorials/intellijJdk.html) 
-to ensure Intellij is configured to use JDK 11.
+to ensure Intellij IDEA is configured to use JDK 11.
 
 
-2. [Import the project as a Gradle project into IDEA.](https://se-education.org/guides/tutorials/intellijImportGradleProject.html)
+2. [Import the project as a Gradle project into Intellij IDEA.](https://se-education.org/guides/tutorials/intellijImportGradleProject.html)
    
-   > 📓 **Note**
-   : Importing a Gradle project is slightly different from importing a normal Java project.
+   > 📓 **Note** : Importing a Gradle project is slightly different from importing a normal Java project.
 
 3. Verify the setup:
    Run the seedu.main.Main and try a few commands.
@@ -73,13 +71,12 @@ to ensure Intellij is configured to use JDK 11.
 
 1. **Configure coding style**
 
-   If using IDEA:
-   [Configure the code style](https://se-education.org/guides/tutorials/intellijCodeStyle.html) to set up IDEA’s coding style to match ours :
+   If using Intellij IDEA:
+   [Configure the code style](https://se-education.org/guides/tutorials/intellijCodeStyle.html) to set up Intellij IDEA’s coding style to match ours :
  
    
-   > 💡 **Tip**
-   : Optionally, you can [follow the guide](https://se-education.org/guides/tutorials/checkstyle.html)
-   > To find how to use the CheckStyle within IDEA e.g., to report problems as you write code
+   > 💡 **Tip** : Optionally, you can [follow the guide](https://se-education.org/guides/tutorials/checkstyle.html)
+   > to find out how to use the CheckStyle within Intellij IDEA (e.g., to report problems as you write code)
 
 2. **Set up CI**
    
@@ -128,14 +125,14 @@ The sections below give more details of each component.
 
 ### 1. **Storage Component**
 The main job of this component is to ensure the proper storage of details regarding the modules in the user's plans and 
-the user's name. The `Storage` component will be called immediately when Modganiser starts up to read the previously 
-saved data and also called whenever the user enters a command which modifies the details of modules in 
+the user's name. It is made up of the `Storage` class which is immediately utilised when Modganiser starts up to read the previously 
+saved data. Furthermore, this component plays a key role whenever the user enters a command which modifies the details of modules in 
 their plan.
 
-![Storage Diagram](diagrams/Storage.png)
+![Storage Diagram](diagrams/StorageClass.png)
 
 
-The `Storage` component,
+The `Storage` class,
 * can save the name of the user into a text file.
 * is able to save changes to a text file after each change made by the user, such as an addition or deletion of 
 modules
@@ -186,7 +183,7 @@ How the `ModuleList` component works:
 * `listOfModules` will then interact with the `Print` component to display the results of the executed command to the
   user.
 
-* The `ModuleList` component will also interact with `Storage` component to save the updated `listofModules`.
+* The `ModuleList` component will also interact with `Storage` component to save the updated `listOfModules`.
 
 
 ![ModuleList Diagram](diagrams/ModuleList.png)
@@ -200,11 +197,7 @@ The `Print` component,
 * contains many methods where each method represents a single type of response to a specific type of user input.
 * executes the relevant method to print a message when called in other components.
 
-![Print](diagrams/Print.png)
 
-> 📓 **Note**
->
-> Only some methods of `Print` are listed in the diagram above with many others omitted due to limited space.
 
 ### 5. **Module Component**
 
@@ -281,52 +274,50 @@ It has multiple checks to ensure that the user keys in valid commands.
 
 The `add` command is used by the user to add a module or multiple modules at once.
 
-The sequence by which the Parser class handles the `add` command is as follows:
+The sequence by which the `Command` class handles the `add` command is as follows:
 
-1. The `Parser` class extracts the necessary fields from the user input, and calls upon the `addModule`
-   method in the `ModuleList` class in a loop.
-2. The method then checks the type of module that is being added, then calls the relevant
-   constructor (`Core`, `UE`, `GE`, `Internship`).
-3. The `addModule` method returns the module that is added to the `Parser` class.
-4. The `getModuleListSize` method is called from `ModuleList` class.
-5. The `printAddedModule` method is called from the `Print` class to display the result to the user.
+1. The `Command` class extracts the necessary fields from the user input, and calls upon the `checkAddInput`
+   method in the `InputChecker` class.
+2. Subsequently, `addModuleWithChecks` is called by self-invocation.
+3. This method first validates the inputs from the user then proceeds to call the `addModule` method of the `ModuleList`
+   class.
+4. The respective module(s) are added to the `listOfModules` attribute in `ModuleList` as requested by the user.
+4. The `addModule` method returns the module that is added to the `listOfModules`.
+5. Finally, the `printAddedModule` method is called from the `Print` class to display the result to the user.
 
 The sequence of events above can be represented with the following sequence diagram:
 
 ![addInputCommand](diagrams/AddInputCommand.png)
 
-<small><i>Figure ???</i></small>
 
 ### 3.4. Find Modules
 
-The find modules features is facilitated by the `Parser`, `ModuleList` and `Module` Classes. `Parser` helps to check
+The find modules features is facilitated by the `Command`, `ModuleList` and `Module` Classes. `Command` helps to check
 for user input to determine is user doing a search via a module name or module type, which will then invoke the 
-`findModuleByName` and `findModuleByType` methods respectively. If any modules are found, Modganiser will print out
+`findModuleByCode` and `findModuleByType` methods respectively. If any modules are found, Modganiser will print out
 all the modules, else Modganiser will return a message to the user, saying that no modules were found with the search
 term they used.
 
-Given below is an example usage scenario and how the findModuleByName mechanism behaves at each step.
+Given below is an example usage scenario and how the `findModuleByCode` mechanism behaves at each step.
 
-Step 1: The user launches the application for the first time. Modganiser will be initialised with an empty ArrayList
+1. The user launches the application for the first time. Modganiser will be initialised with an empty ArrayList
 of Modules.
 
-Step 2: The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two modules into Modganiser via the addModules 
+2. The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two modules into Modganiser via the addModules 
 feature
 
-The following object diagram shows the current state of the ChatBot:
-![FindModule](diagrams/FindTwoModules.png)
+The following object diagram shows the current state of Modganiser:
+![FindTwoModules](diagrams/FindTwoModules.png)
 
-<small><i>Figure ???</i></small>
 
-Step 3: The user now wants to find the details of the modules he has just added. He executes `find /name /CS` which
-will call `findModuleByName`. This method will then print out all the modules that have the keyword "CS" in their
+3. The user now wants to find the details of the modules he has just added. He executes `find /name /CS` which
+will call `findModuleByCode`. This method will then print out all the modules that have the keyword "CS" in their
 module name.
 
-The following sequence diagram shows how the `findModuleByName` operation works:
+The following sequence diagram shows how the `findModuleByCode` operation works:
 
 ![FindModule](diagrams/FindModule.png)
 
-<small><i>Figure ???</i></small>
 
 ### 3.5. Delete Modules
 
@@ -334,18 +325,18 @@ The following sequence diagram shows how the `findModuleByName` operation works:
 
 The `delete` command is used by the user to delete a module which is specified by the user.
 
-The sequence in which the `Parser` class handles the `delete` command is as follows:
-1. The `Parser` class extracts the necessary fields from the user input, and calls upon the `deleteModule`
+The sequence in which the `Command` class handles the `delete` command is as follows:
+1. The `Command` class extracts the necessary fields from the user input, and calls upon the `deleteModule`
    method in the `ModuleList` class.
-2. The method then loops through the moduleList array, attempting to find a module with the module code
-   that was specified by the user.
-3. If a corresponding module is found, the `deleteModule` method will remove the module from the moduleList array
+2. The method then loops through the `listOfModules` array in the `ModuleList` object, attempting to find a module 
+   with the module code that was specified by the user.
+3. If a corresponding module is found, the `deleteModule` method will remove the module from the `listOfModules` array
    and return the deleted `Module` object. Otherwise, the `deleteModule` method returns `null`.
-4. If a deleted `Module` object is returned from `deleteModule`, the `Parser` class calls upon
-   `printDeletedModule()` of the `Print` class. Otherwise, the `Parser` class calls upon `printNoDeletedModuleFound()`
+4. If a deleted `Module` object is returned from `deleteModule`, the `Command` class calls upon
+   `printDeletedModule()` of the `Print` class. Otherwise, the `Command` class calls upon `printNoDeletedModuleFound()`
    of the `Print` class. This displays to the user the result of the `delete` command.
 
-The following sequence diagram shows how the `deleteModule` operation works:
+The following sequence diagram shows how the `deleteCommand` operation works:
 
 ![deleteModule](diagrams/DeleteModule.png)
 
@@ -354,10 +345,17 @@ The following sequence diagram shows how the `deleteModule` operation works:
 
 `edit` command:
 
+The following sequence diagram shows how the `editCommand` operation works:
+
+![editCommand](diagrams/EditCommand.png)
+
+> 📓 **Note**
+>
+> Some method calls from ModuleList are intentionally left out of the diagram to keep it simple.
 The `edit` command is used by the user to make changes to fields in the module description.
 
-The sequence in which the `Parser` class handles the `edit` command is as follows:
-1. The `Parser` class extracts the other fields of the user input, and calls upon the `editModuleField()` method
+The sequence in which the `Command` class handles the `edit` command is as follows:
+1. The `Command` class extracts the other fields of the user input, and calls upon the `editModuleField()` method
    by self-invocation.
 2. The method then uses a `switch` statement to evaluate the module field that the user wants to update.
 3. After checking the field to be updated, the appropriate method within the `ModuleList` class is called upon to
@@ -370,33 +368,32 @@ The sequence in which the `Parser` class handles the `edit` command is as follow
    This method directly modifies the `semester` attribute of the `Module` object.
 7. If the user wants to update the grade, the `editModuleGrade` method is called.
    This method calls the `updateModuleGrade` method which directly modifies the `grade` attribute of the `Module` 
-   object. 
+   object. (Not shown in sequence diagram)
 8. If the user wants to update Module Type, the `editModuleType()` method is called.
-   This method removes the existing `Module` object and adds a new `Module` object of the new type specified
-   by the user. The `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
-   methods in the `Module` class are also called upon to obtain the respective fields required to create the new
-   `Module` object.
+   More information regarding this method is provided in the subsequent section.
 9. If the user wants to update Module Code, the `editModuleCode()` method is called.
-   This method removes the existing `Module` object and adds a new `Module` object with the new module code specified
-   by the user. The `getModuleType()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
-   methods in the `Module` class are also called upon to obtain the respective fields required to create the new
-   `Module` object.
+   More information regarding this method is provided in the subsequent section.
 
-The following sequence diagram shows how the `editModuleField` operation works:
 
-![editCommand](diagrams/EditCommand.png)
-
-> 📓 **Note**
->
-> Some method calls from ModuleList are intentionally left out of the diagram to keep it simple.
 
 The following sequence diagram shows more details on how the `editModuleType` operation works:
 
-![editCommand](diagrams/editModuleType.png)
+![editModuleType](diagrams/editModuleType.png)
+
+The `editModuleType` method removes the existing `Module` object and adds a new `Module` object of the new type specified
+by the user. The `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
+methods in the `Module` class are also called upon to obtain the respective required fields to create the new
+`Module` object.
+
 
 The following sequence diagram shows more details on how the `editModuleCode` operation works:
 
-![editCommand](diagrams/editModuleCode.png)
+![editModuleCode](diagrams/editModuleCode.png)
+
+The `editModuleCode` method removes the existing `Module` object and adds a new `Module` object with the new module code specified
+by the user. The `getModuleType()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
+methods in the `Module` class are also called upon to obtain the respective fields required to create the new
+`Module` object.
 
 ### 3.7. Add or Update Grade
 
