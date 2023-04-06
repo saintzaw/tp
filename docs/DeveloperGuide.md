@@ -442,9 +442,51 @@ The sequence of events above can be represented with the following sequence diag
 ---
 ## Documentation, logging and testing
 
-* [Documentation guide](Documentation.md)
-* [Testing guide](Testing.md)
-* [Logging guide](Logging.md)
+### Documentation
+**Setting up and maintaining the project website:**
+
+* The `docs/` folder is used for documentation.
+
+**Style guidance:**
+
+* Follow the [**_Google developer documentation style guide_**](https://developers.google.com/style).
+
+* Also relevant is the [_[se-edu/guides] **Markdown coding standard**_](https://se-education.org/guides/conventions/markdown.html)
+
+**Diagrams:**
+
+* See the [_[se-edu/guides] **Using PlantUML**_](https://se-education.org/guides/tutorials/plantUml.html)
+
+### Logging
+* We are using `java.util.logging` package for logging.
+* The logger is initialised in the `Main` class.
+* Logging information and log messages are written into a `modganiserLog` text file.
+
+### Testing
+#### Running tests
+
+There are two ways to run tests.
+
+* **Method 1: Using IntelliJ JUnit test runner**
+   * To run all tests, right-click on the `src/test/java` folder and choose `Run 'All Tests'`
+   * To run a subset of tests, you can right-click on a test package,
+     test class, or a test and choose `Run 'ABC'`
+* **Method 2: Using Gradle**
+   * Open a console and run the command `gradlew clean test` (Mac/Linux: `./gradlew clean test`)
+
+<div markdown="span" class="alert alert-secondary">:link: **Link**: Read [this Gradle Tutorial from the se-edu/guides](https://se-education.org/guides/tutorials/gradle.html) to learn more about using Gradle.
+</div>
+
+--------------------------------------------------------------------------------------------------------------------
+
+#### Types of tests
+
+This project has two types of tests:
+
+1. *ModuleList Tests* that are checking multiple code functions.
+   e.g. `seedu.main.ModuleListTest`
+2. *Print Tests* that are checking multiple outputs to the program.
+   e.g. `seedu.main.PrintTest`
 
 ## Appendix: Requirements
 
