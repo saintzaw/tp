@@ -135,7 +135,7 @@ public class ManPage {
     public static void printManPageFind() {
         System.out.println("\n\n" + LINE +
 
-                "Find module: find /CODE /KEYWORD or fine /TYPE /KEYWORD\n " +
+                "Find module: find /CODE /KEYWORD or find /TYPE /KEYWORD\n " +
                 "Find out which year and semester you plan to take the module.\n\n " +
                 "Example: In a list with CS2113T and CS2101 as both core modules.\n "+
                 "1.  find /CODE /CS2113 will show the CS2113T module only\n "+

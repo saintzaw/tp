@@ -440,7 +440,6 @@ public class PrintTest {
         ManPage.printManPageFind();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line +
-
                 "Find module: find /CODE /KEYWORD or find /TYPE /KEYWORD" + System.lineSeparator() + " " +
                 "Find out which year and semester you plan to take the module." +
                 System.lineSeparator() + System.lineSeparator() + " " +
