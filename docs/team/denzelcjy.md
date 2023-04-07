@@ -1,12 +1,12 @@
 # Denzel Chen - Project Portfolio Page
 
-## Project: Modganiser
+## Overview
 
-Modganiser is effortless module planning at your fingertips via the Command Line Interface (CLI), focused on helping
-Information Security Undergraduates graduate in 4 years. It provides a platform to plan all 4 years of your modules
+Modganiser facilitates effortless module planning at your fingertips via the Command Line Interface (CLI), focused on helping
+Information Security Undergraduates graduate on time in 4 years. It provides a platform to plan all 4 years of your modules
 to ensure that you meet your graduation requirements.
-Built on Java, Modganiser can definitely get your module plan up faster than traditional Graphical User Interface (GUI)
-apps if you can type fast.
+Built to run on Java 11, Modganiser can definitely get your module plan up faster than traditional Graphical User Interface (GUI)
+applications if you can type fast.
 
 ## Summary of contributions
 
@@ -23,27 +23,38 @@ apps if you can type fast.
       * Handled print messages to user, and creation of Modganiser Logo.
 
 * Grade Command
-    * **PR**: [#84](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/84)
+    * **PR**: [#84](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/84), 
+[#292](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/292)
       * Added the grade command to allow users to grade their completed modules in their module plan.
 
 * CalculateCAP Command
     * **PR**: [#84](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/84)
       * Added the calculateCAP command to allow users to calculate their CAP based on graded modules that have grade value.
+<div style="page-break-after: always;"></div>
 
 * JUnit Testing, Assertions, Logging
-    * **PR**: [#36](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/36), [#53](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/53), [#55](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/55), [#111](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/111), [#112](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/112)
+    * **PR**: [#36](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/36), 
+[#53](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/53), 
+[#55](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/55), 
+[#111](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/111), 
+[#112](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/112)
       * Added Junit Testing to `Print` class,  `grade` and `calculateCAP` commands.
       * Added assertions for method in `Parser` class.
       * Set-up Logging, added logging to `grade` and `calculateCAP` commands.
 
 * PE-D Bugs
-    * **PR**: [#248](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/248),
+    * **PR**: [#248](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/248)
       * Squashed PE-D bugs related to `grade` and `calculateCAP` commands, as well as modular credit limit error in `add` command.
 
-<div style="page-break-after: always;"></div>
-
 ### User Guide
-* **PR**: [#138](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/138), [#145](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/145), [#160](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/160), [#163](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/163), [#172](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/172), [#177](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/177), [#256](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/256)
+* **PR**: [#138](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/138), 
+[#145](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/145), 
+[#160](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/160), 
+[#163](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/163), 
+[#172](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/172), 
+[#177](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/177), 
+[#256](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/256),
+[#271](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/271)
   * Creation of hyperlinks to each section of the User Guide
   * Added the Table of Contents
   * Added sections on `grade` and `calculateCAP` command
@@ -51,15 +62,21 @@ apps if you can type fast.
   * Added extra notes to fix PE-D bugs for User Guide
 
 ### Developer Guide
-* **PR**: [#99](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/99)
+* **PR**: [#99](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/99), 
+[#281](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/281)
   * Added descriptions and UML diagrams for `grade` and `calculateCAP` commands
 
 ### Reviewing / Mentoring
-* Reviewing **PRs**: [#81](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/81), [#96](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/96) [#117](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/117), [#162](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/162)
+* Reviewing **PRs**: [#81](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/81), 
+[#96](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/96),
+[#117](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/117), 
+[#162](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/162)
 
 ### Contributions beyond the project team
 * Found and reported [PE-D bugs](https://github.com/denzelcjy/ped/issues) for team [Clanki](https://github.com/AY2223S2-CS2113-T15-4/tp)
 * Forum contribution in finding [website bug](https://github.com/nus-cs2113-AY2223S2/forum/issues/23).
+
+<div style="page-break-after: always;"></div>
 
 ### Extract: User Guide
 #### 5.2.2 Adding Grade Obtained for Module: `grade`
@@ -88,28 +105,25 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 >
 > ![gradeEmpty](../UG_Screenshots/AddingAModule.png)
 
-
->❗ [**Warning**](https://ay2223s2-cs2113t-t09-4.github.io/tp/UserGuide.html#31-special-notations)
->
-> Modganiser will show an error if you add grades to a module that doesn't exist.
->
-![GradeCommand](../UG_Screenshots/Grade_Module_Not_In_List.png)
+<div style="page-break-after: always;"></div>
 
 ### Extract: Developer Guide
-### 3.8. Calculate CAP
+### Calculate CAP
 
 `calculateCAP` command:
 
 The `calculateCAP` command is used by the user to calculate the Cumulative Average Point (CAP) of graded modules.
 
 The sequence by which the Parser class handles the `calculateCAP` command is as follows:
-1) The `Parser` class extracts the other fields of the user input, and calls upon the `calculateCAP()` method
-   in the `ModuleList` class.
-2) The method then loops through the moduleList array to find modules that have been graded.
-3) It checks if the module grade should be counted by self-invocation of the `shouldCountModule()` method
-4) If it is, proceeds to obtain the grade value by self-invocation of the `getGradeValue()` method.
-5) Calculates the required grade values, and finally calls the `printCalculatedCAP()` of the `Print` class to display
-   the result to the user
+1. The `Parser` class extracts the commands from the user input and calls upon the `calculateCAPCommand()` method
+   in the `Command` class.
+2. The `calculateCAPCommand()` method extracts the other fields of the user input, and calls upon the
+   `calculateCAP()` method in the `ModuleList` class.
+3. The method then loops through the moduleList array to find modules that already have grades.
+4. It checks if the module grade should be counted by self-invocation of the `shouldCountModuleGrade()` method
+5. If it is, proceeds to obtain the grade value by self-invocation of the `getGradeValue()` method.
+6. Calculates the accumulated grade values and their weightages based on modular credits, and finally calls the
+   `printCalculatedCAP()` of the `Print` class to display the calculated CAP to the user
 
 The sequence of events above can be represented with the following sequence diagram:
 
