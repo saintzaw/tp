@@ -51,7 +51,7 @@ Please refer to the following links to view my contributions:
     * The following is the UML diagram I added. It is a component diagram to illustrate how the `Parser` component works.
       ![Parser Diagram](ppp_diagrams/Parser.png)
       * Please refer to [PR#235](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/235)
-* [Edit Command](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#34-find-modules)
+* [Edit Command](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#edit-modules)
     * Added descriptions of the edit command for the DG
     * The following is the UML diagram I added. It is a sequence diagram to illustrate how the `edit` command works.
       ![EditCommand Diagram](ppp_diagrams/EditCommand.png)
