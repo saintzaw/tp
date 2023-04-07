@@ -40,7 +40,7 @@ public class ManPage {
                 "To find out more, use the command: man /edit\n\n " +
 
                 "5. Find\n " +
-                "Command: find /MODULE_CODE /KEYWORD or find /MODULE_TYPE /KEYWORD\n " +
+                "Command: find /CODE /KEYWORD or find /TYPE /KEYWORD\n " +
                 "To find out more, use the command: man /find\n\n " +
 
                 "6. Track\n " +
@@ -55,7 +55,7 @@ public class ManPage {
                 "Command: calculatecap\n " +
                 "To find out more, use the command: man /calculator\n\n " +
 
-                "9. Input/Update Grades\n " +
+                "9. Input Grades\n " +
                 "Command: grade /MODULE_CODE /GRADE\n " +
                 "To find out more, use the command: man /grade\n\n " +
 
@@ -75,7 +75,7 @@ public class ManPage {
                 "Adding a module:  add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM\n "+
                 "Adds a module to the list of modules.\n " +
                 "Year includes {1, 2, 3, 4}\n "+
-                "Semester includes  {1, 1.5(semester 1 break), 2, 2.5(semester 2 break)}\n "+
+                "Semester includes  {1, 1.5 (Special Term 1), 2, 2.5 (Special Term 2)}\n "+
                 "Multiple modules could be added at the same time, like: "+
                 "add /CS2113T IS4231 CS1010 /4 /CORE /1 /1 for year 1 semester 1\n "+
                 "Example for year 1 semester 1: add /CS2113T /4 /CORE /1 /1\n " +
@@ -135,11 +135,11 @@ public class ManPage {
     public static void printManPageFind() {
         System.out.println("\n\n" + LINE +
 
-                "Find module: find /MODULE_CODE or MODULE_TYPE /KEYWORD\n " +
+                "Find module: find /CODE /KEYWORD or fine /TYPE /KEYWORD\n " +
                 "Find out which year and semester you plan to take the module.\n\n " +
                 "Example: In a list with CS2113T and CS2101 as both core modules.\n "+
-                "1.  find /code /CS2113 will show the CS2113T module only\n "+
-                "2.  find /type /CORE  will show both CS2113T and CS2101 modules\n\n " +
+                "1.  find /CODE /CS2113 will show the CS2113T module only\n "+
+                "2.  find /TYPE /CORE  will show both CS2113T and CS2101 modules\n\n " +
                 LINE);
     }
 
@@ -196,12 +196,11 @@ public class ManPage {
      * Prints a more detailed description on how to
      * input grades.
      */
-    public static void printManPageUpdateGrade() {
+    public static void printManPageInputGrade() {
         System.out.println("\n\n" +
                 LINE+
 
-                "Input/Update Grades: grade /MODULE_CODE /GRADE\n " +
-                "Updates your cap\n "+
+                "Input Grades: grade /MODULE_CODE /GRADE\n " +
                 "Example: grade /CS2101 /A+\n\n "+
                 "Grades: \n " +
                         "A+ [5.0]\n " +

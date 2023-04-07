@@ -24,7 +24,7 @@ public class Parser {
 
         switch (userCommands[0].trim()) {
         case "MAN":
-            commands.manPageCommand(userCommands);
+            commands.manPageCommand(userCommands,userInput);
             break;
         case "ADD":
             commands.addCommand(userCommands, moduleList);

@@ -22,24 +22,22 @@ public class Command {
      * @param userCommands The command that the user inputs to the ChatBot
      */
 
-    public void manPageCommand(String[] userCommands) {
+    public void manPageCommand(String[] userCommands, String userInput) {
         LOGGER.log(Level.INFO, "Starting manpage process");
 
-        if (userCommands.length == 2) {
-            checkInput.checkManPageInput(userCommands);
+        if(userInput.equalsIgnoreCase("man")) {
+            ManPage.printManPage();
         } else {
-
             try {
-                int numberOfFields = 1;
+                int numberOfFields = 2;
                 checkInput.checkNumberOfFields(numberOfFields, userCommands);
+                checkInput.checkManPageInput(userCommands);
             } catch (MainException e) {
                 Print.printErrorMessage(e);
                 LOGGER.log(Level.WARNING, "User Input is invalid");
             }
-            assert userCommands.length == 1;
-            ManPage.printManPage();
+            assert userCommands.length == 2;
         }
-
         LOGGER.log(Level.INFO, "End of manpage process");
     }
 
@@ -63,9 +61,8 @@ public class Command {
      *
      * @param userCommands the command that the user inputs into the ChatBot
      * @param moduleList the list of modules in the module plan
-     * @throws MainException if the user input is not valid
      */
-    public void findCommand(String[] userCommands, ModuleList moduleList) throws MainException {
+    public void findCommand(String[] userCommands, ModuleList moduleList) {
         try {
             int numberOfFields = 3;
             checkInput.checkNumberOfFields(numberOfFields, userCommands);

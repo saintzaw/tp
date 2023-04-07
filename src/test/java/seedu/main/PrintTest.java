@@ -8,8 +8,10 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrintTest {
-    private static String line = "-----------------------------------------------------" + System.lineSeparator() + " ";
-
+    private static String line = "-----------------------------------------------------"
+            + System.lineSeparator() + " ";
+    private static String printingLine = "    ____________________________________________________________"
+            + System.lineSeparator();
     @Test
     public void printAddedModuleTest() {
         ModuleList moduleList = new ModuleList();
@@ -312,7 +314,7 @@ public class PrintTest {
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
                 "5. Find" + System.lineSeparator() + " " +
-                "Command: find /MODULE_CODE /KEYWORD or find /MODULE_TYPE /KEYWORD" +
+                "Command: find /CODE /KEYWORD or find /TYPE /KEYWORD" +
                 System.lineSeparator() + " " +
                 "To find out more, use the command: man /find"
                 + System.lineSeparator() + System.lineSeparator() + " " +
@@ -332,7 +334,7 @@ public class PrintTest {
                 + " " + "To find out more, use the command: man /calculator"
                 + System.lineSeparator() + System.lineSeparator() + " " +
 
-                "9. Input/Update Grades" + System.lineSeparator() + " " +
+                "9. Input Grades" + System.lineSeparator() + " " +
                 "Command: grade /MODULE_CODE /GRADE" + System.lineSeparator()
                 + " " + "To find out more, use the command: man /grade"
                 + System.lineSeparator() + System.lineSeparator() + " " +
@@ -362,7 +364,7 @@ public class PrintTest {
                 + System.lineSeparator() + " " +
                 "Year includes {1, 2, 3, 4}"
                 + System.lineSeparator() + " " +
-                "Semester includes  {1, 1.5(semester 1 break), 2, 2.5(semester 2 break)}" +
+                "Semester includes  {1, 1.5 (Special Term 1), 2, 2.5 (Special Term 2)}" +
                 System.lineSeparator() + " " +
                 "Multiple modules could be added at the same time, like: " +
                 "add /CS2113T IS4231 CS1010 /4 /CORE /1 /1 for year 1 semester 1"
@@ -439,12 +441,12 @@ public class PrintTest {
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line +
 
-                "Find module: find /MODULE_CODE or MODULE_TYPE /KEYWORD" + System.lineSeparator() + " " +
+                "Find module: find /CODE /KEYWORD or find /TYPE /KEYWORD" + System.lineSeparator() + " " +
                 "Find out which year and semester you plan to take the module." +
                 System.lineSeparator() + System.lineSeparator() + " " +
                 "Example: In a list with CS2113T and CS2101 as both core modules." + System.lineSeparator() + " " +
-                "1.  find /code /CS2113 will show the CS2113T module only" + System.lineSeparator() + " " +
-                "2.  find /type /CORE  will show both CS2113T and CS2101 modules" +
+                "1.  find /CODE /CS2113 will show the CS2113T module only" + System.lineSeparator() + " " +
+                "2.  find /TYPE /CORE  will show both CS2113T and CS2101 modules" +
                 System.lineSeparator() + System.lineSeparator() + " "
                 + line;
 
@@ -513,14 +515,13 @@ public class PrintTest {
     }
 
     @Test
-    public void printManPageUpdateGradeTest() {
+    public void printManPageInputGradeTest() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        ManPage.printManPageUpdateGrade();
+        ManPage.printManPageInputGrade();
         String expectedOutput = System.lineSeparator() + System.lineSeparator()
                 + line +
-                "Input/Update Grades: grade /MODULE_CODE /GRADE" + System.lineSeparator() + " " +
-                "Updates your cap" + System.lineSeparator() + " " +
+                "Input Grades: grade /MODULE_CODE /GRADE" + System.lineSeparator() + " " +
                 "Example: grade /CS2101 /A+"
                 + System.lineSeparator() + System.lineSeparator() + " " +
                 "Grades:" + System.lineSeparator() + " " +
@@ -833,6 +834,21 @@ public class PrintTest {
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
+
+    }
+
+    @Test
+    public void printWrongManPageField() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        Print.printWrongManPageField();
+
+        String expectedOutput = printingLine +
+                "     Incorrect field for the ManPage Command, " + System.lineSeparator() +
+                "     Check our command summary again by typing `man`" + System.lineSeparator() +
+               printingLine;
+        assertEquals(expectedOutput.replaceAll("\\s+", ""),
+                outContent.toString().replaceAll("\\s+", ""));
     }
 }
 

@@ -245,9 +245,6 @@ The sequence by which the ManPage class handles the `man` command is as follows:
 `ManPage#printManPageUpdateGrade()` - Prints description of how to input grades.
 
 
-
-![ManPage](diagrams/ManPage.png)
-
 **Design Considerations**
 
 **Alternative 1** : Prints the manual page individually as features. 

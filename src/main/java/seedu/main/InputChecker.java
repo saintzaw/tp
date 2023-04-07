@@ -69,12 +69,13 @@ public class InputChecker {
             ManPage.printManPageCalculator();
             break;
         case "GRADE":
-            ManPage.printManPageUpdateGrade();
+            ManPage.printManPageInputGrade();
             break;
         case "BYE":
             ManPage.printManPageExit();
             break;
         default:
+            Print.printWrongManPageField();
             break;
         }
     }
@@ -275,7 +276,6 @@ public class InputChecker {
      * @param moduleList This is the list of module codes.
      * @param listOfModules This is the list of our currently stored modules.
      * @param userCommands This the user command.
-     * @return
      */
     private void addModuleWithChecks(String[] moduleList, ModuleList listOfModules, String[] userCommands) {
         for (String moduleCode: moduleList) {
