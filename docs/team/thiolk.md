@@ -12,7 +12,7 @@ Given below are my contributions to the project:
 * Please go to this [RepoSense Link](https://nus-cs2113-ay2223s2.github.io/tp-dashboard/?search=thiolk&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code~other&since=2023-02-17) to view my contributions.
 
 #### Enhancements Implemented
-* Please find my contributions to the [FindCommand](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/src/main/java/seedu/duke/ModuleList.java) by referring to the lines 84-145.
+* Please find my contributions to the [FindCommand](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/src/main/java/seedu/main/ModuleList.java) by referring to findModuleByCode and findModuleByType methods.
   * Implemented a new command to find modules by their module code.
   * In v2.0, enhanced the function to find modules whose module code contains the keyword that the user inputted.
   * in v2.0, enhanced the function to find modules by their type.
@@ -50,4 +50,5 @@ Given below are my contributions to the project:
 * Peer reviewed User Guides and Developer Guides of other teams in the same tutorial group.
 * Found and reported [bugs](https://github.com/Thiolk/ped/issues) for team [Magus Stock](https://github.com/AY2223S2-CS2113-W12-3/tp)
 
-
+<div style="page-break-after: always;"></div>
+--- 
