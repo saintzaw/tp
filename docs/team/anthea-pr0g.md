@@ -20,54 +20,75 @@ requirements (Core/UE/GE/Internships).
 
 2. **Enhancements implemented:**
 
-   * ManPage class - constantly needing to update it as the features change
-   and split the features up so the manpage is easier to look at
-   * Method in Parser to check User Input before it uses its respective
-   ManPage methods
-   * A new type of module that handles Internships such as ATAP and SIP
-   * Exceptions for ManPage Inputs
+   * [ManPage class](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/69)
+   constantly needing to update it as the features change
+   and split the features up so the manpage is easier to look at 
+   * Method in InputChecker (checkManPageInput()) to check User's Input is valid
+     for the manpage command before it uses its respective ManPage methods
+   * Method in Command (manPageCommand()) to ensure the appropriate number of fields are used
+     and a valid user input is used
+   * A new type of module that handles [Internships](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/69) 
+   such as ATAP and SIP 
+   * Exceptions for ManPage Inputs 
    * Exceptions to accept only 0-6 ,8 ,12 mcs
-   * Exceptions to handle duplicate names but different module types
-   * Bye command
-   * JavaDoc
+   * Exceptions to handle [duplicate names](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/71)
+   but different module types
+   * [Bye command](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/65)
+   * [JavaDoc](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/122)
+   * [PE-D bugs](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/242)
+   * [ManPage Bugs found after PE-D](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/293)
+   
 
 3. **Contributions to the UG:**
 
-   * Manpage feature description/ command usage
-   * Command summary table
+   * [Manpage feature](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/149/files) 
+   description/ command usage
+   * [First Draft of the whole UG including the Command summary table](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/122)
 
 4. **Contributions to the DG:** 
 
-   * Table of contents with the hyperlinks
-   * Setting up section
-   * Architecture components and how they interact
-   * Module component
-   * Manpage component implementation
+
+   * [Table of contents with the hyperlinks](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/169)
+   * [Setting up section](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/230)
+   * [Architecture components](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/230) and how they interact
+   * [Module component](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/230)
+   * [Manpage component implementation](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/92)
 
 5. **UML Diagrams I added:**
+
    * Module component interface diagram 
    * Architecture component sequence diagram 
    * Manpage class sequence diagram
 
 6. **Contributions to team-based tasks**
-   * Logging
-   * Assertions 
-   * Junits
+
+   * [Logging](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/61)
+   * [Assertions](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/48)
+   * [Junits](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/42)
    * Released v1.0 jar in week 9
-   * Issues tagged to versions 
+   * Ensure issues are created/delegated when needed
 
 7. **Review/mentoring contributions:**
    
-   Links to PRs reviewed, instances of helping team members in other ways.
+   Links to PRs reviewed:
    [#233](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/233)
    [#167](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/167)
+   [#266](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/266)
+   [#277](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/277)
+
+   * Added the return to Table of contents link for everyone's component in the DG 
+   * Cleaned up inconsistencies as I see them
+   
+
 8. **Contributions beyond the project team:**
 
-   Evidence of helping others e.g. responses you posted in our forum, bugs you reported in other team's products,
-   Evidence of technical leadership e.g. sharing useful information in the forum
-   Keep in mind that evaluators will use the PPP to estimate your project effort. We recommend that you mention things that will earn you a fair score e.g., explain how deep the enhancement is, why it is complete, how hard it was to implement etc.
-   Had to learn how to use Plant UML for sequence and architecture diagrams
-
+   * Peer reviewed User guides and Developer guides for team [rainyDay](https://github.com/AY2223S2-CS2113T-T09-1/tp)
+     and team [MoneyGoWhere](https://github.com/AY2223S2-CS2113T-T09-2/tp).
+   * Reported 21 Bugs for Practical Dry Run.
+   * Learnt Plant UML for sequence, class and architecture diagrams.
+   * It was hard to keep track of changes made to each feature by other members
+     and to make these changes also to the manual page.
+   
 ### DG extracts
 
 **UML Diagrams I added:**
