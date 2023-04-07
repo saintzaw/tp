@@ -37,15 +37,15 @@ Modganiser is a platform that provides **effortless module planning, at your fin
 6. [Appendix: Instructions for manual testing](#appendix--instructions-for-manual-testing)
 
 
-## Introduction 
-
----
 
 ## Acknowledgements
 
 ---
 
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* style.puml was used in making some of these diagrams. It was reused from the AB3 developers guide provided to us.
+* [Link to AB3 developer guide](https://se-education.org/addressbook-level3/DeveloperGuide.html#logic-component).
+* [Link to original source code](https://github.com/se-edu/addressbook-level3/blob/master/docs/diagrams/style.puml).
 
 ## Setting Up
 
@@ -167,22 +167,17 @@ to the user.
 
 ### 3. **ModuleList Component**
 
+The ModuleList component serves to store the arraylist of modules as well as methods to support the commands of the user. 
+The ModuleList component is made up of the ModuleList class.
+
 How the `ModuleList` component works:
-
-* Firstly, when the `ModuleList` component is called, it will execute one of the following 7 types of methods.
-
-* The 7 types of methods are:
-1. `addModule`
-2. `editModule`
-3. `deleteModule`
-4. `findModule`
-5. `listModule`
-6. `calculateCap`
-7. `trackModule`
+* ModuleList will have methods that support the user's commands other than man. (Example: Add, Delete, Edit, Find, Etc.)
 
 * The `listOfModules` is the ArrayList containing `Module` objects up to the current point of execution.
 
-* For the first 2 methods, it will interact with the `Module` component. The result will then update the
+* Before the command is passed to the ModuleList component, it should have been parsed and checked.
+
+* Some methods such as Add and Edit will interact with the `Module` component. The result will then be used to update the
   `listOfModules`.
 
 * The remaining methods will interact with the `listOfModules` directly.
@@ -193,7 +188,7 @@ How the `ModuleList` component works:
 * The `ModuleList` component will also interact with `Storage` component to save the updated `listOfModules`.
 
 
-![ModuleList Diagram](diagrams/ModuleList.png)
+![ModuleList Diagram](diagrams/ModuleListClass.png)
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
