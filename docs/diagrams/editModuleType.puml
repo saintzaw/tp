@@ -12,7 +12,7 @@ participant "<<class>>\nPrint" as Print
         ML -> Mod: getGrade()
 
         ML -> ML: addModule(moduleCode:String, modularCredits:String,\n moduleType:String, year:String, semester:String)
-        ML -> ML: updateModuleGrade(moduleCode:String, grade:String)
+        ML -> ML: updateModuleGrade(moduleCode:String, grade:String \n command:String)
         ML -> Print : printEditedModule(moduleEdited:Module, moduleListSize:int)
         activate Print
         Print --> ML
