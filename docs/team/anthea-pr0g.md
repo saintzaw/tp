@@ -77,11 +77,7 @@ requirements (Core/UE/GE/Internships).
 
 7. **Review/mentoring contributions:**
    
-   * Links to PRs reviewed:
-   [#233](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/233)
-   [#167](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/167)
-   [#266](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/266)
-   [#277](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/277)
+   * Links to PRs reviewed: [#233](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/233) [#167](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/167) [#266](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/266) [#277](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/277)
    * Added the return to Table of contents link for everyone's component in the DG 
    * Cleaned up inconsistencies as I see them
    
@@ -96,9 +92,7 @@ requirements (Core/UE/GE/Internships).
    * It was hard to keep track of changes made to each feature by other members
      and to make these changes also to the manual page.
    
-### DG extracts
-
-**UML Diagrams I added:**
+### **UML Diagrams I added:**
 
 Interaction Diagram in the Architecture component:
 
@@ -108,43 +102,3 @@ Module Class:
 
 ![Module Diagram](ppp_diagrams/ModuleClass.png)
 
-
-
-**DG extract 1:**
-Table of contents with hyperlinks
-
-![extract1 Diagram](ppp_diagrams/Anthea1.png)
-
-**DG extract 2:**
-Added some Tips and Warnings for setting up component
-
-![extract2 Diagram](ppp_diagrams/Anthea2.png)
-
-**DG extract 3:**
-Explained how the components interact with each other
-in the modganiser’s architecture
-
-![extract3 Diagram](ppp_diagrams/Anthea3.png)
-
-**DG extract 4:**
-Explained what the Module component consisted of  
-
-![extract4 Diagram](ppp_diagrams/Anthea4.png)
-
-**DG extract 5:**
-Description of ManPage's design and implementation
-
-![extract5 Diagram](ppp_diagrams/Anthea5.png)
-
-
-### UG extracts
-
-**UG extract 1:**
-Table of contents with hyperlinks
-
-![extract1 Diagram](ppp_diagrams/Anthea6.png)
-
-**UG extract 2:**
-Added some Tips and Warnings for setting up component
-
-![extract2 Diagram](ppp_diagrams/Anthea7.png)
