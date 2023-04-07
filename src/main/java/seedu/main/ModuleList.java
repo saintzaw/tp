@@ -311,9 +311,10 @@ public class ModuleList {
      *
      * @param moduleCode The unique identifier of the module.
      * @param newGrade The updated grade that is to be prescribed to the module.
+     * @throws MainException if command is edit and grade has not been added yet.
      */
-    public void editModuleGrade(String moduleCode, String newGrade) {
-        Module updatedModule = updateModuleGrade(moduleCode, newGrade);
+    public void editModuleGrade(String moduleCode, String newGrade) throws MainException {
+        Module updatedModule = updateModuleGrade(moduleCode, newGrade, "edit");
         if (updatedModule != null) {
             Print.printEditedModule(updatedModule, listOfModules.size());
         }
@@ -336,7 +337,7 @@ public class ModuleList {
 
             // Add new module
             Module moduleEdited = addModule(moduleCode, modularCredits, moduleType, year, semester);
-            updateModuleGrade(moduleCode, grade);
+            updateModuleGrade(moduleCode, grade, "grade");
             Print.printEditedModule(moduleEdited, listOfModules.size());
         } catch (MainException e) {
             Print.printErrorMessage(e);
@@ -368,7 +369,7 @@ public class ModuleList {
             } else {
                 moduleEdited = addModule(newModuleCode, modularCredits, moduleType, year, semester);
             }
-            updateModuleGrade(newModuleCode, grade);
+            updateModuleGrade(newModuleCode, grade, "grade");
             Print.printEditedModule(moduleEdited, listOfModules.size());
         } catch (MainException e) {
             Print.printErrorMessage(e);
@@ -446,15 +447,37 @@ public class ModuleList {
      * @param moduleCode the string containing the name of the module code.
      * @param moduleGrade the string containing the grade input by user.
      * @return the module object with the updated grade attribute.
+     * @throws MainException if command is "grade" and grade has already been added, or if command is edit and grade has
+     *     not been added yet.
      */
-    public Module updateModuleGrade(String moduleCode, String moduleGrade) {
+    public Module updateModuleGrade(String moduleCode, String moduleGrade, String command) throws MainException {
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
+                validateSetModuleGrade(module, command);
                 module.setGrade(moduleGrade);
                 return module;
             }
         }
         return null;
+    }
+
+    /**
+     * Validates whether the grade can be updated for the specific command given.
+     *
+     * @param module the module object that matches the module to be updated by the user.
+     * @param command the string containing the command that the method is called from.
+     * @throws MainException if command is "grade" and grade has already been added, or if command is edit and grade has
+     *     not been added yet.
+     */
+    private void validateSetModuleGrade(Module module, String command) throws MainException {
+        if (command.equals("grade") && !module.getGrade().equals(" ")) {
+            throw new MainException("Grade for module has already been added, you may edit your grade" +
+                    " using the edit command instead!");
+        }
+        if (command.equals("edit") && module.getGrade().equals(" ")) {
+            throw new MainException("Grade for module has not been added yet, you may add your grade" +
+                    " using the grade command instead!");
+        }
     }
 
     /**

@@ -340,10 +340,22 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 > 📓 [**Note**](#31-special-notations)
 >
-> The grades for modules will be empty initially and will have a blank 2nd square bracket [“ ”] which needs to be updated via this command.
+> The grades for modules will be empty initially and will have a blank 2nd square bracket [“ ”] which needs to be 
+> updated via this command.
 > 
 > ![gradeEmpty](UG_Screenshots/AddingAModule.png)
 
+> 📓 [**Note**](#31-special-notations)
+>
+> For ease of convenience, we have decided not to include Exempted(EXE), Incomplete(IC), In Progress(IP) 
+> and Withdrawn(W) as a valid grade input as users can [delete](#524-deleting-module-from-module-plan-delete) and 
+> [add](#521-adding-modules-add) the module should they wish to retake the module another time.
+
+>❗ [**Warning**](#31-special-notations)
+>
+> Modganiser will show an error if you add grades to a module that already has a grade.
+>
+![ModuleAlreadyHasGrade]()
 
 >❗ [**Warning**](#31-special-notations)
 >
@@ -397,6 +409,12 @@ Expected Output:
 > Modganiser will show an error if you edit a module that doesn't exist in your module plan.
 >
 >![EditError](UG_Screenshots/Edit_Module_Not_In_List.png)
+
+> ❗ [**Warning**](#31-special-notations)
+>
+> Modganiser will show an error if you edit a grade for a module that has not been graded yet.
+>
+>![EditGradeError]()
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>

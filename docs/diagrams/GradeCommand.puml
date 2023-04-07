@@ -7,7 +7,7 @@ participant "<<class>>\nPrint" as Print
 
 [->Command : gradeCommand\n(userCommands:String[],\n moduleList:ModuleList)
 activate Command
-Command->ML : updateModuleGrade\n(moduleCode:String, moduleGrade:String)
+Command->ML : updateModuleGrade\n(moduleCode:String, moduleGrade:String, \n command:String)
 
 activate ML
 loop until module code matches or list ends

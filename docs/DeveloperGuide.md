@@ -28,7 +28,7 @@ Modganiser is a platform that provides **effortless module planning, at your fin
    + 3.4. [Find Modules](#34-find-modules)
    + 3.5. [Delete Modules](#35-delete-modules)
    + 3.6. [Edit Modules](#36-edit-modules)
-   + 3.7. [Add or Update Grade](#37-add-or-update-grade)
+   + 3.7. [Add Grade](#37-add-grade)
    + 3.8. [Calculate CAP](#38-calculate-cap)
 4. [Appendix: Requirements](#appendix--requirements)
    + 4.1. [Product Scope](#product-scope)
@@ -395,21 +395,24 @@ by the user. The `getModuleType()`, `getModularCredits()`, `getYear()`, `getSeme
 methods in the `Module` class are also called upon to obtain the respective fields required to create the new
 `Module` object.
 
-### 3.7. Add or Update Grade
+### 3.7. Add Grade
 
 `grade` command:
 
-The `grade` command is used by the user to update the grade of modules that are in the module plan.
+The `grade` command is used by the user to add the grade of modules that are in the module plan.
 
 The sequence by which the Parser class handles the `grade` command is as follows:
 1. The `Parser` class extracts the commands from the user input and calls upon the `gradeCommand()` method
    in the `Command` class.
 2. The `Command` class extracts the other fields of the user input, and calls upon the `updateModuleGrade()` method
    in the `ModuleList` class.
-3. The method then loops through the moduleList array to find the moduleCode that requires a grade update by the user.
-4. If the module is found, it calls the `setGrade()` method of the `Module` class to update the grade field of the
+3. The method then loops through the moduleList array to find the moduleCode that requires a grade addition by the user.
+4. If the module is found, the module code is checked for validation on whether the grade has already been set before.
+5. If the grade has been set already, an exception is thrown to prompt the user to update the grade using
+the `edit` command instead.
+6. Otherwise, it calls the `setGrade()` method of the `Module` class to update the grade field of the
 `Module` object and prints a success message by calling the `printUpdatedModuleGrade()` method of the `Print` class.
-5. Else, it prints an error message by calling the `printInvalidModule()` method of the `Print` class.
+7. Else, it prints an error message by calling the `printInvalidModule()` method of the `Print` class.
 
 The sequence of events above can be represented with the following sequence diagram:
 
