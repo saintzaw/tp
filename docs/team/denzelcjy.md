@@ -97,18 +97,10 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 ![GradeCommand](../UG_Screenshots/InputGrade.png)
 
----
-
-> 📓 [**Note**](https://ay2223s2-cs2113t-t09-4.github.io/tp/UserGuide.html#31-special-notations)
->
-> The grades for modules will be empty initially and will have a blank 2nd square bracket [“ ”] which needs to be updated via this command.
->
-> ![gradeEmpty](../UG_Screenshots/AddingAModule.png)
-
 <div style="page-break-after: always;"></div>
 
 ### Extract: Developer Guide
-### Calculate CAP
+#### Calculate CAP
 
 `calculateCAP` command:
 
