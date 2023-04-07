@@ -355,13 +355,13 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 >
 > Modganiser will show an error if you add grades to a module that already has a grade.
 >
-![ModuleAlreadyHasGrade]()
+![ModuleAlreadyHasGrade](UG_Screenshots/ModuleAlreadyHasGrade.png)
 
 >❗ [**Warning**](#31-special-notations)
 >
 > Modganiser will show an error if you add grades to a module that doesn't exist.
 > 
-![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)
+> ![GradeCommand](UG_Screenshots/Grade_Module_Not_In_List.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
@@ -414,7 +414,7 @@ Expected Output:
 >
 > Modganiser will show an error if you edit a grade for a module that has not been graded yet.
 >
->![EditGradeError]()
+>![EditGradeError](UG_Screenshots/ModuleNoGrade.png)
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
