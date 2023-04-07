@@ -11,7 +11,7 @@ Actor User as user USER_COLOR
 Participant ":Parser" as parser LOGIC_COLOR
 Participant ":ModuleList" as modulelist MODEL_COLOR
 Participant ":Module" as module
-Participant ":Print" as print UI_COLOR
+Participant "<<class>>\n:Print" as print UI_COLOR
 Participant ":Storage" as storage STORAGE_COLOR
 
 

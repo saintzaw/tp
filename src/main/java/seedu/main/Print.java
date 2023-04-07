@@ -3,6 +3,8 @@ import java.util.ArrayList;
 
 public class Print {
 
+    private static final String LINE= "    ____________________________________________________________\n";
+
     /**
      * Prints a greeting message to the user.
      */
@@ -389,6 +391,15 @@ public class Print {
         System.out.println("    ____________________________________________________________");
         System.out.println("     Attempting to add modules (if any) with the correct module code!");
         System.out.println("    ____________________________________________________________");
+    }
+
+    /**
+     * Prints a message to user that they have inputted the wrong inputs for manpage
+     */
+    public static void printWrongManPageField() {
+
+        System.out.println(LINE + "     Incorrect field for the ManPage Command, \n" +
+                "     Check our command summary again by typing `man`\n" + LINE);
     }
 
 }
