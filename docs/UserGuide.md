@@ -368,8 +368,6 @@ Example: `grade /CS2113T /A` adds grade “A” to CS2113T
 
 ---
 
-<div style="page-break-after: always;"></div>
-
 #### 5.2.3 Editing Module Details: `edit`
 
 **Function**
