@@ -24,8 +24,9 @@ Modganiser is a platform that provides **effortless module planning, at your fin
    + 4.4. [Find Modules](#find-modules)
    + 4.5. [Delete Modules](#delete-modules)
    + 4.6. [Edit Modules](#edit-modules)
-   + 4.7. [Add Grade](#add-grade)
-   + 4.8. [Calculate CAP](#calculate-cap)
+   + 4.7. [List Modules](#list-modules)
+   + 4.8. [Add Grade](#add-grade)
+   + 4.9. [Calculate CAP](#calculate-cap)
 5. [Appendix: Requirements](#appendix--requirements)
    + 5.1. [Product Scope](#product-scope)
    + 5.2. [User Stories](#user-stories)
@@ -411,6 +412,27 @@ methods in the `Module` class are also called upon to obtain the respective fiel
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
+### List Modules
+
+`list` command:
+
+The sequence in which the `Command` class handles the `list` command is as follows:
+1. The `Command` class extracts the other fields of the user input, and calls upon the `listModules()` method
+   by self-invocation.
+2. The method then uses a `switch` statement to evaluate the year that the user wants to view.
+3. After checking the year, the `listModulesByYear()` method within the `ModuleList` class is called upon to
+   list the modules that are planned for the year specified by the user.
+4. The `listModulesByYear()` method calls upon the `addModulesToLists()` method in the `ModuleList` class in order to
+retrieve the list of modules planned for each semester in the specified year.
+5. The `addModulesToLists()` method calls upon the `getModuleType()`, `getGrade()`, `getModuleCode()`, 
+`getModularCredits()`, `getYear()` and `getSemester()` methods within the `Module` class to get the attributes of each 
+module in the list of modules.
+6. The `listModulesByYear()` method also calls upon the `printModuleListByYear()` method within the `Print` class to 
+print out the list of modules to the user. If there are no modules planned for the specified year, it calls upon the 
+`printEmptyModuleList()` method within the `Print` class instead, to print out an error message to the user.
+
+**Returning back to Table of Contents: [Table of contents](#table-of-contents)**
+
 ### Add Grade
 
 `grade` command:
@@ -504,12 +526,7 @@ There are two ways to run tests.
 * **Method 2: Using Gradle**
    * Open a console and run the command `gradlew clean test` (Mac/Linux: `./gradlew clean test`)
 
-<div markdown="span" class="alert alert-secondary">:link: **Link**: Read [this Gradle Tutorial from the se-edu/guides](https://se-education.org/guides/tutorials/gradle.html) to learn more about using Gradle.
-</div>
-
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
-
---------------------------------------------------------------------------------------------------------------------
 
 #### Types of tests
 
