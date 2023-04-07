@@ -79,6 +79,7 @@ Interaction Diagram in the Architecture component:
 Module Component:
 
 ![Module Diagram](ppp_diagrams/ModuleClass.png)
+![Module Diagram](ppp_diagrams/Module.png)
 
 ManPage Implementation:
 
