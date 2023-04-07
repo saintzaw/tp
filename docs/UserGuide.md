@@ -734,6 +734,7 @@ In this section, you will find the most commonly asked questions and answers. If
 | Why am I able to add CS0000 even though it is not a valid module? Or input the wrong MCs for the module? Or use a wrong module type? | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto [NUSMods](https://nusmods.com) to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the [Information Security Student requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before deciding on the [module type](#8-glossary). |
 | Why does Modganiser quit when I type "bye" instead of saving it as my name?                                                          | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                                                                                                                                    |
 
+<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
@@ -744,18 +745,18 @@ In this section, you will find the most commonly asked questions and answers. If
 
 A summary of Modganiser's various features and their respective command formats
 
-|                     Feature                     | Command Word |                       Command Format                        |                                     Example                                     |
-|:-----------------------------------------------:|:------------:|:-----------------------------------------------------------:|:-------------------------------------------------------------------------------:|
-|                   Add modules                   |     `add`      | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` | `add /CS2113T /4 /CORE /1 /1` or `add /CS2113T CS2101 IS4231 /4 /CORE /1 /1`    |
-|               Add grade obtained                |    `grade`     |                 `grade /MODULE_CODE /GRADE`                 |                              `grade /CS2113T /A+`                               |
-|         Edit details of existing module         |     `edit`     |       `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `        |                            `edit /CS2113T /TYPE /UE`                            |
-|             Delete existing module              |    `delete`    |                    `delete /MODULE_CODE`                    |                                `delete /CS2113T`                                |
-|                List module plan                 |     `list`     |                        `list /YEAR`                         |                                    `list /2`                                    |
-|           Find module in module plan            |     `find`     |               `find /TYPE_OF_SEARCH /KEYWORD`               |                       `find /CODE /CS or find /TYPE /GE`                        |
-| Track progress of [module type](#8-glossary)    |    `track`     |                    `track /MODULE_TYPE`                     |                               `track /INTERNSHIP`                               |
-|              Calculate current CAP              | `calculatecap` |                       `calculatecap`                        |                                 `calculatecap`                                  |
-|                View Manual Page                 |     `man`      |                   `man` or `man /FEATURE`                   |                               `man` or `man /add`                               |
-|                 Exit Modganiser                 |     `bye`      |                            `bye`                            |                                      `bye`                                      |
+|                   Feature                    | Command Word |                       Command Format                        |                                    Example                                     |
+|:--------------------------------------------:|:------------:|:-----------------------------------------------------------:|:------------------------------------------------------------------------------:|
+|                 Add modules                  |     `add`      | `add /MODULE_CODE /MODULAR_CREDITS /MODULE_TYPE /YEAR /SEM` |                         `add /CS2113T /4 /CORE /1 /1`                          |
+|              Add grade obtained              |    `grade`     |                 `grade /MODULE_CODE /GRADE`                 |                              `grade /CS2113T /A+`                              |
+|             Edit module details              |     `edit`     |       `edit /MODULE_CODE /FIELD_TO_EDIT /NEW_INFO  `        |                           `edit /CS2113T /TYPE /UE`                            |
+|                Delete module                 |    `delete`    |                    `delete /MODULE_CODE`                    |                               `delete /CS2113T`                                |
+|               List module plan               |     `list`     |                        `list /YEAR`                         |                                   `list /2`                                    |
+|                 Find module                  |     `find`     |               `find /TYPE_OF_SEARCH /KEYWORD`               |                       `find /CODE /CS or find /TYPE /GE`                       |
+| Track progress of [module type](#8-glossary) |    `track`     |                    `track /MODULE_TYPE`                     |                              `track /INTERNSHIP`                               |
+|            Calculate current CAP             | `calculatecap` |                       `calculatecap`                        |                                 `calculatecap`                                 |
+|                 View Manual                  |     `man`      |                   `man` or `man /FEATURE`                   |                              `man` or `man /add`                               |
+|               Exit Modganiser                |     `bye`      |                            `bye`                            |                                     `bye`                                      |
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
@@ -779,6 +780,7 @@ A explanation of the technical terms frequently used in this guide or unique to 
 | Local storage           | Data that is stored on your device and can be accessed without an internet connection                                                                                                                                                                                      |
 
 
+<p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---

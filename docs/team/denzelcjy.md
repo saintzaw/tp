@@ -118,6 +118,7 @@ The sequence by which the Parser class handles the `calculateCAP` command is as 
    `printCalculatedCAP()` of the `Print` class to display the calculated CAP to the user
 
 <div style="page-break-after: always;"></div>
+
 The sequence of events above can be represented with the following sequence diagram:
 
 ![calculateCAP](../diagrams/CalculateCAP.png)
