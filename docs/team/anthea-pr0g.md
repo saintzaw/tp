@@ -45,8 +45,8 @@ requirements (Core/UE/GE/Internships).
    description/ command usage
    * [First Draft of the whole UG including the Command summary table](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/122)
 
-4. **Contributions to the DG:** 
 
+4. **Contributions to the DG:** 
 
    * [Table of contents with the hyperlinks](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/169)
    * [Setting up section](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/230)
@@ -54,11 +54,12 @@ requirements (Core/UE/GE/Internships).
    * [Module component](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/230)
    * [Manpage component implementation](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/92)
 
+
 5. **UML Diagrams I added:**
 
-   * Module component interface diagram 
-   * Architecture component sequence diagram 
-   * Manpage class sequence diagram
+   * Module class diagram 
+   * Architecture component sequence diagram
+
 
 6. **Contributions to team-based tasks**
 
@@ -68,9 +69,10 @@ requirements (Core/UE/GE/Internships).
    * Released v1.0 jar in week 9
    * Ensure issues are created/delegated when needed
 
+
 7. **Review/mentoring contributions:**
    
-   Links to PRs reviewed:
+   * Links to PRs reviewed:
    [#233](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/233)
    [#167](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/167)
    [#266](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/266)
@@ -97,14 +99,9 @@ Interaction Diagram in the Architecture component:
 
 ![Interaction Diagram](ppp_diagrams/Interaction.png)
 
-Module Component:
+Module Class:
 
 ![Module Diagram](ppp_diagrams/ModuleClass.png)
-![Module Diagram](ppp_diagrams/Module.png)
-
-ManPage Implementation:
-
-![ManPage Diagram](ppp_diagrams/ManPage.png)
 
 
 **DG extract 1:**
