@@ -593,9 +593,9 @@ public class PrintTest {
         System.setOut(new PrintStream(outContent));
         moduleList.addModule("CS2113T", "4", "CORE", "1", "1");
         moduleList.addModule("CS2101", "4", "CORE", "1", "1");
-        moduleList.updateModuleGrade("CS2113T", "A");
-        moduleList.updateModuleGrade("CS2101", "B");
         try {
+            moduleList.updateModuleGrade("CS2113T", "A", "grade");
+            moduleList.updateModuleGrade("CS2101", "B", "grade");
             parser.checkUserInput("calculateCAP", moduleList);
         } catch (MainException e) {
             return;

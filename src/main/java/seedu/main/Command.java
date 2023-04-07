@@ -283,7 +283,7 @@ public class Command {
             checkInput.checkAlphanumeric(userCommands[1].trim());
             checkInput.checkGradeInput(userCommands[2].trim());
             Module moduleGradeUpdated =
-                    moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim());
+                    moduleList.updateModuleGrade(userCommands[1].trim(), userCommands[2].trim(), "grade");
             if (moduleGradeUpdated != null) {
                 LOGGER.log(Level.INFO, "Update grade process success!");
                 Print.printUpdatedModuleGrade(moduleGradeUpdated);
