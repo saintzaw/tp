@@ -727,7 +727,7 @@ In this section, you will find the most commonly asked questions and answers. If
 
 | Questions                                                                                                                            | Answers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |--------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I am unable to install java?                                                                                                         | Please click [here](https://www.oracle.com/sg/java/technologies/downloads/) to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                                                                               |
+| I am unable to install Java?                                                                                                         | Please click [here](https://www.oracle.com/sg/java/technologies/downloads/) to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                                                                               |
 | Why is Modganiser not running?                                                                                                       | Please follow our [Set-Up Guide](#4-set-up-guide) closely. If Modganiser still fails to run, please [contact us](https://github.com/AY2223S2-CS2113T-T09-4/tp/issues) by clicking on the green "new issue" button and submitting it.                                                                                                                                                                                                                                                                                    |
 | Where is my save file?                                                                                                               | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                                                                                                                            |
 | What if I change my device? How do I transfer the save data to my new device?                                                        | Locate and save your MOdganiser save file, then send it to yourself using a messaging or email application, or store it in an online cloud storage like Google Drive. You can then retrieve the file with your new device.                                                                                                                                                                                                                                                                                              | 
@@ -738,8 +738,6 @@ In this section, you will find the most commonly asked questions and answers. If
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
-
-<div style="page-break-after: always;"></div>
 
 ## 7. Command Summary
 
@@ -762,6 +760,8 @@ A summary of Modganiser's various features and their respective command formats
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ## 8. Glossary
 
