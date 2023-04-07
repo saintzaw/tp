@@ -42,7 +42,7 @@ Given below are my contributions to the project:
   * See [PR#110](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/110)
 
 #### Reviewing / Mentoring contributions
-* [#1238](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/238)
+* [#238](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/238)
 * [#177](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/177)
 
 
