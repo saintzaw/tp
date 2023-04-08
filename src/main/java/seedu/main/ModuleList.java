@@ -246,10 +246,9 @@ public class ModuleList {
         ArrayList<String> moduleListSpecialTermTwo = new ArrayList<>();
 
         if (getModuleListSize() > 0) {
-            addModulesToLists(year, moduleListByYear, moduleListSemOne, moduleListSpecialTermOne, moduleListSemTwo
-                    , moduleListSpecialTermTwo);
-
-            if (moduleListByYear.size() != 0 ) {
+            addModulesToLists(year, moduleListByYear, moduleListSemOne, moduleListSpecialTermOne,
+                    moduleListSemTwo, moduleListSpecialTermTwo);
+            if (moduleListByYear.size() > 0 ) {
                 Print.printModuleListByYear(moduleListSemOne, moduleListSpecialTermOne,
                         moduleListSemTwo, moduleListSpecialTermTwo, year);
             } else {
@@ -268,12 +267,14 @@ public class ModuleList {
      * @param newModularCredits The updated amount of credits that are to be prescribed to the module.
      */
     public void editModularCredits(String moduleCode, String newModularCredits) {
+        LOGGER.log(Level.INFO, "Starting editModularCredits process");
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
                 module.setModularCredits(newModularCredits);
                 Print.printEditedModule(module, listOfModules.size());
             }
         }
+        LOGGER.log(Level.INFO, "Finished editModularCredits process");
     }
 
     /**
@@ -283,12 +284,14 @@ public class ModuleList {
      * @param newYear The updated year that the module is taken or to be taken in. [1-6]
      */
     public void editYear(String moduleCode, String newYear) {
+        LOGGER.log(Level.INFO, "Starting editYear process");
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
                 module.setYear(newYear);
                 Print.printEditedModule(module, listOfModules.size());
             }
         }
+        LOGGER.log(Level.INFO, "Finished editModularCredits process");
     }
 
     /**
@@ -298,12 +301,14 @@ public class ModuleList {
      * @param newSemester The updated semester that the module is taken or to be taken in. [1, 1.5, 2, 2.5]
      */
     public void editSemester(String moduleCode, String newSemester) {
+        LOGGER.log(Level.INFO, "Starting editSemester process");
         for (Module module : listOfModules) {
             if (module.getModuleCode().equals(moduleCode)) {
                 module.setSemester(newSemester);
                 Print.printEditedModule(module, listOfModules.size());
             }
         }
+        LOGGER.log(Level.INFO, "Finishing editSemester process");
     }
 
     /**
@@ -314,10 +319,12 @@ public class ModuleList {
      * @throws MainException if command is edit and grade has not been added yet.
      */
     public void editModuleGrade(String moduleCode, String newGrade) throws MainException {
+        LOGGER.log(Level.INFO, "Starting editModuleGrade process");
         Module updatedModule = updateModuleGrade(moduleCode, newGrade, "edit");
         if (updatedModule != null) {
             Print.printEditedModule(updatedModule, listOfModules.size());
         }
+        LOGGER.log(Level.INFO, "Finishing editModuleGrade process");
     }
 
     /**
@@ -327,6 +334,7 @@ public class ModuleList {
      * @param moduleType The updated type of module. [Core, GeneralElective, UnrestrictedElective, Internship]
      */
     public void editModuleType(String moduleCode, String moduleType) {
+        LOGGER.log(Level.INFO, "Starting editModuleType process");
         try {
             // Delete module with old moduleType
             Module oldModule = deleteModule(moduleCode);
@@ -342,6 +350,7 @@ public class ModuleList {
         } catch (MainException e) {
             Print.printErrorMessage(e);
         }
+        LOGGER.log(Level.INFO, "Finishing editModuleType process");
     }
 
     /**
@@ -351,6 +360,7 @@ public class ModuleList {
      * @param newModuleCode The updated unique identifier of the module.
      */
     public void editModuleCode(String oldModuleCode, String newModuleCode) {
+        LOGGER.log(Level.INFO, "Starting editModuleCode process");
         try {
             // Delete module with old moduleType
             Module oldModule = deleteModule(oldModuleCode);
@@ -374,6 +384,7 @@ public class ModuleList {
         } catch (MainException e) {
             Print.printErrorMessage(e);
         }
+        LOGGER.log(Level.INFO, "Finishing editModuleCode process");
     }
 
     /**

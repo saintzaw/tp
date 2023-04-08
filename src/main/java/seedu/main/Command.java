@@ -71,6 +71,13 @@ public class Command {
             return;
         }
         assert userCommands.length == 3;
+
+        try {
+            checkInput.checkBlankUserInput(userCommands);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            return;
+        }
         ArrayList<Module> foundModules = new ArrayList<>();
 
         try {
@@ -106,6 +113,14 @@ public class Command {
             return;
         }
         assert userCommands.length == 2;
+
+        try {
+            checkInput.checkBlankUserInput(userCommands);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            return;
+        }
+
         try {
             checkInput.checkAlphanumeric(userCommands[1].trim());
             Module deletedModule = moduleList.deleteModule(userCommands[1].trim());
@@ -135,6 +150,14 @@ public class Command {
             return;
         }
         assert userCommands.length == 2;
+
+        try {
+            checkInput.checkBlankUserInput(userCommands);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            return;
+        }
+
         listModules(moduleList, userCommands[1].trim());
     }
 
@@ -187,6 +210,14 @@ public class Command {
             return;
         }
         assert userCommands.length == 4;
+
+        try {
+            checkInput.checkBlankUserInput(userCommands);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            return;
+        }
+
         try {
             editModuleField(moduleList, userCommands);
         } catch (MainException e) {
@@ -276,6 +307,14 @@ public class Command {
             return;
         }
         assert userCommands.length == 3;
+
+        try {
+            checkInput.checkBlankUserInput(userCommands);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            return;
+        }
+
         try {
             checkInput.checkAlphanumeric(userCommands[1].trim());
             checkInput.checkGradeInput(userCommands[2].trim());
@@ -309,6 +348,14 @@ public class Command {
             Print.printErrorMessage(e);
             return;
         }
+
+        try {
+            checkInput.checkBlankUserInput(userCommands);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            return;
+        }
+
         assert userCommands.length == 1;
         moduleList.calculateCAP();
         LOGGER.log(Level.INFO, "End of calculate CAP process");
@@ -322,6 +369,14 @@ public class Command {
         } catch (MainException e) {
             Print.printErrorMessage(e);
         }
+
+        try {
+            checkInput.checkBlankUserInput(userCommands);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            return;
+        }
+
         assert userCommands.length == 1;
         Storage.saveModules(moduleList.getModuleList());
         Print.printFarewellMessage();
@@ -344,6 +399,14 @@ public class Command {
             return;
         }
         assert userCommands.length == 2;
+
+        try {
+            checkInput.checkBlankUserInput(userCommands);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+            return;
+        }
+
         try {
             trackGraduationRequirements(moduleList, userCommands[1].trim());
         } catch (MainException e) {
