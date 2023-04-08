@@ -42,7 +42,7 @@ to ensure that you meet your graduation requirements.
 * Added sections on Storage and Print components: **PR** [#233](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/233)
 * Added section on delete module: **PR** [#117](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/117), **PR** [#277](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/277)
 * Edited the section on the edit modules command: **PR** [#171](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/171)
-* Added the sequence diagram for delete module, editModuleCode and editModuleType: **PR** [#233](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/233), **PR** [#283](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/283) 
+* Added the sequence diagram for `delete` command, `track` command, `editModuleCode()` and `editModuleType()`: **PR** [#233](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/233), **PR** [#283](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/283), **PR** [#314](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/314) 
 * Added both Appendices sections (Requirements and Instructions for Manual Testing): **PR** [#233](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/233)
   * Product Scope, User Stories, Use Cases and Non-Functional Requirements
 * Edited the format of the DG to make it standardised and neat: **PR** [#314](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/314)
