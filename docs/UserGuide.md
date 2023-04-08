@@ -17,7 +17,7 @@ Should you have any feedback or enquiries, please do not hesitate to [reach out 
 Are you a current information security undergraduate at NUS? Or are you a prospective student,
 about to begin your journey into information security? Well, Modganiser is exactly what you are looking for!
 
-So why Modganiser? We have seen and heard of cases of undergraduates not being able to graduate on time as they have missed out certain requirements. For information security undergraduates who aim to obtain their degree in 4 years, Modganiser provides you a platform to effortlessly plan for the modules you wish to take during your undergraduate journey, all whil ensuring that you meet the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) on time.
+So why Modganiser? We have seen and heard of cases of undergraduates not being able to graduate on time as they have missed out certain requirements. For information security undergraduates who aim to obtain their degree in 4 years, Modganiser provides you a platform to effortlessly plan for the modules you wish to take during your undergraduate journey, all while ensuring that you meet the [graduation requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) on time.
 
 Modganiser works via the [Command Line Interface (CLI)](#8-glossary), and while it is a big difference compared to traditional Graphical User Interface (GUI) applications, If you can type fast, Modganiser is much more efficient!
 
@@ -75,7 +75,7 @@ Modganiser uses a [Command Line Interface (CLI)](#8-glossary) which may be new t
 User Guide from start to finish if you are new to Modganiser, although you may choose to skip to more relevant sections
 if you are used to Java, CLI or Modganiser, which are described below:
 * Our [Table of Contents](#table-of-contents) helps you to  navigate between the different sections quickly.
-* Our [Set-Up Guide](#4-set-up-guide) provides a step-by-step instructions on how to install Modganiser, and how to use the [Command Line Interface](#8-glossary).
+* Our [Set-Up Guide](#4-set-up-guide) provides step-by-step instructions on how to install Modganiser and how to use the [Command Line Interface](#8-glossary).
 * Have a look at the [Features](#51-summary-of-features) that Modganiser offers!
 * The [FAQ](#6-faq) has answers to the most frequently asked questions.
 * A [Command Summary](#7-command-summary) is provided to give an overview of the different commands available in Modganiser and their respective formats.
