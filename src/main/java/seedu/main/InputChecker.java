@@ -37,6 +37,21 @@ public class InputChecker {
 
     }
 
+    //@@author saintzaw
+    /**
+     * Checks all the fields of the user command, to ensure there are no empty fields.
+     *
+     * @param userCommands The input that the user keyed in.
+     * @throws MainException if the user input is invalid.
+     */
+    public void checkBlankUserInput(String[] userCommands) throws MainException {
+        for (String userCommand : userCommands) {
+            if (userCommand.isBlank()) {
+                throw new MainException("User input cannot be empty for any parameter");
+            }
+        }
+    }
+
     /**
      * It will display the description of the feature as requested by the
      * user's input.
@@ -94,6 +109,12 @@ public class InputChecker {
         int numberOfFields = 6;
         checkNumberOfFields(numberOfFields, userCommands);
         assert userCommands.length == 6 : "Expected 6 fields";
+
+        try {
+            checkBlankUserInput(userCommands);
+        } catch (MainException e) {
+            Print.printErrorMessage(e);
+        }
 
         //check for non-empty and correct number of characters in the moduleCode field
         String[] moduleList = userCommands[1].trim().split(" ");
@@ -304,7 +325,7 @@ public class InputChecker {
      * Checks the Module Code field of an Edit Module Code command.
      * Currently checks for empty strings.
      * Currently checks for the correct number of characters. [6-10]
-     * Currently checks listOfModules to ensure there are no duplicates.
+     * Currently checks for the entire string to be alphanumeric.
      *
      * @param moduleCode the new unique identifier of the module
      * @throws MainException if user command is invalid
@@ -319,10 +340,7 @@ public class InputChecker {
         if (moduleCode.trim().length() > MODULE_CODE_UPPER_BOUND) {
             throw new MainException("Module Code cannot be more than 10 characters!");
         }
-        boolean isAlphanumeric = moduleCode.matches("^[A-Z0-9]*$");
-        if (!isAlphanumeric) {
-            throw new MainException("Module Code is not alphanumeric!");
-        }
+        checkAlphanumeric(moduleCode.trim());
     }
 
     //@@author saintzaw
