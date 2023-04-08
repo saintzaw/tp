@@ -190,7 +190,8 @@ public class Command {
             listOfModules.listModulesByYear("4");
             break;
         default:
-            throw new MainException("Make sure Year of Study is an integer from 1-4 or \"all\"");
+            throw new MainException("Make sure Year of Study is an integer with no decimal place from 1-4 or \"all\" \n"
+                    + "     Example: 1.0 is not accepted as a valid input!");
         }
     }
 
