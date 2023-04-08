@@ -567,6 +567,8 @@ Example: `track /CORE` tracks the completion status of your [core modules](#8-gl
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
 
+---
+
 <div style="page-break-after: always;"></div>
 
 Example: `track /ALL` tracks all the planned modules filtered by [module type](#8-glossary).
