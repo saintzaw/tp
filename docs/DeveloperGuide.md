@@ -27,13 +27,17 @@ Modganiser is a platform that provides **effortless module planning, at your fin
    + 4.6. [List Modules](#list-modules)
    + 4.7. [Add Grade](#add-grade)
    + 4.8. [Calculate CAP](#calculate-cap)
-5. [Appendix: Requirements](#appendix--requirements)
-   + 5.1. [Product Scope](#product-scope)
-   + 5.2. [User Stories](#user-stories)
-   + 5.3. [Use Cases](#use-cases)
-   + 5.4. [Non-Functional Requirements](#non-functional-requirements)
-   + 5.5. [Glossary](#glossary)
-6. [Appendix: Instructions for manual testing](#appendix--instructions-for-manual-testing)
+5. [Documentation, Logging and Testing](#documentation-logging-and-testing)
+   + 5.1 [Documentation](#documentation)
+   + 5.2 [Logging](#logging)
+   + 5.3 [Testing](#testing)
+6. [Appendix: Requirements](#appendix--requirements)
+   + 6.1. [Product Scope](#product-scope)
+   + 6.2. [User Stories](#user-stories)
+   + 6.3. [Use Cases](#use-cases)
+   + 6.4. [Non-Functional Requirements](#non-functional-requirements)
+   + 6.5. [Glossary](#glossary)
+7. [Appendix: Instructions for manual testing](#appendix--instructions-for-manual-testing)
 
 
 
@@ -509,6 +513,8 @@ The sequence of events above can be represented with the following sequence diag
 
 * We are using `java.util.logging` package for logging.
 * The logger is initialised in the `Main` class.
+* The logging levels that we use are `INFO` and `WARNING`, according to the conventions given in [[se-edu/guides] Java: Logging conventions.](https://se-education.org/guides/conventions/java/logging.html)
+* `INFO` messages are used to document the running process of the program and `WARNING` messages are logged when the program runs into an error.
 * Logging information and log messages are written into a `modganiserLog` text file.
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
