@@ -2,59 +2,60 @@
 
 # Modganiser Developer Guide
 
+---
+
 ## Introduction
 
----
 
 Modganiser is a platform that provides **effortless module planning, at your fingertips via the Command Line Interface** (CLI). It helps Information security students graduate in time by giving you a platform to plan all 4 years of your modules to ensure that you meet graduation requirements (UE/GEs).  If you can type fast, Modganiser can get your schedule up  faster than traditional GUI apps.
 
+---
+
 ## Table of Contents
 
----
-1. [Acknowledgements](#acknowledgements)
-2. [Setting Up](#setting-up)
-3. [Architecture](#architecture)
-   + 3.1. [Storage](#1-storage-component)
-   + 3.2. [Parser](#2-parser-component)
-   + 3.3. [ModuleList](#3-modulelist-component)
-   + 3.4. [Print](#4-print-component)
-   + 3.5. [Module](#5-module-component)
-4. [Design and Implementation](#design-and-implementation)
-   + 4.1. [ManPage](#manpage)
-   + 4.2. [Add Modules](#add-modules)
-   + 4.3. [Find Modules](#find-modules)
-   + 4.4. [Delete Modules](#delete-modules)
-   + 4.5. [Edit Modules](#edit-modules)
-   + 4.6. [List Modules](#list-modules)
-   + 4.7. [Track Modules](#track-modules)
-   + 4.8. [Add Grade](#add-grade)
-   + 4.9. [Calculate CAP](#calculate-cap)
-5. [Documentation, Logging and Testing](#documentation-logging-and-testing)
-   + 5.1 [Documentation](#documentation)
-   + 5.2 [Logging](#logging)
-   + 5.3 [Testing](#testing)
-6. [Appendix: Requirements](#appendix--requirements)
-   + 6.1. [Product Scope](#product-scope)
-   + 6.2. [User Stories](#user-stories)
-   + 6.3. [Use Cases](#use-cases)
-   + 6.4. [Non-Functional Requirements](#non-functional-requirements)
-   + 6.5. [Glossary](#glossary)
-7. [Appendix: Instructions for manual testing](#appendix--instructions-for-manual-testing)
-
-
-
-## Acknowledgements
+1. [Acknowledgements](#1-acknowledgements)
+2. [Setting Up](#2-setting-up)
+3. [Architecture](#3-architecture)
+   + 3.1 [Storage](#31-storage-component)
+   + 3.2 [Parser](#32-parser-component)
+   + 3.3 [ModuleList](#33-modulelist-component)
+   + 3.4 [Print](#34-print-component)
+   + 3.5 [Module](#35-module-component)
+4. [Design and Implementation](#4-design-and-implementation)
+   + 4.1 [ManPage](#41-manpage)
+   + 4.2 [Add Modules](#42-add-modules)
+   + 4.3 [Find Modules](#43-find-modules)
+   + 4.4 [Delete Modules](#44-delete-modules)
+   + 4.5 [Edit Modules](#45-edit-modules)
+   + 4.6 [List Modules](#46-list-modules)
+   + 4.7 [Track Modules](#47-track-modules)
+   + 4.8 [Add Grade](#48-add-grade)
+   + 4.9 [Calculate CAP](#49-calculate-cap)
+5. [Documentation, Logging and Testing](#5-documentation-logging-and-testing)
+   + 5.1 [Documentation](#51-documentation)
+   + 5.2 [Logging](#52-logging)
+   + 5.3 [Testing](#53-testing)
+6. [Appendix: Requirements](#6-appendix--requirements)
+   + 6.1 [Product Scope](#61-product-scope)
+   + 6.2 [User Stories](#62-user-stories)
+   + 6.3 [Use Cases](#63-use-cases)
+   + 6.4 [Non-Functional Requirements](#64-non-functional-requirements)
+   + 6.5 [Glossary](#65-glossary)
+7. [Appendix: Instructions for Manual Testing](#7-appendix--instructions-for-manual-testing)
 
 ---
 
-{list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+## 1. Acknowledgements
+
+
 * style.puml was used in making some of these diagrams. It was reused from the AB3 developers guide provided to us.
 * [Link to AB3 developer guide](https://se-education.org/addressbook-level3/DeveloperGuide.html#logic-component).
 * [Link to original source code](https://github.com/se-edu/addressbook-level3/blob/master/docs/diagrams/style.puml).
 
-## Setting Up
-
 ---
+
+## 2. Setting Up
+
 > ❗ **Warning** : Follow the steps in the following guide precisely. Things will not work out if you deviate in some steps. 
 
 First, fork [Modganiser's repo](https://github.com/AY2223S2-CS2113T-T09-4/tp), and clone the fork into your computer.
@@ -99,9 +100,10 @@ to ensure Intellij IDEA is configured to use JDK 11.
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-## Architecture
-
 ---
+
+## 3. Architecture
+
 
 The Diagram below shows an overview of how components are linked together to produce Modganiser.
 
@@ -132,7 +134,11 @@ The Sequence Diagram shows how the components interact with each other:
 
 The sections below give more details of each component.
 
-### 1. **Storage Component**
+**Returning back to Table of Contents: [Table of contents](#table-of-contents)**
+
+---
+
+### 3.1 **Storage Component**
 The main job of this component is to ensure the proper storage of details regarding the modules in the user's plans and 
 the user's name. It is made up of the `Storage` class which is immediately utilised when Modganiser starts up to read the previously 
 saved data. Furthermore, this component plays a key role whenever the user enters a command which modifies the details of modules in 
@@ -149,7 +155,9 @@ modules
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### 2. **Parser Component**
+---
+
+### 3.2 **Parser Component**
 How the `Parser` component works:
 
 * Firstly, when the `Parser` is called upon, it uses the `Command` class to parse the user command.
@@ -170,7 +178,9 @@ to the user.
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### 3. **ModuleList Component**
+---
+
+### 3.3 **ModuleList Component**
 
 The ModuleList component serves to store the arraylist of modules as well as methods to support the commands of the user. 
 The ModuleList component is made up of the ModuleList class.
@@ -197,7 +207,9 @@ How the `ModuleList` component works:
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### 4. **Print Component**
+---
+
+### 3.4 **Print Component**
 
 When the `Print` component is called, it helps to print messages to the User Interface (UI) to allow for interaction with the user. 
 
@@ -208,7 +220,9 @@ The `Print` component,
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### 5. **Module Component**
+---
+
+### 3.5 **Module Component**
 
 When the `Module` is called, it will execute to set and get its attributes.
 Mostly used for the `Storage` component and the `ModuleList` component that works
@@ -226,24 +240,26 @@ more with the `Module` component to create, update and retrieve any of the 5 att
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-## Design and Implementation
+---
+
+## 4. Design and Implementation
 
 ---
 
-### ManPage 
+### 4.1 ManPage 
 
-The ManPage is a class that is used to display parts of the manual page that is requested by the user.
+The `ManPage` is a class that is used to display parts of the manual page that is requested by the user.
 It has multiple methods for separate features.
 
 **Implementation**
 
-The sequence by which the ManPage class handles the `man` command is as follows:
-1) The `Parser` class extracts the other fields of the user input, and calls upon the `checkUserInput()` method
+The sequence by which the `ManPage` class handles the `man` command is as follows:
+
+1. The `Parser` class extracts the other fields of the user input, and calls upon the `checkUserInput()` method
    which calls upon the `checkManPageInput()`.
+2. The method then uses the methods in the `ManPage` class to print out the requested feature.
 
-2) The method then uses the methods in the ManPage class to print out the requested feature.
-
-**Some Examples of the methods in the ManPage class:**
+**Some Examples of the methods in the `ManPage` class:**
 
 `ManPage#printManPage()` - Prints the Command Summary.
 
@@ -258,19 +274,21 @@ The sequence by which the ManPage class handles the `man` command is as follows:
 
 **Design Considerations**
 
-**Alternative 1** : Prints the manual page individually as features. 
-Pros: Avoids wordy and long manual page when command is man, ability to have more description
-for specific features. Avoids long methods. 
-Cons: Extra step of typing another command to understand a feature well.
+**Alternative 1** : Prints the manual page individually as features.
+* Pros: Avoids wordy and long manual page when command is man, ability to have more description
+for specific features. Avoids long methods.
+* Cons: Extra step of typing another command to understand a feature well.
 
-**Alternative 2**: Combining all feature descriptions in a single manual page. 
-Pros: Avoid extra step of typing another command to understand a feature well.
-Cons: Wordy and long manual page when command is man, user has to scroll through
+**Alternative 2**: Combining all feature descriptions in a single manual page.
+* Pros: Avoid extra step of typing another command to understand a feature well.
+* Cons: Wordy and long manual page when command is man, user has to scroll through
 a long manual page to find what they need. Long method.
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Add Modules
+---
+
+### 4.2 Add Modules
 
 `add` command:
 
@@ -278,14 +296,14 @@ The `add` command is used by the user to add a module or multiple modules at onc
 
 The sequence by which the `Command` class handles the `add` command is as follows:
 
-1. The `Command` class extracts the necessary fields from the user input, and calls upon the `checkAddInput`
+1. The `Command` class extracts the necessary fields from the user input, and calls upon the `checkAddInput()`
    method in the `InputChecker` class.
-2. Subsequently, `addModuleWithChecks` is called by self-invocation.
-3. This method first validates the inputs from the user then proceeds to call the `addModule` method of the `ModuleList`
+2. Subsequently, `addModuleWithChecks()` is called by self-invocation.
+3. This method first validates the inputs from the user then proceeds to call the `addModule()` method of the `ModuleList`
    class.
 4. The respective module(s) are added to the `listOfModules` attribute in `ModuleList` as requested by the user.
-4. The `addModule` method returns the module that is added to the `listOfModules`.
-5. Finally, the `printAddedModule` method is called from the `Print` class to display the result to the user.
+5. The `addModule()` method returns the module that is added to the `listOfModules`.
+6. Finally, the `printAddedModule()` method is called from the `Print` class to display the result to the user.
 
 The sequence of events above can be represented with the following sequence diagram:
 
@@ -293,15 +311,17 @@ The sequence of events above can be represented with the following sequence diag
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Find Modules
+---
+
+### 4.3 Find Modules
 
 The find modules features is facilitated by the `Command`, `ModuleList` and `Module` Classes. `Command` helps to check
 for user input to determine is user doing a search via a module name or module type, which will then invoke the 
-`findModuleByCode` and `findModuleByType` methods respectively. If any modules are found, Modganiser will print out
+`findModuleByCode()` and `findModuleByType()` methods respectively. If any modules are found, Modganiser will print out
 all the modules, else Modganiser will return a message to the user, saying that no modules were found with the search
 term they used.
 
-Given below is an example usage scenario and how the `findModuleByCode` mechanism behaves at each step.
+Given below is an example usage scenario and how the `findModuleByCode()` mechanism behaves at each step.
 
 1. The user launches the application for the first time. Modganiser will be initialised with an empty ArrayList
 of Modules.
@@ -309,18 +329,19 @@ of Modules.
 2. The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two modules into Modganiser via the add modules 
 feature
 The following object diagram shows the current state of Modganiser:
-![FindTwoModules](diagrams/FindTwoModules.png)
+
+   ![FindTwoModules](diagrams/FindTwoModules.png)
 3. The user now wants to find the details of the modules he has just added. He executes `find /code /CS` which
-will call `findModuleByCode`. This method will then print out all the modules that have the keyword "CS" in their
+will call `findModuleByCode()`. This method will then print out all the modules that have the keyword "CS" in their
 module name, which in this case will print CS2113T and CS2101 along with their respective details.
 
-The following sequence diagram shows how the `findModuleByCode` operation works:
+The following sequence diagram shows how the `findModuleByCode()` operation works:
 
 ![FindModule](diagrams/FindModule.png)
 
-For `findModuleByType` method, it works similarly to `findModuleByCode`. The differences are listed below
+For `findModuleByType()` method, it works similarly to `findModuleByCode()`. The differences are listed below
 1. The search terms can only be CORE, GE, UE or Internship.
-2. Instead of getModuleCode, ModuleList will check which modules in the arraylist are an instance of the module type that is being searched.
+2. Instead of `getModuleCode()`, `ModuleList` will check which modules in the arraylist are an instance of the module type that is being searched.
 
 **Design Considerations**
 
@@ -331,34 +352,38 @@ For `findModuleByType` method, it works similarly to `findModuleByCode`. The dif
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Delete Modules
+---
+
+### 4.4 Delete Modules
 
 `delete` command:
 
 The `delete` command is used by the user to delete a module which is specified by the user.
 
 The sequence in which the `Command` class handles the `delete` command is as follows:
-1. The `Command` class extracts the necessary fields from the user input, and calls upon the `deleteModule`
+1. The `Command` class extracts the necessary fields from the user input, and calls upon the `deleteModule()`
    method in the `ModuleList` class.
 2. The method then loops through the `listOfModules` array in the `ModuleList` object, attempting to find a module 
    with the module code that was specified by the user.
-3. If a corresponding module is found, the `deleteModule` method will remove the module from the `listOfModules` array
-   and return the deleted `Module` object. Otherwise, the `deleteModule` method returns `null`.
-4. If a deleted `Module` object is returned from `deleteModule`, the `Command` class calls upon
+3. If a corresponding module is found, the `deleteModule()` method will remove the module from the `listOfModules` array
+   and return the deleted `Module` object. Otherwise, the `deleteModule()` method returns `null`.
+4. If a deleted `Module` object is returned from `deleteModule()`, the `Command` class calls upon
    `printDeletedModule()` of the `Print` class. Otherwise, the `Command` class calls upon `printNoDeletedModuleFound()`
    of the `Print` class. This displays to the user the result of the `delete` command.
 
-The following sequence diagram shows how the `deleteCommand` operation works:
+The following sequence diagram shows how the `deleteCommand()` operation works:
 
 ![deleteModule](diagrams/DeleteModule.png)
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Edit Modules
+---
+
+### 4.5 Edit Modules
 
 `edit` command:
 
-The following sequence diagram shows how the `editCommand` operation works:
+The following sequence diagram shows how the `editCommand()` operation works:
 
 ![editCommand](diagrams/EditCommand.png)
 
@@ -379,31 +404,32 @@ The sequence in which the `Command` class handles the `edit` command is as follo
    This method directly modifies the `year` attribute of the `Module` object.
 6. If the user wants to update the Semester, the `editSemester()` method is called.
    This method directly modifies the `semester` attribute of the `Module` object.
-7. If the user wants to update the grade, the `editModuleGrade` method is called.
-   This method calls the `updateModuleGrade` method which directly modifies the `grade` attribute of the `Module` 
+7. If the user wants to update the grade, the `editModuleGrade()` method is called.
+   This method calls the `updateModuleGrade()` method which directly modifies the `grade` attribute of the `Module` 
    object. (Not shown in sequence diagram)
 8. If the user wants to update Module Type, the `editModuleType()` method is called.
    More information regarding this method is provided in the subsequent section.
 9. If the user wants to update Module Code, the `editModuleCode()` method is called.
    More information regarding this method is provided in the subsequent section.
 
+---
 
-
-The following sequence diagram shows more details on how the `editModuleType` operation works:
+The following sequence diagram shows more details on how the `editModuleType()` operation works:
 
 ![editModuleType](diagrams/editModuleType.png)
 
-The `editModuleType` method removes the existing `Module` object and adds a new `Module` object of the new type specified
+The `editModuleType()` method removes the existing `Module` object and adds a new `Module` object of the new type specified
 by the user. The `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
 methods in the `Module` class are also called upon to obtain the respective required fields to create the new
 `Module` object.
 
+---
 
 The following sequence diagram shows more details on how the `editModuleCode` operation works:
 
 ![editModuleCode](diagrams/editModuleCode.png)
 
-The `editModuleCode` method removes the existing `Module` object and adds a new `Module` object with the new module code specified
+The `editModuleCode()` method removes the existing `Module` object and adds a new `Module` object with the new module code specified
 by the user. The `getModuleType()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
 methods in the `Module` class are also called upon to obtain the respective fields required to create the new
 `Module` object.
@@ -411,7 +437,9 @@ methods in the `Module` class are also called upon to obtain the respective fiel
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### List Modules
+---
+
+### 4.6 List Modules
 
 `list` command:
 
@@ -436,7 +464,7 @@ module in the list of modules.
 print out the list of modules to the user. If there are no modules planned for the specified year, it calls upon the 
 `printEmptyModuleList()` method within the `Print` class instead, to print out an error message to the user.
 
-The following sequence diagram shows more details on how the `listModulesByYear` operation works:
+The following sequence diagram shows more details on how the `listModulesByYear()` operation works:
 
 ![listModulesByYear](diagrams/ListCommand.png)
 
@@ -446,28 +474,35 @@ method is called for a total of 4 times to list the modules in the years 1 to 4 
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Track Modules
+---
+
+### 4.7 Track Modules
 
 `track` command:
 
 The sequence in which the `Command` class handles the `track` command is as follows:
-1. The `Command` class extracts the other fields of the user input, and calls upon the `trackCommand()` method
-   by self-invocation.
-2. The `trackCommand()` method runs some checks on the user input before calling upon the 
-`trackGraduationRequirements()` method within the `Command` class which checks how far the user is from meeting the 
+1. The `trackCommand()` method runs some checks on the user input before calling upon the 
+`trackGraduationRequirements()` method by self-invocation which checks how far the user is from meeting the 
 requirements for a specific module type.
-3. The `trackGraduationRequirements()` method uses a `switch` statement to evaluate which module type the user wants to 
+2. The `trackGraduationRequirements()` method uses a `switch` statement to evaluate which module type the user wants to 
 view the requirements for. The accepted inputs for the `moduleType` field are `CORE`, `UE`, `GE`, `INTERNSHIP` and `ALL` 
 which represents all 4 module types.
-4. After checking the module type, it calls upon the `findModuleByType()` and `trackModules()` methods within the 
+3. After checking the module type, it calls upon the `findModuleByType()` and `trackModules()` methods within the 
 `ModuleList` class.
-5. The `findModuleByType()` method retrieves all the modules that are of the corresponding user-specified module type 
+4. The `findModuleByType()` method retrieves all the modules that are of the corresponding user-specified module type 
 while the `trackModules()` method tracks the number of modules of this type that have been completed. 
-6. The `trackModules()` method also calls upon the `printModuleTypeRequirements()` method within the `Print` class to
+5. The `trackModules()` method also calls upon the `printModuleTypeRequirements()` method within the `Print` class to
    print a message to user that about their graduation requirements.
 
+The following sequence diagram shows more details on how the `trackCommand()` operation works:
+
+![trackCommand](diagrams/TrackCommand.png)
+
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
-### Add Grade
+
+---
+
+### 4.8 Add Grade
 
 `grade` command:
 
@@ -493,8 +528,9 @@ The sequence of events above can be represented with the following sequence diag
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
+---
 
-### Calculate CAP
+### 4.9 Calculate CAP
 
 `calculateCAP` command:
 
@@ -517,12 +553,13 @@ The sequence of events above can be represented with the following sequence diag
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
+---
 
-## Documentation, logging and testing
+## 5. Documentation, logging and testing
 
 ---
 
-### Documentation
+### 5.1 Documentation
 **Setting up and maintaining the project website:**
 
 * The `docs/` folder is used for documentation.
@@ -540,7 +577,9 @@ The sequence of events above can be represented with the following sequence diag
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Logging
+---
+
+### 5.2 Logging
 
 * We are using `java.util.logging` package for logging.
 * The logger is initialised in the `Main` class.
@@ -550,7 +589,9 @@ The sequence of events above can be represented with the following sequence diag
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Testing
+---
+
+### 5.3 Testing
 #### Running tests
 
 There are two ways to run tests.
@@ -562,7 +603,6 @@ There are two ways to run tests.
 * **Method 2: Using Gradle**
    * Open a console and run the command `gradlew clean test` (Mac/Linux: `./gradlew clean test`)
 
-**Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 #### Types of tests
 
@@ -575,9 +615,13 @@ This project has two types of tests:
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-## Appendix: Requirements
+---
 
-###  Product Scope
+## 6. Appendix: Requirements
+
+---
+
+### 6.1 Product Scope
 
 **Target User Profile**
 
@@ -593,7 +637,9 @@ compared to when using other applications
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### User Stories
+---
+
+### 6.2 User Stories
 
 | Priority | As a...      | I want to...                                       | So that I can...                                                                       |
 |----------|--------------|----------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -614,7 +660,9 @@ compared to when using other applications
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Use Cases
+---
+
+### 6.3 Use Cases
 
 For all use cases below, the **System** is `Modganiser` and the **Actor** is the `user`
 
@@ -664,7 +712,9 @@ For all use cases below, the **System** is `Modganiser` and the **Actor** is the
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Non-Functional Requirements
+---
+
+### 6.4 Non-Functional Requirements
 
 1. Should work on any mainstream OS as long as it has Java 11 or above installed
 2. Should be able to hold up to 1000 modules without a noticeable sluggishness in performance for typical usage.
@@ -678,13 +728,17 @@ For all use cases below, the **System** is `Modganiser` and the **Actor** is the
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
-### Glossary
+---
+
+### 6.5 Glossary
 
 Mainstream OS: Windows, Linux, Unix, OS-X, MacOS
 
+**Returning back to Table of Contents: [Table of contents](#table-of-contents)**
+
 ---
 
-## Appendix: Instructions for manual testing
+## 7. Appendix: Instructions for Manual Testing
 
 Below are some instructions to test the application manually.
 
