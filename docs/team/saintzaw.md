@@ -63,7 +63,10 @@ Please refer to the following links to view my contributions:
   * The following is the UML diagram I added. It is a sequence diagram to illustrate how part of the `list` command works.
     ![ListCommand Diagram](ppp_diagrams/ListCommand.png)
   * Please refer to **PR** [#302](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/302) and [#306](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/306)  
-* Added a section on [Documentation, Logging and Testing]()
+* [Track Command]()
+  * Added descriptions of the track command for the DG
+  * Please refer to **PR** [#]()
+* Added a section on [Documentation, Logging and Testing](https://ay2223s2-cs2113t-t09-4.github.io/tp/DeveloperGuide.html#documentation-logging-and-testing)
 
 #### Reviewing/Mentoring contributions
 * Reviewed my team members' PRs. Please refer to **PR**: [#273](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/273) 
