@@ -8,7 +8,7 @@ to ensure that you meet your graduation requirements.
 Built to run on Java 11, Modganiser can definitely get your module plan up faster than traditional Graphical User Interface (GUI)
 applications if you can type fast.
 
-## Summary of contributions
+## Summary of Contributions
 
 ### Code Contributed
 * Please click on this [link to my RepoSense report](https://nus-cs2113-ay2223s2.github.io/tp-dashboard/?search=denzelcjy&breakdown=true&sort=groupTitle%20dsc&sortWithin=title&since=2023-02-17&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other) to view my contributions.
@@ -55,16 +55,21 @@ applications if you can type fast.
 [#177](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/177), 
 [#256](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/256),
 [#271](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/271)
-  * Creation of hyperlinks to each section of the User Guide
-  * Added the Table of Contents
-  * Added sections on `grade` and `calculateCAP` command
-  * Added initial screenshots
-  * Added extra notes to fix PE-D bugs for User Guide
+  * Creation of hyperlinks to each section of the User Guide.
+  * Added the Table of Contents.
+  * Added sections on `grade` and `calculateCAP` command.
+  * Added initial screenshots.
+  * Added extra notes to fix PE-D bugs for User Guide.
 
 ### Developer Guide
 * **PR**: [#99](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/99), 
 [#281](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/281)
   * Added descriptions and UML diagrams for `grade` and `calculateCAP` commands
+
+### Contributions to Team-based Tasks
+* Started issue tracker, created labels for issues.
+* Created the logger.
+* Learnt PlantUML to create the template sequence diagram for my team.
 
 ### Reviewing / Mentoring
 * Reviewing **PRs**: [#81](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/81), 
@@ -72,7 +77,7 @@ applications if you can type fast.
 [#117](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/117), 
 [#162](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/162)
 
-### Contributions beyond the project team
+### Contributions beyond the Project Team
 * Found and reported [PE-D bugs](https://github.com/denzelcjy/ped/issues) for team [Clanki](https://github.com/AY2223S2-CS2113-T15-4/tp)
 * Forum contribution in finding [website bug](https://github.com/nus-cs2113-AY2223S2/forum/issues/23).
 
