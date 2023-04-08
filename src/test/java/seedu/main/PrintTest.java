@@ -641,7 +641,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Make sure Modular Credits is an integer from 0-41"
+                + System.lineSeparator()
+                + "     Error: Make sure Modular Credits is an integer with no decimal place from 0-41"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -770,7 +771,8 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Make sure Year of Study is an integer from 1-4"
+                + System.lineSeparator()
+                + "     Error: Make sure Year of Study is an integer with no decimal place from 1-4"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -790,7 +792,8 @@ public class PrintTest {
         }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Error: Make sure Semester is 1, 1.5 (Special Term 1), 2 or " +
-                "2.5 (Special Term 2)"
+                "2.5 (Special Term 2), with no additional decimal places\n"
+                + "     Example: 1.0, 1.50, 2.0, 2.50 is not accepted as a valid input!"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -809,7 +812,9 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
-                + System.lineSeparator() + "     Error: Make sure Year of Study is an integer from 1-4"
+                + System.lineSeparator()
+                + "     Error: Make sure Year of Study is an integer with no decimal place from 1-4\n"
+                + "     Example: 1.0 is not accepted as a valid input!"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());
@@ -829,7 +834,8 @@ public class PrintTest {
         }
         String expectedOutput = "    ____________________________________________________________"
                 + System.lineSeparator() + "     Error: Make sure Semester is 1, 1.5 (Special Term 1), 2 or " +
-                "2.5 (Special Term 2)"
+                "2.5 (Special Term 2), with no additional decimal places\n"
+                + "     Example: 1.0, 1.50, 2.0, 2.50 is not accepted as a valid input!"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());

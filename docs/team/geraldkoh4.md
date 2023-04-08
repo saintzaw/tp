@@ -18,14 +18,16 @@ apps if you can type fast.
 ### Enhancements Implemented
 
 * Set-up the team repo and invited everyone
-* Created and maintained the add module command.
-* Implemented the Exception class
-* Created and maintained some printing methods such as add command error print messages
-* Exceptions to the add module command and its different fields
-* Logging for the add module command
-* Junit testing for the add module command
-* JavaDoc
-* For more information please refer to the [link to my Pull Requests.](https://github.com/AY2223S2-CS2113T-T09-4/tp/pulls?q=is%3Apr+is%3Aclosed+author%3Ageraldkoh4)
+* Created and maintained the add module command. [PR#32](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/32)
+* Implemented the draft Exception class  [PR#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
+* Created and maintained some printing methods such as add command error print messages [PR#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
+* Added and constantly maintained Exceptions to the add module command and its different fields [PR#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
+* Added Logging for the add module command [PR#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
+* Added Junit testing for the add module command [PR#182](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/182)
+* Added Assertions for the add module command [PR#49](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/49)
+* JavaDoc [PR#182](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/182)
+* All supplemented links to Pull Requests are the first iteration or commits mainly about the relevant topic. 
+* For more maintenance and other miscellaneous changes refer to the  [link to my Pull Requests.](https://github.com/AY2223S2-CS2113T-T09-4/tp/pulls?q=is%3Apr+is%3Aclosed+author%3Ageraldkoh4)
 
 ### Contributions to the User Guide
 * [Add Command](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/UserGuide.md#521-adding-modules-add)
@@ -37,7 +39,7 @@ apps if you can type fast.
   * Created the first draft of the Architecture component for the DG
     * The following is the UML diagram I added. It is a component diagram to illustrate how the `ModuleList` component works.
     ![ModuleList Diagram](ppp_diagrams/ModuleList.png)
-        * See [PR#181](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/181)
+        * See [PR#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
 * [Add Command](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#33-add-modules)
   * Created the first draft of the add command for the DG
     * The following is the UML diagram I added. It is a sequence diagram to illustrate how the `Add` command works. 

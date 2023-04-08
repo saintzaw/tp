@@ -31,6 +31,7 @@ public class InputChecker {
     private static final int MODULE_CREDIT_LOWER_BOUND = 0;
     private static final int MODULE_CREDIT_UPPER_BOUND = 41;
     private static final String INVALID_MODULE_CODE = "fail";
+    private static final String ERROR_MESSAGE_FORMATTING_SPACES = "     ";
 
     public InputChecker () {
 
@@ -155,10 +156,12 @@ public class InputChecker {
         try {
             int moduleCredits = Integer.parseInt(userCommands[2].trim());
             if (moduleCredits < MODULE_CREDIT_LOWER_BOUND || moduleCredits > MODULE_CREDIT_UPPER_BOUND) {
-                throw new MainException("Make sure Modular Credits is an integer from 0-41");
+                throw new MainException("Make sure Modular Credits is an integer with no decimal place from 0-41");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Modular Credits is an integer from 0-41");
+            throw new MainException("Make sure Modular Credits is an integer with no decimal place from 0-41\n"
+                    + ERROR_MESSAGE_FORMATTING_SPACES
+                    + "Example: 4.0 is not accepted as a valid input!");
         }
     }
 
@@ -211,7 +214,7 @@ public class InputChecker {
         try {
             int year = Integer.parseInt(userCommands[4].trim());
             if (year < YEAR_LOWER_BOUND || year > YEAR_UPPER_BOUND) {
-                throw new MainException("Make sure Year of Study is an integer from 1-4");
+                throw new MainException("Make sure Year of Study is an integer with no decimal place from 1-4");
             }
             String semester = userCommands[5].trim();
             boolean isCorrectSemester = semester.equals(SEMESTER_ONE)
@@ -219,10 +222,15 @@ public class InputChecker {
                     || semester.equals(SEMESTER_TWO)
                     || semester.equals(SPECIAL_TERM_TWO);
             if (!isCorrectSemester) {
-                throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)");
+                throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)"
+                        + ", with no additional decimal places\n"
+                        + ERROR_MESSAGE_FORMATTING_SPACES
+                        + "Example: 1.0, 1.50, 2.0, 2.50 is not accepted as a valid input!");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Year of Study is an integer from 1-4");
+            throw new MainException("Make sure Year of Study is an integer with no decimal place from 1-4\n"
+                    + ERROR_MESSAGE_FORMATTING_SPACES
+                    + "Example: 1.0 is not accepted as a valid input!");
         }
     }
 
@@ -236,7 +244,7 @@ public class InputChecker {
      */
     public void checkNumberOfFields(int numberOfFields, String[] userCommands) throws MainException {
         if (userCommands.length > numberOfFields) {
-            throw new MainException("Too many fields");
+            throw new MainException("Too many fields, use the '/' character only for fields/flags!");
         } else if (userCommands.length < numberOfFields) {
             throw new MainException("Missing fields");
         }
@@ -330,10 +338,12 @@ public class InputChecker {
         try {
             int moduleCredits = Integer.parseInt(modularCredits);
             if (moduleCredits < MODULE_CREDIT_LOWER_BOUND || moduleCredits > MODULE_CREDIT_UPPER_BOUND) {
-                throw new MainException("Make sure Modular Credits is an integer from 0-41");
+                throw new MainException("Make sure Modular Credits is an integer with no decimal place from 0-41");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Modular Credits is an integer from 0-41");
+            throw new MainException("Make sure Modular Credits is an integer with no decimal place from 0-41\n"
+                    + ERROR_MESSAGE_FORMATTING_SPACES
+                    + "Example: 4.0 is not accepted as a valid input!");
         }
     }
 
@@ -368,10 +378,12 @@ public class InputChecker {
         try {
             int newYear = Integer.parseInt(year);
             if (newYear < YEAR_LOWER_BOUND || newYear > YEAR_UPPER_BOUND) {
-                throw new MainException("Make sure Year of Study is an integer from 1-4");
+                throw new MainException("Make sure Year of Study is an integer with no decimal place from 1-4");
             }
         } catch (NumberFormatException e) {
-            throw new MainException("Make sure Year of Study is an integer from 1-4");
+            throw new MainException("Make sure Year of Study is an integer with no decimal place from 1-4\n"
+                    + ERROR_MESSAGE_FORMATTING_SPACES
+                    + "Example: 1.0 is not accepted as a valid input!");
         }
     }
 
@@ -389,7 +401,10 @@ public class InputChecker {
                 || semester.equals(SEMESTER_TWO)
                 || semester.equals(SPECIAL_TERM_TWO);
         if (!isCorrectSemester) {
-            throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)");
+            throw new MainException("Make sure Semester is 1, 1.5 (Special Term 1), 2 or 2.5 (Special Term 2)"
+                    + ", with no additional decimal places\n"
+                    + ERROR_MESSAGE_FORMATTING_SPACES
+                    + "Example: 1.0, 1.50, 2.0, 2.50 is not accepted as a valid input!");
         }
     }
 
