@@ -104,7 +104,7 @@ Notes are important information that you should pay attention to when using Modg
 
 **Warnings**
 
-Warnings are to warn you of potential pitfalls that new users may encounter. For example: commands like `delete /MODULE_CODE`  deletes the module from your plan and the action is irreversible.
+Warnings are to warn you of potential pitfalls that new users may encounter. 
 
 > ❗ **Warning**: Read this section carefully when you see it
 
@@ -177,7 +177,7 @@ To set up Modganiser, please follow the steps below:
 
 2. Please click [here](https://github.com/AY2223S2-CS2113T-T09-4/tp/releases) and download the file titled "tp.jar" which contains Modganiser.
 
-3. Save the file into a new folder on your Desktop and title the folder “Modganiser”.
+3. Create an empty folder on your Desktop, title the folder "Modagniser" and save the "tp.jar" file inside it.
 
 4. Open the [CLI interface](#8-glossary) on your device
     * For Windows, click on the Windows button and search for “Command Prompt”.
@@ -205,6 +205,10 @@ To set up Modganiser, please follow the steps below:
    ![Modganiser accepts Name](UG_Screenshots/Name_Entered.png)
 
 8. Modganiser is now ready to run. You can type commands at the bottom after the horizontal line.
+
+> 📓 **Note**
+>
+> If your name is "bye", please use an alias instead. Please refer to the [FAQ Section](#6-faq) for more information. 
 
 All right! Modganiser is now installed onto your device. Move on to the next section to find out more about the various features that Modganiser has.
 
@@ -298,14 +302,14 @@ Example: `add /CS2113T /4 /CORE /1 /1`. adds the module CS2113T that is worth 4 
 
 > 💡 [**Tip**](#31-special-notations)
 >
-> As you will likely take an average of 5 modules in a semester, multiple modules can be together.
+> As you will likely take an average of 5 modules in a semester, advanced users can take advantage of being able to add multiple modules with one command.
 >
 > For example: `add /CS2113T IS4231 CS3235 /4 /CORE /1 /1` will add CS2113T, IS4231 and CS3235 into the module plan. All 3 modules will be reflected as [Core](#8-glossary) modules worth 4 MCs, and will be taken in Year 1 Semester 1.
 > ![AddCommand](UG_Screenshots/AddingMultipleModules.png)
 
 >❗ [**Warning**](#31-special-notations)
 >
-> Adding multiple modules should only be used if all the modules have the same inputs for MODULE_TYPE, MODULAR_CREDITS, YEAR and SEMESTER. Example, SIP3200 and CS2113T should not be added together in a single line as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
+> Adding multiple modules should only be used if all the modules have the same inputs for MODULE_TYPE, MODULAR_CREDITS, YEAR and SEMESTER. Example, SIP3200 and CS2113T should not be added together with a single command as SIP3200 is worth 6 modular credits while CS2113T is worth 4 modular credits.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
@@ -708,7 +712,7 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 
 > 📓 [**Note**](#31-special-notations)
 >
-> If you switch devices, and want to import your module plan from your old device to
+> If you switch devices and want to import your module plan from your old device to
 the new one, firstly locate your save file on the old device, which is just a normal text
 file. You can then use any form of messaging applications like [Telegram](https://telegram.org/), email applications
 like [Gmail](https://mail.google.com/) or online cloud storage like [Google Drive](https://drive.google.com/) to send this save file to yourself or
@@ -731,7 +735,7 @@ In this section, you will find the most commonly asked questions and answers. If
 | I am unable to install Java?                                                                                                         | Please click [here](https://www.oracle.com/sg/java/technologies/downloads/) to install the correct version of java for your device (Windows or MacOS) or contact the developers for help.                                                                                                                                                                                                                                                                                                                               |
 | Why is Modganiser not running?                                                                                                       | Please follow our [Set-Up Guide](#4-set-up-guide) closely. If Modganiser still fails to run, please [contact us](https://github.com/AY2223S2-CS2113T-T09-4/tp/issues) by clicking on the green "new issue" button and submitting it.                                                                                                                                                                                                                                                                                    |
 | Where is my save file?                                                                                                               | Please go to your desktop and locate the folder titled “Modganiser” or the folder where you stored tp.jar. Inside that folder, you will find another folder titled “data” which has a text file titled “modules”. This text file is the save file which has information on your module plan.                                                                                                                                                                                                                            |
-| What if I change my device? How do I transfer the save data to my new device?                                                        | Locate and save your MOdganiser save file, then send it to yourself using a messaging or email application, or store it in an online cloud storage like Google Drive. You can then retrieve the file with your new device.                                                                                                                                                                                                                                                                                              | 
+| What if I change my device? How do I transfer the save data to my new device?                                                        | Please refer to Modganiser's [save feature](#554-saving-module-plan) for instructions on how to locate your save file and send it to your new device.                                                                                                                                                                                                                                                                                                                                                                   | 
 | Why am I able to add CS0000 even though it is not a valid module? Or input the wrong MCs for the module? Or use a wrong module type? | We are unable to keep a database of modules in our ChatBot and hence cannot check if the module code you inputted is being offered. Please go onto [NUSMods](https://nusmods.com) to check the modules you want to take before carefully inputting the module code and the number of MCs of that module. Furthermore, please double check against the [Information Security Student requirements](https://www.comp.nus.edu.sg/cugresource/per-cohort/isc/isc-21-22/) before deciding on the [module type](#8-glossary). |
 | Why does Modganiser quit when I type "bye" instead of saving it as my name?                                                          | `bye` is a command that will quit Modganiser, regardless of where it is used. If your name is “bye”, please consider using an alias. We are very sorry for the inconvenience caused.                                                                                                                                                                                                                                                                                                                                    |
 
