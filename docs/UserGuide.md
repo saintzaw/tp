@@ -716,7 +716,7 @@ Your saved module plan will be automatically loaded when you run Modganiser.
 the new one, firstly locate your save file on the old device, which is just a normal text
 file. You can then use any form of messaging applications like [Telegram](https://telegram.org/), email applications
 like [Gmail](https://mail.google.com/) or online cloud storage like [Google Drive](https://drive.google.com/) to send this save file to yourself or
-store this save file. You can then retrieve this save file from your new device.
+store this save file. You can then retrieve this save file from your new device. On your new device, set up Modganiser and locate the save file on your new device. Replace this save file with the one from your old device.
 
 <p style = "text-align:right"><small>Click <a href="#51-summary-of-features">here</a> to return to the summary of features</small></p>
 <p style = "text-align:right"><small>Click <a href="#table-of-contents">here</a> to return to the Table of Contents</small></p>
