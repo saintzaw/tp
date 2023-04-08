@@ -11,6 +11,8 @@ Modganiser is a platform that provides **effortless module planning, at your fin
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ## Table of Contents
 
 1. [Acknowledgements](#1-acknowledgements)
@@ -35,15 +37,17 @@ Modganiser is a platform that provides **effortless module planning, at your fin
    + 5.1 [Documentation](#51-documentation)
    + 5.2 [Logging](#52-logging)
    + 5.3 [Testing](#53-testing)
-6. [Appendix: Requirements](#6-appendix--requirements)
+6. [Appendix: Requirements](#6-appendix-requirements)
    + 6.1 [Product Scope](#61-product-scope)
    + 6.2 [User Stories](#62-user-stories)
    + 6.3 [Use Cases](#63-use-cases)
    + 6.4 [Non-Functional Requirements](#64-non-functional-requirements)
    + 6.5 [Glossary](#65-glossary)
-7. [Appendix: Instructions for Manual Testing](#7-appendix--instructions-for-manual-testing)
+7. [Appendix: Instructions for Manual Testing](#7-appendix-instructions-for-manual-testing)
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ## 1. Acknowledgements
 
@@ -102,6 +106,8 @@ to ensure Intellij IDEA is configured to use JDK 11.
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ## 3. Architecture
 
 
@@ -125,6 +131,8 @@ Modganiser consists of :
 4. `Print` : Displays the outcome.
 5. `Module` : Creates the module and its attributes.
 
+<div style="page-break-after: always;"></div>
+
 **How the components interact with each other**
 
 When using the command `add /CS2113T /4 /CORE /1 /1` ,
@@ -137,6 +145,7 @@ The sections below give more details of each component.
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 3.1 **Storage Component**
 The main job of this component is to ensure the proper storage of details regarding the modules in the user's plans and 
@@ -156,6 +165,7 @@ modules
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 3.2 **Parser Component**
 How the `Parser` component works:
@@ -179,6 +189,7 @@ to the user.
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 3.3 **ModuleList Component**
 
@@ -208,6 +219,7 @@ How the `ModuleList` component works:
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 3.4 **Print Component**
 
@@ -287,6 +299,7 @@ a long manual page to find what they need. Long method.
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 4.2 Add Modules
 
@@ -312,6 +325,7 @@ The sequence of events above can be represented with the following sequence diag
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 4.3 Find Modules
 
@@ -335,6 +349,8 @@ The following object diagram shows the current state of Modganiser:
 will call `findModuleByCode()`. This method will then print out all the modules that have the keyword "CS" in their
 module name, which in this case will print CS2113T and CS2101 along with their respective details.
 
+<div style="page-break-after: always;"></div>
+
 The following sequence diagram shows how the `findModuleByCode()` operation works:
 
 ![FindModule](diagrams/FindModule.png)
@@ -353,6 +369,7 @@ For `findModuleByType()` method, it works similarly to `findModuleByCode()`. The
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 4.4 Delete Modules
 
@@ -378,6 +395,7 @@ The following sequence diagram shows how the `deleteCommand()` operation works:
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 4.5 Edit Modules
 
@@ -413,10 +431,11 @@ The sequence in which the `Command` class handles the `edit` command is as follo
    More information regarding this method is provided in the subsequent section.
 
 ---
+<div style="page-break-after: always;"></div>
 
 The following sequence diagram shows more details on how the `editModuleType()` operation works:
 
-![editModuleType](diagrams/editModuleType.png)
+![editModuleType](diagrams/EditModuleType.png)
 
 The `editModuleType()` method removes the existing `Module` object and adds a new `Module` object of the new type specified
 by the user. The `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
@@ -424,10 +443,11 @@ methods in the `Module` class are also called upon to obtain the respective requ
 `Module` object.
 
 ---
+<div style="page-break-after: always;"></div>
 
 The following sequence diagram shows more details on how the `editModuleCode` operation works:
 
-![editModuleCode](diagrams/editModuleCode.png)
+![editModuleCode](diagrams/EditModuleCode.png)
 
 The `editModuleCode()` method removes the existing `Module` object and adds a new `Module` object with the new module code specified
 by the user. The `getModuleType()`, `getModularCredits()`, `getYear()`, `getSemester()` and `getGrade()`
@@ -464,6 +484,8 @@ module in the list of modules.
 print out the list of modules to the user. If there are no modules planned for the specified year, it calls upon the 
 `printEmptyModuleList()` method within the `Print` class instead, to print out an error message to the user.
 
+<div style="page-break-after: always;"></div>
+
 The following sequence diagram shows more details on how the `listModulesByYear()` operation works:
 
 ![listModulesByYear](diagrams/ListCommand.png)
@@ -475,6 +497,7 @@ method is called for a total of 4 times to list the modules in the years 1 to 4 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 4.7 Track Modules
 
@@ -501,6 +524,7 @@ The following sequence diagram shows more details on how the `trackCommand()` op
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 4.8 Add Grade
 
@@ -521,6 +545,8 @@ the `edit` command instead.
 `Module` object and prints a success message by calling the `printUpdatedModuleGrade()` method of the `Print` class.
 7. Else, it prints an error message by calling the `printInvalidModule()` method of the `Print` class.
 
+<div style="page-break-after: always;"></div>
+
 The sequence of events above can be represented with the following sequence diagram:
 
 ![gradeCommand](diagrams/GradeCommand.png)
@@ -529,6 +555,7 @@ The sequence of events above can be represented with the following sequence diag
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 4.9 Calculate CAP
 
@@ -547,6 +574,8 @@ The sequence by which the Parser class handles the `calculateCAP` command is as 
 6. Calculates the accumulated grade values and their weightages based on modular credits, and finally calls the
 `printCalculatedCAP()` of the `Print` class to display the calculated CAP to the user
 
+<div style="page-break-after: always;"></div>
+
 The sequence of events above can be represented with the following sequence diagram:
 
 ![calculateCAP](diagrams/CalculateCAP.png)
@@ -554,6 +583,7 @@ The sequence of events above can be represented with the following sequence diag
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ## 5. Documentation, logging and testing
 
@@ -590,6 +620,7 @@ The sequence of events above can be represented with the following sequence diag
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 5.3 Testing
 #### Running tests
@@ -616,6 +647,7 @@ This project has two types of tests:
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ## 6. Appendix: Requirements
 
@@ -661,6 +693,7 @@ compared to when using other applications
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 6.3 Use Cases
 
@@ -690,6 +723,8 @@ For all use cases below, the **System** is `Modganiser` and the **Actor** is the
 
      Use case resumes at step 2.
 
+<div style="page-break-after: always;"></div>
+
 **Use case: Delete a module**
 
 **Main Success Scenario (MSS):**
@@ -713,6 +748,7 @@ For all use cases below, the **System** is `Modganiser` and the **Actor** is the
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 6.4 Non-Functional Requirements
 
@@ -737,6 +773,7 @@ Mainstream OS: Windows, Linux, Unix, OS-X, MacOS
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ## 7. Appendix: Instructions for Manual Testing
 
@@ -780,7 +817,8 @@ Below are some instructions to test the application manually.
    `add /CS1010 /4 /CORE /x /y` (where x is > 4 or < 1 and y is not 1, 1.5, 2, or 2.5)
 
       Expected: Similar to previous erroneous case.
-   
+
+<div style="page-break-after: always;"></div>
 
 2. Adding a module when there are modules in the list
    1. Test case: `add /CS2106 /4 /CORE /2 /1`
@@ -820,6 +858,7 @@ Below are some instructions to test the application manually.
       Expected: No module is deleted. An error message is displayed along with the error details being shown
       in the message.
 
+<div style="page-break-after: always;"></div>
 
 ### Saving Data
 

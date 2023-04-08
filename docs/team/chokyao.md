@@ -31,6 +31,8 @@ to ensure that you meet your graduation requirements.
   * Added Junit Testing and assertions for the `delete` command.
   * Added logging to `delete` and `save` commands.
 
+<div style="page-break-after: always;"></div>
+
 * PE-D Bugs: **PR** [#253](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/253)
   * Squashed PE-D bugs related to corruption of save file where a corrupted save file will result in inability to start the application:
 
@@ -58,6 +60,7 @@ to ensure that you meet your graduation requirements.
 * Found and reported [PE-D bugs](https://github.com/chokyao/ped/issues) for team [Inka](https://github.com/AY2223S2-CS2113-F10-1/tp)
 * Reviewed other UGs and DGs of other groups
 
+<div style="page-break-after: always;"></div>
 
 ### Extract: Developer Guide
 
@@ -65,6 +68,8 @@ to ensure that you meet your graduation requirements.
 ![editModuleCode](../diagrams/EditModuleCode.png)
 
 ![editModuleType](../diagrams/EditModuleType.png)
+
+<div style="page-break-after: always;"></div>
 
 #### Portion on Delete Modules
 
