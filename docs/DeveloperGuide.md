@@ -412,10 +412,16 @@ methods in the `Module` class are also called upon to obtain the respective fiel
 
 `list` command:
 
+> 📓 **Note**
+>
+> The full sequence diagram for the `list` command has been intentionally left out here to keep it simpler.
+The `list` command is used by the user to view the modules that are planned for a specific year. 
+
 The sequence in which the `Command` class handles the `list` command is as follows:
 1. The `Command` class extracts the other fields of the user input, and calls upon the `listModules()` method
    by self-invocation.
-2. The method then uses a `switch` statement to evaluate the year that the user wants to view.
+2. The method then uses a `switch` statement to evaluate the year that the user wants to view. The accepted inputs for
+the `year` field are `1`, `2`, `3`, `4` and `ALL` which represents all 4 years.
 3. After checking the year, the `listModulesByYear()` method within the `ModuleList` class is called upon to
    list the modules that are planned for the year specified by the user.
 4. The `listModulesByYear()` method calls upon the `addModulesToLists()` method in the `ModuleList` class in order to
@@ -426,6 +432,14 @@ module in the list of modules.
 6. The `listModulesByYear()` method also calls upon the `printModuleListByYear()` method within the `Print` class to 
 print out the list of modules to the user. If there are no modules planned for the specified year, it calls upon the 
 `printEmptyModuleList()` method within the `Print` class instead, to print out an error message to the user.
+
+The following sequence diagram shows more details on how the `listModulesByYear` operation works:
+
+![listModulesByYear](diagrams/ListCommand.png)
+
+In the case where the `year` input by the user is either `1`, `2`, `3` or `4`, the `listModulesByYear` method is called 
+once to list the modules in the specified `year`. In the case where the `year` input is `ALL`, the `listModulesByYear` 
+method is called for a total of 4 times to list the modules in the years 1 to 4 , respectively. 
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
