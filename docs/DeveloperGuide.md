@@ -1,4 +1,5 @@
 <br>
+
 # Modganiser Developer Guide
 
 ## Introduction
@@ -304,20 +305,28 @@ Given below is an example usage scenario and how the `findModuleByCode` mechanis
 1. The user launches the application for the first time. Modganiser will be initialised with an empty ArrayList
 of Modules.
 
-2. The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two modules into Modganiser via the addModules 
+2. The user executes `add /CS2113T CS2101 /4 /CORE /2 /2` to add two modules into Modganiser via the add modules 
 feature
-
 The following object diagram shows the current state of Modganiser:
 ![FindTwoModules](diagrams/FindTwoModules.png)
-
-
-3. The user now wants to find the details of the modules he has just added. He executes `find /name /CS` which
+3. The user now wants to find the details of the modules he has just added. He executes `find /code /CS` which
 will call `findModuleByCode`. This method will then print out all the modules that have the keyword "CS" in their
-module name.
+module name, which in this case will print CS2113T and CS2101 along with their respective details.
 
 The following sequence diagram shows how the `findModuleByCode` operation works:
 
 ![FindModule](diagrams/FindModule.png)
+
+For `findModuleByType` method, it works similarly to `findModuleByCode`. The differences are listed below
+1. The search terms can only be CORE, GE, UE or Internship.
+2. Instead of getModuleCode, ModuleList will check which modules in the arraylist are an instance of the module type that is being searched.
+
+**Design Considerations**
+
+**Alternative 1:** Find module by code will only return the module if the search term is exactly the same as the module code
+* Pros: This makes the search module by code easy to implement  
+* Cons: This makes the search function very restrictive, and users might be looking to search for all modules which are CS-coded rather than a specific module
+
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
