@@ -661,7 +661,13 @@ public class PrintTest {
             return;
         }
         String expectedOutput = "    ____________________________________________________________"
+                + System.lineSeparator() + "     Error: User input cannot be empty for any parameter"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator() + "     Error: Module Code cannot be empty"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator() + "    ____________________________________________________________"
+                + System.lineSeparator() + "     Attempting to add modules (if any) with the correct module code!"
                 + System.lineSeparator() + "    ____________________________________________________________"
                 + System.lineSeparator();
         assertEquals(expectedOutput, outContent.toString());

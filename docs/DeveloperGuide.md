@@ -20,14 +20,13 @@ Modganiser is a platform that provides **effortless module planning, at your fin
    + 3.5. [Module](#5-module-component)
 4. [Design and Implementation](#design-and-implementation)
    + 4.1. [ManPage](#manpage)
-   + 4.2. [Parser](#parser)
-   + 4.3. [Add Modules](#add-modules)
-   + 4.4. [Find Modules](#find-modules)
-   + 4.5. [Delete Modules](#delete-modules)
-   + 4.6. [Edit Modules](#edit-modules)
-   + 4.7. [List Modules](#list-modules)
-   + 4.8. [Add Grade](#add-grade)
-   + 4.9. [Calculate CAP](#calculate-cap)
+   + 4.2. [Add Modules](#add-modules)
+   + 4.3. [Find Modules](#find-modules)
+   + 4.4. [Delete Modules](#delete-modules)
+   + 4.5. [Edit Modules](#edit-modules)
+   + 4.6. [List Modules](#list-modules)
+   + 4.7. [Add Grade](#add-grade)
+   + 4.8. [Calculate CAP](#calculate-cap)
 5. [Appendix: Requirements](#appendix--requirements)
    + 5.1. [Product Scope](#product-scope)
    + 5.2. [User Stories](#user-stories)
@@ -262,16 +261,6 @@ Cons: Extra step of typing another command to understand a feature well.
 Pros: Avoid extra step of typing another command to understand a feature well.
 Cons: Wordy and long manual page when command is man, user has to scroll through
 a long manual page to find what they need. Long method.
-
-**Returning back to Table of Contents: [Table of contents](#table-of-contents)**
-
-### Parser
-
-The `Parser` is a class that handles the commands keyed in by the user.  
-It has multiple checks to ensure that the user keys in valid commands. 
-
-<!---elaborate more on the class, still unsure of the format...--->
-<!---insert other commands here, still unsure of the format...(should it all be under Parser class or separate?)--->
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
