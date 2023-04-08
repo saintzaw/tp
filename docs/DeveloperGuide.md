@@ -26,8 +26,9 @@ Modganiser is a platform that provides **effortless module planning, at your fin
    + 4.4. [Delete Modules](#delete-modules)
    + 4.5. [Edit Modules](#edit-modules)
    + 4.6. [List Modules](#list-modules)
-   + 4.7. [Add Grade](#add-grade)
-   + 4.8. [Calculate CAP](#calculate-cap)
+   + 4.7. [Track Modules](#track-modules)
+   + 4.8. [Add Grade](#add-grade)
+   + 4.9. [Calculate CAP](#calculate-cap)
 5. [Documentation, Logging and Testing](#documentation-logging-and-testing)
    + 5.1 [Documentation](#documentation)
    + 5.2 [Logging](#logging)
@@ -445,6 +446,27 @@ method is called for a total of 4 times to list the modules in the years 1 to 4 
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
+### Track Modules
+
+`track` command:
+
+The sequence in which the `Command` class handles the `track` command is as follows:
+1. The `Command` class extracts the other fields of the user input, and calls upon the `trackCommand()` method
+   by self-invocation.
+2. The `trackCommand()` method runs some checks on the user input before calling upon the 
+`trackGraduationRequirements()` method within the `Command` class which checks how far the user is from meeting the 
+requirements for a specific module type.
+3. The `trackGraduationRequirements()` method uses a `switch` statement to evaluate which module type the user wants to 
+view the requirements for. The accepted inputs for the `moduleType` field are `CORE`, `UE`, `GE`, `INTERNSHIP` and `ALL` 
+which represents all 4 module types.
+4. After checking the module type, it calls upon the `findModuleByType()` and `trackModules()` methods within the 
+`ModuleList` class.
+5. The `findModuleByType()` method retrieves all the modules that are of the corresponding user-specified module type 
+while the `trackModules()` method tracks the number of modules of this type that have been completed. 
+6. The `trackModules()` method also calls upon the `printModuleTypeRequirements()` method within the `Print` class to
+   print a message to user that about their graduation requirements.
+
+**Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 ### Add Grade
 
 `grade` command:
