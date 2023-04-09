@@ -516,7 +516,7 @@ which represents all 4 module types.
 4. The `findModuleByType()` method retrieves all the modules that are of the corresponding user-specified module type 
 while the `trackModules()` method tracks the number of modular credits of this module type that have been planned. 
 5. The `trackModules()` method also calls upon the `printModuleTypeRequirements()` method within the `Print` class to
-   print a message to user that about their graduation requirements.
+   print a message to user about their graduation requirements.
 
 <div style="page-break-after: always;"></div>
 
