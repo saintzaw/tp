@@ -498,6 +498,7 @@ method is called for a total of 4 times to list the modules in the years 1 to 4 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 4.7 Track Modules
 
@@ -516,6 +517,8 @@ which represents all 4 module types.
 while the `trackModules()` method tracks the number of modular credits of this module type that have been planned. 
 5. The `trackModules()` method also calls upon the `printModuleTypeRequirements()` method within the `Print` class to
    print a message to user that about their graduation requirements.
+
+<div style="page-break-after: always;"></div>
 
 The following sequence diagram shows more details on how the `trackCommand()` operation works:
 
