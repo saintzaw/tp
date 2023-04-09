@@ -4,10 +4,10 @@ hide circle
 
 class Storage {
 --
-(+) getSavedName()
+(+) getSavedName(): String
 (+) saveName(name: String)
 (+) writeNameToFile(name: String)
-(+) getSavedModules()
+(+) getSavedModules(): ArrayList<String>
 (+) saveModules(savedModules: ArrayList<Module>)
 (+) writeModulesToFile(savedModules: ArrayList<Module>)
 }
