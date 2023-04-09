@@ -458,6 +458,7 @@ methods in the `Module` class are also called upon to obtain the respective fiel
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
+<div style="page-break-after: always;"></div>
 
 ### 4.6 List Modules
 
@@ -497,14 +498,13 @@ method is called for a total of 4 times to list the modules in the years 1 to 4 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
 
 ---
-<div style="page-break-after: always;"></div>
 
 ### 4.7 Track Modules
 
 `track` command:
 
 The sequence in which the `Command` class handles the `track` command is as follows:
-1. The `trackCommand()` method runs some checks on the user input before calling upon the 
+1. The `trackCommand()` method runs checks on the user input to ensure it is valid before calling upon the 
 `trackGraduationRequirements()` method by self-invocation which checks how far the user is from meeting the 
 requirements for a specific module type.
 2. The `trackGraduationRequirements()` method uses a `switch` statement to evaluate which module type the user wants to 
@@ -513,7 +513,7 @@ which represents all 4 module types.
 3. After checking the module type, it calls upon the `findModuleByType()` and `trackModules()` methods within the 
 `ModuleList` class.
 4. The `findModuleByType()` method retrieves all the modules that are of the corresponding user-specified module type 
-while the `trackModules()` method tracks the number of modules of this type that have been completed. 
+while the `trackModules()` method tracks the number of modular credits of this module type that have been planned. 
 5. The `trackModules()` method also calls upon the `printModuleTypeRequirements()` method within the `Print` class to
    print a message to user that about their graduation requirements.
 
