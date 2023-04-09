@@ -21,20 +21,20 @@ to ensure that you meet your graduation requirements.
 
 * Implemented the Save User's Name Feature: **PR** [#127](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/127)
   * Handled prompting and saving of user's name on user's first time starting up of the application 
-  and added the ability to retrieve saved name on subsequent start-ups.
+  and added the ability to retrieve saved name on subsequent start-ups
 
 * Implemented the Save Modules Feature: **PR** [#81](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/81)
   * Added the ability to save modules and constantly update the save file as the user makes changes to 
-  his/her plans.
+  his/her plan
 
 * JUnit Testing, Assertions, Logging: **PR** [#52](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/52), **PR** [#62](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/62) 
-  * Added Junit Testing and assertions for the `delete` command.
-  * Added logging to `delete` and `save` commands.
+  * Added Junit Testing and assertions for the `delete` command
+  * Added logging to `delete` and `save` commands
 
 <div style="page-break-after: always;"></div>
 
 * PE-D Bugs: **PR** [#253](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/253)
-  * Squashed PE-D bugs related to corruption of save file where a corrupted save file will result in inability to start the application:
+  * Squashed PE-D bugs related to corruption of save file where a corrupted save file will result in inability to start the application
 
 ### User Guide
 * Added first draft of the section on delete modules feature: **PR** [#161](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/161)
@@ -64,7 +64,7 @@ to ensure that you meet your graduation requirements.
 
 ### Extract: Developer Guide
 
-#### Sequence Diagram
+#### Sequence Diagram for editModuleCode()
 ![editModuleCode](../diagrams/EditModuleCode.png)
 
 
