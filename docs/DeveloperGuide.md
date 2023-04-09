@@ -168,6 +168,8 @@ modules
 <div style="page-break-after: always;"></div>
 
 ### 3.2 **Parser Component**
+![Parser Diagram](diagrams/Parser.png)
+
 How the `Parser` component works:
 
 * Firstly, when the `Parser` is called upon, it uses the `Command` class to parse the user command.
@@ -183,7 +185,6 @@ validity.
 * Both the `Command` and `InputChecker` classes interact with the `Print` component for the printing of messages 
 to the user.
 
-![Parser Diagram](diagrams/Parser.png)
 ![Parser Class Diagram](diagrams/ParserClass.png)
 
 **Returning back to Table of Contents: [Table of contents](#table-of-contents)**
