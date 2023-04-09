@@ -36,7 +36,6 @@ Please refer to the following links to view my contributions:
     * Added assertions for `delete` command. Please refer to [PR #50](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/50)
     * Added logging to `list` and `edit` commands. Please refer to [PR #306](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/306)
 
-
 <div style="page-break-after: always;"></div>
 
 #### Contributions to the User Guide
@@ -49,23 +48,17 @@ Please refer to the following links to view my contributions:
 
 #### Contributions to the Developer Guide
 * [Parser Component](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#2-parser-component)
-    * Added descriptions of the Parser component for the DG
-    * The following is the UML diagram I added. It is a component diagram to illustrate how the `Parser` component works.
-      ![Parser Diagram](ppp_diagrams/Parser.png)
-      * Please refer to [PR #235](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/235)
+    * Added descriptions and a UML diagram of the Parser for the DG
+    * Please refer to **PR** [#235](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/235)
 * [Edit Command](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#edit-modules)
-    * Added descriptions of the edit command for the DG
-    * The following is the UML diagram I added. It is a sequence diagram to illustrate how the `edit` command works.
-      ![EditCommand Diagram](ppp_diagrams/EditCommand.png)
-    * Please refer to [PR #104](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/104)
+    * Added descriptions and a UML diagram of the edit command for the DG
+    * Please refer to **PR** [#104](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/104)
 * [List Command](https://ay2223s2-cs2113t-t09-4.github.io/tp/DeveloperGuide.html#list-modules)
-  * Added descriptions of the list command for the DG
-  * The following is the UML diagram I added. It is a sequence diagram to illustrate how part of the `list` command works.
-    ![ListCommand Diagram](ppp_diagrams/ListCommand.png)
-  * Please refer to **PR** [#302](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/302) and [#306](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/306)  
+    * Added descriptions and a UML diagram of the list command for the DG
+    * Please refer to **PR** [#302](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/302) and [#306](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/306)  
 * [Track Command](https://ay2223s2-cs2113t-t09-4.github.io/tp/DeveloperGuide.html#47-track-modules)
-  * Added descriptions of the track command for the DG
-  * Please refer to **PR** [#313](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/313)
+    * Added descriptions of the track command for the DG
+    * Please refer to **PR** [#313](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/313)
 * Added a section on [Documentation, Logging and Testing](https://ay2223s2-cs2113t-t09-4.github.io/tp/DeveloperGuide.html#documentation-logging-and-testing)
 
 #### Reviewing/Mentoring contributions
@@ -76,3 +69,16 @@ Please refer to the following links to view my contributions:
 #### Contributions beyond the project team
 * Reported [PE-D bugs](https://github.com/saintzaw/ped/issues) for team [EveNtUS](https://github.com/AY2223S2-CS2113-W12-2/tp)
 * Reviewed User Guides and Developer Guides of other teams in my tutorial group.
+
+<div style="page-break-after: always;"></div>
+
+### Extract: Developer Guide
+
+#### Component diagram for `Parser` component
+![Parser Diagram](ppp_diagrams/Parser.png)
+
+#### Sequence diagram for `edit` command
+![EditCommand Diagram](ppp_diagrams/EditCommand.png)
+
+#### Sequence diagram for `listModulesByYear()` 
+![ListCommand Diagram](ppp_diagrams/ListCommand.png)
