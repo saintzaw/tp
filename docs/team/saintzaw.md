@@ -36,7 +36,6 @@ Please refer to the following links to view my contributions:
     * Added assertions for `delete` command. Please refer to [PR #50](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/50)
     * Added logging to `list` and `edit` commands. Please refer to [PR #306](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/306)
 
-
 <div style="page-break-after: always;"></div>
 
 #### Contributions to the User Guide
