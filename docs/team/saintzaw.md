@@ -36,8 +36,6 @@ Please refer to the following links to view my contributions:
     * Added assertions for `delete` command. Please refer to [PR #50](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/50)
     * Added logging to `list` and `edit` commands. Please refer to [PR #306](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/306)
 
-<div style="page-break-after: always;"></div>
-
 #### Contributions to the User Guide
 * [Edit Command](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/UserGuide.md#523-editing-module-details-edit)
     * Created a draft of the edit command for UG
@@ -77,8 +75,12 @@ Please refer to the following links to view my contributions:
 #### Component diagram for `Parser` component
 ![Parser Diagram](ppp_diagrams/Parser.png)
 
+<div style="page-break-after: always;"></div>
+
 #### Sequence diagram for `edit` command
 ![EditCommand Diagram](ppp_diagrams/EditCommand.png)
+
+<div style="page-break-after: always;"></div>
 
 #### Sequence diagram for `listModulesByYear()` 
 ![ListCommand Diagram](ppp_diagrams/ListCommand.png)
