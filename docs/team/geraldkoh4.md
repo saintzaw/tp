@@ -17,7 +17,7 @@ apps if you can type fast.
 
 ### Enhancements Implemented
 
-* Created and maintained the add module command. PR: [#32](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/32),[#73](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/73), [#93](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/93), [#137](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/137), [#241](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/241), [#251](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/251), [#276](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/276), [#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
+* Created and maintained the add module command. PR: [#32](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/32), [#73](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/73), [#93](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/93), [#137](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/137), [#241](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/241), [#251](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/251), [#276](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/276), [#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
 * Implemented the draft Exception class. PR: [#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
 * Created and maintained some printing methods such as add command error print messages. PR: [#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56), [#137](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/137), [#241](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/241), [#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
 * Added and constantly maintained Exceptions to the add module command and its different fields. PR: [#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56), [#241](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/241), [#251](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/251), [#276](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/276), [#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
@@ -36,19 +36,26 @@ apps if you can type fast.
     * See [PR#167](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/167)
 
 ### Contributions to the Developer Guide
-* [Architecture Component](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#architecture)
-  * Created the first draft of the Architecture component for the DG
-    * The following is the UML diagram I added. It is a component diagram to illustrate how the `ModuleList` component works.
+* [Architecture Component](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#3-architecture)
+  * The following is the UML diagram I added. It is an architecture diagram to illustrate how Modganiser works on a high level.
+    
+    ![Architecture Diagram](ppp_diagrams/Architecture.png)
+    * See [PR#181](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/181) 
+
+* [ModuleList Component](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#33-modulelist-component)
+  * The following is the UML diagram I added. It is a component diagram to illustrate how the `ModuleList` component works.
+  
     ![ModuleList Diagram](ppp_diagrams/ModuleList.png)
-        * See [PR#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
-* [Add Command](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#33-add-modules)
+      * See [PR#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
+
+* [Add Command](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/DeveloperGuide.md#42-add-modules)
   * Created the first draft of the add command for the DG
     * The following is the UML diagram I added. It is a sequence diagram to illustrate how the `Add` command works. 
     ![EditCommand Diagram](ppp_diagrams/AddInputCommand.png)
       * See [PR#182](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/182)
 
 ### Reviewing/Mentoring contributions
-* Pull Requests reviewed : [link](https://github.com/AY2223S2-CS2113T-T09-4/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3A%40me)
+* Pull Requests reviewed: [link](https://github.com/AY2223S2-CS2113T-T09-4/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3A%40me)
 
 ### Contributions beyond the project team
 * Reported [bugs](https://github.com/geraldkoh4/ped/issues) for the product [SEP Helper](https://github.com/AY2223S2-CS2113-T12-3/tp)
