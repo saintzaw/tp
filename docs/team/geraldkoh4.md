@@ -17,17 +17,18 @@ apps if you can type fast.
 
 ### Enhancements Implemented
 
-* Set-up the team repo and invited everyone
-* Created and maintained the add module command. [PR#32](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/32)
-* Implemented the draft Exception class  [PR#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
-* Created and maintained some printing methods such as add command error print messages [PR#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
-* Added and constantly maintained Exceptions to the add module command and its different fields [PR#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
-* Added Logging for the add module command [PR#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
-* Added Junit testing for the add module command [PR#182](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/182)
-* Added Assertions for the add module command [PR#49](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/49)
-* JavaDoc [PR#182](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/182)
-* All supplemented links to Pull Requests are the first iteration or commits mainly about the relevant topic. 
-* For more maintenance and other miscellaneous changes refer to the  [link to my Pull Requests.](https://github.com/AY2223S2-CS2113T-T09-4/tp/pulls?q=is%3Apr+is%3Aclosed+author%3Ageraldkoh4)
+* Created and maintained the add module command. PR: [#32](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/32),[#73](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/73), [#93](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/93), [#137](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/137), [#241](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/241), [#251](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/251), [#276](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/276), [#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
+* Implemented the draft Exception class. PR: [#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
+* Created and maintained some printing methods such as add command error print messages. PR: [#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56), [#137](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/137), [#241](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/241), [#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
+* Added and constantly maintained Exceptions to the add module command and its different fields. PR: [#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56), [#241](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/241), [#251](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/251), [#276](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/276), [#305](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/305)
+* Added Logging for the add module command. PR: [#56](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/56)
+* Added Junit testing for the add module command. PR: [#35](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/35), [#182](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/182)
+* Added Assertions for the add module command. PR: [#49](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/49)
+* JavaDocs. PR: [#137](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/137), [#182](https://github.com/AY2223S2-CS2113T-T09-4/tp/pull/182)
+* For a more comprehensive view on maintenance and other miscellaneous changes refer to the [link to my Pull Requests.](https://github.com/AY2223S2-CS2113T-T09-4/tp/pulls?q=is%3Apr+is%3Aclosed+author%3Ageraldkoh4)
+
+### Contributions to Team-based Tasks
+* Set-up the team repository and invited everyone in the group
 
 ### Contributions to the User Guide
 * [Add Command](https://github.com/AY2223S2-CS2113T-T09-4/tp/blob/master/docs/UserGuide.md#521-adding-modules-add)
