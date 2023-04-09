@@ -64,12 +64,9 @@ to ensure that you meet your graduation requirements.
 
 ### Extract: Developer Guide
 
-#### Sequence Diagrams
+#### Sequence Diagram
 ![editModuleCode](../diagrams/EditModuleCode.png)
 
-![editModuleType](../diagrams/EditModuleType.png)
-
-<div style="page-break-after: always;"></div>
 
 #### Portion on Delete Modules
 
