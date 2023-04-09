@@ -19,14 +19,14 @@ __
 (+) findCommand(userCommands : String[], moduleList : ModuleList)
 (+) deleteCommand(userCommands : String[], moduleList : ModuleList)
 (+) listCommand(userCommands : String[], moduleList : ModuleList)
-(+) listModules(listOfModules : ModuleList, year : String)
+(-) listModules(listOfModules : ModuleList, year : String)
 (+) editCommand(userCommands : String[], moduleList : ModuleList)
-(+) editModuleField(userCommands : String[], listOfModules : ModuleList)
+(-) editModuleField(userCommands : String[], listOfModules : ModuleList)
 (+) gradeCommand(userCommands : String[], moduleList : ModuleList)
 (+) calculateCAPCommand(userCommands : String[], moduleList : ModuleList)
 (+) byeCommand(userCommands : String[], moduleList : ModuleList)
 (+) trackCommand(userCommands : String[], moduleList : ModuleList)
-(+) trackGraduationRequirements(listOfModules : ModuleList, moduleType : String)
+(-) trackGraduationRequirements(listOfModules : ModuleList, moduleType : String)
 }
 
 Command --|> InputChecker
@@ -35,14 +35,14 @@ class InputChecker {
 __
 (+) checkManPageInput(userCommands : String[])
 (+) checkAddInput(userCommands : String[], listOfModules : ModuleList)
-(+) checkAddInputCorrectModuleCode(moduleList : String[])
-(+) checkAddInputCorrectModularCreditField(userCommands : String[])
-(+) checkAddInputCorrectTypeOfModule(userCommands : String[])
+(-) checkAddInputCorrectModuleCode(moduleList : String[])
+(-) checkAddInputCorrectModularCreditField(userCommands : String[])
+(-) checkAddInputCorrectTypeOfModule(userCommands : String[])
 (+) checkAddInputNoDuplicates(moduleCode : String, listOfModules : ArrayList<Module>)
-(+) checkAddInputYearAndSemester(userCommands : String[])
+(-) checkAddInputYearAndSemester(userCommands : String[])
 (+) checkNumberOfFields(userCommands : String[], numberOfFields : int)
-(+) lazyDeleteInvalidInputsForModuleList(moduleList : String[])
-(+) addModuleWithChecks(moduleList : String[], listOfModules : ModuleList, userCommands : String[])
+(-) lazyDeleteInvalidInputsForModuleList(moduleList : String[]): String[]
+(-) addModuleWithChecks(moduleList : String[], listOfModules : ModuleList, userCommands : String[])
 (+) checkEditInputCorrectModuleCode(moduleCode : String)
 (+) checkEditInputCorrectModularCreditField(modularCredits : String)
 (+) checkEditInputCorrectTypeOfModule(typeOfModule : String)
